@@ -8,8 +8,8 @@
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="85"/>
-        <CursorPos Y="101"/>
+        <TopLine Value="68"/>
+        <CursorPos Y="107"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
@@ -43,10 +43,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Project1.pas"/>
-        <Caret Line="13" Column="77"/>
-      </Position>
       <Position>
         <Filename Value="Project1.pas"/>
         <Caret Line="14" Column="18" TopLine="8"/>
@@ -162,6 +158,10 @@
       <Position>
         <Filename Value="Project1.pas"/>
         <Caret Line="105" Column="31" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="116" TopLine="70"/>
       </Position>
     </JumpHistory>
     <RunParams>

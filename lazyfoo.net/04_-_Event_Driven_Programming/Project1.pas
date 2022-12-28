@@ -4,33 +4,14 @@ uses
   sdl,
   sdl_image;
 
-type
+const
+  Screen_Width: integer = 640;
+  Screen_Heigth: integer = 480;
+  Screen_BPP: integer = 32;
+var
+  image, screen: PSDL_Surface;
 
-  { TSDL_Win }
-
-  TSDL_Win = class(TObject)
-  private
-    image, screen: PSDL_Surface;
-    Screen_Width, Screen_Heigth, Screen_BPP: integer;
-    procedure apply_surface(x, y: integer; Source, destination: PSDL_Surface);
-    function load_image(const filename: string): PSDL_Surface;
-    function load_files: boolean;
-  public
-    constructor Create;
-    procedure Run;
-    destructor Destroy; override;
-  end;
-
-  procedure TSDL_Win.apply_surface(x, y: integer; Source, destination: PSDL_Surface);
-  var
-    offset: SDL_Rect;
-  begin
-    offset.x := x;
-    offset.y := y;
-    SDL_BlitSurface(Source, nil, destination, @offset);
-  end;
-
-  function TSDL_Win.load_image(const filename: string): PSDL_Surface;
+  function Load_Image(const filename: string): PSDL_Surface;
   var
     loadedImage: PSDL_Surface;
   begin
@@ -44,58 +25,71 @@ type
     end;
   end;
 
-  function TSDL_Win.load_files: boolean;
+  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface);
+  var
+    offset: SDL_Rect;
   begin
+    offset.x := x;
+    offset.y := y;
+    SDL_BlitSurface(Source, nil, destination, @offset);
+  end;
+
+  function Load_Files: boolean;
+  begin
+    Result := True;
+
     // Load Images
-    image := load_image('logo.png');
+    image := Load_Image('logo.png');
     if image = nil then begin
       Result := False;
       Exit;
     end;
-    Result := True;
   end;
 
-  constructor TSDL_Win.Create;
+  function Create: boolean;
   begin
-    inherited Create;
-    Screen_Width := 640;
-    Screen_Heigth := 480;
-    Screen_BPP := 32;
+    Result := True;
 
     // Start SDL
     if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
       Writeln('Kann SDL nicht öffnen: ', SDL_GetError);
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     // Screen Setup
     screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_SWSURFACE);
     if screen = nil then begin
       Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     // Fenster Titel
     SDL_WM_SetCaption('Event Test', nil);
 
-    if not load_files then begin
+    if not Load_Files then begin
       WriteLn('Fehler beim Dateien laden !');
-      Halt(1);
+      Result := False;
+      Exit;
     end;
   end;
 
-  procedure TSDL_Win.Run;
+  function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
   begin
+    Result := True;
+
     // Copy Image auf Screen
-    apply_surface(0, 0, image, screen);
+    Apply_Surface(0, 0, image, screen);
 
     // Update Screen
     if SDL_Flip(screen) = -1 then begin
       WriteLn('Fehler beim Flip !');
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     repeat
@@ -109,23 +103,24 @@ type
     until quit;
   end;
 
-  destructor TSDL_Win.Destroy;
+  procedure Destroy;
   begin
     // Images freigeben
     SDL_FreeSurface(image);
 
     // SDL beenden
     SDL_Quit;
-
-    inherited Destroy;
   end;
 
-var
-  MySDL: TSDL_Win;
-
 begin
-  MySDL := TSDL_Win.Create;
-  MySDL.Run;
-  MySDL.Free;
-
+  if not Create then begin
+    Halt(1);
+  end;
+  if not Load_Files then begin
+    Halt(1);
+  end;
+  if not Run then begin
+    Halt(1);
+  end;
+  Destroy;
 end.

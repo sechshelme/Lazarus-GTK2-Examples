@@ -4,7 +4,7 @@ uses
   sdl;
 
 var
-  hello, screen: PSDL_Surface; // Our main screen
+  hello, screen: PSDL_Surface;
 
 begin
   // Start SDL

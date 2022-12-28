@@ -8,8 +8,8 @@
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="60"/>
-        <CursorPos X="27" Y="75"/>
+        <TopLine Value="87"/>
+        <CursorPos X="17" Y="17"/>
         <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit>
@@ -43,26 +43,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Project1.pas"/>
-        <Caret Line="103" Column="84" TopLine="80"/>
-      </Position>
-      <Position>
-        <Filename Value="Project1.pas"/>
-        <Caret Line="97" Column="80" TopLine="80"/>
-      </Position>
-      <Position>
-        <Filename Value="Project1.pas"/>
-        <Caret Line="91" Column="22" TopLine="80"/>
-      </Position>
-      <Position>
-        <Filename Value="Project1.pas"/>
-        <Caret Line="104" Column="63" TopLine="81"/>
-      </Position>
-      <Position>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/sdl/src/sdl.pas"/>
-        <Caret Line="2103" Column="82" TopLine="2085"/>
-      </Position>
       <Position>
         <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/sdl/src/sdl.pas"/>
         <Caret Line="2739" Column="50" TopLine="2700"/>
@@ -162,6 +142,26 @@
       <Position>
         <Filename Value="Project1.pas"/>
         <Caret Line="50" Column="27" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="104" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="10" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="93" Column="14" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="21" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="12" Column="26"/>
       </Position>
     </JumpHistory>
     <RunParams>

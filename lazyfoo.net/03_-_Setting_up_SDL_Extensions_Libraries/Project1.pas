@@ -10,7 +10,7 @@ const
   Screen_BPP = 32;
 
 var
-  message, background, screen: PSDL_Surface;
+  image, screen: PSDL_Surface;
 
   function load_image(const filename: string): PSDL_Surface;
   var
@@ -35,33 +35,47 @@ var
     SDL_BlitSurface(Source, nil, destination, @offset);
   end;
 
-begin
-  // Start SDL
-  if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
-    Writeln('Kann SDL nicht öffnen: ', SDL_GetError);
-    Halt(1);
+  function init: boolean;
+  begin
+    Result := False;
+
+    // Start SDL
+    if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
+      Writeln('Kann SDL nicht öffnen: ', SDL_GetError);
+      Result := True;
+      Exit;
+    end;
+
+    // Screen Setup
+    screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_SWSURFACE);
+    if screen = nil then begin
+      Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
+      Result := True;
+      Exit;
+    end;
+
+    SDL_WM_SetCaption('Hello World !', nil);
   end;
 
-  // Screen Setup
-  screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_SWSURFACE);
-  if screen = nil then begin
-    Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
-    Halt(1);
+  procedure Destroy;
+  begin
+    // Images freigeben
+    SDL_FreeSurface(image);
+
+    // SDL beenden
+    SDL_Quit;
   end;
+
+begin
+  init;
 
   SDL_WM_SetCaption('Hello World !', nil);
 
   // Load Images
-  background := load_image('SDL_logo.bmp');
-  message := load_image('loggo.png');
+  image := load_image('logo.png');
 
   // Copy Image auf Screen
-  apply_surface(0, 0, background, screen);
-  apply_surface(320, 0, background, screen);
-  apply_surface(0, 240, background, screen);
-  apply_surface(320, 240, background, screen);
-
-  apply_surface(180, 140, message, screen);
+  apply_surface(180, 140, image, screen);
 
   // Update Screen
   SDL_Flip(screen);
@@ -69,10 +83,5 @@ begin
   // Pause 5sek
   SDL_Delay(5000);
 
-  // Images freigeben
-  SDL_FreeSurface(message);
-  SDL_FreeSurface(background);
-
-  // SDL beenden
-  SDL_Quit;
+  Destroy;
 end.

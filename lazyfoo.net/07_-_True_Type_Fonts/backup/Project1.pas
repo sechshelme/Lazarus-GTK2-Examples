@@ -6,29 +6,17 @@ uses
   sdl_image;
 
 const
-  clip: array[0..3] of SDL_Rect = (
-    (x: 0; y: 0; w: 100; h: 100),
-    (x: 100; y: 0; w: 100; h: 100),
-    (x: 0; y: 100; w: 100; h: 100),
-    (x: 100; y: 100; w: 100; h: 100));
+  Screen_Width: integer = 640;
+  Screen_Heigth: integer = 480;
+  Screen_BPP: integer = 32;
 
-  textColor: TSDL_Color = (r: $FF; g: $FF; b: $FF);
+  textColor: TSDL_Color = (r: $FF; g: $FF; b: $FF; unused: $00);
 
-type
-  TSDL_Win = class(TObject)
-  private
-    message, background, screen: PSDL_Surface;
-    Screen_Width, Screen_Heigth, Screen_BPP: integer;
-    font: PTTF_Font;
-    procedure apply_surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
-    function load_image(const filename: string): PSDL_Surface;
-  public
-    constructor Create;
-    procedure Run;
-    destructor Destroy; override;
-  end;
+var
+  message, background, screen: PSDL_Surface;
+  font: PTTF_Font;
 
-  procedure TSDL_Win.apply_surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
+  procedure apply_surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
     offset: SDL_Rect;
   begin
@@ -37,7 +25,7 @@ type
     SDL_BlitSurface(Source, clip, destination, @offset);
   end;
 
-  function TSDL_Win.load_image(const filename: string): PSDL_Surface;
+  function load_image(const filename: string): PSDL_Surface;
   var
     loadedImage, optimizedImage: PSDL_Surface;
     colorkey: uint32;
@@ -57,51 +45,64 @@ type
     Result := optimizedImage;
   end;
 
-  constructor TSDL_Win.Create;
+  function Load_Files: boolean;
   begin
-    inherited Create;
-    Screen_Width := 320;
-    Screen_Heigth := 240;
-    Screen_BPP := 32;
+    Result := True;
+
+    // Load Images
+    background := Load_Image('background.png');
+    if background = nil then begin
+      Result := False;
+      Exit;
+    end;
+
+    // Lade Schrift
+    font := TTF_OpenFont('font.ttf', 28);
+    if font = nil then begin
+      WriteLn('Kann Schrift nicht laden');
+      Result := False;
+      Exit;
+    end;
+
+  end;
+
+  function Create: boolean;
+  begin
+    Result := True;
 
     // Start SDL
     if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
       Writeln('Kann SDL nicht öffnen: ', SDL_GetError);
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     // Screen Setup
     screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_SWSURFACE);
     if screen = nil then begin
       Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     // TTF Font inizialisieren
     if TTF_Init = -1 then begin
       WriteLn('Kann Font nicht inizialisieren');
-      Halt(1);
+      Result := False;
+      Exit;
     end;
 
     // Fenster Titel
     SDL_WM_SetCaption('TTF Test', nil);
-
-    background := load_image('background.jpg');
-
-    font := TTF_OpenFont('lazy.ttf', 28);
-    if font = nil then begin
-      WriteLn('Kann Font nicht laden');
-      Halt(1);
-    end;
-
   end;
 
-  procedure TSDL_Win.Run;
+  function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-    message := TTF_RenderText_Solid(font, 'Hello World !', textColor);
+    Result := True;
+    message := TTF_RenderText_Solid(font, 'Ich bin ein sehr langer Text', textColor);
 
     // Copy Image auf Screen
     apply_surface(0, 0, background, screen);
@@ -119,7 +120,7 @@ type
     until quit;
   end;
 
-  destructor TSDL_Win.Destroy;
+  procedure Destroy;
   begin
     // Images freigeben
     SDL_FreeSurface(background);
@@ -129,15 +130,17 @@ type
     TTF_CloseFont(font);
 
     SDL_Quit;
-
-    inherited Destroy;
   end;
 
-var
-  MySDL: TSDL_Win;
-
 begin
-  MySDL := TSDL_Win.Create;
-  MySDL.Run;
-  MySDL.Free;
+  if not Create then begin
+    Halt(1);
+  end;
+  if not Load_Files then begin
+    Halt(1);
+  end;
+  if not Run then begin
+    Halt(1);
+  end;
+  Destroy;
 end.
