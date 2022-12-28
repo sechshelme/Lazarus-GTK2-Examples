@@ -16,7 +16,7 @@ begin
   screen := SDL_SetVideoMode(640, 480, 8, SDL_SWSURFACE);
 
   // Load Images
-  hello := SDL_LoadBMP('SDL_logo2.bmp');
+  hello := SDL_LoadBMP('SDL_logo.bmp');
 
   // Copy Image auf Screen
   SDL_BlitSurface(hello, nil, screen, nil);

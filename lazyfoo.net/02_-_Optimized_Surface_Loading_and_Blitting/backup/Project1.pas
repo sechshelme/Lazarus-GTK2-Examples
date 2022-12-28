@@ -15,6 +15,7 @@ var
   var
     loadedImage: PSDL_Surface;
   begin
+    Result := nil;
     loadedImage := SDL_LoadBMP(PChar(filename));
     if loadedImage <> nil then begin
       Result := SDL_DisplayFormat(loadedImage);
@@ -48,8 +49,8 @@ begin
   SDL_WM_SetCaption('Hello World !', nil);
 
   // Load Images
-  background := load_image('SDL_logo.bmp');
-  message := load_image('icon.bmp');
+  background := load_image('background.bmp');
+  message := load_image('hello.bmp');
 
   // Copy Image auf Screen
   apply_surface(0, 0, background, screen);
@@ -60,7 +61,10 @@ begin
   apply_surface(180, 140, message, screen);
 
   // Update Screen
-  SDL_Flip(screen);
+  if SDL_Flip(screen) = -1 then begin
+    WriteLn('Fehler beim SDL_Flip !');
+    Halt(1);
+  end;
 
   // Pause 5sek
   SDL_Delay(5000);

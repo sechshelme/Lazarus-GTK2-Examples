@@ -8,15 +8,13 @@ var
 
 begin
   // Start SDL
-  if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
-    Writeln('SDL could not initialize! SDL_Error: ', SDL_GetError);
-  end;
+  SDL_Init(SDL_INIT_EVERYTHING);
 
   // Screen Setup
-  screen := SDL_SetVideoMode(640, 480, 8, SDL_SWSURFACE);
+  screen := SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
 
   // Load Images
-  hello := SDL_LoadBMP('SDL_logo.bmp');
+  hello := SDL_LoadBMP('hello.bmp');
 
   // Copy Image auf Screen
   SDL_BlitSurface(hello, nil, screen, nil);
