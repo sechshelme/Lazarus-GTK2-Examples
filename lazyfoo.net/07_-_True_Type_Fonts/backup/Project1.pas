@@ -10,13 +10,13 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  textColor: TSDL_Color = (r: $FF; g: $FF; b: $FF; unused: $00);
+  textColor: TSDL_Color = (r: $FF; g: $88; b: $88; unused: $00);
 
 var
   message, background, screen: PSDL_Surface;
   font: PTTF_Font;
 
-  procedure apply_surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
+  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
     offset: SDL_Rect;
   begin
@@ -25,7 +25,7 @@ var
     SDL_BlitSurface(Source, clip, destination, @offset);
   end;
 
-  function load_image(const filename: string): PSDL_Surface;
+  function Load_Image(const filename: string): PSDL_Surface;
   var
     loadedImage, optimizedImage: PSDL_Surface;
     colorkey: uint32;
@@ -37,6 +37,7 @@ var
       SDL_FreeSurface(loadedImage);
     end else begin
       WriteLn('Kann Datei ' + filename + ' nicht laden');
+      exit;
     end;
     if optimizedImage <> nil then begin
       colorkey := SDL_MapRGB(optimizedImage^.format, $0, $FF, $FF);
@@ -57,7 +58,7 @@ var
     end;
 
     // Lade Schrift
-    font := TTF_OpenFont('font.ttf', 28);
+    font := TTF_OpenFont('font.ttf', 40);
     if font = nil then begin
       WriteLn('Kann Schrift nicht laden');
       Result := False;
@@ -100,13 +101,18 @@ var
   var
     quit: boolean = False;
     event: TSDL_Event;
+    colorkey: UInt32;
   begin
     Result := True;
     message := TTF_RenderText_Solid(font, 'Ich bin ein sehr langer Text', textColor);
+    if message <> nil then begin
+      colorkey := SDL_MapRGB(message^.format, $00, $00, $00);
+      SDL_SetColorKey(message, SDL_SRCCOLORKEY, colorkey);
+    end;
 
     // Copy Image auf Screen
-    apply_surface(0, 0, background, screen);
-    apply_surface(0, 150, message, screen);
+    Apply_Surface(0, 0, background, screen);
+    Apply_Surface(0, 150, message, screen);
 
     SDL_Flip(screen);
 

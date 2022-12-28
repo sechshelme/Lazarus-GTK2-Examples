@@ -10,10 +10,10 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  textColor: TSDL_Color = (r: $FF; g: $88; b: $88; unused: $00);
+  textColor: TSDL_Color = (r: $00; g: $FF; b: $00; unused: $00);
 
 var
-  message, background, screen: PSDL_Surface;
+  message, background, screen, LeftMessage, TopMessage, RightMessage, BottomMessage: PSDL_Surface;
   font: PTTF_Font;
 
   procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
@@ -28,7 +28,6 @@ var
   function Load_Image(const filename: string): PSDL_Surface;
   var
     loadedImage, optimizedImage: PSDL_Surface;
-    colorkey: uint32;
   begin
     Result := nil;
     loadedImage := IMG_Load(PChar(filename));
@@ -40,8 +39,7 @@ var
       exit;
     end;
     if optimizedImage <> nil then begin
-      colorkey := SDL_MapRGB(optimizedImage^.format, $0, $FF, $FF);
-      SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
+      SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, SDL_MapRGB(optimizedImage^.format, $0, $FF, $FF));
     end;
     Result := optimizedImage;
   end;
@@ -58,12 +56,13 @@ var
     end;
 
     // Lade Schrift
-    font := TTF_OpenFont('font.ttf', 40);
+    font := TTF_OpenFont('font.ttf', 28);
     if font = nil then begin
       WriteLn('Kann Schrift nicht laden');
       Result := False;
       Exit;
     end;
+
   end;
 
   function Create: boolean;
@@ -93,31 +92,50 @@ var
     end;
 
     // Fenster Titel
-    SDL_WM_SetCaption('TTF Test', nil);
+    SDL_WM_SetCaption('Tasten-Test', nil);
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
-    colorkey: UInt32;
   begin
     Result := True;
-    message := TTF_RenderText_Solid(font, 'Ich bin ein sehr langer Text', textColor);
-    if message <> nil then begin
-      colorkey := SDL_MapRGB(message^.format, $00, $00, $00);
-      SDL_SetColorKey(message, SDL_SRCCOLORKEY, colorkey);
-    end;
+    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Lef', textColor);
+    TopMessage := TTF_RenderText_Solid(font, 'Pfeil  UP', textColor);
+    RightMessage := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
+    BottomMessage := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);
 
     // Copy Image auf Screen
     Apply_Surface(0, 0, background, screen);
-    Apply_Surface(0, 150, message, screen);
-
     SDL_Flip(screen);
 
     repeat
       SDL_WaitEvent(@Event);
       case event.type_ of
+        SDL_KEYDOWN: begin
+          case event.key.keysym.sym of
+            SDLK_UP: begin
+              message := TopMessage;
+            end;
+            SDLK_DOWN: begin
+              message := BottomMessage;
+            end;
+            SDLK_LEFT: begin
+              message := LeftMessage;
+            end;
+            SDLK_RIGHT: begin
+              message := RightMessage;
+            end;
+          end;
+          Apply_Surface(0, 0, background, screen);
+          if message <> nil then begin
+            SDL_SetColorKey(message, SDL_SRCCOLORKEY, SDL_MapRGB(message^.format, $00, $00, $00));
+            Apply_Surface((Screen_Width - message^.w) div 2, (Screen_Heigth - message^.h) div 2, message, screen);
+            message := nil;
+          end;
+          SDL_Flip(screen);
+        end;
         SDL_QUITEV: begin
           quit := True;
         end;
