@@ -116,7 +116,7 @@ var
     Result := True;
 
     // Fenster Titel
-    SDL_WM_SetCaption('Tasten-Test', nil);
+    SDL_WM_SetCaption('Sound', nil);
   end;
 
   procedure PrintText(const s: string; Top: integer);
@@ -124,6 +124,7 @@ var
     message := TTF_RenderText_Solid(font, PChar(Utf8ToAnsi(s)), textColor);
     SDL_SetColorKey(message, SDL_SRCCOLORKEY, SDL_MapRGB(message^.format, $00, $00, $00));
     Apply_Surface((Screen_Width - message^.w) div 2, Top, message, screen);
+    SDL_FreeSurface(message);
   end;
 
   function Run: boolean;
@@ -188,7 +189,6 @@ var
   procedure Destroy;
   begin
     SDL_FreeSurface(background);
-    SDL_FreeSurface(message);
 
     Mix_FreeChunk(scratch);
     Mix_FreeChunk(high);

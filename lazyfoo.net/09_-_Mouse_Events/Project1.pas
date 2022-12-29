@@ -29,7 +29,7 @@ type
 
 var
   buttonSheet, screen: PSDL_Surface;
-  Button:TSDLButton;
+  Button: TSDLButton;
 
   procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
@@ -83,12 +83,12 @@ var
       Exit;
     end;
 
-   buttonSheet:= Load_Image('button.png');
+    buttonSheet := Load_Image('button.png');
 
     // Fenster Titel
     SDL_WM_SetCaption('Tasten-Test', nil);
 
-    Button:=TSDLButton.Create(170,120,320,240);
+    Button := TSDLButton.Create(170, 120, 320, 240);
   end;
 
   function Run: boolean;
@@ -108,7 +108,7 @@ var
           quit := True;
         end;
       end;
-      SDL_FillRect(screen,@screen^.clip_rect, $FF);
+      SDL_FillRect(screen, @screen^.clip_rect, $FF);
       Button.Show;
       SDL_Flip(screen);
     until quit;
@@ -118,7 +118,6 @@ var
   begin
     SDL_FreeSurface(screen);
     SDL_FreeSurface(buttonSheet);
-
 
     SDL_Quit;
   end;
@@ -172,7 +171,7 @@ var
 
   procedure TSDLButton.Show;
   begin
-    Apply_Surface(box.x, box.y,buttonSheet, screen,clip);
+    Apply_Surface(box.x, box.y, buttonSheet, screen, clip);
   end;
 
 
