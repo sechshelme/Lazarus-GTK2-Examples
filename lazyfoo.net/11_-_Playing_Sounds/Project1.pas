@@ -67,7 +67,7 @@ var
       Exit;
     end;
 
-    music := Mix_LoadMUS('doom.mp3');
+    music := Mix_LoadMUS('doom.mid');
     if music = nil then begin
       WriteLn('Kann Musik nicht laden');
       Result := False;
