@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/home/tux/fpcupdeluxe_stable/fpc/bin/x86_64-linux/fpc.sh" Date="1669730573"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq -Fi/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Diverses/SDL/15_-_Besser_mit_Classen/lib/x86_64-linux -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Diverses/SDL/15_-_Besser_mit_Classen/ -FU/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Diverses/SDL/15_-_Besser_mit_Classen/lib/x86_64-linux/ -FE/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Diverses/SDL/15_-_Besser_mit_Classen/ -o/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Diverses/SDL/15_-_Besser_mit_Classen/Project1 Project1.pas"/>
-</CONFIG>
