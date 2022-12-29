@@ -103,7 +103,7 @@ var
     colorkey: UInt32;
   begin
     Result := True;
-    message := TTF_RenderText_Solid(font, 'Ich bin ein sehr langer Text', textColor);
+    message := TTF_RenderText_Solid(font, 'Ich bin ein sehr langer Text' , textColor);
     if message <> nil then begin
       colorkey := SDL_MapRGB(message^.format, $00, $00, $00);
       SDL_SetColorKey(message, SDL_SRCCOLORKEY, colorkey);

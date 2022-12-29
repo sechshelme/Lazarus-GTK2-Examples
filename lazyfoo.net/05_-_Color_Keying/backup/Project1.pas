@@ -32,6 +32,7 @@ var
       SDL_FreeSurface(loadedImage);
     end else begin
       WriteLn('Kann Datei ' + filename + ' nicht laden');
+      Exit;
     end;
     if optimizedImage <> nil then begin
       colorkey := SDL_MapRGB(optimizedImage^.format, $00, $FF, $FF);

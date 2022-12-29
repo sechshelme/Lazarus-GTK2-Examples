@@ -99,9 +99,10 @@ var
   var
     quit: boolean = False;
     event: TSDL_Event;
+    keystates: PUInt8;
   begin
     Result := True;
-    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Lef', textColor);
+    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Left', textColor);
     TopMessage := TTF_RenderText_Solid(font, 'Pfeil  Up', textColor);
     RightMessage := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
     BottomMessage := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);
@@ -111,6 +112,15 @@ var
     SDL_Flip(screen);
 
     repeat
+      while SDL_PollEvent(@event)=0 do begin
+        case event.type_ of
+        SDL_QUITEV: begin
+          quit := True;
+        end;
+        end;
+      end;
+      keystates :=SDL_GetKeyState(nil);
+
       SDL_WaitEvent(@Event);
       case event.type_ of
         SDL_KEYDOWN: begin
@@ -135,9 +145,6 @@ var
             message := nil;
           end;
           SDL_Flip(screen);
-        end;
-        SDL_QUITEV: begin
-          quit := True;
         end;
       end;
     until quit;

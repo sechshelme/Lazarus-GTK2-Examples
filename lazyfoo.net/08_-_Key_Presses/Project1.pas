@@ -101,7 +101,7 @@ var
     event: TSDL_Event;
   begin
     Result := True;
-    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Lef', textColor);
+    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Left', textColor);
     TopMessage := TTF_RenderText_Solid(font, 'Pfeil  Up', textColor);
     RightMessage := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
     BottomMessage := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200">
+  <circle cx="50" cy="50" r="48" stroke="black" stroke-width="4" fill="#FFFF00" />
+  <circle cx="150" cy="50" r="48" stroke="black" stroke-width="4" fill="#FF0000" />
+  <circle cx="50" cy="150" r="48" stroke="black" stroke-width="4" fill="#00FF00" />
+  <circle cx="150" cy="150" r="48" stroke="black" stroke-width="4" fill="#0000FF" />
+</svg> 

@@ -54,7 +54,7 @@ var
     Result := True;
 
     // Load Images
-    dots := Load_Image('smildy.png');
+    dots := Load_Image('dots.svg');
     if dots = nil then begin
       Result := False;
       Exit;
