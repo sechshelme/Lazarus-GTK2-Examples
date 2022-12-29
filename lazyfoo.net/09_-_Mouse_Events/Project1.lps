@@ -8,9 +8,17 @@
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="141"/>
-        <CursorPos X="52" Y="172"/>
+        <CursorPos Y="5"/>
         <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sdlbutton.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SDLButton"/>
+        <EditorIndex Value="1"/>
+        <CursorPos Y="13"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -47,15 +55,6 @@
         <TopLine Value="211"/>
         <CursorPos X="3" Y="234"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="sdlbutton.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="SDLButton"/>
-        <EditorIndex Value="1"/>
-        <CursorPos Y="13"/>
-        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>

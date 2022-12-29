@@ -13,7 +13,7 @@ const
   textColor: TSDL_Color = (r: $00; g: $FF; b: $00; unused: $00);
 
 var
-  message, background, screen, LeftMessage, TopMessage, RightMessage, BottomMessage: PSDL_Surface;
+  background, screen, LeftMessage, TopMessage, RightMessage, BottomMessage: PSDL_Surface;
   font: PTTF_Font;
 
   procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
@@ -107,47 +107,44 @@ var
     RightMessage := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
     BottomMessage := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);
 
+    SDL_SetColorKey(LeftMessage, SDL_SRCCOLORKEY, SDL_MapRGB(LeftMessage^.format, $00, $00, $00));
+    SDL_SetColorKey(TopMessage, SDL_SRCCOLORKEY, SDL_MapRGB(TopMessage^.format, $00, $00, $00));
+    SDL_SetColorKey(RightMessage, SDL_SRCCOLORKEY, SDL_MapRGB(RightMessage^.format, $00, $00, $00));
+    SDL_SetColorKey(BottomMessage, SDL_SRCCOLORKEY, SDL_MapRGB(BottomMessage^.format, $00, $00, $00));
+
+
     // Copy Image auf Screen
     Apply_Surface(0, 0, background, screen);
     SDL_Flip(screen);
+    keystates := SDL_GetKeyState(nil);
 
     repeat
-      while SDL_PollEvent(@event)=0 do begin
+      while SDL_PollEvent(@event) = 0 do begin
         case event.type_ of
-        SDL_QUITEV: begin
-          quit := True;
-          WriteLn('quit');
-        end;
+          SDL_QUITEV: begin
+            quit := True;
+          end;
         end;
       end;
-      keystates :=SDL_GetKeyState(nil);
 
-      SDL_WaitEvent(@Event);
-      case event.type_ of
-        SDL_KEYDOWN: begin
-          case event.key.keysym.sym of
-            SDLK_UP: begin
-              message := TopMessage;
-            end;
-            SDLK_DOWN: begin
-              message := BottomMessage;
-            end;
-            SDLK_LEFT: begin
-              message := LeftMessage;
-            end;
-            SDLK_RIGHT: begin
-              message := RightMessage;
-            end;
-          end;
-          Apply_Surface(0, 0, background, screen);
-          if message <> nil then begin
-            SDL_SetColorKey(message, SDL_SRCCOLORKEY, SDL_MapRGB(message^.format, $00, $00, $00));
-            Apply_Surface((Screen_Width - message^.w) div 2, (Screen_Heigth - message^.h) div 2, message, screen);
-            message := nil;
-          end;
-          SDL_Flip(screen);
-        end;
+      Apply_Surface(0, 0, background, screen);
+
+      if keystates[SDLK_UP] <> 0 then  begin
+        Apply_Surface((Screen_Width - TopMessage^.w) div 2, (Screen_Heigth div 2 - TopMessage^.h) div 2, TopMessage, screen);
       end;
+      if keystates[SDLK_DOWN] <> 0 then  begin
+        Apply_Surface((Screen_Width - BottomMessage^.w) div 2, (Screen_Heigth div 2 - BottomMessage^.h) div 2 + Screen_Heigth div 2, BottomMessage, screen);
+      end;
+      if keystates[SDLK_LEFT] <> 0 then  begin
+        Apply_Surface((Screen_Width div 2 - LeftMessage^.w) div 2, (Screen_Heigth - LeftMessage^.h) div 2, LeftMessage, screen);
+      end;
+      if keystates[SDLK_RIGHT] <> 0 then  begin
+        Apply_Surface((Screen_Width div 2 - RightMessage^.w) div 2 + (Screen_Width div 2), (Screen_Heigth - RightMessage^.h) div 2, RightMessage, screen);
+      end;
+      if keystates[SDLK_ESCAPE] <> 0 then  begin
+        quit:=True;
+      end;
+      SDL_Flip(screen);
     until quit;
   end;
 
@@ -155,10 +152,15 @@ var
   begin
     // Images freigeben
     SDL_FreeSurface(background);
-    SDL_FreeSurface(message);
+
+    SDL_FreeSurface(LeftMessage);
+    SDL_FreeSurface(TopMessage);
+    SDL_FreeSurface(RightMessage);
+    SDL_FreeSurface(BottomMessage);
 
     // SDL beenden
     TTF_CloseFont(font);
+    TTF_Quit;
 
     SDL_Quit;
   end;

@@ -117,6 +117,10 @@ var
 
   procedure Destroy;
   begin
+    SDL_FreeSurface(screen);
+    SDL_FreeSurface(screen);
+
+
     SDL_Quit;
   end;
 
@@ -169,7 +173,7 @@ var
 
   procedure TSDLButton.Show;
   begin
-    Apply_Surface(box.x, box.y,buttonSheet, screen,@clip);
+    Apply_Surface(box.x, box.y,buttonSheet, screen,clip);
   end;
 
 

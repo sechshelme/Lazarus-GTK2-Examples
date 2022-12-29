@@ -2,7 +2,6 @@ program Project1;
 
 uses
   sdl,
-  sdl_ttf,
   sdl_image,
   SDLButton;
 
@@ -117,6 +116,10 @@ var
 
   procedure Destroy;
   begin
+    SDL_FreeSurface(screen);
+    SDL_FreeSurface(buttonSheet);
+
+
     SDL_Quit;
   end;
 

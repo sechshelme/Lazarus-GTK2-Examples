@@ -3,7 +3,8 @@ program Project1;
 uses
   sdl,
   sdl_ttf,
-  sdl_image;
+  sdl_image,
+  sdl_mixer;
 
 const
   Screen_Width: integer = 640;
@@ -13,8 +14,11 @@ const
   textColor: TSDL_Color = (r: $00; g: $FF; b: $00; unused: $00);
 
 var
-  background, screen, LeftMsg, TopMsg, RightMsg, BottomMsg: PSDL_Surface;
+  message, background, screen: PSDL_Surface;
   font: PTTF_Font;
+
+  music: PMix_Music;
+  scratch, high, med, low: PMix_Chunk;
 
   procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
@@ -63,16 +67,31 @@ var
       Exit;
     end;
 
+    music := Mix_LoadMUS('doom.mp3');
+    if music = nil then begin
+      WriteLn('Kann Musik nicht laden');
+      Result := False;
+      Exit;
+    end;
+
+    scratch := Mix_LoadWAV('scratch.wav');
+    high := Mix_LoadWAV('high.wav');
+    med := Mix_LoadWAV('medium.wav');
+    low := Mix_LoadWAV('low.wav');
+    if (scratch = nil) or (high = nil) or (med = nil) or (low = nil) then begin
+      WriteLn('Kann Musik nicht laden');
+      Result := False;
+      Exit;
+    end;
   end;
 
   function Create: boolean;
   begin
-    Result := True;
+    Result := False;
 
     // Start SDL
     if SDL_Init(SDL_INIT_EVERYTHING) < 0 then begin
       Writeln('Kann SDL nicht öffnen: ', SDL_GetError);
-      Result := False;
       Exit;
     end;
 
@@ -80,85 +99,104 @@ var
     screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_SWSURFACE);
     if screen = nil then begin
       Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
-      Result := False;
       Exit;
     end;
 
     // TTF Font inizialisieren
     if TTF_Init = -1 then begin
       WriteLn('Kann Font nicht inizialisieren');
-      Result := False;
       Exit;
     end;
 
+    if Mix_OpenAudio(48000, MIX_DEFAULT_FORMAT, 2, 4096) = -1 then begin
+      Write('Kann Audio nicht öffnen');
+      Exit;
+    end;
+
+    Result := True;
+
     // Fenster Titel
     SDL_WM_SetCaption('Tasten-Test', nil);
+  end;
+
+  procedure PrintText(const s: string; Top: integer);
+  begin
+    message := TTF_RenderText_Solid(font, PChar(Utf8ToAnsi(s)), textColor);
+    SDL_SetColorKey(message, SDL_SRCCOLORKEY, SDL_MapRGB(message^.format, $00, $00, $00));
+    Apply_Surface((Screen_Width - message^.w) div 2, Top, message, screen);
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
-    keystates: PUInt8;
   begin
     Result := True;
-    LeftMsg := TTF_RenderText_Solid(font, 'Pfeil Left', textColor);
-    TopMsg := TTF_RenderText_Solid(font, 'Pfeil  Up', textColor);
-    RightMsg := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
-    BottomMsg := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);
-
-    SDL_SetColorKey(LeftMsg, SDL_SRCCOLORKEY, SDL_MapRGB(LeftMsg^.format, $00, $00, $00));
-    SDL_SetColorKey(TopMsg, SDL_SRCCOLORKEY, SDL_MapRGB(TopMsg^.format, $00, $00, $00));
-    SDL_SetColorKey(RightMsg, SDL_SRCCOLORKEY, SDL_MapRGB(RightMsg^.format, $00, $00, $00));
-    SDL_SetColorKey(BottomMsg, SDL_SRCCOLORKEY, SDL_MapRGB(BottomMsg^.format, $00, $00, $00));
-
 
     // Copy Image auf Screen
     Apply_Surface(0, 0, background, screen);
+
+    PrintText('Drücke 1 bis 4 für Sound-Effekte', 100);
+    PrintText('Drücke 9 Start und Pause Musik', 200);
+    PrintText('Drücke 0 Stop Musik', 300);
+
     SDL_Flip(screen);
-    keystates := SDL_GetKeyState(nil);
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
-        case event.type_ of
-          SDL_QUITEV: begin
-            quit := True;
+      SDL_WaitEvent(@Event);
+      case event.type_ of
+        SDL_KEYDOWN: begin
+          case event.key.keysym.sym of
+            SDLK_1: begin
+              Mix_PlayChannel(-1, scratch, 0);
+            end;
+            SDLK_2: begin
+              Mix_PlayChannel(-1, high, 0);
+            end;
+            SDLK_3: begin
+              Mix_PlayChannel(-1, med, 0);
+            end;
+            SDLK_4: begin
+              Mix_PlayChannel(-1, low, 0);
+            end;
+            SDLK_9: begin
+              if Mix_PlayingMusic = 0 then begin
+                Mix_PlayMusic(music, -1);
+              end else begin
+                if Mix_PausedMusic = 1 then begin
+                  Mix_ResumeMusic;
+                end else begin
+                  Mix_PauseMusic;
+                end;
+              end;
+            end;
+            SDLK_0: begin
+              Mix_HaltMusic;
+            end;
+            SDLK_ESCAPE: begin
+              quit := True;
+            end;
           end;
         end;
+        SDL_QUITEV: begin
+          quit := True;
+        end;
       end;
-
-      Apply_Surface(0, 0, background, screen);
-
-      if keystates[SDLK_UP] <> 0 then  begin
-        Apply_Surface((Screen_Width - TopMsg^.w) div 2, (Screen_Heigth div 2 - TopMsg^.h) div 2, TopMsg, screen);
-      end;
-      if keystates[SDLK_DOWN] <> 0 then  begin
-        Apply_Surface((Screen_Width - BottomMsg^.w) div 2, (Screen_Heigth div 2 - BottomMsg^.h) div 2 + Screen_Heigth div 2, BottomMsg, screen);
-      end;
-      if keystates[SDLK_LEFT] <> 0 then  begin
-        Apply_Surface((Screen_Width div 2 - LeftMsg^.w) div 2, (Screen_Heigth - LeftMsg^.h) div 2, LeftMsg, screen);
-      end;
-      if keystates[SDLK_RIGHT] <> 0 then  begin
-        Apply_Surface((Screen_Width div 2 - RightMsg^.w) div 2 + (Screen_Width div 2), (Screen_Heigth - RightMsg^.h) div 2, RightMsg, screen);
-      end;
-      if keystates[SDLK_ESCAPE] <> 0 then  begin
-        quit:=True;
-      end;
-      SDL_Flip(screen);
     until quit;
   end;
 
   procedure Destroy;
   begin
-    // Images freigeben
     SDL_FreeSurface(background);
+    SDL_FreeSurface(message);
 
-    SDL_FreeSurface(LeftMsg);
-    SDL_FreeSurface(TopMsg);
-    SDL_FreeSurface(RightMsg);
-    SDL_FreeSurface(BottomMsg);
+    Mix_FreeChunk(scratch);
+    Mix_FreeChunk(high);
+    Mix_FreeChunk(med);
+    Mix_FreeChunk(low);
+    Mix_FreeMusic(music);
+    Mix_CloseAudio;
 
-    // SDL beenden
     TTF_CloseFont(font);
     TTF_Quit;
 

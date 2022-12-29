@@ -3,7 +3,7 @@ program Project1;
 uses
   sdl,
   sdl_ttf,
-  sdl_image;
+  sdl_image,heaptrc;
 
 const
   Screen_Width: integer = 640;
@@ -101,7 +101,7 @@ var
     event: TSDL_Event;
   begin
     Result := True;
-    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Lef', textColor);
+    LeftMessage := TTF_RenderText_Solid(font, 'Pfeil Left', textColor);
     TopMessage := TTF_RenderText_Solid(font, 'Pfeil  Up', textColor);
     RightMessage := TTF_RenderText_Solid(font, 'Pfeil Right', textColor);
     BottomMessage := TTF_RenderText_Solid(font, 'Pfeil Down', textColor);
@@ -127,6 +127,9 @@ var
             SDLK_RIGHT: begin
               message := RightMessage;
             end;
+            SDLK_ESCAPE: begin
+              quit := True;
+            end;
           end;
           Apply_Surface(0, 0, background, screen);
           if message <> nil then begin
@@ -148,6 +151,11 @@ var
     // Images freigeben
     SDL_FreeSurface(background);
     SDL_FreeSurface(message);
+
+    SDL_FreeSurface(LeftMessage);
+    SDL_FreeSurface(TopMessage);
+    SDL_FreeSurface(RightMessage);
+    SDL_FreeSurface(BottomMessage);
 
     // SDL beenden
     TTF_CloseFont(font);
