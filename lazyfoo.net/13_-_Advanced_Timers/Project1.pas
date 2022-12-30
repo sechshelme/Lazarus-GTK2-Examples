@@ -3,6 +3,7 @@ program Project1;
 uses
   sdl,
   sdl_image,
+  sdl_net,
   sdl_ttf;
 
 const
@@ -11,9 +12,100 @@ const
   Screen_BPP: integer = 32;
 
   textColor: TSDL_Color = (r: $00; g: $FF; b: $00; unused: $00);
+type
+
+  { TTimer }
+
+  TTimer = class(TObject)
+    startTicks, pausedTicks: integer;
+    paused, started: boolean;
+    constructor Create;
+    destructor Destroy; override;
+    procedure start;
+    procedure stop;
+    procedure pause;
+    procedure unpaused;
+    function getTicks: integer;
+    function is_started: boolean;
+    function is_paused: boolean;
+  end;
+
+  { TTimer }
+
+  constructor TTimer.Create;
+  begin
+    inherited Create;
+    startTicks := 0;
+    pausedTicks := 0;
+    paused := False;
+    started := False;
+  end;
+
+  destructor TTimer.Destroy;
+  begin
+    inherited Destroy;
+  end;
+
+  procedure TTimer.start;
+  begin
+    started := True;
+    paused := False;
+    startTicks := SDL_GetTicks;
+  end;
+
+  procedure TTimer.stop;
+  begin
+    started := False;
+    paused := False;
+  end;
+
+  procedure TTimer.pause;
+  begin
+    if started and not paused then begin
+      paused := True;
+      pausedTicks := SDL_GetTicks - startTicks;
+    end;
+  end;
+
+  procedure TTimer.unpaused;
+  begin
+    if paused then begin
+      paused := False;
+      startTicks := SDL_GetTicks - pausedTicks;
+      pausedTicks := 0;
+    end;
+  end;
+
+  function TTimer.getTicks: integer;
+  begin
+    if started then begin
+      if paused then begin
+        Result := pausedTicks;
+        Exit;
+      end else begin
+        Result := SDL_GetTicks - startTicks;
+        Exit;
+      end;
+    end;
+    Result := 0;
+  end;
+
+  function TTimer.is_started: boolean;
+  begin
+    Result := started;
+  end;
+
+  function TTimer.is_paused: boolean;
+  begin
+    Result := paused;
+  end;
+
+  // Ende TTimer
+
 var
-  background, startStop, secouds, screen: PSDL_Surface;
+  background, screen: PSDL_Surface;
   font: PTTF_Font;
+  Timer: TTimer;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -61,7 +153,6 @@ var
       Result := False;
       Exit;
     end;
-
   end;
 
   function Create: boolean;
@@ -97,21 +188,22 @@ var
     end;
 
     Result := True;
+
+    Timer := TTimer.Create;
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
-    start: uint32;
-    running: boolean = True;
-     s: string;
+    s: string;
+    secouds, startStop, pauseMessage: PSDL_Surface;
   begin
     Result := True;
 
     // Copy Image auf Screen
     startStop := TTF_RenderText_Solid(font, 'Press S to start or stop the timer', textColor);
-    start := SDL_GetTicks;
+    pauseMessage := TTF_RenderText_Solid(font, 'Press P to pause or unpause the timer', textColor);
 
     repeat
       while SDL_PollEvent(@event) = 0 do begin
@@ -119,12 +211,17 @@ var
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
               SDLK_s: begin
-                if running then begin
-                  running := False;
-                  start := 0;
+                if Timer.is_started then begin
+                  Timer.stop;
                 end else begin
-                  running := True;
-                  start := SDL_GetTicks;
+                  Timer.start;
+                end;
+              end;
+              SDLK_p: begin
+                if Timer.is_paused then begin
+                  Timer.unpaused;
+                end else begin
+                  Timer.pause;
                 end;
               end;
               SDLK_ESCAPE: begin
@@ -139,15 +236,14 @@ var
 
         Apply_Surface(0, 0, background, screen);
         Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
+        Apply_Surface((Screen_Width - pauseMessage^.w) div 2, 250, pauseMessage, screen);
 
-        if running then begin
-          Str(SDL_GetTicks-start,s);
+        Str(Timer.getTicks / 1000: 4: 2, s);
 
-          secouds:=TTF_RenderText_Solid(font, PChar('Timer: '+s), textColor);
-          Apply_Surface((Screen_Width-secouds^.w)div 2,50,secouds,screen);
+        secouds := TTF_RenderText_Solid(font, PChar('Timer: ' + s), textColor);
+        Apply_Surface((Screen_Width - secouds^.w) div 2, 0, secouds, screen);
 
-          SDL_FreeSurface(secouds)
-        end;
+        SDL_FreeSurface(secouds);
 
         // Update Screen
         if SDL_Flip(screen) = -1 then begin
@@ -156,12 +252,15 @@ var
           Exit;
         end;
       end;
-
     until quit;
+    SDL_FreeSurface(startStop);
+    SDL_FreeSurface(pauseMessage);
   end;
 
   procedure Destroy;
   begin
+    Timer.Free;
+
     // Images freigeben
     SDL_FreeSurface(background);
 
