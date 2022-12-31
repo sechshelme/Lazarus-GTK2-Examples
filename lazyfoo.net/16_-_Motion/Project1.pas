@@ -95,22 +95,34 @@ type
           end;
         end;
       end;
-      //SDL_KEYUP: begin
-      //  case event.key.keysym.sym of
-      //    SDLK_UP: begin
-      //      yVel += Dot_Height div 2;
-      //    end;
-      //    SDLK_DOWN: begin
-      //      yVel -= Dot_Height div 2;
-      //    end;
-      //    SDLK_LEFT: begin
-      //      xVel += Dot_Width div 2;
-      //    end;
-      //    SDLK_RIGHT: begin
-      //      xVel -= Dot_Width div 2;
-      //    end;
-      //  end;
-      //end;
+      SDL_KEYUP: begin
+        case event.key.keysym.sym of
+          SDLK_UP: begin
+            yVel += Dot_Height div 2;
+          end;
+          SDLK_DOWN: begin
+            yVel -= Dot_Height div 2;
+          end;
+          SDLK_LEFT: begin
+            xVel += Dot_Width div 2;
+          end;
+          SDLK_RIGHT: begin
+            xVel -= Dot_Width div 2;
+          end;
+        end;
+      end;
+    end;
+    if xvel > 3 then begin
+      xvel := 3;
+    end;
+    if yvel > 3 then begin
+      yvel := 3;
+    end;
+    if xvel < -3 then begin
+      xvel := -3;
+    end;
+    if yvel < -3 then begin
+      yvel := -3;
     end;
   end;
 
@@ -121,10 +133,9 @@ type
       x -= xvel;
     end;
     y += yvel;
-    if (y < 0) or (x + Dot_Height > Screen_Heigth) then begin
+    if (y < 0) or (y + Dot_Height > Screen_Heigth) then begin
       y -= yvel;
     end;
-    WriteLn('x: ',x,'   y: ',y);
   end;
 
   procedure TDot.Show;
@@ -256,7 +267,6 @@ var
   var
     quit: boolean = False;
     event: TSDL_Event;
-    s: string;
   begin
     fps.start;
 
@@ -278,7 +288,7 @@ var
 
         MyDot.move;
 
-        SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $00, $FF, $FF));
+        SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
         MyDot.Show;
 
         // Update screen
