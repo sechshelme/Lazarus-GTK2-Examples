@@ -2,15 +2,13 @@ program Project1;
 
 uses
   sdl,
-  sdl_image,
-  sdl_ttf;
+  sdl_image;
 
 const
   Screen_Width: integer = 640;
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  textColor: TSDL_Color = (r: $00; g: $FF; b: $00; unused: $00);
 type
 
   { TTimer }
@@ -102,9 +100,10 @@ type
   // Ende TTimer
 
 var
-  background, screen: PSDL_Surface;
-  font: PTTF_Font;
-  Timer: TTimer;
+  image, screen: PSDL_Surface;
+  fps, update: TTimer;
+
+  frame: integer;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -139,16 +138,8 @@ var
     Result := True;
 
     // Load Images
-    background := Load_Image('background.png');
-    if background = nil then begin
-      Result := False;
-      Exit;
-    end;
-
-    // Lade Schrift
-    font := TTF_OpenFont('font.ttf', 28);
-    if font = nil then begin
-      WriteLn('Kann Schrift nicht laden');
+    image := Load_Image('testing.png');
+    if image = nil then begin
       Result := False;
       Exit;
     end;
@@ -171,14 +162,8 @@ var
       Exit;
     end;
 
-    // TTF Font inizialisieren
-    if TTF_Init = -1 then begin
-      WriteLn('Kann Font nicht inizialisieren');
-      Exit;
-    end;
-
     // Fenster Titel
-    SDL_WM_SetCaption('Timer Test', nil);
+    SDL_WM_SetCaption('Frame Rate Test', nil);
 
     if not Load_Files then begin
       WriteLn('Fehler beim Dateien laden !');
@@ -188,7 +173,9 @@ var
 
     Result := True;
 
-    Timer := TTimer.Create;
+    update := TTimer.Create;
+    ;
+    fps := TTimer.Create;
   end;
 
   function Run: boolean;
@@ -196,33 +183,17 @@ var
     quit: boolean = False;
     event: TSDL_Event;
     s: string;
-    secouds, startStop, pauseMessage: PSDL_Surface;
   begin
     Result := True;
 
-    // Copy Image auf Screen
-    startStop := TTF_RenderText_Solid(font, 'Press S to start or stop the timer', textColor);
-    pauseMessage := TTF_RenderText_Solid(font, 'Press P to pause or unpause the timer', textColor);
+    update.start;
+    fps.start;
 
     repeat
       while SDL_PollEvent(@event) = 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
-              SDLK_s: begin
-                if Timer.is_started then begin
-                  Timer.stop;
-                end else begin
-                  Timer.start;
-                end;
-              end;
-              SDLK_p: begin
-                if Timer.is_paused then begin
-                  Timer.unpaused;
-                end else begin
-                  Timer.pause;
-                end;
-              end;
               SDLK_ESCAPE: begin
                 quit := True;
               end;
@@ -233,16 +204,7 @@ var
           end;
         end;
 
-        Apply_Surface(0, 0, background, screen);
-        Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
-        Apply_Surface((Screen_Width - pauseMessage^.w) div 2, 250, pauseMessage, screen);
-
-        Str(Timer.getTicks / 1000: 4: 2, s);
-
-        secouds := TTF_RenderText_Solid(font, PChar('Timer: ' + s), textColor);
-        Apply_Surface((Screen_Width - secouds^.w) div 2, 0, secouds, screen);
-
-        SDL_FreeSurface(secouds);
+        Apply_Surface(0, 0, image, screen);
 
         // Update Screen
         if SDL_Flip(screen) = -1 then begin
@@ -250,21 +212,25 @@ var
           Result := False;
           Exit;
         end;
+
+        Inc(frame);
+
+        if update.getTicks > 1000 then begin
+          Str(frame div (fps.getTicks div 1000), s);
+          SDL_WM_SetCaption(PChar('Average Frames Per Second: ' + s), nil);
+          update.start;
+        end;
       end;
     until quit;
-    SDL_FreeSurface(startStop);
-    SDL_FreeSurface(pauseMessage);
   end;
 
   procedure Destroy;
   begin
-    Timer.Free;
+    fps.Free;
+    update.Free;
 
     // Images freigeben
-    SDL_FreeSurface(background);
-
-    TTF_CloseFont(font);
-    TTF_Quit;
+    SDL_FreeSurface(image);
 
     // SDL beenden
     SDL_Quit;

@@ -116,6 +116,8 @@ var
 
   procedure Destroy;
   begin
+    Button.Free;
+
     SDL_FreeSurface(screen);
     SDL_FreeSurface(buttonSheet);
 

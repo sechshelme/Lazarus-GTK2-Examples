@@ -105,7 +105,7 @@ var
     event: TSDL_Event;
     start: uint32;
     running: boolean = True;
-     s: string;
+    s: string;
   begin
     Result := True;
 
@@ -141,12 +141,12 @@ var
         Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
 
         if running then begin
-          Str(SDL_GetTicks-start,s);
+          Str(SDL_GetTicks - start, s);
 
-          secouds:=TTF_RenderText_Solid(font, PChar('Timer: '+s), textColor);
-          Apply_Surface((Screen_Width-secouds^.w)div 2,50,secouds,screen);
+          secouds := TTF_RenderText_Solid(font, PChar('Timer: ' + s), textColor);
+          Apply_Surface((Screen_Width - secouds^.w) div 2, 50, secouds, screen);
 
-          SDL_FreeSurface(secouds)
+          SDL_FreeSurface(secouds);
         end;
 
         // Update Screen
@@ -164,6 +164,9 @@ var
   begin
     // Images freigeben
     SDL_FreeSurface(background);
+
+    TTF_CloseFont(font);
+    TTF_Quit;
 
     // SDL beenden
     SDL_Quit;
