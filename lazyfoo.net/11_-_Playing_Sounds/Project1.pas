@@ -79,7 +79,7 @@ var
     med := Mix_LoadWAV('medium.wav');
     low := Mix_LoadWAV('low.wav');
     if (scratch = nil) or (high = nil) or (med = nil) or (low = nil) then begin
-      WriteLn('Kann Musik nicht laden');
+      WriteLn('Kann Sound nicht laden');
       Result := False;
       Exit;
     end;
