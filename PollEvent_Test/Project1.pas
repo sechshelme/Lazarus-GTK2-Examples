@@ -11,41 +11,6 @@ const
 var
   image, screen: PSDL_Surface;
 
-  function Load_Image(const filename: string): PSDL_Surface;
-  var
-    loadedImage: PSDL_Surface;
-  begin
-    Result := nil;
-    loadedImage := IMG_Load(PChar(filename));
-    if loadedImage <> nil then begin
-      Result := SDL_DisplayFormat(loadedImage);
-      SDL_FreeSurface(loadedImage);
-    end else begin
-      WriteLn('Kann Datei ' + filename + ' nicht laden');
-    end;
-  end;
-
-  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface);
-  var
-    offset: SDL_Rect;
-  begin
-    offset.x := x;
-    offset.y := y;
-    SDL_BlitSurface(Source, nil, destination, @offset);
-  end;
-
-  function Load_Files: boolean;
-  begin
-    Result := True;
-
-    // Load Images
-    image := Load_Image('logo.png');
-    if image = nil then begin
-      Result := False;
-      Exit;
-    end;
-  end;
-
   function Create: boolean;
   begin
     Result := True;
@@ -65,25 +30,15 @@ var
       Exit;
     end;
 
-    // Fenster Titel
-    SDL_WM_SetCaption('Event Test', nil);
-
-    if not Load_Files then begin
-      WriteLn('Fehler beim Dateien laden !');
-      Result := False;
-      Exit;
-    end;
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
+    i: integer;
   begin
     Result := True;
-
-    // Copy Image auf Screen
-    Apply_Surface(0, 0, image, screen);
 
     // Update Screen
     if SDL_Flip(screen) = -1 then begin
@@ -92,31 +47,34 @@ var
       Exit;
     end;
 
+    //repeat
+    //  i:=SDL_PollEvent(@event);
+    //  if i <> 0 then WriteLn(i) ;
+    //until quit;
+
     repeat
       while SDL_PollEvent(@event) = 0 do begin
-        case event.type_ of   z
+        case event.type_ of
+          SDL_MOUSEBUTTONDOWN: begin
+            WriteLn('down');
+          end;
           SDL_QUITEV: begin
             quit := True;
           end;
         end;
+//        event.type_ := 0;
       end;
     until quit;
   end;
 
   procedure Destroy;
   begin
-    // Images freigeben
-    SDL_FreeSurface(image);
-
     // SDL beenden
     SDL_Quit;
   end;
 
 begin
   if not Create then begin
-    Halt(1);
-  end;
-  if not Load_Files then begin
     Halt(1);
   end;
   if not Run then begin
