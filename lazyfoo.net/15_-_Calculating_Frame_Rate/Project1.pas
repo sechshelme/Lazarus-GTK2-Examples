@@ -190,7 +190,7 @@ var
     fps.start;
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
+      while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -203,23 +203,23 @@ var
             quit := True;
           end;
         end;
+      end;
 
-        Apply_Surface(0, 0, image, screen);
+      Apply_Surface(0, 0, image, screen);
 
-        // Update Screen
-        if SDL_Flip(screen) = -1 then begin
-          WriteLn('Fehler beim Flip !');
-          Result := False;
-          Exit;
-        end;
+      // Update Screen
+      if SDL_Flip(screen) = -1 then begin
+        WriteLn('Fehler beim Flip !');
+        Result := False;
+        Exit;
+      end;
 
-        Inc(frame);
+      Inc(frame);
 
-        if update.getTicks > 1000 then begin
-          Str(frame div (fps.getTicks div 1000), s);
-          SDL_WM_SetCaption(PChar('Average Frames Per Second: ' + s), nil);
-          update.start;
-        end;
+      if update.getTicks > 1000 then begin
+        Str(frame div (fps.getTicks div 1000), s);
+        SDL_WM_SetCaption(PChar('Average Frames Per Second: ' + s), nil);
+        update.start;
       end;
     until quit;
   end;

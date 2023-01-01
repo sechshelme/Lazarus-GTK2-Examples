@@ -208,7 +208,7 @@ var
     message := TTF_RenderText_Solid(font, 'Testing Frame Rate', textColor);
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
+      while SDL_PollEvent(@event) <> 0 do begin
         fps.start;
         case event.type_ of
           SDL_KEYDOWN: begin
@@ -228,21 +228,22 @@ var
             quit := True;
           end;
         end;
+      end;
 
-        Apply_Surface(0, 0, background, screen);
-        Apply_Surface((Screen_Width - message^.w) div 2, ((Screen_Heigth + message^.h * 2) div FRAMES_PER_SECOND) * (frame mod FRAMES_PER_SECOND) - message^.h, message, screen);
+      Apply_Surface(0, 0, background, screen);
+      Apply_Surface((Screen_Width - message^.w) div 2, ((Screen_Heigth + message^.h * 2) div FRAMES_PER_SECOND) * (frame mod FRAMES_PER_SECOND) - message^.h, message, screen);
 
-        // Update Screen
-        if SDL_Flip(screen) = -1 then begin
-          WriteLn('Fehler beim Flip !');
-          Result := False;
-          Exit;
-        end;
+      // Update Screen
+      if SDL_Flip(screen) = -1 then begin
+        WriteLn('Fehler beim Flip !');
+        Result := False;
+        Exit;
+      end;
 
-        Inc(frame);
-        if cap and (fps.getTicks < 1000 / FRAMES_PER_SECOND) then begin
-          SDL_Delay(1000 div FRAMES_PER_SECOND - fps.getTicks);
-        end;
+      WriteLn(cap);
+      Inc(frame);
+      if cap and (fps.getTicks < 1000 / FRAMES_PER_SECOND) then begin
+        SDL_Delay(1000 div FRAMES_PER_SECOND - fps.getTicks);
       end;
     until quit;
   end;

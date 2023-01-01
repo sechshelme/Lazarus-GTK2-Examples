@@ -101,11 +101,12 @@ var
     // Copy Image auf Screen
 
     repeat
-      SDL_WaitEvent(@event);
-      Button.HandleEvent(event);
-      case event.type_ of
-        SDL_QUITEV: begin
-          quit := True;
+      if SDL_PollEvent(@event) <> 0 then begin
+        Button.HandleEvent(event);
+        case event.type_ of
+          SDL_QUITEV: begin
+            quit := True;
+          end;
         end;
       end;
       SDL_FillRect(screen, @screen^.clip_rect, $FF);

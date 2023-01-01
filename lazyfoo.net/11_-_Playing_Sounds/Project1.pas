@@ -144,43 +144,44 @@ var
     SDL_Flip(screen);
 
     repeat
-      SDL_WaitEvent(@Event);
-      case event.type_ of
-        SDL_KEYDOWN: begin
-          case event.key.keysym.sym of
-            SDLK_1: begin
-              Mix_PlayChannel(-1, scratch, 0);
-            end;
-            SDLK_2: begin
-              Mix_PlayChannel(-1, high, 0);
-            end;
-            SDLK_3: begin
-              Mix_PlayChannel(-1, med, 0);
-            end;
-            SDLK_4: begin
-              Mix_PlayChannel(-1, low, 0);
-            end;
-            SDLK_9: begin
-              if Mix_PlayingMusic = 0 then begin
-                Mix_PlayMusic(music, -1);
-              end else begin
-                if Mix_PausedMusic = 1 then begin
-                  Mix_ResumeMusic;
+      while SDL_PollEvent(@Event) <> 0 do begin
+        case event.type_ of
+          SDL_KEYDOWN: begin
+            case event.key.keysym.sym of
+              SDLK_1: begin
+                Mix_PlayChannel(-1, scratch, 0);
+              end;
+              SDLK_2: begin
+                Mix_PlayChannel(-1, high, 0);
+              end;
+              SDLK_3: begin
+                Mix_PlayChannel(-1, med, 0);
+              end;
+              SDLK_4: begin
+                Mix_PlayChannel(-1, low, 0);
+              end;
+              SDLK_9: begin
+                if Mix_PlayingMusic = 0 then begin
+                  Mix_PlayMusic(music, -1);
                 end else begin
-                  Mix_PauseMusic;
+                  if Mix_PausedMusic = 1 then begin
+                    Mix_ResumeMusic;
+                  end else begin
+                    Mix_PauseMusic;
+                  end;
                 end;
               end;
-            end;
-            SDLK_0: begin
-              Mix_HaltMusic;
-            end;
-            SDLK_ESCAPE: begin
-              quit := True;
+              SDLK_0: begin
+                Mix_HaltMusic;
+              end;
+              SDLK_ESCAPE: begin
+                quit := True;
+              end;
             end;
           end;
-        end;
-        SDL_QUITEV: begin
-          quit := True;
+          SDL_QUITEV: begin
+            quit := True;
+          end;
         end;
       end;
     until quit;

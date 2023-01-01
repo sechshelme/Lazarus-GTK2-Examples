@@ -118,7 +118,7 @@ var
     keystates := SDL_GetKeyState(nil);
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
+      while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_QUITEV: begin
             quit := True;

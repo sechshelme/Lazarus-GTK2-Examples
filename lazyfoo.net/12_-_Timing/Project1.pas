@@ -114,7 +114,7 @@ var
     start := SDL_GetTicks;
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
+      while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -136,6 +136,7 @@ var
             quit := True;
           end;
         end;
+      end;
 
         Apply_Surface(0, 0, background, screen);
         Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
@@ -155,7 +156,6 @@ var
           Result := False;
           Exit;
         end;
-      end;
 
     until quit;
   end;

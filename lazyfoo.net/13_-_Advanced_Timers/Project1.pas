@@ -205,7 +205,7 @@ var
     pauseMessage := TTF_RenderText_Solid(font, 'Press P to pause or unpause the timer', textColor);
 
     repeat
-      while SDL_PollEvent(@event) = 0 do begin
+      while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -232,24 +232,24 @@ var
             quit := True;
           end;
         end;
+      end;
 
-        Apply_Surface(0, 0, background, screen);
-        Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
-        Apply_Surface((Screen_Width - pauseMessage^.w) div 2, 250, pauseMessage, screen);
+      Apply_Surface(0, 0, background, screen);
+      Apply_Surface((Screen_Width - startStop^.w) div 2, 200, startStop, screen);
+      Apply_Surface((Screen_Width - pauseMessage^.w) div 2, 250, pauseMessage, screen);
 
-        Str(Timer.getTicks / 1000: 4: 2, s);
+      Str(Timer.getTicks / 1000: 4: 2, s);
 
-        secouds := TTF_RenderText_Solid(font, PChar('Timer: ' + s), textColor);
-        Apply_Surface((Screen_Width - secouds^.w) div 2, 0, secouds, screen);
+      secouds := TTF_RenderText_Solid(font, PChar('Timer: ' + s), textColor);
+      Apply_Surface((Screen_Width - secouds^.w) div 2, 0, secouds, screen);
 
-        SDL_FreeSurface(secouds);
+      SDL_FreeSurface(secouds);
 
-        // Update Screen
-        if SDL_Flip(screen) = -1 then begin
-          WriteLn('Fehler beim Flip !');
-          Result := False;
-          Exit;
-        end;
+      // Update Screen
+      if SDL_Flip(screen) = -1 then begin
+        WriteLn('Fehler beim Flip !');
+        Result := False;
+        Exit;
       end;
     until quit;
     SDL_FreeSurface(startStop);
