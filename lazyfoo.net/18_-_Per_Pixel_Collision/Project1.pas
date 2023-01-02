@@ -35,7 +35,7 @@ type
     function is_paused: boolean;
   end;
 
-  TSDL_Rects = array of TSDL_Rect;
+  TSDL_Rects = array [0..10] of TSDL_Rect;
 
   { TDot }
 
@@ -66,7 +66,7 @@ type
       exit;
     end;
     if optimizedImage <> nil then begin
-      SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, SDL_MapRGB(optimizedImage^.format, $0, $FF, $FF));
+      SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, SDL_MapRGB(optimizedImage^.format, $FF, $FF, $FF));
     end;
     Result := optimizedImage;
   end;
@@ -85,7 +85,7 @@ type
     leftA, leftB, rightA, rightB, topA, topB, bottomA, bottomB, i, j: integer;
   begin
     i := 0;
-    WriteLn(A[i].x, ' - ', A[i].y, ' - ', A[i].w, ' - ', A[i].h, ' - ', B[i].x, ' - ', B[i].y, ' - ', B[i].w, ' - ', B[i].h);
+//    WriteLn(A[i].x, ' - ', A[i].y, ' - ', A[i].w, ' - ', A[i].h, ' - ', B[i].x, ' - ', B[i].y, ' - ', B[i].w, ' - ', B[i].h);
     Result := False;
     for i := 0 to Length(A) - 1 do begin
       leftA := A[i].x;
@@ -185,7 +185,6 @@ type
   procedure TDot.move(rects: TSDL_Rects);
   begin
     x += xVel;
-    //    WriteLn(x);
     shift_boxes;
     if (x < 0) or (x + Dot_Width > Screen_Width) or (check_collision(box, rects)) then begin
       x -= xVel;
@@ -201,16 +200,19 @@ type
   procedure TDot.Show;
   begin
     Apply_Surface(x, y, square, screen);
+
+    WriteLn(xvel,'   ',yvel);
   end;
 
   function TDot.get_rects: TSDL_Rects;
   var
     i: Integer;
   begin
-    SetLength(Result,Length(box) );
-    for i := 1 to Length(box) - 1 do begin
-      Result[i] := box[i];
-    end;
+//    SetLength(Result,Length(box) );
+//    for i := 1 to Length(box) - 1 do begin
+//      Result[i] := box[i];
+  //  end;
+    Result := box;
   end;
 
   { TTimer }
@@ -328,7 +330,7 @@ var
 
     Result := True;
 
-    mDot := TDot.Create(20, 20);
+    mDot := TDot.Create(120, 120);
     otherDot := TDot.Create(220, 220);
     fps := TTimer.Create;
   end;
