@@ -340,9 +340,9 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-    fps.start;
 
     repeat
+      fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
         mDot.handle_Input(event);
         case event.type_ of
@@ -372,8 +372,10 @@ var
         Exit;
       end;
 
+      WriteLn(fps.getTicks);
+
       if fps.getTicks < 1000 div frames_per_Second then begin
-        SDL_Delay(1000 div frames_per_Second - fps.getTicks);
+        SDL_Delay((1000 div frames_per_Second) - fps.getTicks);
       end;
     until quit;
   end;

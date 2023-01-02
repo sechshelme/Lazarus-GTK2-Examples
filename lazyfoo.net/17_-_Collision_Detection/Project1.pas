@@ -116,35 +116,35 @@ type
   procedure TSquare.handle_Input(event: TSDL_Event);
   begin
     case event.type_ of
-      SDL_KEYDOWN: begin
+        SDL_KEYDOWN: begin
         case event.key.keysym.sym of
           SDLK_UP: begin
-            yVel -= 1;
+            yVel -= Square_Height div 2;
           end;
           SDLK_DOWN: begin
-            yVel += 1;
+            yVel += Square_Height div 2;
           end;
           SDLK_LEFT: begin
-            xVel -= 1;
+            xVel -= Square_Width div 2;
           end;
           SDLK_RIGHT: begin
-            xVel += 1;
+            xVel += Square_Width div 2;
           end;
         end;
       end;
       SDL_KEYUP: begin
         case event.key.keysym.sym of
           SDLK_UP: begin
-            yVel += 1;
+            yVel += Square_Height div 2;
           end;
           SDLK_DOWN: begin
-            yVel -= 1;
+            yVel -= Square_Height div 2;
           end;
           SDLK_LEFT: begin
-            xVel += 1;
+            xVel += Square_Width div 2;
           end;
           SDLK_RIGHT: begin
-            xVel -= 1;
+            xVel -= Square_Width div 2;
           end;
         end;
       end;
@@ -297,9 +297,8 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-    fps.start;
-
     repeat
+      fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
         MySquare.handle_Input(event);
         case event.type_ of

@@ -208,8 +208,8 @@ var
     message := TTF_RenderText_Solid(font, 'Testing Frame Rate', textColor);
 
     repeat
+      fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
-        fps.start;
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -240,7 +240,6 @@ var
         Exit;
       end;
 
-      WriteLn(cap);
       Inc(frame);
       if cap and (fps.getTicks < 1000 / FRAMES_PER_SECOND) then begin
         SDL_Delay(1000 div FRAMES_PER_SECOND - fps.getTicks);
