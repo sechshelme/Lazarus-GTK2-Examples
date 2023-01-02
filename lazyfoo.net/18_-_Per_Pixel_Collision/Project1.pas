@@ -11,12 +11,11 @@ const
 
   frames_per_Second: integer = 20;
 
-  Square_Width = 20;
-  Square_Height = 20;
+  Dot_Width = 20;
+  Dot_Height = 20;
 
 var
   square, screen: PSDL_Surface;
-  wall:SDL_Rect;
 
 type
 
@@ -36,17 +35,21 @@ type
     function is_paused: boolean;
   end;
 
-  { TSquare }
+  TSDL_Rects = array of TSDL_Rect;
 
-  TSquare = class(TObject)
+  { TDot }
+
+  TDot = class(TObject)
   private
-    box: SDL_Rect;
-    xVel, yVel: integer;
+    box: TSDL_Rects;
+    x, y, xVel, yVel: integer;
+    procedure shift_boxes;
   public
-    constructor Create;
+    constructor Create(AX, AY: integer);
     procedure handle_Input(event: TSDL_Event);
-    procedure move;
+    procedure move(rects: TSDL_Rects);
     procedure Show;
+    function get_rects: TSDL_Rects;
   end;
 
   function Load_Image(const filename: string): PSDL_Surface;
@@ -77,43 +80,71 @@ type
     SDL_BlitSurface(Source, nil, destination, @offset);
   end;
 
-  function check_collision(A, B: TSDL_Rect): boolean;
+  function check_collision(var A, B: TSDL_Rects): boolean;
   var
-    leftA, leftB, rightA, rightB, topA, topB, bottomA, bottomB: integer;
+    leftA, leftB, rightA, rightB, topA, topB, bottomA, bottomB, i, j: integer;
   begin
-    leftA := A.x;
-    rightA := A.x + A.w;
-    topA := A.y;
-    bottomA := A.y + A.h;
+    i := 0;
+    WriteLn(A[i].x, ' - ', A[i].y, ' - ', A[i].w, ' - ', A[i].h, ' - ', B[i].x, ' - ', B[i].y, ' - ', B[i].w, ' - ', B[i].h);
+    Result := False;
+    for i := 0 to Length(A) - 1 do begin
+      leftA := A[i].x;
+      rightA := A[i].x + A[i].w;
+      topA := A[i].y;
+      bottomA := A[i].y + A[i].h;
+      for j := 0 to Length(B) - 1 do begin
+        leftB := B[j].x;
+        rightB := B[j].x + B[j].w;
+        topB := B[j].y;
+        bottomB := B[j].y + B[j].h;
 
-    leftB := B.x;
-    rightB := B.x + B.w;
-    topB := B.y;
-    bottomB := B.y + B.h;
-    Result := True;
-    if bottomA <= topB then begin
-      Result := False;
-    end;
-    if topA >= bottomB then begin
-      Result := False;
-    end;
-    if rightA <= leftB then begin
-      Result := False;
-    end;
-    if leftA >= rightB then begin
-      Result := False;
+        if ((bottomA <= topB) or (topA >= bottomB) or (rightA <= leftB) or (leftA >= rightB)) = False then begin
+          Result := True;
+
+          //WriteLn(bottomA,' - ', topB,' - ',topA,' - ', bottomB,' - ',rightA,' - ',leftB,' - ',leftA,' - ', rightB);
+
+          //   exit;
+        end;
+      end;
     end;
   end;
 
   { TSquare }
 
-  constructor TSquare.Create;
+  procedure TDot.shift_boxes;
+  var
+    r: integer = 0;
+    i: integer;
   begin
-    box.w := Square_Width;
-    box.h := Square_Height;
+    for i := 0 to Length(box) - 1 do begin
+      box[i].x := x + (Dot_Width - box[i].w) div 2;
+      box[i].y := y + r;
+      r += box[i].h;
+    end;
   end;
 
-  procedure TSquare.handle_Input(event: TSDL_Event);
+  constructor TDot.Create(AX, AY: integer);
+  const
+    b: TSDL_Rects = (
+      (x: 0; y: 0; w: 6; h: 1),
+      (x: 0; y: 0; w: 10; h: 1),
+      (x: 0; y: 0; w: 14; h: 1),
+      (x: 0; y: 0; w: 16; h: 2),
+      (x: 0; y: 0; w: 18; h: 2),
+      (x: 0; y: 0; w: 20; h: 6),
+      (x: 0; y: 0; w: 18; h: 2),
+      (x: 0; y: 0; w: 16; h: 2),
+      (x: 0; y: 0; w: 14; h: 1),
+      (x: 0; y: 0; w: 10; h: 1),
+      (x: 0; y: 0; w: 6; h: 1));
+  begin
+    x := Ax;
+    y := Ay;
+    box := b;
+    shift_boxes;
+  end;
+
+  procedure TDot.handle_Input(event: TSDL_Event);
   begin
     case event.type_ of
       SDL_KEYDOWN: begin
@@ -151,21 +182,35 @@ type
     end;
   end;
 
-  procedure TSquare.move;
+  procedure TDot.move(rects: TSDL_Rects);
   begin
-    box.x += xVel;
-    if (box.x < 0) or (box.x + Square_Width > Screen_Width) or (check_collision(box, wall)) then begin
-      box.x -= xVel;
+    x += xVel;
+    //    WriteLn(x);
+    shift_boxes;
+    if (x < 0) or (x + Dot_Width > Screen_Width) or (check_collision(box, rects)) then begin
+      x -= xVel;
+      shift_boxes;
     end;
-    box.y += yVel;
-    if (box.y < 0) or (box.y + Square_Height > Screen_Heigth) or (check_collision(box, wall)) then begin
-      box.y -= yVel;
+    y += yVel;
+    if (y < 0) or (y + Dot_Height > Screen_Heigth) or (check_collision(box, rects)) then begin
+      y -= yVel;
+      shift_boxes;
     end;
   end;
 
-  procedure TSquare.Show;
+  procedure TDot.Show;
   begin
-    Apply_Surface(box.x, box.y, square, screen);
+    Apply_Surface(x, y, square, screen);
+  end;
+
+  function TDot.get_rects: TSDL_Rects;
+  var
+    i: Integer;
+  begin
+    SetLength(Result,Length(box) );
+    for i := 1 to Length(box) - 1 do begin
+      Result[i] := box[i];
+    end;
   end;
 
   { TTimer }
@@ -241,7 +286,7 @@ type
   // Ende TTimer
 var
   fps: TTimer;
-  MySquare: TSquare;
+  mDot, otherDot: TDot;
 
   function Load_Files: boolean;
   begin
@@ -273,7 +318,7 @@ var
     end;
 
     // Fenster Titel
-    SDL_WM_SetCaption('Motation', nil);
+    SDL_WM_SetCaption('Move the Dot', nil);
 
     if not Load_Files then begin
       WriteLn('Fehler beim Dateien laden !');
@@ -281,14 +326,10 @@ var
       Exit;
     end;
 
-    wall.x:=300;
-    wall.y:=40;
-    wall.w:=40;
-    wall.h:=400;
-
     Result := True;
 
-    MySquare := TSquare.Create;
+    mDot := TDot.Create(20, 20);
+    otherDot := TDot.Create(220, 220);
     fps := TTimer.Create;
   end;
 
@@ -301,7 +342,7 @@ var
 
     repeat
       while SDL_PollEvent(@event) <> 0 do begin
-        MySquare.handle_Input(event);
+        mDot.handle_Input(event);
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -316,11 +357,11 @@ var
         end;
       end;
 
-      MySquare.move;
+      mDot.move(otherDot.get_rects);
 
       SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
-      SDL_FillRect(screen, @wall, SDL_MapRGB(screen^.format, $77, $77, $77));
-      MySquare.Show;
+      otherDot.Show;
+      mDot.Show;
 
       // Update screen
       if SDL_Flip(screen) = -1 then begin
@@ -338,7 +379,8 @@ var
   procedure Destroy;
   begin
     fps.Free;
-    MySquare.Free;
+    mDot.Free;
+    otherDot.Free;
 
     // Images freigeben
     SDL_FreeSurface(square);

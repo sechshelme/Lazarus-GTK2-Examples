@@ -120,47 +120,35 @@ type
       SDL_KEYDOWN: begin
         case event.key.keysym.sym of
           SDLK_UP: begin
-            yVel -= Square_Height div 2;
+            yVel -= 1;
           end;
           SDLK_DOWN: begin
-            yVel += Square_Height div 2;
+            yVel += 1;
           end;
           SDLK_LEFT: begin
-            xVel -= Square_Width div 2;
+            xVel -= 1;
           end;
           SDLK_RIGHT: begin
-            xVel += Square_Width div 2;
+            xVel += 1;
           end;
         end;
       end;
-      //SDL_KEYUP: begin
-      //  case event.key.keysym.sym of
-      //    SDLK_UP: begin
-      //      yVel += Square_Height div 2;
-      //    end;
-      //    SDLK_DOWN: begin
-      //      yVel -= Square_Height div 2;
-      //    end;
-      //    SDLK_LEFT: begin
-      //      xVel += Square_Width div 2;
-      //    end;
-      //    SDLK_RIGHT: begin
-      //      xVel -= Square_Width div 2;
-      //    end;
-      //  end;
-      //end;
-    end;
-    if xvel > 1 then begin
-      xvel := 1;
-    end;
-    if yvel > 1 then begin
-      yvel := 1;
-    end;
-    if xvel < -1 then begin
-      xvel := -1;
-    end;
-    if yvel < -1 then begin
-      yvel := -1;
+      SDL_KEYUP: begin
+        case event.key.keysym.sym of
+          SDLK_UP: begin
+            yVel += 1;
+          end;
+          SDLK_DOWN: begin
+            yVel -= 1;
+          end;
+          SDLK_LEFT: begin
+            xVel += 1;
+          end;
+          SDLK_RIGHT: begin
+            xVel -= 1;
+          end;
+        end;
+      end;
     end;
   end;
 
