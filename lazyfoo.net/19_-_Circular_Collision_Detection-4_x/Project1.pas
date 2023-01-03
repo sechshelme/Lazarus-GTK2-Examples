@@ -10,6 +10,7 @@ type
   TCircle = record
     x, y, r: integer;
   end;
+  TCircles = array of TCircle;
 
 const
   Screen_Width: integer = 640;
@@ -22,8 +23,20 @@ const
 
 var
   dot, screen: PSDL_Surface;
-  box: TRects;
-  otherDot: TCircle;
+
+const
+  box: TRects = (
+  (x: 130; y: 90; w: 40; h: 40),
+  (x: 180; y: 60; w: 40; h: 40),
+  (x: 60; y: 60; w: 40; h: 40),
+  (x: 80; y: 190; w: 40; h: 40));
+
+  otherDot: TCircles = (
+  (x: 30; y: 30; r: 10),
+  (x: 30; y: 150; r: 10),
+  (x: 150; y: 30; r: 10),
+  (x: 50; y: 180; r: 10));
+
 type
 
   { TTimer }
@@ -51,7 +64,7 @@ type
   public
     constructor Create;
     procedure handle_Input(event: TSDL_Event);
-    procedure move(var rects: TRects; var Circle: TCircle);
+    procedure move(var rects: TRects; var Circle: TCircles);
     procedure Show;
   end;
 
@@ -173,21 +186,28 @@ type
     end;
   end;
 
-  procedure TDot.move(var rects: TRects; var Circle: TCircle);
+  procedure TDot.move(var rects: TRects; var Circle: TCircles);
+  var
+    oldx, oldy, i: integer;
   begin
+    oldx := c.x;
+    oldy := c.y;
     c.x += xVel;
-    if (c.x - Dot_Width div 2 < 0) or (c.x + Dot_Width div 2 > Screen_Width) or (check_collision(c, rects)) or (check_collision(c, Circle)) then begin
-      c.x -= xVel;
-    end;
     c.y += yVel;
-    if (c.y - Dot_Width div 2 < 0) or (c.y + Dot_Width div 2 > Screen_Heigth) or (check_collision(c, rects)) or (check_collision(c, Circle)) then begin
-      c.y -= yVel;
+
+    for i := 0 to Length(Circle) - 1 do begin
+      if (c.x - Dot_Width div 2 < 0) or (c.x + Dot_Width div 2 > Screen_Width) or (check_collision(c, rects)) or (check_collision(c, Circle[i])) then begin
+        c.x := oldx;
+      end;
+      if (c.y - Dot_Width div 2 < 0) or (c.y + Dot_Width div 2 > Screen_Heigth) or (check_collision(c, rects)) or (check_collision(c, Circle[i])) then begin
+        c.y := oldy;
+      end;
     end;
   end;
 
   procedure TDot.Show;
   begin
-    Apply_Surface(c.x-c.r, c.y-c.r, dot, screen);
+    Apply_Surface(c.x - c.r, c.y - c.r, dot, screen);
   end;
 
   { TTimer }
@@ -308,20 +328,13 @@ var
     MyDot := TDot.Create;
     fps := TTimer.Create;
 
-    SetLength(box, 1);
-    box[0].x := 60;
-    box[0].y := 60;
-    box[0].w := 40;
-    box[0].h := 40;
-    otherDot.x := 30;
-    otherDot.y := 30;
-    otherDot.r := Dot_Width div 2;
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
+    i: integer;
   begin
     repeat
       fps.start;
@@ -344,9 +357,13 @@ var
       MyDot.move(box, otherDot);
 
       SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
-      SDL_FillRect(screen, @box[0], SDL_MapRGB(screen^.format, $77, $77, $77));
+      for i := 0 to Length(box) - 1 do begin
+        SDL_FillRect(screen, @box[i], SDL_MapRGB(screen^.format, $77, $77, $77));
+      end;
 
-      Apply_Surface(otherDot.x - otherDot.r, otherDot.y - otherDot.r, dot, screen);
+      for i := 0 to Length(otherDot) - 1 do begin
+        Apply_Surface(otherDot[i].x - otherDot[i].r, otherDot[i].y - otherDot[i].r, dot, screen);
+      end;
       MyDot.Show;
 
       // Update screen
