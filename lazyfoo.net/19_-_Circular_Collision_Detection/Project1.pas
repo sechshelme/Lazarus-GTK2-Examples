@@ -4,19 +4,28 @@ uses
   sdl,
   sdl_image;
 
+type
+  TRects = array of TSDL_Rect;
+
+  TCircle = record
+    x, y, r: integer;
+  end;
+
 const
   Screen_Width: integer = 640;
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 20;
+  frames_per_Second: integer = 60;
 
+  Square_Width = 20;
+  Square_Height = 20;
   Dot_Width = 20;
-  Dot_Height = 20;
 
 var
-  square, screen: PSDL_Surface;
-
+  dot, screen: PSDL_Surface;
+  box: TRects;
+  otherDot: TCircle;
 type
 
   { TTimer }
@@ -35,21 +44,17 @@ type
     function is_paused: boolean;
   end;
 
-  TRects = array [0..10] of TSDL_Rect;
-
   { TDot }
 
   TDot = class(TObject)
   private
-    box: TRects;
-    x, y, xVel, yVel: integer;
-    procedure shift_boxes;
+    c: TCircle;
+    xVel, yVel: integer;
   public
-    constructor Create(AX, AY: integer);
+    constructor Create;
     procedure handle_Input(event: TSDL_Event);
-    procedure move(rects: TRects);
+    procedure move(var rects: TRects; var Circle: TCircle);
     procedure Show;
-    function get_rects: TRects;
   end;
 
   function Load_Image(const filename: string): PSDL_Surface;
@@ -80,68 +85,56 @@ type
     SDL_BlitSurface(Source, nil, destination, @offset);
   end;
 
-  function check_collision(var A, B: TRects): boolean;
-  var
-    leftA, leftB, rightA, rightB, topA, topB, bottomA, bottomB, i, j: integer;
+  function distanc(x1, y1, x2, y2: integer): single;
   begin
-    i := 0;
-//    WriteLn(A[i].x, ' - ', A[i].y, ' - ', A[i].w, ' - ', A[i].h, ' - ', B[i].x, ' - ', B[i].y, ' - ', B[i].w, ' - ', B[i].h);
-    Result := False;
-    for i := 0 to Length(A) - 1 do begin
-      leftA := A[i].x;
-      rightA := A[i].x + A[i].w;
-      topA := A[i].y;
-      bottomA := A[i].y + A[i].h;
-      for j := 0 to Length(B) - 1 do begin
-        leftB := B[j].x;
-        rightB := B[j].x + B[j].w;
-        topB := B[j].y;
-        bottomB := B[j].y + B[j].h;
+    Result := Sqrt(Sqr(x2 - x1) + Sqr(y2 - y1));
+  end;
 
-        if ((bottomA <= topB) or (topA >= bottomB) or (rightA <= leftB) or (leftA >= rightB)) = False then begin
-          Result := True;
+  function check_collision(var A: TCircle; var B: TCircle): boolean;
+  begin
+    if distanc(A.x, A.y, B.x, B.y) < A.r + B.r then begin
+      Result := True;
+    end else begin
+      Result := False;
+    end;
+  end;
 
-          //WriteLn(bottomA,' - ', topB,' - ',topA,' - ', bottomB,' - ',rightA,' - ',leftB,' - ',leftA,' - ', rightB);
+  function check_collision(var A: TCircle; var B: TRects): boolean;
+  var
+    cX, cY, i: integer;
+  begin
+    for i := 0 to Length(B) - 1 do begin
+      if A.x < B[i].x then begin
+        cX := B[i].x;
+      end else if A.x > B[i].x + B[i].w then begin
+        cX := B[i].x + B[i].w;
+      end else begin
+        cX := A.x;
+      end;
 
-          //   exit;
-        end;
+      if A.y < B[i].y then begin
+        cY := B[i].y;
+      end else if A.y > B[i].x + B[i].h then begin
+        cY := B[i].y + B[i].h;
+      end else begin
+        cY := A.y;
+      end;
+
+      if distanc(A.x, A.y, cX, cY) < A.r then begin
+        Result := True;
+        Exit;
       end;
     end;
+    Result := False;
   end;
 
   { TSquare }
 
-  procedure TDot.shift_boxes;
-  var
-    r: integer = 0;
-    i: integer;
+  constructor TDot.Create;
   begin
-    for i := 0 to Length(box) - 1 do begin
-      box[i].x := x + (Dot_Width - box[i].w) div 2;
-      box[i].y := y + r;
-      r += box[i].h;
-    end;
-  end;
-
-  constructor TDot.Create(AX, AY: integer);
-  const
-    b: TRects = (
-      (x: 0; y: 0; w: 6; h: 1),
-      (x: 0; y: 0; w: 10; h: 1),
-      (x: 0; y: 0; w: 14; h: 1),
-      (x: 0; y: 0; w: 16; h: 2),
-      (x: 0; y: 0; w: 18; h: 2),
-      (x: 0; y: 0; w: 20; h: 6),
-      (x: 0; y: 0; w: 18; h: 2),
-      (x: 0; y: 0; w: 16; h: 2),
-      (x: 0; y: 0; w: 14; h: 1),
-      (x: 0; y: 0; w: 10; h: 1),
-      (x: 0; y: 0; w: 6; h: 1));
-  begin
-    x := Ax;
-    y := Ay;
-    box := b;
-    shift_boxes;
+    c.x := Dot_Width div 2;
+    c.y := Dot_Width div 2;
+    c.r := Dot_Width div 2;
   end;
 
   procedure TDot.handle_Input(event: TSDL_Event);
@@ -182,37 +175,21 @@ type
     end;
   end;
 
-  procedure TDot.move(rects: TRects);
+  procedure TDot.move(var rects: TRects; var Circle: TCircle);
   begin
-    x += xVel;
-    shift_boxes;
-    if (x < 0) or (x + Dot_Width > Screen_Width) or (check_collision(box, rects)) then begin
-      x -= xVel;
-      shift_boxes;
+    c.x += xVel;
+    if (c.x - Dot_Width div 2 < 0) or (c.x + Dot_Width div 2 > Screen_Width) or (check_collision(c, rects)) or (check_collision(c, Circle)) then begin
+      c.x -= xVel;
     end;
-    y += yVel;
-    if (y < 0) or (y + Dot_Height > Screen_Heigth) or (check_collision(box, rects)) then begin
-      y -= yVel;
-      shift_boxes;
+    c.y += yVel;
+    if (c.y - Dot_Width div 2 < 0) or (c.y + Dot_Width div 2 > Screen_Heigth) or (check_collision(c, rects)) or (check_collision(c, Circle)) then begin
+      c.y -= yVel;
     end;
   end;
 
   procedure TDot.Show;
   begin
-    Apply_Surface(x, y, square, screen);
-
-    WriteLn(xvel,'   ',yvel);
-  end;
-
-  function TDot.get_rects: TRects;
-  var
-    i: Integer;
-  begin
-//    SetLength(Result,Length(box) );
-//    for i := 1 to Length(box) - 1 do begin
-//      Result[i] := box[i];
-  //  end;
-    Result := box;
+    Apply_Surface(c.x-c.r, c.y-c.r, dot, screen);
   end;
 
   { TTimer }
@@ -288,15 +265,15 @@ type
   // Ende TTimer
 var
   fps: TTimer;
-  mDot, otherDot: TDot;
+  MyDot: TDot;
 
   function Load_Files: boolean;
   begin
     Result := True;
 
     // Load Images
-    square := Load_Image('dot.bmp');
-    if square = nil then begin
+    dot := Load_Image('dot.bmp');
+    if dot = nil then begin
       Result := False;
       Exit;
     end;
@@ -330,9 +307,17 @@ var
 
     Result := True;
 
-    mDot := TDot.Create(120, 120);
-    otherDot := TDot.Create(220, 220);
+    MyDot := TDot.Create;
     fps := TTimer.Create;
+
+    SetLength(box, 1);
+    box[0].x := 60;
+    box[0].y := 60;
+    box[0].w := 40;
+    box[0].h := 40;
+    otherDot.x := 30;
+    otherDot.y := 30;
+    otherDot.r := Dot_Width div 2;
   end;
 
   function Run: boolean;
@@ -340,11 +325,10 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-
     repeat
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
-        mDot.handle_Input(event);
+        MyDot.handle_Input(event);
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -359,11 +343,13 @@ var
         end;
       end;
 
-      mDot.move(otherDot.get_rects);
+      MyDot.move(box, otherDot);
 
       SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
-      otherDot.Show;
-      mDot.Show;
+      SDL_FillRect(screen, @box[0], SDL_MapRGB(screen^.format, $77, $77, $77));
+
+      Apply_Surface(otherDot.x - otherDot.r, otherDot.y - otherDot.r, dot, screen);
+      MyDot.Show;
 
       // Update screen
       if SDL_Flip(screen) = -1 then begin
@@ -372,10 +358,8 @@ var
         Exit;
       end;
 
-      WriteLn(fps.getTicks);
-
       if fps.getTicks < 1000 div frames_per_Second then begin
-        SDL_Delay((1000 div frames_per_Second) - fps.getTicks);
+        SDL_Delay(1000 div frames_per_Second - fps.getTicks);
       end;
     until quit;
   end;
@@ -383,11 +367,10 @@ var
   procedure Destroy;
   begin
     fps.Free;
-    mDot.Free;
-    otherDot.Free;
+    MyDot.Free;
 
     // Images freigeben
-    SDL_FreeSurface(square);
+    SDL_FreeSurface(dot);
 
     // SDL beenden
     SDL_Quit;
