@@ -9,23 +9,29 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 60;
+  frames_per_Second: integer = 20;
 
-  Dot_Width = 20;
-  Dot_Height = 20;
+  Foo_Width = 64;
+  Foo_Height = 205;
+  Foo_Right = 0;
+  Foo_Left = 1;
+
 
 var
-  dot, screen: PSDL_Surface;
+  clipsRight: array [0..3] of TSDL_Rect;
+  clipsLeft: array [0..3] of TSDL_Rect;
+  foo, screen: PSDL_Surface;
 
 type
 
-  { TDot }
+  { TFoo }
 
-  TDot = class(TObject)
+  TFoo = class(TObject)
   private
-    x, y, xvel, yVel: integer;
+    offset, velocity, frame, status: integer;
   public
-    procedure handle_Input(event: TSDL_Event);
+    constructor Create;
+    procedure handle_input(event: TSDL_Event);
     procedure move;
     procedure Show;
   end;
@@ -33,8 +39,10 @@ type
   { TTimer }
 
   TTimer = class(TObject)
+  private
     startTicks, pausedTicks: integer;
     paused, started: boolean;
+  public
     constructor Create;
     destructor Destroy; override;
     procedure start;
@@ -65,70 +73,95 @@ type
     Result := optimizedImage;
   end;
 
-  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface);
+  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
     offset: SDL_Rect;
   begin
     offset.x := x;
     offset.y := y;
-    SDL_BlitSurface(Source, nil, destination, @offset);
+    SDL_BlitSurface(Source, clip, destination, @offset);
   end;
 
-  { TDot }
+  { TFoo }
 
-  procedure TDot.handle_Input(event: TSDL_Event);
+  procedure set_clips;
+  var
+    i: integer;
   begin
-    case event.type_ of
-      SDL_KEYDOWN: begin
-        case event.key.keysym.sym of
-          SDLK_UP: begin
-            yVel -= Dot_Height div 2;
+    for i := 0 to 3 do begin
+      clipsRight[i].x := i * Foo_Width;
+      clipsRight[i].y := 0;
+      clipsRight[i].w := Foo_Width;
+      clipsRight[i].h := Foo_Height;
+
+      clipsLeft[i].x := i * Foo_Width;
+      clipsLeft[i].y := Foo_Height;
+      clipsLeft[i].w := Foo_Width;
+      clipsLeft[i].h := Foo_Height;
+    end;
+  end;
+
+  constructor TFoo.Create;
+  begin
+    inherited Create;
+    status := Foo_Right;
+  end;
+
+  procedure TFoo.handle_input(event: TSDL_Event);
+  begin
+    begin
+      case event.type_ of
+        SDL_KEYDOWN: begin
+          case event.key.keysym.sym of
+            SDLK_LEFT: begin
+              velocity -= Foo_Width div 4;
+            end;
+            SDLK_RIGHT: begin
+              velocity += Foo_Width div 4;
+            end;
           end;
-          SDLK_DOWN: begin
-            yVel += Dot_Height div 2;
-          end;
-          SDLK_LEFT: begin
-            xVel -= Dot_Width div 2;
-          end;
-          SDLK_RIGHT: begin
-            xVel += Dot_Width div 2;
+        end;
+        SDL_KEYUP: begin
+          case event.key.keysym.sym of
+            SDLK_LEFT: begin
+              velocity += Foo_Width div 4;
+            end;
+            SDLK_RIGHT: begin
+              velocity -= Foo_Width div 4;
+            end;
           end;
         end;
       end;
-      SDL_KEYUP: begin
-        case event.key.keysym.sym of
-          SDLK_UP: begin
-            yVel += Dot_Height div 2;
-          end;
-          SDLK_DOWN: begin
-            yVel -= Dot_Height div 2;
-          end;
-          SDLK_LEFT: begin
-            xVel += Dot_Width div 2;
-          end;
-          SDLK_RIGHT: begin
-            xVel -= Dot_Width div 2;
-          end;
-        end;
-      end;
     end;
   end;
 
-  procedure TDot.move;
+  procedure TFoo.move;
   begin
-    x += xvel;
-    if (x < 0) or (x + Dot_Width > Screen_Width) then begin
-      x -= xvel;
-    end;
-    y += yvel;
-    if (y < 0) or (y + Dot_Height > Screen_Heigth) then begin
-      y -= yvel;
+    offset += velocity;
+    if (offset < 0) or (offset + Foo_Width > Screen_Width) then begin
+      offset -= velocity;
     end;
   end;
 
-  procedure TDot.Show;
+  procedure TFoo.Show;
   begin
-    Apply_Surface(x, y, dot, screen);
+    if velocity < 0 then begin
+      status := Foo_Left;
+      Inc(frame);
+    end else if velocity > 0 then begin
+      status := Foo_Right;
+      Inc(frame);
+    end else begin
+      frame := 0;
+    end;
+    if frame > 4 then begin
+      frame := 0;
+    end;
+    if status = Foo_Right then begin
+      Apply_Surface(offset, Screen_Heigth - Foo_Height, foo, screen, @clipsRight[frame]);
+    end else begin
+      Apply_Surface(offset, Screen_Heigth - Foo_Height, foo, screen, @clipsLeft[frame]);
+    end;
   end;
 
   { TTimer }
@@ -204,15 +237,15 @@ type
   // Ende TTimer
 var
   fps: TTimer;
-  MyDot: TDot;
+  walk: TFoo;
 
   function Load_Files: boolean;
   begin
     Result := True;
 
     // Load Images
-    dot := Load_Image('dot.bmp');
-    if dot = nil then begin
+    foo := Load_Image('foo.png');
+    if foo = nil then begin
       Result := False;
       Exit;
     end;
@@ -245,8 +278,9 @@ var
     end;
 
     Result := True;
+    set_clips;
 
-    MyDot := TDot.Create;
+    walk := TFoo.Create;
     fps := TTimer.Create;
   end;
 
@@ -255,11 +289,10 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-
     repeat
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
-        MyDot.handle_Input(event);
+        walk.handle_input(event);
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -274,10 +307,10 @@ var
         end;
       end;
 
-      MyDot.move;
+      walk.move;
 
       SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
-      MyDot.Show;
+      walk.Show;
 
       // Update screen
       if SDL_Flip(screen) = -1 then begin
@@ -295,10 +328,10 @@ var
   procedure Destroy;
   begin
     fps.Free;
-    MyDot.Free;
+    walk.Free;
 
     // Images freigeben
-    SDL_FreeSurface(dot);
+    SDL_FreeSurface(foo);
 
     // SDL beenden
     SDL_Quit;
