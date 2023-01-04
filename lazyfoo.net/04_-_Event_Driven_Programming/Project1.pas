@@ -65,6 +65,11 @@ var
       Exit;
     end;
 
+    if not Load_Files then begin
+      Result := False;
+      Exit;
+    end;
+
     // Fenster Titel
     SDL_WM_SetCaption('Event Test', nil);
 
@@ -94,7 +99,7 @@ var
 
     repeat
       while SDL_PollEvent(@event) = 0 do begin
-        case event.type_ of   z
+        case event.type_ of
           SDL_QUITEV: begin
             quit := True;
           end;
@@ -114,9 +119,6 @@ var
 
 begin
   if not Create then begin
-    Halt(1);
-  end;
-  if not Load_Files then begin
     Halt(1);
   end;
   if not Run then begin

@@ -16,6 +16,7 @@ const
 
 var
   dot, screen: PSDL_Surface;
+  background: uint32;
 
 type
 
@@ -23,11 +24,15 @@ type
 
   TDot = class(TObject)
   private
-    x, y, xvel, yVel: integer;
+    Fx: integer;
+    Fy: integer;
+    xvel, yVel: integer;
   public
     procedure handle_Input(event: TSDL_Event);
     procedure move;
     procedure Show;
+    property x: integer read Fx write Fx;
+    property y: integer read Fy write Fy;
   end;
 
   { TTimer }
@@ -116,19 +121,19 @@ type
 
   procedure TDot.move;
   begin
-    x += xvel;
-    if (x < 0) or (x + Dot_Width > Screen_Width) then begin
-      x -= xvel;
+    fx += xvel;
+    if (fx < 0) or (fx + Dot_Width > Screen_Width) then begin
+      fx -= xvel;
     end;
-    y += yvel;
-    if (y < 0) or (y + Dot_Height > Screen_Heigth) then begin
-      y -= yvel;
+    fy += yvel;
+    if (fy < 0) or (fy + Dot_Height > Screen_Heigth) then begin
+      fy -= yvel;
     end;
   end;
 
   procedure TDot.Show;
   begin
-    Apply_Surface(x, y, dot, screen);
+    Apply_Surface(fx, fy, dot, screen);
   end;
 
   { TTimer }
@@ -206,16 +211,44 @@ var
   fps: TTimer;
   MyDot: TDot;
 
-  function Load_Files: boolean;
+  function Load_Files(var thisDot: TDot; var bg: uint32): boolean;
+  var
+    f: Text;
+    offset: integer;
+    level: string;
   begin
     Result := True;
 
     // Load Images
-    dot := Load_Image('dot.bmp');
+    dot := Load_Image('dot.png');
     if dot = nil then begin
       Result := False;
       Exit;
     end;
+
+    AssignFile(f, 'save.ini');
+    Reset(f);
+    ReadLn(f, offset);
+    MyDot.x := offset;
+    ReadLn(f, offset);
+    MyDot.y := offset;
+    ReadLn(f, level);
+    WriteLn(level);
+    case level of
+      'White Level': begin
+        bg := SDL_MapRGB(screen^.format, $FF, $FF, $FF);
+      end;
+      'Red Level': begin
+        bg := SDL_MapRGB(screen^.format, $FF, $00, $00);
+      end;
+      'Green Level': begin
+        bg := SDL_MapRGB(screen^.format, $00, $FF, $00);
+      end;
+      'Blue Level': begin
+        bg := SDL_MapRGB(screen^.format, $00, $00, $FF);
+      end;
+    end;
+    CloseFile(f);
   end;
 
   function Create: boolean;
@@ -238,16 +271,17 @@ var
     // Fenster Titel
     SDL_WM_SetCaption('Frame Rate Test', nil);
 
-    if not Load_Files then begin
+    MyDot := TDot.Create;
+    fps := TTimer.Create;
+
+    background := SDL_MapRGB(screen^.Blitmap, $FF, $FF, $FF);
+    if not Load_Files(MyDot, background) then begin
       WriteLn('Fehler beim Dateien laden !');
       Result := False;
       Exit;
     end;
-
     Result := True;
 
-    MyDot := TDot.Create;
-    fps := TTimer.Create;
   end;
 
   function Run: boolean;
@@ -255,7 +289,6 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-
     repeat
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
@@ -266,6 +299,18 @@ var
               SDLK_ESCAPE: begin
                 quit := True;
               end;
+              SDLK_1: begin
+                background := SDL_MapRGB(screen^.format, $FF, $FF, $FF);
+              end;
+              SDLK_2: begin
+                background := SDL_MapRGB(screen^.format, $FF, $00, $00);
+              end;
+              SDLK_3: begin
+                background := SDL_MapRGB(screen^.format, $00, $FF, $00);
+              end;
+              SDLK_4: begin
+                background := SDL_MapRGB(screen^.format, $00, $00, $FF);
+              end;
             end;
           end;
           SDL_QUITEV: begin
@@ -275,8 +320,7 @@ var
       end;
 
       MyDot.move;
-
-      SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
+      SDL_FillRect(screen, @screen^.clip_rect, background);
       MyDot.Show;
 
       // Update screen
@@ -292,13 +336,39 @@ var
     until quit;
   end;
 
-  procedure Destroy;
+  procedure Destroy(var thisDot: TDot; var bg: uint32);
+  var
+    f: Text;
+    r, g, b: byte;
   begin
-    fps.Free;
-    MyDot.Free;
 
     // Images freigeben
     SDL_FreeSurface(dot);
+
+    SDL_GetRGB(bg, screen^.format, @r, @g, @b);
+    AssignFile(f, 'save.ini');
+    Rewrite(f);
+
+    WriteLn(f, thisDot.x);
+    WriteLn(f, thisDot.y);
+
+    WriteLn(r);
+    WriteLn(g);
+    WriteLn(b);
+
+    if (r = $FF) and (g = $FF) and (b = $FF) then begin
+      WriteLn(f, 'White Level');
+    end else if r = $FF then begin
+      WriteLn(f, 'Red Level');
+    end else if g = $FF then begin
+      WriteLn(f, 'Green Level');
+    end else if b = $FF then begin
+      WriteLn(f, 'Blue Level');
+    end;
+    CloseFile(f);
+
+    fps.Free;
+    MyDot.Free;
 
     // SDL beenden
     SDL_Quit;
@@ -311,5 +381,5 @@ begin
   if not Run then begin
     Halt(1);
   end;
-  Destroy;
+  Destroy(MyDot, background);
 end.

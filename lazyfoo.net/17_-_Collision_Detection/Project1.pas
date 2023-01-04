@@ -350,9 +350,6 @@ begin
   if not Create then begin
     Halt(1);
   end;
-  if not Load_Files then begin
-    Halt(1);
-  end;
   if not Run then begin
     Halt(1);
   end;

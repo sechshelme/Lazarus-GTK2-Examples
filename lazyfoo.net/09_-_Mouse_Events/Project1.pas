@@ -88,6 +88,11 @@ var
     // Fenster Titel
     SDL_WM_SetCaption('Tasten-Test', nil);
 
+    if not Load_Files then begin
+      Result := False;
+      Exit;
+    end;
+
     Button := TSDLButton.Create(170, 120, 320, 240);
   end;
 
@@ -180,9 +185,6 @@ var
 
 begin
   if not Create then begin
-    Halt(1);
-  end;
-  if not Load_Files then begin
     Halt(1);
   end;
   if not Run then begin

@@ -113,6 +113,10 @@ var
       Exit;
     end;
 
+    if not Load_Files then begin
+      Exit;
+    end;
+
     Result := True;
 
     // Fenster Titel
@@ -206,9 +210,6 @@ var
 
 begin
   if not Create then begin
-    Halt(1);
-  end;
-  if not Load_Files then begin
     Halt(1);
   end;
   if not Run then begin
