@@ -9,32 +9,12 @@ const
   Screen_Height = 480;
   Screen_BPP = 32;
 
-  frames_per_Second: integer = 60;
-
-  Dot_Width = 20;
-  Dot_Height = 20;
-
-  Level_Width = 1280;
-  Level_Height = 960;
-
-  camera: SDL_Rect = (x: 0; y: 0; w: Screen_Width; h: Screen_Height);
+  frames_per_Second: integer = 20;
 
 var
   dot, background, screen: PSDL_Surface;
 
 type
-
-  { TDot }
-
-  TDot = class(TObject)
-  private
-    x, y, xVel, yVel: integer;
-  public
-    procedure handle_input(event: TSDL_Event);
-    procedure move;
-    procedure Show;
-    procedure set_camera;
-  end;
 
   { TTimer }
 
@@ -82,82 +62,6 @@ type
     SDL_BlitSurface(Source, clip, destination, @offset);
   end;
 
-  { TDot }
-
-  procedure TDot.handle_input(event: TSDL_Event);
-  begin
-    begin
-      case event.type_ of
-        SDL_KEYDOWN: begin
-          case event.key.keysym.sym of
-            SDLK_UP: begin
-              yVel -= Dot_Height div 2;
-            end;
-            SDLK_DOWN: begin
-              yVel += Dot_Height div 2;
-            end;
-            SDLK_LEFT: begin
-              xVel -= Dot_Width div 2;
-            end;
-            SDLK_RIGHT: begin
-              xVel += Dot_Width div 2;
-            end;
-          end;
-        end;
-        SDL_KEYUP: begin
-          case event.key.keysym.sym of
-            SDLK_UP: begin
-              yVel += Dot_Height div 2;
-            end;
-            SDLK_DOWN: begin
-              yVel -= Dot_Height div 2;
-            end;
-            SDLK_LEFT: begin
-              xVel += Dot_Width div 2;
-            end;
-            SDLK_RIGHT: begin
-              xVel -= Dot_Width div 2;
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-
-  procedure TDot.move;
-  begin
-    x += xVel;
-    if (x < 0) or (x + Dot_Width > Level_Width) then begin
-      x -= xVel;
-    end;
-    y += yVel;
-    if (y < 0) or (y + Dot_Height > Level_Height) then begin
-      y -= yVel;
-    end;
-  end;
-
-  procedure TDot.Show;
-  begin
-    Apply_Surface(x - camera.x, y - camera.y, dot, screen);
-  end;
-
-  procedure TDot.set_camera;
-  begin
-    camera.x := (x + Dot_Width div 2) - Screen_Width div 2;
-    camera.y := (y + Dot_Height div 2) - Screen_Height div 2;
-    if camera.x < 0 then begin
-      camera.x := 0;
-    end;
-    if camera.y < 0 then begin
-      camera.y := 0;
-    end;
-    if camera.x > Level_Width - camera.w then begin
-      camera.x := Level_Width - camera.w;
-    end;
-    if camera.y > Level_Height - camera.h then begin
-      camera.y := Level_Height - camera.h;
-    end;
-  end;
 
   { TTimer }
 
@@ -232,7 +136,6 @@ type
   // Ende TTimer
 var
   fps: TTimer;
-  myDot: TDot;
 
   function Load_Files: boolean;
   begin
@@ -280,7 +183,6 @@ var
 
     Result := True;
 
-    myDot := TDot.Create;
     fps := TTimer.Create;
   end;
 
@@ -288,11 +190,13 @@ var
   var
     quit: boolean = False;
     event: TSDL_Event;
+  var
+    bgX: integer = 0;
+    bgY: integer = 0;
   begin
     repeat
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
-        myDot.handle_input(event);
         case event.type_ of
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
@@ -307,11 +211,15 @@ var
         end;
       end;
 
-      myDot.move;
-      myDot.set_camera;
-      Apply_Surface(0, 0, background, screen, @camera);
+      bgX -= 2;
+      if bgX <= -background^.w then begin
+        bgX := 0;
+      end;
+      WriteLn(bgx);
 
-      myDot.Show;
+      Apply_Surface(bgX, bgY, background, screen);
+      Apply_Surface(bgX + background^.w, bgY, background, screen);
+      Apply_Surface(310, 230, dot, screen);
 
       // Update screen
       if SDL_Flip(screen) = -1 then begin
@@ -329,7 +237,6 @@ var
   procedure Destroy;
   begin
     fps.Free;
-    myDot.Free;
 
     // Images freigeben
     SDL_FreeSurface(dot);
