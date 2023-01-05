@@ -252,6 +252,7 @@ var
         Exit;
       end;
     until quit;
+    Result := True;
     SDL_FreeSurface(startStop);
     SDL_FreeSurface(pauseMessage);
   end;

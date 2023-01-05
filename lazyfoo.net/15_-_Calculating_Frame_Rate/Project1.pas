@@ -222,6 +222,7 @@ var
         update.start;
       end;
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;

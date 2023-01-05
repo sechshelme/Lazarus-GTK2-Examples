@@ -334,6 +334,7 @@ var
         SDL_Delay(1000 div frames_per_Second - fps.getTicks);
       end;
     until quit;
+    Result := True;
   end;
 
   procedure Destroy(var thisDot: TDot; var bg: uint32);

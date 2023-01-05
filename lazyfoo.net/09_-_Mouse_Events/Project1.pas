@@ -101,7 +101,7 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-    Result := True;
+    Result := False;
 
     // Copy Image auf Screen
 
@@ -118,6 +118,7 @@ var
       Button.Show;
       SDL_Flip(screen);
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;

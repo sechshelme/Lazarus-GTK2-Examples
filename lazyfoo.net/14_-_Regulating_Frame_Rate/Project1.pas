@@ -245,6 +245,7 @@ var
         SDL_Delay(1000 div FRAMES_PER_SECOND - fps.getTicks);
       end;
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;

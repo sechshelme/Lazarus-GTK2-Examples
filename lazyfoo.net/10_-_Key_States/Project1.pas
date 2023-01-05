@@ -150,6 +150,7 @@ var
       end;
       SDL_Flip(screen);
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;

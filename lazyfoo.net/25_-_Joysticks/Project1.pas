@@ -114,8 +114,6 @@ type
       end;
       SDL_JOYAXISMOTION: begin
         if event.jaxis.which = 0 then begin
-        WriteLn(event.jaxis.axis);
-
           if event.jaxis.axis = 0 then begin
             if (event.jaxis.Value > -8000) and (event.jaxis.Value < 8000) then begin
               xvel := 0;
@@ -135,6 +133,9 @@ type
             end;
           end;
         end;
+      end;
+      SDL_JOYBUTTONDOWN: begin
+        WriteLn(event.jbutton.button);
       end;
     end;
   end;
@@ -245,7 +246,7 @@ var
 
   function Create: boolean;
   var
-    numJs: integer;
+    numJs, i: integer;
   begin
     Result := False;
 
@@ -268,6 +269,9 @@ var
     numJs := SDL_NumJoysticks;
     WriteLn('Anzahl Josysticks: ', numJs);
     if numJs > 0 then begin
+      for i := 0 to numJs - 1 do begin
+        WriteLn('Name: ', SDL_JoystickName(i));
+      end;
       sticks := SDL_JoystickOpen(0);
       if sticks = nil then begin
         WriteLn('Jojstick Fehler !');
@@ -291,7 +295,6 @@ var
     quit: boolean = False;
     event: TSDL_Event;
   begin
-
     repeat
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
@@ -326,6 +329,7 @@ var
         SDL_Delay(1000 div frames_per_Second - fps.getTicks);
       end;
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;
@@ -349,5 +353,6 @@ begin
   if not Run then begin
     Halt(1);
   end;
+  WriteLn('ende');
   Destroy;
 end.

@@ -208,6 +208,7 @@ var
       WriteLn('flip');
       SDL_Flip(screen);
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;

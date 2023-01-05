@@ -158,6 +158,7 @@ var
         end;
 
     until quit;
+    Result := True;
   end;
 
   procedure Destroy;
