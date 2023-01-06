@@ -21,11 +21,11 @@ var
   begin
     modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE);
     //  if modus=TSDL_Rect^^( 0) then WriteLn('NULL');
-    if modus = Pointer(0) then begin
+    if modus = PPSDL_Rect(0) then begin
       WriteLn('Kein Modus vorhanden');
     end;
 
-    if modus = Pointer(-1) then begin
+    if modus = PPSDL_Rect(-1) then begin
       WriteLn('Alle Moden vorhanden');
     end;
 
