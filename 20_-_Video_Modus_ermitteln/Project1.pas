@@ -15,9 +15,8 @@ var
   procedure WriteVideoModus;
   var
     modus, p: PPSDL_Rect;
-//    pm: PSDL_Rect;
-//    m: TSDL_Rect;
     i: integer;
+    VideoInfo: PSDL_VideoInfo;
   begin
     modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE);
     //  if modus=TSDL_Rect^^( 0) then WriteLn('NULL');
@@ -30,29 +29,22 @@ var
     end;
 
     p := modus;
-    i := 0;
-    while p[i] <> nil do begin
-      WriteLn('Widht:', p[i]^.w: 5, ' Height:', p[i]^.h: 5);
-      Inc(i);
+    while p^ <> nil do begin
+      WriteLn('Widht:', p^^.w: 5, ' Height:', p^^.h: 5);
+      Inc(p);
     end;
 
-    //while p <> nil do begin
-    //  pm := p^;
-    //  m := pm^;
-    //  WriteLn('Widht:',m.w:5,' Height:',m.h:5);
-    //  Inc(p);
-    //  if PtrInt(p)=-1 then halt;;
-    //end;
+    VideoInfo := SDL_GetVideoInfo;
+    WriteLn('current_w: ', VideoInfo^.current_w: 5);
+    WriteLn('current_h: ', VideoInfo^.current_h: 5);
+    WriteLn('video_mem:   ', VideoInfo^.video_mem: 5);
+    WriteLn('PSDL_PixelFormat^.BitsPerPixel: ', VideoInfo^.vfmt^.BitsPerPixel: 5);
+    WriteLn('PSDL_PixelFormat^.BytesPerPixel: ', VideoInfo^.vfmt^.BytesPerPixel: 5);
+    WriteLn('PSDL_PixelFormat^.Rloss: ', VideoInfo^.vfmt^.Rloss: 5);
+    WriteLn('PSDL_PixelFormat^.Gloss: ', VideoInfo^.vfmt^.Rloss: 5);
+    WriteLn('PSDL_PixelFormat^.Bloss: ', VideoInfo^.vfmt^.Gloss: 5);
+    WriteLn('PSDL_PixelFormat^.Aloss: ', VideoInfo^.vfmt^.Aloss: 5);
 
-    WriteLn();
-    WriteLn();
-
-    //pm:=p^;
-    //while pm <> nil do begin
-    //  WriteLn('Widht:', p[i]^.w: 5, ' Height:', p[i]^.h: 5);
-    //  Inc(pm);
-    //end;
-    //
   end;
 
 begin

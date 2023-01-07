@@ -12,8 +12,8 @@ const
   frames_per_Second: integer = 20;
 
 var
-  back,  front, screen: PSDL_Surface;
-  alpha: Integer;
+  back, front, screen: PSDL_Surface;
+  alpha: integer;
 
 type
 
@@ -184,7 +184,7 @@ var
     Result := True;
 
     fps := TTimer.Create;
-    alpha:=SDL_ALPHA_OPAQUE;
+    alpha := SDL_ALPHA_OPAQUE;
   end;
 
   function Run: boolean;
@@ -210,11 +210,19 @@ var
         end;
       end;
 
-      keystatus:=SDL_GetKeyState(nil);
-      if keystatus[SDLK_UP]<>0 then if alpha<SDL_ALPHA_OPAQUE then Inc(alpha,5);
-      if keystatus[SDLK_DOWN]<>0 then if alpha>SDL_ALPHA_TRANSPARENT then Dec(alpha,5);
+      keystatus := SDL_GetKeyState(nil);
+      if keystatus[SDLK_UP] <> 0 then begin
+        if alpha < SDL_ALPHA_OPAQUE then begin
+          Inc(alpha, 5);
+        end;
+      end;
+      if keystatus[SDLK_DOWN] <> 0 then begin
+        if alpha > SDL_ALPHA_TRANSPARENT then begin
+          Dec(alpha, 5);
+        end;
+      end;
 
-      SDL_SetAlpha(front,SDL_SRCALPHA,alpha);
+      SDL_SetAlpha(front, SDL_SRCALPHA, alpha);
 
       Apply_Surface(0, 0, back, screen);
       Apply_Surface(0, 0, front, screen);
