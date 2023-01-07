@@ -1,7 +1,7 @@
 program Project1;
 
 uses
-  heaptrc,
+//  heaptrc,
   sdl;
 
 var
@@ -37,9 +37,10 @@ type
     current_h: SInt32;  // Value: The current video mode height
   end;
 
-  function SDL_GetVideoInfo: PSDL_VideoInfo2;
-cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_GetVideoInfo'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
-{$EXTERNALSYM SDL_GetVideoInfo}
+  const   SDLLibName = 'SDL';
+
+  function SDL_GetVideoInfo: PSDL_VideoInfo2; cdecl; external SDLLibName;
+  //  {$EXTERNALSYM SDL_GetVideoInfo}
 
 
 
@@ -49,20 +50,18 @@ cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_GetVideoInfo'{$ELSE} SDLL
     i: integer;
     VideoInfo: PSDL_VideoInfo2;
   begin
-    modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE);
+    modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE or SDL_OPENGL);
     //  if modus=TSDL_Rect^^( 0) then WriteLn('NULL');
     if modus = PPSDL_Rect(0) then begin
       WriteLn('Kein Modus vorhanden');
-    end;
-
-    if modus = PPSDL_Rect(-1) then begin
+    end else if modus = PPSDL_Rect(-1) then begin
       WriteLn('Alle Moden vorhanden');
-    end;
-
-    p := modus;
-    while p^ <> nil do begin
-      WriteLn('Widht:', p^^.w: 5, ' Height:', p^^.h: 5);
-      Inc(p);
+    end else begin
+      p := modus;
+      while p^ <> nil do begin
+        WriteLn('Widht:', p^^.w: 5, ' Height:', p^^.h: 5);
+        Inc(p);
+      end;
     end;
 
     VideoInfo := SDL_GetVideoInfo;
@@ -89,19 +88,23 @@ cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_GetVideoInfo'{$ELSE} SDLL
 
   end;
 
+  procedure WriteVideoModus2;
+  begin
+  end;
+
 begin
   // Initialize the video SDL subsystem
   if SDL_Init(SDL_INIT_VIDEO) < 0 then begin
     Writeln('SDL could not initialize! SDL_Error: ', SDL_GetError);
   end;
 
-  WriteVideoModus;
-
-
   scr := SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
   if scr = nil then  begin
     WriteLn('error');
   end;
+  WriteVideoModus;
+  halt;
+
   if scr = nil then begin
     WriteLn('could not initialize sdl2: ', SDL_GetError());
   end;
