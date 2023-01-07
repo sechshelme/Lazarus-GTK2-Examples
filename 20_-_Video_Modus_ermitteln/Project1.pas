@@ -12,11 +12,42 @@ var
 
   // https://www.libsdl.org/release/SDL-1.2.15/docs/html/sdllistmodes.html
 
+type
+  // Useful for determining the video hardware capabilities
+  PSDL_VideoInfo2 = ^TSDL_VideoInfo2;
+
+  TSDL_VideoInfo2 = bitpacked record
+    //    hw_available: UInt8; // Hardware and WindowManager flags in first 2 bits ( see below )
+    hw_available: 0..1; // Can you create hardware surfaces
+    wm_available: 0..1; // Can you talk to a window manager?
+    UnusedBits1: 0..63;
+    //    blit_hw: UInt8; // Blit Hardware flags. See below for which bits do what
+    UnusedBits2: 0..1;
+    blit_hw: 0..1; // Flag:UInt32  Accelerated blits HW --> HW
+    blit_hw_CC: 0..1; // Flag:UInt32  Accelerated blits with Colorkey
+    blit_hw_A: 0..1; // Flag:UInt32  Accelerated blits with Alpha
+    blit_sw: 0..1; // Flag:UInt32  Accelerated blits SW --> HW
+    blit_sw_CC: 0..1; // Flag:UInt32  Accelerated blits with Colorkey
+    blit_sw_A: 0..1; // Flag:UInt32  Accelerated blits with Alpha
+    blit_fill: 0..1; // Flag:UInt32  Accelerated color fill}
+    UnusedBits3: uint16; // Unused at this point
+    video_mem: uint32; // The total amount of video memory (in K)
+    vfmt: PSDL_PixelFormat; // Value: The format of the video surface
+    current_w: SInt32;  // Value: The current video mode width
+    current_h: SInt32;  // Value: The current video mode height
+  end;
+
+  function SDL_GetVideoInfo: PSDL_VideoInfo2;
+cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_GetVideoInfo'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
+{$EXTERNALSYM SDL_GetVideoInfo}
+
+
+
   procedure WriteVideoModus;
   var
     modus, p: PPSDL_Rect;
     i: integer;
-    VideoInfo: PSDL_VideoInfo;
+    VideoInfo: PSDL_VideoInfo2;
   begin
     modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE);
     //  if modus=TSDL_Rect^^( 0) then WriteLn('NULL');
@@ -35,15 +66,26 @@ var
     end;
 
     VideoInfo := SDL_GetVideoInfo;
-    WriteLn('current_w: ', VideoInfo^.current_w: 5);
-    WriteLn('current_h: ', VideoInfo^.current_h: 5);
-    WriteLn('video_mem:   ', VideoInfo^.video_mem: 5);
+    WriteLn('hw_available: ', VideoInfo^.hw_available: 5);
+    WriteLn('wm_available: ', VideoInfo^.wm_available: 5);
+    WriteLn('blit_hw:      ', VideoInfo^.blit_hw: 5);
+    WriteLn('blit_hw_CC:   ', VideoInfo^.blit_hw_CC: 5);
+    WriteLn('blit_hw_A:    ', VideoInfo^.blit_hw_A: 5);
+    WriteLn('blit_sw:      ', VideoInfo^.blit_sw: 5);
+    WriteLn('blit_sw_CC:   ', VideoInfo^.blit_sw_CC: 5);
+    WriteLn('blit_sw_A:    ', VideoInfo^.blit_sw_A: 5);
+    WriteLn('blit_fill:    ', VideoInfo^.blit_fill: 5);
+
+
+    WriteLn('video_mem:    ', VideoInfo^.video_mem: 5);
     WriteLn('PSDL_PixelFormat^.BitsPerPixel: ', VideoInfo^.vfmt^.BitsPerPixel: 5);
     WriteLn('PSDL_PixelFormat^.BytesPerPixel: ', VideoInfo^.vfmt^.BytesPerPixel: 5);
     WriteLn('PSDL_PixelFormat^.Rloss: ', VideoInfo^.vfmt^.Rloss: 5);
     WriteLn('PSDL_PixelFormat^.Gloss: ', VideoInfo^.vfmt^.Rloss: 5);
     WriteLn('PSDL_PixelFormat^.Bloss: ', VideoInfo^.vfmt^.Gloss: 5);
     WriteLn('PSDL_PixelFormat^.Aloss: ', VideoInfo^.vfmt^.Aloss: 5);
+    WriteLn('current_w: ', VideoInfo^.current_w: 5);
+    WriteLn('current_h: ', VideoInfo^.current_h: 5);
 
   end;
 
