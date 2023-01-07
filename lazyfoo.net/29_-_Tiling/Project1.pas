@@ -210,6 +210,14 @@ type
     end;
   end;
 
+  function set_tiles(Tile: TTiles): boolean;
+  var
+    x, y: integer;
+  begin
+    //laden
+  end;
+
+
   { TTile }
 
   constructor TTile.Create(x, y, tileType: integer);
@@ -230,12 +238,12 @@ type
 
   function TTile.get_type: integer;
   begin
-
+    Result := type_;
   end;
 
   function TTile.get_box: TSDL_Rect;
   begin
-
+    Result := box;
   end;
 
   { TDot }
