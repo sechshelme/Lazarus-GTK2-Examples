@@ -9,7 +9,7 @@ const
   Screen_Height = 480;
   Screen_BPP = 32;
 
-  frames_per_Second: integer = 20;
+  frames_per_Second: integer = 60;
 
   Dot_Width = 20;
   Dot_Height = 20;
@@ -57,7 +57,7 @@ type
     function get_type: integer;
     function get_box: TSDL_Rect;
   end;
-  TTiles = array of TTile;
+  TTiles = array [0..TOTAL_TILES] of TTile;
 
   { TDot }
 
@@ -66,8 +66,9 @@ type
     box: TSDL_Rect;
     xVel, yVel: integer;
   public
+    constructor Create;
     procedure handle_input(event: TSDL_Event);
-    procedure move(Tile: TTiles);
+    procedure move(tiles: TTiles);
     procedure Show;
     procedure set_camera;
   end;
@@ -89,6 +90,9 @@ type
     function is_started: boolean;
     function is_paused: boolean;
   end;
+
+var
+  tiles: TTiles;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -198,25 +202,73 @@ type
     Result := True;
     if bottomA <= topB then begin
       Result := False;
+      Exit;
     end;
     if topA >= bottomB then begin
       Result := False;
+      Exit;
     end;
     if rightA <= leftB then begin
       Result := False;
+      Exit;
     end;
     if leftA >= rightB then begin
       Result := False;
+      Exit;
     end;
   end;
 
-  function set_tiles(Tile: TTiles): boolean;
+  function set_tiles(var tiles: TTiles): boolean;
   var
-    x, y: integer;
+    x: integer = 0;
+    y: integer = 0;
+    i, tileType: integer;
+    f: Text;
   begin
-    //laden
+    Result := True;
+    AssignFile(f, 'lazy.map');
+    Reset(f);
+
+    for i := 0 to Length(tiles)- 1 do begin
+      tileType := -1;
+      Read(f, tileType);
+      if IOResult <> 0 then begin
+        Result := False;
+        Exit;
+      end;
+
+      if (tileType >= 0) and (tileType < TILE_SPRITES) then begin
+        tiles[i] := TTile.Create(x, y, tileType);
+      end else begin
+        CloseFile(f);
+        Result := False;
+        Exit;
+      end;
+
+      Inc(x, TILE_WIDTH);
+      if x >= Level_Width then begin
+        x := 0;
+        Inc(y, TILE_HEIGHT);
+      end;
+    end;
+
+    CloseFile(f);
   end;
 
+  function touches_wall(box: TSDL_Rect; var tiles: TTiles): boolean;
+  var
+    i: integer;
+  begin
+    Result := False;
+    for i := 0 to Length(tiles) - 1 do begin
+      if (tiles[i].get_type >= TILE_CENTER) and (tiles[i].get_type <= TILE_TOPLEFT) then begin
+        if check_collision(box, tiles[i].get_box) then begin
+          Result := True;
+          Exit;
+        end;
+      end;
+    end;
+  end;
 
   { TTile }
 
@@ -232,7 +284,7 @@ type
   procedure TTile.Show;
   begin
     if check_collision(camera, box) then begin
-      Apply_Surface(box.x - camera.x, box.y - camera.y, tileSheet, screen, cli);
+      Apply_Surface(box.x - camera.x, box.y - camera.y, tileSheet, screen, @clips[type_]);
     end;
   end;
 
@@ -247,6 +299,12 @@ type
   end;
 
   { TDot }
+
+  constructor TDot.Create;
+  begin
+    box.w:=Dot_Width;
+    box.h:=Dot_Height;
+  end;
 
   procedure TDot.handle_input(event: TSDL_Event);
   begin
@@ -288,27 +346,27 @@ type
     end;
   end;
 
-  procedure TDot.move(Tile: TTiles);
+  procedure TDot.move(tiles: TTiles);
   begin
-    x += xVel;
-    if (x < 0) or (x + Dot_Width > Level_Width) then begin
-      x -= xVel;
+    box.x += xVel;
+    if (box.x < 0) or (box.x + Dot_Width > Level_Width) or touches_wall(box, tiles) then begin
+      box.x -= xVel;
     end;
-    y += yVel;
-    if (y < 0) or (y + Dot_Height > Level_Height) then begin
-      y -= yVel;
+    box.y += yVel;
+    if (box.y < 0) or (box.y + Dot_Height > Level_Height) or touches_wall(box, tiles) then begin
+      box.y -= yVel;
     end;
   end;
 
   procedure TDot.Show;
   begin
-    Apply_Surface(x - camera.x, y - camera.y, dot, screen);
+    Apply_Surface(box.x - camera.x, box.y - camera.y, dot, screen);
   end;
 
   procedure TDot.set_camera;
   begin
-    camera.x := (x + Dot_Width div 2) - Screen_Width div 2;
-    camera.y := (y + Dot_Height div 2) - Screen_Height div 2;
+    camera.x := (box.x + Dot_Width div 2) - Screen_Width div 2;
+    camera.y := (box.y + Dot_Height div 2) - Screen_Height div 2;
     if camera.x < 0 then begin
       camera.x := 0;
     end;
@@ -403,14 +461,20 @@ var
     Result := True;
 
     // Load Images
-    dot := Load_Image('dot.bmp');
+    dot := Load_Image('dot.png');
     if dot = nil then begin
       Result := False;
       Exit;
     end;
 
-    background := Load_Image('bg.png');
-    if background = nil then begin
+    tileSheet := Load_Image('tiles.png');
+    if tileSheet = nil then begin
+      Result := False;
+      Exit;
+    end;
+
+    if set_tiles(tiles) = False then begin
+      WriteLn('Konnte Tiles nicht laden !');
       Result := False;
       Exit;
     end;
@@ -442,9 +506,11 @@ var
       Exit;
     end;
 
+    clip_tiles;
+
     Result := True;
 
-    myDot := TDot.Create;
+    myDot:=TDot.Create;
     fps := TTimer.Create;
   end;
 
@@ -452,6 +518,7 @@ var
   var
     quit: boolean = False;
     event: TSDL_Event;
+    i: integer;
   begin
     repeat
       fps.start;
@@ -471,10 +538,11 @@ var
         end;
       end;
 
-      myDot.move;
+      myDot.move(tiles);
       myDot.set_camera;
-      Apply_Surface(0, 0, background, screen, @camera);
-
+      for i := 0 to Length(tiles) - 1 do begin
+        tiles[i].Show;
+      end;
       myDot.Show;
 
       // Update screen
@@ -492,13 +560,19 @@ var
   end;
 
   procedure Destroy;
+  var
+    i: integer;
   begin
     fps.Free;
     myDot.Free;
 
     // Images freigeben
     SDL_FreeSurface(dot);
-    SDL_FreeSurface(background);
+    SDL_FreeSurface(tileSheet);
+
+    for i := 0 to Length(tiles) - 1 do begin
+      tiles[i].Free;
+    end;
 
     // SDL beenden
     SDL_Quit;

@@ -103,11 +103,6 @@ begin
     WriteLn('error');
   end;
   WriteVideoModus;
-  halt;
-
-  if scr = nil then begin
-    WriteLn('could not initialize sdl2: ', SDL_GetError());
-  end;
 
   dstrect.h := 100;
   dstrect.w := 100;
