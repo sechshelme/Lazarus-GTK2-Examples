@@ -69,16 +69,53 @@ var
     pixels: PUInt32;
   begin
     pixels := surface^.pixels;
-    pixels[(y * surface^.w) + x] := pixel;
+    pixels[y * surface^.w + x] := pixel;
   end;
 
-  function flip_surface(surface: PSDL_Surface; flag: integer): PSDL_Surface;
+  function flip_surface(surface: PSDL_Surface; flags: integer): PSDL_Surface;
   var
     flipped: PSDL_Surface;
+    x, rx, y, ry: integer;
+    pixel: uint32;
   begin
-    if (surface^.flags and SDL_SRCCOLORKEY) <> 0 then begin
-      flipped := SDL_CreateRGBSurface(SDL_SWSURFACE, surface^.w, surface^.h, surface^.format^.BitsPerPixel, surface^.format^.RMask, surface^.format^.GMask, surface^.format^.BMask, 0);
+    with surface^ do begin
+      if (flags and SDL_SRCCOLORKEY) <> 0 then begin
+        flipped := SDL_CreateRGBSurface(SDL_SWSURFACE, w, h, format^.BitsPerPixel, format^.RMask, format^.GMask, format^.BMask, 0);
+      end else begin
+        flipped := SDL_CreateRGBSurface(SDL_SWSURFACE, w, h, format^.BitsPerPixel, format^.RMask, format^.GMask, format^.BMask, format^.AMask);
+      end;
     end;
+    if SDL_MustLock(surface) then begin
+      SDL_LockSurface(surface);
+    end;
+    rx := flipped^.w - 1;
+    for  x := 0 to flipped^.w - 1 do begin
+      ry := flipped^.h - 1;
+      for  y := 0 to flipped^.h - 1 do begin
+
+        pixel := get_pixel32(surface, x, y);
+        if (flags and Flip_Vertical <> 0) and (flags and Flip_Horizontal <> 0) then begin
+          put_pixel32(flipped, rx, ry, pixel);
+        end else if flags and Flip_Horizontal <> 0 then begin
+          put_pixel32(flipped, rx, y, pixel);
+        end else if flags and Flip_Vertical <> 0 then begin
+          put_pixel32(flipped, x, ry, pixel);
+        end;
+
+        Dec(ry);
+      end;
+      Dec(rx);
+    end;
+
+    if SDL_MustLock(surface) then begin
+      SDL_UnlockSurface(surface);
+    end;
+
+    if surface^.flags and SDL_SRCCOLORKEY <> 0 then begin
+      SDL_SetColorKey(flipped, SDL_RLEACCEL or SDL_SRCCOLORKEY, surface^.format^.colorkey);
+    end;
+
+    Result := flipped;
   end;
 
   function Create: boolean;
@@ -106,23 +143,25 @@ var
     end;
 
     // Fenster Titel
-    SDL_WM_SetCaption('Bitmap font Test', nil);
-
-    font := TBitmapFont.Create(bitmapFont);
+    SDL_WM_SetCaption('Flip Test', nil);
   end;
 
   function Run: boolean;
   var
     quit: boolean = False;
     event: TSDL_Event;
-    colorkey: uint32;
   begin
     Result := True;
 
-    SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $88, $FF, $88));
+    topRight := flip_surface(topLeft, Flip_Horizontal);
+    bottomLeft := flip_surface(topLeft, Flip_Vertical);
+    bottomRight := flip_surface(topLeft, Flip_Horizontal or Flip_Vertical);
 
-    font.show_text(100, 100, 'Hello World !' + LineEnding + 'Hallo Welt !' + LineEnding + '1234567890', screen);
-    // Copy Image auf Screen
+    Apply_Surface(0, 0, topLeft, screen);
+    Apply_Surface(320, 0, topRight, screen);
+    Apply_Surface(0, 240, bottomLeft, screen);
+    Apply_Surface(320, 240, bottomRight, screen);
+
     SDL_Flip(screen);
 
     repeat
@@ -145,7 +184,10 @@ var
   procedure Destroy;
   begin
     // Images freigeben
-    SDL_FreeSurface(bitmapFont);
+    SDL_FreeSurface(topLeft);
+    SDL_FreeSurface(topRight);
+    SDL_FreeSurface(bottomLeft);
+    SDL_FreeSurface(bottomRight);
 
     // SDL beenden
     SDL_Quit;
