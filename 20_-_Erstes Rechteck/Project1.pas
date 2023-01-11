@@ -60,11 +60,11 @@ type
         SDL_QUITEV: begin
           Quit := True;
         end;
-        SDL_ACTIVEEVENT: begin
+        SDL_KEYDOWN: begin
           dstrect.h := 100;
           dstrect.w := 10;
-          for i := 0 to 1000 do begin
-            SDL_FillRect(scr, @dstrect, i);
+          for i := 0 to 610 do begin
+            SDL_FillRect(scr, @dstrect, random($FFFFFF));
 
             dstrect.x := i;
             dstrect.y := 150;

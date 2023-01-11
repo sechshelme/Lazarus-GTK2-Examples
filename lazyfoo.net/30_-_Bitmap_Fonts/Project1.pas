@@ -232,7 +232,8 @@ var
 
     SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $88, $FF, $88));
 
-    font.show_text(100, 100, 'Hello World !' + LineEnding + 'Hallo Welt !' + LineEnding + '1234567890', screen);
+    font.show_text(100, 100, 'Hello World !' + LineEnding + 'Hallo Welt !' + LineEnding + '1234567890'
+    +LineEnding+'öäü ÜÄÏŸ iiii', screen);
     // Copy Image auf Screen
     SDL_Flip(screen);
 
