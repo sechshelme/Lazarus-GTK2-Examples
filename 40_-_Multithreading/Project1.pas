@@ -5,20 +5,26 @@ uses
   sdl_image;
 
 const
-  Screen_Width: integer = 640;
+  Screen_Width: integer = 1640;
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 60;
+  ThreadCount = 40;
 
-  Dot_Width = 20;
-  Dot_Height = 20;
-  Dot_Vel = 2000;
+type
+  PThread = ^TThread;
+
+  TThread = record
+    r: TSDL_Rect;
+    thread: PSDL_Thread;
+  end;
 
 var
   image, screen: PSDL_Surface;
-  thread: PSDL_Thread;
   quit: boolean = False;
+
+
+  thread: array[0..ThreadCount - 1] of TThread;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -61,20 +67,35 @@ var
   end;
 
   function my_thread(Data: Pointer): integer; cdecl;
+  var
+    r: TSDL_Rect;
   begin
+    r := PThread(Data)^.r;
+
     while not quit do begin
-      SDL_WM_SetCaption('Thread is running', nil);
-      if quit then exit;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running.', nil);
-      if quit then exit;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running..', nil);
-      if quit then exit;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running...', nil);
-      if quit then exit;
-      SDL_Delay(250);
+      SDL_FillRect(screen, @r, Random($FFFFFF));
+
+//
+//      SDL_WM_SetCaption('Thread is running', nil);
+//      if quit then begin
+//        exit;
+//      end;
+//      SDL_Delay(250);
+//      SDL_WM_SetCaption('Thread is running.', nil);
+//      if quit then begin
+//        exit;
+//      end;
+//      SDL_Delay(250);
+//      SDL_WM_SetCaption('Thread is running..', nil);
+//      if quit then begin
+//        exit;
+//      end;
+//      SDL_Delay(250);
+//      SDL_WM_SetCaption('Thread is running...', nil);
+//      if quit then begin
+//        exit;
+//      end;
+//      SDL_Delay(1000);
     end;
   end;
 
@@ -108,22 +129,25 @@ var
 
   end;
 
-// Mit der original Funktion geht es nicht.
-// function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+  // Mit der original Funktion geht es nicht.
+  // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
-function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var
     event: TSDL_Event;
-    r:TSDL_Rect;
+    i: integer;
   begin
-    thread := SDL_CreateThread(@my_thread, nil);
+    for i := 0 to ThreadCount - 1 do begin
+      thread[i].r.x := i * 110 + 10;
+      thread[i].r.y := 10;
+      thread[i].r.w := 100;
+      thread[i].r.h := 100;
+      thread[i].thread := SDL_CreateThread(@my_thread, @thread[i]);
+    end;
+
     repeat
-
-      Apply_Surface(0, 0, image, screen);
-      SDL_Flip(screen);
-
       while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
@@ -139,23 +163,23 @@ function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; exter
         end;
       end;
 
-      r.w:=100;
-      r.h:=100;
-      SDL_FillRect(screen, @r, Random($FFFFFF));
-
       if SDL_Flip(screen) = -1 then begin
         WriteLn('Flip Error !');
         Result := False;
         Exit;
       end;
     until quit;
-    SDL_Delay(300);
+    SDL_Delay(100);
     Result := True;
   end;
 
   procedure Destroy;
+  var
+    i: integer;
   begin
-    SDL_KillThread(thread);
+    for i := 0 to ThreadCount - 1 do begin
+      SDL_KillThread(thread[i].thread);
+    end;
 
     // Images freigeben
     SDL_FreeSurface(image);
