@@ -5,11 +5,11 @@ uses
   sdl_image;
 
 const
-  Screen_Width: integer = 1640;
+  Screen_Width: integer = 640;
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  ThreadCount = 40;
+  ThreadCount = 4;
 
 type
   PThread = ^TThread;
@@ -66,36 +66,34 @@ var
     end;
   end;
 
+  procedure put_pixel32(surface: PSDL_Surface; x, y: integer; pixel: uint32);
+  var
+    pixels: PUInt32;
+  begin
+    pixels := surface^.pixels;
+    pixels[y * surface^.w + x] := pixel;
+  end;
+
+
+
   function my_thread(Data: Pointer): integer; cdecl;
   var
     r: TSDL_Rect;
+    x, y, j: integer;
   begin
     r := PThread(Data)^.r;
 
     while not quit do begin
-      SDL_FillRect(screen, @r, Random($FFFFFF));
+      for x := 0 to r.w - 10 do begin
+        for y := 0 to r.h - 10 do begin
+          for j:=0 to 999 do
+          put_pixel32(screen, x + r.x, y + r.y, Random($FFFFFF));
+        end;
+      end;
+      //      for i:=0 to r.w*r.h do int32( screen^.pixels[i]):=random($FFFFFF);
 
-//
-//      SDL_WM_SetCaption('Thread is running', nil);
-//      if quit then begin
-//        exit;
-//      end;
-//      SDL_Delay(250);
-//      SDL_WM_SetCaption('Thread is running.', nil);
-//      if quit then begin
-//        exit;
-//      end;
-//      SDL_Delay(250);
-//      SDL_WM_SetCaption('Thread is running..', nil);
-//      if quit then begin
-//        exit;
-//      end;
-//      SDL_Delay(250);
-//      SDL_WM_SetCaption('Thread is running...', nil);
-//      if quit then begin
-//        exit;
-//      end;
-//      SDL_Delay(1000);
+//      SDL_FillRect(screen, @r, Random($FFFFFF));
+
     end;
   end;
 
@@ -162,6 +160,7 @@ var
           end;
         end;
       end;
+      SDL_Delay(1000);
 
       if SDL_Flip(screen) = -1 then begin
         WriteLn('Flip Error !');

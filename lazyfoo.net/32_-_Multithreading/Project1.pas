@@ -64,16 +64,24 @@ var
   begin
     while not quit do begin
       SDL_WM_SetCaption('Thread is running', nil);
-      if quit then exit;
+      if quit then begin
+        exit;
+      end;
       SDL_Delay(250);
       SDL_WM_SetCaption('Thread is running.', nil);
-      if quit then exit;
+      if quit then begin
+        exit;
+      end;
       SDL_Delay(250);
       SDL_WM_SetCaption('Thread is running..', nil);
-      if quit then exit;
+      if quit then begin
+        exit;
+      end;
       SDL_Delay(250);
       SDL_WM_SetCaption('Thread is running...', nil);
-      if quit then exit;
+      if quit then begin
+        exit;
+      end;
       SDL_Delay(250);
     end;
   end;
@@ -108,15 +116,15 @@ var
 
   end;
 
-// Mit der original Funktion geht es nicht.
-// function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+  // Mit der original Funktion geht es nicht.
+  // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
-function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var
     event: TSDL_Event;
-    r:TSDL_Rect;
+    r: TSDL_Rect;
   begin
     thread := SDL_CreateThread(@my_thread, nil);
     repeat
@@ -139,10 +147,13 @@ function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; exter
         end;
       end;
 
-      r.w:=100;
-      r.h:=100;
+      r.x := 10;
+      r.y := 10;
+      r.w := 100;
+      r.h := 100;
       SDL_FillRect(screen, @r, Random($FFFFFF));
 
+      WriteLn('flip');
       if SDL_Flip(screen) = -1 then begin
         WriteLn('Flip Error !');
         Result := False;
