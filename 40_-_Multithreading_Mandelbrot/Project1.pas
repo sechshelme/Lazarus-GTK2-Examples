@@ -8,7 +8,7 @@ const
   Screen_Heigth: integer = 960;
   Screen_BPP: integer = 32;
 
-  ThreadCount = 16;
+  ThreadCount: integer = 0;
 
   o: single = 1.2;
   u: single = -1.2;
@@ -27,9 +27,9 @@ type
 var
   screen: PSDL_Surface;
   quit: boolean = False;
-  Counter: integer = 0;
+  Counter: integer = -1;
 
-  thread: array[0..ThreadCount - 1] of TThread;
+  thread: array of TThread;
 
   procedure put_pixel32(surface: PSDL_Surface; x, y: integer; pixel: uint32);
   var
@@ -74,6 +74,9 @@ var
           until (SqrX + SqrY > 8) or (farbe > interation);
           if Farbe > interation then begin
             farbe := 0;
+          end;
+          if quit then begin
+            Exit;
           end;
 
           put_pixel32(screen, x, y, Farbe * 100);
@@ -122,17 +125,8 @@ var
     event: TSDL_Event;
     i: integer;
     calc: uint32;
+    rect: TSDL_Rect;
   begin
-    calc := SDL_GetTicks;
-    for i := 0 to ThreadCount - 1 do begin
-      thread[i].r.x := i * 110 + 10;
-      thread[i].r.y := 10;
-      thread[i].r.w := 100;
-      thread[i].r.h := 100;
-      thread[i].Nr := i;
-      thread[i].thread := SDL_CreateThread(@my_thread, @thread[i]);
-    end;
-
     repeat
       while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
@@ -141,36 +135,61 @@ var
               SDLK_ESCAPE: begin
                 quit := True;
               end;
-              //SDLK_1: begin
-              //  Thread_Count := 1;
-              //end;
-              //SDLK_2: begin
-              //  Thread_Count := 2;
-              //end;
-              //SDLK_3: begin
-              //  Thread_Count := 4;
-              //end;
-              //SDLK_4: begin
-              //  Thread_Count := 8;
-              //end;
-              //SDLK_5: begin
-              //  Thread_Count := 16;
-              //end;
-              //SDLK_6: begin
-              //  Thread_Count := 32;
-              //end;
-              //SDLK_7: begin
-              //  Thread_Count := 64;
-              //end;
-              //SDLK_8: begin
-              //  Thread_Count := 128;
-              //end;
-              //SDLK_9: begin
-              //  Thread_Count := 256;
-              //end;
-              //SDLK_0: begin
-              //  Thread_Count := 512;
-              //end;
+            end;
+            if Counter = -1 then  begin
+              for i := 0 to ThreadCount - 1 do begin
+                SDL_KillThread(thread[i].thread);
+              end;
+              rect.x := 0;
+              rect.y := 0;
+              rect.w := Screen_Width;
+              rect.h := Screen_Heigth;
+              SDL_FillRect(screen, @rect, 0);
+              SDL_Flip(screen);
+              case event.key.keysym.sym of
+                SDLK_1: begin
+                  ThreadCount := 1;
+                end;
+                SDLK_2: begin
+                  ThreadCount := 2;
+                end;
+                SDLK_3: begin
+                  ThreadCount := 4;
+                end;
+                SDLK_4: begin
+                  ThreadCount := 8;
+                end;
+                SDLK_5: begin
+                  ThreadCount := 16;
+                end;
+                SDLK_6: begin
+                  ThreadCount := 32;
+                end;
+                SDLK_7: begin
+                  ThreadCount := 64;
+                end;
+                SDLK_8: begin
+                  ThreadCount := 128;
+                end;
+                SDLK_9: begin
+                  ThreadCount := 256;
+                end;
+                SDLK_0: begin
+                  ThreadCount := 512;
+                end;
+              end;
+              WriteLn('Thread Count: ', ThreadCount);
+              SetLength(thread, ThreadCount);
+              counter := 0;
+              calc := SDL_GetTicks;
+              for i := 0 to ThreadCount - 1 do begin
+                thread[i].r.x := i * 110 + 10;
+                thread[i].r.y := 10;
+                thread[i].r.w := 100;
+                thread[i].r.h := 100;
+                thread[i].Nr := i;
+                thread[i].thread := SDL_CreateThread(@my_thread, @thread[i]);
+              end;
             end;
           end;
           SDL_QUITEV: begin
@@ -188,7 +207,7 @@ var
 
       if counter = 0 then begin
         counter := -1;
-        WriteLn('calc: ', SDL_GetTicks - calc: 10);
+        WriteLn('Calc Time: ', (SDL_GetTicks - calc) / 1000: 10: 3);
         for i := 0 to ThreadCount - 1 do begin
           //          with Paras[i] do begin
           //              WriteLn('Nr: ',nr,' Time: ', time: 12: 10);

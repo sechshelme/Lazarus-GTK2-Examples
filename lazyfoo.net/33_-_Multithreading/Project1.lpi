@@ -62,12 +62,6 @@
       <Item>
         <Name Value="EDivByZero"/>
       </Item>
-      <Item>
-        <Name Value="RunError(216)"/>
-      </Item>
-      <Item>
-        <Name Value="EAccessViolation"/>
-      </Item>
     </Exceptions>
   </Debugging>
 </CONFIG>

@@ -9,12 +9,6 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 60;
-
-  Dot_Width = 20;
-  Dot_Height = 20;
-  Dot_Vel = 2000;
-
 var
   image, screen: PSDL_Surface;
   thread: PSDL_Thread;
@@ -119,7 +113,15 @@ var
   // Mit der original Funktion geht es nicht.
   // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
-  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+
+{ Create a thread }
+// function SDL_CreateThread(fn: PInt; data: Pointer): PSDL_Thread;
+function SDL_CreateThread(fn: Pointer; data: Pointer): PSDL_Thread;
+cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
+{$EXTERNALSYM SDL_CreateThread}
+
+
+//  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var
