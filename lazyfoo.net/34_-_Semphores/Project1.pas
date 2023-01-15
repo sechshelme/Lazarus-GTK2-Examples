@@ -10,21 +10,14 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 60;
-
-  Dot_Width = 20;
-  Dot_Height = 20;
-  Dot_Vel = 2000;
-
 var
   background, screen: PSDL_Surface;
   Text: array[0..4] of PSDL_Surface;
   font: PTTF_Font;
   quit: boolean = False;
-  sextColor: TSDL_Color;
 
   threadA, threadB: PSDL_Thread;
-  videoLock: TSDL_Sem;
+  videoLock: PSDL_Sem;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -49,45 +42,43 @@ var
   var
     offset: SDL_Rect;
   begin
+    SDL_SemWait(videoLock);
     offset.x := x;
     offset.y := y;
-    SDL_SemWait(@videoLock);
     SDL_BlitSurface(Source, nil, screen, @offset);
     SDL_Flip(screen);
-    SDL_SemPost(@videoLock);
+    SDL_SemPost(videoLock);
   end;
 
-function blitter_a(Dato: Pointer): integer;
-var
-  y: integer = 10;
-  b: integer;
-begin
-  for b := 0 to 4 do begin
-    SDL_Delay(200);
-    Show_Surface((Screen_Width div 2 - Text[b]^.w) div 2, y, Text[b]);
-    Inc(y, 100);
+  function blitter_a(Data: Pointer): integer;
+  var
+    y: integer = 10;
+    b: integer;
+  begin
+    for b := 0 to 4 do begin
+      SDL_Delay(200);
+      Show_Surface((Screen_Width div 2 - Text[b]^.w) div 2, y, Text[b]);
+      Inc(y, 100);
+    end;
+    Result := 0;
   end;
-  Result := 0;
-end;
 
-function blitter_b(Dato: Pointer): integer;
-var
-  y: integer = 10;
-  b: integer;
-begin
-  for b := 0 to 4 do begin
-    SDL_Delay(200);
-    Show_Surface(Screen_Width div 2 + ((Screen_Width div 2 - Text[b]^.w) div 2), y, Text[b]);
-    Inc(y, 100);
+  function blitter_b(Data: Pointer): integer;
+  var
+    y: integer = 10;
+    b: integer;
+  begin
+    for b := 0 to 4 do begin
+      SDL_Delay(200);
+      Show_Surface(Screen_Width div 2 + ((Screen_Width div 2 - Text[b]^.w) div 2), y, Text[b]);
+      Inc(y, 100);
+    end;
+    Result := 0;
   end;
-  Result := 0;
-end;
-
-
 
   function Load_Files: boolean;
   var
-    textColor: TSDL_Color=(r:$FF;g:$FF;b:$00;unused:$00);
+    textColor: TSDL_Color = (r: $FF; g: $FF; b: $00; unused: $00);
   begin
     Result := True;
 
@@ -99,43 +90,17 @@ end;
     end;
 
     // Font
-    font := TTF_OpenFont('lazy.ttf',72);
+    font := TTF_OpenFont('lazy.ttf', 72);
     if font = nil then begin
       Result := False;
       Exit;
     end;
 
-    text[0]:=TTF_RenderText_Solid(font,'One',textColor);
-    text[1]:=TTF_RenderText_Solid(font,'Two',textColor);
-    text[2]:=TTF_RenderText_Solid(font,'Three',textColor);
-    text[3]:=TTF_RenderText_Solid(font,'Four',textColor);
-    text[4]:=TTF_RenderText_Solid(font,'Five',textColor);
-  end;
-
-  function my_thread(Data: Pointer): integer; cdecl;
-  begin
-    while not quit do begin
-      SDL_WM_SetCaption('Thread is running', nil);
-      if quit then begin
-        exit;
-      end;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running.', nil);
-      if quit then begin
-        exit;
-      end;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running..', nil);
-      if quit then begin
-        exit;
-      end;
-      SDL_Delay(250);
-      SDL_WM_SetCaption('Thread is running...', nil);
-      if quit then begin
-        exit;
-      end;
-      SDL_Delay(250);
-    end;
+    Text[0] := TTF_RenderText_Solid(font, 'One', textColor);
+    Text[1] := TTF_RenderText_Solid(font, 'Two', textColor);
+    Text[2] := TTF_RenderText_Solid(font, 'Three', textColor);
+    Text[3] := TTF_RenderText_Solid(font, 'Four', textColor);
+    Text[4] := TTF_RenderText_Solid(font, 'Five', textColor);
   end;
 
   function Create: boolean;
@@ -155,6 +120,9 @@ end;
       Exit;
     end;
 
+    TTF_Init;
+    videoLock:=SDL_CreateSemaphore(1);
+
     // Fenster Titel
     SDL_WM_SetCaption('Thread test', nil);
 
@@ -165,32 +133,28 @@ end;
     end;
 
     Result := True;
-
   end;
 
   // Mit der original Funktion geht es nicht.
   // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
-
-
-  { Create a thread }
-  // function SDL_CreateThread(fn: PInt; data: Pointer): PSDL_Thread;
-  //function SDL_CreateThread(fn: Pointer; data: Pointer): PSDL_Thread;
-
-  //cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
-  //{$EXTERNALSYM SDL_CreateThread}
-  //
 
   function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var
     event: TSDL_Event;
-    r: TSDL_Rect;
+    i: Integer;
   begin
-    //    thread := SDL_CreateThread(@my_thread, nil);
-    repeat
+    WriteLn('ffdgfdg');
+    Show_Surface(0,0,background);
+    WriteLn('ffdgfdg');
 
-      //    Apply_Surface(0, 0, background, screen);
+    threadA := SDL_CreateThread(@blitter_a, nil);
+    threadB := SDL_CreateThread(@blitter_b, nil);
+
+    SDL_WaitThread(threadA, i);
+    SDL_WaitThread(threadB, i);
+    repeat
       SDL_Flip(screen);
 
       while SDL_PollEvent(@event) <> 0 do begin
@@ -208,31 +172,25 @@ end;
         end;
       end;
 
-      r.x := 10;
-      r.y := 10;
-      r.w := 100;
-      r.h := 100;
-      SDL_FillRect(screen, @r, Random($FFFFFF));
-
-      WriteLn('flip');
-      if SDL_Flip(screen) = -1 then begin
-        WriteLn('Flip Error !');
-        Result := False;
-        Exit;
-      end;
     until quit;
     SDL_Delay(300);
     Result := True;
   end;
 
   procedure Destroy;
+  var
+    i: integer;
   begin
-    //    SDL_KillThread(thread);
-
-    // Images freigeben
+    SDL_DestroySemaphore(videoLock);
     SDL_FreeSurface(background);
 
-    // SDL beenden
+    for i := 0 to Length(Text) - 1 do begin
+      SDL_FreeSurface(Text[i]);
+    end;
+
+    TTF_CloseFont(font);
+    TTF_Quit;
+
     SDL_Quit;
   end;
 
