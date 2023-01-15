@@ -2,7 +2,6 @@ program Project1;
 
 uses
   sdl,
-  sdl_ttf,
   sdl_image;
 
 const
@@ -11,13 +10,13 @@ const
   Screen_BPP: integer = 32;
 
 var
-  background, screen: PSDL_Surface;
-  Text: array[0..4] of PSDL_Surface;
-  font: PTTF_Font;
+  buffer, screen: PSDL_Surface;
+  images: array[0..4] of PSDL_Surface;
   quit: boolean = False;
 
-  threadA, threadB: PSDL_Thread;
-  videoLock: PSDL_Sem;
+  producerThread, consumerThread: PSDL_Thread;
+  bufferlock: PSDL_Mutex;
+  canProduce, canConsume: PSDL_Cond;
 
   function Load_Image(const filename: string): PSDL_Surface;
   var
@@ -38,69 +37,80 @@ var
     Result := optimizedImage;
   end;
 
-  procedure Show_Surface(x, y: integer; Source: PSDL_Surface);
+  procedure Apply_Surface(x, y: integer; Source, destination: PSDL_Surface; clip: PSDL_Rect = nil);
   var
     offset: SDL_Rect;
   begin
-    SDL_SemWait(videoLock);
     offset.x := x;
     offset.y := y;
-    SDL_BlitSurface(Source, nil, screen, @offset);
-    SDL_Flip(screen);
-    SDL_SemPost(videoLock);
+    SDL_BlitSurface(Source, clip, destination, @offset);
   end;
 
-  function blitter_a(Data: Pointer): integer;
+  procedure produce(x, y: integer);
+  begin
+    SDL_mutexP(bufferlock);
+    if buffer <> nil then begin
+      SDL_CondWait(canProduce, bufferlock);
+    end;
+    buffer := images[Random(5)];
+    Apply_Surface(x, y, buffer, screen);
+    SDL_Flip(screen);
+    SDL_mutexV(bufferlock);
+    SDL_CondSignal(canConsume);
+  end;
+
+  procedure consume(x, y: integer);
+  begin
+    SDL_mutexP(bufferlock);
+    if buffer = nil then begin
+      SDL_CondWait(canConsume, bufferlock);
+    end;
+    Apply_Surface(x, y, buffer, screen);
+    buffer := nil;
+    SDL_Flip(screen);
+    SDL_mutexV(bufferlock);
+    SDL_CondSignal(canProduce);
+  end;
+
+  function producer(Data: Pointer): integer;
   var
     y: integer = 10;
-    b: integer;
+    i: integer;
   begin
-    for b := 0 to 4 do begin
-      SDL_Delay(200);
-      Show_Surface((Screen_Width div 2 - Text[b]^.w) div 2, y, Text[b]);
-      Inc(y, 100);
+    Randomize;
+    for i := 0 to 4 do begin
+      SDL_Delay(Random(1000));
+      produce(10, y);
+      Inc(y, 90);
     end;
     Result := 0;
   end;
 
-  function blitter_b(Data: Pointer): integer;
+  function consumer(Data: Pointer): integer;
   var
     y: integer = 10;
-    b: integer;
+    i: integer;
   begin
-    for b := 0 to 4 do begin
-      SDL_Delay(200);
-      Show_Surface(Screen_Width div 2 + ((Screen_Width div 2 - Text[b]^.w) div 2), y, Text[b]);
-      Inc(y, 100);
+    for i := 0 to 4 do begin
+      SDL_Delay(Random(1000));
+      consume(330, y);
+      Inc(y, 90);
     end;
     Result := 0;
   end;
 
   function Load_Files: boolean;
-  var
-    textColor: TSDL_Color = (r: $FF; g: $FF; b: $00; unused: $00);
   begin
     Result := True;
 
-    // Load Images
-    background := Load_Image('background.png');
-    if background = nil then begin
+    images[0] := Load_Image('1.png');
+    images[1] := Load_Image('2.png');
+    images[2] := Load_Image('3.png');
+    images[3] := Load_Image('4.png');
+    images[4] := Load_Image('5.png');
+    if (images[0] = nil) or (images[1] = nil) or (images[2] = nil) or (images[3] = nil) or (images[4] = nil) then begin
       Result := False;
-      Exit;
     end;
-
-    // Font
-    font := TTF_OpenFont('lazy.ttf', 72);
-    if font = nil then begin
-      Result := False;
-      Exit;
-    end;
-
-    Text[0] := TTF_RenderText_Solid(font, 'One', textColor);
-    Text[1] := TTF_RenderText_Solid(font, 'Two', textColor);
-    Text[2] := TTF_RenderText_Solid(font, 'Three', textColor);
-    Text[3] := TTF_RenderText_Solid(font, 'Four', textColor);
-    Text[4] := TTF_RenderText_Solid(font, 'Five', textColor);
   end;
 
   function Create: boolean;
@@ -120,11 +130,13 @@ var
       Exit;
     end;
 
-    TTF_Init;
-    videoLock := SDL_CreateSemaphore(1);
+    bufferlock := SDL_CreateMutex;
+
+    canProduce := SDL_CreateCond;
+    canConsume := SDL_CreateCond;
 
     // Fenster Titel
-    SDL_WM_SetCaption('Thread test', nil);
+    SDL_WM_SetCaption('Producer / Consumer Test', nil);
 
     if not Load_Files then begin
       WriteLn('Fehler beim Dateien laden !');
@@ -143,18 +155,18 @@ var
   function Run: boolean;
   var
     event: TSDL_Event;
-    i: integer;
+    i: integer = 0;
   begin
-    Show_Surface(0, 0, background);
+    SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(@screen^.format, $80, $80, $80));
+    SDL_Flip(screen);
 
-    threadA := SDL_CreateThread(@blitter_a, nil);
-    threadB := SDL_CreateThread(@blitter_b, nil);
+    producerThread := SDL_CreateThread(@producer, nil);
+    consumerThread := SDL_CreateThread(@consumer, nil);
+//    WriteLn('dsfsdfsdfsea');
+    SDL_WaitThread(producerThread, i);
+    SDL_WaitThread(consumerThread, i);
 
-    SDL_WaitThread(threadA, i);
-    SDL_WaitThread(threadB, i);
     repeat
-      SDL_Flip(screen);
-
       while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
           SDL_KEYDOWN: begin
@@ -169,7 +181,6 @@ var
           end;
         end;
       end;
-
     until quit;
     Result := True;
   end;
@@ -178,15 +189,14 @@ var
   var
     i: integer;
   begin
-    SDL_DestroySemaphore(videoLock);
-    SDL_FreeSurface(background);
+    SDL_DestroyMutex(bufferlock);
 
-    for i := 0 to Length(Text) - 1 do begin
-      SDL_FreeSurface(Text[i]);
+    SDL_DestroyCond(canProduce);
+    SDL_DestroyCond(canConsume);
+
+    for i := 0 to Length(images) - 1 do begin
+      SDL_FreeSurface(images[i]);
     end;
-
-    TTF_CloseFont(font);
-    TTF_Quit;
 
     SDL_Quit;
   end;
