@@ -102,7 +102,6 @@ var
   function Load_Files: boolean;
   begin
     Result := True;
-
     images[0] := Load_Image('1.png');
     images[1] := Load_Image('2.png');
     images[2] := Load_Image('3.png');
@@ -162,7 +161,7 @@ var
 
     producerThread := SDL_CreateThread(@producer, nil);
     consumerThread := SDL_CreateThread(@consumer, nil);
-//    WriteLn('dsfsdfsdfsea');
+
     SDL_WaitThread(producerThread, i);
     SDL_WaitThread(consumerThread, i);
 
