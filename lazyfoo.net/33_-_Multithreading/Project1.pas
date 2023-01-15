@@ -1,6 +1,7 @@
 program Project1;
 
 uses
+  ctypes,
   sdl,
   sdl_image;
 
@@ -56,6 +57,7 @@ var
 
   function my_thread(Data: Pointer): integer; cdecl;
   begin
+    Result := 1234;
     while not quit do begin
       SDL_WM_SetCaption('Thread is running', nil);
       if quit then begin
@@ -114,19 +116,14 @@ var
   // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
 
-{ Create a thread }
-// function SDL_CreateThread(fn: PInt; data: Pointer): PSDL_Thread;
-function SDL_CreateThread(fn: Pointer; data: Pointer): PSDL_Thread;
-cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
-{$EXTERNALSYM SDL_CreateThread}
+  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName      ;
 
-
-//  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var
     event: TSDL_Event;
     r: TSDL_Rect;
+    res: cint;
   begin
     thread := SDL_CreateThread(@my_thread, nil);
     repeat
@@ -155,13 +152,16 @@ cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLL
       r.h := 100;
       SDL_FillRect(screen, @r, Random($FFFFFF));
 
-      WriteLn('flip');
+      //      WriteLn('flip');
       if SDL_Flip(screen) = -1 then begin
         WriteLn('Flip Error !');
         Result := False;
         Exit;
       end;
     until quit;
+    SDL_WaitThread(thread, res);
+    WriteLn(res);
+    halt;
     SDL_Delay(300);
     Result := True;
   end;
