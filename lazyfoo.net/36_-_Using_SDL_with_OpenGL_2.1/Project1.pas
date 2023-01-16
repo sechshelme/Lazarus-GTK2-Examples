@@ -121,7 +121,7 @@ var
     end;
 
     // screen Setup
-    screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_OPENGL);
+    screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_OPENGL or SDL_RESIZABLE);
     if screen = nil then begin
       Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
       Exit;
@@ -135,14 +135,14 @@ var
     fps := TTimer.Create;
 
     //  glCLEARCOLOR(0.0, 0.0, 1.0, 0.0);
-  glViewport(0, 0, Screen_Width, Screen_Heigth);
+//  glViewport(0, 0, Screen_Width, Screen_Heigth);
   //  glMATRIXMODE(GL_PROJECTION);
   //  glLOADIDENTITY;
   //  gluPERSPECTIVE(45.0, 640.0 / 480.0, 1.0, 3.0);
   //  glMATRIXMODE(GL_MODELVIEW);
   //  glLOADIDENTITY;
   //  glCLEAR(GL_COLOR_BUFFER_BIT);
-  glEnable(GL_CULL_FACE);
+  //glEnable(GL_CULL_FACE);
   //  glTRANSLATEf(0.0, 0.0, -2.0);
   end;
 

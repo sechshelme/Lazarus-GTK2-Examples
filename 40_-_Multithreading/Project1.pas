@@ -74,8 +74,6 @@ var
     pixels[y * surface^.w + x] := pixel;
   end;
 
-
-
   function my_thread(Data: Pointer): integer; cdecl;
   var
     r: TSDL_Rect;
@@ -90,10 +88,6 @@ var
           put_pixel32(screen, x + r.x, y + r.y, Random($FFFFFF));
         end;
       end;
-      //      for i:=0 to r.w*r.h do int32( screen^.pixels[i]):=random($FFFFFF);
-
-//      SDL_FillRect(screen, @r, Random($FFFFFF));
-
     end;
   end;
 

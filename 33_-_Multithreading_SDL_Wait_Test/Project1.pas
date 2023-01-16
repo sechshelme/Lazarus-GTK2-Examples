@@ -178,10 +178,10 @@ cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLL
       end;
     until quit;
     res:=0;
-    SDL_WaitThread(thread, @res);
+//    SDL_WaitThread(thread, @res);
     WriteLn(res);
-    halt;
-    SDL_Delay(300);
+//    halt;
+    SDL_Delay(500);
     Result := True;
   end;
 

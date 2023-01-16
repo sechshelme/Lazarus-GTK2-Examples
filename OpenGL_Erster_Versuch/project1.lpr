@@ -20,7 +20,7 @@ begin
   end;
 
   //  glCLEARCOLOR(0.0, 0.0, 1.0, 0.0);
-  glVIEWPORT(0, 0, 640, 480);
+ // glVIEWPORT(0, 0, 640, 480);
   //  glMATRIXMODE(GL_PROJECTION);
   //  glLOADIDENTITY;
   //  gluPERSPECTIVE(45.0, 640.0 / 480.0, 1.0, 3.0);

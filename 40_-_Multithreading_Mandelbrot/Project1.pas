@@ -48,9 +48,7 @@ var
     SqrX, SqrY, XPos, YPos, XStep, YStep, creal, cimag, links, rechts, oben, unten: single;
   begin
     Inc(counter);
-    //  t := Now;
     Para := PThread(Data)^;
-    //    WriteLn(Para.Nr);
     links := l;
     rechts := r;
     oben := o;
@@ -85,9 +83,6 @@ var
       end;
       creal := creal + XStep;
     end;
-    //    WriteLn(Para.Nr,' beendet.  Time:', now-t:12:10);
-    //  Para.ende := True;
-    //  Para.time := now - t + 1;
     Dec(counter);
   end;
 
@@ -118,12 +113,13 @@ var
   // Mit der original Funktion geht es nicht.
   // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
-//  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+// function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external 'SDL';
 
   function Run: boolean;
   var
     event: TSDL_Event;
-    i: integer;
+    i, i2: integer;
     calc: uint32;
     rect: TSDL_Rect;
   begin
@@ -197,7 +193,7 @@ var
           end;
         end;
       end;
-      SDL_Delay(10);
+      SDL_Delay(100);
 
       if SDL_Flip(screen) = -1 then begin
         WriteLn('Flip Error !');
@@ -208,14 +204,15 @@ var
       if counter = 0 then begin
         counter := -1;
         WriteLn('Calc Time: ', (SDL_GetTicks - calc) / 1000: 10: 3);
-        for i := 0 to ThreadCount - 1 do begin
-          //          with Paras[i] do begin
-          //              WriteLn('Nr: ',nr,' Time: ', time: 12: 10);
-          //        end;
-        end;
       end;
     until quit;
-    SDL_Delay(100);
+
+    for i := 0 to ThreadCount - 1 do begin
+//      SDL_WaitThread(thread[i].thread, i2);
+    end;
+
+
+//    SDL_Delay(100);
     Result := True;
   end;
 
