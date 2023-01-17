@@ -6,7 +6,30 @@ uses
 // function SDL_CreateThread(fn: PInt; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
-var   videoLock: PSDL_Sem;
+var
+  videoLock, writeLock: PSDL_Sem;
+  inPaint:Boolean;
+
+  function WriteThread1(p: Pointer): integer;
+  begin
+    while True do begin
+      SDL_SemWait(writeLock);
+      WriteLn('0');
+      SDL_SemPost(writeLock);
+    end;
+    Result := 0;
+  end;
+
+  function WriteThread2(p: Pointer): integer;
+  begin
+    while True do begin
+      SDL_SemWait(writeLock);
+      if inPaint then WriteLn('Write und Paint gehlt gleichzeitig');
+      WriteLn('1');
+      SDL_SemPost(writeLock);
+    end;
+    Result := 0;
+  end;
 
   function thread1(p: Pointer): integer;
   var
@@ -23,9 +46,11 @@ var   videoLock: PSDL_Sem;
       rect.y := 1 + Random(470);
       SDL_FillRect(s, @rect, SDL_MapRGB(s^.format, $FF, $00, $00));
       SDL_SemWait(videoLock);
+      inPaint:=True;
       SDL_UpdateRect(s, rect.x, rect.y, rect.w, rect.h);
+      inPaint:=False;
       SDL_SemPost(videoLock);
-//      SDL_Delay(1);
+      //      SDL_Delay(1);
     end;
     Result := 0;
   end;
@@ -46,16 +71,17 @@ var   videoLock: PSDL_Sem;
       SDL_FillRect(s, @rect, SDL_MapRGB(s^.format, $00, $FF, $00));
 
       SDL_SemWait(videoLock);
+      if inPaint then WriteLn('Die darf nie kommen !');
       SDL_UpdateRect(s, rect.x, rect.y, rect.w, rect.h);
       SDL_SemPost(videoLock);
-  //    SDL_Delay(1);
+      //    SDL_Delay(1);
     end;
     Result := 0;
   end;
 
 var
   screen: PSDL_Surface;
-  t1, t2: PSDL_Thread;
+  t1, t2, w1, w2: PSDL_Thread;
   e: TSDL_Event;
   quit: boolean = False;
 begin
@@ -67,22 +93,30 @@ begin
   if screen = nil then begin
     WriteLn('Video Modus kann nicht eingerichtet werden: ', SDL_GetError);
     Halt(1);
-  end;     videoLock:=SDL_CreateSemaphore(1);
+  end;
+  videoLock := SDL_CreateSemaphore(1);
+  writeLock := SDL_CreateSemaphore(1);
   t1 := SDL_CreateThread(@thread1, screen);
- t2 := SDL_CreateThread(@thread2, screen);
+  t2 := SDL_CreateThread(@thread2, screen);
+  w1 := SDL_CreateThread(@WriteThread1, screen);
+  w2 := SDL_CreateThread(@WriteThread2, screen);
   while (SDL_WaitEvent(@e) <> 0) and (not quit) do begin
     case e.type_ of
       SDL_KEYDOWN: begin
         case e.key.keysym.sym of
           SDLK_ESCAPE: begin
-//            SDL_KillThread(t1);
-//            SDL_KillThread(t2);
+            //SDL_KillThread(t1);
+            //SDL_KillThread(t2);
+            //SDL_KillThread(w1);
+            //SDL_KillThread(w2);
             quit := True;
           end;
         end;
       end;
     end;
   end;
+  halt;
   SDL_DestroySemaphore(videoLock);
-//  SDL_Quit;
+  SDL_DestroySemaphore(writeLock);
+  SDL_Quit;
 end.

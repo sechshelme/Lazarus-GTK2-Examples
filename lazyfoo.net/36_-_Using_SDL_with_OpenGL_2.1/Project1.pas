@@ -13,9 +13,6 @@ const
 
   frames_per_Second: integer = 60;
 
-  Dot_Width = 20;
-  Dot_Height = 20;
-
 var
   screen: PSDL_Surface;
 
@@ -121,7 +118,7 @@ var
     end;
 
     // screen Setup
-    screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_OPENGL or SDL_RESIZABLE);
+    screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_OPENGL or SDL_RESIZABLE or SDL_SWSURFACE);
     if screen = nil then begin
       Writeln('Kann kein Fenster öffnen: ', SDL_GetError);
       Exit;
@@ -131,24 +128,14 @@ var
     SDL_WM_SetCaption('OpenGL', nil);
 
     Result := True;
-
     fps := TTimer.Create;
 
-    //  glCLEARCOLOR(0.0, 0.0, 1.0, 0.0);
-//  glViewport(0, 0, Screen_Width, Screen_Heigth);
-  //  glMATRIXMODE(GL_PROJECTION);
-  //  glLOADIDENTITY;
-  //  gluPERSPECTIVE(45.0, 640.0 / 480.0, 1.0, 3.0);
-  //  glMATRIXMODE(GL_MODELVIEW);
-  //  glLOADIDENTITY;
-  //  glCLEAR(GL_COLOR_BUFFER_BIT);
-  //glEnable(GL_CULL_FACE);
-  //  glTRANSLATEf(0.0, 0.0, -2.0);
+    glClearColor(0.0, 0.0, 1.0, 0.0);
   end;
 
   function Run: boolean;
   const
-    r=0.5;
+    r = 1.0;
   var
     quit: boolean = False;
     event: TSDL_Event;
@@ -158,6 +145,13 @@ var
       fps.start;
       while SDL_PollEvent(@event) <> 0 do begin
         case event.type_ of
+          SDL_VIDEORESIZE: begin
+            WriteLn(event.resize.w);
+            Screen_Width:=event.resize.w;
+            Screen_Heigth:=event.resize.h;
+            screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, Screen_BPP, SDL_OPENGL or SDL_RESIZABLE or SDL_SWSURFACE);
+            glViewport(0, 0, Screen_Width, Screen_Heigth);
+          end;
           SDL_KEYDOWN: begin
             case event.key.keysym.sym of
               SDLK_ESCAPE: begin
@@ -170,7 +164,6 @@ var
           end;
         end;
       end;
-
 
       glRotatef(1.0, 0.0, 0.0, 1.0);
       glClear(GL_COLOR_BUFFER_BIT);
@@ -187,17 +180,6 @@ var
       glEnd;
 
       SDL_GL_SwapBuffers;
-      //MyDot.move;
-      //
-      //SDL_FillRect(screen, @screen^.clip_rect, SDL_MapRGB(screen^.format, $FF, $FF, $FF));
-      //MyDot.Show;
-      //
-      //// Update screen
-      //if SDL_Flip(screen) = -1 then begin
-      //  WriteLn('Fehler beim Flip !');
-      //  Result := False;
-      //  Exit;
-      //end;
 
       if fps.getTicks < 1000 div frames_per_Second then begin
         SDL_Delay(1000 div frames_per_Second - fps.getTicks);
