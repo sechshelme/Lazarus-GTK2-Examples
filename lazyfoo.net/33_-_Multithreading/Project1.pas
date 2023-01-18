@@ -109,7 +109,6 @@ var
     end;
 
     Result := True;
-
   end;
 
   // Mit der original Funktion geht es nicht.

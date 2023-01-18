@@ -13,7 +13,7 @@ begin
     WriteLn('Kann SDL nicht inizialisieren:', SDL_GetError);
     Halt(1);
   end;
-  screen := SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE);
+  screen := SDL_SetVideoMode(640, 480, 16, SDL_SWSURFACE or SDL_DOUBLEBUF);
   if screen = nil then begin
     WriteLn('Video Modus kann nicht eingerichtet werden: ', SDL_GetError);
     Halt(1);
@@ -25,7 +25,8 @@ begin
   end;
   SDL_BlitSurface(image, nil, screen, nil);
   SDL_FreeSurface(image);
-  SDL_UpdateRect(screen, 0, 0, 0, 0);
+  SDL_UpdateRect(screen, 50, 50, 100, 100);
+  SDL_UpdateRect(screen, 75, 75, 125, 125);
   while not quit do begin
     while SDL_PollEvent(@e) <> 0 do begin
       case e.type_ of

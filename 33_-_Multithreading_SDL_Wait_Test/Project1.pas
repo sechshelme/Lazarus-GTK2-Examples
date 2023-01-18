@@ -118,24 +118,7 @@ var
 
 
 { Create a thread }
-// function SDL_CreateThread(fn: PInt; data: Pointer): PSDL_Thread;
-function SDL_CreateThread(fn: Pointer; data: Pointer): PSDL_Thread;
-cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_CreateThread'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
-{$EXTERNALSYM SDL_CreateThread}
-
-
-// procedure SDL_WaitThread(thread: PSDL_Thread; var status: Integer);
-//procedure SDL_WaitThread(thread: PSDL_Thread; status: PInteger);
-//cdecl; external {$IFNDEF NDS}{$IFDEF __GPC__}name 'SDL_WaitThread'{$ELSE} SDLLibName{$ENDIF __GPC__}{$ENDIF};
-//{$EXTERNALSYM SDL_WaitThread}
-
-// procedure SDL_WaitThread(thread: PSDL_Thread; status: pcint) cdecl; external SDLLibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_WaitThread' {$ENDIF}{$ENDIF};
-  procedure SDL_WaitThread(thread: PSDL_Thread; status: PLongint) cdecl; external SDLLibName {$IFDEF DELPHI} {$IFDEF MACOS} name '_SDL_WaitThread' {$ENDIF}{$ENDIF};
-
-
-
-
-//  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
+  function SDL_CreateThread(fn: Pointer; Data: Pointer): PSDL_Thread; cdecl; external SDLLibName;
 
   function Run: boolean;
   var

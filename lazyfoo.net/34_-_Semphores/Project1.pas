@@ -150,8 +150,9 @@ var
     threadA := SDL_CreateThread(@blitter_a, nil);
     threadB := SDL_CreateThread(@blitter_b, nil);
 
-    SDL_WaitThread(threadA, i);
-    SDL_WaitThread(threadB, i);
+    SDL_WaitThread(threadA, LongInt(nil^));
+    SDL_WaitThread(threadB, LongInt(nil^));
+//    SDL_WaitThread(threadB, i);
     repeat
       SDL_Flip(screen);
 

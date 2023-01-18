@@ -8,7 +8,7 @@ var
   scr, img: PSDL_Surface; // Our main screen
   Quit: boolean;
   Event: TSDL_Event;
-  dstrect: TSDL_Rect;
+  rect: TSDL_Rect;
 
   // https://www.libsdl.org/release/SDL-1.2.15/docs/html/sdllistmodes.html
 
@@ -49,6 +49,7 @@ type
     modus, p: PPSDL_Rect;
     i: integer;
     VideoInfo: PSDL_VideoInfo2;
+    pc1, pc2: array[0..255] of Char;
   begin
     modus := SDL_ListModes(nil, SDL_FULLSCREEN or SDL_HWSURFACE or SDL_OPENGL);
     //  if modus=TSDL_Rect^^( 0) then WriteLn('NULL');
@@ -86,6 +87,11 @@ type
     WriteLn('current_w: ', VideoInfo^.current_w: 5);
     WriteLn('current_h: ', VideoInfo^.current_h: 5);
 
+    SDL_VideoDriverName(@pc1, 512);
+    WriteLn(pc1);
+    SDL_VideoDriverName(pc2, 512);
+    WriteLn(pc2);
+
   end;
 
   procedure WriteVideoModus2;
@@ -104,13 +110,13 @@ begin
   end;
   WriteVideoModus;
 
-  dstrect.h := 100;
-  dstrect.w := 100;
-  SDL_FillRect(scr, @dstrect, $FFBBBB);
+  rect.h := 100;
+  rect.w := 100;
+  SDL_FillRect(scr, @rect, $FFBBBB);
 
-  dstrect.x := 150;
-  dstrect.y := 150;
-  SDL_FillRect(scr, @dstrect, $BBBBFF);
+  rect.x := 150;
+  rect.y := 150;
+  SDL_FillRect(scr, @rect, $BBBBFF);
 
   SDL_Flip(scr);
   SDL_WM_SetCaption('SDL-Fenster', nil);
