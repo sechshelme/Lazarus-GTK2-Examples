@@ -13,13 +13,14 @@ type
 
   TRunGames = class(TObject)
   private
-    posx, posy, Screen_Width, Screen_Heigth, Screen_BPP: integer;
+    dotWidth, posx, posy, xvel, yvel, Screen_Width, Screen_Heigth, Screen_BPP: integer;
     screen: PSDL_Surface;
     Quit: boolean;
   public
     constructor Create;
     destructor Destroy; override;
     procedure Run;
+    procedure Dot;
   end;
 
 implementation
@@ -36,6 +37,7 @@ begin
 
   posx := 100;
   posy := 100;
+  dotWidth := 20;
 
   // Initialisiere  SDL Subsystem
   if SDL_Init(SDL_INIT_VIDEO) < 0 then begin
@@ -43,7 +45,8 @@ begin
   end;
 
   // Erzeuge Fenster
-screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, 8, SDL_SWSURFACE or SDL_FULLSCREEN);
+  //   screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, 32, SDL_SWSURFACE or SDL_FULLSCREEN);
+  screen := SDL_SetVideoMode(Screen_Width, Screen_Heigth, 32, SDL_SWSURFACE);
   if screen = nil then begin
     WriteLn('could not initialize sdl2: ', SDL_GetError());
   end;
@@ -63,10 +66,11 @@ end;
 
 procedure TRunGames.Run;
 const
-  step = 5;
+  step = 1;
 var
   Event: TSDL_Event;
   rect: TSDL_Rect;
+  peng: boolean = False;
 begin
   repeat
     while SDL_PollEvent(@event) <> 0 do begin
@@ -77,16 +81,41 @@ begin
               quit := True;
             end;
             SDLK_RIGHT: begin
-              Inc(posx, step);
+              xvel := step;
             end;
             SDLK_LEFT: begin
-              Dec(posx, step);
+              xvel := -step;
             end;
             SDLK_DOWN: begin
-              Inc(posy, step);
+              yvel := step;
             end;
             SDLK_UP: begin
-              Dec(posy, step);
+              yvel := -step;
+            end;
+            SDLK_SPACE: begin
+              peng := True;
+            end;
+          end;
+        end;
+        SDL_KEYUP: begin
+          case event.key.keysym.sym of
+            SDLK_ESCAPE: begin
+              quit := True;
+            end;
+            SDLK_RIGHT: begin
+              xvel := 0;
+            end;
+            SDLK_LEFT: begin
+              xvel := 0;
+            end;
+            SDLK_DOWN: begin
+              yvel := 0;
+            end;
+            SDLK_UP: begin
+              yvel := 0;
+            end;
+            SDLK_SPACE: begin
+              peng := False;
             end;
           end;
         end;
@@ -95,19 +124,48 @@ begin
         end;
       end;
     end;
-    rect.x := posx;
-    rect.y := posy;
-    rect.h := 10;
-    rect.w := 10;
+    Inc(posx, xvel);
+    Inc(posy, yvel);
+
     SDL_FillRect(screen, nil, $000000);
 
-    rect.x := posx;
-    rect.y := posy;
-    rect.h := 10;
-    rect.w := 10;
-    SDL_FillRect(screen, @rect, $FF8888);
+    if peng then begin
+      WriteLn('peng');
+      rect.x := 0;
+      rect.y := Screen_Heigth - 20;
+      rect.h := 20;
+      rect.w := Screen_Width;
+
+      SDL_FillRect(screen, @rect, $FF0000);
+    end;
+
+    dot;
+
     SDL_Flip(screen);
   until quit;
+end;
+
+procedure TRunGames.Dot;
+var
+  rect: TSDL_Rect;
+begin
+  if posx < 0 then begin
+    posx := 0;
+  end;
+  if posy < 0 then begin
+    posy := 0;
+  end;
+  if posx > Screen_Width - dotWidth then begin
+    posx := Screen_Width - dotWidth;
+  end;
+  if posy > Screen_Heigth - dotWidth - 20 then begin
+    posy := Screen_Heigth - dotWidth - 20;
+  end;
+  rect.x := posx;
+  rect.y := posy;
+  rect.h := dotWidth;
+  rect.w := dotWidth;
+  SDL_FillRect(screen, @rect, $FF8888);
 end;
 
 end.

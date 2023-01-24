@@ -34,9 +34,12 @@ procedure TForm1.NewGameClick(Sender: TObject);
 var
   g: TRunGames;
 begin
+//  NewGame.Enabled:=False;
+  WriteLn('run');
   g := TRunGames.Create;
   g.Run;
   g.Free;
+//  NewGame.Enabled:=True;
 end;
 
 end.
