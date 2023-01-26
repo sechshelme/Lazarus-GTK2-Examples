@@ -68,6 +68,7 @@ var
     end;
 
     music := Mix_LoadMUS('doom.mid');
+//    music := Mix_LoadMUS('scratch.wav');
     if music = nil then begin
       WriteLn('Kann Musik nicht laden');
       Result := False;
