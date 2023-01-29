@@ -90,6 +90,7 @@ type
     rightB := B.x + B.w;
     topB := B.y;
     bottomB := B.y + B.h;
+
     Result := True;
     if bottomA <= topB then begin
       Result := False;

@@ -9,7 +9,7 @@ const
   Screen_Heigth: integer = 480;
   Screen_BPP: integer = 32;
 
-  frames_per_Second: integer = 20;
+  frames_per_Second: integer = 60;
 
   Square_Width = 20;
   Square_Height = 20;
