@@ -7,11 +7,33 @@ uses
 
   procedure gtk_widget_set_tooltip_text(window: PGtkWidget; title: Pgchar); cdecl; external gtklib;
 
-var
-  mein_menu: array of TGtkItemFactoryEntry = ((path: '/Datei'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+    procedure menu_click_msg(widget: PGtkWidget; Data: gpointer);
+    begin
+      WriteLn('menu click');
+      if Data <> nil then begin
+        WriteLn(PChar(Data));
+      end;
+    end;
 
+var
+  mein_menu: array of TGtkItemFactoryEntry = (
+  (path: '/Datei'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+
+  (path: '/Datei/Neu'; accelerator: '<control>n'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Datei/Speichern'; accelerator: 'F2'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Datei/Speichern unter...'; accelerator: '<control>b'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
   (path: '/Datei/Öffnen'; accelerator: '<control>b'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
-  (path: '/Datei/Beenden'; accelerator: '<control>q'; callback: @gtk_main_quit; callback_action: 0; item_type: nil; extra_data: nil));
+  (path: '/Datei/Beenden'; accelerator: '<control>q'; callback: @gtk_main_quit; callback_action: 0; item_type: nil; extra_data: nil),
+
+  (path: '/Bearbeiten'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Bearbeiten/Ausschneiden'; accelerator: '<shift>Delete'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Bearbeiten/Kopieren'; accelerator: '<control>Insert'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Bearbeiten/Einfügen'; accelerator: '<shift>Insert'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+
+  (path: '/Hilfe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data: nil)
+//  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: @menu_click_msg; callback_action: 0; item_type: nil; extra_data: nil)
+  );
 
 
   function main(argc: integer; argv: PChar): integer;
@@ -51,6 +73,9 @@ var
     gtk_box_pack_start(GTK_BOX(vbox), menubar, gFALSE, False, 0);
 
     g_signal_connect(G_OBJECT(window), 'destroy', G_CALLBACK(@gtk_main_quit), nil);
+//    g_signal_connect(G_OBJECT(window), 'destroy', G_CALLBACK(@menu_click_msg), nil);
+
+
 
     gtk_widget_show_all(window);
     gtk_main;
