@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1649687632"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -gw2 -godwarfsets -gl -l -vewnhibq -Fi/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/SDL-2/GTK/zetcode.com_gui_gtk2_introduction/30-Menus_and_toolbars/40-CheckMenuItem/lib/x86_64-linux -Fu/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/SDL-2/GTK/zetcode.com_gui_gtk2_introduction/30-Menus_and_toolbars/40-CheckMenuItem/ -FU/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/SDL-2/GTK/zetcode.com_gui_gtk2_introduction/30-Menus_and_toolbars/40-CheckMenuItem/lib/x86_64-linux/ -FE/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/SDL-2/GTK/zetcode.com_gui_gtk2_introduction/30-Menus_and_toolbars/40-CheckMenuItem/ -o/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/SDL-2/GTK/zetcode.com_gui_gtk2_introduction/30-Menus_and_toolbars/40-CheckMenuItem/project1 project1.lpr"/>
-</CONFIG>

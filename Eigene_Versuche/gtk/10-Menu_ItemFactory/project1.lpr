@@ -32,7 +32,7 @@ var
 
   (path: '/Hilfe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
   (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data: nil)
-//  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: @menu_click_msg; callback_action: 0; item_type: nil; extra_data: nil)
+//  (path: '/Hilfe/About2...'; accelerator: 'F1'; callback: @menu_click_msg; callback_action: 0; item_type: nil; extra_data: nil)
   );
 
 
