@@ -1,9 +1,15 @@
 program project1;
 
+// http://tux.iar.unlp.edu.ar/~fede/manuales/tutorial/x1716.html
+
 uses
   glib2,
   gdk2,
   gtk2;
+
+
+const
+  cmNew=1000;
 
   procedure gtk_widget_set_tooltip_text(window: PGtkWidget; title: Pgchar); cdecl; external gtklib;
 
@@ -11,6 +17,7 @@ uses
     begin
       WriteLn('menu click');
       if Data <> nil then begin
+        WriteLn('data');
         WriteLn(PChar(Data));
       end;
     end;
@@ -19,10 +26,11 @@ var
   mein_menu: array of TGtkItemFactoryEntry = (
   (path: '/Datei'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
 
-  (path: '/Datei/Neu'; accelerator: '<control>n'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Datei/Neu'; accelerator: '<control>n'; callback: nil; callback_action: 0; item_type: '<Item>'; extra_data: nil),
   (path: '/Datei/Speichern'; accelerator: 'F2'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
   (path: '/Datei/Speichern unter...'; accelerator: '<control>b'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
   (path: '/Datei/Öffnen'; accelerator: '<control>b'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Datei/sep'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Separator>'; extra_data: nil),
   (path: '/Datei/Beenden'; accelerator: '<control>q'; callback: @gtk_main_quit; callback_action: 0; item_type: nil; extra_data: nil),
 
   (path: '/Bearbeiten'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
@@ -31,7 +39,7 @@ var
   (path: '/Bearbeiten/Einfügen'; accelerator: '<shift>Insert'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
 
   (path: '/Hilfe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
-  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data: nil)
+  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data:  Pointer(cmNew))
 //  (path: '/Hilfe/About2...'; accelerator: 'F1'; callback: @menu_click_msg; callback_action: 0; item_type: nil; extra_data: nil)
   );
 
