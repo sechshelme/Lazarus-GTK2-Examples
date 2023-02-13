@@ -35,8 +35,9 @@ const
 
   function main(argc: integer; argv: PChar): integer;
   var
-    window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1: PGtkWidget;
+    window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1, toolbar: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
+    toolquit, toolNet, toolSave: PGtkToolItem;
   begin
     gtk_init(@argc, @argv);
 
@@ -63,6 +64,7 @@ const
     quitMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, accel_group);
 
     gtk_widget_add_accelerator(quitMi, 'activate', accel_group, gdk_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
+    g_signal_connect(G_OBJECT(quitMi), 'activate', G_CALLBACK(@gtk_main_quit), nil);
 
     gtk_menu_item_set_submenu(GTK_MENU_ITEM(fileMi), fileMenu);
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), newMi);
@@ -80,8 +82,27 @@ const
     gtk_menu_shell_append(GTK_MENU_SHELL(menubar), fileMi);
     gtk_box_pack_start(GTK_BOX(vbox), menubar, gFALSE, False, 0);
 
+    // --- Toolbar
+    toolbar := gtk_toolbar_new;
+
+    toolquit := gtk_tool_button_new_from_stock(GTK_STOCK_QUIT);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolquit, -1);
+    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
+
+    toolSave := gtk_tool_button_new_from_stock(GTK_STOCK_SAVE);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolSave, -1);
+    //    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
+
+
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), gtk_separator_tool_item_new, -1);
+
+    toolNet := gtk_tool_button_new_from_stock(GTK_STOCK_NETWORK);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolNet, -1);
+    //    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
+
+    gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
+
     g_signal_connect(G_OBJECT(window), 'destroy', G_CALLBACK(@gtk_main_quit), nil);
-    g_signal_connect(G_OBJECT(quitMi), 'activate', G_CALLBACK(@gtk_main_quit), nil);
 
     gtk_widget_show_all(window);
     gtk_main;

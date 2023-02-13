@@ -32,12 +32,26 @@ const
     end;
   end;
 
+  procedure redo_undo_click_msg(widget: PGtkWidget; Data: gpointer); cdecl;
+  begin
+    WriteLn(PtrUInt(Data));
+    if widget^.Name = 'undo' then begin
+      WriteLn('a');
+      gtk_widget_set_sensitive(widget, False);
+      gtk_widget_set_sensitive(Data, True);
+    end else begin
+      WriteLn('b');
+      gtk_widget_set_sensitive(widget, False);
+      gtk_widget_set_sensitive(Data, True);
+    end;
+  end;
+
 
   function main(argc: integer; argv: PChar): integer;
   var
     window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1, toolbar: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
-    toolquit: PGtkToolItem;
+    toolquit, toolNet, toolSave, toolUndo, toolRedo: PGtkToolItem;
   begin
     gtk_init(@argc, @argv);
 
@@ -87,20 +101,32 @@ const
 
     toolquit := gtk_tool_button_new_from_stock(GTK_STOCK_QUIT);
     gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolquit, -1);
-    gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
     g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
 
-    toolquit := gtk_tool_button_new_from_stock(GTK_STOCK_SAVE);
-    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolquit, -1);
-    gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
-    //    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
-
-    toolquit := gtk_tool_button_new_from_stock(GTK_STOCK_NETWORK);
-    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolquit, -1);
-    gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
+    toolSave := gtk_tool_button_new_from_stock(GTK_STOCK_SAVE);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolSave, -1);
     //    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
 
 
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), gtk_separator_tool_item_new, -1);
+
+    toolNet := gtk_tool_button_new_from_stock(GTK_STOCK_NETWORK);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolNet, -1);
+    //    g_signal_connect(G_OBJECT(toolquit), 'clicked', G_CALLBACK(@gtk_main_quit), nil);
+
+    // Redo / Undo
+    toolUndo := gtk_tool_button_new_from_stock(GTK_STOCK_UNDO);
+    gtk_widget_set_name(GTK_WIDGET(toolUndo), 'undo');
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolUndo, -1);
+
+    toolRedo := gtk_tool_button_new_from_stock(GTK_STOCK_REDO);
+    gtk_toolbar_insert(GTK_TOOLBAR(toolbar), toolRedo, -1);
+    WriteLn(PtrUInt(toolRedo));
+    WriteLn(PtrUInt(toolUndo));
+    g_signal_connect(G_OBJECT(toolRedo), 'clicked', G_CALLBACK(@redo_undo_click_msg), toolUndo);
+    g_signal_connect(G_OBJECT(toolUndo), 'clicked', G_CALLBACK(@redo_undo_click_msg), toolRedo);
+
+    gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
 
     g_signal_connect(G_OBJECT(window), 'destroy', G_CALLBACK(@gtk_main_quit), nil);
 
