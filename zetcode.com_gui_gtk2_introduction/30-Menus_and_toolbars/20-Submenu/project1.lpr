@@ -43,6 +43,7 @@ uses
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), imprMi);
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), sep);
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), quitMi);
+
     gtk_menu_shell_append(GTK_MENU_SHELL(menubar), fileMi);
     gtk_box_pack_start(GTK_BOX(vbox), menubar, gFALSE, False, 0);
 
