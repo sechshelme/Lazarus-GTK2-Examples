@@ -32,6 +32,19 @@ const
     end;
   end;
 
+    procedure toggle_statusbar(widget: PGtkWidget; statusbar: gpointer);
+  begin
+    if gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)) then begin
+      gtk_widget_show(statusbar);
+      WriteLn('show');
+    end else begin
+      gtk_widget_hide(statusbar);
+      WriteLn('hide');
+    end;
+  end;
+
+
+
   procedure show_popup(widget: PGtkWidget; event: PGdkEvent); cdecl;
   var
     bevent: PGdkEventButton;
@@ -49,7 +62,10 @@ const
 
   function main(argc: integer; argv: PChar): integer;
   var
-    window, menubar, fileMi, quitMi, pMenu, openMi, newMi, testMi0, testMi1, toolbar, ebox, hideMi, vbox, popMenu, maximizeMItem, minimizeMItem, restoreMItem: PGtkWidget;
+    window, menubar, fileMi, quitMi, openMi,  toolbar, event_box,  vbox, popMenu, maximizeMItem, minimizeMItem, restoreMItem,
+      fileMenu, PrintMi, fileSubMenu, SubMi0, SubMi1, SubMi2, SubMi,
+      optionMenu, tog_statusMi, optionMi, helpMenu, helpMi, aboutMi,
+      statusbar, label1, button1: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
     toolquit, toolNet, toolSave: PGtkToolItem;
   begin
@@ -60,53 +76,103 @@ const
     gtk_window_set_default_size(GTK_WINDOW(window), 300, 200);
     gtk_window_set_title(GTK_WINDOW(window), 'Popup menu');
 
+    event_box := gtk_event_box_new;
+    gtk_container_add(GTK_CONTAINER(window), event_box);
+
     vbox := gtk_vbox_new(False, 0);
-    gtk_container_add(GTK_CONTAINER(window), vbox);
+    gtk_container_add(GTK_CONTAINER(event_box), vbox);
+
+
+    // --- Status Bar
+    statusbar := gtk_statusbar_new;
+//    g_signal_connect(G_OBJECT(statusbar), 'expose-event', G_CALLBACK(@StatusBar_draw_event), NULL);
+//    g_signal_connect(G_OBJECT(statusbar), 'button-press-event', G_CALLBACK(@statusBar_click_msg), nil);
+    gtk_box_pack_end(GTK_BOX(vbox), statusbar, True, True, 0);
+
+    label1:=gtk_label_new('Dies ist die Status-Bar');
+    gtk_box_pack_start(GTK_BOX(statusbar),label1 , False, False, 0);
+
+    button1:=gtk_button_new_with_label('Button');
+    gtk_box_pack_start(GTK_BOX(statusbar),button1 , False, False, 0);
+
+
+    WriteLn('statusbar: ', PtrUInt(statusbar));
 
     // --- Menu
-
     menubar := gtk_menu_bar_new;
 
-    pMenu := gtk_menu_new;
-
-    accel_group := gtk_accel_group_new;
-    gtk_window_add_accel_group(GTK_WINDOW(window), accel_group);
-
-
-    fileMi := gtk_menu_item_new_with_mnemonic('_File');
+    // Datei Menü
+    fileMenu := gtk_menu_new;
+    fileMi := gtk_menu_item_new_with_mnemonic('_Datei');
     gtk_widget_set_tooltip_text(fileMi, 'Datei Menü');
-    gtk_menu_item_set_submenu(GTK_MENU_ITEM(fileMi), pMenu);
-
-    newMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_NEW, nil);
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), newMi);
-
-    openMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_OPEN, nil);
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), openMi);
-
-    testMi0 := gtk_menu_item_new_with_mnemonic('_Test');
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), testMi0);
-    g_signal_connect(G_OBJECT(testMi0), 'activate', G_CALLBACK(@menu_click_msg), Pointer(cmTest0));
-
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), gtk_separator_menu_item_new);
-
-    testMi1 := gtk_menu_item_new_with_mnemonic('_Test');
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), testMi1);
-    g_signal_connect(G_OBJECT(testMi1), 'activate', G_CALLBACK(@menu_click_msg), Pointer(cmTest1));
-
-    quitMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, accel_group);
-    gtk_widget_add_accelerator(quitMi, 'activate', accel_group, gdk_q, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
-    g_signal_connect(G_OBJECT(quitMi), 'activate', G_CALLBACK(@gtk_main_quit), nil);
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), quitMi);
-
-    hideMi := gtk_menu_item_new_with_label('Minimize');
-    g_signal_connect_swapped(G_OBJECT(hideMi), 'activate', G_CALLBACK(@gtk_window_iconify), GTK_WINDOW(window));
-    gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), hideMi);
-
     gtk_menu_shell_append(GTK_MENU_SHELL(menubar), fileMi);
-    gtk_box_pack_start(GTK_BOX(vbox), menubar, gFALSE, False, 0);
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(fileMi), fileMenu);
+
+    // > Datei Öffnen
+    OpenMi := gtk_menu_item_new_with_mnemonic('Datei _öffnen...');
+    //    OpenMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_OPEN, nil);
+    g_signal_connect(G_OBJECT(OpenMi), 'activate', G_CALLBACK(@menu_click_msg), PChar('Datei öffnen...'));
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), OpenMi);
+
+    // > Drucken
+    PrintMi := gtk_menu_item_new_with_mnemonic('_Drucken');
+    g_signal_connect(G_OBJECT(PrintMi), 'activate', G_CALLBACK(@menu_click_msg), nil);
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), PrintMi);
+
+    // > Sub Menu
+    fileSubMenu := gtk_menu_new;
+    SubMi := gtk_menu_item_new_with_mnemonic('_Sub');
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(SubMi), fileSubMenu);
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), SubMi);
+
+    // >> Sub0
+    SubMi0 := gtk_menu_item_new_with_mnemonic('Sub_0');
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileSubMenu), SubMi0);
+    g_signal_connect(G_OBJECT(SubMi0), 'activate', G_CALLBACK(@menu_click_msg), PChar('Sub 0...'));
+
+    // >> Sub1
+    SubMi1 := gtk_menu_item_new_with_mnemonic('Sub_1');
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileSubMenu), SubMi1);
+    g_signal_connect(G_OBJECT(SubMi1), 'activate', G_CALLBACK(@menu_click_msg), PChar('Sub 1...'));
+
+    // >> Sub2
+    SubMi2 := gtk_menu_item_new_with_mnemonic('Sub_2');
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileSubMenu), SubMi2);
+    g_signal_connect(G_OBJECT(SubMi2), 'activate', G_CALLBACK(@menu_click_msg), PChar('Sub 2...'));
+
+    // > Trenner
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), gtk_separator_menu_item_new);
+
+    // > Beenden
+    quitMi := gtk_menu_item_new_with_mnemonic('_Beenden');
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), quitMi);
+    g_signal_connect(G_OBJECT(quitMi), 'activate', G_CALLBACK(@gtk_main_quit), nil);
+
+    // Optionen
+    optionMenu := gtk_menu_new;
+    optionMi := gtk_menu_item_new_with_mnemonic('_Optionen');
+    gtk_menu_shell_append(GTK_MENU_SHELL(menubar), optionMi);
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(optionMi), optionMenu);
+
+    // > Status Bar
+    tog_statusMi := gtk_check_menu_item_new_with_label('Status-Bar');
+    g_signal_connect(G_OBJECT(tog_statusMi), 'activate', G_CALLBACK(@toggle_statusbar), statusbar);
+    gtk_menu_shell_append(GTK_MENU_SHELL(optionMenu), tog_statusMi);
+
+    // Hilfe
+    helpMenu := gtk_menu_new;
+    helpMi := gtk_menu_item_new_with_mnemonic('_Hilfe');
+    gtk_menu_shell_append(GTK_MENU_SHELL(menubar), helpMi);
+    gtk_menu_item_set_submenu(GTK_MENU_ITEM(helpMi), helpMenu);
+
+    // > About
+    aboutMi := gtk_menu_item_new_with_mnemonic('_About...');
+    gtk_menu_shell_append(GTK_MENU_SHELL(helpMenu), aboutMi);
+    g_signal_connect(G_OBJECT(aboutMi), 'activate', G_CALLBACK(@menu_click_msg), PChar('About...'));
+
+    gtk_box_pack_start(GTK_BOX(vbox), menubar, False, False, 0);
 
     // --- Toolbar
-
     toolbar := gtk_toolbar_new;
 
     toolquit := gtk_tool_button_new_from_stock(GTK_STOCK_QUIT);
@@ -127,26 +193,22 @@ const
 
     // --- Popup Menu
 
-    ebox := gtk_event_box_new;
-    gtk_container_add(GTK_CONTAINER(vbox), ebox);
-
     popMenu := gtk_menu_new;
-
-    maximizeMItem := gtk_menu_item_new_with_label('Maximize');
-    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), maximizeMItem);
-    g_signal_connect_swapped(G_OBJECT(maximizeMItem), 'activate', G_CALLBACK(@gtk_window_maximize), GTK_WINDOW(window));
 
     minimizeMItem := gtk_menu_item_new_with_label('Minimize');
     gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), minimizeMItem);
     g_signal_connect_swapped(G_OBJECT(minimizeMItem), 'activate', G_CALLBACK(@gtk_window_iconify), GTK_WINDOW(window));
+
+    maximizeMItem := gtk_menu_item_new_with_label('Maximize');
+    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), maximizeMItem);
+    g_signal_connect_swapped(G_OBJECT(maximizeMItem), 'activate', G_CALLBACK(@gtk_window_maximize), GTK_WINDOW(window));
 
     restoreMItem := gtk_menu_item_new_with_label('Wiederherstellen');
     gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), restoreMItem);
     g_signal_connect_swapped(G_OBJECT(restoreMItem), 'activate', G_CALLBACK(@gtk_window_unmaximize), GTK_WINDOW(window));
 
     gtk_widget_show_all(popMenu);
-    g_signal_connect_swapped(G_OBJECT(ebox), 'button-press-event', G_CALLBACK(@show_popup), popMenu);
-
+    g_signal_connect_swapped(G_OBJECT(event_box), 'button-press-event', G_CALLBACK(@show_popup), popMenu);
 
     // --- Globales
 
