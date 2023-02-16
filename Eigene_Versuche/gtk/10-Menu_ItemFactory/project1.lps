@@ -7,8 +7,8 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="98" Y="29"/>
+        <TopLine Value="15"/>
+        <CursorPos X="29" Y="26"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit>
@@ -87,21 +87,23 @@
       </Unit>
       <Unit>
         <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkitemfactory.inc"/>
-        <EditorIndex Value="-1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <TopLine Value="14"/>
         <CursorPos X="4" Y="14"/>
         <UsageCount Value="10"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/packages/gtk2/src/gtk+/gtk/gtkitemfactory.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="4" Y="14"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/packages/gtk2/src/gtk+/gtk/gtkmain.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="75"/>
         <CursorPos X="11" Y="87"/>
         <UsageCount Value="10"/>
@@ -109,25 +111,13 @@
       </Unit>
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/packages/gtk2/src/glib/gclosure.inc"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="4" Y="28"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="10" Column="146"/>
-      </Position>
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="45" Column="79"/>
-      </Position>
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="14" Column="118" TopLine="4"/>
-      </Position>
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="25" Column="118"/>
@@ -235,6 +225,18 @@
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="35" Column="3" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="42" Column="54"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="26" Column="29" TopLine="15"/>
+      </Position>
+      <Position>
+        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkitemfactory.inc"/>
+        <Caret Line="65" Column="36" TopLine="35"/>
       </Position>
     </JumpHistory>
     <RunParams>
