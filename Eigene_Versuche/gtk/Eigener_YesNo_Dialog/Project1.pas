@@ -27,7 +27,10 @@ uses
 
     // Label
     Label_Align := gtk_alignment_new(0.5, 0.5, 0, 0);
-    label1 := gtk_label_new('Ich bin ein YES/NO Dialog,' + LineEnding + 'Mit einem sehr langen Text !' + LineEnding + 'Bitte drücke Yes, No, Abbrechen oder Hilfe');
+    label1 := gtk_label_new(nil);
+
+    gtk_label_set_markup(GTK_LABEL(label1), '<span font="20" color="red"><b>Red</b></span>' + LineEnding + '<span font="16" color="orange"><b>green</b></span>' + LineEnding + '<span font="12" color="green"><b>Red</b></span>' + LineEnding +
+      LineEnding + '<b><i>Frage:</i></b>' + LineEnding + 'Ich bin ein YES/NO Dialog,' + LineEnding + 'Mit einem sehr langen Text !' + LineEnding + 'Bitte drücke Yes, No, Abbrechen oder Hilfe');
     gtk_container_add(GTK_CONTAINER(Label_Align), label1);
     gtk_container_add(GTK_CONTAINER(vbox), Label_Align);
 
