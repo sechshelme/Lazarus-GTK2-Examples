@@ -135,7 +135,7 @@ const
   var
     window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1, toolbar, table, btn: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
-    toolquit, toolNet, toolSave, tb: PGtkToolItem;
+    toolquit, toolNet, toolSave, ToolBtn: PGtkToolItem;
     i: integer;
   begin
     gtk_init(@argc, @argv);
@@ -207,8 +207,8 @@ const
     gtk_table_set_row_spacings(GTK_TABLE(table), 2);
     gtk_table_set_col_spacings(GTK_TABLE(table), 2);
     for i := 0 to Length(iconlist) - 1 do begin
-      tb := gtk_tool_button_new_from_stock(iconlist[i]);
-      gtk_table_attach_defaults(GTK_TABLE(table), PGtkWidget(tb), (i mod 16), (i mod 16) + 1, (i div 16), (i div 16) + 1);
+      ToolBtn := gtk_tool_button_new_from_stock(iconlist[i]);
+      gtk_table_attach_defaults(GTK_TABLE(table), GTK_WIDGET(ToolBtn), (i mod 16), (i mod 16) + 1, (i div 16), (i div 16) + 1);
     end;
 
     gtk_box_pack_start(GTK_BOX(vbox), table, False, False, 0);

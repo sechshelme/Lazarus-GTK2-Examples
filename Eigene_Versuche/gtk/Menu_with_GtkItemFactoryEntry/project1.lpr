@@ -22,6 +22,11 @@ const
       end;
     end;
 
+    procedure test_proc; cdecl;
+    begin
+      WriteLn('menu click xxx');
+    end;
+
 var
   mein_menu: array of TGtkItemFactoryEntry = (
   (path: '/Datei'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
@@ -39,7 +44,8 @@ var
   (path: '/Bearbeiten/Einfügen'; accelerator: '<shift>Insert'; callback: nil; callback_action: 0; item_type: nil; extra_data: nil),
 
   (path: '/Hilfe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
-  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data:  Pointer(cmNew))
+  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: @test_proc; callback_action: 0; item_type: nil; extra_data:  nil)
+//  (path: '/Hilfe/About...'; accelerator: 'F1'; callback: TGtkItemFactoryCallback(@menu_click_msg); callback_action: 0; item_type: nil; extra_data:  Pointer(cmNew))
 //  (path: '/Hilfe/About2...'; accelerator: 'F1'; callback: @menu_click_msg; callback_action: 0; item_type: nil; extra_data: nil)
   );
 
