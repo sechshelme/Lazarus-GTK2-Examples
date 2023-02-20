@@ -36,6 +36,8 @@ uses
     btn1 := gtk_button_new_with_label('Button1');
     gtk_fixed_put(GTK_FIXED(fixed), btn1, 150, 50);
     gtk_widget_set_size_request(btn1, 75, 25);
+    gtk_widget_modify_bg(btn1, GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_fg(btn1, GTK_STATE_PRELIGHT, @col);
     gtk_signal_connect(PGtkObject(btn1), 'clicked', G_CALLBACK(@press), Pointer(1));
 
     btn2 := gtk_button_new_with_label('Button2');
