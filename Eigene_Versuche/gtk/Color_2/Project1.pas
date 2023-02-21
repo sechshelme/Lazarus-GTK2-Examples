@@ -6,15 +6,14 @@ uses
   Gtk2;
 
 var
-  col: TGdkColor=(pixel:0;red:27000;green:30000;blue:35000);
+  col: TGdkColor = (pixel: 0; red: 27000; green: 30000; blue: 35000);
 
-procedure enter_callback(widget: PGtkWidget; Data: gpointer); cdecl;
-begin
-  WriteLn('enter');
-  gtk_widget_modify_bg(widget,GTK_STATE_PRELIGHT, @col);
+  procedure enter_callback(widget: PGtkWidget; Data: gpointer); cdecl;
+  begin
+    WriteLn('enter');
+    gtk_widget_modify_bg(widget, GTK_STATE_PRELIGHT, @col);
 
-
-end;
+  end;
 
   procedure configute_callback(widget: PGtkWidget; event: PGdkEvent; Data: gpointer); cdecl;
   var
@@ -38,7 +37,7 @@ end;
 
   procedure main;
   var
-    window, halign, btn: PGtkWidget;
+    window, vbox, btn, draw: PGtkWidget;
   begin
     GTK_Init(@argc, @argv);
 
@@ -48,13 +47,23 @@ end;
     gtk_container_set_border_width(GTK_CONTAINER(Window), 15);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
-    halign := gtk_alignment_new(0, 0, 0, 0);
+    vbox := gtk_vbox_new(False, 0);
 
     btn := gtk_button_new_with_label('Button 1');
     g_signal_connect(G_OBJECT(btn), 'enter', G_CALLBACK(@enter_callback), nil);
 
-    gtk_container_add(GTK_CONTAINER(halign), btn);
-    gtk_container_add(GTK_CONTAINER(Window), halign);
+    gtk_container_add(GTK_CONTAINER(vbox), btn);
+    gtk_container_add(GTK_CONTAINER(Window), vbox);
+
+    draw := gtk_drawing_area_new;
+    gdk_color_parse('#0000FF', @col);
+    gtk_widget_modify_bg(draw, GTK_STATE_NORMAL, @col);
+    gtk_container_add(GTK_CONTAINER(vbox), draw);
+
+    draw := gtk_drawing_area_new;
+    gdk_color_parse('#00FFFF', @col);
+    gtk_widget_modify_bg(draw, GTK_STATE_NORMAL, @col);
+    gtk_container_add(GTK_CONTAINER(vbox), draw);
 
 
     g_signal_connect(G_OBJECT(window), 'configure-event', G_CALLBACK(@configute_callback), nil);
@@ -62,17 +71,9 @@ end;
 
     gtk_widget_show_all(window);
 
-    gdk_color_parse('#0000FF',@col);
+    gdk_color_parse('#FF00FF', @col);
 
-    gtk_widget_modify_bg(btn,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(btn,GTK_STATE_PRELIGHT, @col);
-
-    gtk_widget_modify_bg(halign,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(halign,GTK_STATE_PRELIGHT, @col);
-
-    gtk_widget_modify_bg(window,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(window,GTK_STATE_PRELIGHT, @col);
-
+    gtk_widget_modify_bg(window, GTK_STATE_NORMAL, @col);
 
     GTK_Main;
   end;
