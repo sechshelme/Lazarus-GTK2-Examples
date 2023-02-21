@@ -5,6 +5,13 @@ uses
   Gdk2,
   Gtk2;
 
+procedure enter_callback(widget: PGtkWidget; Data: gpointer); cdecl;
+begin
+  WriteLn('enter');
+
+
+end;
+
   procedure configute_callback(widget: PGtkWidget; event: PGdkEvent; Data: gpointer); cdecl;
   var
     buf: PGString;
@@ -32,7 +39,7 @@ uses
     GTK_Init(@argc, @argv);
 
     Window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(Window), 'Hallo');
+    gtk_window_set_title(GTK_WINDOW(Window), 'Enter signal');
     gtk_window_set_default_size(GTK_WINDOW(Window), 500, 500);
     gtk_container_set_border_width(GTK_CONTAINER(Window), 15);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
@@ -40,6 +47,7 @@ uses
     halign := gtk_alignment_new(0, 0, 0, 0);
 
     btn := gtk_button_new_with_label('Button 1');
+    g_signal_connect(G_OBJECT(btn), 'enter', G_CALLBACK(@enter_callback), nil);
 
     gtk_container_add(GTK_CONTAINER(halign), btn);
     gtk_container_add(GTK_CONTAINER(Window), halign);

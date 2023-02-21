@@ -45,16 +45,18 @@ const
 
 
 
-  procedure show_popup(widget: PGtkWidget; event: PGdkEvent); cdecl;
+  procedure show_popup(widget: PGtkWidget; event: PGdkEvent; popMenu:gpointer);
   var
     bevent: PGdkEventButton;
   begin
+    WriteLn('show ev: ', PtrUInt(event));
+    WriteLn('data   : ', PtrUInt(popMenu));
     WriteLn('click');
     if event^._type = GDK_BUTTON_PRESS then begin
       bevent := PGdkEventButton(event);
       if bevent^.button = 3 then begin
-        WriteLn(PtrUInt(widget));
-        gtk_menu_popup(GTK_MENU(widget), nil, nil, nil, nil, bevent^.button, bevent^.time);
+        WriteLn('widget: ', PtrUInt(widget));
+        gtk_menu_popup(GTK_MENU(popMenu), nil, nil, nil, nil, bevent^.button, bevent^.time);
       end;
     end;
   end;
@@ -62,10 +64,10 @@ const
 
   function main(argc: integer; argv: PChar): integer;
   var
-    window, menubar, fileMi, quitMi, openMi,  toolbar, event_box,  vbox, popMenu, maximizeMItem, minimizeMItem, restoreMItem,
+    window, menubar, fileMi, quitMi, openMi,  toolbar, event_box,  vbox, popMenu, popMIMmaximize, popMIMinimize, popMIRestore,
       fileMenu, PrintMi, fileSubMenu, SubMi0, SubMi1, SubMi2, SubMi,
       optionMenu, tog_statusMi, optionMi, helpMenu, helpMi, aboutMi,
-      statusbar, label1, button1: PGtkWidget;
+      statusbar, label1, button1, popMIQuit: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
     toolquit, toolNet, toolSave: PGtkToolItem;
   begin
@@ -87,16 +89,15 @@ const
     statusbar := gtk_statusbar_new;
 //    g_signal_connect(G_OBJECT(statusbar), 'expose-event', G_CALLBACK(@StatusBar_draw_event), NULL);
 //    g_signal_connect(G_OBJECT(statusbar), 'button-press-event', G_CALLBACK(@statusBar_click_msg), nil);
-    gtk_box_pack_end(GTK_BOX(vbox), statusbar, True, True, 0);
+    gtk_box_pack_end(GTK_BOX(vbox), statusbar, False, False, 0);
 
     label1:=gtk_label_new('Dies ist die Status-Bar');
     gtk_box_pack_start(GTK_BOX(statusbar),label1 , False, False, 0);
 
     button1:=gtk_button_new_with_label('Button');
     gtk_box_pack_start(GTK_BOX(statusbar),button1 , False, False, 0);
-
-
-    WriteLn('statusbar: ', PtrUInt(statusbar));
+    button1:=gtk_button_new_with_label('Button');
+    gtk_box_pack_start(GTK_BOX(statusbar),button1 , False, False, 0);
 
     // --- Menu
     menubar := gtk_menu_bar_new;
@@ -109,8 +110,8 @@ const
     gtk_menu_item_set_submenu(GTK_MENU_ITEM(fileMi), fileMenu);
 
     // > Datei Öffnen
-    OpenMi := gtk_menu_item_new_with_mnemonic('Datei _öffnen...');
-    //    OpenMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_OPEN, nil);
+//    OpenMi := gtk_menu_item_new_with_mnemonic('Datei _öffnen...');
+        OpenMi := gtk_image_menu_item_new_from_stock(GTK_STOCK_OPEN, nil);
     g_signal_connect(G_OBJECT(OpenMi), 'activate', G_CALLBACK(@menu_click_msg), PChar('Datei öffnen...'));
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), OpenMi);
 
@@ -144,7 +145,7 @@ const
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), gtk_separator_menu_item_new);
 
     // > Beenden
-    quitMi := gtk_menu_item_new_with_mnemonic('_Beenden');
+    quitMi :=   gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, nil);
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), quitMi);
     g_signal_connect(G_OBJECT(quitMi), 'activate', G_CALLBACK(@gtk_main_quit), nil);
 
@@ -195,20 +196,28 @@ const
 
     popMenu := gtk_menu_new;
 
-    minimizeMItem := gtk_menu_item_new_with_label('Minimize');
-    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), minimizeMItem);
-    g_signal_connect_swapped(G_OBJECT(minimizeMItem), 'activate', G_CALLBACK(@gtk_window_iconify), GTK_WINDOW(window));
+    popMIMinimize := gtk_menu_item_new_with_label('Minimize');
+    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), popMIMinimize);
+    g_signal_connect_swapped(G_OBJECT(popMIMinimize), 'activate', G_CALLBACK(@gtk_window_iconify), GTK_WINDOW(window));
 
-    maximizeMItem := gtk_menu_item_new_with_label('Maximize');
-    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), maximizeMItem);
-    g_signal_connect_swapped(G_OBJECT(maximizeMItem), 'activate', G_CALLBACK(@gtk_window_maximize), GTK_WINDOW(window));
+    popMIMmaximize := gtk_menu_item_new_with_label('Maximize');
+    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), popMIMmaximize);
+    g_signal_connect_swapped(G_OBJECT(popMIMmaximize), 'activate', G_CALLBACK(@gtk_window_maximize), GTK_WINDOW(window));
 
-    restoreMItem := gtk_menu_item_new_with_label('Wiederherstellen');
-    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), restoreMItem);
-    g_signal_connect_swapped(G_OBJECT(restoreMItem), 'activate', G_CALLBACK(@gtk_window_unmaximize), GTK_WINDOW(window));
+    popMIRestore := gtk_menu_item_new_with_label('Wiederherstellen');
+    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), popMIRestore);
+    g_signal_connect_swapped(G_OBJECT(popMIRestore), 'activate', G_CALLBACK(@gtk_window_unmaximize), GTK_WINDOW(window));
+
+    popMIQuit := gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT,nil);
+    gtk_menu_shell_append(GTK_MENU_SHELL(popMenu), popMIQuit);
+//   g_signal_connect_swapped(G_OBJECT(popMIQuit), 'activate', G_CALLBACK(@gtk_main_quit), GTK_WINDOW(window));
+ //   g_signal_connect( GTK_WINDOW(window), 'activate', G_CALLBACK(@gtk_main_quit),G_OBJECT(popMIQuit));
+    g_signal_connect_swapped(G_OBJECT(popMIQuit), 'activate', G_CALLBACK(@gtk_main_quit), nil);
 
     gtk_widget_show_all(popMenu);
-    g_signal_connect_swapped(G_OBJECT(event_box), 'button-press-event', G_CALLBACK(@show_popup), popMenu);
+    WriteLn('init pop: ', PtrUInt(popMenu));
+    WriteLn('init box: ', PtrUInt(event_box));
+    g_signal_connect(G_OBJECT(event_box), 'button-press-event', G_CALLBACK(@show_popup), popMenu);
 
     // --- Globales
 
