@@ -34,7 +34,7 @@
 
 #include <gtk/gtkentry.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SEARCH_ENTRY                 (gtk_search_entry_get_type ())
 #define GTK_SEARCH_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEARCH_ENTRY, GtkSearchEntry))
@@ -42,16 +42,16 @@
 
 typedef struct _GtkSearchEntry       GtkSearchEntry;
 
+/* Zeile entfernt */
+GType           gtk_search_entry_get_type       (void) ;
 
-GType           gtk_search_entry_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget*      gtk_search_entry_new            (void);
 
-
+/* Zeile entfernt */
 void            gtk_search_entry_set_key_capture_widget (GtkSearchEntry *entry,
                                                          GtkWidget      *widget);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_search_entry_get_key_capture_widget (GtkSearchEntry *entry);
 
 GDK_AVAILABLE_IN_4_8
@@ -60,6 +60,6 @@ void gtk_search_entry_set_search_delay (GtkSearchEntry *entry,
 GDK_AVAILABLE_IN_4_8
 guint gtk_search_entry_get_search_delay (GtkSearchEntry *entry);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SEARCH_ENTRY_H__ */

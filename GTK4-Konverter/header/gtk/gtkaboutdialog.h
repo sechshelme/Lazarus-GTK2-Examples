@@ -29,7 +29,7 @@
 
 #include <gtk/gtkwindow.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ABOUT_DIALOG            (gtk_about_dialog_get_type ())
 #define GTK_ABOUT_DIALOG(object)         (G_TYPE_CHECK_INSTANCE_CAST ((object), GTK_TYPE_ABOUT_DIALOG, GtkAboutDialog))
@@ -92,104 +92,104 @@ typedef enum {
 } GtkLicense;
 
 
-
-GType                  gtk_about_dialog_get_type               (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                  gtk_about_dialog_get_type               (void) ;
+/* Zeile entfernt */
 GtkWidget             *gtk_about_dialog_new                    (void);
-
+/* Zeile entfernt */
 void                   gtk_show_about_dialog                   (GtkWindow       *parent,
                                                                 const char      *first_property_name,
-                                                                ...) G_GNUC_NULL_TERMINATED;
-
+                                                                ...) ;
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_program_name       (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_program_name       (GtkAboutDialog  *about,
                                                                 const char      *name);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_version            (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_version            (GtkAboutDialog  *about,
                                                                 const char      *version);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_copyright          (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_copyright          (GtkAboutDialog  *about,
                                                                 const char      *copyright);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_comments           (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_comments           (GtkAboutDialog  *about,
                                                                 const char      *comments);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_license            (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_license            (GtkAboutDialog  *about,
                                                                 const char      *license);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_license_type       (GtkAboutDialog  *about,
                                                                 GtkLicense       license_type);
-
+/* Zeile entfernt */
 GtkLicense             gtk_about_dialog_get_license_type       (GtkAboutDialog  *about);
 
-
+/* Zeile entfernt */
 gboolean               gtk_about_dialog_get_wrap_license       (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_wrap_license       (GtkAboutDialog  *about,
                                                                 gboolean         wrap_license);
 
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_system_information (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_system_information (GtkAboutDialog  *about,
                                                                 const char      *system_information);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_website            (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_website            (GtkAboutDialog  *about,
                                                                 const char      *website);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_website_label      (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_website_label      (GtkAboutDialog  *about,
                                                                 const char      *website_label);
-
+/* Zeile entfernt */
 const char * const *   gtk_about_dialog_get_authors            (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_authors            (GtkAboutDialog  *about,
                                                                 const char     **authors);
-
+/* Zeile entfernt */
 const char * const *   gtk_about_dialog_get_documenters        (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_documenters        (GtkAboutDialog  *about,
                                                                 const char     **documenters);
-
+/* Zeile entfernt */
 const char * const *   gtk_about_dialog_get_artists            (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_artists            (GtkAboutDialog  *about,
                                                                 const char     **artists);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_translator_credits (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_translator_credits (GtkAboutDialog  *about,
                                                                 const char      *translator_credits);
-
+/* Zeile entfernt */
 GdkPaintable          *gtk_about_dialog_get_logo               (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_logo               (GtkAboutDialog  *about,
                                                                 GdkPaintable    *logo);
-
+/* Zeile entfernt */
 const char *          gtk_about_dialog_get_logo_icon_name     (GtkAboutDialog  *about);
-
+/* Zeile entfernt */
 void                   gtk_about_dialog_set_logo_icon_name     (GtkAboutDialog  *about,
                                                                 const char      *icon_name);
-
+/* Zeile entfernt */
 void                  gtk_about_dialog_add_credit_section      (GtkAboutDialog  *about,
                                                                 const char      *section_name,
                                                                 const char     **people);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkAboutDialog, g_object_unref)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ABOUT_DIALOG_H__ */
 

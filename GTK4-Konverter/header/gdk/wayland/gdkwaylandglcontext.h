@@ -28,7 +28,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_WAYLAND_GL_CONTEXT		(gdk_wayland_gl_context_get_type ())
 #define GDK_WAYLAND_GL_CONTEXT(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_WAYLAND_GL_CONTEXT, GdkWaylandGLContext))
@@ -37,9 +37,9 @@
 typedef struct _GdkWaylandGLContext		GdkWaylandGLContext;
 typedef struct _GdkWaylandGLContextClass	GdkWaylandGLContextClass;
 
+/* Zeile entfernt */
+GType gdk_wayland_gl_context_get_type (void) ;
 
-GType gdk_wayland_gl_context_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif /* __GDK_WAYLAND_GL_CONTEXT_H__ */

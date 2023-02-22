@@ -1,10 +1,10 @@
 
-    Type
-    PGdkDisplay  = ^GdkDisplay;
-    PGdkGLContext  = ^GdkGLContext;
-    PGdkSurface  = ^GdkSurface;
-    PGError  = ^GError;
-    Plongint  = ^longint;
+  Type
+  PGdkDisplay  = ^GdkDisplay;
+  PGdkGLContext  = ^GdkGLContext;
+  PGdkSurface  = ^GdkSurface;
+  PGError  = ^GError;
+  Plongint  = ^longint;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -36,6 +36,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
   {*
    * GdkGLAPI:
    * @GDK_GL_API_GL: The OpenGL API
@@ -67,71 +68,81 @@
   { was #define dname def_expr }
   function GDK_GL_ERROR : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gdk_gl_error_quark:GQuark;
 
-(* error 
-GType gdk_gl_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_gl_context_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_gl_context_get_display(context:PGdkGLContext):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_gl_context_get_surface(context:PGdkGLContext):^GdkSurface;
 
 (* error 
 GdkGLContext *          gdk_gl_context_get_shared_context       (GdkGLContext  *context);
  in declarator_list *)
+  { Zeile entfernt  }
   procedure gdk_gl_context_get_version(context:PGdkGLContext; major:Plongint; minor:Plongint);
 
+  { Zeile entfernt  }
   function gdk_gl_context_is_legacy(context:PGdkGLContext):gboolean;
 
-(* error 
-gboolean                gdk_gl_context_is_shared                (GdkGLContext  *self,
-(* error 
-                                                                 GdkGLContext  *other);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_gl_context_is_shared(self:PGdkGLContext; other:PGdkGLContext):gboolean;
+
+  { Zeile entfernt  }
   procedure gdk_gl_context_set_required_version(context:PGdkGLContext; major:longint; minor:longint);
 
+  { Zeile entfernt  }
   procedure gdk_gl_context_get_required_version(context:PGdkGLContext; major:Plongint; minor:Plongint);
 
+  { Zeile entfernt  }
   procedure gdk_gl_context_set_debug_enabled(context:PGdkGLContext; enabled:gboolean);
 
+  { Zeile entfernt  }
   function gdk_gl_context_get_debug_enabled(context:PGdkGLContext):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_gl_context_set_forward_compatible(context:PGdkGLContext; compatible:gboolean);
 
+  { Zeile entfernt  }
   function gdk_gl_context_get_forward_compatible(context:PGdkGLContext):gboolean;
 
-(* error 
-void                    gdk_gl_context_set_allowed_apis         (GdkGLContext  *self,
-in declaration at line 95 *)
-(* error 
-GdkGLAPI                gdk_gl_context_get_allowed_apis         (GdkGLContext  *self);
- in declarator_list *)
-(* error 
-GdkGLAPI                gdk_gl_context_get_api                  (GdkGLContext  *self);
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gdk_gl_context_set_allowed_apis(self:PGdkGLContext; apis:GdkGLAPI);
+
+  { Zeile entfernt  }
+  function gdk_gl_context_get_allowed_apis(self:PGdkGLContext):GdkGLAPI;
+
+  { Zeile entfernt  }
+  function gdk_gl_context_get_api(self:PGdkGLContext):GdkGLAPI;
+
 (* error 
 void                    gdk_gl_context_set_use_es               (GdkGLContext  *context,
 (* error 
                                                                  int            use_es);
  in declarator_list *)
  in declarator_list *)
-    function gdk_gl_context_get_use_es(context:PGdkGLContext):gboolean;
+  { Zeile entfernt  }
+  function gdk_gl_context_get_use_es(context:PGdkGLContext):gboolean;
 
-    function gdk_gl_context_realize(context:PGdkGLContext; error:PPGError):gboolean;
+  { Zeile entfernt  }
+  function gdk_gl_context_realize(context:PGdkGLContext; error:PPGError):gboolean;
 
-    procedure gdk_gl_context_make_current(context:PGdkGLContext);
+  { Zeile entfernt  }
+  procedure gdk_gl_context_make_current(context:PGdkGLContext);
 
-    function gdk_gl_context_get_current:^GdkGLContext;
+  { Zeile entfernt  }
+  function gdk_gl_context_get_current:^GdkGLContext;
 
-    procedure gdk_gl_context_clear_current;
+  { Zeile entfernt  }
+  procedure gdk_gl_context_clear_current;
 
+  { Zeile entfernt  }
 {$endif}
-    { __GDK_GL_CONTEXT_H__  }
+  { __GDK_GL_CONTEXT_H__  }
   { was #define dname def_expr }
   function GDK_TYPE_GL_CONTEXT : longint; { return type might be wrong }
     begin
@@ -164,6 +175,10 @@ void                    gdk_gl_context_set_use_es               (GdkGLContext  *
   begin
     { You must implement this function }
   end;
+  function gdk_gl_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_gl_context_get_display(context:PGdkGLContext):PGdkDisplay;
   begin
     { You must implement this function }
@@ -177,6 +192,10 @@ void                    gdk_gl_context_set_use_es               (GdkGLContext  *
     { You must implement this function }
   end;
   function gdk_gl_context_is_legacy(context:PGdkGLContext):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_is_shared(self:PGdkGLContext; other:PGdkGLContext):gboolean;
   begin
     { You must implement this function }
   end;
@@ -204,24 +223,36 @@ void                    gdk_gl_context_set_use_es               (GdkGLContext  *
   begin
     { You must implement this function }
   end;
-    function gdk_gl_context_get_use_es(context:PGdkGLContext):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gdk_gl_context_realize(context:PGdkGLContext; error:PPGError):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    procedure gdk_gl_context_make_current(context:PGdkGLContext);
-    begin
-      { You must implement this function }
-    end;
-    function gdk_gl_context_get_current:PGdkGLContext;
-    begin
-      { You must implement this function }
-    end;
-    procedure gdk_gl_context_clear_current;
-    begin
-      { You must implement this function }
-    end;
+  procedure gdk_gl_context_set_allowed_apis(self:PGdkGLContext; apis:GdkGLAPI);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_get_allowed_apis(self:PGdkGLContext):GdkGLAPI;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_get_api(self:PGdkGLContext):GdkGLAPI;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_get_use_es(context:PGdkGLContext):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_realize(context:PGdkGLContext; error:PPGError):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_gl_context_make_current(context:PGdkGLContext);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_gl_context_get_current:PGdkGLContext;
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_gl_context_clear_current;
+  begin
+    { You must implement this function }
+  end;
 

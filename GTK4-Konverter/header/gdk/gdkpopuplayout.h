@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GdkAnchorHints:
@@ -74,72 +74,72 @@ typedef struct _GdkPopupLayout GdkPopupLayout;
 
 #define GDK_TYPE_POPUP_LAYOUT (gdk_popup_layout_get_type ())
 
-
+/* Zeile entfernt */
 GType                   gdk_popup_layout_get_type               (void);
 
-
+/* Zeile entfernt */
 GdkPopupLayout *        gdk_popup_layout_new                    (const GdkRectangle     *anchor_rect,
                                                                  GdkGravity              rect_anchor,
                                                                  GdkGravity              surface_anchor);
 
-
+/* Zeile entfernt */
 GdkPopupLayout *        gdk_popup_layout_ref                    (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_unref                  (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 GdkPopupLayout *        gdk_popup_layout_copy                   (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 gboolean                gdk_popup_layout_equal                  (GdkPopupLayout         *layout,
                                                                  GdkPopupLayout         *other);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_anchor_rect        (GdkPopupLayout         *layout,
                                                                  const GdkRectangle     *anchor_rect);
 
-
+/* Zeile entfernt */
 const GdkRectangle *    gdk_popup_layout_get_anchor_rect        (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_rect_anchor        (GdkPopupLayout         *layout,
                                                                  GdkGravity              anchor);
 
-
+/* Zeile entfernt */
 GdkGravity              gdk_popup_layout_get_rect_anchor        (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_surface_anchor     (GdkPopupLayout         *layout,
                                                                  GdkGravity              anchor);
 
-
+/* Zeile entfernt */
 GdkGravity              gdk_popup_layout_get_surface_anchor     (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_anchor_hints       (GdkPopupLayout         *layout,
                                                                  GdkAnchorHints          anchor_hints);
 
-
+/* Zeile entfernt */
 GdkAnchorHints          gdk_popup_layout_get_anchor_hints       (GdkPopupLayout         *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_offset             (GdkPopupLayout         *layout,
                                                                  int                     dx,
                                                                  int                     dy);
 
-
+/* Zeile entfernt */
 void                    gdk_popup_layout_get_offset             (GdkPopupLayout         *layout,
                                                                  int                    *dx,
                                                                  int                    *dy);
 
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 void                    gdk_popup_layout_set_shadow_width       (GdkPopupLayout     *layout,
                                                                  int                 left,
                                                                  int                 right,
                                                                  int                 top,
                                                                  int                 bottom);
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 void                    gdk_popup_layout_get_shadow_width       (GdkPopupLayout     *layout,
                                                                  int                *left,
                                                                  int                *right,
@@ -147,6 +147,6 @@ void                    gdk_popup_layout_get_shadow_width       (GdkPopupLayout 
                                                                  int                *bottom);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_POPUP_LAYOUT_H__ */

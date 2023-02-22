@@ -32,15 +32,13 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MAP_LIST_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkMapListModelMapFunc:
    * @item: (type GObject) (transfer full): The item to map
@@ -54,20 +52,27 @@ G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, 
    *
    * Returns: (type GObject) (transfer full): The item to map to
     }
-(* error 
-typedef gpointer (* GtkMapListModelMapFunc) (gpointer item, gpointer user_data);
- in declarator_list *)
- in declarator_list *)
+
+  type
+
+    GtkMapListModelMapFunc = function (item:gpointer; user_data:gpointer):gpointer;cdecl;
+  { Zeile entfernt  }
+
   function gtk_map_list_model_new(model:PGListModel; map_func:GtkMapListModelMapFunc; user_data:gpointer; user_destroy:GDestroyNotify):^GtkMapListModel;
 
+  { Zeile entfernt  }
   procedure gtk_map_list_model_set_map_func(self:PGtkMapListModel; map_func:GtkMapListModelMapFunc; user_data:gpointer; user_destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_map_list_model_set_model(self:PGtkMapListModel; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_map_list_model_get_model(self:PGtkMapListModel):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_map_list_model_has_map(self:PGtkMapListModel):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MAP_LIST_MODEL_H__  }
   { was #define dname def_expr }

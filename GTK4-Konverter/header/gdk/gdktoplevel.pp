@@ -5,6 +5,7 @@
   PGdkEvent  = ^GdkEvent;
   PGdkSurface  = ^GdkSurface;
   PGdkToplevel  = ^GdkToplevel;
+  PGdkToplevelLayout  = ^GdkToplevelLayout;
   PGList  = ^GList;
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -37,6 +38,7 @@
 {$include <gdk/gdkseat.h>}
 {$include <gdk/gdksurface.h>}
 {$include <gdk/gdktoplevellayout.h>}
+  { Zeile entfernt  }
   {*
    * GdkSurfaceEdge:
    * @GDK_SURFACE_EDGE_NORTH_WEST: the top left corner.
@@ -124,59 +126,70 @@
   { was #define dname def_expr }
   function GDK_TYPE_TOPLEVEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GdkToplevel, gdk_toplevel, GDK, TOPLEVEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GdkToplevel, gdk_toplevel, GDK, TOPLEVEL, GObject)
-(* error 
-                                                 GdkToplevelLayout *layout);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gdk_toplevel_present(toplevel:PGdkToplevel; layout:PGdkToplevelLayout);
+
+  { Zeile entfernt  }
   function gdk_toplevel_minimize(toplevel:PGdkToplevel):gboolean;
 
+  { Zeile entfernt  }
   function gdk_toplevel_lower(toplevel:PGdkToplevel):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_focus(toplevel:PGdkToplevel; timestamp:guint32);
 
+  { Zeile entfernt  }
   function gdk_toplevel_get_state(toplevel:PGdkToplevel):GdkToplevelState;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_toplevel_set_title(toplevel:PGdkToplevel; title:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_toplevel_set_startup_id(toplevel:PGdkToplevel; startup_id:Pchar);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_set_transient_for(toplevel:PGdkToplevel; parent:PGdkSurface);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_set_modal(toplevel:PGdkToplevel; modal:gboolean);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_set_icon_list(toplevel:PGdkToplevel; surfaces:PGList);
 
+  { Zeile entfernt  }
   function gdk_toplevel_show_window_menu(toplevel:PGdkToplevel; event:PGdkEvent):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_set_decorated(toplevel:PGdkToplevel; decorated:gboolean);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_set_deletable(toplevel:PGdkToplevel; deletable:gboolean);
 
+  { Zeile entfernt  }
   function gdk_toplevel_supports_edge_constraints(toplevel:PGdkToplevel):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_inhibit_system_shortcuts(toplevel:PGdkToplevel; event:PGdkEvent);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_restore_system_shortcuts(toplevel:PGdkToplevel);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_begin_resize(toplevel:PGdkToplevel; edge:GdkSurfaceEdge; device:PGdkDevice; button:longint; x:double; 
               y:double; timestamp:guint32);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_begin_move(toplevel:PGdkToplevel; device:PGdkDevice; button:longint; x:double; y:double; 
               timestamp:guint32);
 
-(* error 
-gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplevel,
-(* error 
-                                                      GdkTitlebarGesture  gesture);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_toplevel_titlebar_gesture(toplevel:PGdkToplevel; gesture:GdkTitlebarGesture):gboolean;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_TOPLEVEL_H__  }
   { was #define dname def_expr }
@@ -185,6 +198,10 @@ gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplev
       GDK_TYPE_TOPLEVEL:=gdk_toplevel_get_type;
     end;
 
+  procedure gdk_toplevel_present(toplevel:PGdkToplevel; layout:PGdkToplevelLayout);
+  begin
+    { You must implement this function }
+  end;
   function gdk_toplevel_minimize(toplevel:PGdkToplevel):gboolean;
   begin
     { You must implement this function }
@@ -252,6 +269,10 @@ gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplev
   end;
   procedure gdk_toplevel_begin_move(toplevel:PGdkToplevel; device:PGdkDevice; button:longint; x:double; y:double; 
               timestamp:guint32);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_toplevel_titlebar_gesture(toplevel:PGdkToplevel; gesture:GdkTitlebarGesture):gboolean;
   begin
     { You must implement this function }
   end;

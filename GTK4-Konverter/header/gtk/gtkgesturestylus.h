@@ -25,7 +25,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_STYLUS         (gtk_gesture_stylus_get_type ())
 #define GTK_GESTURE_STYLUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_STYLUS, GtkGestureStylus))
@@ -37,27 +37,27 @@
 typedef struct _GtkGestureStylus GtkGestureStylus;
 typedef struct _GtkGestureStylusClass GtkGestureStylusClass;
 
+/* Zeile entfernt */
+GType             gtk_gesture_stylus_get_type (void) ;
 
-GType             gtk_gesture_stylus_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture *      gtk_gesture_stylus_new      (void);
 
-
+/* Zeile entfernt */
 gboolean          gtk_gesture_stylus_get_axis (GtkGestureStylus *gesture,
 					       GdkAxisUse        axis,
 					       double           *value);
-
+/* Zeile entfernt */
 gboolean          gtk_gesture_stylus_get_axes (GtkGestureStylus  *gesture,
 					       GdkAxisUse         axes[],
 					       double           **values);
-
+/* Zeile entfernt */
 gboolean          gtk_gesture_stylus_get_backlog (GtkGestureStylus  *gesture,
 						  GdkTimeCoord     **backlog,
 						  guint             *n_elems);
-
+/* Zeile entfernt */
 GdkDeviceTool *   gtk_gesture_stylus_get_device_tool (GtkGestureStylus *gesture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_STYLUS_H__ */

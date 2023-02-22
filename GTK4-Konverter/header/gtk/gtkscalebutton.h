@@ -40,7 +40,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SCALE_BUTTON                 (gtk_scale_button_get_type ())
 #define GTK_SCALE_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCALE_BUTTON, GtkScaleButton))
@@ -70,33 +70,33 @@ struct _GtkScaleButtonClass
   gpointer padding[8];
 };
 
-
-GType            gtk_scale_button_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType            gtk_scale_button_get_type         (void) ;
+/* Zeile entfernt */
 GtkWidget *      gtk_scale_button_new              (double           min,
                                                     double           max,
                                                     double           step,
                                                     const char     **icons);
-
+/* Zeile entfernt */
 void             gtk_scale_button_set_icons        (GtkScaleButton  *button,
                                                     const char     **icons);
-
+/* Zeile entfernt */
 double           gtk_scale_button_get_value        (GtkScaleButton  *button);
-
+/* Zeile entfernt */
 void             gtk_scale_button_set_value        (GtkScaleButton  *button,
                                                     double           value);
-
+/* Zeile entfernt */
 GtkAdjustment *  gtk_scale_button_get_adjustment   (GtkScaleButton  *button);
-
+/* Zeile entfernt */
 void             gtk_scale_button_set_adjustment   (GtkScaleButton  *button,
                                                     GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 GtkWidget *      gtk_scale_button_get_plus_button  (GtkScaleButton  *button);
-
+/* Zeile entfernt */
 GtkWidget *      gtk_scale_button_get_minus_button (GtkScaleButton  *button);
-
+/* Zeile entfernt */
 GtkWidget *      gtk_scale_button_get_popup        (GtkScaleButton  *button);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SCALE_BUTTON_H__ */

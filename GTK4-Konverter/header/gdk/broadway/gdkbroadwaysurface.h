@@ -27,7 +27,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_BROADWAY_SURFACE              (gdk_broadway_surface_get_type ())
 #define GDK_BROADWAY_SURFACE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_BROADWAY_SURFACE, GdkBroadwaySurface))
@@ -43,9 +43,9 @@ typedef GdkSurface GdkBroadwaySurface;
 #endif
 typedef struct _GdkBroadwaySurfaceClass GdkBroadwaySurfaceClass;
 
-
+/* Zeile entfernt */
 GType    gdk_broadway_surface_get_type          (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_BROADWAY_SURFACE_H__ */

@@ -29,26 +29,33 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_WINDOW_HANDLE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkWindowHandle, gtk_window_handle, GTK, WINDOW_HANDLE, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkWindowHandle, gtk_window_handle, GTK, WINDOW_HANDLE, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_window_handle_new:^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_window_handle_get_child(self:PGtkWindowHandle):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_window_handle_set_child(self:PGtkWindowHandle; child:PGtkWidget);
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_WINDOW_HANDLE : longint; { return type might be wrong }
     begin
       GTK_TYPE_WINDOW_HANDLE:=gtk_window_handle_get_type;
     end;
 
+  function gtk_window_handle_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_window_handle_get_child(self:PGtkWindowHandle):PGtkWidget;
   begin
     { You must implement this function }

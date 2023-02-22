@@ -40,11 +40,15 @@
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktexture.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
   function gdk_pixbuf_get_from_surface(surface:Pcairo_surface_t; src_x:longint; src_y:longint; width:longint; height:longint):^GdkPixbuf;
 
+  { Zeile entfernt  }
   function gdk_pixbuf_get_from_texture(texture:PGdkTexture):^GdkPixbuf;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_PIXBUF_H__  }
   function gdk_pixbuf_get_from_surface(surface:Pcairo_surface_t; src_x:longint; src_y:longint; width:longint; height:longint):PGdkPixbuf;

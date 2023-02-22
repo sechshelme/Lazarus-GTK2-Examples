@@ -32,20 +32,23 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MULTI_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSorter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSorter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_multi_sorter_new:^GtkMultiSorter;
+
+  { Zeile entfernt  }
   procedure gtk_multi_sorter_append(self:PGtkMultiSorter; sorter:PGtkSorter);
 
+  { Zeile entfernt  }
   procedure gtk_multi_sorter_remove(self:PGtkMultiSorter; position:guint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MULTI_SORTER_H__  }
   { was #define dname def_expr }
@@ -54,6 +57,10 @@ G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSo
       GTK_TYPE_MULTI_SORTER:=gtk_multi_sorter_get_type;
     end;
 
+  function gtk_multi_sorter_new:PGtkMultiSorter;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_multi_sorter_append(self:PGtkMultiSorter; sorter:PGtkSorter);
   begin
     { You must implement this function }

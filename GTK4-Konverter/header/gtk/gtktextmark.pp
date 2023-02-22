@@ -61,6 +61,7 @@
 {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
+  { Zeile entfernt  }
 
   type
     _GtkTextMark = GtkTextMark;
@@ -108,29 +109,34 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType                 gtk_text_mark_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_mark_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_text_mark_new(name:Pchar; left_gravity:gboolean):^GtkTextMark;
 
+  { Zeile entfernt  }
   procedure gtk_text_mark_set_visible(mark:PGtkTextMark; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_mark_get_visible(mark:PGtkTextMark):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_mark_get_name(mark:PGtkTextMark):^char;
 
+  { Zeile entfernt  }
   function gtk_text_mark_get_deleted(mark:PGtkTextMark):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_mark_get_buffer(mark:PGtkTextMark):^GtkTextBuffer;
 
+  { Zeile entfernt  }
   function gtk_text_mark_get_left_gravity(mark:PGtkTextMark):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TEXT_MARK_H__  }
   { was #define dname def_expr }
@@ -179,6 +185,10 @@ GType                 gtk_text_mark_get_type         (void) G_GNUC_CONST;
     GTK_TEXT_MARK_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TEXT_MARK,GtkTextMarkClass);
   end;
 
+  function gtk_text_mark_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_mark_new(name:Pchar; left_gravity:gboolean):PGtkTextMark;
   begin
     { You must implement this function }

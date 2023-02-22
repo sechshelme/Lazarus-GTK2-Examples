@@ -35,25 +35,30 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_DRAG_ICON : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkDragIcon, gtk_drag_icon, GTK, DRAG_ICON, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkDragIcon, gtk_drag_icon, GTK, DRAG_ICON, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_drag_icon_get_for_drag(drag:PGdkDrag):^GtkWidget;
+
+  { Zeile entfernt  }
   procedure gtk_drag_icon_set_child(self:PGtkDragIcon; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_drag_icon_get_child(self:PGtkDragIcon):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_drag_icon_set_from_paintable(drag:PGdkDrag; paintable:PGdkPaintable; hot_x:longint; hot_y:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_drag_icon_create_widget_for_value(value:PGValue):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DRAG_ICON_H__  }
   { was #define dname def_expr }
@@ -62,6 +67,10 @@ G_DECLARE_FINAL_TYPE (GtkDragIcon, gtk_drag_icon, GTK, DRAG_ICON, GtkWidget)
       GTK_TYPE_DRAG_ICON:=gtk_drag_icon_get_type;
     end;
 
+  function gtk_drag_icon_get_for_drag(drag:PGdkDrag):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_drag_icon_set_child(self:PGtkDragIcon; child:PGtkWidget);
   begin
     { You must implement this function }

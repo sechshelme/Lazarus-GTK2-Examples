@@ -24,7 +24,7 @@
 
 #include <gtk/gtkimcontext.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_IM_MULTICONTEXT              (gtk_im_multicontext_get_type ())
 #define GTK_IM_MULTICONTEXT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IM_MULTICONTEXT, GtkIMMulticontext))
@@ -57,18 +57,18 @@ struct _GtkIMMulticontextClass
   void (*_gtk_reserved4) (void);
 };
 
-
-GType         gtk_im_multicontext_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_im_multicontext_get_type (void) ;
+/* Zeile entfernt */
 GtkIMContext *gtk_im_multicontext_new      (void);
 
-
+/* Zeile entfernt */
 const char  * gtk_im_multicontext_get_context_id   (GtkIMMulticontext *context);
 
-
+/* Zeile entfernt */
 void          gtk_im_multicontext_set_context_id   (GtkIMMulticontext *context,
                                                     const char        *context_id);
  
-
+/* Zeile entfernt */
 
 #endif /* __GTK_IM_MULTICONTEXT_H__ */

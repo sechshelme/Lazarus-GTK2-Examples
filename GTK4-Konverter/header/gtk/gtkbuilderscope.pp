@@ -36,15 +36,13 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER_SCOPE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkBuilderClosureFlags:
    * @GTK_BUILDER_CLOSURE_SWAPPED: The closure should be created swapped. See
@@ -57,15 +55,10 @@ G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GOb
    * for unknown values and raise a %GTK_BUILDER_ERROR_INVALID_ATTRIBUTE error
    * when they encounter one.
     }
- in declarator_list *)
   {< prefix=GTK_BUILDER_CLOSURE > }
-(* error 
-} GtkBuilderClosureFlags;
- in declarator_list *)
 
-    var
- : G_DECLARE_INTERFACE;
- : G_DECLARE_INTERFACE;
+  type
+    GtkBuilderClosureFlags = (GTK_BUILDER_CLOSURE_SWAPPED := 1 shl 0);
   {*
    * GtkBuilderScopeInterface:
    * @get_type_from_name: Try to lookup a `GType` via the its name. See
@@ -93,8 +86,6 @@ G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GOb
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
-
-  type
     _GtkBuilderScopeInterface = record
         g_iface : GTypeInterface;
         get_type_from_name : function (self:PGtkBuilderScope; builder:PGtkBuilder; type_name:Pchar):GType;cdecl;
@@ -111,29 +102,27 @@ G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GOb
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER_CSCOPE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_builder_cscope_new:^GtkBuilderScope;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_builder_cscope_add_callback_symbol(self:PGtkBuilderCScope; callback_name:Pchar; callback_symbol:GCallback);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                                 ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gtk_builder_cscope_add_callback_symbols(self:PGtkBuilderCScope; first_callback_name:Pchar; first_callback_symbol:GCallback; args:array of const);
 
-    var
- : pointer;
 (* error 
   gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
 in define line 120 *)
+    { Zeile entfernt  }
 (* Const before type ignored *)
-
     function gtk_builder_cscope_lookup_callback_symbol(self:PGtkBuilderCScope; callback_name:Pchar):GCallback;
 
+    { Zeile entfernt  }
 {$endif}
     { __GTK_BUILDER_SCOPE_H__  }
   { was #define dname def_expr }
@@ -148,7 +137,15 @@ in define line 120 *)
       GTK_TYPE_BUILDER_CSCOPE:=gtk_builder_cscope_get_type;
     end;
 
+  function gtk_builder_cscope_new:PGtkBuilderScope;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_builder_cscope_add_callback_symbol(self:PGtkBuilderCScope; callback_name:Pchar; callback_symbol:GCallback);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_builder_cscope_add_callback_symbols(self:PGtkBuilderCScope; first_callback_name:Pchar; first_callback_symbol:GCallback);
   begin
     { You must implement this function }
   end;

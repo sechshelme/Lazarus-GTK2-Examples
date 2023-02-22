@@ -25,12 +25,12 @@
 
 #include <gtk/gtkwindow.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_NATIVE_DIALOG             (gtk_native_dialog_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkNativeDialog, gtk_native_dialog, GTK, NATIVE_DIALOG, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkNativeDialogClass:
@@ -57,30 +57,30 @@ struct _GtkNativeDialogClass
   void (*_gtk_reserved4) (void);
 };
 
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_show (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_hide (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_destroy (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 gboolean              gtk_native_dialog_get_visible (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_set_modal (GtkNativeDialog *self,
                                                    gboolean modal);
-
+/* Zeile entfernt */
 gboolean              gtk_native_dialog_get_modal (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_set_title (GtkNativeDialog *self,
                                                    const char *title);
-
+/* Zeile entfernt */
 const char *          gtk_native_dialog_get_title (GtkNativeDialog *self);
-
+/* Zeile entfernt */
 void                  gtk_native_dialog_set_transient_for (GtkNativeDialog *self,
                                                            GtkWindow *parent);
-
+/* Zeile entfernt */
 GtkWindow *           gtk_native_dialog_get_transient_for (GtkNativeDialog *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_NATIVE_DIALOG_H__ */

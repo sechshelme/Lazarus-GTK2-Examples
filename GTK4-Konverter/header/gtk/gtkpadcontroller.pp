@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PAD_CONTROLLER : longint; { return type might be wrong }
@@ -102,23 +103,24 @@
         action_name : ^char;
       end;
 
-(* error 
-GType gtk_pad_controller_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_pad_controller_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_pad_controller_new(group:PGActionGroup; pad:PGdkDevice):^GtkPadController;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_pad_controller_set_action_entries(controller:PGtkPadController; entries:PGtkPadActionEntry; n_entries:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_pad_controller_set_action(controller:PGtkPadController; _type:GtkPadActionType; index:longint; mode:longint; _label:Pchar; 
               action_name:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PAD_CONTROLLER_H__  }
   { was #define dname def_expr }
@@ -167,6 +169,10 @@ GType gtk_pad_controller_get_type           (void) G_GNUC_CONST;
     GTK_PAD_CONTROLLER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_PAD_CONTROLLER,GtkPadControllerClass);
   end;
 
+  function gtk_pad_controller_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_pad_controller_new(group:PGActionGroup; pad:PGdkDevice):PGtkPadController;
   begin
     { You must implement this function }

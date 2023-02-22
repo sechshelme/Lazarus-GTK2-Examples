@@ -27,7 +27,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE         (gtk_gesture_get_type ())
 #define GTK_GESTURE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE, GtkGesture))
@@ -38,70 +38,70 @@
 
 typedef struct _GtkGestureClass GtkGestureClass;
 
+/* Zeile entfernt */
+GType       gtk_gesture_get_type             (void) ;
 
-GType       gtk_gesture_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDevice * gtk_gesture_get_device           (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_set_state            (GtkGesture            *gesture,
                                               GtkEventSequenceState  state);
-
+/* Zeile entfernt */
 GtkEventSequenceState
             gtk_gesture_get_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence);
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_set_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence,
                                               GtkEventSequenceState  state);
-
+/* Zeile entfernt */
 GList     * gtk_gesture_get_sequences        (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 GdkEventSequence * gtk_gesture_get_last_updated_sequence
                                              (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_handles_sequence     (GtkGesture       *gesture,
                                               GdkEventSequence *sequence);
-
+/* Zeile entfernt */
 GdkEvent *
             gtk_gesture_get_last_event       (GtkGesture       *gesture,
                                               GdkEventSequence *sequence);
 
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_get_point            (GtkGesture       *gesture,
                                               GdkEventSequence *sequence,
                                               double           *x,
                                               double           *y);
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_get_bounding_box     (GtkGesture       *gesture,
                                               GdkRectangle     *rect);
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_get_bounding_box_center
                                              (GtkGesture       *gesture,
                                               double           *x,
                                               double           *y);
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_is_active            (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_is_recognized        (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 void        gtk_gesture_group                (GtkGesture       *group_gesture,
                                               GtkGesture       *gesture);
-
+/* Zeile entfernt */
 void        gtk_gesture_ungroup              (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 GList *     gtk_gesture_get_group            (GtkGesture       *gesture);
 
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_is_grouped_with      (GtkGesture       *gesture,
                                               GtkGesture       *other);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_H__ */

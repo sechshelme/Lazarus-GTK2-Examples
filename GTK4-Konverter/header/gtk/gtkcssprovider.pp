@@ -28,6 +28,7 @@
 {$define __GTK_CSS_PROVIDER_H__}  
 {$include <gio/gio.h>}
 {$include <gtk/css/gtkcss.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CSS_PROVIDER : longint; { return type might be wrong }
@@ -51,32 +52,37 @@
         parent_instance : GObject;
       end;
 
-(* error 
-GType gtk_css_provider_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_css_provider_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_css_provider_new:^GtkCssProvider;
 
+  { Zeile entfernt  }
   function gtk_css_provider_to_string(provider:PGtkCssProvider):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_css_provider_load_from_data(css_provider:PGtkCssProvider; data:Pchar; length:gssize);
 
+  { Zeile entfernt  }
   procedure gtk_css_provider_load_from_file(css_provider:PGtkCssProvider; file:PGFile);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_css_provider_load_from_path(css_provider:PGtkCssProvider; path:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_css_provider_load_from_resource(css_provider:PGtkCssProvider; resource_path:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_css_provider_load_named(provider:PGtkCssProvider; name:Pchar; variant:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CSS_PROVIDER_H__  }
   { was #define dname def_expr }
@@ -101,6 +107,10 @@ GType gtk_css_provider_get_type (void) G_GNUC_CONST;
     GTK_IS_CSS_PROVIDER:=G_TYPE_CHECK_INSTANCE_TYPE(o,GTK_TYPE_CSS_PROVIDER);
   end;
 
+  function gtk_css_provider_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_css_provider_new:PGtkCssProvider;
   begin
     { You must implement this function }

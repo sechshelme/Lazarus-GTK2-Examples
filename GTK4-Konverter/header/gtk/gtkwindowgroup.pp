@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include "gtkwindow.h"}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_WINDOW_GROUP : longint; { return type might be wrong }
@@ -83,21 +84,23 @@
 
   { Window groups
     }
-(* error 
-GType            gtk_window_group_get_type      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_window_group_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_window_group_new:^GtkWindowGroup;
 
+  { Zeile entfernt  }
   procedure gtk_window_group_add_window(window_group:PGtkWindowGroup; window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_group_remove_window(window_group:PGtkWindowGroup; window:PGtkWindow);
 
+  { Zeile entfernt  }
   function gtk_window_group_list_windows(window_group:PGtkWindowGroup):^GList;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_WINDOW_GROUP_H__  }
   { was #define dname def_expr }
@@ -146,6 +149,10 @@ GType            gtk_window_group_get_type      (void) G_GNUC_CONST;
     GTK_WINDOW_GROUP_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_WINDOW_GROUP,GtkWindowGroupClass);
   end;
 
+  function gtk_window_group_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_window_group_new:PGtkWindowGroup;
   begin
     { You must implement this function }

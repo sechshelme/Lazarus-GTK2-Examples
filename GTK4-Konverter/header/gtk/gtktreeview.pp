@@ -47,6 +47,7 @@
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreeviewcolumn.h>}
 {$include <gtk/gtkentry.h>}
+  { Zeile entfernt  }
   {*
    * GtkTreeViewDropPosition:
    * @GTK_TREE_VIEW_DROP_BEFORE: dropped row is inserted before
@@ -190,217 +191,301 @@
         _reserved : array[0..15] of gpointer;
       end;
 
-(* error 
-GType                  gtk_tree_view_get_type                      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_view_get_type:GType;
+
   { Creators  }
-
+  { Zeile entfernt  }
   function gtk_tree_view_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_tree_view_new_with_model(model:PGtkTreeModel):^GtkWidget;
 
   { Accessors  }
+  { Zeile entfernt  }
   function gtk_tree_view_get_model(tree_view:PGtkTreeView):^GtkTreeModel;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_model(tree_view:PGtkTreeView; model:PGtkTreeModel);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_selection(tree_view:PGtkTreeView):^GtkTreeSelection;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_headers_visible(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_headers_visible(tree_view:PGtkTreeView; headers_visible:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_columns_autosize(tree_view:PGtkTreeView);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_headers_clickable(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_headers_clickable(tree_view:PGtkTreeView; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_activate_on_single_click(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_activate_on_single_click(tree_view:PGtkTreeView; single:gboolean);
 
   { Column functions  }
+  { Zeile entfernt  }
   function gtk_tree_view_append_column(tree_view:PGtkTreeView; column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_remove_column(tree_view:PGtkTreeView; column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_insert_column(tree_view:PGtkTreeView; column:PGtkTreeViewColumn; position:longint):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-								    ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  function gtk_tree_view_insert_column_with_attributes(tree_view:PGtkTreeView; position:longint; title:Pchar; cell:PGtkCellRenderer; args:array of const):longint;
 
-    var
- : longint;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_tree_view_insert_column_with_data_func(tree_view:PGtkTreeView; position:longint; title:Pchar; cell:PGtkCellRenderer; func:GtkTreeCellDataFunc; 
              data:gpointer; dnotify:GDestroyNotify):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_n_columns(tree_view:PGtkTreeView):guint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_column(tree_view:PGtkTreeView; n:longint):^GtkTreeViewColumn;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_columns(tree_view:PGtkTreeView):^GList;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_move_column_after(tree_view:PGtkTreeView; column:PGtkTreeViewColumn; base_column:PGtkTreeViewColumn);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_expander_column(tree_view:PGtkTreeView; column:PGtkTreeViewColumn);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_expander_column(tree_view:PGtkTreeView):^GtkTreeViewColumn;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_column_drag_function(tree_view:PGtkTreeView; func:GtkTreeViewColumnDropFunc; user_data:gpointer; destroy:GDestroyNotify);
 
   { Actions  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_scroll_to_point(tree_view:PGtkTreeView; tree_x:longint; tree_y:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_scroll_to_cell(tree_view:PGtkTreeView; path:PGtkTreePath; column:PGtkTreeViewColumn; use_align:gboolean; row_align:single; 
               col_align:single);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_row_activated(tree_view:PGtkTreeView; path:PGtkTreePath; column:PGtkTreeViewColumn);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_expand_all(tree_view:PGtkTreeView);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_collapse_all(tree_view:PGtkTreeView);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_expand_to_path(tree_view:PGtkTreeView; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   function gtk_tree_view_expand_row(tree_view:PGtkTreeView; path:PGtkTreePath; open_all:gboolean):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_collapse_row(tree_view:PGtkTreeView; path:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_map_expanded_rows(tree_view:PGtkTreeView; func:GtkTreeViewMappingFunc; data:gpointer);
 
+  { Zeile entfernt  }
   function gtk_tree_view_row_expanded(tree_view:PGtkTreeView; path:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_reorderable(tree_view:PGtkTreeView; reorderable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_reorderable(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_cursor(tree_view:PGtkTreeView; path:PGtkTreePath; focus_column:PGtkTreeViewColumn; start_editing:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_cursor_on_cell(tree_view:PGtkTreeView; path:PGtkTreePath; focus_column:PGtkTreeViewColumn; focus_cell:PGtkCellRenderer; start_editing:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_get_cursor(tree_view:PGtkTreeView; path:PPGtkTreePath; focus_column:PPGtkTreeViewColumn);
 
   { Layout information  }
+  { Zeile entfernt  }
   function gtk_tree_view_get_path_at_pos(tree_view:PGtkTreeView; x:longint; y:longint; path:PPGtkTreePath; column:PPGtkTreeViewColumn; 
              cell_x:Plongint; cell_y:Plongint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_get_cell_area(tree_view:PGtkTreeView; path:PGtkTreePath; column:PGtkTreeViewColumn; rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_get_background_area(tree_view:PGtkTreeView; path:PGtkTreePath; column:PGtkTreeViewColumn; rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_get_visible_rect(tree_view:PGtkTreeView; visible_rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_visible_range(tree_view:PGtkTreeView; start_path:PPGtkTreePath; end_path:PPGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_is_blank_at_pos(tree_view:PGtkTreeView; x:longint; y:longint; path:PPGtkTreePath; column:PPGtkTreeViewColumn; 
              cell_x:Plongint; cell_y:Plongint):gboolean;
 
   { Drag-and-Drop support  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_enable_model_drag_source(tree_view:PGtkTreeView; start_button_mask:GdkModifierType; formats:PGdkContentFormats; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_enable_model_drag_dest(tree_view:PGtkTreeView; formats:PGdkContentFormats; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_unset_rows_drag_source(tree_view:PGtkTreeView);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_unset_rows_drag_dest(tree_view:PGtkTreeView);
 
   { These are useful to implement your own custom stuff.  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_drag_dest_row(tree_view:PGtkTreeView; path:PGtkTreePath; pos:GtkTreeViewDropPosition);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_get_drag_dest_row(tree_view:PGtkTreeView; path:PPGtkTreePath; pos:PGtkTreeViewDropPosition);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_dest_row_at_pos(tree_view:PGtkTreeView; drag_x:longint; drag_y:longint; path:PPGtkTreePath; pos:PGtkTreeViewDropPosition):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_create_row_drag_icon(tree_view:PGtkTreeView; path:PGtkTreePath):^GdkPaintable;
 
   { Interactive search  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_enable_search(tree_view:PGtkTreeView; enable_search:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_enable_search(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_search_column(tree_view:PGtkTreeView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_search_column(tree_view:PGtkTreeView; column:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_search_equal_func(tree_view:PGtkTreeView):GtkTreeViewSearchEqualFunc;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_search_equal_func(tree_view:PGtkTreeView; search_equal_func:GtkTreeViewSearchEqualFunc; search_user_data:gpointer; search_destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_search_entry(tree_view:PGtkTreeView):^GtkEditable;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_search_entry(tree_view:PGtkTreeView; entry:PGtkEditable);
 
   { Convert between the different coordinate systems  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_widget_to_tree_coords(tree_view:PGtkTreeView; wx:longint; wy:longint; tx:Plongint; ty:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_tree_to_widget_coords(tree_view:PGtkTreeView; tx:longint; ty:longint; wx:Plongint; wy:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_widget_to_bin_window_coords(tree_view:PGtkTreeView; wx:longint; wy:longint; bx:Plongint; by:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_bin_window_to_widget_coords(tree_view:PGtkTreeView; bx:longint; by:longint; wx:Plongint; wy:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_tree_to_bin_window_coords(tree_view:PGtkTreeView; tx:longint; ty:longint; bx:Plongint; by:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_convert_bin_window_to_tree_coords(tree_view:PGtkTreeView; bx:longint; by:longint; tx:Plongint; ty:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_fixed_height_mode(tree_view:PGtkTreeView; enable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_fixed_height_mode(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_hover_selection(tree_view:PGtkTreeView; hover:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_hover_selection(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_hover_expand(tree_view:PGtkTreeView; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_hover_expand(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_rubber_banding(tree_view:PGtkTreeView; enable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_rubber_banding(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_is_rubber_banding_active(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_row_separator_func(tree_view:PGtkTreeView):GtkTreeViewRowSeparatorFunc;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_row_separator_func(tree_view:PGtkTreeView; func:GtkTreeViewRowSeparatorFunc; data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_grid_lines(tree_view:PGtkTreeView):GtkTreeViewGridLines;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_grid_lines(tree_view:PGtkTreeView; grid_lines:GtkTreeViewGridLines);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_enable_tree_lines(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_enable_tree_lines(tree_view:PGtkTreeView; enabled:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_show_expanders(tree_view:PGtkTreeView; enabled:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_show_expanders(tree_view:PGtkTreeView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_level_indentation(tree_view:PGtkTreeView; indentation:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_level_indentation(tree_view:PGtkTreeView):longint;
 
   { Convenience functions for setting tooltips  }
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_tooltip_row(tree_view:PGtkTreeView; tooltip:PGtkTooltip; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_tooltip_cell(tree_view:PGtkTreeView; tooltip:PGtkTooltip; path:PGtkTreePath; column:PGtkTreeViewColumn; cell:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_tooltip_context(tree_view:PGtkTreeView; x:longint; y:longint; keyboard_tip:gboolean; model:PPGtkTreeModel; 
              path:PPGtkTreePath; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_set_tooltip_column(tree_view:PGtkTreeView; column:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_get_tooltip_column(tree_view:PGtkTreeView):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_VIEW_H__  }
   { was #define dname def_expr }
@@ -449,6 +534,10 @@ GType                  gtk_tree_view_get_type                      (void) G_GNUC
     GTK_TREE_VIEW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TREE_VIEW,GtkTreeViewClass);
   end;
 
+  function gtk_tree_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_view_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -506,6 +595,10 @@ GType                  gtk_tree_view_get_type                      (void) G_GNUC
     { You must implement this function }
   end;
   function gtk_tree_view_insert_column(tree_view:PGtkTreeView; column:PGtkTreeViewColumn; position:longint):longint;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_view_insert_column_with_attributes(tree_view:PGtkTreeView; position:longint; title:Pchar; cell:PGtkCellRenderer):longint;
   begin
     { You must implement this function }
   end;

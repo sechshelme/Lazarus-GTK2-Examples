@@ -33,7 +33,7 @@
 #include <gtk/gtkrange.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SCALE            (gtk_scale_get_type ())
 #define GTK_SCALE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCALE, GtkScale))
@@ -79,58 +79,58 @@ typedef char * (*GtkScaleFormatValueFunc) (GtkScale *scale,
                                            gpointer  user_data);
 
 
-
-GType             gtk_scale_get_type           (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType             gtk_scale_get_type           (void) ;
+/* Zeile entfernt */
 GtkWidget       * gtk_scale_new                (GtkOrientation   orientation,
                                                 GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 GtkWidget       * gtk_scale_new_with_range     (GtkOrientation   orientation,
                                                 double           min,
                                                 double           max,
                                                 double           step);
-
+/* Zeile entfernt */
 void              gtk_scale_set_digits         (GtkScale        *scale,
                                                 int              digits);
-
+/* Zeile entfernt */
 int               gtk_scale_get_digits         (GtkScale        *scale);
-
+/* Zeile entfernt */
 void              gtk_scale_set_draw_value     (GtkScale        *scale,
                                                 gboolean         draw_value);
-
+/* Zeile entfernt */
 gboolean          gtk_scale_get_draw_value     (GtkScale        *scale);
-
+/* Zeile entfernt */
 void              gtk_scale_set_has_origin     (GtkScale        *scale,
                                                 gboolean         has_origin);
-
+/* Zeile entfernt */
 gboolean          gtk_scale_get_has_origin     (GtkScale        *scale);
-
+/* Zeile entfernt */
 void              gtk_scale_set_value_pos      (GtkScale        *scale,
                                                 GtkPositionType  pos);
-
+/* Zeile entfernt */
 GtkPositionType   gtk_scale_get_value_pos      (GtkScale        *scale);
 
-
+/* Zeile entfernt */
 PangoLayout     * gtk_scale_get_layout         (GtkScale        *scale);
-
+/* Zeile entfernt */
 void              gtk_scale_get_layout_offsets (GtkScale        *scale,
                                                 int             *x,
                                                 int             *y);
 
-
+/* Zeile entfernt */
 void              gtk_scale_add_mark           (GtkScale        *scale,
                                                 double           value,
                                                 GtkPositionType  position,
                                                 const char      *markup);
-
+/* Zeile entfernt */
 void              gtk_scale_clear_marks        (GtkScale        *scale);
 
-
+/* Zeile entfernt */
 void              gtk_scale_set_format_value_func (GtkScale                *scale,
                                                    GtkScaleFormatValueFunc  func,
                                                    gpointer                 user_data,
                                                    GDestroyNotify           destroy_notify);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SCALE_H__ */

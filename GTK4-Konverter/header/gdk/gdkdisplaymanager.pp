@@ -38,6 +38,7 @@
 {$endif}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkdisplay.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DISPLAY_MANAGER : longint; { return type might be wrong }
@@ -52,27 +53,30 @@
   { return type might be wrong }   
   function GDK_IS_DISPLAY_MANAGER(object : longint) : longint;  
 
-(* error 
-GType              gdk_display_manager_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_display_manager_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_display_manager_get:^GdkDisplayManager;
 
+  { Zeile entfernt  }
   function gdk_display_manager_get_default_display(manager:PGdkDisplayManager):^GdkDisplay;
 
+  { Zeile entfernt  }
   procedure gdk_display_manager_set_default_display(manager:PGdkDisplayManager; display:PGdkDisplay);
 
+  { Zeile entfernt  }
   function gdk_display_manager_list_displays(manager:PGdkDisplayManager):^GSList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_display_manager_open_display(manager:PGdkDisplayManager; name:Pchar):^GdkDisplay;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_set_allowed_backends(backends:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DISPLAY_MANAGER_H__  }
   { was #define dname def_expr }
@@ -97,6 +101,10 @@ GType              gdk_display_manager_get_type            (void) G_GNUC_CONST;
     GDK_IS_DISPLAY_MANAGER:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_DISPLAY_MANAGER);
   end;
 
+  function gdk_display_manager_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_display_manager_get:PGdkDisplayManager;
   begin
     { You must implement this function }

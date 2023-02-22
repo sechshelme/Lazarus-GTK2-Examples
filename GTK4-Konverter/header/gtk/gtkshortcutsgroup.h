@@ -25,7 +25,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUTS_GROUP            (gtk_shortcuts_group_get_type ())
 #define GTK_SHORTCUTS_GROUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_GROUP, GtkShortcutsGroup))
@@ -35,9 +35,9 @@
 typedef struct _GtkShortcutsGroup         GtkShortcutsGroup;
 typedef struct _GtkShortcutsGroupClass    GtkShortcutsGroupClass;
 
+/* Zeile entfernt */
+GType gtk_shortcuts_group_get_type (void) ;
 
-GType gtk_shortcuts_group_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUTS_GROUP_H__ */

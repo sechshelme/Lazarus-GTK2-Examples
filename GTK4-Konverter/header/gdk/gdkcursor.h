@@ -32,7 +32,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_CURSOR              (gdk_cursor_get_type ())
 #define GDK_CURSOR(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_CURSOR, GdkCursor))
@@ -41,30 +41,30 @@
 /* Cursors
  */
 
+/* Zeile entfernt */
+GType      gdk_cursor_get_type           (void) ;
 
-GType      gdk_cursor_get_type           (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkCursor* gdk_cursor_new_from_texture   (GdkTexture      *texture,
                                           int              hotspot_x,
                                           int              hotspot_y,
                                           GdkCursor       *fallback);
-
+/* Zeile entfernt */
 GdkCursor*  gdk_cursor_new_from_name     (const char      *name,
                                           GdkCursor       *fallback);
 
-
+/* Zeile entfernt */
 GdkCursor * gdk_cursor_get_fallback      (GdkCursor       *cursor);
-
+/* Zeile entfernt */
 const char *gdk_cursor_get_name          (GdkCursor       *cursor);
-
+/* Zeile entfernt */
 GdkTexture *gdk_cursor_get_texture       (GdkCursor       *cursor);
-
+/* Zeile entfernt */
 int         gdk_cursor_get_hotspot_x     (GdkCursor       *cursor);
-
+/* Zeile entfernt */
 int         gdk_cursor_get_hotspot_y     (GdkCursor       *cursor);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CURSOR_H__ */

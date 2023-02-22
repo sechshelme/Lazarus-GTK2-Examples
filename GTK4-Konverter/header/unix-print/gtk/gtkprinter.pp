@@ -35,6 +35,7 @@
 {$endif}
 {$include <cairo.h>}
 {$include <gtk/gtk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_CAPABILITIES : longint; { return type might be wrong }
@@ -75,12 +76,9 @@
       GTK_PRINT_CAPABILITY_PREVIEW := 1 shl 7,GTK_PRINT_CAPABILITY_NUMBER_UP := 1 shl 8,
       GTK_PRINT_CAPABILITY_NUMBER_UP_LAYOUT := 1 shl 9
       );
-(* error 
-GType gtk_print_capabilities_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_print_capabilities_get_type:GType;
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINTER : longint; { return type might be wrong }
@@ -99,63 +97,83 @@ GType gtk_print_capabilities_get_type (void) G_GNUC_CONST;
   type
     _GtkPrinter = GtkPrinter;
     _GtkPrintBackend = GtkPrintBackend;
-(* error 
-GType                    gtk_printer_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_printer_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_printer_new(name:Pchar; backend:PGtkPrintBackend; virtual_:gboolean):^GtkPrinter;
 
+  { Zeile entfernt  }
   function gtk_printer_get_backend(printer:PGtkPrinter):^GtkPrintBackend;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_printer_get_name(printer:PGtkPrinter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_printer_get_state_message(printer:PGtkPrinter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_printer_get_description(printer:PGtkPrinter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_printer_get_location(printer:PGtkPrinter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_printer_get_icon_name(printer:PGtkPrinter):^char;
 
+  { Zeile entfernt  }
   function gtk_printer_get_job_count(printer:PGtkPrinter):longint;
 
+  { Zeile entfernt  }
   function gtk_printer_is_active(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_is_paused(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_is_accepting_jobs(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_is_virtual(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_is_default(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_accepts_pdf(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_accepts_ps(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_list_papers(printer:PGtkPrinter):^GList;
 
+  { Zeile entfernt  }
   function gtk_printer_get_default_page_size(printer:PGtkPrinter):^GtkPageSetup;
 
+  { Zeile entfernt  }
   function gtk_printer_compare(a:PGtkPrinter; b:PGtkPrinter):longint;
 
+  { Zeile entfernt  }
   function gtk_printer_has_details(printer:PGtkPrinter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_printer_request_details(printer:PGtkPrinter);
 
+  { Zeile entfernt  }
   function gtk_printer_get_capabilities(printer:PGtkPrinter):GtkPrintCapabilities;
 
+  { Zeile entfernt  }
   function gtk_printer_get_hard_margins(printer:PGtkPrinter; top:Pdouble; bottom:Pdouble; left:Pdouble; right:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_printer_get_hard_margins_for_paper_size(printer:PGtkPrinter; paper_size:PGtkPaperSize; top:Pdouble; bottom:Pdouble; left:Pdouble; 
              right:Pdouble):gboolean;
 
@@ -175,9 +193,11 @@ GType                    gtk_printer_get_type              (void) G_GNUC_CONST;
   type
 
     GtkPrinterFunc = function (printer:PGtkPrinter; data:gpointer):gboolean;cdecl;
+  { Zeile entfernt  }
 
   procedure gtk_enumerate_printers(func:GtkPrinterFunc; data:gpointer; destroy:GDestroyNotify; wait:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINTER_H__  }
   { was #define dname def_expr }
@@ -186,6 +206,10 @@ GType                    gtk_printer_get_type              (void) G_GNUC_CONST;
       GTK_TYPE_PRINT_CAPABILITIES:=gtk_print_capabilities_get_type;
     end;
 
+  function gtk_print_capabilities_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_PRINTER : longint; { return type might be wrong }
     begin
@@ -208,6 +232,10 @@ GType                    gtk_printer_get_type              (void) G_GNUC_CONST;
     GTK_IS_PRINTER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PRINTER);
   end;
 
+  function gtk_printer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_printer_new(name:Pchar; backend:PGtkPrintBackend; virtual_:gboolean):PGtkPrinter;
   begin
     { You must implement this function }

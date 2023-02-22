@@ -31,7 +31,7 @@
 
 #include <gtk/gtktexttag.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkTextTagTableForeach:
@@ -47,27 +47,27 @@ typedef void (* GtkTextTagTableForeach) (GtkTextTag *tag, gpointer data);
 #define GTK_TEXT_TAG_TABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT_TAG_TABLE, GtkTextTagTable))
 #define GTK_IS_TEXT_TAG_TABLE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_TEXT_TAG_TABLE))
 
+/* Zeile entfernt */
+GType          gtk_text_tag_table_get_type (void) ;
 
-GType          gtk_text_tag_table_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkTextTagTable *gtk_text_tag_table_new      (void);
-
+/* Zeile entfernt */
 gboolean         gtk_text_tag_table_add      (GtkTextTagTable        *table,
                                               GtkTextTag             *tag);
-
+/* Zeile entfernt */
 void             gtk_text_tag_table_remove   (GtkTextTagTable        *table,
                                               GtkTextTag             *tag);
-
+/* Zeile entfernt */
 GtkTextTag      *gtk_text_tag_table_lookup   (GtkTextTagTable        *table,
                                               const char             *name);
-
+/* Zeile entfernt */
 void             gtk_text_tag_table_foreach  (GtkTextTagTable        *table,
                                               GtkTextTagTableForeach  func,
                                               gpointer                data);
-
+/* Zeile entfernt */
 int              gtk_text_tag_table_get_size (GtkTextTagTable        *table);
 
-
+/* Zeile entfernt */
 
 #endif

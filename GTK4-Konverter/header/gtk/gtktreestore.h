@@ -28,7 +28,7 @@
 #include <stdarg.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_TREE_STORE			(gtk_tree_store_get_type ())
@@ -58,65 +58,65 @@ struct _GtkTreeStoreClass
 };
 
 
-
-GType         gtk_tree_store_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_tree_store_get_type         (void) ;
+/* Zeile entfernt */
 GtkTreeStore *gtk_tree_store_new              (int           n_columns,
 					       ...);
-
+/* Zeile entfernt */
 GtkTreeStore *gtk_tree_store_newv             (int           n_columns,
 					       GType        *types);
-
+/* Zeile entfernt */
 void          gtk_tree_store_set_column_types (GtkTreeStore *tree_store,
 					       int           n_columns,
 					       GType        *types);
 
 /* NOTE: use gtk_tree_model_get to get values from a GtkTreeStore */
 
-
+/* Zeile entfernt */
 void          gtk_tree_store_set_value        (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       int           column,
 					       GValue       *value);
-
+/* Zeile entfernt */
 void          gtk_tree_store_set              (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       ...);
-
+/* Zeile entfernt */
 void          gtk_tree_store_set_valuesv      (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       int          *columns,
 					       GValue       *values,
 					       int           n_values);
-
+/* Zeile entfernt */
 void          gtk_tree_store_set_valist       (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       va_list       var_args);
-
+/* Zeile entfernt */
 gboolean      gtk_tree_store_remove           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_tree_store_insert           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       int           position);
-
+/* Zeile entfernt */
 void          gtk_tree_store_insert_before    (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       GtkTreeIter  *sibling);
-
+/* Zeile entfernt */
 void          gtk_tree_store_insert_after     (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       GtkTreeIter  *sibling);
-
+/* Zeile entfernt */
 void          gtk_tree_store_insert_with_values (GtkTreeStore *tree_store,
 						 GtkTreeIter  *iter,
 						 GtkTreeIter  *parent,
 						 int           position,
 						 ...);
-
+/* Zeile entfernt */
 void          gtk_tree_store_insert_with_valuesv (GtkTreeStore *tree_store,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent,
@@ -124,45 +124,45 @@ void          gtk_tree_store_insert_with_valuesv (GtkTreeStore *tree_store,
 						  int          *columns,
 						  GValue       *values,
 						  int           n_values);
-
+/* Zeile entfernt */
 void          gtk_tree_store_prepend          (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent);
-
+/* Zeile entfernt */
 void          gtk_tree_store_append           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent);
-
+/* Zeile entfernt */
 gboolean      gtk_tree_store_is_ancestor      (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *descendant);
-
+/* Zeile entfernt */
 int           gtk_tree_store_iter_depth       (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_tree_store_clear            (GtkTreeStore *tree_store);
-
+/* Zeile entfernt */
 gboolean      gtk_tree_store_iter_is_valid    (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_tree_store_reorder          (GtkTreeStore *tree_store,
                                                GtkTreeIter  *parent,
                                                int          *new_order);
-
+/* Zeile entfernt */
 void          gtk_tree_store_swap             (GtkTreeStore *tree_store,
                                                GtkTreeIter  *a,
                                                GtkTreeIter  *b);
-
+/* Zeile entfernt */
 void          gtk_tree_store_move_before      (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
-
+/* Zeile entfernt */
 void          gtk_tree_store_move_after       (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_TREE_STORE_H__ */

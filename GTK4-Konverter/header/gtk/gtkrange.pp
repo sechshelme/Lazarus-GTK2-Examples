@@ -38,6 +38,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_RANGE : longint; { return type might be wrong }
@@ -88,57 +89,77 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType              gtk_range_get_type                      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_range_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_adjustment(range:PGtkRange; adjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_range_get_adjustment(range:PGtkRange):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_inverted(range:PGtkRange; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_range_get_inverted(range:PGtkRange):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_flippable(range:PGtkRange; flippable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_range_get_flippable(range:PGtkRange):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_slider_size_fixed(range:PGtkRange; size_fixed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_range_get_slider_size_fixed(range:PGtkRange):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_range_get_range_rect(range:PGtkRange; range_rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_range_get_slider_range(range:PGtkRange; slider_start:Plongint; slider_end:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_range_set_increments(range:PGtkRange; step:double; page:double);
 
+  { Zeile entfernt  }
   procedure gtk_range_set_range(range:PGtkRange; min:double; max:double);
 
+  { Zeile entfernt  }
   procedure gtk_range_set_value(range:PGtkRange; value:double);
 
+  { Zeile entfernt  }
   function gtk_range_get_value(range:PGtkRange):double;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_show_fill_level(range:PGtkRange; show_fill_level:gboolean);
 
+  { Zeile entfernt  }
   function gtk_range_get_show_fill_level(range:PGtkRange):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_restrict_to_fill_level(range:PGtkRange; restrict_to_fill_level:gboolean);
 
+  { Zeile entfernt  }
   function gtk_range_get_restrict_to_fill_level(range:PGtkRange):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_fill_level(range:PGtkRange; fill_level:double);
 
+  { Zeile entfernt  }
   function gtk_range_get_fill_level(range:PGtkRange):double;
 
+  { Zeile entfernt  }
   procedure gtk_range_set_round_digits(range:PGtkRange; round_digits:longint);
 
+  { Zeile entfernt  }
   function gtk_range_get_round_digits(range:PGtkRange):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_RANGE_H__  }
   { was #define dname def_expr }
@@ -187,6 +208,10 @@ GType              gtk_range_get_type                      (void) G_GNUC_CONST;
     GTK_RANGE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_RANGE,GtkRangeClass);
   end;
 
+  function gtk_range_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_range_set_adjustment(range:PGtkRange; adjustment:PGtkAdjustment);
   begin
     { You must implement this function }

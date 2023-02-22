@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SEPARATOR                  (gtk_separator_get_type ())
 #define GTK_SEPARATOR(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEPARATOR, GtkSeparator))
@@ -41,12 +41,12 @@
 
 typedef struct _GtkSeparator GtkSeparator;
 
-
-GType       gtk_separator_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_separator_get_type (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_separator_new      (GtkOrientation orientation);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SEPARATOR_H__ */

@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_CONTENT_DESERIALIZER         (gdk_content_deserializer_get_type ())
 #define GDK_CONTENT_DESERIALIZER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_CONTENT_DESERIALIZER, GdkContentDeserializer))
@@ -46,48 +46,48 @@ typedef struct _GdkContentDeserializer GdkContentDeserializer;
  */
 typedef void (* GdkContentDeserializeFunc) (GdkContentDeserializer *deserializer);
 
+/* Zeile entfernt */
+GType                   gdk_content_deserializer_get_type               (void) ;
 
-GType                   gdk_content_deserializer_get_type               (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char *            gdk_content_deserializer_get_mime_type          (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 GType                   gdk_content_deserializer_get_gtype              (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 GValue *                gdk_content_deserializer_get_value              (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 GInputStream *          gdk_content_deserializer_get_input_stream       (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 int                     gdk_content_deserializer_get_priority           (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 GCancellable *          gdk_content_deserializer_get_cancellable        (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 gpointer                gdk_content_deserializer_get_user_data          (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 void                    gdk_content_deserializer_set_task_data          (GdkContentDeserializer *deserializer,
                                                                          gpointer                data,
                                                                          GDestroyNotify          notify);
-
+/* Zeile entfernt */
 gpointer                gdk_content_deserializer_get_task_data          (GdkContentDeserializer *deserializer);
 
-
+/* Zeile entfernt */
 void                    gdk_content_deserializer_return_success         (GdkContentDeserializer *deserializer);
-
+/* Zeile entfernt */
 void                    gdk_content_deserializer_return_error           (GdkContentDeserializer *deserializer,
                                                                          GError                 *error);
 
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_union_deserialize_gtypes    (GdkContentFormats      *formats);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_union_deserialize_mime_types(GdkContentFormats      *formats);
 
-
+/* Zeile entfernt */
 void                    gdk_content_register_deserializer               (const char             *mime_type,
                                                                          GType                   type,
                                                                          GdkContentDeserializeFunc deserialize,
                                                                          gpointer                data,
                                                                          GDestroyNotify          notify);
-
+/* Zeile entfernt */
 void                    gdk_content_deserialize_async                   (GInputStream           *stream,
                                                                          const char             *mime_type,
                                                                          GType                   type,
@@ -95,12 +95,12 @@ void                    gdk_content_deserialize_async                   (GInputS
                                                                          GCancellable           *cancellable,
                                                                          GAsyncReadyCallback     callback,
                                                                          gpointer                user_data);
-
+/* Zeile entfernt */
 gboolean                gdk_content_deserialize_finish                  (GAsyncResult           *result,
                                                                          GValue                 *value,
                                                                          GError                **error);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CONTENT_DESERIALIZER_H__ */

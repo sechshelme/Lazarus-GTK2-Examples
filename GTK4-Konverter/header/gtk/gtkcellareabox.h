@@ -28,7 +28,7 @@
 
 #include <gtk/gtkcellarea.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_AREA_BOX            (gtk_cell_area_box_get_type ())
 #define GTK_CELL_AREA_BOX(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_AREA_BOX, GtkCellAreaBox))
@@ -36,26 +36,26 @@
 
 typedef struct _GtkCellAreaBox              GtkCellAreaBox;
 
+/* Zeile entfernt */
+GType        gtk_cell_area_box_get_type    (void) ;
 
-GType        gtk_cell_area_box_get_type    (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkCellArea *gtk_cell_area_box_new         (void);
-
+/* Zeile entfernt */
 void         gtk_cell_area_box_pack_start  (GtkCellAreaBox  *box,
                                             GtkCellRenderer *renderer,
                                             gboolean         expand,
                                             gboolean         align,
                                             gboolean         fixed);
-
+/* Zeile entfernt */
 void         gtk_cell_area_box_pack_end    (GtkCellAreaBox  *box,
                                             GtkCellRenderer *renderer,
                                             gboolean         expand,
                                             gboolean         align,
                                             gboolean         fixed);
-
+/* Zeile entfernt */
 int          gtk_cell_area_box_get_spacing (GtkCellAreaBox  *box);
-
+/* Zeile entfernt */
 void         gtk_cell_area_box_set_spacing (GtkCellAreaBox  *box,
                                             int              spacing);
 
@@ -63,6 +63,6 @@ void         gtk_cell_area_box_set_spacing (GtkCellAreaBox  *box,
 gboolean    _gtk_cell_area_box_group_visible (GtkCellAreaBox  *box,
                                               int              group_idx);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_AREA_BOX_H__ */

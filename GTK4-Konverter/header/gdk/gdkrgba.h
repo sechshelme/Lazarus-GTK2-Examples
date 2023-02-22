@@ -32,7 +32,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 struct _GdkRGBA
 {
@@ -44,32 +44,32 @@ struct _GdkRGBA
 
 #define GDK_TYPE_RGBA (gdk_rgba_get_type ())
 
+/* Zeile entfernt */
+GType     gdk_rgba_get_type  (void) ;
 
-GType     gdk_rgba_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkRGBA * gdk_rgba_copy      (const GdkRGBA *rgba);
-
+/* Zeile entfernt */
 void      gdk_rgba_free      (GdkRGBA       *rgba);
 
+/* Zeile entfernt */
+gboolean  gdk_rgba_is_clear  (const GdkRGBA *rgba) ;
+/* Zeile entfernt */
+gboolean  gdk_rgba_is_opaque (const GdkRGBA *rgba) ;
 
-gboolean  gdk_rgba_is_clear  (const GdkRGBA *rgba) G_GNUC_PURE;
-
-gboolean  gdk_rgba_is_opaque (const GdkRGBA *rgba) G_GNUC_PURE;
-
-
-guint     gdk_rgba_hash      (gconstpointer  p) G_GNUC_PURE;
-
+/* Zeile entfernt */
+guint     gdk_rgba_hash      (gconstpointer  p) ;
+/* Zeile entfernt */
 gboolean  gdk_rgba_equal     (gconstpointer  p1,
-                              gconstpointer  p2) G_GNUC_PURE;
+                              gconstpointer  p2) ;
 
-
+/* Zeile entfernt */
 gboolean  gdk_rgba_parse     (GdkRGBA       *rgba,
                               const char    *spec);
-
+/* Zeile entfernt */
 char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_RGBA_H__ */

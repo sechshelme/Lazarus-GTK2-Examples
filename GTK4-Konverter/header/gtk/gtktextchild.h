@@ -33,7 +33,7 @@
 #include <glib-object.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 
 /**
@@ -73,21 +73,21 @@ struct _GtkTextChildAnchorClass
   void (*_gtk_reserved4) (void);
 };
 
+/* Zeile entfernt */
+GType gtk_text_child_anchor_get_type (void) ;
 
-GType gtk_text_child_anchor_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkTextChildAnchor *gtk_text_child_anchor_new (void);
 
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GtkTextChildAnchor *gtk_text_child_anchor_new_with_replacement (const char *character);
 
-
+/* Zeile entfernt */
 GtkWidget **gtk_text_child_anchor_get_widgets (GtkTextChildAnchor *anchor,
                                                guint *out_len);
-
+/* Zeile entfernt */
 gboolean gtk_text_child_anchor_get_deleted (GtkTextChildAnchor *anchor);
 
-
+/* Zeile entfernt */
 
 #endif

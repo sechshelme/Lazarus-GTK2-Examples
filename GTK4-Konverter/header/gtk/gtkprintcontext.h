@@ -28,7 +28,7 @@
 #include <gtk/gtkpagesetup.h>
 
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkPrintContext GtkPrintContext;
 
@@ -36,25 +36,25 @@ typedef struct _GtkPrintContext GtkPrintContext;
 #define GTK_PRINT_CONTEXT(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_CONTEXT, GtkPrintContext))
 #define GTK_IS_PRINT_CONTEXT(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_PRINT_CONTEXT))
 
-
-GType          gtk_print_context_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType          gtk_print_context_get_type (void) ;
 
 
 /* Rendering */
-
+/* Zeile entfernt */
 cairo_t      *gtk_print_context_get_cairo_context    (GtkPrintContext *context);
 
-
+/* Zeile entfernt */
 GtkPageSetup *gtk_print_context_get_page_setup       (GtkPrintContext *context);
-
+/* Zeile entfernt */
 double        gtk_print_context_get_width            (GtkPrintContext *context);
-
+/* Zeile entfernt */
 double        gtk_print_context_get_height           (GtkPrintContext *context);
-
+/* Zeile entfernt */
 double        gtk_print_context_get_dpi_x            (GtkPrintContext *context);
-
+/* Zeile entfernt */
 double        gtk_print_context_get_dpi_y            (GtkPrintContext *context);
-
+/* Zeile entfernt */
 gboolean      gtk_print_context_get_hard_margins     (GtkPrintContext *context,
 						      double          *top,
 						      double          *bottom,
@@ -62,20 +62,20 @@ gboolean      gtk_print_context_get_hard_margins     (GtkPrintContext *context,
 						      double          *right);
 
 /* Fonts */
-
+/* Zeile entfernt */
 PangoFontMap *gtk_print_context_get_pango_fontmap    (GtkPrintContext *context);
-
+/* Zeile entfernt */
 PangoContext *gtk_print_context_create_pango_context (GtkPrintContext *context);
-
+/* Zeile entfernt */
 PangoLayout  *gtk_print_context_create_pango_layout  (GtkPrintContext *context);
 
 /* Needed for preview implementations */
-
+/* Zeile entfernt */
 void         gtk_print_context_set_cairo_context     (GtkPrintContext *context,
 						      cairo_t         *cr,
 						      double           dpi_x,
 						      double           dpi_y);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PRINT_CONTEXT_H__ */

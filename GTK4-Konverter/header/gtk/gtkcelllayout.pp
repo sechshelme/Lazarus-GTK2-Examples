@@ -42,6 +42,7 @@
 {$include <gtk/gtkcellarea.h>}
 {$include <gtk/gtkbuildable.h>}
 {$include <gtk/gtkbuilder.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_LAYOUT : longint; { return type might be wrong }
@@ -116,37 +117,39 @@
         get_area : function (cell_layout:PGtkCellLayout):PGtkCellArea;cdecl;
       end;
 
-(* error 
-GType gtk_cell_layout_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_layout_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_pack_start(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; expand:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_pack_end(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_layout_get_cells(cell_layout:PGtkCellLayout):^GList;
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_clear(cell_layout:PGtkCellLayout);
 
-(* error 
-                                          ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gtk_cell_layout_set_attributes(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; args:array of const);
 
-    var
- : pointer;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   procedure gtk_cell_layout_add_attribute(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; attribute:Pchar; column:longint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_set_cell_data_func(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; func:GtkCellLayoutDataFunc; func_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_clear_attributes(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   procedure gtk_cell_layout_reorder(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; position:longint);
 
+  { Zeile entfernt  }
   function gtk_cell_layout_get_area(cell_layout:PGtkCellLayout):^GtkCellArea;
 
 (* Const before type ignored *)
@@ -159,6 +162,7 @@ GType gtk_cell_layout_get_type           (void) G_GNUC_CONST;
 (* Const before type ignored *)
   procedure _gtk_cell_layout_buildable_add_child(buildable:PGtkBuildable; builder:PGtkBuilder; child:PGObject; _type:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_LAYOUT_H__  }
   { was #define dname def_expr }
@@ -191,6 +195,10 @@ GType gtk_cell_layout_get_type           (void) G_GNUC_CONST;
     GTK_CELL_LAYOUT_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_CELL_LAYOUT,GtkCellLayoutIface);
   end;
 
+  function gtk_cell_layout_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_cell_layout_pack_start(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer; expand:gboolean);
   begin
     { You must implement this function }
@@ -204,6 +212,10 @@ GType gtk_cell_layout_get_type           (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   procedure gtk_cell_layout_clear(cell_layout:PGtkCellLayout);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_cell_layout_set_attributes(cell_layout:PGtkCellLayout; cell:PGtkCellRenderer);
   begin
     { You must implement this function }
   end;

@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APP_CHOOSER_BUTTON            (gtk_app_chooser_button_get_type ())
 #define GTK_APP_CHOOSER_BUTTON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER_BUTTON, GtkAppChooserButton))
@@ -37,46 +37,46 @@
 
 typedef struct _GtkAppChooserButton        GtkAppChooserButton;
 
+/* Zeile entfernt */
+GType       gtk_app_chooser_button_get_type           (void) ;
 
-GType       gtk_app_chooser_button_get_type           (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget * gtk_app_chooser_button_new                (const char          *content_type);
 
-
+/* Zeile entfernt */
 void        gtk_app_chooser_button_append_separator   (GtkAppChooserButton *self);
-
+/* Zeile entfernt */
 void        gtk_app_chooser_button_append_custom_item (GtkAppChooserButton *self,
                                                        const char          *name,
                                                        const char          *label,
                                                        GIcon               *icon);
-
+/* Zeile entfernt */
 void     gtk_app_chooser_button_set_active_custom_item (GtkAppChooserButton *self,
                                                         const char          *name);
 
-
+/* Zeile entfernt */
 void     gtk_app_chooser_button_set_show_dialog_item  (GtkAppChooserButton *self,
                                                        gboolean             setting);
-
+/* Zeile entfernt */
 gboolean gtk_app_chooser_button_get_show_dialog_item  (GtkAppChooserButton *self);
-
+/* Zeile entfernt */
 void     gtk_app_chooser_button_set_heading           (GtkAppChooserButton *self,
                                                        const char          *heading);
-
+/* Zeile entfernt */
 const char *
          gtk_app_chooser_button_get_heading           (GtkAppChooserButton *self);
-
+/* Zeile entfernt */
 void     gtk_app_chooser_button_set_show_default_item (GtkAppChooserButton *self,
                                                        gboolean             setting);
-
+/* Zeile entfernt */
 gboolean gtk_app_chooser_button_get_show_default_item (GtkAppChooserButton *self);
 
-
+/* Zeile entfernt */
 gboolean gtk_app_chooser_button_get_modal             (GtkAppChooserButton *self);
-
+/* Zeile entfernt */
 void     gtk_app_chooser_button_set_modal             (GtkAppChooserButton *self,
                                                        gboolean             modal);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APP_CHOOSER_BUTTON_H__ */

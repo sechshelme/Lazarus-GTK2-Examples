@@ -24,7 +24,7 @@
 #include <cairo.h>
 #include <gsk/gskrenderer.h>
 
-
+/* Zeile entfernt */
 
 #define GSK_TYPE_CAIRO_RENDERER (gsk_cairo_renderer_get_type ())
 
@@ -45,12 +45,12 @@
 typedef struct _GskCairoRenderer                GskCairoRenderer;
 typedef struct _GskCairoRendererClass           GskCairoRendererClass;
 
+/* Zeile entfernt */
+GType                   gsk_cairo_renderer_get_type             (void) ;
 
-GType                   gsk_cairo_renderer_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GskRenderer *           gsk_cairo_renderer_new                  (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GSK_CAIRO_RENDERER_H__ */

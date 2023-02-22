@@ -26,7 +26,7 @@
 
 #include <gtk/gtkgesturesingle.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_LONG_PRESS         (gtk_gesture_long_press_get_type ())
 #define GTK_GESTURE_LONG_PRESS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_LONG_PRESS, GtkGestureLongPress))
@@ -38,21 +38,21 @@
 typedef struct _GtkGestureLongPress GtkGestureLongPress;
 typedef struct _GtkGestureLongPressClass GtkGestureLongPressClass;
 
+/* Zeile entfernt */
+GType        gtk_gesture_long_press_get_type   (void) ;
 
-GType        gtk_gesture_long_press_get_type   (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture * gtk_gesture_long_press_new        (void);
 
-
+/* Zeile entfernt */
 void         gtk_gesture_long_press_set_delay_factor (GtkGestureLongPress *gesture,
                                                       double               delay_factor);
 
-
+/* Zeile entfernt */
 double       gtk_gesture_long_press_get_delay_factor (GtkGestureLongPress *gesture);
 
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_LONG_PRESS_H__ */

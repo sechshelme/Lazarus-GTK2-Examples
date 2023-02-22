@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkpapersize.h>}
+  { Zeile entfernt  }
 
   type
     _GtkPrintSettings = GtkPrintSettings;
@@ -74,78 +75,98 @@
         end : longint;
       end;
 
-(* error 
-GType             gtk_print_settings_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_print_settings_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_print_settings_new:^GtkPrintSettings;
 
+  { Zeile entfernt  }
   function gtk_print_settings_copy(other:PGtkPrintSettings):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_new_from_file(file_name:Pchar; error:PPGError):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_load_file(settings:PGtkPrintSettings; file_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_to_file(settings:PGtkPrintSettings; file_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_new_from_key_file(key_file:PGKeyFile; group_name:Pchar; error:PPGError):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_load_key_file(settings:PGtkPrintSettings; key_file:PGKeyFile; group_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_to_key_file(settings:PGtkPrintSettings; key_file:PGKeyFile; group_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_has_key(settings:PGtkPrintSettings; key:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_print_settings_get(settings:PGtkPrintSettings; key:Pchar):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_print_settings_set(settings:PGtkPrintSettings; key:Pchar; value:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_unset(settings:PGtkPrintSettings; key:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_foreach(settings:PGtkPrintSettings; func:GtkPrintSettingsFunc; user_data:gpointer);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_bool(settings:PGtkPrintSettings; key:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_bool(settings:PGtkPrintSettings; key:Pchar; value:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_double(settings:PGtkPrintSettings; key:Pchar):double;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_double_with_default(settings:PGtkPrintSettings; key:Pchar; def:double):double;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_double(settings:PGtkPrintSettings; key:Pchar; value:double);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_length(settings:PGtkPrintSettings; key:Pchar; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_length(settings:PGtkPrintSettings; key:Pchar; value:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_int(settings:PGtkPrintSettings; key:Pchar):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_int_with_default(settings:PGtkPrintSettings; key:Pchar; def:longint):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_int(settings:PGtkPrintSettings; key:Pchar; value:longint);
 
@@ -209,125 +230,179 @@ GType             gtk_print_settings_get_type                (void) G_GNUC_CONST
     GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION = 'win32-driver-version';    
     GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA = 'win32-driver-extra';    
   { Helpers:  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_print_settings_get_printer(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_printer(settings:PGtkPrintSettings; printer:Pchar);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_orientation(settings:PGtkPrintSettings):GtkPageOrientation;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_orientation(settings:PGtkPrintSettings; orientation:GtkPageOrientation);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_paper_size(settings:PGtkPrintSettings):^GtkPaperSize;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_paper_size(settings:PGtkPrintSettings; paper_size:PGtkPaperSize);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_paper_width(settings:PGtkPrintSettings; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_paper_width(settings:PGtkPrintSettings; width:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_paper_height(settings:PGtkPrintSettings; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_paper_height(settings:PGtkPrintSettings; height:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_use_color(settings:PGtkPrintSettings):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_use_color(settings:PGtkPrintSettings; use_color:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_collate(settings:PGtkPrintSettings):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_collate(settings:PGtkPrintSettings; collate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_reverse(settings:PGtkPrintSettings):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_reverse(settings:PGtkPrintSettings; reverse:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_duplex(settings:PGtkPrintSettings):GtkPrintDuplex;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_duplex(settings:PGtkPrintSettings; duplex:GtkPrintDuplex);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_quality(settings:PGtkPrintSettings):GtkPrintQuality;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_quality(settings:PGtkPrintSettings; quality:GtkPrintQuality);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_n_copies(settings:PGtkPrintSettings):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_n_copies(settings:PGtkPrintSettings; num_copies:longint);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_number_up(settings:PGtkPrintSettings):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_number_up(settings:PGtkPrintSettings; number_up:longint);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_number_up_layout(settings:PGtkPrintSettings):GtkNumberUpLayout;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_number_up_layout(settings:PGtkPrintSettings; number_up_layout:GtkNumberUpLayout);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_resolution(settings:PGtkPrintSettings):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_resolution(settings:PGtkPrintSettings; resolution:longint);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_resolution_x(settings:PGtkPrintSettings):longint;
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_resolution_y(settings:PGtkPrintSettings):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_resolution_xy(settings:PGtkPrintSettings; resolution_x:longint; resolution_y:longint);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_printer_lpi(settings:PGtkPrintSettings):double;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_printer_lpi(settings:PGtkPrintSettings; lpi:double);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_scale(settings:PGtkPrintSettings):double;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_scale(settings:PGtkPrintSettings; scale:double);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_print_pages(settings:PGtkPrintSettings):GtkPrintPages;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_print_pages(settings:PGtkPrintSettings; pages:GtkPrintPages);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_page_ranges(settings:PGtkPrintSettings; num_ranges:Plongint):^GtkPageRange;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_page_ranges(settings:PGtkPrintSettings; page_ranges:PGtkPageRange; num_ranges:longint);
 
+  { Zeile entfernt  }
   function gtk_print_settings_get_page_set(settings:PGtkPrintSettings):GtkPageSet;
 
+  { Zeile entfernt  }
   procedure gtk_print_settings_set_page_set(settings:PGtkPrintSettings; page_set:GtkPageSet);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_default_source(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_default_source(settings:PGtkPrintSettings; default_source:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_media_type(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_media_type(settings:PGtkPrintSettings; media_type:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_dither(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_dither(settings:PGtkPrintSettings; dither:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_finishings(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_finishings(settings:PGtkPrintSettings; finishings:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_settings_get_output_bin(settings:PGtkPrintSettings):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_settings_set_output_bin(settings:PGtkPrintSettings; output_bin:Pchar);
 
+  { Zeile entfernt  }
   function gtk_print_settings_to_gvariant(settings:PGtkPrintSettings):^GVariant;
 
+  { Zeile entfernt  }
   function gtk_print_settings_new_from_gvariant(variant:PGVariant):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_SETTINGS_H__  }
   { was #define dname def_expr }
@@ -352,6 +427,10 @@ GType             gtk_print_settings_get_type                (void) G_GNUC_CONST
     GTK_IS_PRINT_SETTINGS:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PRINT_SETTINGS);
   end;
 
+  function gtk_print_settings_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_print_settings_new:PGtkPrintSettings;
   begin
     { You must implement this function }

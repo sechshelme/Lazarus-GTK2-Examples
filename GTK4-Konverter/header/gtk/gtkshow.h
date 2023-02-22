@@ -27,9 +27,9 @@
 
 #include <gtk/gtkwindow.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 void gtk_show_uri_full (GtkWindow           *parent,
                         const char          *uri,
                         guint32              timestamp,
@@ -37,16 +37,16 @@ void gtk_show_uri_full (GtkWindow           *parent,
                         GAsyncReadyCallback  callback,
                         gpointer             user_data);
 
-
+/* Zeile entfernt */
 gboolean gtk_show_uri_full_finish (GtkWindow     *parent,
                                    GAsyncResult  *result,
                                    GError       **error);
 
-
+/* Zeile entfernt */
 void gtk_show_uri (GtkWindow  *parent,
                    const char *uri,
                    guint32     timestamp);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHOW_H__ */

@@ -31,7 +31,7 @@
 
 #include <glib.h>
 
-
+/* Zeile entfernt */
 
 /* Currently, these are the same values numerically as in the
  * X protocol. If you change that, gdksurface-x11.c/gdk_surface_set_geometry_hints()
@@ -331,6 +331,6 @@ typedef enum {
   GDK_MEMORY_N_FORMATS
 } GdkMemoryFormat;
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_ENUMS_H__ */

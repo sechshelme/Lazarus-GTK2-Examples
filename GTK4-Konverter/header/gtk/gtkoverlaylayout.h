@@ -22,36 +22,36 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_OVERLAY_LAYOUT (gtk_overlay_layout_get_type ())
 #define GTK_TYPE_OVERLAY_LAYOUT_CHILD (gtk_overlay_layout_child_get_type ())
 
 /* GtkOverlayLayout */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayout, gtk_overlay_layout, GTK, OVERLAY_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_overlay_layout_new    (void);
 
 /* GtkOverlayLayoutChild */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayoutChild, gtk_overlay_layout_child, GTK, OVERLAY_LAYOUT_CHILD, GtkLayoutChild)
-
-
+/* Zeile entfernt */
 void            gtk_overlay_layout_child_set_measure (GtkOverlayLayoutChild *child,
                                                       gboolean               measure);
 
-
+/* Zeile entfernt */
 gboolean        gtk_overlay_layout_child_get_measure (GtkOverlayLayoutChild *child);
 
-
+/* Zeile entfernt */
 void            gtk_overlay_layout_child_set_clip_overlay (GtkOverlayLayoutChild *child,
                                                            gboolean               clip_overlay);
 
-
+/* Zeile entfernt */
 gboolean        gtk_overlay_layout_child_get_clip_overlay (GtkOverlayLayoutChild *child);
 
-
+/* Zeile entfernt */

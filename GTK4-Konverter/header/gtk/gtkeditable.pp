@@ -40,6 +40,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EDITABLE : longint; { return type might be wrong }
@@ -82,59 +83,76 @@
         get_delegate : function (editable:PGtkEditable):PGtkEditable;cdecl;
       end;
 
-(* error 
-GType    gtk_editable_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_editable_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_editable_get_text(editable:PGtkEditable):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_editable_set_text(editable:PGtkEditable; text:Pchar);
 
+  { Zeile entfernt  }
 (* error 
                                             int          end_pos) G_GNUC_MALLOC;
  in declarator_list *)
 
     var
  : char;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   procedure gtk_editable_insert_text(editable:PGtkEditable; text:Pchar; length:longint; position:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_editable_delete_text(editable:PGtkEditable; start_pos:longint; end_pos:longint);
 
+  { Zeile entfernt  }
   function gtk_editable_get_selection_bounds(editable:PGtkEditable; start_pos:Plongint; end_pos:Plongint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_editable_delete_selection(editable:PGtkEditable);
 
+  { Zeile entfernt  }
   procedure gtk_editable_select_region(editable:PGtkEditable; start_pos:longint; end_pos:longint);
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_position(editable:PGtkEditable; position:longint);
 
+  { Zeile entfernt  }
   function gtk_editable_get_position(editable:PGtkEditable):longint;
 
+  { Zeile entfernt  }
   function gtk_editable_get_editable(editable:PGtkEditable):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_editable(editable:PGtkEditable; is_editable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_editable_get_alignment(editable:PGtkEditable):single;
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_alignment(editable:PGtkEditable; xalign:single);
 
+  { Zeile entfernt  }
   function gtk_editable_get_width_chars(editable:PGtkEditable):longint;
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_width_chars(editable:PGtkEditable; n_chars:longint);
 
+  { Zeile entfernt  }
   function gtk_editable_get_max_width_chars(editable:PGtkEditable):longint;
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_max_width_chars(editable:PGtkEditable; n_chars:longint);
 
+  { Zeile entfernt  }
   function gtk_editable_get_enable_undo(editable:PGtkEditable):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_editable_set_enable_undo(editable:PGtkEditable; enable_undo:gboolean);
 
   { api for implementations  }
@@ -162,20 +180,27 @@ GType    gtk_editable_get_type             (void) G_GNUC_CONST;
       GTK_EDITABLE_PROP_WIDTH_CHARS,GTK_EDITABLE_PROP_MAX_WIDTH_CHARS,
       GTK_EDITABLE_PROP_XALIGN,GTK_EDITABLE_PROP_ENABLE_UNDO,
       GTK_EDITABLE_NUM_PROPERTIES);
+  { Zeile entfernt  }
 
   function gtk_editable_install_properties(object_class:PGObjectClass; first_prop:guint):guint;
 
+  { Zeile entfernt  }
   function gtk_editable_get_delegate(editable:PGtkEditable):^GtkEditable;
 
+  { Zeile entfernt  }
   procedure gtk_editable_init_delegate(editable:PGtkEditable);
 
+  { Zeile entfernt  }
   procedure gtk_editable_finish_delegate(editable:PGtkEditable);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_editable_delegate_set_property(object:PGObject; prop_id:guint; value:PGValue; pspec:PGParamSpec):gboolean;
 
+  { Zeile entfernt  }
   function gtk_editable_delegate_get_property(object:PGObject; prop_id:guint; value:PGValue; pspec:PGParamSpec):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EDITABLE_H__  }
   { was #define dname def_expr }
@@ -208,6 +233,10 @@ GType    gtk_editable_get_type             (void) G_GNUC_CONST;
     GTK_EDITABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_EDITABLE,GtkEditableInterface);
   end;
 
+  function gtk_editable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_editable_get_text(editable:PGtkEditable):Pchar;
   begin
     { You must implement this function }

@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ORIENTABLE : longint; { return type might be wrong }
@@ -60,17 +61,17 @@
         base_iface : GTypeInterface;
       end;
 
-(* error 
-GType          gtk_orientable_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_orientable_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_orientable_set_orientation(orientable:PGtkOrientable; orientation:GtkOrientation);
 
+  { Zeile entfernt  }
   function gtk_orientable_get_orientation(orientable:PGtkOrientable):GtkOrientation;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ORIENTABLE_H__  }
   { was #define dname def_expr }
@@ -103,6 +104,10 @@ GType          gtk_orientable_get_type        (void) G_GNUC_CONST;
     GTK_ORIENTABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_ORIENTABLE,GtkOrientableIface);
   end;
 
+  function gtk_orientable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_orientable_set_orientation(orientable:PGtkOrientable; orientation:GtkOrientation);
   begin
     { You must implement this function }

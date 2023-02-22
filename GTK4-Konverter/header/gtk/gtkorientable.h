@@ -28,7 +28,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ORIENTABLE             (gtk_orientable_get_type ())
 #define GTK_ORIENTABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ORIENTABLE, GtkOrientable))
@@ -44,15 +44,15 @@ struct _GtkOrientableIface
 };
 
 
+/* Zeile entfernt */
+GType          gtk_orientable_get_type        (void) ;
 
-GType          gtk_orientable_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void           gtk_orientable_set_orientation (GtkOrientable  *orientable,
                                                GtkOrientation  orientation);
-
+/* Zeile entfernt */
 GtkOrientation gtk_orientable_get_orientation (GtkOrientable  *orientable);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ORIENTABLE_H__ */

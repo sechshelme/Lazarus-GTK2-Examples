@@ -39,6 +39,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_DRAG_SOURCE : longint; { return type might be wrong }
@@ -72,31 +73,38 @@
   type
     _GtkDragSource = GtkDragSource;
     _GtkDragSourceClass = GtkDragSourceClass;
-(* error 
-GType              gtk_drag_source_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_drag_source_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_drag_source_new:^GtkDragSource;
 
+  { Zeile entfernt  }
   procedure gtk_drag_source_set_content(source:PGtkDragSource; content:PGdkContentProvider);
 
+  { Zeile entfernt  }
   function gtk_drag_source_get_content(source:PGtkDragSource):^GdkContentProvider;
 
+  { Zeile entfernt  }
   procedure gtk_drag_source_set_actions(source:PGtkDragSource; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   function gtk_drag_source_get_actions(source:PGtkDragSource):GdkDragAction;
 
+  { Zeile entfernt  }
   procedure gtk_drag_source_set_icon(source:PGtkDragSource; paintable:PGdkPaintable; hot_x:longint; hot_y:longint);
 
+  { Zeile entfernt  }
   procedure gtk_drag_source_drag_cancel(source:PGtkDragSource);
 
+  { Zeile entfernt  }
   function gtk_drag_source_get_drag(source:PGtkDragSource):^GdkDrag;
 
+  { Zeile entfernt  }
   function gtk_drag_check_threshold(widget:PGtkWidget; start_x:longint; start_y:longint; current_x:longint; current_y:longint):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DRAG_SOURCE_H__  }
   { was #define dname def_expr }
@@ -145,6 +153,10 @@ GType              gtk_drag_source_get_type  (void) G_GNUC_CONST;
     GTK_DRAG_SOURCE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_DRAG_SOURCE,GtkDragSourceClass);
   end;
 
+  function gtk_drag_source_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_drag_source_new:PGtkDragSource;
   begin
     { You must implement this function }

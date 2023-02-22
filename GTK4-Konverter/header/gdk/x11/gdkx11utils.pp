@@ -34,6 +34,7 @@
 {$include <gdk/gdk.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
   {*
    * GDK_XID_TO_POINTER:
    * @xid: XID to stuff into the pointer
@@ -60,6 +61,7 @@
   { return type might be wrong }   
   function GDK_POINTER_TO_XID(pointer : longint) : longint;  
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_UTILS_H__  }
   { was #define dname(params) para_def_expr }

@@ -18,7 +18,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CUSTOM_LAYOUT (gtk_custom_layout_get_type ())
 
@@ -66,12 +66,12 @@ typedef void (* GtkCustomAllocateFunc) (GtkWidget    *widget,
                                         int           height,
                                         int           baseline);
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkCustomLayout, gtk_custom_layout, GTK, CUSTOM_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_custom_layout_new   (GtkCustomRequestModeFunc request_mode,
                                                  GtkCustomMeasureFunc     measure,
                                                  GtkCustomAllocateFunc    allocate);
 
-
+/* Zeile entfernt */

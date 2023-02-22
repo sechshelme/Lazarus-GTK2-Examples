@@ -30,6 +30,7 @@
 {$error "Only <gdk/wayland/gdkwayland.h> can be included directly."}
 {$endif}
 {$include <gdk/gdkmonitor.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_WAYLAND_MONITOR : longint; { return type might be wrong }
@@ -48,15 +49,15 @@
   type
     _GdkWaylandMonitor = GdkWaylandMonitor;
     _GdkWaylandMonitorClass = GdkWaylandMonitorClass;
-(* error 
-GType             gdk_wayland_monitor_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_wayland_monitor_get_type:GType;
+
+  { Zeile entfernt  }
 (* error 
 struct wl_output *gdk_wayland_monitor_get_wl_output       (GdkMonitor *monitor);
 in declaration at line 44 *)
+    { Zeile entfernt  }
 {$endif}
     { __GDK_WAYLAND_MONITOR_H__  }
   { was #define dname def_expr }
@@ -81,4 +82,8 @@ in declaration at line 44 *)
     GDK_IS_WAYLAND_MONITOR:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_WAYLAND_MONITOR);
   end;
 
+  function gdk_wayland_monitor_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

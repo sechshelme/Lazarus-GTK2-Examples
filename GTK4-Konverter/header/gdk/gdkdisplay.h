@@ -32,96 +32,96 @@
 #include <gdk/gdkseat.h>
 #include <gdk/gdkmonitor.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DISPLAY              (gdk_display_get_type ())
 #define GDK_DISPLAY(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DISPLAY, GdkDisplay))
 #define GDK_IS_DISPLAY(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_DISPLAY))
 
-
-GType       gdk_display_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gdk_display_get_type (void) ;
+/* Zeile entfernt */
 GdkDisplay *gdk_display_open                (const char *display_name);
 
-
+/* Zeile entfernt */
 const char * gdk_display_get_name         (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 gboolean    gdk_display_device_is_grabbed  (GdkDisplay  *display,
                                             GdkDevice   *device);
-
+/* Zeile entfernt */
 void        gdk_display_beep               (GdkDisplay  *display);
-
+/* Zeile entfernt */
 void        gdk_display_sync               (GdkDisplay  *display);
-
+/* Zeile entfernt */
 void        gdk_display_flush              (GdkDisplay  *display);
 
-
+/* Zeile entfernt */
 void        gdk_display_close                  (GdkDisplay  *display);
-
+/* Zeile entfernt */
 gboolean    gdk_display_is_closed          (GdkDisplay  *display);
 
-
+/* Zeile entfernt */
 gboolean    gdk_display_is_composited      (GdkDisplay  *display);
-
+/* Zeile entfernt */
 gboolean    gdk_display_is_rgba            (GdkDisplay  *display);
-
+/* Zeile entfernt */
 gboolean    gdk_display_supports_input_shapes (GdkDisplay    *display);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 gboolean    gdk_display_prepare_gl         (GdkDisplay  *self,
                                             GError     **error);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GdkGLContext *gdk_display_create_gl_context(GdkDisplay  *self,
                                             GError     **error);
 
-
+/* Zeile entfernt */
 GdkDisplay *gdk_display_get_default (void);
 
-
+/* Zeile entfernt */
 GdkClipboard *          gdk_display_get_clipboard               (GdkDisplay     *display);
-
+/* Zeile entfernt */
 GdkClipboard *          gdk_display_get_primary_clipboard       (GdkDisplay     *display);
 
-
+/* Zeile entfernt */
 void     gdk_display_notify_startup_complete   (GdkDisplay    *display,
                                                 const char    *startup_id);
-
+/* Zeile entfernt */
 const char * gdk_display_get_startup_notification_id (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 GdkAppLaunchContext *gdk_display_get_app_launch_context (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 GdkSeat * gdk_display_get_default_seat (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 GList   * gdk_display_list_seats       (GdkDisplay *display);
 
-
-GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
-
+/* Zeile entfernt */
+GListModel * gdk_display_get_monitors          (GdkDisplay *self) ;
+/* Zeile entfernt */
 GdkMonitor * gdk_display_get_monitor_at_surface (GdkDisplay *display,
                                                 GdkSurface  *surface);
 
-
+/* Zeile entfernt */
 void      gdk_display_put_event  (GdkDisplay     *display,
                                   GdkEvent       *event);
 
-
+/* Zeile entfernt */
 gboolean       gdk_display_map_keyval  (GdkDisplay    *display,
                                         guint          keyval,
                                         GdkKeymapKey **keys,
                                         int           *n_keys);
 
-
+/* Zeile entfernt */
 gboolean       gdk_display_map_keycode (GdkDisplay    *display,
                                         guint          keycode,
                                         GdkKeymapKey **keys,
                                         guint        **keyvals,
                                         int           *n_entries);
 
-
+/* Zeile entfernt */
 gboolean       gdk_display_translate_key (GdkDisplay      *display,
                                           guint            keycode,
                                           GdkModifierType  state,
@@ -131,13 +131,13 @@ gboolean       gdk_display_translate_key (GdkDisplay      *display,
                                           int             *level,
                                           GdkModifierType *consumed);
 
-
+/* Zeile entfernt */
 gboolean     gdk_display_get_setting (GdkDisplay *display,
                                       const char *name,
                                       GValue     *value);
 
 
 
-
+/* Zeile entfernt */
 
 #endif  /* __GDK_DISPLAY_H__ */

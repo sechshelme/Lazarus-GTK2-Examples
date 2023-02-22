@@ -6,12 +6,12 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LAYOUT_CHILD (gtk_layout_child_get_type())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutChild, gtk_layout_child, GTK, LAYOUT_CHILD, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 struct _GtkLayoutChildClass
 {
@@ -19,9 +19,9 @@ struct _GtkLayoutChildClass
   GObjectClass parent_class;
 };
 
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_layout_child_get_layout_manager     (GtkLayoutChild *layout_child);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_layout_child_get_child_widget       (GtkLayoutChild *layout_child);
 
-
+/* Zeile entfernt */

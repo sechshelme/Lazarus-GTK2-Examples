@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcellarea.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_AREA_BOX : longint; { return type might be wrong }
@@ -51,26 +52,29 @@
 
   type
     _GtkCellAreaBox = GtkCellAreaBox;
-(* error 
-GType        gtk_cell_area_box_get_type    (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_area_box_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_area_box_new:^GtkCellArea;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_box_pack_start(box:PGtkCellAreaBox; renderer:PGtkCellRenderer; expand:gboolean; align:gboolean; fixed:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_box_pack_end(box:PGtkCellAreaBox; renderer:PGtkCellRenderer; expand:gboolean; align:gboolean; fixed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_area_box_get_spacing(box:PGtkCellAreaBox):longint;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_box_set_spacing(box:PGtkCellAreaBox; spacing:longint);
 
   { Private interaction with GtkCellAreaBoxContext  }
   function _gtk_cell_area_box_group_visible(box:PGtkCellAreaBox; group_idx:longint):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_AREA_BOX_H__  }
   { was #define dname def_expr }
@@ -95,6 +99,10 @@ GType        gtk_cell_area_box_get_type    (void) G_GNUC_CONST;
     GTK_IS_CELL_AREA_BOX:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_CELL_AREA_BOX);
   end;
 
+  function gtk_cell_area_box_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_area_box_new:PGtkCellArea;
   begin
     { You must implement this function }

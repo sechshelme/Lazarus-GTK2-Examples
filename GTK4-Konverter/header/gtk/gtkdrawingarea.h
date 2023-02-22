@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_DRAWING_AREA            (gtk_drawing_area_get_type ())
 #define GTK_DRAWING_AREA(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_DRAWING_AREA, GtkDrawingArea))
@@ -85,27 +85,27 @@ struct _GtkDrawingAreaClass
 };
 
 
-
-GType      gtk_drawing_area_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_drawing_area_get_type (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_drawing_area_new      (void);
 
-
+/* Zeile entfernt */
 void            gtk_drawing_area_set_content_width      (GtkDrawingArea         *self,
                                                          int                     width);
-
+/* Zeile entfernt */
 int             gtk_drawing_area_get_content_width      (GtkDrawingArea         *self);
-
+/* Zeile entfernt */
 void            gtk_drawing_area_set_content_height     (GtkDrawingArea         *self,
                                                          int                     height);
-
+/* Zeile entfernt */
 int             gtk_drawing_area_get_content_height     (GtkDrawingArea         *self);
-
+/* Zeile entfernt */
 void            gtk_drawing_area_set_draw_func          (GtkDrawingArea         *self,
                                                          GtkDrawingAreaDrawFunc  draw_func,
                                                          gpointer                user_data,
                                                          GDestroyNotify          destroy);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DRAWING_AREA_H__ */

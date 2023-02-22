@@ -1,14 +1,14 @@
 
-    Type
-    Pchar  = ^char;
-    PGdkDevice  = ^GdkDevice;
-    PGdkEvent  = ^GdkEvent;
-    PGdkRectangle  = ^GdkRectangle;
-    PGdkSurface  = ^GdkSurface;
-    PGtkIMContext  = ^GtkIMContext;
-    PGtkWidget  = ^GtkWidget;
-    Plongint  = ^longint;
-    PPangoAttrList  = ^PangoAttrList;
+  Type
+  Pchar  = ^char;
+  PGdkDevice  = ^GdkDevice;
+  PGdkEvent  = ^GdkEvent;
+  PGdkRectangle  = ^GdkRectangle;
+  PGdkSurface  = ^GdkSurface;
+  PGtkIMContext  = ^GtkIMContext;
+  PGtkWidget  = ^GtkWidget;
+  Plongint  = ^longint;
+  PPangoAttrList  = ^PangoAttrList;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_IM_CONTEXT : longint; { return type might be wrong }
@@ -109,31 +110,37 @@
         _gtk_reserved5 : procedure ;cdecl;
       end;
 
-(* error 
-GType    gtk_im_context_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_im_context_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_im_context_set_client_widget(context:PGtkIMContext; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_im_context_get_preedit_string(context:PGtkIMContext; str:PPchar; attrs:PPPangoAttrList; cursor_pos:Plongint);
 
+  { Zeile entfernt  }
   function gtk_im_context_filter_keypress(context:PGtkIMContext; event:PGdkEvent):gboolean;
 
+  { Zeile entfernt  }
   function gtk_im_context_filter_key(context:PGtkIMContext; press:gboolean; surface:PGdkSurface; device:PGdkDevice; time:guint32; 
              keycode:guint; state:GdkModifierType; group:longint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_im_context_focus_in(context:PGtkIMContext);
 
+  { Zeile entfernt  }
   procedure gtk_im_context_focus_out(context:PGtkIMContext);
 
+  { Zeile entfernt  }
   procedure gtk_im_context_reset(context:PGtkIMContext);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_im_context_set_cursor_location(context:PGtkIMContext; area:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_im_context_set_use_preedit(context:PGtkIMContext; use_preedit:gboolean);
 
 (* error 
@@ -157,25 +164,19 @@ gboolean gtk_im_context_get_surrounding     (GtkIMContext       *context,
  in declarator_list *)
  in declarator_list *)
  in declarator_list *)
-(* error 
-void     gtk_im_context_set_surrounding_with_selection
-in declaration at line 159 *)
-(* error 
-gboolean gtk_im_context_get_surrounding_with_selection
-(* error 
-                                             char              **text,
-(* error 
-                                             int                *cursor_index,
-(* error 
-                                             int                *anchor_index);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
-    function gtk_im_context_delete_surrounding(context:PGtkIMContext; offset:longint; n_chars:longint):gboolean;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  procedure gtk_im_context_set_surrounding_with_selection(context:PGtkIMContext; text:Pchar; len:longint; cursor_index:longint; anchor_index:longint);
 
+  { Zeile entfernt  }
+  function gtk_im_context_get_surrounding_with_selection(context:PGtkIMContext; text:PPchar; cursor_index:Plongint; anchor_index:Plongint):gboolean;
+
+  { Zeile entfernt  }
+  function gtk_im_context_delete_surrounding(context:PGtkIMContext; offset:longint; n_chars:longint):gboolean;
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_IM_CONTEXT_H__  }
+  { __GTK_IM_CONTEXT_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_IM_CONTEXT : longint; { return type might be wrong }
     begin
@@ -222,6 +223,10 @@ gboolean gtk_im_context_get_surrounding_with_selection
     GTK_IM_CONTEXT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_IM_CONTEXT,GtkIMContextClass);
   end;
 
+  function gtk_im_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_im_context_set_client_widget(context:PGtkIMContext; widget:PGtkWidget);
   begin
     { You must implement this function }
@@ -259,8 +264,16 @@ gboolean gtk_im_context_get_surrounding_with_selection
   begin
     { You must implement this function }
   end;
-    function gtk_im_context_delete_surrounding(context:PGtkIMContext; offset:longint; n_chars:longint):gboolean;
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_im_context_set_surrounding_with_selection(context:PGtkIMContext; text:Pchar; len:longint; cursor_index:longint; anchor_index:longint);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_im_context_get_surrounding_with_selection(context:PGtkIMContext; text:PPchar; cursor_index:Plongint; anchor_index:Plongint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_im_context_delete_surrounding(context:PGtkIMContext; offset:longint; n_chars:longint):gboolean;
+  begin
+    { You must implement this function }
+  end;
 

@@ -38,6 +38,7 @@
 {$include <gtk/gtkcellarea.h>}
 {$include <gtk/gtktreeviewcolumn.h>}
 {$include <gtk/gtktreemodelfilter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ENTRY_COMPLETION : longint; { return type might be wrong }
@@ -76,64 +77,86 @@
 (* Const before type ignored *)
 
     GtkEntryCompletionMatchFunc = function (completion:PGtkEntryCompletion; key:Pchar; iter:PGtkTreeIter; user_data:gpointer):gboolean;cdecl;
-(* error 
-GType               gtk_entry_completion_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_entry_completion_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_entry_completion_new:^GtkEntryCompletion;
 
+  { Zeile entfernt  }
   function gtk_entry_completion_new_with_area(area:PGtkCellArea):^GtkEntryCompletion;
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_entry(completion:PGtkEntryCompletion):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_model(completion:PGtkEntryCompletion; model:PGtkTreeModel);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_model(completion:PGtkEntryCompletion):^GtkTreeModel;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_match_func(completion:PGtkEntryCompletion; func:GtkEntryCompletionMatchFunc; func_data:gpointer; func_notify:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_minimum_key_length(completion:PGtkEntryCompletion; length:longint);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_minimum_key_length(completion:PGtkEntryCompletion):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_completion_compute_prefix(completion:PGtkEntryCompletion; key:Pchar):^char;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_complete(completion:PGtkEntryCompletion);
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_insert_prefix(completion:PGtkEntryCompletion);
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_inline_completion(completion:PGtkEntryCompletion; inline_completion:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_inline_completion(completion:PGtkEntryCompletion):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_inline_selection(completion:PGtkEntryCompletion; inline_selection:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_inline_selection(completion:PGtkEntryCompletion):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_popup_completion(completion:PGtkEntryCompletion; popup_completion:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_popup_completion(completion:PGtkEntryCompletion):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_popup_set_width(completion:PGtkEntryCompletion; popup_set_width:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_popup_set_width(completion:PGtkEntryCompletion):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_popup_single_match(completion:PGtkEntryCompletion; popup_single_match:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_popup_single_match(completion:PGtkEntryCompletion):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_completion_get_completion_prefix(completion:PGtkEntryCompletion):^char;
 
   { convenience  }
+  { Zeile entfernt  }
   procedure gtk_entry_completion_set_text_column(completion:PGtkEntryCompletion; column:longint);
 
+  { Zeile entfernt  }
   function gtk_entry_completion_get_text_column(completion:PGtkEntryCompletion):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ENTRY_COMPLETION_H__  }
   { was #define dname def_expr }
@@ -158,6 +181,10 @@ GType               gtk_entry_completion_get_type               (void) G_GNUC_CO
     GTK_IS_ENTRY_COMPLETION:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_ENTRY_COMPLETION);
   end;
 
+  function gtk_entry_completion_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_entry_completion_new:PGtkEntryCompletion;
   begin
     { You must implement this function }

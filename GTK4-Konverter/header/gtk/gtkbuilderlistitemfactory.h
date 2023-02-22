@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistitemfactory.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BUILDER_LIST_ITEM_FACTORY         (gtk_builder_list_item_factory_get_type ())
 #define GTK_BUILDER_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_BUILDER_LIST_ITEM_FACTORY, GtkBuilderListItemFactory))
@@ -38,23 +38,23 @@
 typedef struct _GtkBuilderListItemFactory GtkBuilderListItemFactory;
 typedef struct _GtkBuilderListItemFactoryClass GtkBuilderListItemFactoryClass;
 
+/* Zeile entfernt */
+GType                   gtk_builder_list_item_factory_get_type          (void) ;
 
-GType                   gtk_builder_list_item_factory_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkListItemFactory *    gtk_builder_list_item_factory_new_from_bytes    (GtkBuilderScope                *scope,
                                                                          GBytes                         *bytes);
-
+/* Zeile entfernt */
 GtkListItemFactory *    gtk_builder_list_item_factory_new_from_resource (GtkBuilderScope                *scope,
                                                                          const char                     *resource_path);
 
+/* Zeile entfernt */
+GBytes *                gtk_builder_list_item_factory_get_bytes         (GtkBuilderListItemFactory      *self) ;
+/* Zeile entfernt */
+const char *            gtk_builder_list_item_factory_get_resource      (GtkBuilderListItemFactory      *self) ;
+/* Zeile entfernt */
+GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuilderListItemFactory      *self) ;
 
-GBytes *                gtk_builder_list_item_factory_get_bytes         (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
-
-const char *            gtk_builder_list_item_factory_get_resource      (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
-
-GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
-
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BUILDER_LIST_ITEM_FACTORY_H__ */

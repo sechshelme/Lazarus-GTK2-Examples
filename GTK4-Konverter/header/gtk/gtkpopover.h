@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_POPOVER                 (gtk_popover_get_type ())
 #define GTK_POPOVER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_POPOVER, GtkPopover))
@@ -56,75 +56,75 @@ struct _GtkPopoverClass
   gpointer reserved[8];
 };
 
+/* Zeile entfernt */
+GType           gtk_popover_get_type (void) ;
 
-GType           gtk_popover_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_popover_new             (void);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_child       (GtkPopover         *popover,
                                              GtkWidget          *child);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_popover_get_child       (GtkPopover         *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_pointing_to (GtkPopover         *popover,
                                              const GdkRectangle *rect);
-
+/* Zeile entfernt */
 gboolean        gtk_popover_get_pointing_to (GtkPopover         *popover,
                                              GdkRectangle       *rect);
-
+/* Zeile entfernt */
 void            gtk_popover_set_position    (GtkPopover         *popover,
                                              GtkPositionType     position);
-
+/* Zeile entfernt */
 GtkPositionType gtk_popover_get_position    (GtkPopover         *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_autohide    (GtkPopover         *popover,
                                              gboolean            autohide);
-
+/* Zeile entfernt */
 gboolean        gtk_popover_get_autohide    (GtkPopover         *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_has_arrow   (GtkPopover         *popover,
                                              gboolean            has_arrow);
-
+/* Zeile entfernt */
 gboolean        gtk_popover_get_has_arrow   (GtkPopover         *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_mnemonics_visible (GtkPopover   *popover,
                                                    gboolean      mnemonics_visible);
-
+/* Zeile entfernt */
 gboolean        gtk_popover_get_mnemonics_visible (GtkPopover   *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_popup (GtkPopover *popover);
-
+/* Zeile entfernt */
 void            gtk_popover_popdown (GtkPopover *popover);
 
-
+/* Zeile entfernt */
 void            gtk_popover_set_offset (GtkPopover *popover,
                                         int         x_offset,
                                         int         y_offset);
-
+/* Zeile entfernt */
 void            gtk_popover_get_offset (GtkPopover *popover,
                                         int        *x_offset,
                                         int        *y_offset);
-
+/* Zeile entfernt */
 void            gtk_popover_set_cascade_popdown (GtkPopover *popover,
                                                  gboolean    cascade_popdown);
-
+/* Zeile entfernt */
 gboolean        gtk_popover_get_cascade_popdown (GtkPopover *popover);
 
-
+/* Zeile entfernt */
 void gtk_popover_set_default_widget (GtkPopover *popover,
                                      GtkWidget  *widget);
 
-
+/* Zeile entfernt */
 void gtk_popover_present (GtkPopover *popover);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_POPOVER_H__ */

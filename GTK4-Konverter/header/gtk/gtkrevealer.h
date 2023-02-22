@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_REVEALER (gtk_revealer_get_type ())
@@ -46,34 +46,34 @@ typedef enum {
   GTK_REVEALER_TRANSITION_TYPE_SWING_DOWN
 } GtkRevealerTransitionType;
 
-
-GType                      gtk_revealer_get_type                (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                      gtk_revealer_get_type                (void) ;
+/* Zeile entfernt */
 GtkWidget*                 gtk_revealer_new                     (void);
-
+/* Zeile entfernt */
 gboolean                   gtk_revealer_get_reveal_child        (GtkRevealer               *revealer);
-
+/* Zeile entfernt */
 void                       gtk_revealer_set_reveal_child        (GtkRevealer               *revealer,
                                                                  gboolean                   reveal_child);
-
+/* Zeile entfernt */
 gboolean                   gtk_revealer_get_child_revealed      (GtkRevealer               *revealer);
-
+/* Zeile entfernt */
 guint                      gtk_revealer_get_transition_duration (GtkRevealer               *revealer);
-
+/* Zeile entfernt */
 void                       gtk_revealer_set_transition_duration (GtkRevealer               *revealer,
                                                                  guint                      duration);
-
+/* Zeile entfernt */
 void                       gtk_revealer_set_transition_type     (GtkRevealer               *revealer,
                                                                  GtkRevealerTransitionType  transition);
-
+/* Zeile entfernt */
 GtkRevealerTransitionType  gtk_revealer_get_transition_type     (GtkRevealer               *revealer);
 
-
+/* Zeile entfernt */
 void                       gtk_revealer_set_child               (GtkRevealer               *revealer,
                                                                  GtkWidget                 *child);
-
+/* Zeile entfernt */
 GtkWidget *                gtk_revealer_get_child               (GtkRevealer               *revealer);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_REVEALER_H__ */

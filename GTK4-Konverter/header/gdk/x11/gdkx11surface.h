@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_X11_SURFACE              (gdk_x11_surface_get_type ())
 #define GDK_X11_SURFACE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_SURFACE, GdkX11Surface))
@@ -50,31 +50,31 @@ typedef GdkSurface GdkX11Surface;
 #endif
 typedef struct _GdkX11SurfaceClass GdkX11SurfaceClass;
 
-
+/* Zeile entfernt */
 GType    gdk_x11_surface_get_type          (void);
 
-
+/* Zeile entfernt */
 Window   gdk_x11_surface_get_xid           (GdkSurface   *surface);
-
+/* Zeile entfernt */
 void     gdk_x11_surface_set_user_time     (GdkSurface   *surface,
                                             guint32      timestamp);
-
+/* Zeile entfernt */
 void     gdk_x11_surface_set_utf8_property (GdkSurface *surface,
                                             const char *name,
                                             const char *value);
-
+/* Zeile entfernt */
 void     gdk_x11_surface_set_theme_variant (GdkSurface   *surface,
                                             const char  *variant);
-
+/* Zeile entfernt */
 void     gdk_x11_surface_move_to_current_desktop (GdkSurface   *surface);
 
-
+/* Zeile entfernt */
 guint32  gdk_x11_surface_get_desktop             (GdkSurface   *surface);
-
+/* Zeile entfernt */
 void     gdk_x11_surface_move_to_desktop         (GdkSurface   *surface,
                                                   guint32      desktop);
 
-
+/* Zeile entfernt */
 void     gdk_x11_surface_set_frame_sync_enabled (GdkSurface *surface,
                                                  gboolean   frame_sync_enabled);
 
@@ -98,30 +98,30 @@ void     gdk_x11_surface_set_frame_sync_enabled (GdkSurface *surface,
  */
 #define GDK_SURFACE_XID(win)           (gdk_x11_surface_get_xid (win))
 
-
+/* Zeile entfernt */
 guint32       gdk_x11_get_server_time  (GdkSurface       *surface);
 
-
+/* Zeile entfernt */
 GdkSurface  *gdk_x11_surface_lookup_for_display      (GdkDisplay *display,
                                                       Window      window);
 
-
+/* Zeile entfernt */
 void gdk_x11_surface_set_skip_taskbar_hint (GdkSurface *surface,
                                             gboolean    skips_taskbar);
-
+/* Zeile entfernt */
 void gdk_x11_surface_set_skip_pager_hint   (GdkSurface *surface,
                                             gboolean    skips_pager);
-
+/* Zeile entfernt */
 void gdk_x11_surface_set_urgency_hint      (GdkSurface *surface,
                                             gboolean    urgent);
 
-
+/* Zeile entfernt */
 void          gdk_x11_surface_set_group    (GdkSurface *surface,
                                             GdkSurface *leader);
-
+/* Zeile entfernt */
 GdkSurface *  gdk_x11_surface_get_group    (GdkSurface *surface);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_SURFACE_H__ */

@@ -22,14 +22,14 @@
 
 #include <gtk/gtkentrybuffer.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PASSWORD_ENTRY_BUFFER (gtk_password_entry_buffer_get_type())
 
-GDK_AVAILABLE_IN_4_4
-G_DECLARE_FINAL_TYPE (GtkPasswordEntryBuffer, gtk_password_entry_buffer, GTK, PASSWORD_ENTRY_BUFFER, GtkEntryBuffer)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 GtkEntryBuffer *        gtk_password_entry_buffer_new   (void);
 
-
+/* Zeile entfernt */

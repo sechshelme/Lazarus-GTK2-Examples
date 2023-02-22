@@ -41,6 +41,7 @@
 {$include <gdk-pixbuf/gdk-pixbuf.h>}
 {$include <gdk/gdk.h>}
 {$include <time.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_RECENT_INFO : longint; { return type might be wrong }
@@ -165,129 +166,157 @@
   { was #define dname def_expr }
   function GTK_RECENT_MANAGER_ERROR : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gtk_recent_manager_error_quark:GQuark;
 
-(* error 
-GType 		  gtk_recent_manager_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_recent_manager_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_recent_manager_new:^GtkRecentManager;
 
+  { Zeile entfernt  }
   function gtk_recent_manager_get_default:^GtkRecentManager;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_manager_add_item(manager:PGtkRecentManager; uri:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_recent_manager_add_full(manager:PGtkRecentManager; uri:Pchar; recent_data:PGtkRecentData):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_manager_remove_item(manager:PGtkRecentManager; uri:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_manager_lookup_item(manager:PGtkRecentManager; uri:Pchar; error:PPGError):^GtkRecentInfo;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_manager_has_item(manager:PGtkRecentManager; uri:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_recent_manager_move_item(manager:PGtkRecentManager; uri:Pchar; new_uri:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_recent_manager_get_items(manager:PGtkRecentManager):^GList;
 
+  { Zeile entfernt  }
   function gtk_recent_manager_purge_items(manager:PGtkRecentManager; error:PPGError):longint;
 
-(* error 
-GType	              gtk_recent_info_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_recent_info_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_recent_info_ref(info:PGtkRecentInfo):^GtkRecentInfo;
 
+  { Zeile entfernt  }
   procedure gtk_recent_info_unref(info:PGtkRecentInfo);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_info_get_uri(info:PGtkRecentInfo):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_info_get_display_name(info:PGtkRecentInfo):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_info_get_description(info:PGtkRecentInfo):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_info_get_mime_type(info:PGtkRecentInfo):^char;
 
+  { Zeile entfernt  }
   function gtk_recent_info_get_added(info:PGtkRecentInfo):^GDateTime;
 
+  { Zeile entfernt  }
   function gtk_recent_info_get_modified(info:PGtkRecentInfo):^GDateTime;
 
+  { Zeile entfernt  }
   function gtk_recent_info_get_visited(info:PGtkRecentInfo):^GDateTime;
 
+  { Zeile entfernt  }
   function gtk_recent_info_get_private_hint(info:PGtkRecentInfo):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_recent_info_get_application_info(info:PGtkRecentInfo; app_name:Pchar; app_exec:PPchar; count:Pguint; stamp:PPGDateTime):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_recent_info_create_app_info(info:PGtkRecentInfo; app_name:Pchar; error:PPGError):^GAppInfo;
 
+  { Zeile entfernt  }
 (* error 
 							    gsize          *length) G_GNUC_MALLOC;
  in declarator_list *)
 
     var
  : char;
+  { Zeile entfernt  }
 (* error 
 char *               gtk_recent_info_last_application     (GtkRecentInfo  *info) G_GNUC_MALLOC;
  in declarator_list *)
  : char;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_recent_info_has_application(info:PGtkRecentInfo; app_name:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* error 
 							    gsize          *length) G_GNUC_MALLOC;
  in declarator_list *)
 
     var
  : char;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_recent_info_has_group(info:PGtkRecentInfo; group_name:Pchar):gboolean;
 
+  { Zeile entfernt  }
   function gtk_recent_info_get_gicon(info:PGtkRecentInfo):^GIcon;
 
+  { Zeile entfernt  }
 (* error 
 char *               gtk_recent_info_get_short_name       (GtkRecentInfo  *info) G_GNUC_MALLOC;
  in declarator_list *)
 
     var
  : char;
+  { Zeile entfernt  }
 (* error 
 char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info) G_GNUC_MALLOC;
  in declarator_list *)
  : char;
+  { Zeile entfernt  }
 
   function gtk_recent_info_get_age(info:PGtkRecentInfo):longint;
 
+  { Zeile entfernt  }
   function gtk_recent_info_is_local(info:PGtkRecentInfo):gboolean;
 
+  { Zeile entfernt  }
   function gtk_recent_info_exists(info:PGtkRecentInfo):gboolean;
 
+  { Zeile entfernt  }
   function gtk_recent_info_match(info_a:PGtkRecentInfo; info_b:PGtkRecentInfo):gboolean;
 
   { private  }
   procedure _gtk_recent_manager_sync;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_RECENT_MANAGER_H__  }
   { was #define dname def_expr }
@@ -352,6 +381,10 @@ char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info)
   begin
     { You must implement this function }
   end;
+  function gtk_recent_manager_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_recent_manager_new:PGtkRecentManager;
   begin
     { You must implement this function }
@@ -389,6 +422,10 @@ char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info)
     { You must implement this function }
   end;
   function gtk_recent_manager_purge_items(manager:PGtkRecentManager; error:PPGError):longint;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_recent_info_get_type:GType;
   begin
     { You must implement this function }
   end;

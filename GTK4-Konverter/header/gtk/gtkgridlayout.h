@@ -20,72 +20,72 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GRID_LAYOUT (gtk_grid_layout_get_type ())
 #define GTK_TYPE_GRID_LAYOUT_CHILD (gtk_grid_layout_child_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkGridLayout, gtk_grid_layout, GTK, GRID_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_grid_layout_new                             (void);
 
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_row_homogeneous             (GtkGridLayout       *grid,
                                                                          gboolean             homogeneous);
-
+/* Zeile entfernt */
 gboolean                gtk_grid_layout_get_row_homogeneous             (GtkGridLayout       *grid);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_row_spacing                 (GtkGridLayout       *grid,
                                                                          guint                spacing);
-
+/* Zeile entfernt */
 guint                   gtk_grid_layout_get_row_spacing                 (GtkGridLayout       *grid);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_column_homogeneous          (GtkGridLayout       *grid,
                                                                          gboolean             homogeneous);
-
+/* Zeile entfernt */
 gboolean                gtk_grid_layout_get_column_homogeneous          (GtkGridLayout       *grid);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_column_spacing              (GtkGridLayout       *grid,
                                                                          guint                spacing);
-
+/* Zeile entfernt */
 guint                   gtk_grid_layout_get_column_spacing              (GtkGridLayout       *grid);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_row_baseline_position       (GtkGridLayout       *grid,
                                                                          int                  row,
                                                                          GtkBaselinePosition  pos);
-
+/* Zeile entfernt */
 GtkBaselinePosition     gtk_grid_layout_get_row_baseline_position       (GtkGridLayout       *grid,
                                                                          int                  row);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_set_baseline_row                (GtkGridLayout       *grid,
                                                                          int                  row);
-
+/* Zeile entfernt */
 int                     gtk_grid_layout_get_baseline_row                (GtkGridLayout       *grid);
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOUT_CHILD, GtkLayoutChild)
-
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_child_set_row                   (GtkGridLayoutChild  *child,
                                                                          int                  row);
-
+/* Zeile entfernt */
 int                     gtk_grid_layout_child_get_row                   (GtkGridLayoutChild  *child);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_child_set_column                (GtkGridLayoutChild  *child,
                                                                          int                  column);
-
+/* Zeile entfernt */
 int                     gtk_grid_layout_child_get_column                (GtkGridLayoutChild  *child);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_child_set_column_span           (GtkGridLayoutChild  *child,
                                                                          int                  span);
-
+/* Zeile entfernt */
 int                     gtk_grid_layout_child_get_column_span           (GtkGridLayoutChild  *child);
-
+/* Zeile entfernt */
 void                    gtk_grid_layout_child_set_row_span              (GtkGridLayoutChild  *child,
                                                                          int                  span);
-
+/* Zeile entfernt */
 int                     gtk_grid_layout_child_get_row_span              (GtkGridLayoutChild  *child);
 
-
+/* Zeile entfernt */

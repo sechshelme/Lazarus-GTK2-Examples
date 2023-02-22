@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ASPECT_FRAME            (gtk_aspect_frame_get_type ())
 #define GTK_ASPECT_FRAME(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ASPECT_FRAME, GtkAspectFrame))
@@ -41,44 +41,44 @@
 
 typedef struct _GtkAspectFrame      GtkAspectFrame;
 
-
-GType      gtk_aspect_frame_get_type   (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_aspect_frame_get_type   (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_aspect_frame_new        (float            xalign,
                                         float            yalign,
                                         float            ratio,
                                         gboolean         obey_child);
 
-
+/* Zeile entfernt */
 void       gtk_aspect_frame_set_xalign (GtkAspectFrame *self,
                                         float           xalign);
-
+/* Zeile entfernt */
 float      gtk_aspect_frame_get_xalign (GtkAspectFrame *self);
 
-
+/* Zeile entfernt */
 void       gtk_aspect_frame_set_yalign (GtkAspectFrame *self,
                                         float           yalign);
-
+/* Zeile entfernt */
 float      gtk_aspect_frame_get_yalign (GtkAspectFrame *self);
 
-
+/* Zeile entfernt */
 void       gtk_aspect_frame_set_ratio  (GtkAspectFrame *self,
                                         float           ratio);
-
+/* Zeile entfernt */
 float      gtk_aspect_frame_get_ratio  (GtkAspectFrame *self);
 
-
+/* Zeile entfernt */
 void       gtk_aspect_frame_set_obey_child (GtkAspectFrame *self,
                                             gboolean        obey_child);
-
+/* Zeile entfernt */
 gboolean   gtk_aspect_frame_get_obey_child (GtkAspectFrame *self);
 
-
+/* Zeile entfernt */
 void       gtk_aspect_frame_set_child  (GtkAspectFrame *self,
                                         GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget *gtk_aspect_frame_get_child  (GtkAspectFrame *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ASPECT_FRAME_H__ */

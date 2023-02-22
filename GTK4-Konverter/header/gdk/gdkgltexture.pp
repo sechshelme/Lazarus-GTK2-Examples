@@ -32,6 +32,7 @@
 {$endif}
 {$include <gdk/gdkglcontext.h>}
 {$include <gdk/gdktexture.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_GL_TEXTURE : longint; { return type might be wrong }
@@ -50,18 +51,19 @@
   type
     _GdkGLTexture = GdkGLTexture;
     _GdkGLTextureClass = GdkGLTextureClass;
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkGLTexture, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkGLTexture, g_object_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
+  function gdk_gl_texture_get_type:GType;
+
+  { Zeile entfernt  }
   function gdk_gl_texture_new(context:PGdkGLContext; id:guint; width:longint; height:longint; destroy:GDestroyNotify; 
              data:gpointer):^GdkTexture;
 
+  { Zeile entfernt  }
   procedure gdk_gl_texture_release(self:PGdkGLTexture);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_GL_TEXTURE_H__  }
   { was #define dname def_expr }
@@ -86,6 +88,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkGLTexture, g_object_unref)
     GDK_IS_GL_TEXTURE:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_GL_TEXTURE);
   end;
 
+  function gdk_gl_texture_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_gl_texture_new(context:PGdkGLContext; id:guint; width:longint; height:longint; destroy:GDestroyNotify; 
              data:gpointer):PGdkTexture;
   begin

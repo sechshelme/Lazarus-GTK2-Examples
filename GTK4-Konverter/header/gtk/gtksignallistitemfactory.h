@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistitemfactory.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY         (gtk_signal_list_item_factory_get_type ())
 #define GTK_SIGNAL_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY, GtkSignalListItemFactory))
@@ -39,13 +39,13 @@ typedef struct _GtkSignalListItemFactory GtkSignalListItemFactory;
 typedef struct _GtkSignalListItemFactoryClass GtkSignalListItemFactoryClass;
 
 
+/* Zeile entfernt */
+GType                   gtk_signal_list_item_factory_get_type   (void) ;
 
-GType                   gtk_signal_list_item_factory_get_type   (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkListItemFactory *    gtk_signal_list_item_factory_new        (void);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SIGNAL_LIST_ITEM_FACTORY_H__ */

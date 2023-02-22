@@ -22,22 +22,22 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_NO_SELECTION (gtk_no_selection_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkNoSelection, gtk_no_selection, GTK, NO_SELECTION, GObject)
-
-
+/* Zeile entfernt */
 GtkNoSelection *        gtk_no_selection_new                    (GListModel             *model);
 
-
+/* Zeile entfernt */
 GListModel *            gtk_no_selection_get_model              (GtkNoSelection         *self);
-
+/* Zeile entfernt */
 void                    gtk_no_selection_set_model              (GtkNoSelection         *self,
                                                                  GListModel             *model);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_NO_SELECTION_H__ */

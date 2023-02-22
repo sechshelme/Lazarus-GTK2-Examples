@@ -50,6 +50,7 @@
 {$include <gdk/gdkenums.h>}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_EVENT : longint; { return type might be wrong }
@@ -360,195 +361,191 @@
       GDK_CROSSING_GTK_UNGRAB,GDK_CROSSING_STATE_CHANGED,
       GDK_CROSSING_TOUCH_BEGIN,GDK_CROSSING_TOUCH_END,
       GDK_CROSSING_DEVICE_SWITCH);
-(* error 
-GType                   gdk_event_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
-(* error 
-GType                   gdk_event_sequence_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  function gdk_event_get_type:GType;
 
+  { Zeile entfernt  }
+  function gdk_event_sequence_get_type:GType;
+
+  { Zeile entfernt  }
   function gdk_event_ref(event:PGdkEvent):^GdkEvent;
 
+  { Zeile entfernt  }
   procedure gdk_event_unref(event:PGdkEvent);
 
+  { Zeile entfernt  }
   function gdk_event_get_event_type(event:PGdkEvent):GdkEventType;
 
+  { Zeile entfernt  }
   function gdk_event_get_surface(event:PGdkEvent):^GdkSurface;
 
+  { Zeile entfernt  }
   function gdk_event_get_seat(event:PGdkEvent):^GdkSeat;
 
+  { Zeile entfernt  }
   function gdk_event_get_device(event:PGdkEvent):^GdkDevice;
 
+  { Zeile entfernt  }
   function gdk_event_get_device_tool(event:PGdkEvent):^GdkDeviceTool;
 
+  { Zeile entfernt  }
   function gdk_event_get_time(event:PGdkEvent):guint32;
 
+  { Zeile entfernt  }
   function gdk_event_get_display(event:PGdkEvent):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_event_get_event_sequence(event:PGdkEvent):^GdkEventSequence;
 
+  { Zeile entfernt  }
   function gdk_event_get_modifier_state(event:PGdkEvent):GdkModifierType;
 
+  { Zeile entfernt  }
   function gdk_event_get_position(event:PGdkEvent; x:Pdouble; y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gdk_event_get_axes(event:PGdkEvent; axes:PPdouble; n_axes:Pguint):gboolean;
 
+  { Zeile entfernt  }
   function gdk_event_get_axis(event:PGdkEvent; axis_use:GdkAxisUse; value:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gdk_event_get_history(event:PGdkEvent; out_n_coords:Pguint):^GdkTimeCoord;
 
+  { Zeile entfernt  }
   function gdk_event_get_pointer_emulated(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_button_event_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_button_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_button_event_get_button(event:PGdkEvent):guint;
 
-(* error 
-GType                   gdk_scroll_event_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_scroll_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_scroll_event_get_direction(event:PGdkEvent):GdkScrollDirection;
 
+  { Zeile entfernt  }
   procedure gdk_scroll_event_get_deltas(event:PGdkEvent; delta_x:Pdouble; delta_y:Pdouble);
 
 (* error 
 GdkScrollUnit           gdk_scroll_event_get_unit       (GdkEvent *event);
  in declarator_list *)
+  { Zeile entfernt  }
   function gdk_scroll_event_is_stop(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_key_event_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_key_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_key_event_get_keyval(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   function gdk_key_event_get_keycode(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   function gdk_key_event_get_consumed_modifiers(event:PGdkEvent):GdkModifierType;
 
+  { Zeile entfernt  }
   function gdk_key_event_get_layout(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   function gdk_key_event_get_level(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   function gdk_key_event_is_modifier(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_focus_event_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_focus_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_focus_event_get_in(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_touch_event_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_touch_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_touch_event_get_emulating_pointer(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_crossing_event_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_crossing_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_crossing_event_get_mode(event:PGdkEvent):GdkCrossingMode;
 
+  { Zeile entfernt  }
   function gdk_crossing_event_get_detail(event:PGdkEvent):GdkNotifyType;
 
+  { Zeile entfernt  }
   function gdk_crossing_event_get_focus(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_touchpad_event_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_touchpad_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_touchpad_event_get_gesture_phase(event:PGdkEvent):GdkTouchpadGesturePhase;
 
+  { Zeile entfernt  }
   function gdk_touchpad_event_get_n_fingers(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   procedure gdk_touchpad_event_get_deltas(event:PGdkEvent; dx:Pdouble; dy:Pdouble);
 
+  { Zeile entfernt  }
   function gdk_touchpad_event_get_pinch_angle_delta(event:PGdkEvent):double;
 
+  { Zeile entfernt  }
   function gdk_touchpad_event_get_pinch_scale(event:PGdkEvent):double;
 
-(* error 
-GType                   gdk_pad_event_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_pad_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_pad_event_get_button(event:PGdkEvent):guint;
 
+  { Zeile entfernt  }
   procedure gdk_pad_event_get_axis_value(event:PGdkEvent; index:Pguint; value:Pdouble);
 
+  { Zeile entfernt  }
   procedure gdk_pad_event_get_group_mode(event:PGdkEvent; group:Pguint; mode:Pguint);
 
-(* error 
-GType                   gdk_dnd_event_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_dnd_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_dnd_event_get_drop(event:PGdkEvent):^GdkDrop;
 
-(* error 
-GType                   gdk_grab_broken_event_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_grab_broken_event_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_grab_broken_event_get_grab_surface(event:PGdkEvent):^GdkSurface;
 
+  { Zeile entfernt  }
   function gdk_grab_broken_event_get_implicit(event:PGdkEvent):gboolean;
 
-(* error 
-GType                   gdk_motion_event_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_motion_event_get_type:GType;
 
-    var
- : GType;
-(* error 
-GType                   gdk_delete_event_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* error 
-GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  { Zeile entfernt  }
+  function gdk_delete_event_get_type:GType;
 
+  { Zeile entfernt  }
+  function gdk_proximity_event_get_type:GType;
+
+  { Zeile entfernt  }
   function gdk_event_triggers_context_menu(event:PGdkEvent):gboolean;
 
+  { Zeile entfernt  }
   function gdk_events_get_distance(event1:PGdkEvent; event2:PGdkEvent; distance:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gdk_events_get_angle(event1:PGdkEvent; event2:PGdkEvent; angle:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gdk_events_get_center(event1:PGdkEvent; event2:PGdkEvent; x:Pdouble; y:Pdouble):gboolean;
 
   {*
@@ -566,11 +563,14 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
   type
     GdkKeyMatch = (GDK_KEY_MATCH_NONE,GDK_KEY_MATCH_PARTIAL,
       GDK_KEY_MATCH_EXACT);
+  { Zeile entfernt  }
 
   function gdk_key_event_matches(event:PGdkEvent; keyval:guint; modifiers:GdkModifierType):GdkKeyMatch;
 
+  { Zeile entfernt  }
   function gdk_key_event_get_match(event:PGdkEvent; keyval:Pguint; modifiers:PGdkModifierType):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_EVENTS_H__  }
   { was #define dname def_expr }
@@ -687,6 +687,14 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
       GDK_TYPE_TOUCHPAD_EVENT:=gdk_touchpad_event_get_type;
     end;
 
+  function gdk_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_event_sequence_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_event_ref(event:PGdkEvent):PGdkEvent;
   begin
     { You must implement this function }
@@ -751,7 +759,15 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gdk_button_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_button_event_get_button(event:PGdkEvent):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_scroll_event_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -764,6 +780,10 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gdk_scroll_event_is_stop(event:PGdkEvent):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_key_event_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -791,11 +811,23 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gdk_focus_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_focus_event_get_in(event:PGdkEvent):gboolean;
   begin
     { You must implement this function }
   end;
+  function gdk_touch_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_touch_event_get_emulating_pointer(event:PGdkEvent):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_crossing_event_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -808,6 +840,10 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gdk_crossing_event_get_focus(event:PGdkEvent):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_touchpad_event_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -831,6 +867,10 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gdk_pad_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_pad_event_get_button(event:PGdkEvent):guint;
   begin
     { You must implement this function }
@@ -843,7 +883,15 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gdk_dnd_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_dnd_event_get_drop(event:PGdkEvent):PGdkDrop;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_grab_broken_event_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -852,6 +900,18 @@ GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gdk_grab_broken_event_get_implicit(event:PGdkEvent):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_motion_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_delete_event_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_proximity_event_get_type:GType;
   begin
     { You must implement this function }
   end;

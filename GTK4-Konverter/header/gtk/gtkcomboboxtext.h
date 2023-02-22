@@ -25,7 +25,7 @@
 
 #include <gtk/gtkcombobox.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_COMBO_BOX_TEXT                 (gtk_combo_box_text_get_type ())
 #define GTK_COMBO_BOX_TEXT(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COMBO_BOX_TEXT, GtkComboBoxText))
@@ -33,44 +33,44 @@
 
 typedef struct _GtkComboBoxText GtkComboBoxText;
 
-
-GType         gtk_combo_box_text_get_type        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_combo_box_text_get_type        (void) ;
+/* Zeile entfernt */
 GtkWidget*    gtk_combo_box_text_new             (void);
-
+/* Zeile entfernt */
 GtkWidget*    gtk_combo_box_text_new_with_entry  (void);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_append_text     (GtkComboBoxText     *combo_box,
                                                   const char          *text);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_insert_text     (GtkComboBoxText     *combo_box,
                                                   int                  position,
                                                   const char          *text);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_prepend_text    (GtkComboBoxText     *combo_box,
                                                   const char          *text);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_remove          (GtkComboBoxText     *combo_box,
                                                   int                  position);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_remove_all      (GtkComboBoxText     *combo_box);
-
+/* Zeile entfernt */
 char         *gtk_combo_box_text_get_active_text (GtkComboBoxText     *combo_box);
 
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_insert          (GtkComboBoxText     *combo_box,
                                                   int                  position,
                                                   const char          *id,
                                                   const char          *text);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_append          (GtkComboBoxText     *combo_box,
                                                   const char          *id,
                                                   const char          *text);
-
+/* Zeile entfernt */
 void          gtk_combo_box_text_prepend         (GtkComboBoxText     *combo_box,
                                                   const char          *id,
                                                   const char          *text);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_COMBO_BOX_TEXT_H__ */

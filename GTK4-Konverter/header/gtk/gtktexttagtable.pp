@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktexttag.h>}
+  { Zeile entfernt  }
   {*
    * GtkTextTagTableForeach:
    * @tag: the `GtkTextTag`
@@ -62,26 +63,29 @@
   { return type might be wrong }   
   function GTK_IS_TEXT_TAG_TABLE(obj : longint) : longint;  
 
-(* error 
-GType          gtk_text_tag_table_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_text_tag_table_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_text_tag_table_new:^GtkTextTagTable;
 
+  { Zeile entfernt  }
   function gtk_text_tag_table_add(table:PGtkTextTagTable; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_tag_table_remove(table:PGtkTextTagTable; tag:PGtkTextTag);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_tag_table_lookup(table:PGtkTextTagTable; name:Pchar):^GtkTextTag;
 
+  { Zeile entfernt  }
   procedure gtk_text_tag_table_foreach(table:PGtkTextTagTable; func:GtkTextTagTableForeach; data:gpointer);
 
+  { Zeile entfernt  }
   function gtk_text_tag_table_get_size(table:PGtkTextTagTable):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_TAG_TABLE : longint; { return type might be wrong }
@@ -105,6 +109,10 @@ GType          gtk_text_tag_table_get_type (void) G_GNUC_CONST;
     GTK_IS_TEXT_TAG_TABLE:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_TEXT_TAG_TABLE);
   end;
 
+  function gtk_text_tag_table_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_tag_table_new:PGtkTextTagTable;
   begin
     { You must implement this function }

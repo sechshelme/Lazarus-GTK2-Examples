@@ -34,6 +34,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkgesturesingle.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_SWIPE : longint; { return type might be wrong }
@@ -67,17 +68,17 @@
   type
     _GtkGestureSwipe = GtkGestureSwipe;
     _GtkGestureSwipeClass = GtkGestureSwipeClass;
-(* error 
-GType           gtk_gesture_swipe_get_type      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_swipe_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_swipe_new:^GtkGesture;
 
+  { Zeile entfernt  }
   function gtk_gesture_swipe_get_velocity(gesture:PGtkGestureSwipe; velocity_x:Pdouble; velocity_y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_SWIPE_H__  }
   { was #define dname def_expr }
@@ -126,6 +127,10 @@ GType           gtk_gesture_swipe_get_type      (void) G_GNUC_CONST;
     GTK_GESTURE_SWIPE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_SWIPE,GtkGestureSwipeClass);
   end;
 
+  function gtk_gesture_swipe_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_swipe_new:PGtkGesture;
   begin
     { You must implement this function }

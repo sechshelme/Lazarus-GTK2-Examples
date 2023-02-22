@@ -30,7 +30,7 @@ typedef struct _GtkEventControllerClass GtkEventControllerClass;
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER         (gtk_event_controller_get_type ())
 #define GTK_EVENT_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER, GtkEventController))
@@ -41,46 +41,46 @@ typedef struct _GtkEventControllerClass GtkEventControllerClass;
 
 
 
+/* Zeile entfernt */
+GType        gtk_event_controller_get_type       (void) ;
 
-GType        gtk_event_controller_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget  * gtk_event_controller_get_widget     (GtkEventController *controller);
 
-
+/* Zeile entfernt */
 void         gtk_event_controller_reset          (GtkEventController *controller);
 
-
+/* Zeile entfernt */
 GtkPropagationPhase gtk_event_controller_get_propagation_phase (GtkEventController *controller);
 
-
+/* Zeile entfernt */
 void                gtk_event_controller_set_propagation_phase (GtkEventController  *controller,
                                                                 GtkPropagationPhase  phase);
 
-
+/* Zeile entfernt */
 GtkPropagationLimit gtk_event_controller_get_propagation_limit (GtkEventController *controller);
 
-
+/* Zeile entfernt */
 void                gtk_event_controller_set_propagation_limit (GtkEventController  *controller,
                                                                 GtkPropagationLimit  limit);
-
+/* Zeile entfernt */
 const char *        gtk_event_controller_get_name              (GtkEventController *controller);
-
+/* Zeile entfernt */
 void                gtk_event_controller_set_name              (GtkEventController *controller,
                                                                 const char         *name);
 GDK_AVAILABLE_IN_4_8
 void                gtk_event_controller_set_static_name       (GtkEventController *controller,
                                                                 const char         *name);
 
-
+/* Zeile entfernt */
 GdkEvent *          gtk_event_controller_get_current_event    (GtkEventController *controller);
-
+/* Zeile entfernt */
 guint32             gtk_event_controller_get_current_event_time   (GtkEventController *controller);
-
+/* Zeile entfernt */
 GdkDevice *         gtk_event_controller_get_current_event_device (GtkEventController *controller);
-
+/* Zeile entfernt */
 GdkModifierType     gtk_event_controller_get_current_event_state (GtkEventController *controller);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_H__ */

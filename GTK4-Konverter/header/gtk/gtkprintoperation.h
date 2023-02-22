@@ -33,7 +33,7 @@
 #include <gtk/gtkprintoperationpreview.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PRINT_OPERATION                (gtk_print_operation_get_type ())
 #define GTK_PRINT_OPERATION(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_OPERATION, GtkPrintOperation))
@@ -218,92 +218,92 @@ typedef enum
   GTK_PRINT_ERROR_INVALID_FILE
 } GtkPrintError;
 
-
+/* Zeile entfernt */
 GQuark gtk_print_error_quark (void);
 
-
-GType                   gtk_print_operation_get_type               (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gtk_print_operation_get_type               (void) ;
+/* Zeile entfernt */
 GtkPrintOperation *     gtk_print_operation_new                    (void);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_default_page_setup (GtkPrintOperation  *op,
                                                                     GtkPageSetup       *default_page_setup);
-
+/* Zeile entfernt */
 GtkPageSetup *          gtk_print_operation_get_default_page_setup (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_print_settings     (GtkPrintOperation  *op,
                                                                     GtkPrintSettings   *print_settings);
-
+/* Zeile entfernt */
 GtkPrintSettings *      gtk_print_operation_get_print_settings     (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_job_name           (GtkPrintOperation  *op,
                                                                     const char         *job_name);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_n_pages            (GtkPrintOperation  *op,
                                                                     int                 n_pages);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_current_page       (GtkPrintOperation  *op,
                                                                     int                 current_page);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_use_full_page      (GtkPrintOperation  *op,
                                                                     gboolean            full_page);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_unit               (GtkPrintOperation  *op,
                                                                     GtkUnit             unit);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_export_filename    (GtkPrintOperation  *op,
                                                                     const char         *filename);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_track_print_status (GtkPrintOperation  *op,
                                                                     gboolean            track_status);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_show_progress      (GtkPrintOperation  *op,
                                                                     gboolean            show_progress);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_allow_async        (GtkPrintOperation  *op,
                                                                     gboolean            allow_async);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_custom_tab_label   (GtkPrintOperation  *op,
                                                                     const char         *label);
-
+/* Zeile entfernt */
 GtkPrintOperationResult gtk_print_operation_run                    (GtkPrintOperation  *op,
                                                                     GtkPrintOperationAction action,
                                                                     GtkWindow          *parent,
                                                                     GError            **error);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_get_error              (GtkPrintOperation  *op,
                                                                     GError            **error);
-
+/* Zeile entfernt */
 GtkPrintStatus          gtk_print_operation_get_status             (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 const char *           gtk_print_operation_get_status_string      (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 gboolean                gtk_print_operation_is_finished            (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_cancel                 (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_draw_page_finish       (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_defer_drawing      (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_support_selection  (GtkPrintOperation  *op,
                                                                     gboolean            support_selection);
-
+/* Zeile entfernt */
 gboolean                gtk_print_operation_get_support_selection  (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_has_selection      (GtkPrintOperation  *op,
                                                                     gboolean            has_selection);
-
+/* Zeile entfernt */
 gboolean                gtk_print_operation_get_has_selection      (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 void                    gtk_print_operation_set_embed_page_setup   (GtkPrintOperation  *op,
                                                                     gboolean            embed);
-
+/* Zeile entfernt */
 gboolean                gtk_print_operation_get_embed_page_setup   (GtkPrintOperation  *op);
-
+/* Zeile entfernt */
 int                     gtk_print_operation_get_n_pages_to_print   (GtkPrintOperation  *op);
 
-
+/* Zeile entfernt */
 GtkPageSetup           *gtk_print_run_page_setup_dialog            (GtkWindow          *parent,
                                                                     GtkPageSetup       *page_setup,
                                                                     GtkPrintSettings   *settings);
@@ -324,13 +324,13 @@ GtkPageSetup           *gtk_print_run_page_setup_dialog            (GtkWindow   
 typedef void  (* GtkPageSetupDoneFunc) (GtkPageSetup *page_setup,
                                         gpointer      data);
 
-
+/* Zeile entfernt */
 void                    gtk_print_run_page_setup_dialog_async      (GtkWindow            *parent,
                                                                     GtkPageSetup         *page_setup,
                                                                     GtkPrintSettings     *settings,
                                                                     GtkPageSetupDoneFunc  done_cb,
                                                                     gpointer              data);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PRINT_OPERATION_H__ */

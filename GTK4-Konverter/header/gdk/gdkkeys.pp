@@ -36,52 +36,73 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
-(* Const before type ignored *)
-(* error 
-const char *gdk_keyval_name      (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
-
-    var
- : char;
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
+  function gdk_keyval_name(keyval:guint):^char;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
   function gdk_keyval_from_name(keyval_name:Pchar):guint;
 
+  { Zeile entfernt  }
   procedure gdk_keyval_convert_case(symbol:guint; lower:Pguint; upper:Pguint);
 
-(* error 
-guint    gdk_keyval_to_upper     (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_keyval_to_upper(keyval:guint):guint;
 
-    var
- : guint;
-(* error 
-guint    gdk_keyval_to_lower     (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
- : guint;
-(* error 
-gboolean gdk_keyval_is_upper     (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
- : gboolean;
-(* error 
-gboolean gdk_keyval_is_lower     (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
- : gboolean;
-(* error 
-guint32  gdk_keyval_to_unicode   (guint        keyval) G_GNUC_CONST;
- in declarator_list *)
- : guint32;
-(* error 
-guint    gdk_unicode_to_keyval   (guint32      wc) G_GNUC_CONST;
- in declarator_list *)
- : guint;
+  { Zeile entfernt  }
+  function gdk_keyval_to_lower(keyval:guint):guint;
+
+  { Zeile entfernt  }
+  function gdk_keyval_is_upper(keyval:guint):gboolean;
+
+  { Zeile entfernt  }
+  function gdk_keyval_is_lower(keyval:guint):gboolean;
+
+  { Zeile entfernt  }
+  function gdk_keyval_to_unicode(keyval:guint):guint32;
+
+  { Zeile entfernt  }
+  function gdk_unicode_to_keyval(wc:guint32):guint;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_KEYS_H__  }
+  function gdk_keyval_name(keyval:guint):Pchar;
+  begin
+    { You must implement this function }
+  end;
   function gdk_keyval_from_name(keyval_name:Pchar):guint;
   begin
     { You must implement this function }
   end;
   procedure gdk_keyval_convert_case(symbol:guint; lower:Pguint; upper:Pguint);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_keyval_to_upper(keyval:guint):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_keyval_to_lower(keyval:guint):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_keyval_is_upper(keyval:guint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_keyval_is_lower(keyval:guint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_keyval_to_unicode(keyval:guint):guint32;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_unicode_to_keyval(wc:guint32):guint;
   begin
     { You must implement this function }
   end;

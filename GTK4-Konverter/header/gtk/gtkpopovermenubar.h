@@ -26,7 +26,7 @@
 #include <gtk/gtkpopover.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define	GTK_TYPE_POPOVER_MENU_BAR               (gtk_popover_menu_bar_get_type ())
@@ -35,27 +35,27 @@
 
 typedef struct _GtkPopoverMenuBar GtkPopoverMenuBar;
 
+/* Zeile entfernt */
+GType        gtk_popover_menu_bar_get_type       (void) ;
 
-GType        gtk_popover_menu_bar_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *  gtk_popover_menu_bar_new_from_model (GMenuModel        *model);
 
-
+/* Zeile entfernt */
 void         gtk_popover_menu_bar_set_menu_model (GtkPopoverMenuBar *bar,
                                                   GMenuModel        *model);
-
+/* Zeile entfernt */
 GMenuModel * gtk_popover_menu_bar_get_menu_model (GtkPopoverMenuBar *bar);
 
-
+/* Zeile entfernt */
 gboolean     gtk_popover_menu_bar_add_child      (GtkPopoverMenuBar *bar,
                                                   GtkWidget         *child,
                                                   const char        *id);
 
-
+/* Zeile entfernt */
 gboolean     gtk_popover_menu_bar_remove_child   (GtkPopoverMenuBar *bar,
                                                   GtkWidget         *child);
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_POPOVER_MENU_BAR_H__ */

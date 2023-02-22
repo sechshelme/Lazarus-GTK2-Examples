@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_ACTION : longint; { return type might be wrong }
@@ -67,18 +68,20 @@
 
     GtkShortcutActionFlags = (GTK_SHORTCUT_ACTION_EXCLUSIVE := 1 shl 0
       );
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutAction, gtk_shortcut_action, GTK, SHORTCUT_ACTION, GObject)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutAction, gtk_shortcut_action, GTK, SHORTCUT_ACTION, GObject)
- in declarator_list *)
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
+  function gtk_shortcut_action_to_string(self:PGtkShortcutAction):^char;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
   function gtk_shortcut_action_parse_string(_string:Pchar):^GtkShortcutAction;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_action_print(self:PGtkShortcutAction; _string:PGString);
 
+  { Zeile entfernt  }
   function gtk_shortcut_action_activate(self:PGtkShortcutAction; flags:GtkShortcutActionFlags; widget:PGtkWidget; args:PGVariant):gboolean;
 
   { was #define dname def_expr }
@@ -89,12 +92,11 @@ GDK_DECLARE_INTERNAL_TYPE (GtkShortcutAction, gtk_shortcut_action, GTK, SHORTCUT
    *
    * A `GtkShortcutAction` that does nothing.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNothingAction, gtk_nothing_action, GTK, NOTHING_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNothingAction, gtk_nothing_action, GTK, NOTHING_ACTION, GtkShortcutAction)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_nothing_action_get:^GtkShortcutAction;
+
   { was #define dname def_expr }
   function GTK_TYPE_CALLBACK_ACTION : longint; { return type might be wrong }
 
@@ -103,18 +105,11 @@ GDK_DECLARE_INTERNAL_TYPE (GtkNothingAction, gtk_nothing_action, GTK, NOTHING_AC
    *
    * A `GtkShortcutAction` that invokes a callback.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkCallbackAction, gtk_callback_action, GTK, CALLBACK_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkCallbackAction, gtk_callback_action, GTK, CALLBACK_ACTION, GtkShortcutAction)
-(* error 
-                                                                 gpointer                data,
-(* error 
-                                                                 GDestroyNotify          destroy);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_callback_action_new(callback:GtkShortcutFunc; data:gpointer; destroy:GDestroyNotify):^GtkShortcutAction;
+
   { was #define dname def_expr }
   function GTK_TYPE_MNEMONIC_ACTION : longint; { return type might be wrong }
 
@@ -123,12 +118,11 @@ GDK_DECLARE_INTERNAL_TYPE (GtkCallbackAction, gtk_callback_action, GTK, CALLBACK
    *
    * A `GtkShortcutAction` that calls gtk_widget_mnemonic_activate().
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicAction, gtk_mnemonic_action, GTK, MNEMONIC_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicAction, gtk_mnemonic_action, GTK, MNEMONIC_ACTION, GtkShortcutAction)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_mnemonic_action_get:^GtkShortcutAction;
+
   { was #define dname def_expr }
   function GTK_TYPE_ACTIVATE_ACTION : longint; { return type might be wrong }
 
@@ -137,12 +131,11 @@ GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicAction, gtk_mnemonic_action, GTK, MNEMONIC
    *
    * A `GtkShortcutAction` that calls gtk_widget_activate().
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkActivateAction, gtk_activate_action, GTK, ACTIVATE_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkActivateAction, gtk_activate_action, GTK, ACTIVATE_ACTION, GtkShortcutAction)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_activate_action_get:^GtkShortcutAction;
+
   { was #define dname def_expr }
   function GTK_TYPE_SIGNAL_ACTION : longint; { return type might be wrong }
 
@@ -154,12 +147,13 @@ GDK_DECLARE_INTERNAL_TYPE (GtkActivateAction, gtk_activate_action, GTK, ACTIVATE
    * Signals that are used in this way are referred to as keybinding signals,
    * and they are expected to be defined with the %G_SIGNAL_ACTION flag.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkSignalAction, gtk_signal_action, GTK, SIGNAL_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkSignalAction, gtk_signal_action, GTK, SIGNAL_ACTION, GtkShortcutAction)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_signal_action_new(signal_name:Pchar):^GtkShortcutAction;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_signal_action_get_signal_name(self:PGtkSignalAction):^char;
 
@@ -171,15 +165,17 @@ GDK_DECLARE_INTERNAL_TYPE (GtkSignalAction, gtk_signal_action, GTK, SIGNAL_ACTIO
    *
    * A `GtkShortcutAction` that activates an action by name.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, GtkShortcutAction)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, GtkShortcutAction)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_named_action_new(name:Pchar):^GtkShortcutAction;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_named_action_get_action_name(self:PGtkNamedAction):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUT_ACTION_H__  }
   { was #define dname def_expr }
@@ -188,6 +184,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, 
       GTK_TYPE_SHORTCUT_ACTION:=gtk_shortcut_action_get_type;
     end;
 
+  function gtk_shortcut_action_to_string(self:PGtkShortcutAction):Pchar;
+  begin
+    { You must implement this function }
+  end;
   function gtk_shortcut_action_parse_string(_string:Pchar):PGtkShortcutAction;
   begin
     { You must implement this function }
@@ -206,30 +206,50 @@ GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, 
       GTK_TYPE_NOTHING_ACTION:=gtk_nothing_action_get_type;
     end;
 
+  function gtk_nothing_action_get:PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_CALLBACK_ACTION : longint; { return type might be wrong }
     begin
       GTK_TYPE_CALLBACK_ACTION:=gtk_callback_action_get_type;
     end;
 
+  function gtk_callback_action_new(callback:GtkShortcutFunc; data:gpointer; destroy:GDestroyNotify):PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_MNEMONIC_ACTION : longint; { return type might be wrong }
     begin
       GTK_TYPE_MNEMONIC_ACTION:=gtk_mnemonic_action_get_type;
     end;
 
+  function gtk_mnemonic_action_get:PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_ACTIVATE_ACTION : longint; { return type might be wrong }
     begin
       GTK_TYPE_ACTIVATE_ACTION:=gtk_activate_action_get_type;
     end;
 
+  function gtk_activate_action_get:PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_SIGNAL_ACTION : longint; { return type might be wrong }
     begin
       GTK_TYPE_SIGNAL_ACTION:=gtk_signal_action_get_type;
     end;
 
+  function gtk_signal_action_new(signal_name:Pchar):PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   function gtk_signal_action_get_signal_name(self:PGtkSignalAction):Pchar;
   begin
     { You must implement this function }
@@ -240,6 +260,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, 
       GTK_TYPE_NAMED_ACTION:=gtk_named_action_get_type;
     end;
 
+  function gtk_named_action_new(name:Pchar):PGtkShortcutAction;
+  begin
+    { You must implement this function }
+  end;
   function gtk_named_action_get_action_name(self:PGtkNamedAction):Pchar;
   begin
     { You must implement this function }

@@ -28,22 +28,22 @@
 #include <gio/gio.h>
 #include <gtk/gtkselectionmodel.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SELECTION_FILTER_MODEL (gtk_selection_filter_model_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkSelectionFilterModel, gtk_selection_filter_model, GTK, SELECTION_FILTER_MODEL, GObject)
-
-
+/* Zeile entfernt */
 GtkSelectionFilterModel * gtk_selection_filter_model_new          (GtkSelectionModel           *model);
 
-
+/* Zeile entfernt */
 void                      gtk_selection_filter_model_set_model    (GtkSelectionFilterModel     *self,
                                                                    GtkSelectionModel           *model);
-
+/* Zeile entfernt */
 GtkSelectionModel *       gtk_selection_filter_model_get_model    (GtkSelectionFilterModel     *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SELECTION_FILTER_MODEL_H__ */

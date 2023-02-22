@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   type
     _GtkAdjustment = GtkAdjustment;
@@ -74,6 +75,7 @@
   { was #define dname def_expr }
   function GTK_INVALID_LIST_POSITION : guint;    
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TYPES_H__  }
   { was #define dname def_expr }

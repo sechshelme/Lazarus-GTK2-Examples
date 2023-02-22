@@ -28,7 +28,7 @@
 #include <gtk/gtkcellarea.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_TREE_VIEW_COLUMN	     (gtk_tree_view_column_get_type ())
@@ -78,119 +78,119 @@ typedef void (* GtkTreeCellDataFunc) (GtkTreeViewColumn *tree_column,
 				      gpointer           data);
 
 
-
-GType                   gtk_tree_view_column_get_type            (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gtk_tree_view_column_get_type            (void) ;
+/* Zeile entfernt */
 GtkTreeViewColumn      *gtk_tree_view_column_new                 (void);
-
+/* Zeile entfernt */
 GtkTreeViewColumn      *gtk_tree_view_column_new_with_area       (GtkCellArea             *area);
-
+/* Zeile entfernt */
 GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const char              *title,
 								  GtkCellRenderer         *cell,
-								  ...) G_GNUC_NULL_TERMINATED;
-
+								  ...) ;
+/* Zeile entfernt */
 void                    gtk_tree_view_column_pack_start          (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell,
 								  gboolean                 expand);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_pack_end            (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell,
 								  gboolean                 expand);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_clear               (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_add_attribute       (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer,
 								  const char              *attribute,
 								  int                      column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_attributes      (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer,
-								  ...) G_GNUC_NULL_TERMINATED;
-
+								  ...) ;
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_cell_data_func  (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer,
 								  GtkTreeCellDataFunc      func,
 								  gpointer                 func_data,
 								  GDestroyNotify           destroy);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_clear_attributes    (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_spacing         (GtkTreeViewColumn       *tree_column,
 								  int                      spacing);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_spacing         (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_visible         (GtkTreeViewColumn       *tree_column,
 								  gboolean                 visible);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_visible         (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_resizable       (GtkTreeViewColumn       *tree_column,
 								  gboolean                 resizable);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_resizable       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_sizing          (GtkTreeViewColumn       *tree_column,
 								  GtkTreeViewColumnSizing  type);
-
+/* Zeile entfernt */
 GtkTreeViewColumnSizing gtk_tree_view_column_get_sizing          (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_x_offset        (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_width           (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_fixed_width     (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_fixed_width     (GtkTreeViewColumn       *tree_column,
 								  int                      fixed_width);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_min_width       (GtkTreeViewColumn       *tree_column,
 								  int                      min_width);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_min_width       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_max_width       (GtkTreeViewColumn       *tree_column,
 								  int                      max_width);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_max_width       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_clicked             (GtkTreeViewColumn       *tree_column);
 
 
 
 /* Options for manipulating the column headers
  */
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_title           (GtkTreeViewColumn       *tree_column,
 								  const char              *title);
-
+/* Zeile entfernt */
 const char *           gtk_tree_view_column_get_title           (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_expand          (GtkTreeViewColumn       *tree_column,
 								  gboolean                 expand);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_expand          (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_clickable       (GtkTreeViewColumn       *tree_column,
 								  gboolean                 clickable);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_clickable       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_widget          (GtkTreeViewColumn       *tree_column,
 								  GtkWidget               *widget);
-
+/* Zeile entfernt */
 GtkWidget              *gtk_tree_view_column_get_widget          (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_alignment       (GtkTreeViewColumn       *tree_column,
 								  float                    xalign);
-
+/* Zeile entfernt */
 float                   gtk_tree_view_column_get_alignment       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_reorderable     (GtkTreeViewColumn       *tree_column,
 								  gboolean                 reorderable);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_reorderable     (GtkTreeViewColumn       *tree_column);
 
 
@@ -198,56 +198,56 @@ gboolean                gtk_tree_view_column_get_reorderable     (GtkTreeViewCol
 /* You probably only want to use gtk_tree_view_column_set_sort_column_id.  The
  * other sorting functions exist primarily to let others do their own custom sorting.
  */
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_sort_column_id  (GtkTreeViewColumn       *tree_column,
 								  int                      sort_column_id);
-
+/* Zeile entfernt */
 int                     gtk_tree_view_column_get_sort_column_id  (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_sort_indicator  (GtkTreeViewColumn       *tree_column,
 								  gboolean                 setting);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_get_sort_indicator  (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_set_sort_order      (GtkTreeViewColumn       *tree_column,
 								  GtkSortType              order);
-
+/* Zeile entfernt */
 GtkSortType             gtk_tree_view_column_get_sort_order      (GtkTreeViewColumn       *tree_column);
 
 
 /* These functions are meant primarily for interaction between the GtkTreeView and the column.
  */
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_cell_set_cell_data  (GtkTreeViewColumn       *tree_column,
 								  GtkTreeModel            *tree_model,
 								  GtkTreeIter             *iter,
 								  gboolean                 is_expander,
 								  gboolean                 is_expanded);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_cell_get_size       (GtkTreeViewColumn       *tree_column,
                                                                   int                     *x_offset,
                                                                   int                     *y_offset,
                                                                   int                     *width,
                                                                   int                     *height);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_cell_is_visible     (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_focus_cell          (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_view_column_cell_get_position   (GtkTreeViewColumn       *tree_column,
 					                          GtkCellRenderer         *cell_renderer,
 					                          int                     *x_offset,
 					                          int                     *width);
-
+/* Zeile entfernt */
 void                    gtk_tree_view_column_queue_resize        (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 GtkWidget              *gtk_tree_view_column_get_tree_view       (GtkTreeViewColumn       *tree_column);
-
+/* Zeile entfernt */
 GtkWidget              *gtk_tree_view_column_get_button          (GtkTreeViewColumn       *tree_column);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_TREE_VIEW_COLUMN_H__ */

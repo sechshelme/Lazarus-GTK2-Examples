@@ -34,6 +34,7 @@
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
 {$include <cairo.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CAIRO_CONTEXT : longint; { return type might be wrong }
@@ -51,15 +52,13 @@
   { was #define dname def_expr }
   function GDK_CAIRO_ERROR : longint; { return type might be wrong }
 
-(* error 
-GType                   gdk_cairo_context_get_type                      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_cairo_context_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_cairo_context_cairo_create(self:PGdkCairoContext):^cairo_t;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CAIRO_CONTEXT__  }
   { was #define dname def_expr }
@@ -90,6 +89,10 @@ GType                   gdk_cairo_context_get_type                      (void) G
       GDK_CAIRO_ERROR:=gdk_cairo_error_quark;
     end;
 
+  function gdk_cairo_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_cairo_context_cairo_create(self:PGdkCairoContext):Pcairo_t;
   begin
     { You must implement this function }

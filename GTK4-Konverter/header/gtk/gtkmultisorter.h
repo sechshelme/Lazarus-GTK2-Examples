@@ -27,23 +27,23 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MULTI_SORTER             (gtk_multi_sorter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSorter)
-
-
+/* Zeile entfernt */
 GtkMultiSorter *        gtk_multi_sorter_new                    (void);
 
-
+/* Zeile entfernt */
 void                    gtk_multi_sorter_append                 (GtkMultiSorter         *self,
                                                                  GtkSorter              *sorter);
 
-
+/* Zeile entfernt */
 void                    gtk_multi_sorter_remove                 (GtkMultiSorter         *self,
                                                                  guint                   position);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MULTI_SORTER_H__ */

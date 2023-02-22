@@ -27,7 +27,7 @@
 
 #include <gtk/gtkgesture.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_SINGLE         (gtk_gesture_single_get_type ())
 #define GTK_GESTURE_SINGLE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_SINGLE, GtkGestureSingle))
@@ -39,37 +39,37 @@
 typedef struct _GtkGestureSingle GtkGestureSingle;
 typedef struct _GtkGestureSingleClass GtkGestureSingleClass;
 
+/* Zeile entfernt */
+GType       gtk_gesture_single_get_type       (void) ;
 
-GType       gtk_gesture_single_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_single_get_touch_only (GtkGestureSingle *gesture);
 
-
+/* Zeile entfernt */
 void        gtk_gesture_single_set_touch_only (GtkGestureSingle *gesture,
                                                gboolean          touch_only);
-
+/* Zeile entfernt */
 gboolean    gtk_gesture_single_get_exclusive  (GtkGestureSingle *gesture);
 
-
+/* Zeile entfernt */
 void        gtk_gesture_single_set_exclusive  (GtkGestureSingle *gesture,
                                                gboolean          exclusive);
 
-
+/* Zeile entfernt */
 guint       gtk_gesture_single_get_button     (GtkGestureSingle *gesture);
 
-
+/* Zeile entfernt */
 void        gtk_gesture_single_set_button     (GtkGestureSingle *gesture,
                                                guint             button);
 
-
+/* Zeile entfernt */
 guint       gtk_gesture_single_get_current_button
                                               (GtkGestureSingle *gesture);
 
-
+/* Zeile entfernt */
 GdkEventSequence * gtk_gesture_single_get_current_sequence
                                               (GtkGestureSingle *gesture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_SINGLE_H__ */

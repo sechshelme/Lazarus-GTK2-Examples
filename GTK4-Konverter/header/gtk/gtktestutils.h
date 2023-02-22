@@ -26,20 +26,20 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkspinbutton.h>
 
-
+/* Zeile entfernt */
 
 /* --- Gtk+ Test Utility API --- */
-
+/* Zeile entfernt */
 void            gtk_test_init                   (int            *argcp,
                                                  char         ***argvp,
                                                  ...);
-
+/* Zeile entfernt */
 void            gtk_test_register_all_types     (void);
-
+/* Zeile entfernt */
 const GType*    gtk_test_list_all_types         (guint          *n_types);
-
+/* Zeile entfernt */
 void            gtk_test_widget_wait_for_draw   (GtkWidget      *widget);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TEST_UTILS_H__ */

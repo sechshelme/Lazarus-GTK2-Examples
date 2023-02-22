@@ -27,7 +27,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DEVICE_PAD         (gdk_device_pad_get_type ())
 #define GDK_DEVICE_PAD(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE_PAD, GdkDevicePad))
@@ -50,25 +50,25 @@ typedef enum {
   GDK_DEVICE_PAD_FEATURE_STRIP
 } GdkDevicePadFeature;
 
+/* Zeile entfernt */
+GType gdk_device_pad_get_type          (void) ;
 
-GType gdk_device_pad_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 int   gdk_device_pad_get_n_groups      (GdkDevicePad *pad);
 
-
+/* Zeile entfernt */
 int   gdk_device_pad_get_group_n_modes (GdkDevicePad *pad,
                                         int           group_idx);
 
-
+/* Zeile entfernt */
 int   gdk_device_pad_get_n_features    (GdkDevicePad        *pad,
                                         GdkDevicePadFeature  feature);
 
-
+/* Zeile entfernt */
 int   gdk_device_pad_get_feature_group (GdkDevicePad        *pad,
                                         GdkDevicePadFeature  feature,
                                         int                  feature_idx);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DEVICE_PAD_H__ */

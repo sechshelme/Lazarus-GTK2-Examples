@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_POPOVER : longint; { return type might be wrong }
@@ -79,56 +80,75 @@
         reserved : array[0..7] of gpointer;
       end;
 
-(* error 
-GType           gtk_popover_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_popover_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_popover_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_child(popover:PGtkPopover; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_popover_get_child(popover:PGtkPopover):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_popover_set_pointing_to(popover:PGtkPopover; rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   function gtk_popover_get_pointing_to(popover:PGtkPopover; rect:PGdkRectangle):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_position(popover:PGtkPopover; position:GtkPositionType);
 
+  { Zeile entfernt  }
   function gtk_popover_get_position(popover:PGtkPopover):GtkPositionType;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_autohide(popover:PGtkPopover; autohide:gboolean);
 
+  { Zeile entfernt  }
   function gtk_popover_get_autohide(popover:PGtkPopover):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_has_arrow(popover:PGtkPopover; has_arrow:gboolean);
 
+  { Zeile entfernt  }
   function gtk_popover_get_has_arrow(popover:PGtkPopover):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_mnemonics_visible(popover:PGtkPopover; mnemonics_visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_popover_get_mnemonics_visible(popover:PGtkPopover):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_popover_popup(popover:PGtkPopover);
 
+  { Zeile entfernt  }
   procedure gtk_popover_popdown(popover:PGtkPopover);
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_offset(popover:PGtkPopover; x_offset:longint; y_offset:longint);
 
+  { Zeile entfernt  }
   procedure gtk_popover_get_offset(popover:PGtkPopover; x_offset:Plongint; y_offset:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_cascade_popdown(popover:PGtkPopover; cascade_popdown:gboolean);
 
+  { Zeile entfernt  }
   function gtk_popover_get_cascade_popdown(popover:PGtkPopover):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_popover_set_default_widget(popover:PGtkPopover; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_popover_present(popover:PGtkPopover);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_POPOVER_H__  }
   { was #define dname def_expr }
@@ -177,6 +197,10 @@ GType           gtk_popover_get_type (void) G_GNUC_CONST;
     GTK_POPOVER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_POPOVER,GtkPopoverClass);
   end;
 
+  function gtk_popover_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_popover_new:PGtkWidget;
   begin
     { You must implement this function }

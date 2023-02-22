@@ -32,20 +32,23 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_LIST_ROW_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_LIST_ROW_SORTER, GtkSorter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_LIST_ROW_SORTER, GtkSorter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_tree_list_row_sorter_new(sorter:PGtkSorter):^GtkTreeListRowSorter;
+
+  { Zeile entfernt  }
   function gtk_tree_list_row_sorter_get_sorter(self:PGtkTreeListRowSorter):^GtkSorter;
 
+  { Zeile entfernt  }
   procedure gtk_tree_list_row_sorter_set_sorter(self:PGtkTreeListRowSorter; sorter:PGtkSorter);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_LIST_ROW_SORTER_H__  }
   { was #define dname def_expr }
@@ -54,6 +57,10 @@ G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_
       GTK_TYPE_TREE_LIST_ROW_SORTER:=gtk_tree_list_row_sorter_get_type;
     end;
 
+  function gtk_tree_list_row_sorter_new(sorter:PGtkSorter):PGtkTreeListRowSorter;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_list_row_sorter_get_sorter(self:PGtkTreeListRowSorter):PGtkSorter;
   begin
     { You must implement this function }

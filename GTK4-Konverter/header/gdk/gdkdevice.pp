@@ -37,6 +37,7 @@
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkdevicetool.h>}
 {$include <gdk/gdkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DEVICE : longint; { return type might be wrong }
@@ -94,51 +95,65 @@
         axes : array[0..(GDK_AXIS_LAST)-1] of double;
       end;
 
-(* error 
-GType               gdk_device_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_device_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gdk_device_get_name(device:PGdkDevice):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_device_get_vendor_id(device:PGdkDevice):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_device_get_product_id(device:PGdkDevice):^char;
 
+  { Zeile entfernt  }
   function gdk_device_get_display(device:PGdkDevice):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_device_get_seat(device:PGdkDevice):^GdkSeat;
 
+  { Zeile entfernt  }
   function gdk_device_get_device_tool(device:PGdkDevice):^GdkDeviceTool;
 
+  { Zeile entfernt  }
   function gdk_device_get_source(device:PGdkDevice):GdkInputSource;
 
+  { Zeile entfernt  }
   function gdk_device_get_has_cursor(device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   function gdk_device_get_num_touches(device:PGdkDevice):guint;
 
+  { Zeile entfernt  }
   function gdk_device_get_modifier_state(device:PGdkDevice):GdkModifierType;
 
+  { Zeile entfernt  }
   function gdk_device_get_direction(device:PGdkDevice):PangoDirection;
 
+  { Zeile entfernt  }
   function gdk_device_has_bidi_layouts(device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   function gdk_device_get_caps_lock_state(device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   function gdk_device_get_num_lock_state(device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   function gdk_device_get_scroll_lock_state(device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   function gdk_device_get_surface_at_position(device:PGdkDevice; win_x:Pdouble; win_y:Pdouble):^GdkSurface;
 
-(* error 
-guint32             gdk_device_get_timestamp            (GdkDevice *device);
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_device_get_timestamp(device:PGdkDevice):guint32;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DEVICE_H__  }
   { was #define dname def_expr }
@@ -163,6 +178,10 @@ guint32             gdk_device_get_timestamp            (GdkDevice *device);
     GDK_IS_DEVICE:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_DEVICE);
   end;
 
+  function gdk_device_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_device_get_name(device:PGdkDevice):Pchar;
   begin
     { You must implement this function }
@@ -224,6 +243,10 @@ guint32             gdk_device_get_timestamp            (GdkDevice *device);
     { You must implement this function }
   end;
   function gdk_device_get_surface_at_position(device:PGdkDevice; win_x:Pdouble; win_y:Pdouble):PGdkSurface;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_device_get_timestamp(device:PGdkDevice):guint32;
   begin
     { You must implement this function }
   end;

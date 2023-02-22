@@ -31,36 +31,42 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gio/gio.h>}
-  { for GDK_AVAILABLE_IN_ALL  }
+  { Zeile entfernt  }
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BOOKMARK_LIST : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBookmarkList, gtk_bookmark_list, GTK, BOOKMARK_LIST, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBookmarkList, gtk_bookmark_list, GTK, BOOKMARK_LIST, GObject)
-(* error 
-                                                             const char *attributes);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gtk_bookmark_list_new(filename:Pchar; attributes:Pchar):^GtkBookmarkList;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bookmark_list_get_filename(self:PGtkBookmarkList):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_bookmark_list_set_attributes(self:PGtkBookmarkList; attributes:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bookmark_list_get_attributes(self:PGtkBookmarkList):^char;
 
+  { Zeile entfernt  }
   procedure gtk_bookmark_list_set_io_priority(self:PGtkBookmarkList; io_priority:longint);
 
+  { Zeile entfernt  }
   function gtk_bookmark_list_get_io_priority(self:PGtkBookmarkList):longint;
 
+  { Zeile entfernt  }
   function gtk_bookmark_list_is_loading(self:PGtkBookmarkList):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BOOKMARK_LIST_H__  }
   { was #define dname def_expr }
@@ -69,6 +75,10 @@ G_DECLARE_FINAL_TYPE (GtkBookmarkList, gtk_bookmark_list, GTK, BOOKMARK_LIST, GO
       GTK_TYPE_BOOKMARK_LIST:=gtk_bookmark_list_get_type;
     end;
 
+  function gtk_bookmark_list_new(filename:Pchar; attributes:Pchar):PGtkBookmarkList;
+  begin
+    { You must implement this function }
+  end;
   function gtk_bookmark_list_get_filename(self:PGtkBookmarkList):Pchar;
   begin
     { You must implement this function }

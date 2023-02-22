@@ -12,20 +12,18 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
   { enumerations from "gtkcssenums.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_css_parser_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CSS_PARSER_ERROR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_css_parser_warning_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CSS_PARSER_WARNING : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CSS_ENUM_TYPES_H__  }
   { Generated data ends here  }

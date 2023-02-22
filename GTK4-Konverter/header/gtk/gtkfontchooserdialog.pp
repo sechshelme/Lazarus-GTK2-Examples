@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkdialog.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FONT_CHOOSER_DIALOG : longint; { return type might be wrong }
@@ -47,16 +48,15 @@
 
   type
     _GtkFontChooserDialog = GtkFontChooserDialog;
-(* error 
-GType      gtk_font_chooser_dialog_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_font_chooser_dialog_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_font_chooser_dialog_new(title:Pchar; parent:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FONT_CHOOSER_DIALOG_H__  }
   { was #define dname def_expr }
@@ -81,6 +81,10 @@ GType      gtk_font_chooser_dialog_get_type         (void) G_GNUC_CONST;
     GTK_IS_FONT_CHOOSER_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_FONT_CHOOSER_DIALOG);
   end;
 
+  function gtk_font_chooser_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_font_chooser_dialog_new(title:Pchar; parent:PGtkWindow):PGtkWidget;
   begin
     { You must implement this function }

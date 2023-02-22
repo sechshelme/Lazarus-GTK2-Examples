@@ -34,6 +34,7 @@
 {$ifndef __GTK_VERSION_H__}
 {$define __GTK_VERSION_H__}  
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   {*
    * GTK_MAJOR_VERSION:
    *
@@ -90,34 +91,49 @@
 (* error 
     (GTK_MAJOR_VERSION > (major) ||                                   \
 in define line 96 *)
-(* error 
-guint gtk_get_major_version (void) G_GNUC_CONST;
- in declarator_list *)
+    { Zeile entfernt  }
 
-      var
- : guint;
-(* error 
-guint gtk_get_minor_version (void) G_GNUC_CONST;
- in declarator_list *)
- : guint;
-(* error 
-guint gtk_get_micro_version (void) G_GNUC_CONST;
- in declarator_list *)
- : guint;
-(* error 
-guint gtk_get_binary_age    (void) G_GNUC_CONST;
- in declarator_list *)
- : guint;
-(* error 
-guint gtk_get_interface_age (void) G_GNUC_CONST;
- in declarator_list *)
- : guint;
+    function gtk_get_major_version:guint;
+
+    { Zeile entfernt  }
+    function gtk_get_minor_version:guint;
+
+    { Zeile entfernt  }
+    function gtk_get_micro_version:guint;
+
+    { Zeile entfernt  }
+    function gtk_get_binary_age:guint;
+
+    { Zeile entfernt  }
+    function gtk_get_interface_age:guint;
+
+    { Zeile entfernt  }
 (* Const before type ignored *)
-
     function gtk_check_version(required_major:guint; required_minor:guint; required_micro:guint):^char;
 
+    { Zeile entfernt  }
 {$endif}
     { __GTK_VERSION_H__  }
+    function gtk_get_major_version:guint;
+    begin
+      { You must implement this function }
+    end;
+    function gtk_get_minor_version:guint;
+    begin
+      { You must implement this function }
+    end;
+    function gtk_get_micro_version:guint;
+    begin
+      { You must implement this function }
+    end;
+    function gtk_get_binary_age:guint;
+    begin
+      { You must implement this function }
+    end;
+    function gtk_get_interface_age:guint;
+    begin
+      { You must implement this function }
+    end;
     function gtk_check_version(required_major:guint; required_minor:guint; required_micro:guint):Pchar;
     begin
       { You must implement this function }

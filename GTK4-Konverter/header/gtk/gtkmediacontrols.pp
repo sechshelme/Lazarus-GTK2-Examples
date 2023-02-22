@@ -2,6 +2,7 @@
   Type
   PGtkMediaControls  = ^GtkMediaControls;
   PGtkMediaStream  = ^GtkMediaStream;
+  PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -32,20 +33,23 @@
 {$endif}
 {$include <gtk/gtkmediastream.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MEDIA_CONTROLS : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_media_controls_new(stream:PGtkMediaStream):^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_media_controls_get_media_stream(controls:PGtkMediaControls):^GtkMediaStream;
 
+  { Zeile entfernt  }
   procedure gtk_media_controls_set_media_stream(controls:PGtkMediaControls; stream:PGtkMediaStream);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MEDIA_CONTROLS_H__  }
   { was #define dname def_expr }
@@ -54,6 +58,10 @@ G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS,
       GTK_TYPE_MEDIA_CONTROLS:=gtk_media_controls_get_type;
     end;
 
+  function gtk_media_controls_new(stream:PGtkMediaStream):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_media_controls_get_media_stream(controls:PGtkMediaControls):PGtkMediaStream;
   begin
     { You must implement this function }

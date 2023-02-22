@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER_SCROLL         (gtk_event_controller_scroll_get_type ())
 #define GTK_EVENT_CONTROLLER_SCROLL(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_SCROLL, GtkEventControllerScroll))
@@ -59,21 +59,21 @@ typedef enum {
   GTK_EVENT_CONTROLLER_SCROLL_BOTH_AXES  = (GTK_EVENT_CONTROLLER_SCROLL_VERTICAL | GTK_EVENT_CONTROLLER_SCROLL_HORIZONTAL),
 } GtkEventControllerScrollFlags;
 
+/* Zeile entfernt */
+GType               gtk_event_controller_scroll_get_type  (void) ;
 
-GType               gtk_event_controller_scroll_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *gtk_event_controller_scroll_new       (GtkEventControllerScrollFlags  flags);
-
+/* Zeile entfernt */
 void                gtk_event_controller_scroll_set_flags (GtkEventControllerScroll      *scroll,
                                                            GtkEventControllerScrollFlags  flags);
-
+/* Zeile entfernt */
 GtkEventControllerScrollFlags
                     gtk_event_controller_scroll_get_flags (GtkEventControllerScroll      *scroll);
 
 GDK_AVAILABLE_IN_4_8
 GdkScrollUnit       gtk_event_controller_scroll_get_unit (GtkEventControllerScroll       *scroll);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_SCROLL_H__ */

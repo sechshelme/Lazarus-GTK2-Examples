@@ -26,7 +26,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkFilterMatch:
@@ -75,8 +75,8 @@ typedef enum {
 
 #define GTK_TYPE_FILTER             (gtk_filter_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkFilter, gtk_filter, GTK, FILTER, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 struct _GtkFilterClass
 {
@@ -99,18 +99,18 @@ struct _GtkFilterClass
   void (*_gtk_reserved8) (void);
 };
 
-
+/* Zeile entfernt */
 gboolean                gtk_filter_match                        (GtkFilter              *self,
                                                                  gpointer                item);
-
+/* Zeile entfernt */
 GtkFilterMatch          gtk_filter_get_strictness               (GtkFilter              *self);
 
 /* for filter implementations */
-
+/* Zeile entfernt */
 void                    gtk_filter_changed                      (GtkFilter              *self,
                                                                  GtkFilterChange         change);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FILTER_H__ */

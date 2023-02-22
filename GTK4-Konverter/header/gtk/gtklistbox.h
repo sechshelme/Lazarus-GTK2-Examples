@@ -28,7 +28,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_LIST_BOX (gtk_list_box_get_type ())
@@ -129,152 +129,152 @@ typedef void (*GtkListBoxUpdateHeaderFunc) (GtkListBoxRow *row,
 typedef GtkWidget * (*GtkListBoxCreateWidgetFunc) (gpointer item,
                                                    gpointer user_data);
 
-
-GType      gtk_list_box_row_get_type      (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_list_box_row_get_type      (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_list_box_row_new           (void);
 
-
+/* Zeile entfernt */
 void       gtk_list_box_row_set_child     (GtkListBoxRow *row,
                                            GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget *gtk_list_box_row_get_child     (GtkListBoxRow *row);
 
-
+/* Zeile entfernt */
 GtkWidget* gtk_list_box_row_get_header    (GtkListBoxRow *row);
-
+/* Zeile entfernt */
 void       gtk_list_box_row_set_header    (GtkListBoxRow *row,
                                            GtkWidget     *header);
-
+/* Zeile entfernt */
 int        gtk_list_box_row_get_index     (GtkListBoxRow *row);
-
+/* Zeile entfernt */
 void       gtk_list_box_row_changed       (GtkListBoxRow *row);
 
-
+/* Zeile entfernt */
 gboolean   gtk_list_box_row_is_selected   (GtkListBoxRow *row);
 
-
+/* Zeile entfernt */
 void       gtk_list_box_row_set_selectable (GtkListBoxRow *row,
                                             gboolean       selectable);
-
+/* Zeile entfernt */
 gboolean   gtk_list_box_row_get_selectable (GtkListBoxRow *row);
 
 
-
+/* Zeile entfernt */
 void       gtk_list_box_row_set_activatable (GtkListBoxRow *row,
                                              gboolean       activatable);
-
+/* Zeile entfernt */
 gboolean   gtk_list_box_row_get_activatable (GtkListBoxRow *row);
 
-
-GType          gtk_list_box_get_type                     (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType          gtk_list_box_get_type                     (void) ;
+/* Zeile entfernt */
 void           gtk_list_box_prepend                      (GtkListBox                    *box,
                                                           GtkWidget                     *child);
-
+/* Zeile entfernt */
 void           gtk_list_box_append                       (GtkListBox                    *box,
                                                           GtkWidget                     *child);
-
+/* Zeile entfernt */
 void           gtk_list_box_insert                       (GtkListBox                    *box,
                                                           GtkWidget                     *child,
                                                           int                            position);
-
+/* Zeile entfernt */
 void           gtk_list_box_remove                       (GtkListBox                    *box,
                                                           GtkWidget                     *child);
-
+/* Zeile entfernt */
 GtkListBoxRow* gtk_list_box_get_selected_row             (GtkListBox                    *box);
-
+/* Zeile entfernt */
 GtkListBoxRow* gtk_list_box_get_row_at_index             (GtkListBox                    *box,
                                                           int                            index_);
-
+/* Zeile entfernt */
 GtkListBoxRow* gtk_list_box_get_row_at_y                 (GtkListBox                    *box,
                                                           int                            y);
-
+/* Zeile entfernt */
 void           gtk_list_box_select_row                   (GtkListBox                    *box,
                                                           GtkListBoxRow                 *row);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_placeholder              (GtkListBox                    *box,
                                                           GtkWidget                     *placeholder);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_adjustment               (GtkListBox                    *box,
                                                           GtkAdjustment                 *adjustment);
-
+/* Zeile entfernt */
 GtkAdjustment *gtk_list_box_get_adjustment               (GtkListBox                    *box);
 
 typedef void (* GtkListBoxForeachFunc) (GtkListBox      *box,
                                         GtkListBoxRow   *row,
                                         gpointer         user_data);
 
-
+/* Zeile entfernt */
 void           gtk_list_box_selected_foreach             (GtkListBox                    *box,
                                                           GtkListBoxForeachFunc          func,
                                                           gpointer                       data);
-
+/* Zeile entfernt */
 GList         *gtk_list_box_get_selected_rows            (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_unselect_row                 (GtkListBox                    *box,
                                                           GtkListBoxRow                 *row);
-
+/* Zeile entfernt */
 void           gtk_list_box_select_all                   (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_unselect_all                 (GtkListBox                    *box);
 
-
+/* Zeile entfernt */
 void           gtk_list_box_set_selection_mode           (GtkListBox                    *box,
                                                           GtkSelectionMode               mode);
-
+/* Zeile entfernt */
 GtkSelectionMode gtk_list_box_get_selection_mode         (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_filter_func              (GtkListBox                    *box,
                                                           GtkListBoxFilterFunc           filter_func,
                                                           gpointer                       user_data,
                                                           GDestroyNotify                 destroy);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_header_func              (GtkListBox                    *box,
                                                           GtkListBoxUpdateHeaderFunc     update_header,
                                                           gpointer                       user_data,
                                                           GDestroyNotify                 destroy);
-
+/* Zeile entfernt */
 void           gtk_list_box_invalidate_filter            (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_invalidate_sort              (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_invalidate_headers           (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_sort_func                (GtkListBox                    *box,
                                                           GtkListBoxSortFunc             sort_func,
                                                           gpointer                       user_data,
                                                           GDestroyNotify                 destroy);
-
+/* Zeile entfernt */
 void           gtk_list_box_set_activate_on_single_click (GtkListBox                    *box,
                                                           gboolean                       single);
-
+/* Zeile entfernt */
 gboolean       gtk_list_box_get_activate_on_single_click (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_drag_unhighlight_row         (GtkListBox                    *box);
-
+/* Zeile entfernt */
 void           gtk_list_box_drag_highlight_row           (GtkListBox                    *box,
                                                           GtkListBoxRow                 *row);
-
+/* Zeile entfernt */
 GtkWidget*     gtk_list_box_new                          (void);
 
 
-
+/* Zeile entfernt */
 void           gtk_list_box_bind_model                   (GtkListBox                   *box,
                                                           GListModel                   *model,
                                                           GtkListBoxCreateWidgetFunc    create_widget_func,
                                                           gpointer                      user_data,
                                                           GDestroyNotify                user_data_free_func);
 
-
+/* Zeile entfernt */
 void           gtk_list_box_set_show_separators          (GtkListBox                   *box,
                                                           gboolean                      show_separators);
-
+/* Zeile entfernt */
 gboolean       gtk_list_box_get_show_separators          (GtkListBox                   *box);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBox, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBoxRow, g_object_unref)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif

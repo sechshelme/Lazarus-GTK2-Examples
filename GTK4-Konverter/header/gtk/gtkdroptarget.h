@@ -28,7 +28,7 @@
 #include <gtk/gtktypes.h>
 
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkDropTarget GtkDropTarget;
 
@@ -42,48 +42,48 @@ typedef struct _GtkDropTarget GtkDropTarget;
 
 typedef struct _GtkDropTargetClass GtkDropTargetClass;
 
+/* Zeile entfernt */
+GType                   gtk_drop_target_get_type         (void) ;
 
-GType                   gtk_drop_target_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkDropTarget *         gtk_drop_target_new              (GType                  type,
                                                           GdkDragAction          actions);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_set_gtypes       (GtkDropTarget         *self,
                                                           GType                 *types,
                                                           gsize                  n_types);
-
+/* Zeile entfernt */
 const GType *           gtk_drop_target_get_gtypes       (GtkDropTarget         *self,
                                                           gsize                 *n_types);
-
+/* Zeile entfernt */
 GdkContentFormats *     gtk_drop_target_get_formats      (GtkDropTarget         *self);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_set_actions      (GtkDropTarget         *self,
                                                           GdkDragAction          actions);
-
+/* Zeile entfernt */
 GdkDragAction           gtk_drop_target_get_actions      (GtkDropTarget         *self);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_set_preload      (GtkDropTarget         *self,
                                                           gboolean               preload);
-
+/* Zeile entfernt */
 gboolean                gtk_drop_target_get_preload      (GtkDropTarget         *self);
 
 GDK_DEPRECATED_IN_4_4_FOR(gtk_drop_target_get_current_drop)
 GdkDrop *               gtk_drop_target_get_drop         (GtkDropTarget         *self);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 GdkDrop *               gtk_drop_target_get_current_drop (GtkDropTarget         *self);
 
-
+/* Zeile entfernt */
 const GValue *          gtk_drop_target_get_value        (GtkDropTarget         *self);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_reject           (GtkDropTarget         *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DROP_TARGET_H__ */

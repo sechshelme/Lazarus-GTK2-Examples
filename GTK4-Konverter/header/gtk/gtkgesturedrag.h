@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_DRAG         (gtk_gesture_drag_get_type ())
 #define GTK_GESTURE_DRAG(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_DRAG, GtkGestureDrag))
@@ -38,21 +38,21 @@
 typedef struct _GtkGestureDrag GtkGestureDrag;
 typedef struct _GtkGestureDragClass GtkGestureDragClass;
 
+/* Zeile entfernt */
+GType        gtk_gesture_drag_get_type          (void) ;
 
-GType        gtk_gesture_drag_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture * gtk_gesture_drag_new               (void);
 
-
+/* Zeile entfernt */
 gboolean     gtk_gesture_drag_get_start_point   (GtkGestureDrag *gesture,
                                                  double         *x,
                                                  double         *y);
-
+/* Zeile entfernt */
 gboolean     gtk_gesture_drag_get_offset        (GtkGestureDrag *gesture,
                                                  double         *x,
                                                  double         *y);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_DRAG_H__ */

@@ -32,6 +32,7 @@
 {$endif}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtkgesturedrag.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_PAN : longint; { return type might be wrong }
@@ -65,19 +66,20 @@
   type
     _GtkGesturePan = GtkGesturePan;
     _GtkGesturePanClass = GtkGesturePanClass;
-(* error 
-GType             gtk_gesture_pan_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_pan_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_pan_new(orientation:GtkOrientation):^GtkGesture;
 
+  { Zeile entfernt  }
   function gtk_gesture_pan_get_orientation(gesture:PGtkGesturePan):GtkOrientation;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_pan_set_orientation(gesture:PGtkGesturePan; orientation:GtkOrientation);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_PAN_H__  }
   { was #define dname def_expr }
@@ -126,6 +128,10 @@ GType             gtk_gesture_pan_get_type        (void) G_GNUC_CONST;
     GTK_GESTURE_PAN_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_PAN,GtkGesturePanClass);
   end;
 
+  function gtk_gesture_pan_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_pan_new(orientation:GtkOrientation):PGtkGesture;
   begin
     { You must implement this function }

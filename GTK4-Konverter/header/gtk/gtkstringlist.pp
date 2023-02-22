@@ -32,44 +32,53 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gio/gio.h>}
-  { for GDK_AVAILABLE_IN_ALL  }
+  { Zeile entfernt  }
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STRING_OBJECT : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringObject, gtk_string_object, GTK, STRING_OBJECT, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringObject, gtk_string_object, GTK, STRING_OBJECT, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_string_object_new(_string:Pchar):^GtkStringObject;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_string_object_get_string(self:PGtkStringObject):^char;
 
   { was #define dname def_expr }
   function GTK_TYPE_STRING_LIST : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before declarator ignored *)
+  function gtk_string_list_new(strings:PPchar):^GtkStringList;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_string_list_append(self:PGtkStringList; _string:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_string_list_take(self:PGtkStringList; _string:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_string_list_remove(self:PGtkStringList; position:guint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   procedure gtk_string_list_splice(self:PGtkStringList; position:guint; n_removals:guint; additions:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_string_list_get_string(self:PGtkStringList; position:guint):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STRING_LIST_H__  }
   { was #define dname def_expr }
@@ -78,6 +87,10 @@ G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
       GTK_TYPE_STRING_OBJECT:=gtk_string_object_get_type;
     end;
 
+  function gtk_string_object_new(_string:Pchar):PGtkStringObject;
+  begin
+    { You must implement this function }
+  end;
   function gtk_string_object_get_string(self:PGtkStringObject):Pchar;
   begin
     { You must implement this function }
@@ -88,6 +101,10 @@ G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
       GTK_TYPE_STRING_LIST:=gtk_string_list_get_type;
     end;
 
+  function gtk_string_list_new(strings:PPchar):PGtkStringList;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_string_list_append(self:PGtkStringList; _string:Pchar);
   begin
     { You must implement this function }

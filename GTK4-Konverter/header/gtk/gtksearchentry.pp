@@ -38,6 +38,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkentry.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SEARCH_ENTRY : longint; { return type might be wrong }
@@ -55,17 +56,17 @@
 
   type
     _GtkSearchEntry = GtkSearchEntry;
-(* error 
-GType           gtk_search_entry_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_search_entry_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_search_entry_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_search_entry_set_key_capture_widget(entry:PGtkSearchEntry; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_search_entry_get_key_capture_widget(entry:PGtkSearchEntry):^GtkWidget;
 
 (* error 
@@ -74,6 +75,7 @@ in declaration at line 59 *)
 (* error 
 guint gtk_search_entry_get_search_delay (GtkSearchEntry *entry);
  in declarator_list *)
+    { Zeile entfernt  }
 {$endif}
     { __GTK_SEARCH_ENTRY_H__  }
   { was #define dname def_expr }
@@ -98,6 +100,10 @@ guint gtk_search_entry_get_search_delay (GtkSearchEntry *entry);
     GTK_IS_SEARCH_ENTRY:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SEARCH_ENTRY);
   end;
 
+  function gtk_search_entry_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_search_entry_new:PGtkWidget;
   begin
     { You must implement this function }

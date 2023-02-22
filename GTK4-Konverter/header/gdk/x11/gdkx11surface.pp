@@ -38,6 +38,7 @@
 {$include <gdk/gdk.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_SURFACE : longint; { return type might be wrong }
@@ -79,26 +80,35 @@
 
   type
     _GdkX11SurfaceClass = GdkX11SurfaceClass;
+  { Zeile entfernt  }
 
   function gdk_x11_surface_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_x11_surface_get_xid(surface:PGdkSurface):Window;
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_user_time(surface:PGdkSurface; timestamp:guint32);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gdk_x11_surface_set_utf8_property(surface:PGdkSurface; name:Pchar; value:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_x11_surface_set_theme_variant(surface:PGdkSurface; variant:Pchar);
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_move_to_current_desktop(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   function gdk_x11_surface_get_desktop(surface:PGdkSurface):guint32;
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_move_to_desktop(surface:PGdkSurface; desktop:guint32);
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_frame_sync_enabled(surface:PGdkSurface; frame_sync_enabled:gboolean);
 
   {*
@@ -127,20 +137,28 @@
   { return type might be wrong }   
   function GDK_SURFACE_XID(win : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_x11_get_server_time(surface:PGdkSurface):guint32;
 
+  { Zeile entfernt  }
   function gdk_x11_surface_lookup_for_display(display:PGdkDisplay; window:Window):^GdkSurface;
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_skip_taskbar_hint(surface:PGdkSurface; skips_taskbar:gboolean);
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_skip_pager_hint(surface:PGdkSurface; skips_pager:gboolean);
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_urgency_hint(surface:PGdkSurface; urgent:gboolean);
 
+  { Zeile entfernt  }
   procedure gdk_x11_surface_set_group(surface:PGdkSurface; leader:PGdkSurface);
 
+  { Zeile entfernt  }
   function gdk_x11_surface_get_group(surface:PGdkSurface):^GdkSurface;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_SURFACE_H__  }
   { was #define dname def_expr }

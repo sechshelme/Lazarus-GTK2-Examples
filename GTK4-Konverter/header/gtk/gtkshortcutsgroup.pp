@@ -27,6 +27,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUTS_GROUP : longint; { return type might be wrong }
@@ -45,12 +46,11 @@
   type
     _GtkShortcutsGroup = GtkShortcutsGroup;
     _GtkShortcutsGroupClass = GtkShortcutsGroupClass;
-(* error 
-GType gtk_shortcuts_group_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_shortcuts_group_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUTS_GROUP_H__  }
   { was #define dname def_expr }
@@ -75,4 +75,8 @@ GType gtk_shortcuts_group_get_type (void) G_GNUC_CONST;
     GTK_IS_SHORTCUTS_GROUP:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SHORTCUTS_GROUP);
   end;
 
+  function gtk_shortcuts_group_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

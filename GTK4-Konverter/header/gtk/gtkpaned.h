@@ -31,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PANED                  (gtk_paned_get_type ())
 #define GTK_PANED(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PANED, GtkPaned))
@@ -39,58 +39,58 @@
 
 typedef struct _GtkPaned GtkPaned;
 
-
-GType       gtk_paned_get_type     (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_paned_get_type     (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_paned_new          (GtkOrientation orientation);
-
+/* Zeile entfernt */
 void        gtk_paned_set_start_child (GtkPaned       *paned,
                                        GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget * gtk_paned_get_start_child (GtkPaned       *paned);
-
+/* Zeile entfernt */
 void        gtk_paned_set_resize_start_child (GtkPaned *paned,
                                               gboolean  resize);
-
+/* Zeile entfernt */
 gboolean    gtk_paned_get_resize_start_child (GtkPaned *paned);
 
-
+/* Zeile entfernt */
 void        gtk_paned_set_end_child   (GtkPaned       *paned,
                                        GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget * gtk_paned_get_end_child   (GtkPaned       *paned);
 
-
+/* Zeile entfernt */
 void        gtk_paned_set_shrink_start_child (GtkPaned *paned,
                                               gboolean  resize);
-
+/* Zeile entfernt */
 gboolean    gtk_paned_get_shrink_start_child (GtkPaned *paned);
 
-
+/* Zeile entfernt */
 void        gtk_paned_set_resize_end_child (GtkPaned *paned,
                                               gboolean  resize);
-
+/* Zeile entfernt */
 gboolean    gtk_paned_get_resize_end_child (GtkPaned *paned);
 
-
+/* Zeile entfernt */
 void        gtk_paned_set_shrink_end_child (GtkPaned *paned,
                                               gboolean  resize);
-
+/* Zeile entfernt */
 gboolean    gtk_paned_get_shrink_end_child (GtkPaned *paned);
 
-
+/* Zeile entfernt */
 int         gtk_paned_get_position (GtkPaned       *paned);
-
+/* Zeile entfernt */
 void        gtk_paned_set_position (GtkPaned       *paned,
                                     int             position);
 
-
+/* Zeile entfernt */
 void        gtk_paned_set_wide_handle (GtkPaned    *paned,
                                        gboolean     wide);
-
+/* Zeile entfernt */
 gboolean    gtk_paned_get_wide_handle (GtkPaned    *paned);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PANED_H__ */

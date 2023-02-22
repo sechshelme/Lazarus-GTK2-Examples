@@ -28,6 +28,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FONT_CHOOSER_WIDGET : longint; { return type might be wrong }
@@ -45,15 +46,14 @@
 
   type
     _GtkFontChooserWidget = GtkFontChooserWidget;
-(* error 
-GType        gtk_font_chooser_widget_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_font_chooser_widget_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_widget_new:^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FONT_CHOOSER_WIDGET_H__  }
   { was #define dname def_expr }
@@ -78,6 +78,10 @@ GType        gtk_font_chooser_widget_get_type                 (void) G_GNUC_CONS
     GTK_IS_FONT_CHOOSER_WIDGET:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_FONT_CHOOSER_WIDGET);
   end;
 
+  function gtk_font_chooser_widget_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_font_chooser_widget_new:PGtkWidget;
   begin
     { You must implement this function }

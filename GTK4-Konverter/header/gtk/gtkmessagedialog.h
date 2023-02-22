@@ -32,7 +32,7 @@
 #include <gtk/gtkdialog.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_MESSAGE_DIALOG                  (gtk_message_dialog_get_type ())
@@ -75,10 +75,10 @@ typedef enum
   GTK_BUTTONS_OK_CANCEL
 } GtkButtonsType;
 
+/* Zeile entfernt */
+GType      gtk_message_dialog_get_type (void) ;
 
-GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget* gtk_message_dialog_new      (GtkWindow      *parent,
                                         GtkDialogFlags  flags,
                                         GtkMessageType  type,
@@ -86,7 +86,7 @@ GtkWidget* gtk_message_dialog_new      (GtkWindow      *parent,
                                         const char     *message_format,
                                         ...) G_GNUC_PRINTF (5, 6);
 
-
+/* Zeile entfernt */
 GtkWidget* gtk_message_dialog_new_with_markup   (GtkWindow      *parent,
                                                  GtkDialogFlags  flags,
                                                  GtkMessageType  type,
@@ -94,23 +94,23 @@ GtkWidget* gtk_message_dialog_new_with_markup   (GtkWindow      *parent,
                                                  const char     *message_format,
                                                  ...) G_GNUC_PRINTF (5, 6);
 
-
+/* Zeile entfernt */
 void       gtk_message_dialog_set_markup  (GtkMessageDialog *message_dialog,
                                            const char       *str);
 
-
+/* Zeile entfernt */
 void       gtk_message_dialog_format_secondary_text (GtkMessageDialog *message_dialog,
                                                      const char       *message_format,
                                                      ...) G_GNUC_PRINTF (2, 3);
 
-
+/* Zeile entfernt */
 void       gtk_message_dialog_format_secondary_markup (GtkMessageDialog *message_dialog,
                                                        const char       *message_format,
                                                        ...) G_GNUC_PRINTF (2, 3);
 
-
+/* Zeile entfernt */
 GtkWidget *gtk_message_dialog_get_message_area (GtkMessageDialog *message_dialog);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MESSAGE_DIALOG_H__ */

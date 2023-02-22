@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_LEGACY : longint; { return type might be wrong }
@@ -63,15 +64,14 @@
   type
     _GtkEventControllerLegacy = GtkEventControllerLegacy;
     _GtkEventControllerLegacyClass = GtkEventControllerLegacyClass;
-(* error 
-GType               gtk_event_controller_legacy_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_event_controller_legacy_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_event_controller_legacy_new:^GtkEventController;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EVENT_CONTROLLER_LEGACY_H__  }
   { was #define dname def_expr }
@@ -120,6 +120,10 @@ GType               gtk_event_controller_legacy_get_type   (void) G_GNUC_CONST;
     GTK_EVENT_CONTROLLER_LEGACY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER_LEGACY,GtkEventControllerLegacyClass);
   end;
 
+  function gtk_event_controller_legacy_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_legacy_new:PGtkEventController;
   begin
     { You must implement this function }

@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_VIEWPORT            (gtk_viewport_get_type ())
@@ -44,25 +44,25 @@
 typedef struct _GtkViewport              GtkViewport;
 
 
-
-GType          gtk_viewport_get_type        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType          gtk_viewport_get_type        (void) ;
+/* Zeile entfernt */
 GtkWidget*     gtk_viewport_new             (GtkAdjustment *hadjustment,
                                              GtkAdjustment *vadjustment);
 
-
+/* Zeile entfernt */
 gboolean       gtk_viewport_get_scroll_to_focus (GtkViewport *viewport);
-
+/* Zeile entfernt */
 void           gtk_viewport_set_scroll_to_focus (GtkViewport *viewport,
                                                  gboolean     scroll_to_focus);
 
-
+/* Zeile entfernt */
 void           gtk_viewport_set_child           (GtkViewport *viewport,
                                                  GtkWidget   *child);
-
+/* Zeile entfernt */
 GtkWidget *    gtk_viewport_get_child           (GtkViewport *viewport);
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_VIEWPORT_H__ */

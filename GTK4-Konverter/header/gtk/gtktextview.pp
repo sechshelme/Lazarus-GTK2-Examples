@@ -49,6 +49,7 @@
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkimcontext.h>}
 {$include <gtk/gtktextbuffer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_VIEW : longint; { return type might be wrong }
@@ -193,169 +194,240 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType          gtk_text_view_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_view_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_text_view_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_text_view_new_with_buffer(buffer:PGtkTextBuffer):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_buffer(text_view:PGtkTextView; buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_buffer(text_view:PGtkTextView):^GtkTextBuffer;
 
+  { Zeile entfernt  }
   function gtk_text_view_scroll_to_iter(text_view:PGtkTextView; iter:PGtkTextIter; within_margin:double; use_align:gboolean; xalign:double; 
              yalign:double):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_scroll_to_mark(text_view:PGtkTextView; mark:PGtkTextMark; within_margin:double; use_align:gboolean; xalign:double; 
               yalign:double);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_scroll_mark_onscreen(text_view:PGtkTextView; mark:PGtkTextMark);
 
+  { Zeile entfernt  }
   function gtk_text_view_move_mark_onscreen(text_view:PGtkTextView; mark:PGtkTextMark):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_place_cursor_onscreen(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_get_visible_rect(text_view:PGtkTextView; visible_rect:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_cursor_visible(text_view:PGtkTextView; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_cursor_visible(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_reset_cursor_blink(text_view:PGtkTextView);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_view_get_cursor_locations(text_view:PGtkTextView; iter:PGtkTextIter; strong:PGdkRectangle; weak:PGdkRectangle);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_view_get_iter_location(text_view:PGtkTextView; iter:PGtkTextIter; location:PGdkRectangle);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_iter_at_location(text_view:PGtkTextView; iter:PGtkTextIter; x:longint; y:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_get_iter_at_position(text_view:PGtkTextView; iter:PGtkTextIter; trailing:Plongint; x:longint; y:longint):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_view_get_line_yrange(text_view:PGtkTextView; iter:PGtkTextIter; y:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_get_line_at_y(text_view:PGtkTextView; target_iter:PGtkTextIter; y:longint; line_top:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_buffer_to_window_coords(text_view:PGtkTextView; win:GtkTextWindowType; buffer_x:longint; buffer_y:longint; window_x:Plongint; 
               window_y:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_window_to_buffer_coords(text_view:PGtkTextView; win:GtkTextWindowType; window_x:longint; window_y:longint; buffer_x:Plongint; 
               buffer_y:Plongint);
 
+  { Zeile entfernt  }
   function gtk_text_view_forward_display_line(text_view:PGtkTextView; iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_backward_display_line(text_view:PGtkTextView; iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_forward_display_line_end(text_view:PGtkTextView; iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_backward_display_line_start(text_view:PGtkTextView; iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_view_starts_display_line(text_view:PGtkTextView; iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_move_visually(text_view:PGtkTextView; iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_view_im_context_filter_keypress(text_view:PGtkTextView; event:PGdkEvent):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_reset_im_context(text_view:PGtkTextView);
 
   { Adding child widgets  }
+  { Zeile entfernt  }
   function gtk_text_view_get_gutter(text_view:PGtkTextView; win:GtkTextWindowType):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_gutter(text_view:PGtkTextView; win:GtkTextWindowType; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_add_child_at_anchor(text_view:PGtkTextView; child:PGtkWidget; anchor:PGtkTextChildAnchor);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_add_overlay(text_view:PGtkTextView; child:PGtkWidget; xpos:longint; ypos:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_move_overlay(text_view:PGtkTextView; child:PGtkWidget; xpos:longint; ypos:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_view_remove(text_view:PGtkTextView; child:PGtkWidget);
 
   { Default style settings (fallbacks if no tag affects the property)  }
+  { Zeile entfernt  }
   procedure gtk_text_view_set_wrap_mode(text_view:PGtkTextView; wrap_mode:GtkWrapMode);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_wrap_mode(text_view:PGtkTextView):GtkWrapMode;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_editable(text_view:PGtkTextView; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_editable(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_overwrite(text_view:PGtkTextView; overwrite:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_overwrite(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_accepts_tab(text_view:PGtkTextView; accepts_tab:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_accepts_tab(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_pixels_above_lines(text_view:PGtkTextView; pixels_above_lines:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_pixels_above_lines(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_pixels_below_lines(text_view:PGtkTextView; pixels_below_lines:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_pixels_below_lines(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_pixels_inside_wrap(text_view:PGtkTextView; pixels_inside_wrap:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_pixels_inside_wrap(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_justification(text_view:PGtkTextView; justification:GtkJustification);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_justification(text_view:PGtkTextView):GtkJustification;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_left_margin(text_view:PGtkTextView; left_margin:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_left_margin(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_right_margin(text_view:PGtkTextView; right_margin:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_right_margin(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_top_margin(text_view:PGtkTextView; top_margin:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_top_margin(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_bottom_margin(text_view:PGtkTextView; bottom_margin:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_bottom_margin(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_indent(text_view:PGtkTextView; indent:longint);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_indent(text_view:PGtkTextView):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_tabs(text_view:PGtkTextView; tabs:PPangoTabArray);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_tabs(text_view:PGtkTextView):^PangoTabArray;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_input_purpose(text_view:PGtkTextView; purpose:GtkInputPurpose);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_input_purpose(text_view:PGtkTextView):GtkInputPurpose;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_input_hints(text_view:PGtkTextView; hints:GtkInputHints);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_input_hints(text_view:PGtkTextView):GtkInputHints;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_monospace(text_view:PGtkTextView; monospace:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_monospace(text_view:PGtkTextView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_view_set_extra_menu(text_view:PGtkTextView; model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_text_view_get_extra_menu(text_view:PGtkTextView):^GMenuModel;
 
+  { Zeile entfernt  }
   function gtk_text_view_get_rtl_context(text_view:PGtkTextView):^PangoContext;
 
+  { Zeile entfernt  }
   function gtk_text_view_get_ltr_context(text_view:PGtkTextView):^PangoContext;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TEXT_VIEW_H__  }
   { was #define dname def_expr }
@@ -404,6 +476,10 @@ GType          gtk_text_view_get_type              (void) G_GNUC_CONST;
     GTK_TEXT_VIEW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TEXT_VIEW,GtkTextViewClass);
   end;
 
+  function gtk_text_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_view_new:PGtkWidget;
   begin
     { You must implement this function }

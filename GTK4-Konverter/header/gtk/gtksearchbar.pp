@@ -40,6 +40,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkeditable.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SEARCH_BAR : longint; { return type might be wrong }
@@ -57,33 +58,41 @@
 
   type
     _GtkSearchBar = GtkSearchBar;
-(* error 
-GType       gtk_search_bar_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_search_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_search_bar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_search_bar_connect_entry(bar:PGtkSearchBar; entry:PGtkEditable);
 
+  { Zeile entfernt  }
   function gtk_search_bar_get_search_mode(bar:PGtkSearchBar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_search_bar_set_search_mode(bar:PGtkSearchBar; search_mode:gboolean);
 
+  { Zeile entfernt  }
   function gtk_search_bar_get_show_close_button(bar:PGtkSearchBar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_search_bar_set_show_close_button(bar:PGtkSearchBar; visible:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_search_bar_set_key_capture_widget(bar:PGtkSearchBar; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_search_bar_get_key_capture_widget(bar:PGtkSearchBar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_search_bar_set_child(bar:PGtkSearchBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_search_bar_get_child(bar:PGtkSearchBar):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SEARCH_BAR_H__  }
   { was #define dname def_expr }
@@ -108,6 +117,10 @@ GType       gtk_search_bar_get_type        (void) G_GNUC_CONST;
     GTK_IS_SEARCH_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SEARCH_BAR);
   end;
 
+  function gtk_search_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_search_bar_new:PGtkWidget;
   begin
     { You must implement this function }

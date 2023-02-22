@@ -28,7 +28,7 @@
 #include <gdk/gdkenums.h>
 
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DEVICE         (gdk_device_get_type ())
 #define GDK_DEVICE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE, GdkDevice))
@@ -83,49 +83,49 @@ struct _GdkTimeCoord
   double axes[GDK_AXIS_LAST];
 };
 
+/* Zeile entfernt */
+GType               gdk_device_get_type                 (void) ;
 
-GType               gdk_device_get_type                 (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char *        gdk_device_get_name                 (GdkDevice *device);
-
+/* Zeile entfernt */
 const char *        gdk_device_get_vendor_id            (GdkDevice *device);
-
+/* Zeile entfernt */
 const char *        gdk_device_get_product_id           (GdkDevice *device);
 
-
+/* Zeile entfernt */
 GdkDisplay *        gdk_device_get_display              (GdkDevice *device);
-
+/* Zeile entfernt */
 GdkSeat *           gdk_device_get_seat                 (GdkDevice *device);
-
+/* Zeile entfernt */
 GdkDeviceTool *     gdk_device_get_device_tool          (GdkDevice *device);
 
-
+/* Zeile entfernt */
 GdkInputSource      gdk_device_get_source               (GdkDevice *device);
-
+/* Zeile entfernt */
 gboolean            gdk_device_get_has_cursor           (GdkDevice *device);
-
+/* Zeile entfernt */
 guint               gdk_device_get_num_touches          (GdkDevice *device);
-
+/* Zeile entfernt */
 GdkModifierType     gdk_device_get_modifier_state       (GdkDevice *device);
-
+/* Zeile entfernt */
 PangoDirection      gdk_device_get_direction            (GdkDevice *device);
-
+/* Zeile entfernt */
 gboolean            gdk_device_has_bidi_layouts         (GdkDevice *device);
-
+/* Zeile entfernt */
 gboolean            gdk_device_get_caps_lock_state      (GdkDevice *device);
-
+/* Zeile entfernt */
 gboolean            gdk_device_get_num_lock_state       (GdkDevice *device);
-
+/* Zeile entfernt */
 gboolean            gdk_device_get_scroll_lock_state    (GdkDevice *device);
 
-
+/* Zeile entfernt */
 GdkSurface *        gdk_device_get_surface_at_position  (GdkDevice *device,
                                                          double    *win_x,
                                                          double    *win_y);
 
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 guint32             gdk_device_get_timestamp            (GdkDevice *device);
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DEVICE_H__ */

@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_OVERLAY             (gtk_overlay_get_type ())
 #define GTK_OVERLAY(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_OVERLAY, GtkOverlay))
@@ -35,38 +35,38 @@
 
 typedef struct _GtkOverlay         GtkOverlay;
 
-
-GType      gtk_overlay_get_type    (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_overlay_get_type    (void) ;
+/* Zeile entfernt */
 GtkWidget *gtk_overlay_new         (void);
-
+/* Zeile entfernt */
 void       gtk_overlay_add_overlay (GtkOverlay *overlay,
                                     GtkWidget  *widget);
-
+/* Zeile entfernt */
 void       gtk_overlay_remove_overlay (GtkOverlay *overlay,
                                        GtkWidget  *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_overlay_set_child (GtkOverlay *overlay,
                                              GtkWidget  *child);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_overlay_get_child (GtkOverlay *overlay);
 
-
+/* Zeile entfernt */
 gboolean   gtk_overlay_get_measure_overlay (GtkOverlay *overlay,
                                             GtkWidget  *widget);
-
+/* Zeile entfernt */
 void       gtk_overlay_set_measure_overlay (GtkOverlay *overlay,
                                             GtkWidget  *widget,
                                             gboolean    measure);
-
+/* Zeile entfernt */
 gboolean   gtk_overlay_get_clip_overlay    (GtkOverlay *overlay,
                                             GtkWidget  *widget);
-
+/* Zeile entfernt */
 void       gtk_overlay_set_clip_overlay    (GtkOverlay *overlay,
                                             GtkWidget  *widget,
                                             gboolean    clip_overlay);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_OVERLAY_H__ */

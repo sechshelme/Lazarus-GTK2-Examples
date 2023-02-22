@@ -27,7 +27,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkborder.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SCROLLABLE            (gtk_scrollable_get_type ())
 #define GTK_SCROLLABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),     GTK_TYPE_SCROLLABLE, GtkScrollable))
@@ -46,33 +46,33 @@ struct _GtkScrollableInterface
 };
 
 /* Public API */
-
-GType                gtk_scrollable_get_type               (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                gtk_scrollable_get_type               (void) ;
+/* Zeile entfernt */
 GtkAdjustment       *gtk_scrollable_get_hadjustment        (GtkScrollable       *scrollable);
-
+/* Zeile entfernt */
 void                 gtk_scrollable_set_hadjustment        (GtkScrollable       *scrollable,
 							    GtkAdjustment       *hadjustment);
-
+/* Zeile entfernt */
 GtkAdjustment       *gtk_scrollable_get_vadjustment        (GtkScrollable       *scrollable);
-
+/* Zeile entfernt */
 void                 gtk_scrollable_set_vadjustment        (GtkScrollable       *scrollable,
 							    GtkAdjustment       *vadjustment);
-
+/* Zeile entfernt */
 GtkScrollablePolicy  gtk_scrollable_get_hscroll_policy     (GtkScrollable       *scrollable);
-
+/* Zeile entfernt */
 void                 gtk_scrollable_set_hscroll_policy     (GtkScrollable       *scrollable,
 							    GtkScrollablePolicy  policy);
-
+/* Zeile entfernt */
 GtkScrollablePolicy  gtk_scrollable_get_vscroll_policy     (GtkScrollable       *scrollable);
-
+/* Zeile entfernt */
 void                 gtk_scrollable_set_vscroll_policy     (GtkScrollable       *scrollable,
 							    GtkScrollablePolicy  policy);
 
-
+/* Zeile entfernt */
 gboolean             gtk_scrollable_get_border             (GtkScrollable       *scrollable,
                                                             GtkBorder           *border);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SCROLLABLE_H__ */

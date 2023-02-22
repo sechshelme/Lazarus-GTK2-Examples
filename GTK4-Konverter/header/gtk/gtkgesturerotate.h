@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesture.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_ROTATE         (gtk_gesture_rotate_get_type ())
 #define GTK_GESTURE_ROTATE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_ROTATE, GtkGestureRotate))
@@ -39,15 +39,15 @@
 typedef struct _GtkGestureRotate GtkGestureRotate;
 typedef struct _GtkGestureRotateClass GtkGestureRotateClass;
 
+/* Zeile entfernt */
+GType        gtk_gesture_rotate_get_type        (void) ;
 
-GType        gtk_gesture_rotate_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture * gtk_gesture_rotate_new             (void);
 
-
+/* Zeile entfernt */
 double       gtk_gesture_rotate_get_angle_delta (GtkGestureRotate *gesture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_ROTATE_H__ */

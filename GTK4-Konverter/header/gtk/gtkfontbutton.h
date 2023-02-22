@@ -33,7 +33,7 @@
 #include <gtk/gtkbutton.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FONT_BUTTON             (gtk_font_button_get_type ())
 #define GTK_FONT_BUTTON(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FONT_BUTTON, GtkFontButton))
@@ -41,35 +41,35 @@
 
 typedef struct _GtkFontButton        GtkFontButton;
 
-
-GType                 gtk_font_button_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                 gtk_font_button_get_type       (void) ;
+/* Zeile entfernt */
 GtkWidget            *gtk_font_button_new            (void);
-
+/* Zeile entfernt */
 GtkWidget            *gtk_font_button_new_with_font  (const char    *fontname);
 
-
+/* Zeile entfernt */
 const char *         gtk_font_button_get_title      (GtkFontButton *font_button);
-
+/* Zeile entfernt */
 void                  gtk_font_button_set_title      (GtkFontButton *font_button,
                                                       const char    *title);
-
+/* Zeile entfernt */
 gboolean              gtk_font_button_get_modal      (GtkFontButton *font_button);
-
+/* Zeile entfernt */
 void                  gtk_font_button_set_modal      (GtkFontButton *font_button,
                                                       gboolean       modal);
-
+/* Zeile entfernt */
 gboolean              gtk_font_button_get_use_font   (GtkFontButton *font_button);
-
+/* Zeile entfernt */
 void                  gtk_font_button_set_use_font   (GtkFontButton *font_button,
                                                       gboolean       use_font);
-
+/* Zeile entfernt */
 gboolean              gtk_font_button_get_use_size   (GtkFontButton *font_button);
-
+/* Zeile entfernt */
 void                  gtk_font_button_set_use_size   (GtkFontButton *font_button,
                                                       gboolean       use_size);
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_FONT_BUTTON_H__ */

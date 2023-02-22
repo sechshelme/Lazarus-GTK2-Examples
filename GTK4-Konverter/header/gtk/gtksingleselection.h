@@ -22,39 +22,39 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SINGLE_SELECTION (gtk_single_selection_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkSingleSelection, gtk_single_selection, GTK, SINGLE_SELECTION, GObject)
-
-
+/* Zeile entfernt */
 GtkSingleSelection *    gtk_single_selection_new                (GListModel             *model);
 
-
+/* Zeile entfernt */
 GListModel *            gtk_single_selection_get_model          (GtkSingleSelection     *self);
-
+/* Zeile entfernt */
 void                    gtk_single_selection_set_model          (GtkSingleSelection     *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 guint                   gtk_single_selection_get_selected       (GtkSingleSelection     *self);
-
+/* Zeile entfernt */
 void                    gtk_single_selection_set_selected       (GtkSingleSelection     *self,
                                                                  guint                   position);
-
+/* Zeile entfernt */
 gpointer                gtk_single_selection_get_selected_item  (GtkSingleSelection     *self);
-
+/* Zeile entfernt */
 gboolean                gtk_single_selection_get_autoselect     (GtkSingleSelection     *self);
-
+/* Zeile entfernt */
 void                    gtk_single_selection_set_autoselect     (GtkSingleSelection     *self,
                                                                  gboolean                autoselect);
-
+/* Zeile entfernt */
 gboolean                gtk_single_selection_get_can_unselect   (GtkSingleSelection     *self);
-
+/* Zeile entfernt */
 void                    gtk_single_selection_set_can_unselect   (GtkSingleSelection     *self,
                                                                  gboolean                can_unselect);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SINGLE_SELECTION_H__ */

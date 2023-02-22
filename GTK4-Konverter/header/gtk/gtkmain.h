@@ -37,7 +37,7 @@
 #include <gtk/gtkwindow.h>
 #endif
 
-
+/* Zeile entfernt */
 
 /**
  * GTK_PRIORITY_RESIZE: (value 110)
@@ -53,13 +53,13 @@
 /* Initialization, exit, mainloop and miscellaneous routines
  */
 
-
+/* Zeile entfernt */
 void     gtk_init                 (void);
 
-
+/* Zeile entfernt */
 gboolean gtk_init_check           (void);
 
-
+/* Zeile entfernt */
 gboolean gtk_is_initialized       (void);
 
 #ifdef G_OS_WIN32
@@ -67,11 +67,11 @@ gboolean gtk_is_initialized       (void);
 /* Variants that are used to check for correct struct packing
  * when building GTK+-using code.
  */
-
+/* Zeile entfernt */
 void     gtk_init_abi_check       (int     num_checks,
                                    size_t  sizeof_GtkWindow,
                                    size_t  sizeof_GtkBox);
-
+/* Zeile entfernt */
 gboolean gtk_init_check_abi_check (int     num_checks,
                                    size_t  sizeof_GtkWindow,
                                    size_t  sizeof_GtkBox);
@@ -81,14 +81,14 @@ gboolean gtk_init_check_abi_check (int     num_checks,
 
 #endif
 
-
+/* Zeile entfernt */
 void              gtk_disable_setlocale    (void);
-
-PangoLanguage *   gtk_get_default_language (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+PangoLanguage *   gtk_get_default_language (void) ;
+/* Zeile entfernt */
 GtkTextDirection  gtk_get_locale_direction (void);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MAIN_H__ */

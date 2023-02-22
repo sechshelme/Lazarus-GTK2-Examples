@@ -25,7 +25,7 @@
 
 #include <gtk/gtkbuilder.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BUILDABLE            (gtk_buildable_get_type ())
 #define GTK_BUILDABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUILDABLE, GtkBuildable))
@@ -239,27 +239,27 @@ struct _GtkBuildableIface
 };
 
 
+/* Zeile entfernt */
+GType     gtk_buildable_get_type               (void) ;
 
-GType     gtk_buildable_get_type               (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char * gtk_buildable_get_buildable_id    (GtkBuildable        *buildable);
 
-
+/* Zeile entfernt */
 void          gtk_buildable_parse_context_push              (GtkBuildableParseContext *context,
                                                              const GtkBuildableParser *parser,
                                                              gpointer                  user_data);
-
+/* Zeile entfernt */
 gpointer      gtk_buildable_parse_context_pop               (GtkBuildableParseContext *context);
-
+/* Zeile entfernt */
 const char *  gtk_buildable_parse_context_get_element       (GtkBuildableParseContext *context);
-
+/* Zeile entfernt */
 GPtrArray    *gtk_buildable_parse_context_get_element_stack (GtkBuildableParseContext *context);
-
+/* Zeile entfernt */
 void          gtk_buildable_parse_context_get_position      (GtkBuildableParseContext *context,
                                                              int                      *line_number,
                                                              int                      *char_number);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BUILDABLE_H__ */

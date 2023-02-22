@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 
 /* -- type macros --- */
@@ -34,17 +34,17 @@
 #define GTK_IS_SETTINGS(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_SETTINGS))
 
 /* --- functions --- */
-
-GType           gtk_settings_get_type                (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType           gtk_settings_get_type                (void) ;
+/* Zeile entfernt */
 GtkSettings*    gtk_settings_get_default             (void);
-
+/* Zeile entfernt */
 GtkSettings*    gtk_settings_get_for_display         (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 void     gtk_settings_reset_property       (GtkSettings            *settings,
                                             const char             *name);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SETTINGS_H__ */

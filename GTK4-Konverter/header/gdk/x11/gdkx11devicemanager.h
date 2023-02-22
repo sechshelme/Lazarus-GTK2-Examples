@@ -28,12 +28,12 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 GdkDevice * gdk_x11_device_manager_lookup (GdkX11DeviceManagerXI2 *device_manager,
                                            int                     device_id);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_DEVICE_MANAGER_H__ */

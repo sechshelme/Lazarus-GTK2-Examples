@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FIXED                  (gtk_fixed_get_type ())
 #define GTK_FIXED(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FIXED, GtkFixed))
@@ -59,38 +59,38 @@ struct _GtkFixedClass
   gpointer padding[8];
 };
 
+/* Zeile entfernt */
+GType gtk_fixed_get_type (void) ;
 
-GType gtk_fixed_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_fixed_new                (void);
-
+/* Zeile entfernt */
 void            gtk_fixed_put                   (GtkFixed     *fixed,
                                                  GtkWidget    *widget,
                                                  double        x,
                                                  double        y);
-
+/* Zeile entfernt */
 void            gtk_fixed_remove                (GtkFixed     *fixed,
                                                  GtkWidget    *widget);
-
+/* Zeile entfernt */
 void            gtk_fixed_move                  (GtkFixed     *fixed,
                                                  GtkWidget    *widget,
                                                  double        x,
                                                  double        y);
-
+/* Zeile entfernt */
 void            gtk_fixed_get_child_position    (GtkFixed     *fixed,
                                                  GtkWidget    *widget,
                                                  double       *x,
                                                  double       *y);
 
-
+/* Zeile entfernt */
 void            gtk_fixed_set_child_transform   (GtkFixed     *fixed,
                                                  GtkWidget    *widget,
                                                  GskTransform *transform);
-
+/* Zeile entfernt */
 GskTransform *  gtk_fixed_get_child_transform   (GtkFixed     *fixed,
                                                  GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FIXED_H__ */

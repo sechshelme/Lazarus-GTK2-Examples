@@ -1,4 +1,6 @@
 
+  Type
+  PGtkEntryBuffer  = ^GtkEntryBuffer;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -25,20 +27,25 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtkentrybuffer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PASSWORD_ENTRY_BUFFER : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_4_4
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_password_entry_buffer_new:^GtkEntryBuffer;
 
-    var
- : GDK_AVAILABLE_IN_4_4;
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PASSWORD_ENTRY_BUFFER : longint; { return type might be wrong }
     begin
       GTK_TYPE_PASSWORD_ENTRY_BUFFER:=gtk_password_entry_buffer_get_type;
     end;
 
+  function gtk_password_entry_buffer_new:PGtkEntryBuffer;
+  begin
+    { You must implement this function }
+  end;
 

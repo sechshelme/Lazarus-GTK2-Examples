@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtklistbase.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_VIEW : longint; { return type might be wrong }
@@ -66,39 +67,45 @@
   type
     _GtkListView = GtkListView;
     _GtkListViewClass = GtkListViewClass;
-(* error 
-GType           gtk_list_view_get_type                          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_list_view_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_list_view_new(model:PGtkSelectionModel; factory:PGtkListItemFactory):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_list_view_get_model(self:PGtkListView):^GtkSelectionModel;
 
+  { Zeile entfernt  }
   procedure gtk_list_view_set_model(self:PGtkListView; model:PGtkSelectionModel);
 
+  { Zeile entfernt  }
   procedure gtk_list_view_set_factory(self:PGtkListView; factory:PGtkListItemFactory);
 
+  { Zeile entfernt  }
   function gtk_list_view_get_factory(self:PGtkListView):^GtkListItemFactory;
 
+  { Zeile entfernt  }
   procedure gtk_list_view_set_show_separators(self:PGtkListView; show_separators:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_view_get_show_separators(self:PGtkListView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_view_set_single_click_activate(self:PGtkListView; single_click_activate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_view_get_single_click_activate(self:PGtkListView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_view_set_enable_rubberband(self:PGtkListView; enable_rubberband:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_view_get_enable_rubberband(self:PGtkListView):gboolean;
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListView, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListView, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LIST_VIEW_H__  }
   { was #define dname def_expr }
@@ -147,6 +154,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListView, g_object_unref)
     GTK_LIST_VIEW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_LIST_VIEW,GtkListViewClass);
   end;
 
+  function gtk_list_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_list_view_new(model:PGtkSelectionModel; factory:PGtkListItemFactory):PGtkWidget;
   begin
     { You must implement this function }

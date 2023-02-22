@@ -192,7 +192,7 @@
 # error "GDK_VERSION_MIN_REQUIRED must be >= GDK_VERSION_4_0"
 #endif
 
-#define GDK_AVAILABLE_IN_ALL                  _GDK_EXTERN
+/* Zeile entfernt */
 
 /* XXX: Every new stable minor release should add a set of macros here */
 
@@ -217,9 +217,9 @@
 
 
 #if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_2
-# define GDK_AVAILABLE_IN_4_2                   GDK_UNAVAILABLE(4, 2)
+/* Zeile entfernt */
 #else
-# define GDK_AVAILABLE_IN_4_2                   _GDK_EXTERN
+/* Zeile entfernt */
 #endif
 
 #if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_2
@@ -232,9 +232,9 @@
 
 
 #if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_4
-# define GDK_AVAILABLE_IN_4_4                   GDK_UNAVAILABLE(4, 4)
+/* Zeile entfernt */
 #else
-# define GDK_AVAILABLE_IN_4_4                   _GDK_EXTERN
+/* Zeile entfernt */
 #endif
 
 #if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_4
@@ -246,9 +246,9 @@
 #endif
 
 #if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_6
-# define GDK_AVAILABLE_IN_4_6                   GDK_UNAVAILABLE(4, 6)
+/* Zeile entfernt */
 #else
-# define GDK_AVAILABLE_IN_4_6                   _GDK_EXTERN
+/* Zeile entfernt */
 #endif
 
 #if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_6

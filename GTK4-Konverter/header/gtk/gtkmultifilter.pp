@@ -1,5 +1,8 @@
 
   Type
+  PGtkAnyFilter  = ^GtkAnyFilter;
+  PGtkEveryFilter  = ^GtkEveryFilter;
+  PGtkFilter  = ^GtkFilter;
   PGtkMultiFilter  = ^GtkMultiFilter;
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -31,39 +34,36 @@
 {$endif}
 {$include <gtk/gtkfilter.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MULTI_FILTER : longint; { return type might be wrong }
 
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMultiFilter, gtk_multi_filter, GTK, MULTI_FILTER, GtkFilter)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMultiFilter, gtk_multi_filter, GTK, MULTI_FILTER, GtkFilter)
-(* error 
-                                                                 GtkFilter              *filter);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gtk_multi_filter_append(self:PGtkMultiFilter; filter:PGtkFilter);
+
+  { Zeile entfernt  }
   procedure gtk_multi_filter_remove(self:PGtkMultiFilter; position:guint);
 
   { was #define dname def_expr }
   function GTK_TYPE_ANY_FILTER : longint; { return type might be wrong }
 
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_any_filter_new:^GtkAnyFilter;
+
   { was #define dname def_expr }
   function GTK_TYPE_EVERY_FILTER : longint; { return type might be wrong }
 
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_every_filter_new:^GtkEveryFilter;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MULTI_FILTER_H__  }
   { was #define dname def_expr }
@@ -72,6 +72,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, 
       GTK_TYPE_MULTI_FILTER:=gtk_multi_filter_get_type;
     end;
 
+  procedure gtk_multi_filter_append(self:PGtkMultiFilter; filter:PGtkFilter);
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_multi_filter_remove(self:PGtkMultiFilter; position:guint);
   begin
     { You must implement this function }
@@ -82,10 +86,18 @@ GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, 
       GTK_TYPE_ANY_FILTER:=gtk_any_filter_get_type;
     end;
 
+  function gtk_any_filter_new:PGtkAnyFilter;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_EVERY_FILTER : longint; { return type might be wrong }
     begin
       GTK_TYPE_EVERY_FILTER:=gtk_every_filter_get_type;
     end;
 
+  function gtk_every_filter_new:PGtkEveryFilter;
+  begin
+    { You must implement this function }
+  end;
 

@@ -28,7 +28,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskenums.h>
 
-
+/* Zeile entfernt */
 
 #define GSK_TYPE_SHADER_ARGS_BUILDER    (gsk_shader_args_builder_get_type ())
 
@@ -41,127 +41,127 @@ typedef struct _GskShaderArgsBuilder GskShaderArgsBuilder;
 
 #define GSK_TYPE_GL_SHADER (gsk_gl_shader_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
-
-
+/* Zeile entfernt */
 GskGLShader *    gsk_gl_shader_new_from_bytes          (GBytes           *sourcecode);
-
+/* Zeile entfernt */
 GskGLShader *    gsk_gl_shader_new_from_resource       (const char       *resource_path);
-
+/* Zeile entfernt */
 gboolean         gsk_gl_shader_compile                 (GskGLShader      *shader,
                                                         GskRenderer      *renderer,
                                                         GError          **error);
-
+/* Zeile entfernt */
 GBytes *         gsk_gl_shader_get_source              (GskGLShader      *shader);
-
+/* Zeile entfernt */
 const char *     gsk_gl_shader_get_resource            (GskGLShader      *shader);
-
+/* Zeile entfernt */
 int              gsk_gl_shader_get_n_textures          (GskGLShader      *shader);
-
+/* Zeile entfernt */
 int              gsk_gl_shader_get_n_uniforms          (GskGLShader      *shader);
-
+/* Zeile entfernt */
 const char *     gsk_gl_shader_get_uniform_name        (GskGLShader      *shader,
                                                         int               idx);
-
+/* Zeile entfernt */
 int              gsk_gl_shader_find_uniform_by_name    (GskGLShader      *shader,
                                                         const char       *name);
-
+/* Zeile entfernt */
 GskGLUniformType gsk_gl_shader_get_uniform_type        (GskGLShader      *shader,
                                                         int               idx);
-
+/* Zeile entfernt */
 int              gsk_gl_shader_get_uniform_offset      (GskGLShader      *shader,
                                                         int               idx);
-
+/* Zeile entfernt */
 gsize            gsk_gl_shader_get_args_size           (GskGLShader      *shader);
 
 
 /* Helpers for managing shader args */
 
-
+/* Zeile entfernt */
 GBytes * gsk_gl_shader_format_args_va (GskGLShader     *shader,
                                        va_list          uniforms);
-
+/* Zeile entfernt */
 GBytes * gsk_gl_shader_format_args    (GskGLShader     *shader,
-                                       ...) G_GNUC_NULL_TERMINATED;
+                                       ...) ;
 
-
+/* Zeile entfernt */
 float    gsk_gl_shader_get_arg_float (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx);
-
+/* Zeile entfernt */
 gint32   gsk_gl_shader_get_arg_int   (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx);
-
+/* Zeile entfernt */
 guint32  gsk_gl_shader_get_arg_uint  (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx);
-
+/* Zeile entfernt */
 gboolean gsk_gl_shader_get_arg_bool  (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx);
-
+/* Zeile entfernt */
 void     gsk_gl_shader_get_arg_vec2  (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx,
                                       graphene_vec2_t *out_value);
-
+/* Zeile entfernt */
 void     gsk_gl_shader_get_arg_vec3  (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx,
                                       graphene_vec3_t *out_value);
-
+/* Zeile entfernt */
 void     gsk_gl_shader_get_arg_vec4  (GskGLShader     *shader,
                                       GBytes          *args,
                                       int              idx,
                                       graphene_vec4_t *out_value);
 
+/* Zeile entfernt */
+GType   gsk_shader_args_builder_get_type  (void) ;
 
-GType   gsk_shader_args_builder_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GskShaderArgsBuilder *gsk_shader_args_builder_new           (GskGLShader *shader,
                                                              GBytes      *initial_values);
-
+/* Zeile entfernt */
 GBytes *               gsk_shader_args_builder_to_args      (GskShaderArgsBuilder *builder);
-
+/* Zeile entfernt */
 GBytes *               gsk_shader_args_builder_free_to_args (GskShaderArgsBuilder *builder);
-
+/* Zeile entfernt */
 GskShaderArgsBuilder  *gsk_shader_args_builder_ref          (GskShaderArgsBuilder *builder);
-
+/* Zeile entfernt */
 void                   gsk_shader_args_builder_unref        (GskShaderArgsBuilder *builder);
 
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_float (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            float                  value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_int   (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            gint32                 value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_uint  (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            guint32                value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_bool  (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            gboolean               value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_vec2  (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            const graphene_vec2_t *value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_vec3  (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            const graphene_vec3_t *value);
-
+/* Zeile entfernt */
 void    gsk_shader_args_builder_set_vec4  (GskShaderArgsBuilder *builder,
                                            int                    idx,
                                            const graphene_vec4_t *value);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GSK_GL_SHADER_H__ */

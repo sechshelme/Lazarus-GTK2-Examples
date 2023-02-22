@@ -36,6 +36,7 @@
 {$include <gtk/gtkborder.h>}
 {$include <gtk/gtkstyleprovider.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STYLE_CONTEXT : longint; { return type might be wrong }
@@ -82,56 +83,73 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
-(* error 
-GType gtk_style_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_style_context_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_style_context_add_provider_for_display(display:PGdkDisplay; provider:PGtkStyleProvider; priority:guint);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_remove_provider_for_display(display:PGdkDisplay; provider:PGtkStyleProvider);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_add_provider(context:PGtkStyleContext; provider:PGtkStyleProvider; priority:guint);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_remove_provider(context:PGtkStyleContext; provider:PGtkStyleProvider);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_save(context:PGtkStyleContext);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_restore(context:PGtkStyleContext);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_set_state(context:PGtkStyleContext; flags:GtkStateFlags);
 
+  { Zeile entfernt  }
   function gtk_style_context_get_state(context:PGtkStyleContext):GtkStateFlags;
 
+  { Zeile entfernt  }
   procedure gtk_style_context_set_scale(context:PGtkStyleContext; scale:longint);
 
+  { Zeile entfernt  }
   function gtk_style_context_get_scale(context:PGtkStyleContext):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_style_context_add_class(context:PGtkStyleContext; class_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_style_context_remove_class(context:PGtkStyleContext; class_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_style_context_has_class(context:PGtkStyleContext; class_name:Pchar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_style_context_set_display(context:PGtkStyleContext; display:PGdkDisplay);
 
+  { Zeile entfernt  }
   function gtk_style_context_get_display(context:PGtkStyleContext):^GdkDisplay;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_style_context_lookup_color(context:PGtkStyleContext; color_name:Pchar; color:PGdkRGBA):gboolean;
 
   { Some helper functions to retrieve most common properties  }
+  { Zeile entfernt  }
   procedure gtk_style_context_get_color(context:PGtkStyleContext; color:PGdkRGBA);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_get_border(context:PGtkStyleContext; border:PGtkBorder);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_get_padding(context:PGtkStyleContext; padding:PGtkBorder);
 
+  { Zeile entfernt  }
   procedure gtk_style_context_get_margin(context:PGtkStyleContext; margin:PGtkBorder);
 
 
@@ -140,9 +158,11 @@ GType gtk_style_context_get_type (void) G_GNUC_CONST;
       GTK_STYLE_CONTEXT_PRINT_SHOW_STYLE := 1 shl 1,
       GTK_STYLE_CONTEXT_PRINT_SHOW_CHANGE := 1 shl 2
       );
+  { Zeile entfernt  }
 
   function gtk_style_context_to_string(context:PGtkStyleContext; flags:GtkStyleContextPrintFlags):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STYLE_CONTEXT_H__  }
   { was #define dname def_expr }
@@ -191,6 +211,10 @@ GType gtk_style_context_get_type (void) G_GNUC_CONST;
     GTK_STYLE_CONTEXT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_STYLE_CONTEXT,GtkStyleContextClass);
   end;
 
+  function gtk_style_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_style_context_add_provider_for_display(display:PGdkDisplay; provider:PGtkStyleProvider; priority:guint);
   begin
     { You must implement this function }

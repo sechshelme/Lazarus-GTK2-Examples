@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtkfilter.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkStringFilterMatchMode:
@@ -47,35 +47,35 @@ typedef enum {
 } GtkStringFilterMatchMode;
 
 #define GTK_TYPE_STRING_FILTER             (gtk_string_filter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, GtkFilter)
-
-
+/* Zeile entfernt */
 GtkStringFilter *       gtk_string_filter_new                   (GtkExpression          *expression);
 
-
+/* Zeile entfernt */
 const char *            gtk_string_filter_get_search            (GtkStringFilter        *self);
-
+/* Zeile entfernt */
 void                    gtk_string_filter_set_search            (GtkStringFilter        *self,
                                                                  const char             *search);
-
+/* Zeile entfernt */
 GtkExpression *         gtk_string_filter_get_expression        (GtkStringFilter        *self);
-
+/* Zeile entfernt */
 void                    gtk_string_filter_set_expression        (GtkStringFilter        *self,
                                                                  GtkExpression          *expression);
-
+/* Zeile entfernt */
 gboolean                gtk_string_filter_get_ignore_case       (GtkStringFilter        *self);
-
+/* Zeile entfernt */
 void                    gtk_string_filter_set_ignore_case       (GtkStringFilter        *self,
                                                                  gboolean                ignore_case);
-
+/* Zeile entfernt */
 GtkStringFilterMatchMode gtk_string_filter_get_match_mode       (GtkStringFilter        *self);
-
+/* Zeile entfernt */
 void                     gtk_string_filter_set_match_mode       (GtkStringFilter        *self,
                                                                  GtkStringFilterMatchMode mode);
 
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STRING_FILTER_H__ */

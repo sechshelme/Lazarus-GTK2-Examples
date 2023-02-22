@@ -230,9 +230,7 @@ in define line 68 *)
 {$if GDK_VERSION_MIN_REQUIRED < GDK_VERSION_4_0}
 {$error "GDK_VERSION_MIN_REQUIRED must be >= GDK_VERSION_4_0"}
 {$endif}
-
-  const
-    GDK_AVAILABLE_IN_ALL = _GDK_EXTERN;    
+  { Zeile entfernt  }
   { XXX: Every new stable minor release should add a set of macros here  }
   { This is not really necessary for 4.0, since there can't be an
    * earlier version, and there are no deprecated symbols. We just
@@ -271,14 +269,9 @@ in define line 68 *)
 
 {$endif}
 {$if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_2}
-
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_2 : longint; { return type might be wrong }
-
+  { Zeile entfernt  }
 {$else}
-
-  const
-    GDK_AVAILABLE_IN_4_2 = _GDK_EXTERN;    
+  { Zeile entfernt  }
 {$endif}
 {$if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_2}
 
@@ -302,14 +295,9 @@ in define line 68 *)
 
 {$endif}
 {$if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_4}
-
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_4 : longint; { return type might be wrong }
-
+  { Zeile entfernt  }
 {$else}
-
-  const
-    GDK_AVAILABLE_IN_4_4 = _GDK_EXTERN;    
+  { Zeile entfernt  }
 {$endif}
 {$if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_4}
 
@@ -333,14 +321,9 @@ in define line 68 *)
 
 {$endif}
 {$if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_6}
-
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_6 : longint; { return type might be wrong }
-
+  { Zeile entfernt  }
 {$else}
-
-  const
-    GDK_AVAILABLE_IN_4_6 = _GDK_EXTERN;    
+  { Zeile entfernt  }
 {$endif}
 {$if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_6}
 
@@ -488,12 +471,6 @@ in define line 68 *)
     GDK_DEPRECATED_IN_4_0_FOR:=_GDK_EXTERN;
   end;
 
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_2 : longint; { return type might be wrong }
-    begin
-      GDK_AVAILABLE_IN_4_2:=GDK_UNAVAILABLE(4,2);
-    end;
-
   { was #define dname(params) para_def_expr }
   { argument types are unknown }
   { return type might be wrong }   
@@ -510,12 +487,6 @@ in define line 68 *)
     GDK_DEPRECATED_IN_4_2_FOR:=_GDK_EXTERN;
   end;
 
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_4 : longint; { return type might be wrong }
-    begin
-      GDK_AVAILABLE_IN_4_4:=GDK_UNAVAILABLE(4,4);
-    end;
-
   { was #define dname(params) para_def_expr }
   { argument types are unknown }
   { return type might be wrong }   
@@ -531,12 +502,6 @@ in define line 68 *)
   begin
     GDK_DEPRECATED_IN_4_4_FOR:=_GDK_EXTERN;
   end;
-
-  { was #define dname def_expr }
-  function GDK_AVAILABLE_IN_4_6 : longint; { return type might be wrong }
-    begin
-      GDK_AVAILABLE_IN_4_6:=GDK_UNAVAILABLE(4,6);
-    end;
 
   { was #define dname(params) para_def_expr }
   { argument types are unknown }

@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SCROLLBAR : longint; { return type might be wrong }
@@ -53,19 +54,20 @@
 
   type
     _GtkScrollbar = GtkScrollbar;
-(* error 
-GType       gtk_scrollbar_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_scrollbar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_scrollbar_new(orientation:GtkOrientation; adjustment:PGtkAdjustment):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_scrollbar_set_adjustment(self:PGtkScrollbar; adjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_scrollbar_get_adjustment(self:PGtkScrollbar):^GtkAdjustment;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SCROLLBAR_H__  }
   { was #define dname def_expr }
@@ -90,6 +92,10 @@ GType       gtk_scrollbar_get_type (void) G_GNUC_CONST;
     GTK_IS_SCROLLBAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SCROLLBAR);
   end;
 
+  function gtk_scrollbar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_scrollbar_new(orientation:GtkOrientation; adjustment:PGtkAdjustment):PGtkWidget;
   begin
     { You must implement this function }

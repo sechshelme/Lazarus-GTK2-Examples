@@ -41,7 +41,7 @@
 #include <gtk/gtkimage.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ENTRY                  (gtk_entry_get_type ())
 #define GTK_ENTRY(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ENTRY, GtkEntry))
@@ -97,200 +97,200 @@ struct _GtkEntryClass
   gpointer padding[8];
 };
 
-
-GType      gtk_entry_get_type       		(void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_entry_get_type       		(void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_entry_new            		(void);
-
+/* Zeile entfernt */
 GtkWidget* gtk_entry_new_with_buffer            (GtkEntryBuffer *buffer);
 
-
+/* Zeile entfernt */
 GtkEntryBuffer* gtk_entry_get_buffer            (GtkEntry       *entry);
-
+/* Zeile entfernt */
 void       gtk_entry_set_buffer                 (GtkEntry       *entry,
                                                  GtkEntryBuffer *buffer);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_visibility 		(GtkEntry      *entry,
 						 gboolean       visible);
-
+/* Zeile entfernt */
 gboolean   gtk_entry_get_visibility             (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_invisible_char         (GtkEntry      *entry,
                                                  gunichar       ch);
-
+/* Zeile entfernt */
 gunichar   gtk_entry_get_invisible_char         (GtkEntry      *entry);
-
+/* Zeile entfernt */
 void       gtk_entry_unset_invisible_char       (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_has_frame              (GtkEntry      *entry,
                                                  gboolean       setting);
-
+/* Zeile entfernt */
 gboolean   gtk_entry_get_has_frame              (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_overwrite_mode         (GtkEntry      *entry,
                                                  gboolean       overwrite);
-
+/* Zeile entfernt */
 gboolean   gtk_entry_get_overwrite_mode         (GtkEntry      *entry);
 
 /* text is truncated if needed */
-
+/* Zeile entfernt */
 void       gtk_entry_set_max_length 		(GtkEntry      *entry,
 						 int            max);
-
+/* Zeile entfernt */
 int        gtk_entry_get_max_length             (GtkEntry      *entry);
-
+/* Zeile entfernt */
 guint16    gtk_entry_get_text_length            (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_activates_default      (GtkEntry      *entry,
                                                  gboolean       setting);
-
+/* Zeile entfernt */
 gboolean   gtk_entry_get_activates_default      (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void       gtk_entry_set_alignment              (GtkEntry      *entry,
                                                  float          xalign);
-
+/* Zeile entfernt */
 float      gtk_entry_get_alignment              (GtkEntry      *entry);
 
-
+/* Zeile entfernt */
 void                gtk_entry_set_completion (GtkEntry           *entry,
                                               GtkEntryCompletion *completion);
-
+/* Zeile entfernt */
 GtkEntryCompletion *gtk_entry_get_completion (GtkEntry           *entry);
 
 /* Progress API
  */
-
+/* Zeile entfernt */
 void           gtk_entry_set_progress_fraction   (GtkEntry     *entry,
                                                   double        fraction);
-
+/* Zeile entfernt */
 double         gtk_entry_get_progress_fraction   (GtkEntry     *entry);
 
-
+/* Zeile entfernt */
 void           gtk_entry_set_progress_pulse_step (GtkEntry     *entry,
                                                   double        fraction);
-
+/* Zeile entfernt */
 double         gtk_entry_get_progress_pulse_step (GtkEntry     *entry);
 
-
+/* Zeile entfernt */
 void           gtk_entry_progress_pulse          (GtkEntry     *entry);
-
+/* Zeile entfernt */
 const char *   gtk_entry_get_placeholder_text    (GtkEntry             *entry);
-
+/* Zeile entfernt */
 void           gtk_entry_set_placeholder_text    (GtkEntry             *entry,
                                                   const char           *text);
 /* Setting and managing icons
  */
-
+/* Zeile entfernt */
 void           gtk_entry_set_icon_from_paintable         (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  GdkPaintable         *paintable);
-
+/* Zeile entfernt */
 void           gtk_entry_set_icon_from_icon_name         (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  const char           *icon_name);
-
+/* Zeile entfernt */
 void           gtk_entry_set_icon_from_gicon             (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  GIcon                *icon);
-
+/* Zeile entfernt */
 GtkImageType   gtk_entry_get_icon_storage_type           (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 GdkPaintable * gtk_entry_get_icon_paintable              (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 const char * gtk_entry_get_icon_name                     (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 GIcon*       gtk_entry_get_icon_gicon                    (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 void         gtk_entry_set_icon_activatable              (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  gboolean              activatable);
-
+/* Zeile entfernt */
 gboolean     gtk_entry_get_icon_activatable              (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 void         gtk_entry_set_icon_sensitive                (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  gboolean              sensitive);
-
+/* Zeile entfernt */
 gboolean     gtk_entry_get_icon_sensitive                (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 int          gtk_entry_get_icon_at_pos                   (GtkEntry             *entry,
 							  int                   x,
 							  int                   y);
-
+/* Zeile entfernt */
 void         gtk_entry_set_icon_tooltip_text             (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  const char           *tooltip);
-
+/* Zeile entfernt */
 char *      gtk_entry_get_icon_tooltip_text             (GtkEntry             *entry,
                                                           GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 void         gtk_entry_set_icon_tooltip_markup           (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  const char           *tooltip);
-
+/* Zeile entfernt */
 char *      gtk_entry_get_icon_tooltip_markup           (GtkEntry             *entry,
                                                           GtkEntryIconPosition  icon_pos);
-
+/* Zeile entfernt */
 void         gtk_entry_set_icon_drag_source              (GtkEntry             *entry,
 							  GtkEntryIconPosition  icon_pos,
 							  GdkContentProvider   *provider,
 							  GdkDragAction         actions);
-
+/* Zeile entfernt */
 int          gtk_entry_get_current_icon_drag_source      (GtkEntry             *entry);
-
+/* Zeile entfernt */
 void         gtk_entry_get_icon_area                     (GtkEntry             *entry,
                                                           GtkEntryIconPosition  icon_pos,
                                                           GdkRectangle         *icon_area);
 
-
+/* Zeile entfernt */
 void        gtk_entry_reset_im_context                   (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 void            gtk_entry_set_input_purpose                  (GtkEntry             *entry,
                                                               GtkInputPurpose       purpose);
-
+/* Zeile entfernt */
 GtkInputPurpose gtk_entry_get_input_purpose                  (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 void            gtk_entry_set_input_hints                    (GtkEntry             *entry,
                                                               GtkInputHints         hints);
-
+/* Zeile entfernt */
 GtkInputHints   gtk_entry_get_input_hints                    (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 void            gtk_entry_set_attributes                     (GtkEntry             *entry,
                                                               PangoAttrList        *attrs);
-
+/* Zeile entfernt */
 PangoAttrList  *gtk_entry_get_attributes                     (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 void            gtk_entry_set_tabs                           (GtkEntry             *entry,
                                                               PangoTabArray        *tabs);
 
-
+/* Zeile entfernt */
 PangoTabArray  *gtk_entry_get_tabs                           (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 gboolean       gtk_entry_grab_focus_without_selecting        (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 void           gtk_entry_set_extra_menu                      (GtkEntry             *entry,
                                                               GMenuModel           *model);
-
+/* Zeile entfernt */
 GMenuModel *   gtk_entry_get_extra_menu                      (GtkEntry             *entry);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ENTRY_H__ */

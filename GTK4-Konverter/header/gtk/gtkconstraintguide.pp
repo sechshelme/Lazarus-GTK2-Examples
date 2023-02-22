@@ -30,44 +30,59 @@
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtktypebuiltins.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_GUIDE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraintGuide, gtk_constraint_guide, GTK, CONSTRAINT_GUIDE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraintGuide, gtk_constraint_guide, GTK, CONSTRAINT_GUIDE, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_constraint_guide_new:^GtkConstraintGuide;
+
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_set_min_size(guide:PGtkConstraintGuide; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_get_min_size(guide:PGtkConstraintGuide; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_set_nat_size(guide:PGtkConstraintGuide; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_get_nat_size(guide:PGtkConstraintGuide; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_set_max_size(guide:PGtkConstraintGuide; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_get_max_size(guide:PGtkConstraintGuide; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   function gtk_constraint_guide_get_strength(guide:PGtkConstraintGuide):GtkConstraintStrength;
 
+  { Zeile entfernt  }
   procedure gtk_constraint_guide_set_strength(guide:PGtkConstraintGuide; strength:GtkConstraintStrength);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_constraint_guide_set_name(guide:PGtkConstraintGuide; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_constraint_guide_get_name(guide:PGtkConstraintGuide):^char;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_GUIDE : longint; { return type might be wrong }
     begin
       GTK_TYPE_CONSTRAINT_GUIDE:=gtk_constraint_guide_get_type;
     end;
 
+  function gtk_constraint_guide_new:PGtkConstraintGuide;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_constraint_guide_set_min_size(guide:PGtkConstraintGuide; width:longint; height:longint);
   begin
     { You must implement this function }

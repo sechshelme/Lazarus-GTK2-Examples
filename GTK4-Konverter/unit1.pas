@@ -24,7 +24,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure LoadClick(Sender: TObject);
   private
-    procedure DeletePos1(sl: TStringList; Source: string);
+    procedure DeletePos1(var sl: TStringList; const Source: string);
+    procedure DeleteSR(var sl: TStringList; const Source: string);
   public
 
   end;
@@ -40,8 +41,34 @@ const
   HeaderPath = '/usr/include/gtk-4.0';
   HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
 
-  //  ListPos1: TStringArray = ('GDK_AVAILABLE_IN_ALL', 'G_BEGIN_DECLS', 'G_END_DECLS', 'GDK_DEPRECATED_IN_4_6_FOR(','fdgfdggfdsg');
-  ListPos1: TStringArray = ('GDK_AVAILABLE_IN_ALL', 'G_BEGIN_DECLS', 'G_END_DECLS', 'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)', 'fdgfdggfdsg');
+  HeaderMask = '*.h';
+  //  HeaderMask='gtk-autocleanups.h';
+
+  //  ListPos1: TStringArray = ('GDK_AVAILABLE_IN_ALL', 'G_BEGIN_DECLS', 'G_END_DECLS', 'GDK_DEPRECATED_IN_4_6_FOR(');
+  ListPos1: TStringArray = (
+    'GDK_DECLARE_INTERNAL_TYPE',
+    'GDK_AVAILABLE_IN_4_4',
+    'GDK_AVAILABLE_IN_4_6',
+    'G_DEFINE_AUTOPTR_CLEANUP_FUNC(',
+    'G_DECLARE_INTERFACE',
+    'G_DECLARE_FINAL_TYPE',
+    'GDK_AVAILABLE_IN_ALL',
+    'G_BEGIN_DECLS',
+    'G_END_DECLS',
+    'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)',
+    'G_DECLARE_DERIVABLE_TYPE',
+    'GDK_AVAILABLE_IN_4_2');
+
+  ListSR: TStringArray = (
+    'G_STMT_START',
+    'G_STMT_END',
+    'G_UNLIKELY',
+
+
+    'G_GNUC_PURE',
+    'GTK_ACCESSIBLE',
+    'G_GNUC_CONST',
+    'G_GNUC_NULL_TERMINATED');
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -55,25 +82,36 @@ procedure TForm1.LoadClick(Sender: TObject);
 var
   slHeaderList: TStringList;
 begin
-  slHeaderList := FindAllFiles(HeaderPath, '*.h', True);
+  //  slHeaderList := FindAllFiles(HeaderPath, '*.h', True);
+  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
   SynEdit1.Lines := slHeaderList;
   slHeaderList.Free;
 end;
 
-procedure TForm1.DeletePos1(sl: TStringList; Source: string);
+procedure TForm1.DeletePos1(var sl: TStringList; const Source: string);
 var
   i: integer;
   p: SizeInt;
 begin
   for i := 0 to sl.Count - 1 do begin
-    p := pos(sl[i], Source);
-    if pos(sl[i], Source) >= 1 then begin
-      sl[i] := '';
-      WriteLn(Source, '   ', p);
+    p := pos(Source, sl[i]);
+    if p >= 1 then begin
+      sl[i] := '/* Zeile entfernt */';
+
+      //      sl[i] := '#error "Leerzeile"';
+
     end;
   end;
 end;
 
+procedure TForm1.DeleteSR(var sl: TStringList; const Source: string);
+var
+  i: integer;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    sl[i] := StringReplace(sl[i], Source, '', []);
+  end;
+end;
 
 procedure TForm1.BtnCopyClick(Sender: TObject);
 var
@@ -90,7 +128,10 @@ begin
     ForceDirectories(ExtractFileDir(path));
     for j := 0 to Length(ListPos1) - 1 do begin
       DeletePos1(sl, ListPos1[j]);
-      //      WriteLn(ListPos1[j]);
+    end;
+
+    for j := 0 to Length(ListSR) - 1 do begin
+      DeleteSR(sl, ListSR[j]);
     end;
 
     sl.SaveToFile(path);
@@ -106,15 +147,19 @@ var
   ms: TMemoryStream;
   BytesRead, i, ec: integer;
   n: longint;
-  slHeaderFiles: TStringList;
+  sl, slHeaderFiles: TStringList;
 
 begin
-  slHeaderFiles := FindAllFiles(HeaderDespPath, '*.h', True);
+  sl := TStringList.Create;
+  SynEdit2.Lines.Clear;
+  //  slHeaderFiles := FindAllFiles(HeaderDespPath, '*.h', True);
+  slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask, True);
+
+
   for i := 0 to slHeaderFiles.Count - 1 do begin
     ms := TMemoryStream.Create;
     BytesRead := 0;
     myProcess := TProcess.Create(nil);
-    //    myProcess.CommandLine := '/usr/bin/h2pas' + ' header/gdk/gdkcairo.h -i';
     myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -i';
     myProcess.Options := [poUsePipes, poStderrToOutPut];
     myProcess.Execute;
@@ -135,17 +180,25 @@ begin
     if BytesRead > 0 then begin
       //    WriteLn;
     end;
-    ec := myProcess.ExitCode;
-    if ec <> 0 then begin
-      WriteLn('Exit Code:', ec );
-      WriteLn(slHeaderFiles[i]);
-    end;
-    SynEdit2.Lines.LoadFromStream(ms);
+    //ec := myProcess.ExitCode;
+    //if ec <> 0 then begin
+    //  WriteLn('Exit Code:', ec);
+    //  WriteLn(slHeaderFiles[i]);
+    //end;
+
+    sl.Clear;
+    sl.LoadFromStream(ms);
+
+    SynEdit2.Lines.Add('------- Title ----------------');
+    SynEdit2.Lines.Add('File: ' + slHeaderFiles[i]);
+    SynEdit2.Lines.Add('------------------------------');
+    SynEdit2.Lines.AddStrings(sl);
 
     myProcess.Free;
   end;
 
   slHeaderFiles.Free;
+  sl.Free;
 end;
 
 procedure TForm1.BtnCloseClick(Sender: TObject);

@@ -30,7 +30,7 @@
 
 #include <gtk/gtkbutton.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LINK_BUTTON		(gtk_link_button_get_type ())
 #define GTK_LINK_BUTTON(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LINK_BUTTON, GtkLinkButton))
@@ -38,28 +38,28 @@
 
 typedef struct _GtkLinkButton GtkLinkButton;
 
+/* Zeile entfernt */
+GType                 gtk_link_button_get_type          (void) ;
 
-GType                 gtk_link_button_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *           gtk_link_button_new               (const char    *uri);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_link_button_new_with_label    (const char    *uri,
 						         const char    *label);
 
-
+/* Zeile entfernt */
 const char *         gtk_link_button_get_uri           (GtkLinkButton *link_button);
-
+/* Zeile entfernt */
 void                  gtk_link_button_set_uri           (GtkLinkButton *link_button,
 						         const char    *uri);
 
-
+/* Zeile entfernt */
 gboolean              gtk_link_button_get_visited       (GtkLinkButton *link_button);
-
+/* Zeile entfernt */
 void                  gtk_link_button_set_visited       (GtkLinkButton *link_button,
                                                          gboolean       visited);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_LINK_BUTTON_H__ */

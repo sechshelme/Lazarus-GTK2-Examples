@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_ITEM : longint; { return type might be wrong }
@@ -64,45 +65,38 @@
   type
     _GtkListItem = GtkListItem;
     _GtkListItemClass = GtkListItemClass;
-(* error 
-GType           gtk_list_item_get_type                          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_list_item_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_list_item_get_item(self:PGtkListItem):gpointer;
 
-(* error 
-guint           gtk_list_item_get_position                      (GtkListItem            *self) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_list_item_get_position(self:PGtkListItem):guint;
 
-    var
- : guint;
-(* error 
-gboolean        gtk_list_item_get_selected                      (GtkListItem            *self) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
-(* error 
-gboolean        gtk_list_item_get_selectable                    (GtkListItem            *self) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
+  { Zeile entfernt  }
+  function gtk_list_item_get_selected(self:PGtkListItem):gboolean;
 
+  { Zeile entfernt  }
+  function gtk_list_item_get_selectable(self:PGtkListItem):gboolean;
+
+  { Zeile entfernt  }
   procedure gtk_list_item_set_selectable(self:PGtkListItem; selectable:gboolean);
 
-(* error 
-gboolean        gtk_list_item_get_activatable                   (GtkListItem            *self) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_list_item_get_activatable(self:PGtkListItem):gboolean;
 
-    var
- : gboolean;
-
+  { Zeile entfernt  }
   procedure gtk_list_item_set_activatable(self:PGtkListItem; activatable:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_list_item_set_child(self:PGtkListItem; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_list_item_get_child(self:PGtkListItem):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LIST_ITEM_H__  }
   { was #define dname def_expr }
@@ -151,11 +145,31 @@ gboolean        gtk_list_item_get_activatable                   (GtkListItem    
     GTK_LIST_ITEM_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_LIST_ITEM,GtkListItemClass);
   end;
 
+  function gtk_list_item_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_list_item_get_item(self:PGtkListItem):gpointer;
   begin
     { You must implement this function }
   end;
+  function gtk_list_item_get_position(self:PGtkListItem):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_list_item_get_selected(self:PGtkListItem):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_list_item_get_selectable(self:PGtkListItem):gboolean;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_list_item_set_selectable(self:PGtkListItem; selectable:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_list_item_get_activatable(self:PGtkListItem):gboolean;
   begin
     { You must implement this function }
   end;

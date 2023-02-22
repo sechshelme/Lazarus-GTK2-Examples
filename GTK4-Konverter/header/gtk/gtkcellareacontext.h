@@ -28,7 +28,7 @@
 
 #include <gtk/gtkcellarea.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_AREA_CONTEXT            (gtk_cell_area_context_get_type ())
 #define GTK_CELL_AREA_CONTEXT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_AREA_CONTEXT, GtkCellAreaContext))
@@ -83,41 +83,41 @@ struct _GtkCellAreaContextClass
   gpointer padding[8];
 };
 
-
-GType        gtk_cell_area_context_get_type              (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType        gtk_cell_area_context_get_type              (void) ;
 
 /* Main apis */
-
+/* Zeile entfernt */
 GtkCellArea *gtk_cell_area_context_get_area                        (GtkCellAreaContext *context);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_allocate                        (GtkCellAreaContext *context,
                                                                     int                 width,
                                                                     int                 height);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_reset                           (GtkCellAreaContext *context);
 
 /* Apis for GtkCellArea clients to consult cached values
  * for a series of GtkTreeModel rows
  */
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_get_preferred_width            (GtkCellAreaContext *context,
                                                                    int                *minimum_width,
                                                                    int                *natural_width);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_get_preferred_height           (GtkCellAreaContext *context,
                                                                    int                *minimum_height,
                                                                    int                *natural_height);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_get_preferred_height_for_width (GtkCellAreaContext *context,
                                                                    int                 width,
                                                                    int                *minimum_height,
                                                                    int                *natural_height);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_get_preferred_width_for_height (GtkCellAreaContext *context,
                                                                    int                 height,
                                                                    int                *minimum_width,
                                                                    int                *natural_width);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_get_allocation                 (GtkCellAreaContext *context,
                                                                    int                *width,
                                                                    int                *height);
@@ -125,15 +125,15 @@ void         gtk_cell_area_context_get_allocation                 (GtkCellAreaCo
 /* Apis for GtkCellArea implementations to update cached values
  * for multiple GtkTreeModel rows
  */
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_push_preferred_width  (GtkCellAreaContext *context,
                                                           int                 minimum_width,
                                                           int                 natural_width);
-
+/* Zeile entfernt */
 void         gtk_cell_area_context_push_preferred_height (GtkCellAreaContext *context,
                                                           int                 minimum_height,
                                                           int                 natural_height);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_AREA_CONTEXT_H__ */

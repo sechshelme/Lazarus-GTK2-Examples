@@ -27,7 +27,7 @@
 #include <gtk/gtkwindow.h>
 #include <gtk/gtkshortcutswindow.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APPLICATION_WINDOW            (gtk_application_window_get_type ())
 #define GTK_APPLICATION_WINDOW(inst)           (G_TYPE_CHECK_INSTANCE_CAST ((inst), \
@@ -61,27 +61,27 @@ struct _GtkApplicationWindowClass
   gpointer padding[8];
 };
 
-
-GType       gtk_application_window_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_application_window_get_type          (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_application_window_new               (GtkApplication      *application);
 
-
+/* Zeile entfernt */
 void        gtk_application_window_set_show_menubar (GtkApplicationWindow *window,
                                                      gboolean              show_menubar);
-
+/* Zeile entfernt */
 gboolean    gtk_application_window_get_show_menubar (GtkApplicationWindow *window);
 
-
+/* Zeile entfernt */
 guint       gtk_application_window_get_id           (GtkApplicationWindow *window);
 
-
+/* Zeile entfernt */
 void        gtk_application_window_set_help_overlay (GtkApplicationWindow *window,
                                                      GtkShortcutsWindow   *help_overlay);
-
+/* Zeile entfernt */
 GtkShortcutsWindow *
             gtk_application_window_get_help_overlay (GtkApplicationWindow *window);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APPLICATION_WINDOW_H__ */

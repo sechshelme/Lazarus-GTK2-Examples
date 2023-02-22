@@ -35,7 +35,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-
+/* Zeile entfernt */
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkX11Display GdkX11Display;
@@ -51,19 +51,19 @@ typedef struct _GdkX11DisplayClass GdkX11DisplayClass;
 #define GDK_IS_X11_DISPLAY_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_X11_DISPLAY))
 #define GDK_X11_DISPLAY_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_X11_DISPLAY, GdkX11DisplayClass))
 
-
+/* Zeile entfernt */
 GType      gdk_x11_display_get_type            (void);
 
-
+/* Zeile entfernt */
 GdkDisplay *  gdk_x11_display_open        (const char  *display_name);
 
-
+/* Zeile entfernt */
 Display *     gdk_x11_display_get_xdisplay     (GdkDisplay  *display);
-
+/* Zeile entfernt */
 Screen *      gdk_x11_display_get_xscreen      (GdkDisplay  *display);
-
+/* Zeile entfernt */
 Window        gdk_x11_display_get_xrootwindow  (GdkDisplay  *display);
-
+/* Zeile entfernt */
 Cursor        gdk_x11_display_get_xcursor      (GdkDisplay  *display,
                                                 GdkCursor   *cursor);
 
@@ -77,60 +77,60 @@ Cursor        gdk_x11_display_get_xcursor      (GdkDisplay  *display,
  */
 #define GDK_DISPLAY_XDISPLAY(display) (gdk_x11_display_get_xdisplay (display))
 
-
+/* Zeile entfernt */
 guint32       gdk_x11_display_get_user_time (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 const char * gdk_x11_display_get_startup_notification_id         (GdkDisplay *display);
-
+/* Zeile entfernt */
 void          gdk_x11_display_set_startup_notification_id         (GdkDisplay  *display,
                                                                    const char *startup_id);
-
+/* Zeile entfernt */
 void          gdk_x11_display_set_program_class                   (GdkDisplay  *display,
                                                                    const char  *program_class);
 
-
+/* Zeile entfernt */
 void          gdk_x11_display_set_cursor_theme (GdkDisplay  *display,
                                                 const char *theme,
                                                 const int    size);
 
-
+/* Zeile entfernt */
 void gdk_x11_display_broadcast_startup_message (GdkDisplay *display,
                                                 const char *message_type,
-                                                ...) G_GNUC_NULL_TERMINATED;
+                                                ...) ;
 
-
+/* Zeile entfernt */
 GdkDisplay   *gdk_x11_lookup_xdisplay (Display *xdisplay);
 
-
+/* Zeile entfernt */
 GdkX11Screen *gdk_x11_display_get_screen (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 GdkMonitor * gdk_x11_display_get_primary_monitor (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 void        gdk_x11_display_grab              (GdkDisplay *display);
-
+/* Zeile entfernt */
 void        gdk_x11_display_ungrab            (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 void        gdk_x11_display_set_surface_scale (GdkDisplay *display,
                                                int scale);
 
-
+/* Zeile entfernt */
 void                           gdk_x11_display_error_trap_push        (GdkDisplay *display);
 /* warn unused because you could use pop_ignored otherwise */
-
+/* Zeile entfernt */
 G_GNUC_WARN_UNUSED_RESULT int  gdk_x11_display_error_trap_pop         (GdkDisplay *display);
-
+/* Zeile entfernt */
 void                           gdk_x11_display_error_trap_pop_ignored (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 void        gdk_x11_set_sm_client_id (const char *sm_client_id);
 
-
+/* Zeile entfernt */
 GdkSurface * gdk_x11_display_get_default_group (GdkDisplay *display);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_DISPLAY_H__ */

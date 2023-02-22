@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_CLICK         (gtk_gesture_click_get_type ())
 #define GTK_GESTURE_CLICK(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_CLICK, GtkGestureClick))
@@ -38,12 +38,12 @@
 typedef struct _GtkGestureClick GtkGestureClick;
 typedef struct _GtkGestureClickClass GtkGestureClickClass;
 
+/* Zeile entfernt */
+GType        gtk_gesture_click_get_type (void) ;
 
-GType        gtk_gesture_click_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture * gtk_gesture_click_new      (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_CLICK_H__ */

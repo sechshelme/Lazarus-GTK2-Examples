@@ -27,7 +27,7 @@
 #include <gdk/gdkversionmacros.h>
 
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DEVICE_TOOL    (gdk_device_tool_get_type ())
 #define GDK_DEVICE_TOOL(o)      (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE_TOOL, GdkDeviceTool))
@@ -60,21 +60,21 @@ typedef enum {
   GDK_DEVICE_TOOL_TYPE_LENS,
 } GdkDeviceToolType;
 
+/* Zeile entfernt */
+GType               gdk_device_tool_get_type        (void) ;
 
-GType               gdk_device_tool_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 guint64             gdk_device_tool_get_serial      (GdkDeviceTool *tool);
 
-
+/* Zeile entfernt */
 guint64             gdk_device_tool_get_hardware_id (GdkDeviceTool *tool);
 
-
+/* Zeile entfernt */
 GdkDeviceToolType   gdk_device_tool_get_tool_type   (GdkDeviceTool *tool);
 
-
+/* Zeile entfernt */
 GdkAxisFlags        gdk_device_tool_get_axes        (GdkDeviceTool *tool);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DEVICE_TOOL_H__ */

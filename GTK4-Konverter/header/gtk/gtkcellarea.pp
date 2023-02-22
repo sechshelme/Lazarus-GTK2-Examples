@@ -50,6 +50,7 @@
 {$include <gtk/gtkcellrenderer.h>}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtktreemodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_AREA : longint; { return type might be wrong }
@@ -252,157 +253,192 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType                 gtk_cell_area_get_type                       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_area_get_type:GType;
+
   { Basic methods  }
-
+  { Zeile entfernt  }
   procedure gtk_cell_area_add(area:PGtkCellArea; renderer:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_remove(area:PGtkCellArea; renderer:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   function gtk_cell_area_has_renderer(area:PGtkCellArea; renderer:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_foreach(area:PGtkCellArea; callback:GtkCellCallback; callback_data:gpointer);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_cell_area_foreach_alloc(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; cell_area:PGdkRectangle; background_area:PGdkRectangle; 
               callback:GtkCellAllocCallback; callback_data:gpointer);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_event(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; event:PGdkEvent; cell_area:PGdkRectangle; 
              flags:GtkCellRendererState):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_cell_area_snapshot(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; snapshot:PGtkSnapshot; background_area:PGdkRectangle; 
               cell_area:PGdkRectangle; flags:GtkCellRendererState; paint_focus:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_get_cell_allocation(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; renderer:PGtkCellRenderer; cell_area:PGdkRectangle; 
               allocation:PGdkRectangle);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_get_cell_at_position(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; cell_area:PGdkRectangle; x:longint; 
              y:longint; alloc_area:PGdkRectangle):^GtkCellRenderer;
 
   { Geometry  }
+  { Zeile entfernt  }
   function gtk_cell_area_create_context(area:PGtkCellArea):^GtkCellAreaContext;
 
+  { Zeile entfernt  }
   function gtk_cell_area_copy_context(area:PGtkCellArea; context:PGtkCellAreaContext):^GtkCellAreaContext;
 
+  { Zeile entfernt  }
   function gtk_cell_area_get_request_mode(area:PGtkCellArea):GtkSizeRequestMode;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_get_preferred_width(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; minimum_width:Plongint; natural_width:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_get_preferred_height_for_width(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; width:longint; minimum_height:Plongint; 
               natural_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_get_preferred_height(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; minimum_height:Plongint; natural_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_get_preferred_width_for_height(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; height:longint; minimum_width:Plongint; 
               natural_width:Plongint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_get_current_path_string(area:PGtkCellArea):^char;
 
   { Attributes  }
+  { Zeile entfernt  }
   procedure gtk_cell_area_apply_attributes(area:PGtkCellArea; tree_model:PGtkTreeModel; iter:PGtkTreeIter; is_expander:gboolean; is_expanded:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_attribute_connect(area:PGtkCellArea; renderer:PGtkCellRenderer; attribute:Pchar; column:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_attribute_disconnect(area:PGtkCellArea; renderer:PGtkCellRenderer; attribute:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_attribute_get_column(area:PGtkCellArea; renderer:PGtkCellRenderer; attribute:Pchar):longint;
 
   { Cell Properties  }
+  { Zeile entfernt  }
   procedure gtk_cell_area_class_install_cell_property(aclass:PGtkCellAreaClass; property_id:guint; pspec:PGParamSpec);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_class_find_cell_property(aclass:PGtkCellAreaClass; property_name:Pchar):^GParamSpec;
 
+  { Zeile entfernt  }
   function gtk_cell_area_class_list_cell_properties(aclass:PGtkCellAreaClass; n_properties:Pguint):^^GParamSpec;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                                    ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gtk_cell_area_add_with_properties(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar; args:array of const);
 
-    var
- : pointer;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                                    ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
- : pointer;
-(* Const before type ignored *)
-(* error 
-                                                                    ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
- : pointer;
-(* Const before type ignored *)
+  procedure gtk_cell_area_cell_set(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar; args:array of const);
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  procedure gtk_cell_area_cell_get(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar; args:array of const);
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
   procedure gtk_cell_area_cell_set_valist(area:PGtkCellArea; renderer:PGtkCellRenderer; first_property_name:Pchar; var_args:va_list);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_cell_get_valist(area:PGtkCellArea; renderer:PGtkCellRenderer; first_property_name:Pchar; var_args:va_list);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_cell_area_cell_set_property(area:PGtkCellArea; renderer:PGtkCellRenderer; property_name:Pchar; value:PGValue);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_cell_get_property(area:PGtkCellArea; renderer:PGtkCellRenderer; property_name:Pchar; value:PGValue);
 
   { Focus  }
+  { Zeile entfernt  }
   function gtk_cell_area_is_activatable(area:PGtkCellArea):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_activate(area:PGtkCellArea; context:PGtkCellAreaContext; widget:PGtkWidget; cell_area:PGdkRectangle; flags:GtkCellRendererState; 
              edit_only:gboolean):gboolean;
 
+  { Zeile entfernt  }
   function gtk_cell_area_focus(area:PGtkCellArea; direction:GtkDirectionType):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_set_focus_cell(area:PGtkCellArea; renderer:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   function gtk_cell_area_get_focus_cell(area:PGtkCellArea):^GtkCellRenderer;
 
   { Focus siblings  }
+  { Zeile entfernt  }
   procedure gtk_cell_area_add_focus_sibling(area:PGtkCellArea; renderer:PGtkCellRenderer; sibling:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_remove_focus_sibling(area:PGtkCellArea; renderer:PGtkCellRenderer; sibling:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   function gtk_cell_area_is_focus_sibling(area:PGtkCellArea; renderer:PGtkCellRenderer; sibling:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_get_focus_siblings(area:PGtkCellArea; renderer:PGtkCellRenderer):^GList;
 
+  { Zeile entfernt  }
   function gtk_cell_area_get_focus_from_sibling(area:PGtkCellArea; renderer:PGtkCellRenderer):^GtkCellRenderer;
 
   { Cell Activation/Editing  }
+  { Zeile entfernt  }
   function gtk_cell_area_get_edited_cell(area:PGtkCellArea):^GtkCellRenderer;
 
+  { Zeile entfernt  }
   function gtk_cell_area_get_edit_widget(area:PGtkCellArea):^GtkCellEditable;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_area_activate_cell(area:PGtkCellArea; widget:PGtkWidget; renderer:PGtkCellRenderer; event:PGdkEvent; cell_area:PGdkRectangle; 
              flags:GtkCellRendererState):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_stop_editing(area:PGtkCellArea; canceled:gboolean);
 
   { Functions for area implementations  }
   { Distinguish the inner cell area from the whole requested area including margins  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_area_inner_cell_area(area:PGtkCellArea; widget:PGtkWidget; cell_area:PGdkRectangle; inner_area:PGdkRectangle);
 
   { Request the size of a cell while respecting the cell margins (requests are margin inclusive)  }
+  { Zeile entfernt  }
   procedure gtk_cell_area_request_renderer(area:PGtkCellArea; renderer:PGtkCellRenderer; orientation:GtkOrientation; widget:PGtkWidget; for_size:longint; 
               minimum_size:Plongint; natural_size:Plongint);
 
@@ -415,6 +451,7 @@ GType                 gtk_cell_area_get_type                       (void) G_GNUC
   procedure _gtk_cell_area_set_cell_data_func_with_proxy(area:PGtkCellArea; cell:PGtkCellRenderer; func:GFunc; func_data:gpointer; destroy:GDestroyNotify; 
               proxy:gpointer);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_AREA_H__  }
   { was #define dname def_expr }
@@ -471,6 +508,10 @@ GType                 gtk_cell_area_get_type                       (void) G_GNUC
     GTK_CELL_AREA_WARN_INVALID_CELL_PROPERTY_ID:=G_OBJECT_WARN_INVALID_PSPEC(object,'cell property id',property_id,pspec);
   end;
 
+  function gtk_cell_area_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_cell_area_add(area:PGtkCellArea; renderer:PGtkCellRenderer);
   begin
     { You must implement this function }
@@ -571,6 +612,18 @@ GType                 gtk_cell_area_get_type                       (void) G_GNUC
     { You must implement this function }
   end;
   function gtk_cell_area_class_list_cell_properties(aclass:PGtkCellAreaClass; n_properties:Pguint):PPGParamSpec;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_cell_area_add_with_properties(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_cell_area_cell_set(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_cell_area_cell_get(area:PGtkCellArea; renderer:PGtkCellRenderer; first_prop_name:Pchar);
   begin
     { You must implement this function }
   end;

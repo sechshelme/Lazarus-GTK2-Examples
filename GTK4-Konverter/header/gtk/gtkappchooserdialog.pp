@@ -40,6 +40,7 @@
 {$endif}
 {$include <gtk/gtkdialog.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APP_CHOOSER_DIALOG : longint; { return type might be wrong }
@@ -57,26 +58,29 @@
 
   type
     _GtkAppChooserDialog = GtkAppChooserDialog;
-(* error 
-GType         gtk_app_chooser_dialog_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_app_chooser_dialog_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_app_chooser_dialog_new(parent:PGtkWindow; flags:GtkDialogFlags; file:PGFile):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_app_chooser_dialog_new_for_content_type(parent:PGtkWindow; flags:GtkDialogFlags; content_type:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_app_chooser_dialog_get_widget(self:PGtkAppChooserDialog):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_app_chooser_dialog_set_heading(self:PGtkAppChooserDialog; heading:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_app_chooser_dialog_get_heading(self:PGtkAppChooserDialog):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APP_CHOOSER_DIALOG_H__  }
   { was #define dname def_expr }
@@ -101,6 +105,10 @@ GType         gtk_app_chooser_dialog_get_type             (void) G_GNUC_CONST;
     GTK_IS_APP_CHOOSER_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_APP_CHOOSER_DIALOG);
   end;
 
+  function gtk_app_chooser_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_app_chooser_dialog_new(parent:PGtkWindow; flags:GtkDialogFlags; file:PGFile):PGtkWidget;
   begin
     { You must implement this function }

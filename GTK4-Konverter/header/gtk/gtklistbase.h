@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkselectionmodel.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LIST_BASE         (gtk_list_base_get_type ())
 #define GTK_LIST_BASE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_BASE, GtkListBase))
@@ -44,9 +44,9 @@
 typedef struct _GtkListBase GtkListBase;
 typedef struct _GtkListBaseClass GtkListBaseClass;
 
+/* Zeile entfernt */
+GType                   gtk_list_base_get_type                  (void) ;
 
-GType                   gtk_list_base_get_type                  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_LIST_BASE_H__ */

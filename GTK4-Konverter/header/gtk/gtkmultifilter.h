@@ -27,32 +27,32 @@
 #include <gtk/gtkfilter.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MULTI_FILTER             (gtk_multi_filter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkMultiFilter, gtk_multi_filter, GTK, MULTI_FILTER, GtkFilter)
-
-
+/* Zeile entfernt */
 void                    gtk_multi_filter_append                 (GtkMultiFilter         *self,
                                                                  GtkFilter              *filter);
-
+/* Zeile entfernt */
 void                    gtk_multi_filter_remove                 (GtkMultiFilter         *self,
                                                                  guint                   position);
 
 #define GTK_TYPE_ANY_FILTER             (gtk_any_filter_get_type ())
-
-GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter)
-
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
 GtkAnyFilter *          gtk_any_filter_new                      (void);
 
 #define GTK_TYPE_EVERY_FILTER             (gtk_every_filter_get_type ())
-
-GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter)
-
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
 GtkEveryFilter *        gtk_every_filter_new                    (void);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MULTI_FILTER_H__ */

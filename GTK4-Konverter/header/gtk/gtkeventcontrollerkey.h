@@ -28,7 +28,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER_KEY         (gtk_event_controller_key_get_type ())
 #define GTK_EVENT_CONTROLLER_KEY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_KEY, GtkEventControllerKey))
@@ -40,25 +40,25 @@
 typedef struct _GtkEventControllerKey GtkEventControllerKey;
 typedef struct _GtkEventControllerKeyClass GtkEventControllerKeyClass;
 
+/* Zeile entfernt */
+GType               gtk_event_controller_key_get_type  (void) ;
 
-GType               gtk_event_controller_key_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *gtk_event_controller_key_new (void);
 
-
+/* Zeile entfernt */
 void                gtk_event_controller_key_set_im_context (GtkEventControllerKey *controller,
                                                              GtkIMContext          *im_context);
-
+/* Zeile entfernt */
 GtkIMContext *      gtk_event_controller_key_get_im_context (GtkEventControllerKey *controller);
 
-
+/* Zeile entfernt */
 gboolean            gtk_event_controller_key_forward        (GtkEventControllerKey *controller,
                                                              GtkWidget             *widget);
-
+/* Zeile entfernt */
 guint               gtk_event_controller_key_get_group      (GtkEventControllerKey *controller);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_KEY_H__ */

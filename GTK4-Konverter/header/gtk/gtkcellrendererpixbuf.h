@@ -25,7 +25,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_CELL_RENDERER_PIXBUF			(gtk_cell_renderer_pixbuf_get_type ())
@@ -34,13 +34,13 @@
 
 typedef struct _GtkCellRendererPixbuf              GtkCellRendererPixbuf;
 
-
-GType            gtk_cell_renderer_pixbuf_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType            gtk_cell_renderer_pixbuf_get_type (void) ;
+/* Zeile entfernt */
 GtkCellRenderer *gtk_cell_renderer_pixbuf_new      (void);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_CELL_RENDERER_PIXBUF_H__ */

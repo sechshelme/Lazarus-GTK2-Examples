@@ -28,21 +28,21 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtkaccessible.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_AT_CONTEXT (gtk_at_context_get_type())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject)
-
-
+/* Zeile entfernt */
 GtkAccessible *         gtk_at_context_get_accessible           (GtkATContext      *self);
-
+/* Zeile entfernt */
 GtkAccessibleRole       gtk_at_context_get_accessible_role      (GtkATContext      *self);
 
-
+/* Zeile entfernt */
 GtkATContext *          gtk_at_context_create                   (GtkAccessibleRole  accessible_role,
                                                                  GtkAccessible     *accessible,
                                                                  GdkDisplay        *display);
 
-
+/* Zeile entfernt */

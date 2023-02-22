@@ -26,12 +26,12 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BUILDER_SCOPE               (gtk_builder_scope_get_type ())
 
-
-G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkBuilderClosureFlags:
@@ -101,29 +101,29 @@ struct _GtkBuilderCScopeClass
 
 #define GTK_TYPE_BUILDER_CSCOPE               (gtk_builder_cscope_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject)
-
-
+/* Zeile entfernt */
 GtkBuilderScope *       gtk_builder_cscope_new                  (void);
-
+/* Zeile entfernt */
 void                    gtk_builder_cscope_add_callback_symbol  (GtkBuilderCScope       *self,
                                                                  const char             *callback_name,
                                                                  GCallback               callback_symbol);
-
+/* Zeile entfernt */
 void                    gtk_builder_cscope_add_callback_symbols (GtkBuilderCScope       *self,
                                                                  const char             *first_callback_name,
                                                                  GCallback               first_callback_symbol,
-                                                                 ...) G_GNUC_NULL_TERMINATED;
+                                                                 ...) ;
 
 #define gtk_builder_cscope_add_callback(scope, callback) \
   gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
 
-
+/* Zeile entfernt */
 GCallback               gtk_builder_cscope_lookup_callback_symbol(GtkBuilderCScope      *self,
                                                                   const char            *callback_name);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BUILDER_SCOPE_H__ */

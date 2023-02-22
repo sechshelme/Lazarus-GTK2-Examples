@@ -26,14 +26,14 @@
 
 #include <gtk/gtkmediastream.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_MEDIA_FILE_EXTENSION_POINT_NAME "gtk-media-file"
 
 #define GTK_TYPE_MEDIA_FILE             (gtk_media_file_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkMediaFile, gtk_media_file, GTK, MEDIA_FILE, GtkMediaStream)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 struct _GtkMediaFileClass
 {
@@ -49,38 +49,38 @@ struct _GtkMediaFileClass
   void (*_gtk_reserved4) (void);
 };
 
-
+/* Zeile entfernt */
 GtkMediaStream *        gtk_media_file_new                      (void);
-
+/* Zeile entfernt */
 GtkMediaStream *        gtk_media_file_new_for_filename         (const char     *filename);
-
+/* Zeile entfernt */
 GtkMediaStream *        gtk_media_file_new_for_resource         (const char     *resource_path);
-
+/* Zeile entfernt */
 GtkMediaStream *        gtk_media_file_new_for_file             (GFile          *file);
-
+/* Zeile entfernt */
 GtkMediaStream *        gtk_media_file_new_for_input_stream     (GInputStream   *stream);
 
-
+/* Zeile entfernt */
 void                    gtk_media_file_clear                    (GtkMediaFile   *self);
 
-
+/* Zeile entfernt */
 void                    gtk_media_file_set_filename             (GtkMediaFile   *self,
                                                                  const char     *filename);
-
+/* Zeile entfernt */
 void                    gtk_media_file_set_resource             (GtkMediaFile   *self,
                                                                  const char     *resource_path);
-
+/* Zeile entfernt */
 void                    gtk_media_file_set_file                 (GtkMediaFile   *self,
                                                                  GFile          *file);
-
+/* Zeile entfernt */
 GFile *                 gtk_media_file_get_file                 (GtkMediaFile   *self);
-
+/* Zeile entfernt */
 void                    gtk_media_file_set_input_stream         (GtkMediaFile   *self,
                                                                  GInputStream   *stream);
-
+/* Zeile entfernt */
 GInputStream *          gtk_media_file_get_input_stream         (GtkMediaFile   *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MEDIA_FILE_H__ */

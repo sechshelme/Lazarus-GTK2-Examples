@@ -22,7 +22,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkConstraintTarget GtkConstraintTarget;
 
@@ -37,15 +37,15 @@ typedef struct _GtkConstraintTarget GtkConstraintTarget;
  * Besides `GtkWidget`, it is also implemented by `GtkConstraintGuide`.
  */
 
-
-G_DECLARE_INTERFACE (GtkConstraintTarget, gtk_constraint_target, GTK, CONSTRAINT_TARGET, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 #define GTK_TYPE_CONSTRAINT (gtk_constraint_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkConstraint, gtk_constraint, GTK, CONSTRAINT, GObject)
-
-
+/* Zeile entfernt */
 GtkConstraint *         gtk_constraint_new                      (gpointer                target,
                                                                  GtkConstraintAttribute  target_attribute,
                                                                  GtkConstraintRelation   relation,
@@ -54,35 +54,35 @@ GtkConstraint *         gtk_constraint_new                      (gpointer       
                                                                  double                  multiplier,
                                                                  double                  constant,
                                                                  int                     strength);
-
+/* Zeile entfernt */
 GtkConstraint *         gtk_constraint_new_constant             (gpointer                target,
                                                                  GtkConstraintAttribute  target_attribute,
                                                                  GtkConstraintRelation   relation,
                                                                  double                  constant,
                                                                  int                     strength);
 
-
+/* Zeile entfernt */
 GtkConstraintTarget *   gtk_constraint_get_target               (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 GtkConstraintAttribute  gtk_constraint_get_target_attribute     (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 GtkConstraintTarget *   gtk_constraint_get_source               (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 GtkConstraintAttribute  gtk_constraint_get_source_attribute     (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 GtkConstraintRelation   gtk_constraint_get_relation             (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 double                  gtk_constraint_get_multiplier           (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 double                  gtk_constraint_get_constant             (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 int                     gtk_constraint_get_strength             (GtkConstraint          *constraint);
 
-
+/* Zeile entfernt */
 gboolean                gtk_constraint_is_required              (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 gboolean                gtk_constraint_is_attached              (GtkConstraint          *constraint);
-
+/* Zeile entfernt */
 gboolean                gtk_constraint_is_constant              (GtkConstraint          *constraint);
 
-
+/* Zeile entfernt */

@@ -21,7 +21,7 @@
 #include <gio/gio.h>
 #include <gtk/css/gtkcss.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CSS_PROVIDER         (gtk_css_provider_get_type ())
 #define GTK_CSS_PROVIDER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_CSS_PROVIDER, GtkCssProvider))
@@ -37,35 +37,35 @@ struct _GtkCssProvider
 };
 
 
+/* Zeile entfernt */
+GType gtk_css_provider_get_type (void) ;
 
-GType gtk_css_provider_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkCssProvider * gtk_css_provider_new (void);
 
-
+/* Zeile entfernt */
 char *           gtk_css_provider_to_string      (GtkCssProvider  *provider);
 
-
+/* Zeile entfernt */
 void             gtk_css_provider_load_from_data (GtkCssProvider  *css_provider,
                                                   const char      *data,
                                                   gssize           length);
-
+/* Zeile entfernt */
 void             gtk_css_provider_load_from_file (GtkCssProvider  *css_provider,
                                                   GFile           *file);
-
+/* Zeile entfernt */
 void             gtk_css_provider_load_from_path (GtkCssProvider  *css_provider,
                                                   const char      *path);
 
-
+/* Zeile entfernt */
 void             gtk_css_provider_load_from_resource (GtkCssProvider *css_provider,
                                                       const char     *resource_path);
 
-
+/* Zeile entfernt */
 void             gtk_css_provider_load_named     (GtkCssProvider  *provider,
                                                   const char      *name,
                                                   const char      *variant);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CSS_PROVIDER_H__ */

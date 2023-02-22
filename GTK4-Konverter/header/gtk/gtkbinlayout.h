@@ -18,14 +18,14 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BIN_LAYOUT (gtk_bin_layout_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkBinLayout, gtk_bin_layout, GTK, BIN_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_bin_layout_new      (void);
 
-
+/* Zeile entfernt */

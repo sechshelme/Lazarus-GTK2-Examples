@@ -26,7 +26,7 @@
 
 #include <gtk/gtkstack.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STACK_SWITCHER            (gtk_stack_switcher_get_type ())
 #define GTK_STACK_SWITCHER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STACK_SWITCHER, GtkStackSwitcher))
@@ -35,16 +35,16 @@
 typedef struct _GtkStackSwitcher              GtkStackSwitcher;
 
 
-
-GType        gtk_stack_switcher_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_stack_switcher_get_type          (void) ;
+/* Zeile entfernt */
 GtkWidget *  gtk_stack_switcher_new               (void);
-
+/* Zeile entfernt */
 void         gtk_stack_switcher_set_stack         (GtkStackSwitcher *switcher,
                                                    GtkStack         *stack);
-
+/* Zeile entfernt */
 GtkStack *   gtk_stack_switcher_get_stack         (GtkStackSwitcher *switcher);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STACK_SWITCHER_H__ */

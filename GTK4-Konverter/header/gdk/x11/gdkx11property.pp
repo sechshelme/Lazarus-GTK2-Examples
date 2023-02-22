@@ -37,13 +37,17 @@
 {$include <gdk/gdk.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gdk_x11_get_xatom_by_name_for_display(display:PGdkDisplay; atom_name:Pchar):Atom;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_x11_get_xatom_name_for_display(display:PGdkDisplay; xatom:Atom):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_PROPERTY_H__  }
   function gdk_x11_get_xatom_by_name_for_display(display:PGdkDisplay; atom_name:Pchar):Atom;

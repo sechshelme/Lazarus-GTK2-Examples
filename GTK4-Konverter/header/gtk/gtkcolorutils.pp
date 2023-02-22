@@ -40,13 +40,17 @@
 {$endif}
 {$include <glib.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
   procedure gtk_hsv_to_rgb(h:single; s:single; v:single; r:Psingle; g:Psingle; 
               b:Psingle);
 
+  { Zeile entfernt  }
   procedure gtk_rgb_to_hsv(r:single; g:single; b:single; h:Psingle; s:Psingle; 
               v:Psingle);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COLOR_UTILS_H__  }
   procedure gtk_hsv_to_rgb(h:single; s:single; v:single; r:Psingle; g:Psingle; 

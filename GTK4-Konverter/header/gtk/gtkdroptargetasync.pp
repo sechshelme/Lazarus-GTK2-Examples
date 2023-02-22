@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   type
     _GtkDropTargetAsync = GtkDropTargetAsync;
@@ -70,25 +71,28 @@
   { return type might be wrong }   
   function GTK_DROP_TARGET_ASYNC_GET_CLASS(o : longint) : longint;  
 
-(* error 
-GType                   gtk_drop_target_async_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_drop_target_async_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_drop_target_async_new(formats:PGdkContentFormats; actions:GdkDragAction):^GtkDropTargetAsync;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_async_set_formats(self:PGtkDropTargetAsync; formats:PGdkContentFormats);
 
+  { Zeile entfernt  }
   function gtk_drop_target_async_get_formats(self:PGtkDropTargetAsync):^GdkContentFormats;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_async_set_actions(self:PGtkDropTargetAsync; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   function gtk_drop_target_async_get_actions(self:PGtkDropTargetAsync):GdkDragAction;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_async_reject_drop(self:PGtkDropTargetAsync; drop:PGdkDrop);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DROP_TARGET_ASYNC_H__  }
   { was #define dname def_expr }
@@ -137,6 +141,10 @@ GType                   gtk_drop_target_async_get_type          (void) G_GNUC_CO
     GTK_DROP_TARGET_ASYNC_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_DROP_TARGET_ASYNC,GtkDropTargetAsyncClass);
   end;
 
+  function gtk_drop_target_async_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_drop_target_async_new(formats:PGdkContentFormats; actions:GdkDragAction):PGtkDropTargetAsync;
   begin
     { You must implement this function }

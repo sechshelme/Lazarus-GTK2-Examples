@@ -1,5 +1,6 @@
 
   Type
+  PGdkPaintable  = ^GdkPaintable;
   PGtkWidget  = ^GtkWidget;
   PGtkWidgetPaintable  = ^GtkWidgetPaintable;
 {$IFDEF FPC}
@@ -28,20 +29,23 @@
 {$ifndef __GTK_WIDGET_PAINTABLE_H__}
 {$define __GTK_WIDGET_PAINTABLE_H__}  
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_WIDGET_PAINTABLE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAINTABLE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAINTABLE, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_widget_paintable_new(widget:PGtkWidget):^GdkPaintable;
+
+  { Zeile entfernt  }
   function gtk_widget_paintable_get_widget(self:PGtkWidgetPaintable):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_widget_paintable_set_widget(self:PGtkWidgetPaintable; widget:PGtkWidget);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_WIDGET_PAINTABLE_H__  }
   { was #define dname def_expr }
@@ -50,6 +54,10 @@ G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAIN
       GTK_TYPE_WIDGET_PAINTABLE:=gtk_widget_paintable_get_type;
     end;
 
+  function gtk_widget_paintable_new(widget:PGtkWidget):PGdkPaintable;
+  begin
+    { You must implement this function }
+  end;
   function gtk_widget_paintable_get_widget(self:PGtkWidgetPaintable):PGtkWidget;
   begin
     { You must implement this function }

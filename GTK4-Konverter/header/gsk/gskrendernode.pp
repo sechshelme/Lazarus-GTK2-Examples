@@ -1,25 +1,30 @@
 
-    Type
-    Pcairo_surface_t  = ^cairo_surface_t;
-    Pcairo_t  = ^cairo_t;
-    Pchar  = ^char;
-    PGBytes  = ^GBytes;
-    PGdkRGBA  = ^GdkRGBA;
-    PGdkTexture  = ^GdkTexture;
-    PGError  = ^GError;
-    Pgraphene_matrix_t  = ^graphene_matrix_t;
-    Pgraphene_point_t  = ^graphene_point_t;
-    Pgraphene_rect_t  = ^graphene_rect_t;
-    Pgraphene_vec4_t  = ^graphene_vec4_t;
-    PGskColorStop  = ^GskColorStop;
-    PGskGLShader  = ^GskGLShader;
-    PGskParseLocation  = ^GskParseLocation;
-    PGskRenderNode  = ^GskRenderNode;
-    PGskRoundedRect  = ^GskRoundedRect;
-    PGskShadow  = ^GskShadow;
-    PGskTransform  = ^GskTransform;
-    PPangoFont  = ^PangoFont;
-    PPangoGlyphString  = ^PangoGlyphString;
+  Type
+  Pcairo_surface_t  = ^cairo_surface_t;
+  Pcairo_t  = ^cairo_t;
+  Pchar  = ^char;
+  PGBytes  = ^GBytes;
+  PGdkRGBA  = ^GdkRGBA;
+  PGdkTexture  = ^GdkTexture;
+  PGError  = ^GError;
+  Pgraphene_matrix_t  = ^graphene_matrix_t;
+  Pgraphene_point_t  = ^graphene_point_t;
+  Pgraphene_rect_t  = ^graphene_rect_t;
+  Pgraphene_vec4_t  = ^graphene_vec4_t;
+  Pgsize  = ^gsize;
+  PGskColorStop  = ^GskColorStop;
+  PGskGLShader  = ^GskGLShader;
+  PGskParseLocation  = ^GskParseLocation;
+  PGskRenderNode  = ^GskRenderNode;
+  PGskRoundedRect  = ^GskRoundedRect;
+  PGskShadow  = ^GskShadow;
+  PGskTransform  = ^GskTransform;
+  Pguint  = ^guint;
+  PGValue  = ^GValue;
+  PPangoFont  = ^PangoFont;
+  PPangoGlyphInfo  = ^PangoGlyphInfo;
+  PPangoGlyphString  = ^PangoGlyphString;
+  Psingle  = ^single;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -51,6 +56,7 @@
 {$include <gsk/gsktypes.h>}
 {$include <gsk/gskglshader.h>}
 {$include <gtk/css/gtkcss.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_RENDER_NODE : longint; { return type might be wrong }
@@ -130,31 +136,37 @@
 (* Const before type ignored *)
 
     GskParseErrorFunc = procedure (start:PGskParseLocation; end:PGskParseLocation; error:PGError; user_data:gpointer);cdecl;
-(* error 
-GType                   gsk_render_node_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gsk_render_node_get_type:GType;
 
+  { Zeile entfernt  }
   function gsk_serialization_error_quark:GQuark;
 
+  { Zeile entfernt  }
   function gsk_render_node_ref(node:PGskRenderNode):^GskRenderNode;
 
+  { Zeile entfernt  }
   procedure gsk_render_node_unref(node:PGskRenderNode);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gsk_render_node_get_node_type(node:PGskRenderNode):GskRenderNodeType;
 
+  { Zeile entfernt  }
   procedure gsk_render_node_get_bounds(node:PGskRenderNode; bounds:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
   procedure gsk_render_node_draw(node:PGskRenderNode; cr:Pcairo_t);
 
+  { Zeile entfernt  }
   function gsk_render_node_serialize(node:PGskRenderNode):^GBytes;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gsk_render_node_write_to_file(node:PGskRenderNode; filename:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gsk_render_node_deserialize(bytes:PGBytes; error_func:GskParseErrorFunc; user_data:gpointer):^GskRenderNode;
 
   { was #define dname def_expr }
@@ -259,681 +271,542 @@ GType                   gsk_render_node_get_type                (void) G_GNUC_CO
     _GskTextNode = GskTextNode;
     _GskBlurNode = GskBlurNode;
     _GskGLShaderNode = GskGLShaderNode;
-(* error 
-GType                   gsk_debug_node_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gsk_debug_node_get_type:GType;
 
+  { Zeile entfernt  }
   function gsk_debug_node_new(child:PGskRenderNode; message:Pchar):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_debug_node_get_child                (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_debug_node_get_child(node:PGskRenderNode):^GskRenderNode;
 
-    var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const char *            gsk_debug_node_get_message              (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : char;
-(* error 
-GType                   gsk_color_node_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_debug_node_get_message(node:PGskRenderNode):^char;
 
+  { Zeile entfernt  }
+  function gsk_color_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
   function gsk_color_node_new(rgba:PGdkRGBA; bounds:Pgraphene_rect_t):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const GdkRGBA *         gsk_color_node_get_color                (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_color_node_get_color(node:PGskRenderNode):^GdkRGBA;
 
-    var
- : GdkRGBA;
-(* error 
-GType                   gsk_texture_node_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  function gsk_texture_node_get_type:GType;
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
   function gsk_texture_node_new(texture:PGdkTexture; bounds:Pgraphene_rect_t):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GdkTexture *            gsk_texture_node_get_texture            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_texture_node_get_texture(node:PGskRenderNode):^GdkTexture;
 
-    var
- : GdkTexture;
-(* error 
-GType                   gsk_linear_gradient_node_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  function gsk_linear_gradient_node_get_type:GType;
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
   function gsk_linear_gradient_node_new(bounds:Pgraphene_rect_t; start:Pgraphene_point_t; end:Pgraphene_point_t; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const graphene_point_t * gsk_linear_gradient_node_get_start         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_linear_gradient_node_get_start(node:PGskRenderNode):^graphene_point_t;
 
-    var
- : graphene_point_t;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const graphene_point_t * gsk_linear_gradient_node_get_end           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_point_t;
-(* Const before type ignored *)
-(* error 
-gsize                    gsk_linear_gradient_node_get_n_color_stops (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : gsize;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-                                                                     gsize                    *n_stops) G_GNUC_PURE;
- in declarator_list *)
- : GskColorStop;
-(* error 
-GType                   gsk_repeating_linear_gradient_node_get_type (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_linear_gradient_node_get_end(node:PGskRenderNode):^graphene_point_t;
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_linear_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_linear_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):^GskColorStop;
+
+  { Zeile entfernt  }
+  function gsk_repeating_linear_gradient_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
   function gsk_repeating_linear_gradient_node_new(bounds:Pgraphene_rect_t; start:Pgraphene_point_t; end:Pgraphene_point_t; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
 
-(* error 
-GType                   gsk_conic_gradient_node_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_conic_gradient_node_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
-
   function gsk_conic_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; rotation:single; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const graphene_point_t * gsk_conic_gradient_node_get_center         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_conic_gradient_node_get_center(node:PGskRenderNode):^graphene_point_t;
 
-    var
- : graphene_point_t;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-float                    gsk_conic_gradient_node_get_rotation       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-float                    gsk_conic_gradient_node_get_angle          (const GskRenderNode      *node) G_GNUC_PURE;
-in declaration at line 260 *)
-(* Const before type ignored *)
-(* error 
-gsize                    gsk_conic_gradient_node_get_n_color_stops  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : gsize;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-                                                                     gsize                    *n_stops) G_GNUC_PURE;
- in declarator_list *)
- : GskColorStop;
-(* error 
-GType                   gsk_radial_gradient_node_get_type (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_conic_gradient_node_get_rotation(node:PGskRenderNode):single;
 
-    function gsk_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
-               end:single; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_conic_gradient_node_get_angle(node:PGskRenderNode):single;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-gsize                   gsk_radial_gradient_node_get_n_color_stops (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_conic_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
 
-      var
- : gsize;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                    gsize               *n_stops) G_GNUC_PURE;
- in declarator_list *)
- : GskColorStop;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const graphene_point_t *gsk_radial_gradient_node_get_center        (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_point_t;
-(* Const before type ignored *)
-(* error 
-float                   gsk_radial_gradient_node_get_hradius       (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_radial_gradient_node_get_vradius       (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_radial_gradient_node_get_start         (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_radial_gradient_node_get_end           (const GskRenderNode *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_repeating_radial_gradient_node_get_type (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_conic_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):^GskColorStop;
 
-    function gsk_repeating_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
-               end:single; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_radial_gradient_node_get_type:GType;
 
-(* error 
-GType                   gsk_border_node_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
+             end:single; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
 
-      var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_radial_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
 
-    function gsk_border_node_new(outline:PGskRoundedRect; border_width:array[0..3] of single; border_color:array[0..3] of GdkRGBA):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_radial_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):^GskColorStop;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const GskRoundedRect *  gsk_border_node_get_outline             (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_radial_gradient_node_get_center(node:PGskRenderNode):^graphene_point_t;
 
-      var
- : GskRoundedRect;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const float *           gsk_border_node_get_widths              (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GdkRGBA *         gsk_border_node_get_colors              (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GdkRGBA;
-(* error 
-GType                   gsk_inset_shadow_node_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_radial_gradient_node_get_hradius(node:PGskRenderNode):single;
 
-    function gsk_inset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
-               blur_radius:single):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_radial_gradient_node_get_vradius(node:PGskRenderNode):single;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GskRoundedRect *  gsk_inset_shadow_node_get_outline       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_radial_gradient_node_get_start(node:PGskRenderNode):single;
 
-      var
- : GskRoundedRect;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GdkRGBA *         gsk_inset_shadow_node_get_color         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GdkRGBA;
-(* Const before type ignored *)
-(* error 
-float                   gsk_inset_shadow_node_get_dx            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_inset_shadow_node_get_dy            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_inset_shadow_node_get_spread        (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_inset_shadow_node_get_blur_radius   (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_outset_shadow_node_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_radial_gradient_node_get_end(node:PGskRenderNode):single;
 
-    function gsk_outset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
-               blur_radius:single):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_repeating_radial_gradient_node_get_type:GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-const GskRoundedRect *  gsk_outset_shadow_node_get_outline      (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+(* Const before type ignored *)
+  function gsk_repeating_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
+             end:single; color_stops:PGskColorStop; n_color_stops:gsize):^GskRenderNode;
 
-      var
- : GskRoundedRect;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GdkRGBA *         gsk_outset_shadow_node_get_color        (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GdkRGBA;
-(* Const before type ignored *)
-(* error 
-float                   gsk_outset_shadow_node_get_dx           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_outset_shadow_node_get_dy           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_outset_shadow_node_get_spread       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* Const before type ignored *)
-(* error 
-float                   gsk_outset_shadow_node_get_blur_radius  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_cairo_node_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  function gsk_border_node_get_type:GType;
 
-    function gsk_cairo_node_new(bounds:Pgraphene_rect_t):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_border_node_new(outline:PGskRoundedRect; border_width:array[0..3] of single; border_color:array[0..3] of GdkRGBA):^GskRenderNode;
 
-    function gsk_cairo_node_get_draw_context(node:PGskRenderNode):^cairo_t;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_border_node_get_outline(node:PGskRenderNode):^GskRoundedRect;
 
-    function gsk_cairo_node_get_surface(node:PGskRenderNode):^cairo_surface_t;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_border_node_get_widths(node:PGskRenderNode):^single;
 
-(* error 
-GType                   gsk_container_node_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_border_node_get_colors(node:PGskRenderNode):^GdkRGBA;
 
-      var
- : GType;
+  { Zeile entfernt  }
+  function gsk_inset_shadow_node_get_type:GType;
 
-    function gsk_container_node_new(children:PPGskRenderNode; n_children:guint):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_inset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
+             blur_radius:single):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-guint                   gsk_container_node_get_n_children       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+(* Const before type ignored *)
+  function gsk_inset_shadow_node_get_outline(node:PGskRenderNode):^GskRoundedRect;
 
-      var
- : guint;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                                 guint                     idx) G_GNUC_PURE;
- in declarator_list *)
- : GskRenderNode;
-(* error 
-GType                   gsk_transform_node_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+(* Const before type ignored *)
+  function gsk_inset_shadow_node_get_color(node:PGskRenderNode):^GdkRGBA;
 
-    function gsk_transform_node_new(child:PGskRenderNode; transform:PGskTransform):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_inset_shadow_node_get_dx(node:PGskRenderNode):single;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_transform_node_get_child            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_inset_shadow_node_get_dy(node:PGskRenderNode):single;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskTransform *          gsk_transform_node_get_transform        (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskTransform;
-(* error 
-GType                   gsk_opacity_node_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  function gsk_inset_shadow_node_get_spread(node:PGskRenderNode):single;
 
-    function gsk_opacity_node_new(child:PGskRenderNode; opacity:single):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_inset_shadow_node_get_blur_radius(node:PGskRenderNode):single;
 
-(* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_opacity_node_get_child              (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_outset_shadow_node_get_type:GType;
 
-      var
- : GskRenderNode;
-(* Const before type ignored *)
-(* error 
-float                   gsk_opacity_node_get_opacity            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_color_matrix_node_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
+  function gsk_outset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
+             blur_radius:single):^GskRenderNode;
 
-    function gsk_color_matrix_node_new(child:PGskRenderNode; color_matrix:Pgraphene_matrix_t; color_offset:Pgraphene_vec4_t):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_outset_shadow_node_get_outline(node:PGskRenderNode):^GskRoundedRect;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_color_matrix_node_get_child         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+(* Const before type ignored *)
+  function gsk_outset_shadow_node_get_color(node:PGskRenderNode):^GdkRGBA;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-                        gsk_color_matrix_node_get_color_matrix  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_matrix_t;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const graphene_vec4_t * gsk_color_matrix_node_get_color_offset  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_vec4_t;
-(* error 
-GType                   gsk_repeat_node_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_outset_shadow_node_get_dx(node:PGskRenderNode):single;
 
-    function gsk_repeat_node_new(bounds:Pgraphene_rect_t; child:PGskRenderNode; child_bounds:Pgraphene_rect_t):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_outset_shadow_node_get_dy(node:PGskRenderNode):single;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_repeat_node_get_child               (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_outset_shadow_node_get_spread(node:PGskRenderNode):single;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const graphene_rect_t * gsk_repeat_node_get_child_bounds        (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_rect_t;
-(* error 
-GType                   gsk_clip_node_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
+  function gsk_outset_shadow_node_get_blur_radius(node:PGskRenderNode):single;
 
-    function gsk_clip_node_new(child:PGskRenderNode; clip:Pgraphene_rect_t):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_cairo_node_get_type:GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_clip_node_get_child                 (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_cairo_node_new(bounds:Pgraphene_rect_t):^GskRenderNode;
 
-      var
- : GskRenderNode;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const graphene_rect_t * gsk_clip_node_get_clip                  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_rect_t;
-(* error 
-GType                   gsk_rounded_clip_node_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  function gsk_cairo_node_get_draw_context(node:PGskRenderNode):^cairo_t;
 
-    function gsk_rounded_clip_node_new(child:PGskRenderNode; clip:PGskRoundedRect):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_cairo_node_get_surface(node:PGskRenderNode):^cairo_surface_t;
 
-(* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_rounded_clip_node_get_child         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_container_node_get_type:GType;
 
-      var
- : GskRenderNode;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GskRoundedRect *  gsk_rounded_clip_node_get_clip          (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskRoundedRect;
-(* error 
-GType                   gsk_shadow_node_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
+  { Zeile entfernt  }
+  function gsk_container_node_new(children:PPGskRenderNode; n_children:guint):^GskRenderNode;
 
-    function gsk_shadow_node_new(child:PGskRenderNode; shadows:PGskShadow; n_shadows:gsize):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_container_node_get_n_children(node:PGskRenderNode):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_shadow_node_get_child               (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_container_node_get_child(node:PGskRenderNode; idx:guint):^GskRenderNode;
 
-      var
- : GskRenderNode;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-                                                                 gsize                     i) G_GNUC_PURE;
- in declarator_list *)
- : GskShadow;
-(* Const before type ignored *)
-(* error 
-gsize                   gsk_shadow_node_get_n_shadows           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : gsize;
-(* error 
-GType                   gsk_blend_node_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  { Zeile entfernt  }
+  function gsk_transform_node_get_type:GType;
 
-    function gsk_blend_node_new(bottom:PGskRenderNode; top:PGskRenderNode; blend_mode:GskBlendMode):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_transform_node_new(child:PGskRenderNode; transform:PGskTransform):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_blend_node_get_bottom_child         (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_transform_node_get_child(node:PGskRenderNode):^GskRenderNode;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_blend_node_get_top_child            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskRenderNode;
-(* Const before type ignored *)
-(* error 
-GskBlendMode            gsk_blend_node_get_blend_mode           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskBlendMode;
-(* error 
-GType                   gsk_cross_fade_node_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  function gsk_transform_node_get_transform(node:PGskRenderNode):^GskTransform;
 
-    function gsk_cross_fade_node_new(start:PGskRenderNode; end:PGskRenderNode; progress:single):^GskRenderNode;
+  { Zeile entfernt  }
+  function gsk_opacity_node_get_type:GType;
 
-(* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_cross_fade_node_get_start_child     (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_opacity_node_new(child:PGskRenderNode; opacity:single):^GskRenderNode;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_cross_fade_node_get_end_child       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskRenderNode;
-(* Const before type ignored *)
-(* error 
-float                   gsk_cross_fade_node_get_progress        (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_text_node_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gsk_opacity_node_get_child(node:PGskRenderNode):^GskRenderNode;
 
-    function gsk_text_node_new(font:PPangoFont; glyphs:PPangoGlyphString; color:PGdkRGBA; offset:Pgraphene_point_t):^GskRenderNode;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_opacity_node_get_opacity(node:PGskRenderNode):single;
 
-(* Const before type ignored *)
-(* error 
-PangoFont *             gsk_text_node_get_font                  (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_color_matrix_node_get_type:GType;
 
-      var
- : PangoFont;
-(* error 
-gboolean                gsk_text_node_has_color_glyphs          (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
-(* Const before type ignored *)
-(* error 
-guint                   gsk_text_node_get_num_glyphs            (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : guint;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                 guint                    *n_glyphs) G_GNUC_PURE;
- in declarator_list *)
- : PangoGlyphInfo;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const GdkRGBA *         gsk_text_node_get_color                 (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GdkRGBA;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* error 
-const graphene_point_t *gsk_text_node_get_offset                (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : graphene_point_t;
-(* error 
-GType                   gsk_blur_node_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  function gsk_color_matrix_node_new(child:PGskRenderNode; color_matrix:Pgraphene_matrix_t; color_offset:Pgraphene_vec4_t):^GskRenderNode;
 
-    function gsk_blur_node_new(child:PGskRenderNode; radius:single):^GskRenderNode;
-
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-GskRenderNode *         gsk_blur_node_get_child                 (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
+  function gsk_color_matrix_node_get_child(node:PGskRenderNode):^GskRenderNode;
 
-      var
- : GskRenderNode;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-float                   gsk_blur_node_get_radius                (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : single;
-(* error 
-GType                   gsk_gl_shader_node_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
 (* Const before type ignored *)
+  function gsk_color_matrix_node_get_color_matrix(node:PGskRenderNode):^graphene_matrix_t;
 
-    function gsk_gl_shader_node_new(shader:PGskGLShader; bounds:Pgraphene_rect_t; args:PGBytes; children:PPGskRenderNode; n_children:guint):^GskRenderNode;
-
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-guint                   gsk_gl_shader_node_get_n_children       (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
-
-      var
- : guint;
 (* Const before type ignored *)
-(* error 
-                                                                 guint                     idx) G_GNUC_PURE;
- in declarator_list *)
- : GskRenderNode;
-(* Const before type ignored *)
-(* error 
-GBytes *                gsk_gl_shader_node_get_args             (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GBytes;
-(* Const before type ignored *)
-(* error 
-GskGLShader *           gsk_gl_shader_node_get_shader           (const GskRenderNode      *node) G_GNUC_PURE;
- in declarator_list *)
- : GskGLShader;
-    {*
-     * GSK_VALUE_HOLDS_RENDER_NODE:
-     * @value: a `GValue`
-     *
-     * Evaluates to %TRUE if @value was initialized with %GSK_TYPE_RENDER_NODE.
-      }
-    { was #define dname(params) para_def_expr }
-    { argument types are unknown }
-    { return type might be wrong }   
+  function gsk_color_matrix_node_get_color_offset(node:PGskRenderNode):^graphene_vec4_t;
 
-    function GSK_VALUE_HOLDS_RENDER_NODE(value : longint) : longint;    
+  { Zeile entfernt  }
+  function gsk_repeat_node_get_type:GType;
 
-(* error 
-void                    gsk_value_set_render_node               (GValue                   *value,
-in declaration at line 547 *)
-(* error 
-void                    gsk_value_take_render_node              (GValue                   *value,
-in declaration at line 550 *)
-(* error 
-GskRenderNode *         gsk_value_get_render_node               (const GValue             *value);
- in declarator_list *)
-(* error 
-GskRenderNode *         gsk_value_dup_render_node               (const GValue             *value);
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_repeat_node_new(bounds:Pgraphene_rect_t; child:PGskRenderNode; child_bounds:Pgraphene_rect_t):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_repeat_node_get_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_repeat_node_get_child_bounds(node:PGskRenderNode):^graphene_rect_t;
+
+  { Zeile entfernt  }
+  function gsk_clip_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_clip_node_new(child:PGskRenderNode; clip:Pgraphene_rect_t):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_clip_node_get_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_clip_node_get_clip(node:PGskRenderNode):^graphene_rect_t;
+
+  { Zeile entfernt  }
+  function gsk_rounded_clip_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_rounded_clip_node_new(child:PGskRenderNode; clip:PGskRoundedRect):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_rounded_clip_node_get_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_rounded_clip_node_get_clip(node:PGskRenderNode):^GskRoundedRect;
+
+  { Zeile entfernt  }
+  function gsk_shadow_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_shadow_node_new(child:PGskRenderNode; shadows:PGskShadow; n_shadows:gsize):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_shadow_node_get_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_shadow_node_get_shadow(node:PGskRenderNode; i:gsize):^GskShadow;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_shadow_node_get_n_shadows(node:PGskRenderNode):gsize;
+
+  { Zeile entfernt  }
+  function gsk_blend_node_get_type:GType;
+
+  { Zeile entfernt  }
+  function gsk_blend_node_new(bottom:PGskRenderNode; top:PGskRenderNode; blend_mode:GskBlendMode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_blend_node_get_bottom_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_blend_node_get_top_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_blend_node_get_blend_mode(node:PGskRenderNode):GskBlendMode;
+
+  { Zeile entfernt  }
+  function gsk_cross_fade_node_get_type:GType;
+
+  { Zeile entfernt  }
+  function gsk_cross_fade_node_new(start:PGskRenderNode; end:PGskRenderNode; progress:single):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_cross_fade_node_get_start_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_cross_fade_node_get_end_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_cross_fade_node_get_progress(node:PGskRenderNode):single;
+
+  { Zeile entfernt  }
+  function gsk_text_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_text_node_new(font:PPangoFont; glyphs:PPangoGlyphString; color:PGdkRGBA; offset:Pgraphene_point_t):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_text_node_get_font(node:PGskRenderNode):^PangoFont;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_text_node_has_color_glyphs(node:PGskRenderNode):gboolean;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_text_node_get_num_glyphs(node:PGskRenderNode):guint;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_text_node_get_glyphs(node:PGskRenderNode; n_glyphs:Pguint):^PangoGlyphInfo;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_text_node_get_color(node:PGskRenderNode):^GdkRGBA;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gsk_text_node_get_offset(node:PGskRenderNode):^graphene_point_t;
+
+  { Zeile entfernt  }
+  function gsk_blur_node_get_type:GType;
+
+  { Zeile entfernt  }
+  function gsk_blur_node_new(child:PGskRenderNode; radius:single):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_blur_node_get_child(node:PGskRenderNode):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_blur_node_get_radius(node:PGskRenderNode):single;
+
+  { Zeile entfernt  }
+  function gsk_gl_shader_node_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_gl_shader_node_new(shader:PGskGLShader; bounds:Pgraphene_rect_t; args:PGBytes; children:PPGskRenderNode; n_children:guint):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_gl_shader_node_get_n_children(node:PGskRenderNode):guint;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_gl_shader_node_get_child(node:PGskRenderNode; idx:guint):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_gl_shader_node_get_args(node:PGskRenderNode):^GBytes;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_gl_shader_node_get_shader(node:PGskRenderNode):^GskGLShader;
+
+  {*
+   * GSK_VALUE_HOLDS_RENDER_NODE:
+   * @value: a `GValue`
+   *
+   * Evaluates to %TRUE if @value was initialized with %GSK_TYPE_RENDER_NODE.
+    }
+  { was #define dname(params) para_def_expr }
+  { argument types are unknown }
+  { return type might be wrong }   
+  function GSK_VALUE_HOLDS_RENDER_NODE(value : longint) : longint;  
+
+  { Zeile entfernt  }
+  procedure gsk_value_set_render_node(value:PGValue; node:PGskRenderNode);
+
+  { Zeile entfernt  }
+  procedure gsk_value_take_render_node(value:PGValue; node:PGskRenderNode);
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_value_get_render_node(value:PGValue):^GskRenderNode;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gsk_value_dup_render_node(value:PGValue):^GskRenderNode;
+
+  { Zeile entfernt  }
 {$endif}
-    { __GSK_RENDER_NODE_H__  }
+  { __GSK_RENDER_NODE_H__  }
   { was #define dname def_expr }
   function GSK_TYPE_RENDER_NODE : longint; { return type might be wrong }
     begin
@@ -954,6 +827,10 @@ GskRenderNode *         gsk_value_dup_render_node               (const GValue   
       GSK_SERIALIZATION_ERROR:=gsk_serialization_error_quark;
     end;
 
+  function gsk_render_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_serialization_error_quark:GQuark;
   begin
     { You must implement this function }
@@ -1140,7 +1017,23 @@ GskRenderNode *         gsk_value_dup_render_node               (const GValue   
       GSK_TYPE_GL_SHADER_NODE:=gsk_gl_shader_node_get_type;
     end;
 
+  function gsk_debug_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_debug_node_new(child:PGskRenderNode; message:Pchar):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_debug_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_debug_node_get_message(node:PGskRenderNode):Pchar;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_node_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -1148,7 +1041,23 @@ GskRenderNode *         gsk_value_dup_render_node               (const GValue   
   begin
     { You must implement this function }
   end;
+  function gsk_color_node_get_color(node:PGskRenderNode):PGdkRGBA;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_texture_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_texture_node_new(texture:PGdkTexture; bounds:Pgraphene_rect_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_texture_node_get_texture(node:PGskRenderNode):PGdkTexture;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_linear_gradient_node_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -1156,7 +1065,31 @@ GskRenderNode *         gsk_value_dup_render_node               (const GValue   
   begin
     { You must implement this function }
   end;
+  function gsk_linear_gradient_node_get_start(node:PGskRenderNode):Pgraphene_point_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_linear_gradient_node_get_end(node:PGskRenderNode):Pgraphene_point_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_linear_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_linear_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):PGskColorStop;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeating_linear_gradient_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_repeating_linear_gradient_node_new(bounds:Pgraphene_rect_t; start:Pgraphene_point_t; end:Pgraphene_point_t; color_stops:PGskColorStop; n_color_stops:gsize):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_conic_gradient_node_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -1164,100 +1097,444 @@ GskRenderNode *         gsk_value_dup_render_node               (const GValue   
   begin
     { You must implement this function }
   end;
-    function gsk_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
-               end:single; color_stops:PGskColorStop; n_color_stops:gsize):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_repeating_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
-               end:single; color_stops:PGskColorStop; n_color_stops:gsize):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_border_node_new(outline:PGskRoundedRect; border_width:array[0..3] of single; border_color:array[0..3] of GdkRGBA):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_inset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
-               blur_radius:single):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_outset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
-               blur_radius:single):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_cairo_node_new(bounds:Pgraphene_rect_t):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_cairo_node_get_draw_context(node:PGskRenderNode):Pcairo_t;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_cairo_node_get_surface(node:PGskRenderNode):Pcairo_surface_t;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_container_node_new(children:PPGskRenderNode; n_children:guint):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_transform_node_new(child:PGskRenderNode; transform:PGskTransform):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_opacity_node_new(child:PGskRenderNode; opacity:single):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_color_matrix_node_new(child:PGskRenderNode; color_matrix:Pgraphene_matrix_t; color_offset:Pgraphene_vec4_t):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_repeat_node_new(bounds:Pgraphene_rect_t; child:PGskRenderNode; child_bounds:Pgraphene_rect_t):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_clip_node_new(child:PGskRenderNode; clip:Pgraphene_rect_t):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_rounded_clip_node_new(child:PGskRenderNode; clip:PGskRoundedRect):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_shadow_node_new(child:PGskRenderNode; shadows:PGskShadow; n_shadows:gsize):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_blend_node_new(bottom:PGskRenderNode; top:PGskRenderNode; blend_mode:GskBlendMode):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_cross_fade_node_new(start:PGskRenderNode; end:PGskRenderNode; progress:single):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_text_node_new(font:PPangoFont; glyphs:PPangoGlyphString; color:PGdkRGBA; offset:Pgraphene_point_t):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_blur_node_new(child:PGskRenderNode; radius:single):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    function gsk_gl_shader_node_new(shader:PGskGLShader; bounds:Pgraphene_rect_t; args:PGBytes; children:PPGskRenderNode; n_children:guint):PGskRenderNode;
-    begin
-      { You must implement this function }
-    end;
-    { was #define dname(params) para_def_expr }
-    { argument types are unknown }
-    { return type might be wrong }   
-    function GSK_VALUE_HOLDS_RENDER_NODE(value : longint) : longint;
-    begin
-      GSK_VALUE_HOLDS_RENDER_NODE:=G_VALUE_HOLDS(value,GSK_TYPE_RENDER_NODE);
-    end;
+  function gsk_conic_gradient_node_get_center(node:PGskRenderNode):Pgraphene_point_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_conic_gradient_node_get_rotation(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_conic_gradient_node_get_angle(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_conic_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_conic_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):PGskColorStop;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
+             end:single; color_stops:PGskColorStop; n_color_stops:gsize):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_n_color_stops(node:PGskRenderNode):gsize;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_color_stops(node:PGskRenderNode; n_stops:Pgsize):PGskColorStop;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_center(node:PGskRenderNode):Pgraphene_point_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_hradius(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_vradius(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_start(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_radial_gradient_node_get_end(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeating_radial_gradient_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeating_radial_gradient_node_new(bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; start:single; 
+             end:single; color_stops:PGskColorStop; n_color_stops:gsize):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_border_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_border_node_new(outline:PGskRoundedRect; border_width:array[0..3] of single; border_color:array[0..3] of GdkRGBA):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_border_node_get_outline(node:PGskRenderNode):PGskRoundedRect;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_border_node_get_widths(node:PGskRenderNode):Psingle;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_border_node_get_colors(node:PGskRenderNode):PGdkRGBA;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
+             blur_radius:single):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_outline(node:PGskRenderNode):PGskRoundedRect;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_color(node:PGskRenderNode):PGdkRGBA;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_dx(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_dy(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_spread(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_inset_shadow_node_get_blur_radius(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_new(outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; spread:single; 
+             blur_radius:single):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_outline(node:PGskRenderNode):PGskRoundedRect;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_color(node:PGskRenderNode):PGdkRGBA;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_dx(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_dy(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_spread(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_outset_shadow_node_get_blur_radius(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cairo_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cairo_node_new(bounds:Pgraphene_rect_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cairo_node_get_draw_context(node:PGskRenderNode):Pcairo_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cairo_node_get_surface(node:PGskRenderNode):Pcairo_surface_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_container_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_container_node_new(children:PPGskRenderNode; n_children:guint):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_container_node_get_n_children(node:PGskRenderNode):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_container_node_get_child(node:PGskRenderNode; idx:guint):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_node_new(child:PGskRenderNode; transform:PGskTransform):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_node_get_transform(node:PGskRenderNode):PGskTransform;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_opacity_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_opacity_node_new(child:PGskRenderNode; opacity:single):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_opacity_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_opacity_node_get_opacity(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_matrix_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_matrix_node_new(child:PGskRenderNode; color_matrix:Pgraphene_matrix_t; color_offset:Pgraphene_vec4_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_matrix_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_matrix_node_get_color_matrix(node:PGskRenderNode):Pgraphene_matrix_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_color_matrix_node_get_color_offset(node:PGskRenderNode):Pgraphene_vec4_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeat_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeat_node_new(bounds:Pgraphene_rect_t; child:PGskRenderNode; child_bounds:Pgraphene_rect_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeat_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_repeat_node_get_child_bounds(node:PGskRenderNode):Pgraphene_rect_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_clip_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_clip_node_new(child:PGskRenderNode; clip:Pgraphene_rect_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_clip_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_clip_node_get_clip(node:PGskRenderNode):Pgraphene_rect_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_rounded_clip_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_rounded_clip_node_new(child:PGskRenderNode; clip:PGskRoundedRect):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_rounded_clip_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_rounded_clip_node_get_clip(node:PGskRenderNode):PGskRoundedRect;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_shadow_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_shadow_node_new(child:PGskRenderNode; shadows:PGskShadow; n_shadows:gsize):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_shadow_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_shadow_node_get_shadow(node:PGskRenderNode; i:gsize):PGskShadow;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_shadow_node_get_n_shadows(node:PGskRenderNode):gsize;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blend_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blend_node_new(bottom:PGskRenderNode; top:PGskRenderNode; blend_mode:GskBlendMode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blend_node_get_bottom_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blend_node_get_top_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blend_node_get_blend_mode(node:PGskRenderNode):GskBlendMode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cross_fade_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cross_fade_node_new(start:PGskRenderNode; end:PGskRenderNode; progress:single):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cross_fade_node_get_start_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cross_fade_node_get_end_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_cross_fade_node_get_progress(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_new(font:PPangoFont; glyphs:PPangoGlyphString; color:PGdkRGBA; offset:Pgraphene_point_t):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_font(node:PGskRenderNode):PPangoFont;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_has_color_glyphs(node:PGskRenderNode):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_num_glyphs(node:PGskRenderNode):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_glyphs(node:PGskRenderNode; n_glyphs:Pguint):PPangoGlyphInfo;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_color(node:PGskRenderNode):PGdkRGBA;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_text_node_get_offset(node:PGskRenderNode):Pgraphene_point_t;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blur_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blur_node_new(child:PGskRenderNode; radius:single):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blur_node_get_child(node:PGskRenderNode):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_blur_node_get_radius(node:PGskRenderNode):single;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_new(shader:PGskGLShader; bounds:Pgraphene_rect_t; args:PGBytes; children:PPGskRenderNode; n_children:guint):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_get_n_children(node:PGskRenderNode):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_get_child(node:PGskRenderNode; idx:guint):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_get_args(node:PGskRenderNode):PGBytes;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_shader_node_get_shader(node:PGskRenderNode):PGskGLShader;
+  begin
+    { You must implement this function }
+  end;
+  { was #define dname(params) para_def_expr }
+  { argument types are unknown }
+  { return type might be wrong }   
+  function GSK_VALUE_HOLDS_RENDER_NODE(value : longint) : longint;
+  begin
+    GSK_VALUE_HOLDS_RENDER_NODE:=G_VALUE_HOLDS(value,GSK_TYPE_RENDER_NODE);
+  end;
 
+  procedure gsk_value_set_render_node(value:PGValue; node:PGskRenderNode);
+  begin
+    { You must implement this function }
+  end;
+  procedure gsk_value_take_render_node(value:PGValue; node:PGskRenderNode);
+  begin
+    { You must implement this function }
+  end;
+  function gsk_value_get_render_node(value:PGValue):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_value_dup_render_node(value:PGValue):PGskRenderNode;
+  begin
+    { You must implement this function }
+  end;
 

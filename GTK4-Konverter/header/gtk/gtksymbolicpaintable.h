@@ -26,12 +26,12 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SYMBOLIC_PAINTABLE       (gtk_symbolic_paintable_get_type ())
 
-GDK_AVAILABLE_IN_4_6
-G_DECLARE_INTERFACE (GtkSymbolicPaintable, gtk_symbolic_paintable, GTK, SYMBOLIC_PAINTABLE, GdkPaintable)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkSymbolicPaintableInterface:
@@ -57,7 +57,7 @@ struct _GtkSymbolicPaintableInterface
                                                                          gsize                   n_colors);
 };
 
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymbolicPaintable   *paintable,
                                                                          GdkSnapshot            *snapshot,
                                                                          double                  width,
@@ -65,6 +65,6 @@ void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymb
                                                                          const GdkRGBA          *colors,
                                                                          gsize                   n_colors);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SYMBOLIC_PAINTABLE_H__ */

@@ -39,6 +39,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkrange.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SCALE : longint; { return type might be wrong }
@@ -94,44 +95,57 @@
     }
 
     GtkScaleFormatValueFunc = function (scale:PGtkScale; value:double; user_data:gpointer):Pchar;cdecl;
-(* error 
-GType             gtk_scale_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_scale_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_scale_new(orientation:GtkOrientation; adjustment:PGtkAdjustment):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_scale_new_with_range(orientation:GtkOrientation; min:double; max:double; step:double):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_scale_set_digits(scale:PGtkScale; digits:longint);
 
+  { Zeile entfernt  }
   function gtk_scale_get_digits(scale:PGtkScale):longint;
 
+  { Zeile entfernt  }
   procedure gtk_scale_set_draw_value(scale:PGtkScale; draw_value:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scale_get_draw_value(scale:PGtkScale):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scale_set_has_origin(scale:PGtkScale; has_origin:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scale_get_has_origin(scale:PGtkScale):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scale_set_value_pos(scale:PGtkScale; pos:GtkPositionType);
 
+  { Zeile entfernt  }
   function gtk_scale_get_value_pos(scale:PGtkScale):GtkPositionType;
 
+  { Zeile entfernt  }
   function gtk_scale_get_layout(scale:PGtkScale):^PangoLayout;
 
+  { Zeile entfernt  }
   procedure gtk_scale_get_layout_offsets(scale:PGtkScale; x:Plongint; y:Plongint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_scale_add_mark(scale:PGtkScale; value:double; position:GtkPositionType; markup:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_scale_clear_marks(scale:PGtkScale);
 
+  { Zeile entfernt  }
   procedure gtk_scale_set_format_value_func(scale:PGtkScale; func:GtkScaleFormatValueFunc; user_data:gpointer; destroy_notify:GDestroyNotify);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SCALE_H__  }
   { was #define dname def_expr }
@@ -180,6 +194,10 @@ GType             gtk_scale_get_type           (void) G_GNUC_CONST;
     GTK_SCALE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_SCALE,GtkScaleClass);
   end;
 
+  function gtk_scale_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_scale_new(orientation:GtkOrientation; adjustment:PGtkAdjustment):PGtkWidget;
   begin
     { You must implement this function }

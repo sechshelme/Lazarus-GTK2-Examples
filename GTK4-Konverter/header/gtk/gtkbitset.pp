@@ -32,93 +32,114 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BITSET : longint; { return type might be wrong }
 
-(* error 
-GType                   gtk_bitset_get_type                     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_bitset_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_bitset_ref(self:PGtkBitset):^GtkBitset;
 
+  { Zeile entfernt  }
   procedure gtk_bitset_unref(self:PGtkBitset);
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBitset, gtk_bitset_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBitset, gtk_bitset_unref)
-(* error 
-                                                                 guint                   value);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_bitset_contains(self:PGtkBitset; value:guint):gboolean;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_is_empty(self:PGtkBitset):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_bitset_equals(self:PGtkBitset; other:PGtkBitset):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_get_size(self:PGtkBitset):guint64;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_get_size_in_range(self:PGtkBitset; first:guint; last:guint):guint64;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_get_nth(self:PGtkBitset; nth:guint):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_get_minimum(self:PGtkBitset):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_get_maximum(self:PGtkBitset):guint;
 
+  { Zeile entfernt  }
   function gtk_bitset_new_empty:^GtkBitset;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_copy(self:PGtkBitset):^GtkBitset;
 
+  { Zeile entfernt  }
   function gtk_bitset_new_range(start:guint; n_items:guint):^GtkBitset;
 
+  { Zeile entfernt  }
   procedure gtk_bitset_remove_all(self:PGtkBitset);
 
+  { Zeile entfernt  }
   function gtk_bitset_add(self:PGtkBitset; value:guint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_bitset_remove(self:PGtkBitset; value:guint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_bitset_add_range(self:PGtkBitset; start:guint; n_items:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_remove_range(self:PGtkBitset; start:guint; n_items:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_add_range_closed(self:PGtkBitset; first:guint; last:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_remove_range_closed(self:PGtkBitset; first:guint; last:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_add_rectangle(self:PGtkBitset; start:guint; width:guint; height:guint; stride:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_remove_rectangle(self:PGtkBitset; start:guint; width:guint; height:guint; stride:guint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_bitset_union(self:PGtkBitset; other:PGtkBitset);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_bitset_intersect(self:PGtkBitset; other:PGtkBitset);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_bitset_subtract(self:PGtkBitset; other:PGtkBitset);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_bitset_difference(self:PGtkBitset; other:PGtkBitset);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_shift_left(self:PGtkBitset; amount:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_shift_right(self:PGtkBitset; amount:guint);
 
+  { Zeile entfernt  }
   procedure gtk_bitset_splice(self:PGtkBitset; position:guint; removed:guint; added:guint);
 
   {*
@@ -139,29 +160,37 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBitset, gtk_bitset_unref)
         private_data : array[0..9] of gpointer;
       end;
 
-(* error 
-GType                   gtk_bitset_iter_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
-(* Const before type ignored *)
+  { Zeile entfernt  }
 
+  function gtk_bitset_iter_get_type:GType;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
   function gtk_bitset_iter_init_first(iter:PGtkBitsetIter; set:PGtkBitset; value:Pguint):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_iter_init_last(iter:PGtkBitsetIter; set:PGtkBitset; value:Pguint):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_iter_init_at(iter:PGtkBitsetIter; set:PGtkBitset; target:guint; value:Pguint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_bitset_iter_next(iter:PGtkBitsetIter; value:Pguint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_bitset_iter_previous(iter:PGtkBitsetIter; value:Pguint):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_iter_get_value(iter:PGtkBitsetIter):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_bitset_iter_is_valid(iter:PGtkBitsetIter):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BITSET_H__  }
   { was #define dname def_expr }
@@ -170,11 +199,19 @@ GType                   gtk_bitset_iter_get_type                (void) G_GNUC_CO
       GTK_TYPE_BITSET:=gtk_bitset_get_type;
     end;
 
+  function gtk_bitset_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_bitset_ref(self:PGtkBitset):PGtkBitset;
   begin
     { You must implement this function }
   end;
   procedure gtk_bitset_unref(self:PGtkBitset);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_bitset_contains(self:PGtkBitset; value:guint):gboolean;
   begin
     { You must implement this function }
   end;
@@ -279,6 +316,10 @@ GType                   gtk_bitset_iter_get_type                (void) G_GNUC_CO
     { You must implement this function }
   end;
   procedure gtk_bitset_splice(self:PGtkBitset; position:guint; removed:guint; added:guint);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_bitset_iter_get_type:GType;
   begin
     { You must implement this function }
   end;

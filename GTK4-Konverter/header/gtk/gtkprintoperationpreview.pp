@@ -32,6 +32,7 @@
 {$endif}
 {$include <cairo.h>}
 {$include <gtk/gtkprintcontext.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_OPERATION_PREVIEW : longint; { return type might be wrong }
@@ -76,19 +77,20 @@
         _gtk_reserved8 : procedure ;cdecl;
       end;
 
-(* error 
-GType   gtk_print_operation_preview_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_print_operation_preview_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_preview_render_page(preview:PGtkPrintOperationPreview; page_nr:longint);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_preview_end_preview(preview:PGtkPrintOperationPreview);
 
+  { Zeile entfernt  }
   function gtk_print_operation_preview_is_selected(preview:PGtkPrintOperationPreview; page_nr:longint):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_OPERATION_PREVIEW_H__  }
   { was #define dname def_expr }
@@ -121,6 +123,10 @@ GType   gtk_print_operation_preview_get_type       (void) G_GNUC_CONST;
     GTK_PRINT_OPERATION_PREVIEW_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_PRINT_OPERATION_PREVIEW,GtkPrintOperationPreviewIface);
   end;
 
+  function gtk_print_operation_preview_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_print_operation_preview_render_page(preview:PGtkPrintOperationPreview; page_nr:longint);
   begin
     { You must implement this function }

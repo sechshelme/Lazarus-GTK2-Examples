@@ -26,12 +26,12 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MEDIA_STREAM             (gtk_media_stream_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkMediaStream, gtk_media_stream, GTK, MEDIA_STREAM, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 struct _GtkMediaStreamClass
 {
@@ -60,58 +60,58 @@ struct _GtkMediaStreamClass
   void (*_gtk_reserved8) (void);
 };
 
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_is_prepared            (GtkMediaStream *self);
-
+/* Zeile entfernt */
 const GError *          gtk_media_stream_get_error              (GtkMediaStream *self);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_has_audio              (GtkMediaStream *self);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_has_video              (GtkMediaStream *self);
 
-
+/* Zeile entfernt */
 void                    gtk_media_stream_play                   (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_pause                  (GtkMediaStream *self);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_get_playing            (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_set_playing            (GtkMediaStream *self,
                                                                  gboolean        playing);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_get_ended              (GtkMediaStream *self);
 
-
+/* Zeile entfernt */
 gint64                  gtk_media_stream_get_timestamp          (GtkMediaStream *self);
-
+/* Zeile entfernt */
 gint64                  gtk_media_stream_get_duration           (GtkMediaStream *self);
 
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_is_seekable            (GtkMediaStream *self);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_is_seeking             (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_seek                   (GtkMediaStream *self,
                                                                  gint64          timestamp);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_get_loop               (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_set_loop               (GtkMediaStream *self,
                                                                  gboolean        loop);
-
+/* Zeile entfernt */
 gboolean                gtk_media_stream_get_muted              (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_set_muted              (GtkMediaStream *self,
                                                                  gboolean        muted);
-
+/* Zeile entfernt */
 double                  gtk_media_stream_get_volume             (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_set_volume             (GtkMediaStream *self,
                                                                  double          volume);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_realize                (GtkMediaStream *self,
                                                                  GdkSurface      *surface);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_unrealize              (GtkMediaStream *self,
                                                                  GdkSurface      *surface);
 
@@ -125,42 +125,42 @@ void                    gtk_media_stream_prepared               (GtkMediaStream 
 GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_unprepared)
 void                    gtk_media_stream_unprepared             (GtkMediaStream *self);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 void                    gtk_media_stream_stream_prepared        (GtkMediaStream *self,
                                                                  gboolean        has_audio,
                                                                  gboolean        has_video,
                                                                  gboolean        seekable,
                                                                  gint64          duration);
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 void                    gtk_media_stream_stream_unprepared      (GtkMediaStream *self);
 
-
+/* Zeile entfernt */
 void                    gtk_media_stream_update                 (GtkMediaStream *self,
                                                                  gint64          timestamp);
 GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_ended)
 void                    gtk_media_stream_ended                  (GtkMediaStream *self);
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 void                    gtk_media_stream_stream_ended           (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_seek_success           (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_seek_failed            (GtkMediaStream *self);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_gerror                 (GtkMediaStream *self,
                                                                  GError         *error);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_error                  (GtkMediaStream *self,
                                                                  GQuark          domain,
                                                                  int             code,
                                                                  const char     *format,
                                                                  ...) G_GNUC_PRINTF (4, 5);
-
+/* Zeile entfernt */
 void                    gtk_media_stream_error_valist           (GtkMediaStream *self,
                                                                  GQuark          domain,
                                                                  int             code,
                                                                  const char     *format,
                                                                  va_list         args) G_GNUC_PRINTF (4, 0);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MEDIA_STREAM_H__ */

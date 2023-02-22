@@ -26,7 +26,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FILE_FILTER              (gtk_file_filter_get_type ())
 #define GTK_FILE_FILTER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_FILTER, GtkFileFilter))
@@ -34,40 +34,40 @@
 
 typedef struct _GtkFileFilter     GtkFileFilter;
 
+/* Zeile entfernt */
+GType           gtk_file_filter_get_type           (void) ;
 
-GType           gtk_file_filter_get_type           (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkFileFilter * gtk_file_filter_new                (void);
-
+/* Zeile entfernt */
 void            gtk_file_filter_set_name           (GtkFileFilter *filter,
                                                     const char    *name);
-
+/* Zeile entfernt */
 const char *    gtk_file_filter_get_name           (GtkFileFilter *filter);
 
-
+/* Zeile entfernt */
 void            gtk_file_filter_add_mime_type      (GtkFileFilter *filter,
                                                     const char    *mime_type);
 
-
+/* Zeile entfernt */
 void            gtk_file_filter_add_pattern        (GtkFileFilter *filter,
                                                     const char    *pattern);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 void            gtk_file_filter_add_suffix         (GtkFileFilter *filter,
                                                     const char    *suffix);
 
-
+/* Zeile entfernt */
 void            gtk_file_filter_add_pixbuf_formats (GtkFileFilter *filter);
 
-
+/* Zeile entfernt */
 const char **   gtk_file_filter_get_attributes     (GtkFileFilter *filter);
 
-
+/* Zeile entfernt */
 GVariant      * gtk_file_filter_to_gvariant        (GtkFileFilter *filter);
-
+/* Zeile entfernt */
 GtkFileFilter * gtk_file_filter_new_from_gvariant  (GVariant      *variant);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FILE_FILTER_H__ */

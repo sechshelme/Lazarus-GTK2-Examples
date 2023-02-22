@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkpopover.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_POPOVER_MENU_BAR : longint; { return type might be wrong }
@@ -48,24 +49,27 @@
 
   type
     _GtkPopoverMenuBar = GtkPopoverMenuBar;
-(* error 
-GType        gtk_popover_menu_bar_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_popover_menu_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_popover_menu_bar_new_from_model(model:PGMenuModel):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_popover_menu_bar_set_menu_model(bar:PGtkPopoverMenuBar; model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_popover_menu_bar_get_menu_model(bar:PGtkPopoverMenuBar):^GMenuModel;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_popover_menu_bar_add_child(bar:PGtkPopoverMenuBar; child:PGtkWidget; id:Pchar):gboolean;
 
+  { Zeile entfernt  }
   function gtk_popover_menu_bar_remove_child(bar:PGtkPopoverMenuBar; child:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_POPOVER_MENU_BAR_H__  }
   { was #define dname def_expr }
@@ -90,6 +94,10 @@ GType        gtk_popover_menu_bar_get_type       (void) G_GNUC_CONST;
     GTK_IS_POPOVER_MENU_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_POPOVER_MENU_BAR);
   end;
 
+  function gtk_popover_menu_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_popover_menu_bar_new_from_model(model:PGMenuModel):PGtkWidget;
   begin
     { You must implement this function }

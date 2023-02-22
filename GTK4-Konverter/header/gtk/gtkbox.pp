@@ -35,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BOX : longint; { return type might be wrong }
@@ -82,37 +83,47 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType       gtk_box_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_box_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_box_new(orientation:GtkOrientation; spacing:longint):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_box_set_homogeneous(box:PGtkBox; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_box_get_homogeneous(box:PGtkBox):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_box_set_spacing(box:PGtkBox; spacing:longint);
 
+  { Zeile entfernt  }
   function gtk_box_get_spacing(box:PGtkBox):longint;
 
+  { Zeile entfernt  }
   procedure gtk_box_set_baseline_position(box:PGtkBox; position:GtkBaselinePosition);
 
+  { Zeile entfernt  }
   function gtk_box_get_baseline_position(box:PGtkBox):GtkBaselinePosition;
 
+  { Zeile entfernt  }
   procedure gtk_box_append(box:PGtkBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_box_prepend(box:PGtkBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_box_remove(box:PGtkBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_box_insert_child_after(box:PGtkBox; child:PGtkWidget; sibling:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_box_reorder_child_after(box:PGtkBox; child:PGtkWidget; sibling:PGtkWidget);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BOX_H__  }
   { was #define dname def_expr }
@@ -161,6 +172,10 @@ GType       gtk_box_get_type            (void) G_GNUC_CONST;
     GTK_BOX_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_BOX,GtkBoxClass);
   end;
 
+  function gtk_box_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_box_new(orientation:GtkOrientation; spacing:longint):PGtkWidget;
   begin
     { You must implement this function }

@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_DRAWING_AREA : longint; { return type might be wrong }
@@ -97,25 +98,29 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_drawing_area_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_drawing_area_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_drawing_area_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_drawing_area_set_content_width(self:PGtkDrawingArea; width:longint);
 
+  { Zeile entfernt  }
   function gtk_drawing_area_get_content_width(self:PGtkDrawingArea):longint;
 
+  { Zeile entfernt  }
   procedure gtk_drawing_area_set_content_height(self:PGtkDrawingArea; height:longint);
 
+  { Zeile entfernt  }
   function gtk_drawing_area_get_content_height(self:PGtkDrawingArea):longint;
 
+  { Zeile entfernt  }
   procedure gtk_drawing_area_set_draw_func(self:PGtkDrawingArea; draw_func:GtkDrawingAreaDrawFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DRAWING_AREA_H__  }
   { was #define dname def_expr }
@@ -164,6 +169,10 @@ GType      gtk_drawing_area_get_type (void) G_GNUC_CONST;
     GTK_DRAWING_AREA_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_DRAWING_AREA,GtkDrawingAreaClass);
   end;
 
+  function gtk_drawing_area_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_drawing_area_new:PGtkWidget;
   begin
     { You must implement this function }

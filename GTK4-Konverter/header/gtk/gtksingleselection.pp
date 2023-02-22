@@ -28,34 +28,44 @@
 {$ifndef __GTK_SINGLE_SELECTION_H__}
 {$define __GTK_SINGLE_SELECTION_H__}  
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SINGLE_SELECTION : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSingleSelection, gtk_single_selection, GTK, SINGLE_SELECTION, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSingleSelection, gtk_single_selection, GTK, SINGLE_SELECTION, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_single_selection_new(model:PGListModel):^GtkSingleSelection;
+
+  { Zeile entfernt  }
   function gtk_single_selection_get_model(self:PGtkSingleSelection):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_single_selection_set_model(self:PGtkSingleSelection; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_single_selection_get_selected(self:PGtkSingleSelection):guint;
 
+  { Zeile entfernt  }
   procedure gtk_single_selection_set_selected(self:PGtkSingleSelection; position:guint);
 
+  { Zeile entfernt  }
   function gtk_single_selection_get_selected_item(self:PGtkSingleSelection):gpointer;
 
+  { Zeile entfernt  }
   function gtk_single_selection_get_autoselect(self:PGtkSingleSelection):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_single_selection_set_autoselect(self:PGtkSingleSelection; autoselect:gboolean);
 
+  { Zeile entfernt  }
   function gtk_single_selection_get_can_unselect(self:PGtkSingleSelection):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_single_selection_set_can_unselect(self:PGtkSingleSelection; can_unselect:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SINGLE_SELECTION_H__  }
   { was #define dname def_expr }
@@ -64,6 +74,10 @@ G_DECLARE_FINAL_TYPE (GtkSingleSelection, gtk_single_selection, GTK, SINGLE_SELE
       GTK_TYPE_SINGLE_SELECTION:=gtk_single_selection_get_type;
     end;
 
+  function gtk_single_selection_new(model:PGListModel):PGtkSingleSelection;
+  begin
+    { You must implement this function }
+  end;
   function gtk_single_selection_get_model(self:PGtkSingleSelection):PGListModel;
   begin
     { You must implement this function }

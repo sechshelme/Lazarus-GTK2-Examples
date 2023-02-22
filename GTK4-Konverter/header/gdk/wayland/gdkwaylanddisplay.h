@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-
+/* Zeile entfernt */
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDisplay GdkWaylandDisplay;
@@ -42,30 +42,30 @@ typedef struct _GdkWaylandDisplayClass GdkWaylandDisplayClass;
 #define GDK_IS_WAYLAND_DISPLAY_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GDK_TYPE_WAYLAND_DISPLAY))
 #define GDK_WAYLAND_DISPLAY_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_WAYLAND_DISPLAY, GdkWaylandDisplayClass))
 
-
+/* Zeile entfernt */
 GType                   gdk_wayland_display_get_type            (void);
 
-
+/* Zeile entfernt */
 struct wl_display      *gdk_wayland_display_get_wl_display      (GdkDisplay *display);
-
+/* Zeile entfernt */
 struct wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *display);
-
+/* Zeile entfernt */
 void                    gdk_wayland_display_set_cursor_theme    (GdkDisplay  *display,
                                                                  const char *name,
                                                                  int          size);
-
+/* Zeile entfernt */
 const char *           gdk_wayland_display_get_startup_notification_id (GdkDisplay *display);
-
+/* Zeile entfernt */
 void                    gdk_wayland_display_set_startup_notification_id (GdkDisplay *display,
                                                                          const char *startup_id);
 
-
+/* Zeile entfernt */
 gboolean                gdk_wayland_display_query_registry      (GdkDisplay  *display,
 								 const char *global);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *display);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_WAYLAND_DISPLAY_H__ */

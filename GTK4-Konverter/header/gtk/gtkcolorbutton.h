@@ -37,7 +37,7 @@
 
 #include <gtk/gtkbutton.h>
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_COLOR_BUTTON             (gtk_color_button_get_type ())
@@ -46,24 +46,24 @@
 
 typedef struct _GtkColorButton GtkColorButton;
 
-
-GType        gtk_color_button_get_type      (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_color_button_get_type      (void) ;
+/* Zeile entfernt */
 GtkWidget *  gtk_color_button_new           (void);
-
+/* Zeile entfernt */
 GtkWidget *  gtk_color_button_new_with_rgba (const GdkRGBA  *rgba);
-
+/* Zeile entfernt */
 void         gtk_color_button_set_title     (GtkColorButton *button,
                                              const char     *title);
-
+/* Zeile entfernt */
 const char *gtk_color_button_get_title     (GtkColorButton *button);
 
-
+/* Zeile entfernt */
 gboolean     gtk_color_button_get_modal        (GtkColorButton *button);
-
+/* Zeile entfernt */
 void         gtk_color_button_set_modal        (GtkColorButton *button,
                                                 gboolean        modal);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_COLOR_BUTTON_H__ */

@@ -36,6 +36,7 @@
 {$endif}
 {$include <gtk/gtkcolumnview.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_COLUMN_VIEW_COLUMN : longint; { return type might be wrong }
@@ -65,58 +66,72 @@
   { return type might be wrong }   
   function GTK_COLUMN_VIEW_COLUMN_GET_CLASS(o : longint) : longint;  
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkColumnViewColumn, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkColumnViewColumn, g_object_unref)
- in declarator_list *)
- in declarator_list *)
-(* error 
-GType                   gtk_column_view_column_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  type
+    _GtkColumnViewColumnClass = GtkColumnViewColumnClass;
+  { Zeile entfernt  }
+
+  function gtk_column_view_column_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_column_view_column_new(title:Pchar; factory:PGtkListItemFactory):^GtkColumnViewColumn;
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_column_view(self:PGtkColumnViewColumn):^GtkColumnView;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_factory(self:PGtkColumnViewColumn; factory:PGtkListItemFactory);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_factory(self:PGtkColumnViewColumn):^GtkListItemFactory;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_column_view_column_set_title(self:PGtkColumnViewColumn; title:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_column_view_column_get_title(self:PGtkColumnViewColumn):^char;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_sorter(self:PGtkColumnViewColumn; sorter:PGtkSorter);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_sorter(self:PGtkColumnViewColumn):^GtkSorter;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_visible(self:PGtkColumnViewColumn; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_visible(self:PGtkColumnViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_header_menu(self:PGtkColumnViewColumn; menu:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_header_menu(self:PGtkColumnViewColumn):^GMenuModel;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_fixed_width(self:PGtkColumnViewColumn; fixed_width:longint);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_fixed_width(self:PGtkColumnViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_resizable(self:PGtkColumnViewColumn; resizable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_resizable(self:PGtkColumnViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_column_set_expand(self:PGtkColumnViewColumn; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_column_get_expand(self:PGtkColumnViewColumn):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COLUMN_VIEW_COLUMN_H__  }
   { was #define dname def_expr }
@@ -165,6 +180,10 @@ GType                   gtk_column_view_column_get_type                 (void) G
     GTK_COLUMN_VIEW_COLUMN_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_COLUMN_VIEW_COLUMN,GtkColumnViewColumnClass);
   end;
 
+  function gtk_column_view_column_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_column_view_column_new(title:Pchar; factory:PGtkListItemFactory):PGtkColumnViewColumn;
   begin
     { You must implement this function }

@@ -32,33 +32,33 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 /* Rectangle utilities
  */
-
+/* Zeile entfernt */
 gboolean gdk_rectangle_intersect (const GdkRectangle *src1,
                                   const GdkRectangle *src2,
                                   GdkRectangle       *dest);
-
+/* Zeile entfernt */
 void     gdk_rectangle_union     (const GdkRectangle *src1,
                                   const GdkRectangle *src2,
                                   GdkRectangle       *dest);
 
-
+/* Zeile entfernt */
 gboolean gdk_rectangle_equal     (const GdkRectangle *rect1,
                                   const GdkRectangle *rect2);
 
-
+/* Zeile entfernt */
 gboolean gdk_rectangle_contains_point (const GdkRectangle *rect,
                                        int                 x,
                                        int                 y);
 
-
-GType gdk_rectangle_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType gdk_rectangle_get_type (void) ;
 
 #define GDK_TYPE_RECTANGLE (gdk_rectangle_get_type ())
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK__RECTANGLE_H__ */

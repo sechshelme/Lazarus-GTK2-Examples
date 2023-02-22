@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 /* Maximum size of text buffer, in bytes */
 #define GTK_ENTRY_BUFFER_MAX_SIZE        G_MAXUSHORT
@@ -87,58 +87,58 @@ struct _GtkEntryBufferClass
   void (*_gtk_reserved8) (void);
 };
 
+/* Zeile entfernt */
+GType                     gtk_entry_buffer_get_type               (void) ;
 
-GType                     gtk_entry_buffer_get_type               (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEntryBuffer*           gtk_entry_buffer_new                    (const char      *initial_chars,
                                                                    int              n_initial_chars);
 
-
+/* Zeile entfernt */
 gsize                     gtk_entry_buffer_get_bytes              (GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 guint                     gtk_entry_buffer_get_length             (GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 const char *              gtk_entry_buffer_get_text               (GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 void                      gtk_entry_buffer_set_text               (GtkEntryBuffer  *buffer,
                                                                    const char      *chars,
                                                                    int              n_chars);
 
-
+/* Zeile entfernt */
 void                      gtk_entry_buffer_set_max_length         (GtkEntryBuffer  *buffer,
                                                                    int              max_length);
 
-
+/* Zeile entfernt */
 int                       gtk_entry_buffer_get_max_length         (GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 guint                     gtk_entry_buffer_insert_text            (GtkEntryBuffer  *buffer,
                                                                    guint            position,
                                                                    const char      *chars,
                                                                    int              n_chars);
 
-
+/* Zeile entfernt */
 guint                     gtk_entry_buffer_delete_text            (GtkEntryBuffer  *buffer,
                                                                    guint            position,
                                                                    int              n_chars);
 
-
+/* Zeile entfernt */
 void                      gtk_entry_buffer_emit_inserted_text     (GtkEntryBuffer  *buffer,
                                                                    guint            position,
                                                                    const char      *chars,
                                                                    guint            n_chars);
 
-
+/* Zeile entfernt */
 void                      gtk_entry_buffer_emit_deleted_text      (GtkEntryBuffer  *buffer,
                                                                    guint            position,
                                                                    guint            n_chars);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkEntryBuffer, g_object_unref)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ENTRY_BUFFER_H__ */

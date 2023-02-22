@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_CONTROLLER : longint; { return type might be wrong }
@@ -66,29 +67,35 @@
   type
     _GtkShortcutController = GtkShortcutController;
     _GtkShortcutControllerClass = GtkShortcutControllerClass;
-(* error 
-GType                   gtk_shortcut_controller_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_shortcut_controller_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_shortcut_controller_new:^GtkEventController;
 
+  { Zeile entfernt  }
   function gtk_shortcut_controller_new_for_model(model:PGListModel):^GtkEventController;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_controller_set_mnemonics_modifiers(self:PGtkShortcutController; modifiers:GdkModifierType);
 
+  { Zeile entfernt  }
   function gtk_shortcut_controller_get_mnemonics_modifiers(self:PGtkShortcutController):GdkModifierType;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_controller_set_scope(self:PGtkShortcutController; scope:GtkShortcutScope);
 
+  { Zeile entfernt  }
   function gtk_shortcut_controller_get_scope(self:PGtkShortcutController):GtkShortcutScope;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_controller_add_shortcut(self:PGtkShortcutController; shortcut:PGtkShortcut);
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_controller_remove_shortcut(self:PGtkShortcutController; shortcut:PGtkShortcut);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUT_CONTROLLER_H__  }
   { was #define dname def_expr }
@@ -137,6 +144,10 @@ GType                   gtk_shortcut_controller_get_type                (void) G
     GTK_SHORTCUT_CONTROLLER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_SHORTCUT_CONTROLLER,GtkShortcutControllerClass);
   end;
 
+  function gtk_shortcut_controller_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_shortcut_controller_new:PGtkEventController;
   begin
     { You must implement this function }

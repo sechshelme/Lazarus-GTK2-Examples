@@ -27,37 +27,37 @@
 #include <gdk/gdkpopuplayout.h>
 #include <gdk/gdksurface.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_POPUP (gdk_popup_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GdkPopup, gdk_popup, GDK, POPUP, GObject)
-
-
+/* Zeile entfernt */
 gboolean        gdk_popup_present               (GdkPopup       *popup,
                                                  int             width,
                                                  int             height,
                                                  GdkPopupLayout *layout);
 
-
+/* Zeile entfernt */
 GdkGravity      gdk_popup_get_surface_anchor    (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 GdkGravity      gdk_popup_get_rect_anchor       (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 GdkSurface *    gdk_popup_get_parent            (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 int             gdk_popup_get_position_x        (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 int             gdk_popup_get_position_y        (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 gboolean        gdk_popup_get_autohide          (GdkPopup       *popup);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_POPUP_H__ */

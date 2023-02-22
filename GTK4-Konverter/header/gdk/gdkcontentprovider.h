@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_CONTENT_PROVIDER            (gdk_content_provider_get_type ())
 #define GDK_CONTENT_PROVIDER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CONTENT_PROVIDER, GdkContentProvider))
@@ -84,18 +84,18 @@ struct _GdkContentProviderClass
 };
 
 
+/* Zeile entfernt */
+GType                   gdk_content_provider_get_type                   (void) ;
 
-GType                   gdk_content_provider_get_type                   (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_provider_ref_formats                (GdkContentProvider     *provider);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_provider_ref_storable_formats       (GdkContentProvider     *provider);
 
-
+/* Zeile entfernt */
 void                    gdk_content_provider_content_changed            (GdkContentProvider     *provider);
 
-
+/* Zeile entfernt */
 void                    gdk_content_provider_write_mime_type_async      (GdkContentProvider     *provider,
                                                                          const char             *mime_type,
                                                                          GOutputStream          *stream,
@@ -103,14 +103,14 @@ void                    gdk_content_provider_write_mime_type_async      (GdkCont
                                                                          GCancellable           *cancellable,
                                                                          GAsyncReadyCallback     callback,
                                                                          gpointer                user_data);
-
+/* Zeile entfernt */
 gboolean                gdk_content_provider_write_mime_type_finish     (GdkContentProvider     *provider,
                                                                          GAsyncResult           *result,
                                                                          GError                **error);
-
+/* Zeile entfernt */
 gboolean                gdk_content_provider_get_value                  (GdkContentProvider     *provider,
                                                                          GValue                 *value,
                                                                          GError                **error);
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CONTENT_PROVIDER_H__ */

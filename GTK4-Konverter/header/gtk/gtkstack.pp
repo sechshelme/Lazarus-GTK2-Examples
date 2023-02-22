@@ -37,6 +37,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkselectionmodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STACK : longint; { return type might be wrong }
@@ -92,107 +93,138 @@
       GTK_STACK_TRANSITION_TYPE_ROTATE_RIGHT,
       GTK_STACK_TRANSITION_TYPE_ROTATE_LEFT_RIGHT
       );
-(* error 
-GType                  gtk_stack_page_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_stack_page_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_stack_page_get_child(self:PGtkStackPage):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_stack_page_get_visible(self:PGtkStackPage):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_page_set_visible(self:PGtkStackPage; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_stack_page_get_needs_attention(self:PGtkStackPage):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_page_set_needs_attention(self:PGtkStackPage; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_stack_page_get_use_underline(self:PGtkStackPage):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_page_set_use_underline(self:PGtkStackPage; setting:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_page_get_name(self:PGtkStackPage):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_stack_page_set_name(self:PGtkStackPage; setting:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_page_get_title(self:PGtkStackPage):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_stack_page_set_title(self:PGtkStackPage; setting:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_page_get_icon_name(self:PGtkStackPage):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_stack_page_set_icon_name(self:PGtkStackPage; setting:Pchar);
 
-(* error 
-GType                  gtk_stack_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_stack_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_stack_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_stack_add_child(stack:PGtkStack; child:PGtkWidget):^GtkStackPage;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_add_named(stack:PGtkStack; child:PGtkWidget; name:Pchar):^GtkStackPage;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_stack_add_titled(stack:PGtkStack; child:PGtkWidget; name:Pchar; title:Pchar):^GtkStackPage;
 
+  { Zeile entfernt  }
   procedure gtk_stack_remove(stack:PGtkStack; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_stack_get_page(stack:PGtkStack; child:PGtkWidget):^GtkStackPage;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_get_child_by_name(stack:PGtkStack; name:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_visible_child(stack:PGtkStack; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_stack_get_visible_child(stack:PGtkStack):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_stack_set_visible_child_name(stack:PGtkStack; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_stack_get_visible_child_name(stack:PGtkStack):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_stack_set_visible_child_full(stack:PGtkStack; name:Pchar; transition:GtkStackTransitionType);
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_hhomogeneous(stack:PGtkStack; hhomogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_stack_get_hhomogeneous(stack:PGtkStack):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_vhomogeneous(stack:PGtkStack; vhomogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_stack_get_vhomogeneous(stack:PGtkStack):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_transition_duration(stack:PGtkStack; duration:guint);
 
+  { Zeile entfernt  }
   function gtk_stack_get_transition_duration(stack:PGtkStack):guint;
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_transition_type(stack:PGtkStack; transition:GtkStackTransitionType);
 
+  { Zeile entfernt  }
   function gtk_stack_get_transition_type(stack:PGtkStack):GtkStackTransitionType;
 
+  { Zeile entfernt  }
   function gtk_stack_get_transition_running(stack:PGtkStack):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_stack_set_interpolate_size(stack:PGtkStack; interpolate_size:gboolean);
 
+  { Zeile entfernt  }
   function gtk_stack_get_interpolate_size(stack:PGtkStack):gboolean;
 
+  { Zeile entfernt  }
   function gtk_stack_get_pages(stack:PGtkStack):^GtkSelectionModel;
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_STACK : longint; { return type might be wrong }
@@ -238,6 +270,10 @@ GType                  gtk_stack_get_type                (void) G_GNUC_CONST;
     GTK_IS_STACK_PAGE:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_STACK_PAGE);
   end;
 
+  function gtk_stack_page_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_stack_page_get_child(self:PGtkStackPage):PGtkWidget;
   begin
     { You must implement this function }
@@ -287,6 +323,10 @@ GType                  gtk_stack_get_type                (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   procedure gtk_stack_page_set_icon_name(self:PGtkStackPage; setting:Pchar);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_stack_get_type:GType;
   begin
     { You must implement this function }
   end;

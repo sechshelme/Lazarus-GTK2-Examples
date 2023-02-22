@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APPLICATION            (gtk_application_get_type ())
 #define GTK_APPLICATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APPLICATION, GtkApplication))
@@ -68,26 +68,26 @@ struct _GtkApplicationClass
   gpointer padding[8];
 };
 
+/* Zeile entfernt */
+GType            gtk_application_get_type      (void) ;
 
-GType            gtk_application_get_type      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkApplication * gtk_application_new           (const char        *application_id,
                                                 GApplicationFlags  flags);
 
-
+/* Zeile entfernt */
 void             gtk_application_add_window    (GtkApplication    *application,
                                                 GtkWindow         *window);
 
-
+/* Zeile entfernt */
 void             gtk_application_remove_window (GtkApplication    *application,
                                                 GtkWindow         *window);
-
+/* Zeile entfernt */
 GList *          gtk_application_get_windows   (GtkApplication    *application);
 
-
+/* Zeile entfernt */
 GMenuModel *     gtk_application_get_menubar   (GtkApplication    *application);
-
+/* Zeile entfernt */
 void             gtk_application_set_menubar   (GtkApplication    *application,
                                                 GMenuModel        *menubar);
 
@@ -99,44 +99,44 @@ typedef enum
   GTK_APPLICATION_INHIBIT_IDLE    = (1 << 3)
 } GtkApplicationInhibitFlags;
 
-
+/* Zeile entfernt */
 guint            gtk_application_inhibit            (GtkApplication             *application,
                                                      GtkWindow                  *window,
                                                      GtkApplicationInhibitFlags  flags,
                                                      const char                 *reason);
-
+/* Zeile entfernt */
 void             gtk_application_uninhibit          (GtkApplication             *application,
                                                      guint                       cookie);
 
-
+/* Zeile entfernt */
 GtkWindow *      gtk_application_get_window_by_id   (GtkApplication             *application,
                                                      guint                       id);
 
-
+/* Zeile entfernt */
 GtkWindow *      gtk_application_get_active_window  (GtkApplication             *application);
 
-
+/* Zeile entfernt */
 char **         gtk_application_list_action_descriptions        (GtkApplication       *application);
 
-
+/* Zeile entfernt */
 char **         gtk_application_get_accels_for_action           (GtkApplication       *application,
                                                                   const char           *detailed_action_name);
-
+/* Zeile entfernt */
 char **         gtk_application_get_actions_for_accel           (GtkApplication       *application,
                                                                   const char           *accel);
 
 
-
+/* Zeile entfernt */
 void             gtk_application_set_accels_for_action           (GtkApplication       *application,
                                                                   const char           *detailed_action_name,
                                                                   const char * const  *accels);
 
-
+/* Zeile entfernt */
 GMenu *          gtk_application_get_menu_by_id                  (GtkApplication       *application,
                                                                   const char           *id);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkApplication, g_object_unref)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APPLICATION_H__ */

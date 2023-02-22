@@ -1,6 +1,7 @@
 
   Type
   PGdkPopup  = ^GdkPopup;
+  PGdkPopupLayout  = ^GdkPopupLayout;
   PGdkSurface  = ^GdkSurface;
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -32,37 +33,35 @@
 {$endif}
 {$include <gdk/gdkpopuplayout.h>}
 {$include <gdk/gdksurface.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_POPUP : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GdkPopup, gdk_popup, GDK, POPUP, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GdkPopup, gdk_popup, GDK, POPUP, GObject)
-(* error 
-                                                 int             width,
-(* error 
-                                                 int             height,
-(* error 
-                                                 GdkPopupLayout *layout);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gdk_popup_present(popup:PGdkPopup; width:longint; height:longint; layout:PGdkPopupLayout):gboolean;
+
+  { Zeile entfernt  }
   function gdk_popup_get_surface_anchor(popup:PGdkPopup):GdkGravity;
 
+  { Zeile entfernt  }
   function gdk_popup_get_rect_anchor(popup:PGdkPopup):GdkGravity;
 
+  { Zeile entfernt  }
   function gdk_popup_get_parent(popup:PGdkPopup):^GdkSurface;
 
+  { Zeile entfernt  }
   function gdk_popup_get_position_x(popup:PGdkPopup):longint;
 
+  { Zeile entfernt  }
   function gdk_popup_get_position_y(popup:PGdkPopup):longint;
 
+  { Zeile entfernt  }
   function gdk_popup_get_autohide(popup:PGdkPopup):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_POPUP_H__  }
   { was #define dname def_expr }
@@ -71,6 +70,10 @@ G_DECLARE_INTERFACE (GdkPopup, gdk_popup, GDK, POPUP, GObject)
       GDK_TYPE_POPUP:=gdk_popup_get_type;
     end;
 
+  function gdk_popup_present(popup:PGdkPopup; width:longint; height:longint; layout:PGdkPopupLayout):gboolean;
+  begin
+    { You must implement this function }
+  end;
   function gdk_popup_get_surface_anchor(popup:PGdkPopup):GdkGravity;
   begin
     { You must implement this function }

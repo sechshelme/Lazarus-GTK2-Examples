@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtkunixprint.h> can be included directly."}
 {$endif}
 {$include <gtk/gtk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PAGE_SETUP_UNIX_DIALOG : longint; { return type might be wrong }
@@ -50,24 +51,27 @@
 
   type
     _GtkPageSetupUnixDialog = GtkPageSetupUnixDialog;
-(* error 
-GType 		  gtk_page_setup_unix_dialog_get_type	        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_page_setup_unix_dialog_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_page_setup_unix_dialog_new(title:Pchar; parent:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_unix_dialog_set_page_setup(dialog:PGtkPageSetupUnixDialog; page_setup:PGtkPageSetup);
 
+  { Zeile entfernt  }
   function gtk_page_setup_unix_dialog_get_page_setup(dialog:PGtkPageSetupUnixDialog):^GtkPageSetup;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_unix_dialog_set_print_settings(dialog:PGtkPageSetupUnixDialog; print_settings:PGtkPrintSettings);
 
+  { Zeile entfernt  }
   function gtk_page_setup_unix_dialog_get_print_settings(dialog:PGtkPageSetupUnixDialog):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PAGE_SETUP_UNIX_DIALOG_H__  }
   { was #define dname def_expr }
@@ -92,6 +96,10 @@ GType 		  gtk_page_setup_unix_dialog_get_type	        (void) G_GNUC_CONST;
     GTK_IS_PAGE_SETUP_UNIX_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PAGE_SETUP_UNIX_DIALOG);
   end;
 
+  function gtk_page_setup_unix_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_page_setup_unix_dialog_new(title:Pchar; parent:PGtkWindow):PGtkWidget;
   begin
     { You must implement this function }

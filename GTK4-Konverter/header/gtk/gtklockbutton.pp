@@ -29,6 +29,7 @@
 {$define __GTK_LOCK_BUTTON_H__}  
 {$include <gtk/gtkbutton.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LOCK_BUTTON : longint; { return type might be wrong }
@@ -46,19 +47,20 @@
 
   type
     _GtkLockButton = GtkLockButton;
-(* error 
-GType        gtk_lock_button_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_lock_button_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_lock_button_new(permission:PGPermission):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_lock_button_get_permission(button:PGtkLockButton):^GPermission;
 
+  { Zeile entfernt  }
   procedure gtk_lock_button_set_permission(button:PGtkLockButton; permission:PGPermission);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LOCK_BUTTON_H__  }
   { was #define dname def_expr }
@@ -83,6 +85,10 @@ GType        gtk_lock_button_get_type       (void) G_GNUC_CONST;
     GTK_IS_LOCK_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(o,GTK_TYPE_LOCK_BUTTON);
   end;
 
+  function gtk_lock_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_lock_button_new(permission:PGPermission):PGtkWidget;
   begin
     { You must implement this function }

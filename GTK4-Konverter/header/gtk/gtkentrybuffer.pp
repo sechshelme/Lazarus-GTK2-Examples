@@ -31,6 +31,7 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   { Maximum size of text buffer, in bytes  }
 
   const
@@ -96,44 +97,50 @@
         _gtk_reserved8 : procedure ;cdecl;
       end;
 
-(* error 
-GType                     gtk_entry_buffer_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_entry_buffer_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_entry_buffer_new(initial_chars:Pchar; n_initial_chars:longint):^GtkEntryBuffer;
 
+  { Zeile entfernt  }
   function gtk_entry_buffer_get_bytes(buffer:PGtkEntryBuffer):gsize;
 
+  { Zeile entfernt  }
   function gtk_entry_buffer_get_length(buffer:PGtkEntryBuffer):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_buffer_get_text(buffer:PGtkEntryBuffer):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_buffer_set_text(buffer:PGtkEntryBuffer; chars:Pchar; n_chars:longint);
 
+  { Zeile entfernt  }
   procedure gtk_entry_buffer_set_max_length(buffer:PGtkEntryBuffer; max_length:longint);
 
+  { Zeile entfernt  }
   function gtk_entry_buffer_get_max_length(buffer:PGtkEntryBuffer):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_buffer_insert_text(buffer:PGtkEntryBuffer; position:guint; chars:Pchar; n_chars:longint):guint;
 
+  { Zeile entfernt  }
   function gtk_entry_buffer_delete_text(buffer:PGtkEntryBuffer; position:guint; n_chars:longint):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_buffer_emit_inserted_text(buffer:PGtkEntryBuffer; position:guint; chars:Pchar; n_chars:guint);
 
+  { Zeile entfernt  }
   procedure gtk_entry_buffer_emit_deleted_text(buffer:PGtkEntryBuffer; position:guint; n_chars:guint);
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkEntryBuffer, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkEntryBuffer, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ENTRY_BUFFER_H__  }
   { was #define dname def_expr }
@@ -182,6 +189,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkEntryBuffer, g_object_unref)
     GTK_ENTRY_BUFFER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_ENTRY_BUFFER,GtkEntryBufferClass);
   end;
 
+  function gtk_entry_buffer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_entry_buffer_new(initial_chars:Pchar; n_initial_chars:longint):PGtkEntryBuffer;
   begin
     { You must implement this function }

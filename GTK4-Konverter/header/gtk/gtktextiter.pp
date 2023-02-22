@@ -42,6 +42,7 @@
 {$endif}
 {$include <gtk/gtktextchild.h>}
 {$include <gtk/gtktexttag.h>}
+  { Zeile entfernt  }
   {*
    * GtkTextSearchFlags:
    * @GTK_TEXT_SEARCH_VISIBLE_ONLY: Search only visible data. A search match may
@@ -100,6 +101,7 @@
 
   { This is primarily intended for language bindings that want to avoid
      a "buffer" argument to text insertions, deletions, etc.  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_text_iter_get_buffer(iter:PGtkTextIter):^GtkTextBuffer;
@@ -107,196 +109,255 @@
   {
    * Life cycle
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_copy(iter:PGtkTextIter):^GtkTextIter;
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_free(iter:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_iter_assign(iter:PGtkTextIter; other:PGtkTextIter);
 
-(* error 
-GType        gtk_text_iter_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_text_iter_get_type:GType;
 
-    var
- : GType;
   {
    * Convert to different kinds of index
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_text_iter_get_offset(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_line(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_line_offset(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_line_index(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_visible_line_offset(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_visible_line_index(iter:PGtkTextIter):longint;
 
   {
    * “Dereference” operators
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_char(iter:PGtkTextIter):gunichar;
 
   { includes the 0xFFFC char for pixmaps/widgets, so char offsets
    * into the returned string map properly into buffer char offsets
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_get_slice(start:PGtkTextIter; end:PGtkTextIter):^char;
 
   { includes only text, no 0xFFFC  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_get_text(start:PGtkTextIter; end:PGtkTextIter):^char;
 
   { exclude invisible chars  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_get_visible_slice(start:PGtkTextIter; end:PGtkTextIter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_get_visible_text(start:PGtkTextIter; end:PGtkTextIter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_paintable(iter:PGtkTextIter):^GdkPaintable;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_marks(iter:PGtkTextIter):^GSList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_child_anchor(iter:PGtkTextIter):^GtkTextChildAnchor;
 
   { Return list of tags toggled at this point (toggled_on determines
    * whether the list is of on-toggles or off-toggles)
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_toggled_tags(iter:PGtkTextIter; toggled_on:gboolean):^GSList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_starts_tag(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_ends_tag(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_toggles_tag(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_has_tag(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_tags(iter:PGtkTextIter):^GSList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_editable(iter:PGtkTextIter; default_setting:gboolean):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_can_insert(iter:PGtkTextIter; default_editability:gboolean):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_starts_word(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_ends_word(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_inside_word(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_starts_sentence(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_ends_sentence(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_inside_sentence(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_starts_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_ends_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_is_cursor_position(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_chars_in_line(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_bytes_in_line(iter:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_get_language(iter:PGtkTextIter):^PangoLanguage;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_is_end(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_is_start(iter:PGtkTextIter):gboolean;
 
   {
    * Moving around the buffer
     }
+  { Zeile entfernt  }
   function gtk_text_iter_forward_char(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_char(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_chars(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_chars(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_lines(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_lines(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_word_end(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_word_start(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_word_ends(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_word_starts(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_line(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_lines(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_lines(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_word_end(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_word_start(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_word_ends(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_word_starts(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_sentence_end(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_sentence_start(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_sentence_ends(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_sentence_starts(iter:PGtkTextIter; count:longint):gboolean;
 
   { cursor positions are almost equivalent to chars, but not quite;
@@ -304,44 +365,62 @@ GType        gtk_text_iter_get_type (void) G_GNUC_CONST;
    * chars. Also, you can’t put the cursor between \r\n at the end
    * of a line.
     }
+  { Zeile entfernt  }
   function gtk_text_iter_forward_cursor_position(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_cursor_position(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_cursor_positions(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_cursor_positions(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_cursor_position(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_cursor_position(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_visible_cursor_positions(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_visible_cursor_positions(iter:PGtkTextIter; count:longint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_offset(iter:PGtkTextIter; char_offset:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_line(iter:PGtkTextIter; line_number:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_line_offset(iter:PGtkTextIter; char_on_line:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_line_index(iter:PGtkTextIter; byte_on_line:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_forward_to_end(iter:PGtkTextIter);
 
+  { Zeile entfernt  }
   function gtk_text_iter_forward_to_line_end(iter:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_visible_line_offset(iter:PGtkTextIter; char_on_line:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_iter_set_visible_line_index(iter:PGtkTextIter; byte_on_line:longint);
 
   { returns TRUE if a toggle was found; NULL for the tag pointer
    * means “any tag toggle”, otherwise the next toggle of the
    * specified tag is located.
     }
+  { Zeile entfernt  }
   function gtk_text_iter_forward_to_tag_toggle(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_iter_backward_to_tag_toggle(iter:PGtkTextIter; tag:PGtkTextTag):gboolean;
 
   {*
@@ -359,19 +438,23 @@ GType        gtk_text_iter_get_type (void) G_GNUC_CONST;
   type
 
     GtkTextCharPredicate = function (ch:gunichar; user_data:gpointer):gboolean;cdecl;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_text_iter_forward_find_char(iter:PGtkTextIter; pred:GtkTextCharPredicate; user_data:gpointer; limit:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_iter_backward_find_char(iter:PGtkTextIter; pred:GtkTextCharPredicate; user_data:gpointer; limit:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_forward_search(iter:PGtkTextIter; str:Pchar; flags:GtkTextSearchFlags; match_start:PGtkTextIter; match_end:PGtkTextIter; 
              limit:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
@@ -381,22 +464,27 @@ GType        gtk_text_iter_get_type (void) G_GNUC_CONST;
   {
    * Comparisons
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_equal(lhs:PGtkTextIter; rhs:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_compare(lhs:PGtkTextIter; rhs:PGtkTextIter):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_iter_in_range(iter:PGtkTextIter; start:PGtkTextIter; end:PGtkTextIter):gboolean;
 
   { Put these two in ascending order  }
+  { Zeile entfernt  }
   procedure gtk_text_iter_order(first:PGtkTextIter; second:PGtkTextIter);
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_ITER : longint; { return type might be wrong }
@@ -417,6 +505,10 @@ GType        gtk_text_iter_get_type (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   procedure gtk_text_iter_assign(iter:PGtkTextIter; other:PGtkTextIter);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_text_iter_get_type:GType;
   begin
     { You must implement this function }
   end;

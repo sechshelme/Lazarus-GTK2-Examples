@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcelleditable.h>}
+  { Zeile entfernt  }
   {*
    * GtkCellRendererState:
    * @GTK_CELL_RENDERER_SELECTED: The cell is currently selected, and
@@ -162,84 +163,109 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType              gtk_cell_renderer_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_renderer_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_request_mode(cell:PGtkCellRenderer):GtkSizeRequestMode;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_preferred_width(cell:PGtkCellRenderer; widget:PGtkWidget; minimum_size:Plongint; natural_size:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_preferred_height_for_width(cell:PGtkCellRenderer; widget:PGtkWidget; width:longint; minimum_height:Plongint; natural_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_preferred_height(cell:PGtkCellRenderer; widget:PGtkWidget; minimum_size:Plongint; natural_size:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_preferred_width_for_height(cell:PGtkCellRenderer; widget:PGtkWidget; height:longint; minimum_width:Plongint; natural_width:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_preferred_size(cell:PGtkCellRenderer; widget:PGtkWidget; minimum_size:PGtkRequisition; natural_size:PGtkRequisition);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_cell_renderer_get_aligned_area(cell:PGtkCellRenderer; widget:PGtkWidget; flags:GtkCellRendererState; cell_area:PGdkRectangle; aligned_area:PGdkRectangle);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_cell_renderer_snapshot(cell:PGtkCellRenderer; snapshot:PGtkSnapshot; widget:PGtkWidget; background_area:PGdkRectangle; cell_area:PGdkRectangle; 
               flags:GtkCellRendererState);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_cell_renderer_activate(cell:PGtkCellRenderer; event:PGdkEvent; widget:PGtkWidget; path:Pchar; background_area:PGdkRectangle; 
              cell_area:PGdkRectangle; flags:GtkCellRendererState):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_cell_renderer_start_editing(cell:PGtkCellRenderer; event:PGdkEvent; widget:PGtkWidget; path:Pchar; background_area:PGdkRectangle; 
              cell_area:PGdkRectangle; flags:GtkCellRendererState):^GtkCellEditable;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_fixed_size(cell:PGtkCellRenderer; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_fixed_size(cell:PGtkCellRenderer; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_alignment(cell:PGtkCellRenderer; xalign:single; yalign:single);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_alignment(cell:PGtkCellRenderer; xalign:Psingle; yalign:Psingle);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_padding(cell:PGtkCellRenderer; xpad:longint; ypad:longint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_get_padding(cell:PGtkCellRenderer; xpad:Plongint; ypad:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_visible(cell:PGtkCellRenderer; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_visible(cell:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_sensitive(cell:PGtkCellRenderer; sensitive:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_sensitive(cell:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_is_activatable(cell:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_is_expander(cell:PGtkCellRenderer; is_expander:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_is_expander(cell:PGtkCellRenderer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_set_is_expanded(cell:PGtkCellRenderer; is_expanded:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_is_expanded(cell:PGtkCellRenderer):gboolean;
 
   { For use by cell renderer implementations only  }
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_stop_editing(cell:PGtkCellRenderer; canceled:gboolean);
 
 (* Const before type ignored *)
   procedure _gtk_cell_renderer_calc_offset(cell:PGtkCellRenderer; cell_area:PGdkRectangle; direction:GtkTextDirection; width:longint; height:longint; 
               x_offset:Plongint; y_offset:Plongint);
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_get_state(cell:PGtkCellRenderer; widget:PGtkWidget; cell_state:GtkCellRendererState):GtkStateFlags;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_RENDERER_H__  }
   { was #define dname def_expr }
@@ -288,6 +314,10 @@ GType              gtk_cell_renderer_get_type       (void) G_GNUC_CONST;
     GTK_CELL_RENDERER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_CELL_RENDERER,GtkCellRendererClass);
   end;
 
+  function gtk_cell_renderer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_renderer_get_request_mode(cell:PGtkCellRenderer):GtkSizeRequestMode;
   begin
     { You must implement this function }

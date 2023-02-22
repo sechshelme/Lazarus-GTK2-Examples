@@ -27,27 +27,27 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_NUMERIC_SORTER             (gtk_numeric_sorter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkNumericSorter, gtk_numeric_sorter, GTK, NUMERIC_SORTER, GtkSorter)
-
-
+/* Zeile entfernt */
 GtkNumericSorter *      gtk_numeric_sorter_new                   (GtkExpression          *expression);
 
-
+/* Zeile entfernt */
 GtkExpression *         gtk_numeric_sorter_get_expression        (GtkNumericSorter       *self);
-
+/* Zeile entfernt */
 void                    gtk_numeric_sorter_set_expression        (GtkNumericSorter       *self,
                                                                   GtkExpression          *expression);
 
-
+/* Zeile entfernt */
 GtkSortType             gtk_numeric_sorter_get_sort_order        (GtkNumericSorter       *self);
-
+/* Zeile entfernt */
 void                    gtk_numeric_sorter_set_sort_order        (GtkNumericSorter       *self,
                                                                   GtkSortType             sort_order);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_NUMERIC_SORTER_H__ */

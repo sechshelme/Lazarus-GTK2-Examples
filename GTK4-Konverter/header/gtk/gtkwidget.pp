@@ -75,6 +75,7 @@
 {$include <gtk/gtkshortcut.h>}
 {$include <gtk/gtkshortcutaction.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
   { Macro for casting a pointer to a GtkWidget or GtkWidgetClass pointer.
    * Macros for testing whether widget or klass are of type GTK_TYPE_WIDGET.
     }
@@ -276,353 +277,496 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_widget_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_widget_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_widget_unparent(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_show(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_hide(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_map(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_unmap(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_realize(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_unrealize(widget:PGtkWidget);
 
   { Queuing draws  }
+  { Zeile entfernt  }
   procedure gtk_widget_queue_draw(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_queue_resize(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_queue_allocate(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_widget_get_frame_clock(widget:PGtkWidget):^GdkFrameClock;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_size_allocate(widget:PGtkWidget; allocation:PGtkAllocation; baseline:longint);
 
+  { Zeile entfernt  }
   procedure gtk_widget_allocate(widget:PGtkWidget; width:longint; height:longint; baseline:longint; transform:PGskTransform);
 
+  { Zeile entfernt  }
   function gtk_widget_get_request_mode(widget:PGtkWidget):GtkSizeRequestMode;
 
+  { Zeile entfernt  }
   procedure gtk_widget_measure(widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; natural:Plongint; 
               minimum_baseline:Plongint; natural_baseline:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_widget_get_preferred_size(widget:PGtkWidget; minimum_size:PGtkRequisition; natural_size:PGtkRequisition);
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_layout_manager(widget:PGtkWidget; layout_manager:PGtkLayoutManager);
 
+  { Zeile entfernt  }
   function gtk_widget_get_layout_manager(widget:PGtkWidget):^GtkLayoutManager;
 
+  { Zeile entfernt  }
   procedure gtk_widget_class_set_layout_manager_type(widget_class:PGtkWidgetClass; _type:GType);
 
+  { Zeile entfernt  }
   function gtk_widget_class_get_layout_manager_type(widget_class:PGtkWidgetClass):GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_class_add_binding(widget_class:PGtkWidgetClass; keyval:guint; mods:GdkModifierType; callback:GtkShortcutFunc; format_string:Pchar; 
               args:array of const);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_widget_class_add_binding_signal(widget_class:PGtkWidgetClass; keyval:guint; mods:GdkModifierType; signal:Pchar; format_string:Pchar; 
               args:array of const);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_widget_class_add_binding_action(widget_class:PGtkWidgetClass; keyval:guint; mods:GdkModifierType; action_name:Pchar; format_string:Pchar; 
               args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_widget_class_add_shortcut(widget_class:PGtkWidgetClass; shortcut:PGtkShortcut);
 
+  { Zeile entfernt  }
   procedure gtk_widget_class_set_activate_signal(widget_class:PGtkWidgetClass; signal_id:guint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_class_set_activate_signal_from_name(widget_class:PGtkWidgetClass; signal_name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_widget_class_get_activate_signal(widget_class:PGtkWidgetClass):guint;
 
+  { Zeile entfernt  }
   function gtk_widget_mnemonic_activate(widget:PGtkWidget; group_cycling:gboolean):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_activate(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_can_focus(widget:PGtkWidget; can_focus:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_can_focus(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_focusable(widget:PGtkWidget; focusable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_focusable(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_has_focus(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_is_focus(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_has_visible_focus(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_grab_focus(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_focus_on_click(widget:PGtkWidget; focus_on_click:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_focus_on_click(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_can_target(widget:PGtkWidget; can_target:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_can_target(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_has_default(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_receives_default(widget:PGtkWidget; receives_default:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_receives_default(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_set_name(widget:PGtkWidget; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_get_name(widget:PGtkWidget):^char;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_state_flags(widget:PGtkWidget; flags:GtkStateFlags; clear:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_widget_unset_state_flags(widget:PGtkWidget; flags:GtkStateFlags);
 
+  { Zeile entfernt  }
   function gtk_widget_get_state_flags(widget:PGtkWidget):GtkStateFlags;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_sensitive(widget:PGtkWidget; sensitive:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_sensitive(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_is_sensitive(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_visible(widget:PGtkWidget; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_visible(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_is_visible(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_is_drawable(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_get_realized(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_get_mapped(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_parent(widget:PGtkWidget; parent:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_widget_get_parent(widget:PGtkWidget):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_widget_get_root(widget:PGtkWidget):^GtkRoot;
 
+  { Zeile entfernt  }
   function gtk_widget_get_native(widget:PGtkWidget):^GtkNative;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_child_visible(widget:PGtkWidget; child_visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_child_visible(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_get_allocated_width(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_get_allocated_height(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_get_allocated_baseline(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_get_allocation(widget:PGtkWidget; allocation:PGtkAllocation);
 
+  { Zeile entfernt  }
 (* error 
                                                                  graphene_matrix_t      *out_transform) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
 
     var
  : gboolean;
+  { Zeile entfernt  }
 (* error 
                                                                  graphene_rect_t        *out_bounds) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : gboolean;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  graphene_point_t       *out_point) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : gboolean;
+  { Zeile entfernt  }
 
   function gtk_widget_get_width(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_get_height(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_get_size(widget:PGtkWidget; orientation:GtkOrientation):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_child_focus(widget:PGtkWidget; direction:GtkDirectionType):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_keynav_failed(widget:PGtkWidget; direction:GtkDirectionType):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_error_bell(widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_size_request(widget:PGtkWidget; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_widget_get_size_request(widget:PGtkWidget; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_opacity(widget:PGtkWidget; opacity:double);
 
+  { Zeile entfernt  }
   function gtk_widget_get_opacity(widget:PGtkWidget):double;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_overflow(widget:PGtkWidget; overflow:GtkOverflow);
 
+  { Zeile entfernt  }
   function gtk_widget_get_overflow(widget:PGtkWidget):GtkOverflow;
 
+  { Zeile entfernt  }
   function gtk_widget_get_ancestor(widget:PGtkWidget; widget_type:GType):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_widget_get_scale_factor(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_widget_get_display(widget:PGtkWidget):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gtk_widget_get_settings(widget:PGtkWidget):^GtkSettings;
 
+  { Zeile entfernt  }
   function gtk_widget_get_clipboard(widget:PGtkWidget):^GdkClipboard;
 
+  { Zeile entfernt  }
   function gtk_widget_get_primary_clipboard(widget:PGtkWidget):^GdkClipboard;
 
   { Expand flags and related support  }
+  { Zeile entfernt  }
   function gtk_widget_get_hexpand(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_hexpand(widget:PGtkWidget; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_hexpand_set(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_hexpand_set(widget:PGtkWidget; set:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_vexpand(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_vexpand(widget:PGtkWidget; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_vexpand_set(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_vexpand_set(widget:PGtkWidget; set:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_compute_expand(widget:PGtkWidget; orientation:GtkOrientation):gboolean;
 
   { Margin and alignment  }
+  { Zeile entfernt  }
   function gtk_widget_get_halign(widget:PGtkWidget):GtkAlign;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_halign(widget:PGtkWidget; align:GtkAlign);
 
+  { Zeile entfernt  }
   function gtk_widget_get_valign(widget:PGtkWidget):GtkAlign;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_valign(widget:PGtkWidget; align:GtkAlign);
 
+  { Zeile entfernt  }
   function gtk_widget_get_margin_start(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_margin_start(widget:PGtkWidget; margin:longint);
 
+  { Zeile entfernt  }
   function gtk_widget_get_margin_end(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_margin_end(widget:PGtkWidget; margin:longint);
 
+  { Zeile entfernt  }
   function gtk_widget_get_margin_top(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_margin_top(widget:PGtkWidget; margin:longint);
 
+  { Zeile entfernt  }
   function gtk_widget_get_margin_bottom(widget:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_margin_bottom(widget:PGtkWidget; margin:longint);
 
+  { Zeile entfernt  }
   function gtk_widget_is_ancestor(widget:PGtkWidget; ancestor:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_translate_coordinates(src_widget:PGtkWidget; dest_widget:PGtkWidget; src_x:double; src_y:double; dest_x:Pdouble; 
              dest_y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_contains(widget:PGtkWidget; x:double; y:double):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_pick(widget:PGtkWidget; x:double; y:double; flags:GtkPickFlags):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_widget_add_controller(widget:PGtkWidget; controller:PGtkEventController);
 
+  { Zeile entfernt  }
   procedure gtk_widget_remove_controller(widget:PGtkWidget; controller:PGtkEventController);
 
+  { Zeile entfernt  }
   function gtk_widget_create_pango_context(widget:PGtkWidget):^PangoContext;
 
+  { Zeile entfernt  }
   function gtk_widget_get_pango_context(widget:PGtkWidget):^PangoContext;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_set_font_options(widget:PGtkWidget; options:Pcairo_font_options_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_get_font_options(widget:PGtkWidget):^cairo_font_options_t;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_create_pango_layout(widget:PGtkWidget; text:Pchar):^PangoLayout;
 
   { Functions for setting directionality for widgets  }
+  { Zeile entfernt  }
   procedure gtk_widget_set_direction(widget:PGtkWidget; dir:GtkTextDirection);
 
+  { Zeile entfernt  }
   function gtk_widget_get_direction(widget:PGtkWidget):GtkTextDirection;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_default_direction(dir:GtkTextDirection);
 
+  { Zeile entfernt  }
   function gtk_widget_get_default_direction:GtkTextDirection;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_cursor(widget:PGtkWidget; cursor:PGdkCursor);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_set_cursor_from_name(widget:PGtkWidget; name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_widget_get_cursor(widget:PGtkWidget):^GdkCursor;
 
+  { Zeile entfernt  }
   function gtk_widget_list_mnemonic_labels(widget:PGtkWidget):^GList;
 
+  { Zeile entfernt  }
   procedure gtk_widget_add_mnemonic_label(widget:PGtkWidget; _label:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_remove_mnemonic_label(widget:PGtkWidget; _label:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_widget_trigger_tooltip_query(widget:PGtkWidget);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_set_tooltip_text(widget:PGtkWidget; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_get_tooltip_text(widget:PGtkWidget):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_set_tooltip_markup(widget:PGtkWidget; markup:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_get_tooltip_markup(widget:PGtkWidget):^char;
 
+  { Zeile entfernt  }
   procedure gtk_widget_set_has_tooltip(widget:PGtkWidget; has_tooltip:gboolean);
 
+  { Zeile entfernt  }
   function gtk_widget_get_has_tooltip(widget:PGtkWidget):gboolean;
 
-(* error 
-GType           gtk_requisition_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_requisition_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* error 
 GtkRequisition *gtk_requisition_new      (void) G_GNUC_MALLOC;
  in declarator_list *)
+
+    var
  : GtkRequisition;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_requisition_copy(requisition:PGtkRequisition):^GtkRequisition;
 
+  { Zeile entfernt  }
   procedure gtk_requisition_free(requisition:PGtkRequisition);
 
+  { Zeile entfernt  }
   function gtk_widget_in_destruction(widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_widget_get_style_context(widget:PGtkWidget):^GtkStyleContext;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_widget_class_set_css_name(widget_class:PGtkWidgetClass; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_widget_class_get_css_name(widget_class:PGtkWidgetClass):^char;
 
+  { Zeile entfernt  }
   function gtk_widget_add_tick_callback(widget:PGtkWidget; callback:GtkTickCallback; user_data:gpointer; notify:GDestroyNotify):guint;
 
+  { Zeile entfernt  }
   procedure gtk_widget_remove_tick_callback(widget:PGtkWidget; id:guint);
 
   {*
@@ -713,86 +857,112 @@ in define line 806 *)
 (* error 
                                              #member_name, \
 in define line 828 *)
+    { Zeile entfernt  }
     procedure gtk_widget_init_template(widget:PGtkWidget);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gtk_widget_get_template_child(widget:PGtkWidget; widget_type:GType; name:Pchar):^GObject;
 
 (* error 
 void    gtk_widget_dispose_template                     (GtkWidget             *widget,
 in declaration at line 838 *)
+    { Zeile entfernt  }
     procedure gtk_widget_class_set_template(widget_class:PGtkWidgetClass; template_bytes:PGBytes);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_class_set_template_from_resource(widget_class:PGtkWidgetClass; resource_name:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_class_bind_template_callback_full(widget_class:PGtkWidgetClass; callback_name:Pchar; callback_symbol:GCallback);
 
+    { Zeile entfernt  }
     procedure gtk_widget_class_set_template_scope(widget_class:PGtkWidgetClass; scope:PGtkBuilderScope);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_class_bind_template_child_full(widget_class:PGtkWidgetClass; name:Pchar; internal_child:gboolean; struct_offset:gssize);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_insert_action_group(widget:PGtkWidget; name:Pchar; group:PGActionGroup);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
     function gtk_widget_activate_action(widget:PGtkWidget; name:Pchar; format_string:Pchar; args:array of const):gboolean;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gtk_widget_activate_action_variant(widget:PGtkWidget; name:Pchar; args:PGVariant):gboolean;
 
+    { Zeile entfernt  }
     procedure gtk_widget_activate_default(widget:PGtkWidget);
 
+    { Zeile entfernt  }
     procedure gtk_widget_set_font_map(widget:PGtkWidget; font_map:PPangoFontMap);
 
+    { Zeile entfernt  }
     function gtk_widget_get_font_map(widget:PGtkWidget):^PangoFontMap;
 
+    { Zeile entfernt  }
     function gtk_widget_get_first_child(widget:PGtkWidget):^GtkWidget;
 
+    { Zeile entfernt  }
     function gtk_widget_get_last_child(widget:PGtkWidget):^GtkWidget;
 
+    { Zeile entfernt  }
     function gtk_widget_get_next_sibling(widget:PGtkWidget):^GtkWidget;
 
+    { Zeile entfernt  }
     function gtk_widget_get_prev_sibling(widget:PGtkWidget):^GtkWidget;
 
+    { Zeile entfernt  }
     function gtk_widget_observe_children(widget:PGtkWidget):^GListModel;
 
+    { Zeile entfernt  }
     function gtk_widget_observe_controllers(widget:PGtkWidget):^GListModel;
 
+    { Zeile entfernt  }
     procedure gtk_widget_insert_after(widget:PGtkWidget; parent:PGtkWidget; previous_sibling:PGtkWidget);
 
+    { Zeile entfernt  }
     procedure gtk_widget_insert_before(widget:PGtkWidget; parent:PGtkWidget; next_sibling:PGtkWidget);
 
+    { Zeile entfernt  }
     procedure gtk_widget_set_focus_child(widget:PGtkWidget; child:PGtkWidget);
 
+    { Zeile entfernt  }
     function gtk_widget_get_focus_child(widget:PGtkWidget):^GtkWidget;
 
+    { Zeile entfernt  }
     procedure gtk_widget_snapshot_child(widget:PGtkWidget; child:PGtkWidget; snapshot:PGtkSnapshot);
 
+    { Zeile entfernt  }
     function gtk_widget_should_layout(widget:PGtkWidget):gboolean;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-const char *            gtk_widget_get_css_name         (GtkWidget   *self) G_GNUC_PURE;
- in declarator_list *)
+    function gtk_widget_get_css_name(self:PGtkWidget):^char;
 
-      var
- : char;
+    { Zeile entfernt  }
 (* Const before type ignored *)
-
     procedure gtk_widget_add_css_class(widget:PGtkWidget; css_class:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_remove_css_class(widget:PGtkWidget; css_class:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gtk_widget_has_css_class(widget:PGtkWidget; css_class:Pchar):gboolean;
 
+    { Zeile entfernt  }
     function gtk_widget_get_css_classes(widget:PGtkWidget):^^char;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_set_css_classes(widget:PGtkWidget; classes:PPchar);
 
@@ -812,34 +982,37 @@ const char *            gtk_widget_get_css_name         (GtkWidget   *self) G_GN
     type
 
       GtkWidgetActionActivateFunc = procedure (widget:PGtkWidget; action_name:Pchar; parameter:PGVariant);cdecl;
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 
     procedure gtk_widget_class_install_action(widget_class:PGtkWidgetClass; action_name:Pchar; parameter_type:Pchar; activate:GtkWidgetActionActivateFunc);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
     procedure gtk_widget_class_install_property_action(widget_class:PGtkWidgetClass; action_name:Pchar; property_name:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
     function gtk_widget_class_query_action(widget_class:PGtkWidgetClass; index_:guint; owner:PGType; action_name:PPchar; parameter_type:PPGVariantType; 
                property_name:PPchar):gboolean;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_widget_action_set_enabled(widget:PGtkWidget; action_name:Pchar; enabled:gboolean);
 
+    { Zeile entfernt  }
     procedure gtk_widget_class_set_accessible_role(widget_class:PGtkWidgetClass; accessible_role:GtkAccessibleRole);
 
+    { Zeile entfernt  }
     function gtk_widget_class_get_accessible_role(widget_class:PGtkWidgetClass):GtkAccessibleRole;
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWidget, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWidget, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
+    { Zeile entfernt  }
+    { Zeile entfernt  }
+    { Zeile entfernt  }
 {$endif}
     { __GTK_WIDGET_H__  }
   { was #define dname def_expr }
@@ -894,6 +1067,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
       GTK_TYPE_REQUISITION:=gtk_requisition_get_type;
     end;
 
+  function gtk_widget_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_widget_unparent(widget:PGtkWidget);
   begin
     { You must implement this function }
@@ -1436,6 +1613,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
   begin
     { You must implement this function }
   end;
+  function gtk_requisition_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_requisition_copy(requisition:PGtkRequisition):PGtkRequisition;
   begin
     { You must implement this function }
@@ -1565,6 +1746,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
       { You must implement this function }
     end;
     function gtk_widget_should_layout(widget:PGtkWidget):gboolean;
+    begin
+      { You must implement this function }
+    end;
+    function gtk_widget_get_css_name(self:PGtkWidget):Pchar;
     begin
       { You must implement this function }
     end;

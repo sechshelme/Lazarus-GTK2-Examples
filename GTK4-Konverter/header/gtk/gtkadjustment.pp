@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ADJUSTMENT : longint; { return type might be wrong }
@@ -82,47 +83,61 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
-(* error 
-GType      gtk_adjustment_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_adjustment_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_adjustment_new(value:double; lower:double; upper:double; step_increment:double; page_increment:double; 
              page_size:double):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_clamp_page(adjustment:PGtkAdjustment; lower:double; upper:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_value(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_value(adjustment:PGtkAdjustment; value:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_lower(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_lower(adjustment:PGtkAdjustment; lower:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_upper(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_upper(adjustment:PGtkAdjustment; upper:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_step_increment(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_step_increment(adjustment:PGtkAdjustment; step_increment:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_page_increment(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_page_increment(adjustment:PGtkAdjustment; page_increment:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_page_size(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_set_page_size(adjustment:PGtkAdjustment; page_size:double);
 
+  { Zeile entfernt  }
   procedure gtk_adjustment_configure(adjustment:PGtkAdjustment; value:double; lower:double; upper:double; step_increment:double; 
               page_increment:double; page_size:double);
 
+  { Zeile entfernt  }
   function gtk_adjustment_get_minimum_increment(adjustment:PGtkAdjustment):double;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ADJUSTMENT_H__  }
   { was #define dname def_expr }
@@ -171,6 +186,10 @@ GType      gtk_adjustment_get_type              (void) G_GNUC_CONST;
     GTK_ADJUSTMENT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_ADJUSTMENT,GtkAdjustmentClass);
   end;
 
+  function gtk_adjustment_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_adjustment_new(value:double; lower:double; upper:double; step_increment:double; page_increment:double; 
              page_size:double):PGtkAdjustment;
   begin

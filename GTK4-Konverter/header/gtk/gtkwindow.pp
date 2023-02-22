@@ -1,15 +1,15 @@
 
-    Type
-    Pchar  = ^char;
-    PGdkDisplay  = ^GdkDisplay;
-    PGdkMonitor  = ^GdkMonitor;
-    PGList  = ^GList;
-    PGListModel  = ^GListModel;
-    PGtkApplication  = ^GtkApplication;
-    PGtkWidget  = ^GtkWidget;
-    PGtkWindow  = ^GtkWindow;
-    PGtkWindowGroup  = ^GtkWindowGroup;
-    Plongint  = ^longint;
+  Type
+  Pchar  = ^char;
+  PGdkDisplay  = ^GdkDisplay;
+  PGdkMonitor  = ^GdkMonitor;
+  PGList  = ^GList;
+  PGListModel  = ^GListModel;
+  PGtkApplication  = ^GtkApplication;
+  PGtkWidget  = ^GtkWidget;
+  PGtkWindow  = ^GtkWindow;
+  PGtkWindowGroup  = ^GtkWindowGroup;
+  Plongint  = ^longint;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -45,6 +45,7 @@
 {$include <gtk/gtkapplication.h>}
 {$include <gtk/gtkaccelgroup.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_WINDOW : longint; { return type might be wrong }
@@ -108,156 +109,209 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_window_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_window_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_window_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_window_set_title(window:PGtkWindow; title:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_window_get_title(window:PGtkWindow):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_window_set_startup_id(window:PGtkWindow; startup_id:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_window_set_focus(window:PGtkWindow; focus:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_window_get_focus(window:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_default_widget(window:PGtkWindow; default_widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_window_get_default_widget(window:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_transient_for(window:PGtkWindow; parent:PGtkWindow);
 
+  { Zeile entfernt  }
   function gtk_window_get_transient_for(window:PGtkWindow):^GtkWindow;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_destroy_with_parent(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_destroy_with_parent(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_hide_on_close(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_hide_on_close(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_mnemonics_visible(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_mnemonics_visible(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_focus_visible(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_focus_visible(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_resizable(window:PGtkWindow; resizable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_resizable(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_display(window:PGtkWindow; display:PGdkDisplay);
 
+  { Zeile entfernt  }
   function gtk_window_is_active(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_decorated(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_decorated(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_deletable(window:PGtkWindow; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_deletable(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_window_set_icon_name(window:PGtkWindow; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_window_get_icon_name(window:PGtkWindow):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_window_set_default_icon_name(name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_window_get_default_icon_name:^char;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_auto_startup_notification(setting:gboolean);
 
   { If window is set modal, input will be grabbed when show and released when hide  }
+  { Zeile entfernt  }
   procedure gtk_window_set_modal(window:PGtkWindow; modal:gboolean);
 
+  { Zeile entfernt  }
   function gtk_window_get_modal(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_window_get_toplevels:^GListModel;
 
+  { Zeile entfernt  }
   function gtk_window_list_toplevels:^GList;
 
+  { Zeile entfernt  }
   procedure gtk_window_present(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_present_with_time(window:PGtkWindow; timestamp:guint32);
 
+  { Zeile entfernt  }
   procedure gtk_window_minimize(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_unminimize(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_maximize(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_unmaximize(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_fullscreen(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_unfullscreen(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_fullscreen_on_monitor(window:PGtkWindow; monitor:PGdkMonitor);
 
+  { Zeile entfernt  }
   procedure gtk_window_close(window:PGtkWindow);
 
   { Set initial default size of the window (does not constrain user
    * resize operations)
     }
+  { Zeile entfernt  }
   procedure gtk_window_set_default_size(window:PGtkWindow; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_window_get_default_size(window:PGtkWindow; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   function gtk_window_get_group(window:PGtkWindow):^GtkWindowGroup;
 
+  { Zeile entfernt  }
   function gtk_window_has_group(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_window_get_application(window:PGtkWindow):^GtkApplication;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_application(window:PGtkWindow; application:PGtkApplication);
 
+  { Zeile entfernt  }
   procedure gtk_window_set_child(window:PGtkWindow; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_window_get_child(window:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_window_set_titlebar(window:PGtkWindow; titlebar:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_window_get_titlebar(window:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_window_is_maximized(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_window_is_fullscreen(window:PGtkWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_window_destroy(window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_window_set_interactive_debugging(enable:gboolean);
 
-(* error 
-void     gtk_window_set_handle_menubar_accel (GtkWindow *window,
-in declaration at line 256 *)
-(* error 
-gboolean gtk_window_get_handle_menubar_accel (GtkWindow *window);
- in declarator_list *)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindow, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindow, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindowGroup, g_object_unref)
+  { Zeile entfernt  }
+  procedure gtk_window_set_handle_menubar_accel(window:PGtkWindow; handle_menubar_accel:gboolean);
+
+  { Zeile entfernt  }
+  function gtk_window_get_handle_menubar_accel(window:PGtkWindow):gboolean;
+
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_WINDOW_H__  }
+  { __GTK_WINDOW_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_WINDOW : longint; { return type might be wrong }
     begin
@@ -304,6 +358,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindowGroup, g_object_unref)
     GTK_WINDOW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_WINDOW,GtkWindowClass);
   end;
 
+  function gtk_window_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_window_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -537,6 +595,14 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindowGroup, g_object_unref)
     { You must implement this function }
   end;
   procedure gtk_window_set_interactive_debugging(enable:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_window_set_handle_menubar_accel(window:PGtkWindow; handle_menubar_accel:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_window_get_handle_menubar_accel(window:PGtkWindow):gboolean;
   begin
     { You must implement this function }
   end;

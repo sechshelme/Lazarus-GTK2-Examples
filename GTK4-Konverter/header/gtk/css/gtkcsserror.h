@@ -24,7 +24,7 @@
 #include <glib.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GTK_CSS_PARSER_ERROR:
@@ -33,7 +33,7 @@
  */
 #define GTK_CSS_PARSER_ERROR (gtk_css_parser_error_quark ())
 
-
+/* Zeile entfernt */
 GQuark gtk_css_parser_error_quark (void);
 
 /**
@@ -43,9 +43,9 @@ GQuark gtk_css_parser_error_quark (void);
  */
 #define GTK_CSS_PARSER_WARNING (gtk_css_parser_warning_quark ())
 
-
+/* Zeile entfernt */
 GQuark gtk_css_parser_warning_quark (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CSS_ERROR_H__ */

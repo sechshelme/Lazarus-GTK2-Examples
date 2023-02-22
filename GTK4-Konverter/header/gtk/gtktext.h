@@ -38,7 +38,7 @@
 #include <gtk/gtkentrybuffer.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TEXT                  (gtk_text_get_type ())
 #define GTK_TEXT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT, GtkText))
@@ -52,120 +52,120 @@ struct _GtkText
   GtkWidget  parent_instance;
 };
 
+/* Zeile entfernt */
+GType           gtk_text_get_type                       (void) ;
 
-GType           gtk_text_get_type                       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_text_new                            (void);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_text_new_with_buffer                (GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 GtkEntryBuffer *gtk_text_get_buffer                     (GtkText         *self);
-
+/* Zeile entfernt */
 void            gtk_text_set_buffer                     (GtkText         *self,
                                                          GtkEntryBuffer  *buffer);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_visibility                 (GtkText         *self,
                                                          gboolean         visible);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_visibility                 (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_invisible_char             (GtkText         *self,
                                                          gunichar         ch);
-
+/* Zeile entfernt */
 gunichar        gtk_text_get_invisible_char             (GtkText         *self);
-
+/* Zeile entfernt */
 void            gtk_text_unset_invisible_char           (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_overwrite_mode             (GtkText         *self,
                                                          gboolean         overwrite);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_overwrite_mode             (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_max_length                 (GtkText         *self,
                                                          int              length);
-
+/* Zeile entfernt */
 int             gtk_text_get_max_length                 (GtkText         *self);
-
+/* Zeile entfernt */
 guint16         gtk_text_get_text_length                (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_activates_default          (GtkText         *self,
                                                          gboolean         activates);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_activates_default          (GtkText         *self);
 
-
+/* Zeile entfernt */
 const char *    gtk_text_get_placeholder_text           (GtkText         *self);
-
+/* Zeile entfernt */
 void            gtk_text_set_placeholder_text           (GtkText         *self,
                                                          const char      *text);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_input_purpose              (GtkText         *self,
                                                          GtkInputPurpose  purpose);
-
+/* Zeile entfernt */
 GtkInputPurpose gtk_text_get_input_purpose              (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_input_hints                (GtkText         *self,
                                                          GtkInputHints    hints);
-
+/* Zeile entfernt */
 GtkInputHints   gtk_text_get_input_hints                (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_attributes                 (GtkText         *self,
                                                          PangoAttrList   *attrs);
-
+/* Zeile entfernt */
 PangoAttrList * gtk_text_get_attributes                 (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_tabs                       (GtkText         *self,
                                                          PangoTabArray   *tabs);
 
-
+/* Zeile entfernt */
 PangoTabArray * gtk_text_get_tabs                       (GtkText         *self);
 
-
+/* Zeile entfernt */
 gboolean        gtk_text_grab_focus_without_selecting   (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_extra_menu                 (GtkText         *self,
                                                          GMenuModel      *model);
-
+/* Zeile entfernt */
 GMenuModel *    gtk_text_get_extra_menu                 (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_enable_emoji_completion    (GtkText         *self,
                                                          gboolean         enable_emoji_completion);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_enable_emoji_completion    (GtkText         *self);
 
 
-
+/* Zeile entfernt */
 void            gtk_text_set_propagate_text_width       (GtkText         *self,
                                                          gboolean         propagate_text_width);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_propagate_text_width       (GtkText         *self);
 
-
+/* Zeile entfernt */
 void            gtk_text_set_truncate_multiline         (GtkText         *self,
                                                          gboolean         truncate_multiline);
-
+/* Zeile entfernt */
 gboolean        gtk_text_get_truncate_multiline         (GtkText         *self);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 void            gtk_text_compute_cursor_extents         (GtkText         *self,
                                                          gsize            position,
                                                          graphene_rect_t *strong,
                                                          graphene_rect_t *weak);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TEXT_H__ */

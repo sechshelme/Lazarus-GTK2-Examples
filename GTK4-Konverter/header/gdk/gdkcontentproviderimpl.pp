@@ -33,17 +33,23 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gdk_content_provider_new_for_value(value:PGValue):^GdkContentProvider;
 
+  { Zeile entfernt  }
   function gdk_content_provider_new_typed(_type:GType; args:array of const):^GdkContentProvider;
 
+  { Zeile entfernt  }
   function gdk_content_provider_new_union(providers:PPGdkContentProvider; n_providers:gsize):^GdkContentProvider;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_content_provider_new_for_bytes(mime_type:Pchar; bytes:PGBytes):^GdkContentProvider;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CONTENT_PROVIDER_IMPL_H__  }
   function gdk_content_provider_new_for_value(value:PGValue):PGdkContentProvider;

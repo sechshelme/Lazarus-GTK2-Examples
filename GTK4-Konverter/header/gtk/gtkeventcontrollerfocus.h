@@ -28,7 +28,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER_FOCUS         (gtk_event_controller_focus_get_type ())
 #define GTK_EVENT_CONTROLLER_FOCUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_FOCUS, GtkEventControllerFocus))
@@ -40,18 +40,18 @@
 typedef struct _GtkEventControllerFocus GtkEventControllerFocus;
 typedef struct _GtkEventControllerFocusClass GtkEventControllerFocusClass;
 
+/* Zeile entfernt */
+GType               gtk_event_controller_focus_get_type  (void) ;
 
-GType               gtk_event_controller_focus_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *gtk_event_controller_focus_new (void);
 
-
+/* Zeile entfernt */
 gboolean            gtk_event_controller_focus_contains_focus     (GtkEventControllerFocus  *self);
-
+/* Zeile entfernt */
 gboolean            gtk_event_controller_focus_is_focus           (GtkEventControllerFocus  *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_FOCUS_H__ */

@@ -36,6 +36,7 @@
 {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MOUNT_OPERATION : longint; { return type might be wrong }
@@ -89,21 +90,29 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
+  { Zeile entfernt  }
 
   function gtk_mount_operation_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_mount_operation_new(parent:PGtkWindow):^GMountOperation;
 
+  { Zeile entfernt  }
   function gtk_mount_operation_is_showing(op:PGtkMountOperation):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_mount_operation_set_parent(op:PGtkMountOperation; parent:PGtkWindow);
 
+  { Zeile entfernt  }
   function gtk_mount_operation_get_parent(op:PGtkMountOperation):^GtkWindow;
 
+  { Zeile entfernt  }
   procedure gtk_mount_operation_set_display(op:PGtkMountOperation; display:PGdkDisplay);
 
+  { Zeile entfernt  }
   function gtk_mount_operation_get_display(op:PGtkMountOperation):^GdkDisplay;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MOUNT_OPERATION_H__  }
   { was #define dname def_expr }

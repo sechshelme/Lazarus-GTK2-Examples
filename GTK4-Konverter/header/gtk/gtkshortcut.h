@@ -22,41 +22,41 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT         (gtk_shortcut_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
-
-
+/* Zeile entfernt */
 GtkShortcut *   gtk_shortcut_new                                (GtkShortcutTrigger     *trigger,
                                                                  GtkShortcutAction      *action);
-
+/* Zeile entfernt */
 GtkShortcut *   gtk_shortcut_new_with_arguments                 (GtkShortcutTrigger     *trigger,
                                                                  GtkShortcutAction      *action,
                                                                  const char             *format_string,
                                                                  ...);
 
-
+/* Zeile entfernt */
 GtkShortcutTrigger *
                 gtk_shortcut_get_trigger                        (GtkShortcut            *self);
-
+/* Zeile entfernt */
 void            gtk_shortcut_set_trigger                        (GtkShortcut            *self,
                                                                  GtkShortcutTrigger     *trigger);
-
+/* Zeile entfernt */
 GtkShortcutAction *
                 gtk_shortcut_get_action                         (GtkShortcut            *self);
-
+/* Zeile entfernt */
 void            gtk_shortcut_set_action                         (GtkShortcut            *self,
                                                                  GtkShortcutAction      *action);
 
-
+/* Zeile entfernt */
 GVariant *      gtk_shortcut_get_arguments                      (GtkShortcut            *self);
-
+/* Zeile entfernt */
 void            gtk_shortcut_set_arguments                      (GtkShortcut            *self,
                                                                  GVariant               *args);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_SHORTCUT_H__ */

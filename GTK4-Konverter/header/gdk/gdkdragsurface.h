@@ -26,18 +26,18 @@
 
 #include <gdk/gdksurface.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DRAG_SURFACE (gdk_drag_surface_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObject)
-
-
+/* Zeile entfernt */
 gboolean gdk_drag_surface_present (GdkDragSurface *drag_surface,
                                    int             width,
                                    int             height);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DRAG_SURFACE_H__ */

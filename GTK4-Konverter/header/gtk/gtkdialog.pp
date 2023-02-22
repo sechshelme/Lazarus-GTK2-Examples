@@ -3,6 +3,7 @@
   Pchar  = ^char;
   PGtkDialog  = ^GtkDialog;
   PGtkWidget  = ^GtkWidget;
+  PGtkWindow  = ^GtkWindow;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -36,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwindow.h>}
+  { Zeile entfernt  }
   {*
    * GtkDialogFlags:
    * @GTK_DIALOG_MODAL: Make the constructed dialog modal
@@ -129,56 +131,53 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_dialog_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_dialog_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_dialog_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                        ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  function gtk_dialog_new_with_buttons(title:Pchar; parent:PGtkWindow; flags:GtkDialogFlags; first_button_text:Pchar; args:array of const):^GtkWidget;
 
-    var
- : GtkWidget;
-
+  { Zeile entfernt  }
   procedure gtk_dialog_add_action_widget(dialog:PGtkDialog; child:PGtkWidget; response_id:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_dialog_add_button(dialog:PGtkDialog; button_text:Pchar; response_id:longint):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                         ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gtk_dialog_add_buttons(dialog:PGtkDialog; first_button_text:Pchar; args:array of const);
 
-    var
- : pointer;
-
+  { Zeile entfernt  }
   procedure gtk_dialog_set_response_sensitive(dialog:PGtkDialog; response_id:longint; setting:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_dialog_set_default_response(dialog:PGtkDialog; response_id:longint);
 
+  { Zeile entfernt  }
   function gtk_dialog_get_widget_for_response(dialog:PGtkDialog; response_id:longint):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_dialog_get_response_for_widget(dialog:PGtkDialog; widget:PGtkWidget):longint;
 
   { Emit response signal  }
+  { Zeile entfernt  }
   procedure gtk_dialog_response(dialog:PGtkDialog; response_id:longint);
 
+  { Zeile entfernt  }
   function gtk_dialog_get_content_area(dialog:PGtkDialog):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_dialog_get_header_bar(dialog:PGtkDialog):^GtkWidget;
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkDialog, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkDialog, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DIALOG_H__  }
   { was #define dname def_expr }
@@ -227,7 +226,15 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkDialog, g_object_unref)
     GTK_DIALOG_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_DIALOG,GtkDialogClass);
   end;
 
+  function gtk_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_dialog_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_dialog_new_with_buttons(title:Pchar; parent:PGtkWindow; flags:GtkDialogFlags; first_button_text:Pchar):PGtkWidget;
   begin
     { You must implement this function }
   end;
@@ -236,6 +243,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkDialog, g_object_unref)
     { You must implement this function }
   end;
   function gtk_dialog_add_button(dialog:PGtkDialog; button_text:Pchar; response_id:longint):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_dialog_add_buttons(dialog:PGtkDialog; first_button_text:Pchar);
   begin
     { You must implement this function }
   end;

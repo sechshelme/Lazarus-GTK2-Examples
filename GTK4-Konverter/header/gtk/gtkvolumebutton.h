@@ -34,7 +34,7 @@
 
 #include <gtk/gtkscalebutton.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_VOLUME_BUTTON                 (gtk_volume_button_get_type ())
 #define GTK_VOLUME_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_VOLUME_BUTTON, GtkVolumeButton))
@@ -47,11 +47,11 @@ struct _GtkVolumeButton
   GtkScaleButton  parent;
 };
 
-
-GType		gtk_volume_button_get_type	(void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType		gtk_volume_button_get_type	(void) ;
+/* Zeile entfernt */
 GtkWidget*	gtk_volume_button_new		(void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_VOLUME_BUTTON_H__ */

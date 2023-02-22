@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcellrenderer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_SPINNER : longint; { return type might be wrong }
@@ -48,15 +49,14 @@
 
   type
     _GtkCellRendererSpinner = GtkCellRendererSpinner;
-(* error 
-GType            gtk_cell_renderer_spinner_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_renderer_spinner_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_spinner_new:^GtkCellRenderer;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_RENDERER_SPINNER_H__  }
   { was #define dname def_expr }
@@ -81,6 +81,10 @@ GType            gtk_cell_renderer_spinner_get_type (void) G_GNUC_CONST;
     GTK_IS_CELL_RENDERER_SPINNER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_CELL_RENDERER_SPINNER);
   end;
 
+  function gtk_cell_renderer_spinner_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_renderer_spinner_new:PGtkCellRenderer;
   begin
     { You must implement this function }

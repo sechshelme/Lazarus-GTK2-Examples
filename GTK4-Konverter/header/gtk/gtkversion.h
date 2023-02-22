@@ -31,7 +31,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GTK_MAJOR_VERSION:
@@ -95,22 +95,22 @@
      (GTK_MAJOR_VERSION == (major) && GTK_MINOR_VERSION == (minor) && \
       GTK_MICRO_VERSION >= (micro)))
 
+/* Zeile entfernt */
+guint gtk_get_major_version (void) ;
+/* Zeile entfernt */
+guint gtk_get_minor_version (void) ;
+/* Zeile entfernt */
+guint gtk_get_micro_version (void) ;
+/* Zeile entfernt */
+guint gtk_get_binary_age    (void) ;
+/* Zeile entfernt */
+guint gtk_get_interface_age (void) ;
 
-guint gtk_get_major_version (void) G_GNUC_CONST;
-
-guint gtk_get_minor_version (void) G_GNUC_CONST;
-
-guint gtk_get_micro_version (void) G_GNUC_CONST;
-
-guint gtk_get_binary_age    (void) G_GNUC_CONST;
-
-guint gtk_get_interface_age (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char * gtk_check_version (guint   required_major,
                                 guint   required_minor,
                                 guint   required_micro);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_VERSION_H__ */

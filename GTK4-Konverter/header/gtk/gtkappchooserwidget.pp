@@ -38,6 +38,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APP_CHOOSER_WIDGET : longint; { return type might be wrong }
@@ -55,42 +56,53 @@
 
   type
     _GtkAppChooserWidget = GtkAppChooserWidget;
-(* error 
-GType         gtk_app_chooser_widget_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_app_chooser_widget_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_app_chooser_widget_new(content_type:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_widget_set_show_default(self:PGtkAppChooserWidget; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_widget_get_show_default(self:PGtkAppChooserWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_widget_set_show_recommended(self:PGtkAppChooserWidget; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_widget_get_show_recommended(self:PGtkAppChooserWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_widget_set_show_fallback(self:PGtkAppChooserWidget; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_widget_get_show_fallback(self:PGtkAppChooserWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_widget_set_show_other(self:PGtkAppChooserWidget; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_widget_get_show_other(self:PGtkAppChooserWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_widget_set_show_all(self:PGtkAppChooserWidget; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_widget_get_show_all(self:PGtkAppChooserWidget):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_app_chooser_widget_set_default_text(self:PGtkAppChooserWidget; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_app_chooser_widget_get_default_text(self:PGtkAppChooserWidget):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APP_CHOOSER_WIDGET_H__  }
   { was #define dname def_expr }
@@ -115,6 +127,10 @@ GType         gtk_app_chooser_widget_get_type             (void) G_GNUC_CONST;
     GTK_IS_APP_CHOOSER_WIDGET:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_APP_CHOOSER_WIDGET);
   end;
 
+  function gtk_app_chooser_widget_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_app_chooser_widget_new(content_type:Pchar):PGtkWidget;
   begin
     { You must implement this function }

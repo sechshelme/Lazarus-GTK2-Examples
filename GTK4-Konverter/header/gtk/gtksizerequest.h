@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkRequestedSize         GtkRequestedSize;
 
@@ -47,12 +47,12 @@ struct _GtkRequestedSize
 
 
 /* General convenience function to aid in allocating natural sizes */
-
+/* Zeile entfernt */
 int                 gtk_distribute_natural_allocation               (int               extra_space,
                                                                      guint             n_requested_sizes,
                                                                      GtkRequestedSize *sizes);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SIZE_REQUEST_H__ */

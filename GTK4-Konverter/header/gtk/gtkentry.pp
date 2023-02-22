@@ -53,6 +53,7 @@
 {$include <gtk/gtkentrybuffer.h>}
 {$include <gtk/gtkentrycompletion.h>}
 {$include <gtk/gtkimage.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ENTRY : longint; { return type might be wrong }
@@ -121,144 +122,202 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_entry_get_type       		(void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_entry_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_entry_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_entry_new_with_buffer(buffer:PGtkEntryBuffer):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_entry_get_buffer(entry:PGtkEntry):^GtkEntryBuffer;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_buffer(entry:PGtkEntry; buffer:PGtkEntryBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_visibility(entry:PGtkEntry; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_visibility(entry:PGtkEntry):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_invisible_char(entry:PGtkEntry; ch:gunichar);
 
+  { Zeile entfernt  }
   function gtk_entry_get_invisible_char(entry:PGtkEntry):gunichar;
 
+  { Zeile entfernt  }
   procedure gtk_entry_unset_invisible_char(entry:PGtkEntry);
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_has_frame(entry:PGtkEntry; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_has_frame(entry:PGtkEntry):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_overwrite_mode(entry:PGtkEntry; overwrite:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_overwrite_mode(entry:PGtkEntry):gboolean;
 
   { text is truncated if needed  }
+  { Zeile entfernt  }
   procedure gtk_entry_set_max_length(entry:PGtkEntry; max:longint);
 
+  { Zeile entfernt  }
   function gtk_entry_get_max_length(entry:PGtkEntry):longint;
 
+  { Zeile entfernt  }
   function gtk_entry_get_text_length(entry:PGtkEntry):guint16;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_activates_default(entry:PGtkEntry; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_activates_default(entry:PGtkEntry):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_alignment(entry:PGtkEntry; xalign:single);
 
+  { Zeile entfernt  }
   function gtk_entry_get_alignment(entry:PGtkEntry):single;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_completion(entry:PGtkEntry; completion:PGtkEntryCompletion);
 
+  { Zeile entfernt  }
   function gtk_entry_get_completion(entry:PGtkEntry):^GtkEntryCompletion;
 
   { Progress API
     }
+  { Zeile entfernt  }
   procedure gtk_entry_set_progress_fraction(entry:PGtkEntry; fraction:double);
 
+  { Zeile entfernt  }
   function gtk_entry_get_progress_fraction(entry:PGtkEntry):double;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_progress_pulse_step(entry:PGtkEntry; fraction:double);
 
+  { Zeile entfernt  }
   function gtk_entry_get_progress_pulse_step(entry:PGtkEntry):double;
 
+  { Zeile entfernt  }
   procedure gtk_entry_progress_pulse(entry:PGtkEntry);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_get_placeholder_text(entry:PGtkEntry):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_set_placeholder_text(entry:PGtkEntry; text:Pchar);
 
   { Setting and managing icons
     }
+  { Zeile entfernt  }
   procedure gtk_entry_set_icon_from_paintable(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; paintable:PGdkPaintable);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_set_icon_from_icon_name(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; icon_name:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_icon_from_gicon(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; icon:PGIcon);
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_storage_type(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):GtkImageType;
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_paintable(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):^GdkPaintable;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_entry_get_icon_name(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):^char;
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_gicon(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):^GIcon;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_icon_activatable(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; activatable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_activatable(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_icon_sensitive(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; sensitive:gboolean);
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_sensitive(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):gboolean;
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_at_pos(entry:PGtkEntry; x:longint; y:longint):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_set_icon_tooltip_text(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; tooltip:Pchar);
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_tooltip_text(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_entry_set_icon_tooltip_markup(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; tooltip:Pchar);
 
+  { Zeile entfernt  }
   function gtk_entry_get_icon_tooltip_markup(entry:PGtkEntry; icon_pos:GtkEntryIconPosition):^char;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_icon_drag_source(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; provider:PGdkContentProvider; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   function gtk_entry_get_current_icon_drag_source(entry:PGtkEntry):longint;
 
+  { Zeile entfernt  }
   procedure gtk_entry_get_icon_area(entry:PGtkEntry; icon_pos:GtkEntryIconPosition; icon_area:PGdkRectangle);
 
+  { Zeile entfernt  }
   procedure gtk_entry_reset_im_context(entry:PGtkEntry);
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_input_purpose(entry:PGtkEntry; purpose:GtkInputPurpose);
 
+  { Zeile entfernt  }
   function gtk_entry_get_input_purpose(entry:PGtkEntry):GtkInputPurpose;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_input_hints(entry:PGtkEntry; hints:GtkInputHints);
 
+  { Zeile entfernt  }
   function gtk_entry_get_input_hints(entry:PGtkEntry):GtkInputHints;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_attributes(entry:PGtkEntry; attrs:PPangoAttrList);
 
+  { Zeile entfernt  }
   function gtk_entry_get_attributes(entry:PGtkEntry):^PangoAttrList;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_tabs(entry:PGtkEntry; tabs:PPangoTabArray);
 
+  { Zeile entfernt  }
   function gtk_entry_get_tabs(entry:PGtkEntry):^PangoTabArray;
 
+  { Zeile entfernt  }
   function gtk_entry_grab_focus_without_selecting(entry:PGtkEntry):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_entry_set_extra_menu(entry:PGtkEntry; model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_entry_get_extra_menu(entry:PGtkEntry):^GMenuModel;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ENTRY_H__  }
   { was #define dname def_expr }
@@ -307,6 +366,10 @@ GType      gtk_entry_get_type       		(void) G_GNUC_CONST;
     GTK_ENTRY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_ENTRY,GtkEntryClass);
   end;
 
+  function gtk_entry_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_entry_new:PGtkWidget;
   begin
     { You must implement this function }

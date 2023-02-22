@@ -34,7 +34,7 @@
 #include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DRAG              (gdk_drag_get_type ())
 #define GDK_DRAG(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DRAG, GdkDrag))
@@ -54,25 +54,25 @@ typedef enum {
   GDK_DRAG_CANCEL_ERROR
 } GdkDragCancelReason;
 
+/* Zeile entfernt */
+GType            gdk_drag_get_type             (void) ;
 
-GType            gdk_drag_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay *     gdk_drag_get_display          (GdkDrag *drag);
-
+/* Zeile entfernt */
 GdkDevice *      gdk_drag_get_device           (GdkDrag *drag);
 
-
+/* Zeile entfernt */
 GdkContentFormats *gdk_drag_get_formats        (GdkDrag *drag);
-
+/* Zeile entfernt */
 GdkDragAction    gdk_drag_get_actions          (GdkDrag *drag);
-
+/* Zeile entfernt */
 GdkDragAction    gdk_drag_get_selected_action  (GdkDrag *drag);
 
+/* Zeile entfernt */
+gboolean         gdk_drag_action_is_unique     (GdkDragAction   action) ;
 
-gboolean         gdk_drag_action_is_unique     (GdkDragAction   action) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDrag *        gdk_drag_begin                (GdkSurface         *surface,
                                                 GdkDevice          *device,
                                                 GdkContentProvider *content,
@@ -80,25 +80,25 @@ GdkDrag *        gdk_drag_begin                (GdkSurface         *surface,
                                                 double              dx,
                                                 double              dy);
 
-
+/* Zeile entfernt */
 void            gdk_drag_drop_done   (GdkDrag  *drag,
                                       gboolean  success);
 
-
+/* Zeile entfernt */
 GdkSurface      *gdk_drag_get_drag_surface (GdkDrag *drag);
 
-
+/* Zeile entfernt */
 void            gdk_drag_set_hotspot (GdkDrag *drag,
                                       int      hot_x,
                                       int      hot_y);
 
-
+/* Zeile entfernt */
 GdkContentProvider *
                 gdk_drag_get_content (GdkDrag *drag);
 
-
+/* Zeile entfernt */
 GdkSurface *    gdk_drag_get_surface (GdkDrag *drag);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DND_H__ */

@@ -27,23 +27,23 @@
 #include <gtk/gtkmediastream.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MEDIA_CONTROLS         (gtk_media_controls_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget      *gtk_media_controls_new                  (GtkMediaStream         *stream);
 
-
+/* Zeile entfernt */
 GtkMediaStream *gtk_media_controls_get_media_stream     (GtkMediaControls       *controls);
-
+/* Zeile entfernt */
 void            gtk_media_controls_set_media_stream     (GtkMediaControls       *controls,
                                                          GtkMediaStream         *stream);
 
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_MEDIA_CONTROLS_H__ */

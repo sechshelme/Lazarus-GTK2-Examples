@@ -34,26 +34,33 @@
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtkaccessible.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_AT_CONTEXT : longint; { return type might be wrong }
 
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_at_context_get_accessible(self:PGtkATContext):^GtkAccessible;
+
+  { Zeile entfernt  }
   function gtk_at_context_get_accessible_role(self:PGtkATContext):GtkAccessibleRole;
 
+  { Zeile entfernt  }
   function gtk_at_context_create(accessible_role:GtkAccessibleRole; accessible:PGtkAccessible; display:PGdkDisplay):^GtkATContext;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_AT_CONTEXT : longint; { return type might be wrong }
     begin
       GTK_TYPE_AT_CONTEXT:=gtk_at_context_get_type;
     end;
 
+  function gtk_at_context_get_accessible(self:PGtkATContext):PGtkAccessible;
+  begin
+    { You must implement this function }
+  end;
   function gtk_at_context_get_accessible_role(self:PGtkATContext):GtkAccessibleRole;
   begin
     { You must implement this function }

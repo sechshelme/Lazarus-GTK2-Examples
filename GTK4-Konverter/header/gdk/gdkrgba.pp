@@ -36,6 +36,7 @@
 {$endif}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   type
     _GdkRGBA = record
@@ -49,42 +50,35 @@
   { was #define dname def_expr }
   function GDK_TYPE_RGBA : longint; { return type might be wrong }
 
-(* error 
-GType     gdk_rgba_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_rgba_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gdk_rgba_copy(rgba:PGdkRGBA):^GdkRGBA;
 
+  { Zeile entfernt  }
   procedure gdk_rgba_free(rgba:PGdkRGBA);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-gboolean  gdk_rgba_is_clear  (const GdkRGBA *rgba) G_GNUC_PURE;
- in declarator_list *)
+  function gdk_rgba_is_clear(rgba:PGdkRGBA):gboolean;
 
-    var
- : gboolean;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-gboolean  gdk_rgba_is_opaque (const GdkRGBA *rgba) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
-(* error 
-guint     gdk_rgba_hash      (gconstpointer  p) G_GNUC_PURE;
- in declarator_list *)
- : guint;
-(* error 
-                              gconstpointer  p2) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
-(* Const before type ignored *)
+  function gdk_rgba_is_opaque(rgba:PGdkRGBA):gboolean;
 
+  { Zeile entfernt  }
+  function gdk_rgba_hash(p:gconstpointer):guint;
+
+  { Zeile entfernt  }
+  function gdk_rgba_equal(p1:gconstpointer; p2:gconstpointer):gboolean;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
   function gdk_rgba_parse(rgba:PGdkRGBA; spec:Pchar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
 char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
@@ -92,6 +86,7 @@ char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
 
     var
  : char;
+  { Zeile entfernt  }
 {$endif}
   { __GDK_RGBA_H__  }
   { was #define dname def_expr }
@@ -100,11 +95,31 @@ char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
       GDK_TYPE_RGBA:=gdk_rgba_get_type;
     end;
 
+  function gdk_rgba_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_rgba_copy(rgba:PGdkRGBA):PGdkRGBA;
   begin
     { You must implement this function }
   end;
   procedure gdk_rgba_free(rgba:PGdkRGBA);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_rgba_is_clear(rgba:PGdkRGBA):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_rgba_is_opaque(rgba:PGdkRGBA):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_rgba_hash(p:gconstpointer):guint;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_rgba_equal(p1:gconstpointer; p2:gconstpointer):gboolean;
   begin
     { You must implement this function }
   end;

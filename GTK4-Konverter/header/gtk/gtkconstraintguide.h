@@ -23,51 +23,51 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypebuiltins.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CONSTRAINT_GUIDE (gtk_constraint_guide_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkConstraintGuide, gtk_constraint_guide, GTK, CONSTRAINT_GUIDE, GObject)
-
-
+/* Zeile entfernt */
 GtkConstraintGuide *    gtk_constraint_guide_new                (void);
 
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_set_min_size       (GtkConstraintGuide *guide,
                                                                  int                 width,
                                                                  int                 height);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_get_min_size       (GtkConstraintGuide *guide,
                                                                  int                *width,
                                                                  int                *height);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_set_nat_size       (GtkConstraintGuide *guide,
                                                                  int                 width,
                                                                  int                 height);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_get_nat_size       (GtkConstraintGuide *guide,
                                                                  int                *width,
                                                                  int                *height);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_set_max_size       (GtkConstraintGuide *guide,
                                                                  int                 width,
                                                                  int                 height);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_get_max_size       (GtkConstraintGuide *guide,
                                                                  int                *width,
                                                                  int                *height);
 
-
+/* Zeile entfernt */
 GtkConstraintStrength   gtk_constraint_guide_get_strength       (GtkConstraintGuide *guide);
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_set_strength       (GtkConstraintGuide    *guide,
                                                                  GtkConstraintStrength  strength);
 
-
+/* Zeile entfernt */
 void                    gtk_constraint_guide_set_name           (GtkConstraintGuide *guide,
                                                                  const char         *name);
-
+/* Zeile entfernt */
 const char *            gtk_constraint_guide_get_name           (GtkConstraintGuide *guide);
 
-
+/* Zeile entfernt */

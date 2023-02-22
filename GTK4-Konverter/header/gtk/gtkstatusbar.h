@@ -32,7 +32,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STATUSBAR            (gtk_statusbar_get_type ())
 #define GTK_STATUSBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STATUSBAR, GtkStatusbar))
@@ -40,28 +40,28 @@
 
 typedef struct _GtkStatusbar GtkStatusbar;
 
-
-GType      gtk_statusbar_get_type     	(void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_statusbar_get_type     	(void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_statusbar_new          	(void);
-
+/* Zeile entfernt */
 guint	   gtk_statusbar_get_context_id	(GtkStatusbar *statusbar,
 					 const char   *context_description);
-
+/* Zeile entfernt */
 guint      gtk_statusbar_push          	(GtkStatusbar *statusbar,
 					 guint	       context_id,
 					 const char   *text);
-
+/* Zeile entfernt */
 void       gtk_statusbar_pop          	(GtkStatusbar *statusbar,
 					 guint	       context_id);
-
+/* Zeile entfernt */
 void       gtk_statusbar_remove        	(GtkStatusbar *statusbar,
 					 guint	       context_id,
 					 guint         message_id);
-
+/* Zeile entfernt */
 void       gtk_statusbar_remove_all    	(GtkStatusbar *statusbar,
 					 guint	       context_id);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STATUSBAR_H__ */

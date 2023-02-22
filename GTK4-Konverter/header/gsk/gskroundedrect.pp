@@ -1,5 +1,6 @@
 
     Type
+    Pgraphene_point_t  = ^graphene_point_t;
     Pgraphene_rect_t  = ^graphene_rect_t;
     Pgraphene_size_t  = ^graphene_size_t;
     PGskRoundedRect  = ^GskRoundedRect;
@@ -31,6 +32,7 @@
 {$error "Only <gsk/gsk.h> can be included directly."}
 {$endif}
 {$include <gsk/gsktypes.h>}
+  { Zeile entfernt  }
   {*
    * GSK_ROUNDED_RECT_INIT:
    * @_x: the X coordinate of the origin
@@ -52,6 +54,7 @@ in define line 46 *)
           corner : array[0..3] of graphene_size_t;
         end;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
@@ -61,43 +64,43 @@ in define line 46 *)
     function gsk_rounded_rect_init(self:PGskRoundedRect; bounds:Pgraphene_rect_t; top_left:Pgraphene_size_t; top_right:Pgraphene_size_t; bottom_right:Pgraphene_size_t; 
                bottom_left:Pgraphene_size_t):^GskRoundedRect;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gsk_rounded_rect_init_copy(self:PGskRoundedRect; src:PGskRoundedRect):^GskRoundedRect;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gsk_rounded_rect_init_from_rect(self:PGskRoundedRect; bounds:Pgraphene_rect_t; radius:single):^GskRoundedRect;
 
+    { Zeile entfernt  }
     function gsk_rounded_rect_normalize(self:PGskRoundedRect):^GskRoundedRect;
 
+    { Zeile entfernt  }
     function gsk_rounded_rect_offset(self:PGskRoundedRect; dx:single; dy:single):^GskRoundedRect;
 
+    { Zeile entfernt  }
     function gsk_rounded_rect_shrink(self:PGskRoundedRect; top:single; right:single; bottom:single; left:single):^GskRoundedRect;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-gboolean                gsk_rounded_rect_is_rectilinear         (const GskRoundedRect     *self) G_GNUC_PURE;
- in declarator_list *)
+    function gsk_rounded_rect_is_rectilinear(self:PGskRoundedRect):gboolean;
 
-      var
- : gboolean;
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                 const graphene_point_t   *point) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
+    function gsk_rounded_rect_contains_point(self:PGskRoundedRect; point:Pgraphene_point_t):gboolean;
+
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                 const graphene_rect_t    *rect) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
+    function gsk_rounded_rect_contains_rect(self:PGskRoundedRect; rect:Pgraphene_rect_t):gboolean;
+
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                 const graphene_rect_t    *rect) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
+    function gsk_rounded_rect_intersects_rect(self:PGskRoundedRect; rect:Pgraphene_rect_t):gboolean;
+
+    { Zeile entfernt  }
 {$endif}
     { __GSK_ROUNDED_RECT_H__  }
     function gsk_rounded_rect_init(self:PGskRoundedRect; bounds:Pgraphene_rect_t; top_left:Pgraphene_size_t; top_right:Pgraphene_size_t; bottom_right:Pgraphene_size_t; 
@@ -122,6 +125,22 @@ gboolean                gsk_rounded_rect_is_rectilinear         (const GskRounde
       { You must implement this function }
     end;
     function gsk_rounded_rect_shrink(self:PGskRoundedRect; top:single; right:single; bottom:single; left:single):PGskRoundedRect;
+    begin
+      { You must implement this function }
+    end;
+    function gsk_rounded_rect_is_rectilinear(self:PGskRoundedRect):gboolean;
+    begin
+      { You must implement this function }
+    end;
+    function gsk_rounded_rect_contains_point(self:PGskRoundedRect; point:Pgraphene_point_t):gboolean;
+    begin
+      { You must implement this function }
+    end;
+    function gsk_rounded_rect_contains_rect(self:PGskRoundedRect; rect:Pgraphene_rect_t):gboolean;
+    begin
+      { You must implement this function }
+    end;
+    function gsk_rounded_rect_intersects_rect(self:PGskRoundedRect; rect:Pgraphene_rect_t):gboolean;
     begin
       { You must implement this function }
     end;

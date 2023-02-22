@@ -35,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwindow.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TOOLTIP : longint; { return type might be wrong }
@@ -49,26 +50,35 @@
   { return type might be wrong }   
   function GTK_IS_TOOLTIP(obj : longint) : longint;  
 
+  { Zeile entfernt  }
   function gtk_tooltip_get_type:GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tooltip_set_markup(tooltip:PGtkTooltip; markup:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tooltip_set_text(tooltip:PGtkTooltip; text:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_tooltip_set_icon(tooltip:PGtkTooltip; paintable:PGdkPaintable);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tooltip_set_icon_from_icon_name(tooltip:PGtkTooltip; icon_name:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_tooltip_set_icon_from_gicon(tooltip:PGtkTooltip; gicon:PGIcon);
 
+  { Zeile entfernt  }
   procedure gtk_tooltip_set_custom(tooltip:PGtkTooltip; custom_widget:PGtkWidget);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tooltip_set_tip_area(tooltip:PGtkTooltip; rect:PGdkRectangle);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TOOLTIP_H__  }
   { was #define dname def_expr }

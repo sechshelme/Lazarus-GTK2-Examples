@@ -2,6 +2,7 @@
   Type
   PGskTransform  = ^GskTransform;
   PGtkFixedLayoutChild  = ^GtkFixedLayoutChild;
+  PGtkLayoutManager  = ^GtkLayoutManager;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -28,6 +29,7 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FIXED_LAYOUT : longint; { return type might be wrong }
@@ -36,24 +38,21 @@
   function GTK_TYPE_FIXED_LAYOUT_CHILD : longint; { return type might be wrong }
 
   { GtkFixedLayout  }
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFixedLayout, gtk_fixed_layout, GTK, FIXED_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFixedLayout, gtk_fixed_layout, GTK, FIXED_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_fixed_layout_new:^GtkLayoutManager;
+
   { GtkFixedLayoutChild  }
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild)
-(* error 
-                                                         GskTransform        *transform);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gtk_fixed_layout_child_set_transform(child:PGtkFixedLayoutChild; transform:PGskTransform);
+
+  { Zeile entfernt  }
   function gtk_fixed_layout_child_get_transform(child:PGtkFixedLayoutChild):^GskTransform;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FIXED_LAYOUT : longint; { return type might be wrong }
     begin
@@ -66,6 +65,14 @@ G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LA
       GTK_TYPE_FIXED_LAYOUT_CHILD:=gtk_fixed_layout_child_get_type;
     end;
 
+  function gtk_fixed_layout_new:PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_fixed_layout_child_set_transform(child:PGtkFixedLayoutChild; transform:PGskTransform);
+  begin
+    { You must implement this function }
+  end;
   function gtk_fixed_layout_child_get_transform(child:PGtkFixedLayoutChild):PGskTransform;
   begin
     { You must implement this function }

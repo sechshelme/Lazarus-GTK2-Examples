@@ -32,7 +32,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SWITCH                 (gtk_switch_get_type ())
 #define GTK_SWITCH(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SWITCH, GtkSwitch))
@@ -41,24 +41,24 @@
 typedef struct _GtkSwitch               GtkSwitch;
 
 
+/* Zeile entfernt */
+GType gtk_switch_get_type (void) ;
 
-GType gtk_switch_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_switch_new          (void);
 
-
+/* Zeile entfernt */
 void            gtk_switch_set_active   (GtkSwitch *self,
                                          gboolean   is_active);
-
+/* Zeile entfernt */
 gboolean        gtk_switch_get_active   (GtkSwitch *self);
 
-
+/* Zeile entfernt */
 void            gtk_switch_set_state   (GtkSwitch *self,
                                         gboolean   state);
-
+/* Zeile entfernt */
 gboolean        gtk_switch_get_state   (GtkSwitch *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SWITCH_H__ */

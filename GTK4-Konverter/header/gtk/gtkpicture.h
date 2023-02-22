@@ -29,43 +29,43 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PICTURE (gtk_picture_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkPicture, gtk_picture, GTK, PICTURE, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new                         (void);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new_for_paintable           (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new_for_pixbuf              (GdkPixbuf              *pixbuf);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new_for_file                (GFile                  *file);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new_for_filename            (const char             *filename);
-
+/* Zeile entfernt */
 GtkWidget*      gtk_picture_new_for_resource            (const char             *resource_path);
 
-
+/* Zeile entfernt */
 void            gtk_picture_set_paintable               (GtkPicture             *self,
                                                          GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 GdkPaintable *  gtk_picture_get_paintable               (GtkPicture             *self);
-
+/* Zeile entfernt */
 void            gtk_picture_set_file                    (GtkPicture             *self,
                                                          GFile                  *file);
-
+/* Zeile entfernt */
 GFile *         gtk_picture_get_file                    (GtkPicture             *self);
-
+/* Zeile entfernt */
 void            gtk_picture_set_filename                (GtkPicture             *self,
                                                          const char             *filename);
-
+/* Zeile entfernt */
 void            gtk_picture_set_resource                (GtkPicture             *self,
                                                          const char             *resource_path);
-
+/* Zeile entfernt */
 void            gtk_picture_set_pixbuf                  (GtkPicture             *self,
                                                          GdkPixbuf              *pixbuf);
 
@@ -74,10 +74,10 @@ void            gtk_picture_set_keep_aspect_ratio       (GtkPicture             
                                                          gboolean                keep_aspect_ratio);
 GDK_DEPRECATED_IN_4_8_FOR(gtk_picture_get_content_fit)
 gboolean        gtk_picture_get_keep_aspect_ratio       (GtkPicture             *self);
-
+/* Zeile entfernt */
 void            gtk_picture_set_can_shrink              (GtkPicture             *self,
                                                          gboolean                can_shrink);
-
+/* Zeile entfernt */
 gboolean        gtk_picture_get_can_shrink              (GtkPicture             *self);
 
 GDK_AVAILABLE_IN_4_8
@@ -86,13 +86,13 @@ void            gtk_picture_set_content_fit             (GtkPicture             
 GDK_AVAILABLE_IN_4_8
 GtkContentFit   gtk_picture_get_content_fit             (GtkPicture             *self);
 
-
+/* Zeile entfernt */
 void            gtk_picture_set_alternative_text        (GtkPicture             *self,
                                                          const char             *alternative_text);
-
+/* Zeile entfernt */
 const char *    gtk_picture_get_alternative_text        (GtkPicture             *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PICTURE_H__ */

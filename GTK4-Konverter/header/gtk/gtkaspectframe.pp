@@ -35,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ASPECT_FRAME : longint; { return type might be wrong }
@@ -52,35 +53,44 @@
 
   type
     _GtkAspectFrame = GtkAspectFrame;
-(* error 
-GType      gtk_aspect_frame_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_aspect_frame_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_new(xalign:single; yalign:single; ratio:single; obey_child:gboolean):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_aspect_frame_set_xalign(self:PGtkAspectFrame; xalign:single);
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_get_xalign(self:PGtkAspectFrame):single;
 
+  { Zeile entfernt  }
   procedure gtk_aspect_frame_set_yalign(self:PGtkAspectFrame; yalign:single);
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_get_yalign(self:PGtkAspectFrame):single;
 
+  { Zeile entfernt  }
   procedure gtk_aspect_frame_set_ratio(self:PGtkAspectFrame; ratio:single);
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_get_ratio(self:PGtkAspectFrame):single;
 
+  { Zeile entfernt  }
   procedure gtk_aspect_frame_set_obey_child(self:PGtkAspectFrame; obey_child:gboolean);
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_get_obey_child(self:PGtkAspectFrame):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_aspect_frame_set_child(self:PGtkAspectFrame; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_aspect_frame_get_child(self:PGtkAspectFrame):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ASPECT_FRAME_H__  }
   { was #define dname def_expr }
@@ -105,6 +115,10 @@ GType      gtk_aspect_frame_get_type   (void) G_GNUC_CONST;
     GTK_IS_ASPECT_FRAME:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_ASPECT_FRAME);
   end;
 
+  function gtk_aspect_frame_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_aspect_frame_new(xalign:single; yalign:single; ratio:single; obey_child:gboolean):PGtkWidget;
   begin
     { You must implement this function }

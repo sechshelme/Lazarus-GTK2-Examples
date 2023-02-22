@@ -32,7 +32,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BUTTON                 (gtk_button_get_type ())
 #define GTK_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUTTON, GtkButton))
@@ -74,45 +74,45 @@ struct _GtkButtonClass
 };
 
 
-
-GType          gtk_button_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType          gtk_button_get_type          (void) ;
+/* Zeile entfernt */
 GtkWidget*     gtk_button_new               (void);
-
+/* Zeile entfernt */
 GtkWidget*     gtk_button_new_with_label    (const char     *label);
-
+/* Zeile entfernt */
 GtkWidget*     gtk_button_new_from_icon_name (const char     *icon_name);
-
+/* Zeile entfernt */
 GtkWidget*     gtk_button_new_with_mnemonic (const char     *label);
 
-
+/* Zeile entfernt */
 void                  gtk_button_set_has_frame      (GtkButton      *button,
 						     gboolean        has_frame);
-
+/* Zeile entfernt */
 gboolean              gtk_button_get_has_frame      (GtkButton      *button);
-
+/* Zeile entfernt */
 void                  gtk_button_set_label          (GtkButton      *button,
 						     const char     *label);
-
+/* Zeile entfernt */
 const char *         gtk_button_get_label          (GtkButton      *button);
-
+/* Zeile entfernt */
 void                  gtk_button_set_use_underline  (GtkButton      *button,
 						     gboolean        use_underline);
-
+/* Zeile entfernt */
 gboolean              gtk_button_get_use_underline  (GtkButton      *button);
 
-
+/* Zeile entfernt */
 void                  gtk_button_set_icon_name      (GtkButton      *button,
                                                      const char     *icon_name);
-
+/* Zeile entfernt */
 const char *          gtk_button_get_icon_name      (GtkButton      *button);
 
-
+/* Zeile entfernt */
 void                  gtk_button_set_child          (GtkButton      *button,
                                                      GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_button_get_child          (GtkButton      *button);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BUTTON_H__ */

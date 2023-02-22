@@ -28,20 +28,23 @@
 {$ifndef __GTK_NO_SELECTION_H__}
 {$define __GTK_NO_SELECTION_H__}  
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_NO_SELECTION : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkNoSelection, gtk_no_selection, GTK, NO_SELECTION, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkNoSelection, gtk_no_selection, GTK, NO_SELECTION, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_no_selection_new(model:PGListModel):^GtkNoSelection;
+
+  { Zeile entfernt  }
   function gtk_no_selection_get_model(self:PGtkNoSelection):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_no_selection_set_model(self:PGtkNoSelection; model:PGListModel);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_NO_SELECTION_H__  }
   { was #define dname def_expr }
@@ -50,6 +53,10 @@ G_DECLARE_FINAL_TYPE (GtkNoSelection, gtk_no_selection, GTK, NO_SELECTION, GObje
       GTK_TYPE_NO_SELECTION:=gtk_no_selection_get_type;
     end;
 
+  function gtk_no_selection_new(model:PGListModel):PGtkNoSelection;
+  begin
+    { You must implement this function }
+  end;
   function gtk_no_selection_get_model(self:PGtkNoSelection):PGListModel;
   begin
     { You must implement this function }

@@ -32,34 +32,35 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SLICE_LIST_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_MODEL, GObject)
-(* error 
-                                                                 guint                   offset,
-(* error 
-                                                                 guint                   size);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_slice_list_model_new(model:PGListModel; offset:guint; size:guint):^GtkSliceListModel;
+
+  { Zeile entfernt  }
   procedure gtk_slice_list_model_set_model(self:PGtkSliceListModel; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_slice_list_model_get_model(self:PGtkSliceListModel):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_slice_list_model_set_offset(self:PGtkSliceListModel; offset:guint);
 
+  { Zeile entfernt  }
   function gtk_slice_list_model_get_offset(self:PGtkSliceListModel):guint;
 
+  { Zeile entfernt  }
   procedure gtk_slice_list_model_set_size(self:PGtkSliceListModel; size:guint);
 
+  { Zeile entfernt  }
   function gtk_slice_list_model_get_size(self:PGtkSliceListModel):guint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SLICE_LIST_MODEL_H__  }
   { was #define dname def_expr }
@@ -68,6 +69,10 @@ G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_M
       GTK_TYPE_SLICE_LIST_MODEL:=gtk_slice_list_model_get_type;
     end;
 
+  function gtk_slice_list_model_new(model:PGListModel; offset:guint; size:guint):PGtkSliceListModel;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_slice_list_model_set_model(self:PGtkSliceListModel; model:PGListModel);
   begin
     { You must implement this function }

@@ -34,34 +34,34 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 int      gdk_x11_display_text_property_to_text_list (GdkDisplay   *display,
                                                      const char   *encoding,
                                                      int           format,
                                                      const guchar *text,
                                                      int           length,
                                                      char       ***list);
-
+/* Zeile entfernt */
 void     gdk_x11_free_text_list                     (char        **list);
-
+/* Zeile entfernt */
 int      gdk_x11_display_string_to_compound_text    (GdkDisplay   *display,
                                                      const char   *str,
                                                      const char  **encoding,
                                                      int          *format,
                                                      guchar      **ctext,
                                                      int          *length);
-
+/* Zeile entfernt */
 gboolean gdk_x11_display_utf8_to_compound_text      (GdkDisplay   *display,
                                                      const char   *str,
                                                      const char  **encoding,
                                                      int          *format,
                                                      guchar      **ctext,
                                                      int          *length);
-
+/* Zeile entfernt */
 void     gdk_x11_free_compound_text                 (guchar       *ctext);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_SELECTION_H__ */

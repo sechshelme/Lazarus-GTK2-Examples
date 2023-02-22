@@ -1,11 +1,11 @@
 
-    Type
-    PGList  = ^GList;
-    PGListModel  = ^GListModel;
-    PGtkAdjustment  = ^GtkAdjustment;
-    PGtkFlowBox  = ^GtkFlowBox;
-    PGtkFlowBoxChild  = ^GtkFlowBoxChild;
-    PGtkWidget  = ^GtkWidget;
+  Type
+  PGList  = ^GList;
+  PGListModel  = ^GListModel;
+  PGtkAdjustment  = ^GtkAdjustment;
+  PGtkFlowBox  = ^GtkFlowBox;
+  PGtkFlowBoxChild  = ^GtkFlowBoxChild;
+  PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -40,6 +40,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FLOW_BOX : longint; { return type might be wrong }
@@ -117,119 +118,151 @@
     }
 
     GtkFlowBoxCreateWidgetFunc = function (item:gpointer; user_data:gpointer):PGtkWidget;cdecl;
-(* error 
-GType                 gtk_flow_box_child_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_flow_box_child_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_flow_box_child_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_child_set_child(self:PGtkFlowBoxChild; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_flow_box_child_get_child(self:PGtkFlowBoxChild):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_flow_box_child_get_index(child:PGtkFlowBoxChild):longint;
 
+  { Zeile entfernt  }
   function gtk_flow_box_child_is_selected(child:PGtkFlowBoxChild):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_child_changed(child:PGtkFlowBoxChild);
 
-(* error 
-GType                 gtk_flow_box_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_flow_box_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_flow_box_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_bind_model(box:PGtkFlowBox; model:PGListModel; create_widget_func:GtkFlowBoxCreateWidgetFunc; user_data:gpointer; user_data_free_func:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_homogeneous(box:PGtkFlowBox; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_homogeneous(box:PGtkFlowBox):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_row_spacing(box:PGtkFlowBox; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_row_spacing(box:PGtkFlowBox):guint;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_column_spacing(box:PGtkFlowBox; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_column_spacing(box:PGtkFlowBox):guint;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_min_children_per_line(box:PGtkFlowBox; n_children:guint);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_min_children_per_line(box:PGtkFlowBox):guint;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_max_children_per_line(box:PGtkFlowBox; n_children:guint);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_max_children_per_line(box:PGtkFlowBox):guint;
 
+  { Zeile entfernt  }
   procedure gtk_flow_box_set_activate_on_single_click(box:PGtkFlowBox; single:gboolean);
 
+  { Zeile entfernt  }
   function gtk_flow_box_get_activate_on_single_click(box:PGtkFlowBox):gboolean;
 
-(* error 
-void                  gtk_flow_box_prepend                      (GtkFlowBox        *self,
-in declaration at line 152 *)
-(* error 
-void                  gtk_flow_box_append                       (GtkFlowBox        *self,
-in declaration at line 155 *)
-    procedure gtk_flow_box_insert(box:PGtkFlowBox; widget:PGtkWidget; position:longint);
+  { Zeile entfernt  }
+  procedure gtk_flow_box_prepend(self:PGtkFlowBox; child:PGtkWidget);
 
-    procedure gtk_flow_box_remove(box:PGtkFlowBox; widget:PGtkWidget);
+  { Zeile entfernt  }
+  procedure gtk_flow_box_append(self:PGtkFlowBox; child:PGtkWidget);
 
-    function gtk_flow_box_get_child_at_index(box:PGtkFlowBox; idx:longint):^GtkFlowBoxChild;
+  { Zeile entfernt  }
+  procedure gtk_flow_box_insert(box:PGtkFlowBox; widget:PGtkWidget; position:longint);
 
-    function gtk_flow_box_get_child_at_pos(box:PGtkFlowBox; x:longint; y:longint):^GtkFlowBoxChild;
+  { Zeile entfernt  }
+  procedure gtk_flow_box_remove(box:PGtkFlowBox; widget:PGtkWidget);
 
+  { Zeile entfernt  }
+  function gtk_flow_box_get_child_at_index(box:PGtkFlowBox; idx:longint):^GtkFlowBoxChild;
 
-    type
-
-      GtkFlowBoxForeachFunc = procedure (box:PGtkFlowBox; child:PGtkFlowBoxChild; user_data:gpointer);cdecl;
-
-    procedure gtk_flow_box_selected_foreach(box:PGtkFlowBox; func:GtkFlowBoxForeachFunc; data:gpointer);
-
-    function gtk_flow_box_get_selected_children(box:PGtkFlowBox):^GList;
-
-    procedure gtk_flow_box_select_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
-
-    procedure gtk_flow_box_unselect_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
-
-    procedure gtk_flow_box_select_all(box:PGtkFlowBox);
-
-    procedure gtk_flow_box_unselect_all(box:PGtkFlowBox);
-
-    procedure gtk_flow_box_set_selection_mode(box:PGtkFlowBox; mode:GtkSelectionMode);
-
-    function gtk_flow_box_get_selection_mode(box:PGtkFlowBox):GtkSelectionMode;
-
-    procedure gtk_flow_box_set_hadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
-
-    procedure gtk_flow_box_set_vadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
+  { Zeile entfernt  }
+  function gtk_flow_box_get_child_at_pos(box:PGtkFlowBox; x:longint; y:longint):^GtkFlowBoxChild;
 
 
-    type
+  type
 
-      GtkFlowBoxFilterFunc = function (child:PGtkFlowBoxChild; user_data:gpointer):gboolean;cdecl;
+    GtkFlowBoxForeachFunc = procedure (box:PGtkFlowBox; child:PGtkFlowBoxChild; user_data:gpointer);cdecl;
+  { Zeile entfernt  }
 
-    procedure gtk_flow_box_set_filter_func(box:PGtkFlowBox; filter_func:GtkFlowBoxFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
+  procedure gtk_flow_box_selected_foreach(box:PGtkFlowBox; func:GtkFlowBoxForeachFunc; data:gpointer);
 
-    procedure gtk_flow_box_invalidate_filter(box:PGtkFlowBox);
+  { Zeile entfernt  }
+  function gtk_flow_box_get_selected_children(box:PGtkFlowBox):^GList;
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_select_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_unselect_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_select_all(box:PGtkFlowBox);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_unselect_all(box:PGtkFlowBox);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_set_selection_mode(box:PGtkFlowBox; mode:GtkSelectionMode);
+
+  { Zeile entfernt  }
+  function gtk_flow_box_get_selection_mode(box:PGtkFlowBox):GtkSelectionMode;
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_set_hadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_set_vadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
 
 
-    type
+  type
 
-      GtkFlowBoxSortFunc = function (child1:PGtkFlowBoxChild; child2:PGtkFlowBoxChild; user_data:gpointer):longint;cdecl;
+    GtkFlowBoxFilterFunc = function (child:PGtkFlowBoxChild; user_data:gpointer):gboolean;cdecl;
+  { Zeile entfernt  }
 
-    procedure gtk_flow_box_set_sort_func(box:PGtkFlowBox; sort_func:GtkFlowBoxSortFunc; user_data:gpointer; destroy:GDestroyNotify);
+  procedure gtk_flow_box_set_filter_func(box:PGtkFlowBox; filter_func:GtkFlowBoxFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
 
-    procedure gtk_flow_box_invalidate_sort(box:PGtkFlowBox);
+  { Zeile entfernt  }
+  procedure gtk_flow_box_invalidate_filter(box:PGtkFlowBox);
 
+
+  type
+
+    GtkFlowBoxSortFunc = function (child1:PGtkFlowBoxChild; child2:PGtkFlowBoxChild; user_data:gpointer):longint;cdecl;
+  { Zeile entfernt  }
+
+  procedure gtk_flow_box_set_sort_func(box:PGtkFlowBox; sort_func:GtkFlowBoxSortFunc; user_data:gpointer; destroy:GDestroyNotify);
+
+  { Zeile entfernt  }
+  procedure gtk_flow_box_invalidate_sort(box:PGtkFlowBox);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_FLOW_BOX_H__  }
+  { __GTK_FLOW_BOX_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_FLOW_BOX : longint; { return type might be wrong }
     begin
@@ -298,6 +331,10 @@ in declaration at line 155 *)
     GTK_FLOW_BOX_CHILD_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,EG_TYPE_FLOW_BOX_CHILD,GtkFlowBoxChildClass);
   end;
 
+  function gtk_flow_box_child_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_flow_box_child_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -319,6 +356,10 @@ in declaration at line 155 *)
     { You must implement this function }
   end;
   procedure gtk_flow_box_child_changed(child:PGtkFlowBoxChild);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_flow_box_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -378,76 +419,84 @@ in declaration at line 155 *)
   begin
     { You must implement this function }
   end;
-    procedure gtk_flow_box_insert(box:PGtkFlowBox; widget:PGtkWidget; position:longint);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_remove(box:PGtkFlowBox; widget:PGtkWidget);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_flow_box_get_child_at_index(box:PGtkFlowBox; idx:longint):PGtkFlowBoxChild;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_flow_box_get_child_at_pos(box:PGtkFlowBox; x:longint; y:longint):PGtkFlowBoxChild;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_selected_foreach(box:PGtkFlowBox; func:GtkFlowBoxForeachFunc; data:gpointer);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_flow_box_get_selected_children(box:PGtkFlowBox):PGList;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_select_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_unselect_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_select_all(box:PGtkFlowBox);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_unselect_all(box:PGtkFlowBox);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_set_selection_mode(box:PGtkFlowBox; mode:GtkSelectionMode);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_flow_box_get_selection_mode(box:PGtkFlowBox):GtkSelectionMode;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_set_hadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_set_vadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_set_filter_func(box:PGtkFlowBox; filter_func:GtkFlowBoxFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_invalidate_filter(box:PGtkFlowBox);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_set_sort_func(box:PGtkFlowBox; sort_func:GtkFlowBoxSortFunc; user_data:gpointer; destroy:GDestroyNotify);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_flow_box_invalidate_sort(box:PGtkFlowBox);
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_flow_box_prepend(self:PGtkFlowBox; child:PGtkWidget);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_append(self:PGtkFlowBox; child:PGtkWidget);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_insert(box:PGtkFlowBox; widget:PGtkWidget; position:longint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_remove(box:PGtkFlowBox; widget:PGtkWidget);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_flow_box_get_child_at_index(box:PGtkFlowBox; idx:longint):PGtkFlowBoxChild;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_flow_box_get_child_at_pos(box:PGtkFlowBox; x:longint; y:longint):PGtkFlowBoxChild;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_selected_foreach(box:PGtkFlowBox; func:GtkFlowBoxForeachFunc; data:gpointer);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_flow_box_get_selected_children(box:PGtkFlowBox):PGList;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_select_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_unselect_child(box:PGtkFlowBox; child:PGtkFlowBoxChild);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_select_all(box:PGtkFlowBox);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_unselect_all(box:PGtkFlowBox);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_set_selection_mode(box:PGtkFlowBox; mode:GtkSelectionMode);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_flow_box_get_selection_mode(box:PGtkFlowBox):GtkSelectionMode;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_set_hadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_set_vadjustment(box:PGtkFlowBox; adjustment:PGtkAdjustment);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_set_filter_func(box:PGtkFlowBox; filter_func:GtkFlowBoxFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_invalidate_filter(box:PGtkFlowBox);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_set_sort_func(box:PGtkFlowBox; sort_func:GtkFlowBoxSortFunc; user_data:gpointer; destroy:GDestroyNotify);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_flow_box_invalidate_sort(box:PGtkFlowBox);
+  begin
+    { You must implement this function }
+  end;
 

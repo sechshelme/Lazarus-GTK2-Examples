@@ -32,6 +32,7 @@
 {$error "Only <gdk/broadway/gdkbroadway.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_BROADWAY_CURSOR : longint; { return type might be wrong }
@@ -73,9 +74,11 @@
 
   type
     _GdkBroadwayCursorClass = GdkBroadwayCursorClass;
+  { Zeile entfernt  }
 
   function gdk_broadway_cursor_get_type:GType;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_BROADWAY_CURSOR_H__  }
   { was #define dname def_expr }

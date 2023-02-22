@@ -33,6 +33,7 @@
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkborder.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SCROLLABLE : longint; { return type might be wrong }
@@ -63,31 +64,38 @@
       end;
 
   { Public API  }
-(* error 
-GType                gtk_scrollable_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_scrollable_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_scrollable_get_hadjustment(scrollable:PGtkScrollable):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_scrollable_set_hadjustment(scrollable:PGtkScrollable; hadjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_scrollable_get_vadjustment(scrollable:PGtkScrollable):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_scrollable_set_vadjustment(scrollable:PGtkScrollable; vadjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_scrollable_get_hscroll_policy(scrollable:PGtkScrollable):GtkScrollablePolicy;
 
+  { Zeile entfernt  }
   procedure gtk_scrollable_set_hscroll_policy(scrollable:PGtkScrollable; policy:GtkScrollablePolicy);
 
+  { Zeile entfernt  }
   function gtk_scrollable_get_vscroll_policy(scrollable:PGtkScrollable):GtkScrollablePolicy;
 
+  { Zeile entfernt  }
   procedure gtk_scrollable_set_vscroll_policy(scrollable:PGtkScrollable; policy:GtkScrollablePolicy);
 
+  { Zeile entfernt  }
   function gtk_scrollable_get_border(scrollable:PGtkScrollable; border:PGtkBorder):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SCROLLABLE_H__  }
   { was #define dname def_expr }
@@ -120,6 +128,10 @@ GType                gtk_scrollable_get_type               (void) G_GNUC_CONST;
     GTK_SCROLLABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_SCROLLABLE,GtkScrollableInterface);
   end;
 
+  function gtk_scrollable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_scrollable_get_hadjustment(scrollable:PGtkScrollable):PGtkAdjustment;
   begin
     { You must implement this function }

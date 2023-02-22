@@ -28,6 +28,7 @@
 {$include <gsk/gskrenderer.h>}
 {$ifdef GDK_WINDOWING_BROADWAY}
 {$include <gdk/broadway/gdkbroadway.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_BROADWAY_RENDERER : longint; { return type might be wrong }
@@ -61,15 +62,14 @@
   type
     _GskBroadwayRenderer = GskBroadwayRenderer;
     _GskBroadwayRendererClass = GskBroadwayRendererClass;
-(* error 
-GType                   gsk_broadway_renderer_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gsk_broadway_renderer_get_type:GType;
 
+  { Zeile entfernt  }
   function gsk_broadway_renderer_new:^GskRenderer;
 
+  { Zeile entfernt  }
 {$endif}
   { GDK_WINDOWING_BROADWAY  }
 {$endif}
@@ -120,6 +120,10 @@ GType                   gsk_broadway_renderer_get_type          (void) G_GNUC_CO
     GSK_BROADWAY_RENDERER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GSK_TYPE_BROADWAY_RENDERER,GskBroadwayRendererClass);
   end;
 
+  function gsk_broadway_renderer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_broadway_renderer_new:PGskRenderer;
   begin
     { You must implement this function }

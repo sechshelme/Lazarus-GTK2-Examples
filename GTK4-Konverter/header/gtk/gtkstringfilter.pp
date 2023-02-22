@@ -33,6 +33,7 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtkfilter.h>}
+  { Zeile entfernt  }
   {*
    * GtkStringFilterMatchMode:
    * @GTK_STRING_FILTER_MATCH_MODE_EXACT: The search string and
@@ -53,30 +54,38 @@
   { was #define dname def_expr }
   function GTK_TYPE_STRING_FILTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, GtkFilter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, GtkFilter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_string_filter_new(expression:PGtkExpression):^GtkStringFilter;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_string_filter_get_search(self:PGtkStringFilter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_string_filter_set_search(self:PGtkStringFilter; search:Pchar);
 
+  { Zeile entfernt  }
   function gtk_string_filter_get_expression(self:PGtkStringFilter):^GtkExpression;
 
+  { Zeile entfernt  }
   procedure gtk_string_filter_set_expression(self:PGtkStringFilter; expression:PGtkExpression);
 
+  { Zeile entfernt  }
   function gtk_string_filter_get_ignore_case(self:PGtkStringFilter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_string_filter_set_ignore_case(self:PGtkStringFilter; ignore_case:gboolean);
 
+  { Zeile entfernt  }
   function gtk_string_filter_get_match_mode(self:PGtkStringFilter):GtkStringFilterMatchMode;
 
+  { Zeile entfernt  }
   procedure gtk_string_filter_set_match_mode(self:PGtkStringFilter; mode:GtkStringFilterMatchMode);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STRING_FILTER_H__  }
   { was #define dname def_expr }
@@ -85,6 +94,10 @@ G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, Gt
       GTK_TYPE_STRING_FILTER:=gtk_string_filter_get_type;
     end;
 
+  function gtk_string_filter_new(expression:PGtkExpression):PGtkStringFilter;
+  begin
+    { You must implement this function }
+  end;
   function gtk_string_filter_get_search(self:PGtkStringFilter):Pchar;
   begin
     { You must implement this function }

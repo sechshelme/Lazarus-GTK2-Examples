@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SCROLLED_WINDOW : longint; { return type might be wrong }
@@ -93,77 +94,107 @@
     GtkPolicyType = (GTK_POLICY_ALWAYS,GTK_POLICY_AUTOMATIC,
       GTK_POLICY_NEVER,GTK_POLICY_EXTERNAL
       );
-(* error 
-GType          gtk_scrolled_window_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_scrolled_window_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_hadjustment(scrolled_window:PGtkScrolledWindow; hadjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_vadjustment(scrolled_window:PGtkScrolledWindow; vadjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_hadjustment(scrolled_window:PGtkScrolledWindow):^GtkAdjustment;
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_vadjustment(scrolled_window:PGtkScrolledWindow):^GtkAdjustment;
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_hscrollbar(scrolled_window:PGtkScrolledWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_vscrollbar(scrolled_window:PGtkScrolledWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_policy(scrolled_window:PGtkScrolledWindow; hscrollbar_policy:GtkPolicyType; vscrollbar_policy:GtkPolicyType);
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_get_policy(scrolled_window:PGtkScrolledWindow; hscrollbar_policy:PGtkPolicyType; vscrollbar_policy:PGtkPolicyType);
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_placement(scrolled_window:PGtkScrolledWindow; window_placement:GtkCornerType);
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_unset_placement(scrolled_window:PGtkScrolledWindow);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_placement(scrolled_window:PGtkScrolledWindow):GtkCornerType;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_has_frame(scrolled_window:PGtkScrolledWindow; has_frame:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_has_frame(scrolled_window:PGtkScrolledWindow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_min_content_width(scrolled_window:PGtkScrolledWindow):longint;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_min_content_width(scrolled_window:PGtkScrolledWindow; width:longint);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_min_content_height(scrolled_window:PGtkScrolledWindow):longint;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_min_content_height(scrolled_window:PGtkScrolledWindow; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_kinetic_scrolling(scrolled_window:PGtkScrolledWindow; kinetic_scrolling:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_kinetic_scrolling(scrolled_window:PGtkScrolledWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_overlay_scrolling(scrolled_window:PGtkScrolledWindow; overlay_scrolling:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_overlay_scrolling(scrolled_window:PGtkScrolledWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_max_content_width(scrolled_window:PGtkScrolledWindow; width:longint);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_max_content_width(scrolled_window:PGtkScrolledWindow):longint;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_max_content_height(scrolled_window:PGtkScrolledWindow; height:longint);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_max_content_height(scrolled_window:PGtkScrolledWindow):longint;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_propagate_natural_width(scrolled_window:PGtkScrolledWindow; propagate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_propagate_natural_width(scrolled_window:PGtkScrolledWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_propagate_natural_height(scrolled_window:PGtkScrolledWindow; propagate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_propagate_natural_height(scrolled_window:PGtkScrolledWindow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_scrolled_window_set_child(scrolled_window:PGtkScrolledWindow; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_scrolled_window_get_child(scrolled_window:PGtkScrolledWindow):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SCROLLED_WINDOW_H__  }
   { was #define dname def_expr }
@@ -188,6 +219,10 @@ GType          gtk_scrolled_window_get_type          (void) G_GNUC_CONST;
     GTK_IS_SCROLLED_WINDOW:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SCROLLED_WINDOW);
   end;
 
+  function gtk_scrolled_window_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_scrolled_window_new:PGtkWidget;
   begin
     { You must implement this function }

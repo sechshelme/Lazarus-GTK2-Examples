@@ -28,6 +28,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_INSCRIPTION : longint; { return type might be wrong }
@@ -50,12 +51,10 @@
       GTK_INSCRIPTION_OVERFLOW_ELLIPSIZE_MIDDLE,
       GTK_INSCRIPTION_OVERFLOW_ELLIPSIZE_END
       );
+  { Zeile entfernt  }
 (* error 
-GDK_AVAILABLE_IN_4_8
+GtkWidget *             gtk_inscription_new                     (const char             *text);
  in declarator_list *)
-
-    var
- : GDK_AVAILABLE_IN_4_8;
 (* error 
 const char *            gtk_inscription_get_text                (GtkInscription         *self);
  in declarator_list *)
@@ -119,6 +118,7 @@ in declaration at line 109 *)
 (* error 
 void                    gtk_inscription_set_yalign              (GtkInscription         *self,
 in declaration at line 112 *)
+    { Zeile entfernt  }
 {$endif}
     { __GTK_INSCRIPTION_H__  }
   { was #define dname def_expr }

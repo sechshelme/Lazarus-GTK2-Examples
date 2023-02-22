@@ -1,7 +1,7 @@
 
-    Type
-    PGtkShortcutController  = ^GtkShortcutController;
-    PGtkShortcutManager  = ^GtkShortcutManager;
+  Type
+  PGtkShortcutController  = ^GtkShortcutController;
+  PGtkShortcutManager  = ^GtkShortcutManager;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -32,15 +32,13 @@
 {$endif}
 {$include <gtk/gtkshortcutcontroller.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_MANAGER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MANAGER, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MANAGER, GtkWidget)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkShortcutManagerInterface:
    * @add_controller: Add a `GtkShortcutController` to be managed.
@@ -53,21 +51,19 @@ G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MAN
    * Note that no function is mandatory to implement, the default implementation
    * will work fine.
     }
- in declarator_list *)
   {< private > }
-(* error 
-  GTypeInterface g_iface;
- in declarator_list *)
   {< public > }
 
-    var
-      add_controller : procedure (self:PGtkShortcutManager; controller:PGtkShortcutController);cvar;public;
-      remove_controller : procedure (self:PGtkShortcutManager; controller:PGtkShortcutController);cvar;public;
-(* error 
-};
-in declaration at line 59 *)
+  type
+    _GtkShortcutManagerInterface = record
+        g_iface : GTypeInterface;
+        add_controller : procedure (self:PGtkShortcutManager; controller:PGtkShortcutController);cdecl;
+        remove_controller : procedure (self:PGtkShortcutManager; controller:PGtkShortcutController);cdecl;
+      end;
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_SHORTCUT_MANAGER_H__  }
+  { __GTK_SHORTCUT_MANAGER_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_MANAGER : longint; { return type might be wrong }
     begin

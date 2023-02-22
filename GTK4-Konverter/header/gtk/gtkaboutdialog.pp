@@ -4,6 +4,7 @@
   PGdkPaintable  = ^GdkPaintable;
   PGtkAboutDialog  = ^GtkAboutDialog;
   PGtkWidget  = ^GtkWidget;
+  PGtkWindow  = ^GtkWindow;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -36,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwindow.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ABOUT_DIALOG : longint; { return type might be wrong }
@@ -89,124 +91,149 @@
       GTK_LICENSE_AGPL_3_0,GTK_LICENSE_AGPL_3_0_ONLY,
       GTK_LICENSE_BSD_3,GTK_LICENSE_APACHE_2_0,
       GTK_LICENSE_MPL_2_0);
-(* error 
-GType                  gtk_about_dialog_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_about_dialog_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_about_dialog_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                                ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gtk_show_about_dialog(parent:PGtkWindow; first_property_name:Pchar; args:array of const);
 
-    var
- : pointer;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_about_dialog_get_program_name(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_program_name(about:PGtkAboutDialog; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_version(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_version(about:PGtkAboutDialog; version:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_copyright(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_copyright(about:PGtkAboutDialog; copyright:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_comments(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_comments(about:PGtkAboutDialog; comments:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_license(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_license(about:PGtkAboutDialog; license:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_about_dialog_set_license_type(about:PGtkAboutDialog; license_type:GtkLicense);
 
+  { Zeile entfernt  }
   function gtk_about_dialog_get_license_type(about:PGtkAboutDialog):GtkLicense;
 
+  { Zeile entfernt  }
   function gtk_about_dialog_get_wrap_license(about:PGtkAboutDialog):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_about_dialog_set_wrap_license(about:PGtkAboutDialog; wrap_license:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_system_information(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_system_information(about:PGtkAboutDialog; system_information:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_website(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_website(about:PGtkAboutDialog; website:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_website_label(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_website_label(about:PGtkAboutDialog; website_label:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   function gtk_about_dialog_get_authors(about:PGtkAboutDialog):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_authors(about:PGtkAboutDialog; authors:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   function gtk_about_dialog_get_documenters(about:PGtkAboutDialog):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_documenters(about:PGtkAboutDialog; documenters:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   function gtk_about_dialog_get_artists(about:PGtkAboutDialog):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_artists(about:PGtkAboutDialog; artists:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_translator_credits(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_translator_credits(about:PGtkAboutDialog; translator_credits:Pchar);
 
+  { Zeile entfernt  }
   function gtk_about_dialog_get_logo(about:PGtkAboutDialog):^GdkPaintable;
 
+  { Zeile entfernt  }
   procedure gtk_about_dialog_set_logo(about:PGtkAboutDialog; logo:PGdkPaintable);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_about_dialog_get_logo_icon_name(about:PGtkAboutDialog):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_about_dialog_set_logo_icon_name(about:PGtkAboutDialog; icon_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_about_dialog_add_credit_section(about:PGtkAboutDialog; section_name:Pchar; people:PPchar);
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkAboutDialog, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkAboutDialog, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ABOUT_DIALOG_H__  }
   { was #define dname def_expr }
@@ -231,7 +258,15 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkAboutDialog, g_object_unref)
     GTK_IS_ABOUT_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(object,GTK_TYPE_ABOUT_DIALOG);
   end;
 
+  function gtk_about_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_about_dialog_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_show_about_dialog(parent:PGtkWindow; first_property_name:Pchar);
   begin
     { You must implement this function }
   end;

@@ -29,20 +29,23 @@
 {$define __GTK_MULTI_SELECTION_H__}  
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkselectionmodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MULTI_SELECTION : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTION, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTION, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_multi_selection_new(model:PGListModel):^GtkMultiSelection;
+
+  { Zeile entfernt  }
   function gtk_multi_selection_get_model(self:PGtkMultiSelection):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_multi_selection_set_model(self:PGtkMultiSelection; model:PGListModel);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MULTI_SELECTION_H__  }
   { was #define dname def_expr }
@@ -51,6 +54,10 @@ G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTI
       GTK_TYPE_MULTI_SELECTION:=gtk_multi_selection_get_type;
     end;
 
+  function gtk_multi_selection_new(model:PGListModel):PGtkMultiSelection;
+  begin
+    { You must implement this function }
+  end;
   function gtk_multi_selection_get_model(self:PGtkMultiSelection):PGListModel;
   begin
     { You must implement this function }

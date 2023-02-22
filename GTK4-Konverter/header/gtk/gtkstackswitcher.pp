@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkstack.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STACK_SWITCHER : longint; { return type might be wrong }
@@ -49,19 +50,20 @@
 
   type
     _GtkStackSwitcher = GtkStackSwitcher;
-(* error 
-GType        gtk_stack_switcher_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_stack_switcher_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_stack_switcher_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_stack_switcher_set_stack(switcher:PGtkStackSwitcher; stack:PGtkStack);
 
+  { Zeile entfernt  }
   function gtk_stack_switcher_get_stack(switcher:PGtkStackSwitcher):^GtkStack;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STACK_SWITCHER_H__  }
   { was #define dname def_expr }
@@ -86,6 +88,10 @@ GType        gtk_stack_switcher_get_type          (void) G_GNUC_CONST;
     GTK_IS_STACK_SWITCHER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_STACK_SWITCHER);
   end;
 
+  function gtk_stack_switcher_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_stack_switcher_new:PGtkWidget;
   begin
     { You must implement this function }

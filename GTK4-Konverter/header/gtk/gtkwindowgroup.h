@@ -32,7 +32,7 @@
 
 #include "gtkwindow.h"
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_WINDOW_GROUP             (gtk_window_group_get_type ())
 #define GTK_WINDOW_GROUP(object)          (G_TYPE_CHECK_INSTANCE_CAST ((object), GTK_TYPE_WINDOW_GROUP, GtkWindowGroup))
@@ -62,22 +62,22 @@ struct _GtkWindowGroupClass
 
 /* Window groups
  */
+/* Zeile entfernt */
+GType            gtk_window_group_get_type      (void) ;
 
-GType            gtk_window_group_get_type      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWindowGroup * gtk_window_group_new           (void);
-
+/* Zeile entfernt */
 void             gtk_window_group_add_window    (GtkWindowGroup     *window_group,
                                                  GtkWindow          *window);
-
+/* Zeile entfernt */
 void             gtk_window_group_remove_window (GtkWindowGroup     *window_group,
                                                  GtkWindow          *window);
-
+/* Zeile entfernt */
 GList *          gtk_window_group_list_windows  (GtkWindowGroup     *window_group);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_WINDOW_GROUP_H__ */
 

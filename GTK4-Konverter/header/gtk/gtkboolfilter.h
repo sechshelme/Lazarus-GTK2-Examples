@@ -27,27 +27,27 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtkfilter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BOOL_FILTER             (gtk_bool_filter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkBoolFilter, gtk_bool_filter, GTK, BOOL_FILTER, GtkFilter)
-
-
+/* Zeile entfernt */
 GtkBoolFilter *         gtk_bool_filter_new                     (GtkExpression          *expression);
 
-
+/* Zeile entfernt */
 GtkExpression *         gtk_bool_filter_get_expression          (GtkBoolFilter          *self);
-
+/* Zeile entfernt */
 void                    gtk_bool_filter_set_expression          (GtkBoolFilter          *self,
                                                                  GtkExpression          *expression);
-
+/* Zeile entfernt */
 gboolean                gtk_bool_filter_get_invert              (GtkBoolFilter          *self);
-
+/* Zeile entfernt */
 void                    gtk_bool_filter_set_invert              (GtkBoolFilter          *self,
                                                                  gboolean                invert);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BOOL_FILTER_H__ */

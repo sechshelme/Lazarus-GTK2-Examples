@@ -24,7 +24,7 @@
 
 #include <gtk/gtkcelleditable.h>
 
-
+/* Zeile entfernt */
 
 
 /**
@@ -168,52 +168,52 @@ struct _GtkCellRendererClass
   gpointer padding[8];
 };
 
+/* Zeile entfernt */
+GType              gtk_cell_renderer_get_type       (void) ;
 
-GType              gtk_cell_renderer_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkSizeRequestMode gtk_cell_renderer_get_request_mode               (GtkCellRenderer    *cell);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_preferred_width            (GtkCellRenderer    *cell,
                                                                      GtkWidget          *widget,
                                                                      int                *minimum_size,
                                                                      int                *natural_size);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_preferred_height_for_width (GtkCellRenderer    *cell,
                                                                      GtkWidget          *widget,
                                                                      int                 width,
                                                                      int                *minimum_height,
                                                                      int                *natural_height);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_preferred_height           (GtkCellRenderer    *cell,
                                                                      GtkWidget          *widget,
                                                                      int                *minimum_size,
                                                                      int                *natural_size);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_preferred_width_for_height (GtkCellRenderer    *cell,
                                                                      GtkWidget          *widget,
                                                                      int                 height,
                                                                      int                *minimum_width,
                                                                      int                *natural_width);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_preferred_size             (GtkCellRenderer    *cell,
                                                                      GtkWidget          *widget,
                                                                      GtkRequisition     *minimum_size,
                                                                      GtkRequisition     *natural_size);
-
+/* Zeile entfernt */
 void               gtk_cell_renderer_get_aligned_area               (GtkCellRenderer    *cell,
 								     GtkWidget          *widget,
 								     GtkCellRendererState flags,
 								     const GdkRectangle *cell_area,
 								     GdkRectangle       *aligned_area);
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_snapshot       (GtkCellRenderer      *cell,
                                                    GtkSnapshot          *snapshot,
 						   GtkWidget            *widget,
 						   const GdkRectangle   *background_area,
 						   const GdkRectangle   *cell_area,
 						   GtkCellRendererState  flags);
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_activate       (GtkCellRenderer      *cell,
 						   GdkEvent             *event,
 						   GtkWidget            *widget,
@@ -221,7 +221,7 @@ gboolean         gtk_cell_renderer_activate       (GtkCellRenderer      *cell,
 						   const GdkRectangle   *background_area,
 						   const GdkRectangle   *cell_area,
 						   GtkCellRendererState  flags);
-
+/* Zeile entfernt */
 GtkCellEditable *gtk_cell_renderer_start_editing  (GtkCellRenderer      *cell,
 						   GdkEvent             *event,
 						   GtkWidget            *widget,
@@ -230,65 +230,65 @@ GtkCellEditable *gtk_cell_renderer_start_editing  (GtkCellRenderer      *cell,
 						   const GdkRectangle   *cell_area,
 						   GtkCellRendererState  flags);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_fixed_size (GtkCellRenderer      *cell,
 						   int                   width,
 						   int                   height);
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_get_fixed_size (GtkCellRenderer      *cell,
 						   int                  *width,
 						   int                  *height);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_alignment  (GtkCellRenderer      *cell,
                                                    float                 xalign,
                                                    float                 yalign);
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_get_alignment  (GtkCellRenderer      *cell,
                                                    float                *xalign,
                                                    float                *yalign);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_padding    (GtkCellRenderer      *cell,
                                                    int                   xpad,
                                                    int                   ypad);
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_get_padding    (GtkCellRenderer      *cell,
                                                    int                  *xpad,
                                                    int                  *ypad);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_visible    (GtkCellRenderer      *cell,
                                                    gboolean              visible);
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_get_visible    (GtkCellRenderer      *cell);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_sensitive  (GtkCellRenderer      *cell,
                                                    gboolean              sensitive);
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_get_sensitive  (GtkCellRenderer      *cell);
 
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_is_activatable (GtkCellRenderer      *cell);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_is_expander (GtkCellRenderer     *cell,
                                                     gboolean             is_expander);
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_get_is_expander (GtkCellRenderer     *cell);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_set_is_expanded (GtkCellRenderer     *cell,
                                                     gboolean             is_expanded);
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_get_is_expanded (GtkCellRenderer     *cell);
 
 
 
 
 /* For use by cell renderer implementations only */
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_stop_editing   (GtkCellRenderer      *cell,
                                                    gboolean              canceled);
 
@@ -301,11 +301,11 @@ void            _gtk_cell_renderer_calc_offset    (GtkCellRenderer      *cell,
                                                    int                  *x_offset,
                                                    int                  *y_offset);
 
-
+/* Zeile entfernt */
 GtkStateFlags   gtk_cell_renderer_get_state       (GtkCellRenderer      *cell,
                                                    GtkWidget            *widget,
                                                    GtkCellRendererState  cell_state);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_RENDERER_H__ */

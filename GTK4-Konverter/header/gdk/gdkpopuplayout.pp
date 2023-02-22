@@ -1,8 +1,8 @@
 
-    Type
-    PGdkPopupLayout  = ^GdkPopupLayout;
-    PGdkRectangle  = ^GdkRectangle;
-    Plongint  = ^longint;
+  Type
+  PGdkPopupLayout  = ^GdkPopupLayout;
+  PGdkRectangle  = ^GdkRectangle;
+  Plongint  = ^longint;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -33,6 +33,7 @@
 {$include <gdk/gdkenums.h>}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
   {*
    * GdkAnchorHints:
    * @GDK_ANCHOR_FLIP_X: allow flipping anchors horizontally
@@ -73,49 +74,66 @@
   { was #define dname def_expr }
   function GDK_TYPE_POPUP_LAYOUT : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gdk_popup_layout_get_type:GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_popup_layout_new(anchor_rect:PGdkRectangle; rect_anchor:GdkGravity; surface_anchor:GdkGravity):^GdkPopupLayout;
 
+  { Zeile entfernt  }
   function gdk_popup_layout_ref(layout:PGdkPopupLayout):^GdkPopupLayout;
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_unref(layout:PGdkPopupLayout);
 
+  { Zeile entfernt  }
   function gdk_popup_layout_copy(layout:PGdkPopupLayout):^GdkPopupLayout;
 
+  { Zeile entfernt  }
   function gdk_popup_layout_equal(layout:PGdkPopupLayout; other:PGdkPopupLayout):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_popup_layout_set_anchor_rect(layout:PGdkPopupLayout; anchor_rect:PGdkRectangle);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_popup_layout_get_anchor_rect(layout:PGdkPopupLayout):^GdkRectangle;
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_set_rect_anchor(layout:PGdkPopupLayout; anchor:GdkGravity);
 
+  { Zeile entfernt  }
   function gdk_popup_layout_get_rect_anchor(layout:PGdkPopupLayout):GdkGravity;
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_set_surface_anchor(layout:PGdkPopupLayout; anchor:GdkGravity);
 
+  { Zeile entfernt  }
   function gdk_popup_layout_get_surface_anchor(layout:PGdkPopupLayout):GdkGravity;
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_set_anchor_hints(layout:PGdkPopupLayout; anchor_hints:GdkAnchorHints);
 
+  { Zeile entfernt  }
   function gdk_popup_layout_get_anchor_hints(layout:PGdkPopupLayout):GdkAnchorHints;
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_set_offset(layout:PGdkPopupLayout; dx:longint; dy:longint);
 
+  { Zeile entfernt  }
   procedure gdk_popup_layout_get_offset(layout:PGdkPopupLayout; dx:Plongint; dy:Plongint);
 
-(* error 
-void                    gdk_popup_layout_set_shadow_width       (GdkPopupLayout     *layout,
-in declaration at line 141 *)
-(* error 
-void                    gdk_popup_layout_get_shadow_width       (GdkPopupLayout     *layout,
-in declaration at line 147 *)
+  { Zeile entfernt  }
+  procedure gdk_popup_layout_set_shadow_width(layout:PGdkPopupLayout; left:longint; right:longint; top:longint; bottom:longint);
+
+  { Zeile entfernt  }
+  procedure gdk_popup_layout_get_shadow_width(layout:PGdkPopupLayout; left:Plongint; right:Plongint; top:Plongint; bottom:Plongint);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GDK_POPUP_LAYOUT_H__  }
+  { __GDK_POPUP_LAYOUT_H__  }
   { was #define dname def_expr }
   function GDK_TYPE_POPUP_LAYOUT : longint; { return type might be wrong }
     begin
@@ -183,6 +201,14 @@ in declaration at line 147 *)
     { You must implement this function }
   end;
   procedure gdk_popup_layout_get_offset(layout:PGdkPopupLayout; dx:Plongint; dy:Plongint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_popup_layout_set_shadow_width(layout:PGdkPopupLayout; left:longint; right:longint; top:longint; bottom:longint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_popup_layout_get_shadow_width(layout:PGdkPopupLayout; left:Plongint; right:Plongint; top:Plongint; bottom:Plongint);
   begin
     { You must implement this function }
   end;

@@ -33,6 +33,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
 {$include <gtk/gtkimcontext.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_FOCUS : longint; { return type might be wrong }
@@ -66,19 +67,20 @@
   type
     _GtkEventControllerFocus = GtkEventControllerFocus;
     _GtkEventControllerFocusClass = GtkEventControllerFocusClass;
-(* error 
-GType               gtk_event_controller_focus_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_event_controller_focus_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_event_controller_focus_new:^GtkEventController;
 
+  { Zeile entfernt  }
   function gtk_event_controller_focus_contains_focus(self:PGtkEventControllerFocus):gboolean;
 
+  { Zeile entfernt  }
   function gtk_event_controller_focus_is_focus(self:PGtkEventControllerFocus):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EVENT_CONTROLLER_FOCUS_H__  }
   { was #define dname def_expr }
@@ -127,6 +129,10 @@ GType               gtk_event_controller_focus_get_type  (void) G_GNUC_CONST;
     GTK_EVENT_CONTROLLER_FOCUS_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER_FOCUS,GtkEventControllerFocusClass);
   end;
 
+  function gtk_event_controller_focus_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_focus_new:PGtkEventController;
   begin
     { You must implement this function }

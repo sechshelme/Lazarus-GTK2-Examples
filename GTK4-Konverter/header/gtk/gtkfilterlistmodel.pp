@@ -33,33 +33,38 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkfilter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FILTER_LIST_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIST_MODEL, GObject)
-(* error 
-                                                                 GtkFilter              *filter);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_filter_list_model_new(model:PGListModel; filter:PGtkFilter):^GtkFilterListModel;
+
+  { Zeile entfernt  }
   procedure gtk_filter_list_model_set_filter(self:PGtkFilterListModel; filter:PGtkFilter);
 
+  { Zeile entfernt  }
   function gtk_filter_list_model_get_filter(self:PGtkFilterListModel):^GtkFilter;
 
+  { Zeile entfernt  }
   procedure gtk_filter_list_model_set_model(self:PGtkFilterListModel; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_filter_list_model_get_model(self:PGtkFilterListModel):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_filter_list_model_set_incremental(self:PGtkFilterListModel; incremental:gboolean);
 
+  { Zeile entfernt  }
   function gtk_filter_list_model_get_incremental(self:PGtkFilterListModel):gboolean;
 
+  { Zeile entfernt  }
   function gtk_filter_list_model_get_pending(self:PGtkFilterListModel):guint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FILTER_LIST_MODEL_H__  }
   { was #define dname def_expr }
@@ -68,6 +73,10 @@ G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIS
       GTK_TYPE_FILTER_LIST_MODEL:=gtk_filter_list_model_get_type;
     end;
 
+  function gtk_filter_list_model_new(model:PGListModel; filter:PGtkFilter):PGtkFilterListModel;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_filter_list_model_set_filter(self:PGtkFilterListModel; filter:PGtkFilter);
   begin
     { You must implement this function }

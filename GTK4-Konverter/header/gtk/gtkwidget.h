@@ -37,7 +37,7 @@
 #include <gtk/gtkshortcutaction.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 /* Macro for casting a pointer to a GtkWidget or GtkWidgetClass pointer.
  * Macros for testing whether widget or klass are of type GTK_TYPE_WIDGET.
@@ -265,47 +265,47 @@ struct _GtkWidgetClass
 };
 
 
-
-GType      gtk_widget_get_type            (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_widget_get_type            (void) ;
+/* Zeile entfernt */
 void       gtk_widget_unparent            (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_show                (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_hide                (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_map                 (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_unmap               (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_realize             (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_unrealize           (GtkWidget           *widget);
 
 /* Queuing draws */
-
+/* Zeile entfernt */
 void       gtk_widget_queue_draw          (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_queue_resize        (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_queue_allocate      (GtkWidget           *widget);
-
+/* Zeile entfernt */
 GdkFrameClock* gtk_widget_get_frame_clock (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 void       gtk_widget_size_allocate       (GtkWidget           *widget,
                                            const GtkAllocation *allocation,
                                            int                  baseline);
-
+/* Zeile entfernt */
 void       gtk_widget_allocate            (GtkWidget               *widget,
                                            int                      width,
                                            int                      height,
                                            int                      baseline,
                                            GskTransform            *transform);
 
-
+/* Zeile entfernt */
 GtkSizeRequestMode  gtk_widget_get_request_mode               (GtkWidget      *widget);
-
+/* Zeile entfernt */
 void gtk_widget_measure (GtkWidget      *widget,
                          GtkOrientation  orientation,
                          int             for_size,
@@ -313,31 +313,31 @@ void gtk_widget_measure (GtkWidget      *widget,
                          int            *natural,
                          int            *minimum_baseline,
                          int            *natural_baseline);
-
+/* Zeile entfernt */
 void                gtk_widget_get_preferred_size             (GtkWidget      *widget,
                                                                GtkRequisition *minimum_size,
                                                                GtkRequisition *natural_size);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_set_layout_manager   (GtkWidget        *widget,
                                                          GtkLayoutManager *layout_manager);
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_widget_get_layout_manager   (GtkWidget        *widget);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_class_set_layout_manager_type        (GtkWidgetClass *widget_class,
                                                                          GType           type);
-
+/* Zeile entfernt */
 GType                   gtk_widget_class_get_layout_manager_type        (GtkWidgetClass *widget_class);
 
-
+/* Zeile entfernt */
 void       gtk_widget_class_add_binding   (GtkWidgetClass      *widget_class,
                                            guint                keyval,
                                            GdkModifierType      mods,
                                            GtkShortcutFunc      callback,
                                            const char          *format_string,
                                            ...);
-
+/* Zeile entfernt */
 void       gtk_widget_class_add_binding_signal
                                           (GtkWidgetClass      *widget_class,
                                            guint                keyval,
@@ -345,7 +345,7 @@ void       gtk_widget_class_add_binding_signal
                                            const char          *signal,
                                            const char          *format_string,
                                            ...);
-
+/* Zeile entfernt */
 void       gtk_widget_class_add_binding_action
                                           (GtkWidgetClass      *widget_class,
                                            guint                keyval,
@@ -353,261 +353,261 @@ void       gtk_widget_class_add_binding_action
                                            const char          *action_name,
                                            const char          *format_string,
                                            ...);
-
+/* Zeile entfernt */
 void       gtk_widget_class_add_shortcut  (GtkWidgetClass      *widget_class,
                                            GtkShortcut         *shortcut);
 
-
+/* Zeile entfernt */
 void       gtk_widget_class_set_activate_signal                 (GtkWidgetClass *widget_class,
                                                                  guint           signal_id);
-
+/* Zeile entfernt */
 void       gtk_widget_class_set_activate_signal_from_name       (GtkWidgetClass *widget_class,
                                                                  const char     *signal_name);
-
+/* Zeile entfernt */
 guint      gtk_widget_class_get_activate_signal                 (GtkWidgetClass *widget_class);
 
-
+/* Zeile entfernt */
 gboolean   gtk_widget_mnemonic_activate   (GtkWidget           *widget,
                                            gboolean             group_cycling);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_activate               (GtkWidget        *widget);
 
-
+/* Zeile entfernt */
 void       gtk_widget_set_can_focus       (GtkWidget           *widget,
                                            gboolean             can_focus);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_get_can_focus       (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_set_focusable       (GtkWidget           *widget,
                                            gboolean             focusable);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_get_focusable       (GtkWidget           *widget);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_has_focus           (GtkWidget           *widget);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_is_focus            (GtkWidget           *widget);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_has_visible_focus   (GtkWidget           *widget);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_grab_focus          (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void       gtk_widget_set_focus_on_click  (GtkWidget           *widget,
                                            gboolean             focus_on_click);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_get_focus_on_click  (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 void       gtk_widget_set_can_target      (GtkWidget           *widget,
                                            gboolean             can_target);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_get_can_target      (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 gboolean   gtk_widget_has_default         (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 void      gtk_widget_set_receives_default (GtkWidget           *widget,
                                            gboolean             receives_default);
-
+/* Zeile entfernt */
 gboolean  gtk_widget_get_receives_default (GtkWidget           *widget);
 
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_name               (GtkWidget    *widget,
                                                          const char   *name);
-
+/* Zeile entfernt */
 const char *         gtk_widget_get_name               (GtkWidget    *widget);
 
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_state_flags        (GtkWidget     *widget,
                                                          GtkStateFlags  flags,
                                                          gboolean       clear);
-
+/* Zeile entfernt */
 void                  gtk_widget_unset_state_flags      (GtkWidget     *widget,
                                                          GtkStateFlags  flags);
-
+/* Zeile entfernt */
 GtkStateFlags         gtk_widget_get_state_flags        (GtkWidget     *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_sensitive          (GtkWidget    *widget,
                                                          gboolean      sensitive);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_get_sensitive          (GtkWidget    *widget);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_is_sensitive           (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_visible            (GtkWidget    *widget,
                                                          gboolean      visible);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_get_visible            (GtkWidget    *widget);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_is_visible             (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 gboolean              gtk_widget_is_drawable            (GtkWidget    *widget);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_get_realized           (GtkWidget    *widget);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_get_mapped             (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_parent             (GtkWidget    *widget,
                                                          GtkWidget    *parent);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_widget_get_parent             (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 GtkRoot *             gtk_widget_get_root               (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 GtkNative *           gtk_widget_get_native             (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_widget_set_child_visible      (GtkWidget    *widget,
                                                          gboolean      child_visible);
-
+/* Zeile entfernt */
 gboolean              gtk_widget_get_child_visible      (GtkWidget    *widget);
 
-
+/* Zeile entfernt */
 int                   gtk_widget_get_allocated_width    (GtkWidget     *widget);
-
+/* Zeile entfernt */
 int                   gtk_widget_get_allocated_height   (GtkWidget     *widget);
-
+/* Zeile entfernt */
 int                   gtk_widget_get_allocated_baseline (GtkWidget     *widget);
 
-
+/* Zeile entfernt */
 void                  gtk_widget_get_allocation         (GtkWidget     *widget,
                                                          GtkAllocation *allocation);
-
+/* Zeile entfernt */
 gboolean                gtk_widget_compute_transform            (GtkWidget              *widget,
                                                                  GtkWidget              *target,
                                                                  graphene_matrix_t      *out_transform) G_GNUC_WARN_UNUSED_RESULT;
-
+/* Zeile entfernt */
 gboolean                gtk_widget_compute_bounds               (GtkWidget              *widget,
                                                                  GtkWidget              *target,
                                                                  graphene_rect_t        *out_bounds) G_GNUC_WARN_UNUSED_RESULT;
-
+/* Zeile entfernt */
 gboolean                gtk_widget_compute_point                (GtkWidget              *widget,
                                                                  GtkWidget              *target,
                                                                  const graphene_point_t *point,
                                                                  graphene_point_t       *out_point) G_GNUC_WARN_UNUSED_RESULT;
 
-
+/* Zeile entfernt */
 int                   gtk_widget_get_width              (GtkWidget     *widget);
-
+/* Zeile entfernt */
 int                   gtk_widget_get_height             (GtkWidget     *widget);
-
+/* Zeile entfernt */
 int                   gtk_widget_get_size               (GtkWidget     *widget,
                                                          GtkOrientation orientation);
 
-
+/* Zeile entfernt */
 gboolean   gtk_widget_child_focus         (GtkWidget           *widget,
                                            GtkDirectionType     direction);
-
+/* Zeile entfernt */
 gboolean   gtk_widget_keynav_failed       (GtkWidget           *widget,
                                            GtkDirectionType     direction);
-
+/* Zeile entfernt */
 void       gtk_widget_error_bell          (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 void       gtk_widget_set_size_request    (GtkWidget           *widget,
                                            int                  width,
                                            int                  height);
-
+/* Zeile entfernt */
 void       gtk_widget_get_size_request    (GtkWidget           *widget,
                                            int                 *width,
                                            int                 *height);
-
+/* Zeile entfernt */
 void       gtk_widget_set_opacity         (GtkWidget           *widget,
                                            double               opacity);
-
+/* Zeile entfernt */
 double     gtk_widget_get_opacity         (GtkWidget           *widget);
-
+/* Zeile entfernt */
 void         gtk_widget_set_overflow      (GtkWidget           *widget,
                                            GtkOverflow          overflow);
-
+/* Zeile entfernt */
 GtkOverflow  gtk_widget_get_overflow      (GtkWidget           *widget);
 
-
+/* Zeile entfernt */
 GtkWidget*   gtk_widget_get_ancestor    (GtkWidget      *widget,
                                          GType           widget_type);
 
-
+/* Zeile entfernt */
 int           gtk_widget_get_scale_factor (GtkWidget *widget);
-
+/* Zeile entfernt */
 GdkDisplay *  gtk_widget_get_display     (GtkWidget *widget);
-
+/* Zeile entfernt */
 GtkSettings*  gtk_widget_get_settings    (GtkWidget *widget);
-
+/* Zeile entfernt */
 GdkClipboard *gtk_widget_get_clipboard   (GtkWidget *widget);
-
+/* Zeile entfernt */
 GdkClipboard *gtk_widget_get_primary_clipboard (GtkWidget *widget);
 
 
 /* Expand flags and related support */
-
+/* Zeile entfernt */
 gboolean gtk_widget_get_hexpand          (GtkWidget      *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_hexpand          (GtkWidget      *widget,
                                           gboolean        expand);
-
+/* Zeile entfernt */
 gboolean gtk_widget_get_hexpand_set      (GtkWidget      *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_hexpand_set      (GtkWidget      *widget,
                                           gboolean        set);
-
+/* Zeile entfernt */
 gboolean gtk_widget_get_vexpand          (GtkWidget      *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_vexpand          (GtkWidget      *widget,
                                           gboolean        expand);
-
+/* Zeile entfernt */
 gboolean gtk_widget_get_vexpand_set      (GtkWidget      *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_vexpand_set      (GtkWidget      *widget,
                                           gboolean        set);
-
+/* Zeile entfernt */
 gboolean gtk_widget_compute_expand       (GtkWidget      *widget,
                                           GtkOrientation  orientation);
 
 /* Margin and alignment */
-
+/* Zeile entfernt */
 GtkAlign gtk_widget_get_halign        (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_halign        (GtkWidget *widget,
                                        GtkAlign   align);
-
+/* Zeile entfernt */
 GtkAlign gtk_widget_get_valign        (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_valign        (GtkWidget *widget,
                                        GtkAlign   align);
-
+/* Zeile entfernt */
 int      gtk_widget_get_margin_start  (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_margin_start  (GtkWidget *widget,
                                        int        margin);
-
+/* Zeile entfernt */
 int      gtk_widget_get_margin_end    (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_margin_end    (GtkWidget *widget,
                                        int        margin);
-
+/* Zeile entfernt */
 int      gtk_widget_get_margin_top    (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_margin_top    (GtkWidget *widget,
                                        int        margin);
-
+/* Zeile entfernt */
 int      gtk_widget_get_margin_bottom (GtkWidget *widget);
-
+/* Zeile entfernt */
 void     gtk_widget_set_margin_bottom (GtkWidget *widget,
                                        int        margin);
 
-
+/* Zeile entfernt */
 gboolean     gtk_widget_is_ancestor     (GtkWidget      *widget,
                                          GtkWidget      *ancestor);
 
-
+/* Zeile entfernt */
 gboolean     gtk_widget_translate_coordinates (GtkWidget  *src_widget,
                                                GtkWidget  *dest_widget,
                                                double      src_x,
@@ -615,113 +615,113 @@ gboolean     gtk_widget_translate_coordinates (GtkWidget  *src_widget,
                                                double     *dest_x,
                                                double     *dest_y);
 
-
+/* Zeile entfernt */
 gboolean     gtk_widget_contains              (GtkWidget  *widget,
                                                double      x,
                                                double      y);
-
+/* Zeile entfernt */
 GtkWidget *  gtk_widget_pick                  (GtkWidget   *widget,
                                                double       x,
                                                double       y,
                                                GtkPickFlags flags);
 
-
+/* Zeile entfernt */
 void         gtk_widget_add_controller        (GtkWidget          *widget,
                                                GtkEventController *controller);
-
+/* Zeile entfernt */
 void         gtk_widget_remove_controller     (GtkWidget          *widget,
                                                GtkEventController *controller);
 
-
+/* Zeile entfernt */
 PangoContext *gtk_widget_create_pango_context (GtkWidget   *widget);
-
+/* Zeile entfernt */
 PangoContext *gtk_widget_get_pango_context    (GtkWidget   *widget);
-
+/* Zeile entfernt */
 void gtk_widget_set_font_options (GtkWidget                  *widget,
                                   const cairo_font_options_t *options);
-
+/* Zeile entfernt */
 const cairo_font_options_t *gtk_widget_get_font_options (GtkWidget *widget);
-
+/* Zeile entfernt */
 PangoLayout  *gtk_widget_create_pango_layout  (GtkWidget   *widget,
                                                const char *text);
 
 /* Functions for setting directionality for widgets */
 
-
+/* Zeile entfernt */
 void             gtk_widget_set_direction         (GtkWidget        *widget,
                                                    GtkTextDirection  dir);
-
+/* Zeile entfernt */
 GtkTextDirection gtk_widget_get_direction         (GtkWidget        *widget);
 
-
+/* Zeile entfernt */
 void             gtk_widget_set_default_direction (GtkTextDirection  dir);
-
+/* Zeile entfernt */
 GtkTextDirection gtk_widget_get_default_direction (void);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_set_cursor                   (GtkWidget              *widget,
                                                                  GdkCursor              *cursor);
-
+/* Zeile entfernt */
 void                    gtk_widget_set_cursor_from_name         (GtkWidget              *widget,
                                                                  const char             *name);
-
+/* Zeile entfernt */
 GdkCursor *             gtk_widget_get_cursor                   (GtkWidget              *widget);
 
-
+/* Zeile entfernt */
 GList* gtk_widget_list_mnemonic_labels  (GtkWidget *widget);
-
+/* Zeile entfernt */
 void   gtk_widget_add_mnemonic_label    (GtkWidget *widget,
                                          GtkWidget *label);
-
+/* Zeile entfernt */
 void   gtk_widget_remove_mnemonic_label (GtkWidget *widget,
                                          GtkWidget *label);
 
-
+/* Zeile entfernt */
 void            gtk_widget_trigger_tooltip_query        (GtkWidget   *widget);
-
+/* Zeile entfernt */
 void            gtk_widget_set_tooltip_text             (GtkWidget   *widget,
                                                          const char  *text);
-
+/* Zeile entfernt */
 const char *    gtk_widget_get_tooltip_text             (GtkWidget   *widget);
-
+/* Zeile entfernt */
 void            gtk_widget_set_tooltip_markup           (GtkWidget   *widget,
                                                          const char  *markup);
-
+/* Zeile entfernt */
 const char *    gtk_widget_get_tooltip_markup           (GtkWidget   *widget);
-
+/* Zeile entfernt */
 void            gtk_widget_set_has_tooltip              (GtkWidget   *widget,
                                                          gboolean     has_tooltip);
-
+/* Zeile entfernt */
 gboolean        gtk_widget_get_has_tooltip              (GtkWidget   *widget);
 
-
-GType           gtk_requisition_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType           gtk_requisition_get_type (void) ;
+/* Zeile entfernt */
 GtkRequisition *gtk_requisition_new      (void) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 GtkRequisition *gtk_requisition_copy     (const GtkRequisition *requisition);
-
+/* Zeile entfernt */
 void            gtk_requisition_free     (GtkRequisition       *requisition);
 
-
+/* Zeile entfernt */
 gboolean     gtk_widget_in_destruction (GtkWidget *widget);
 
-
+/* Zeile entfernt */
 GtkStyleContext * gtk_widget_get_style_context (GtkWidget *widget);
 
-
+/* Zeile entfernt */
 void              gtk_widget_class_set_css_name (GtkWidgetClass *widget_class,
                                                  const char     *name);
-
+/* Zeile entfernt */
 const char *      gtk_widget_class_get_css_name (GtkWidgetClass *widget_class);
 
-
+/* Zeile entfernt */
 guint gtk_widget_add_tick_callback (GtkWidget       *widget,
                                     GtkTickCallback  callback,
                                     gpointer         user_data,
                                     GDestroyNotify   notify);
 
-
+/* Zeile entfernt */
 void gtk_widget_remove_tick_callback (GtkWidget       *widget,
                                       guint            id);
 
@@ -827,104 +827,104 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
                                              TRUE, \
                                              G_PRIVATE_OFFSET (TypeName, member_name))
 
-
+/* Zeile entfernt */
 void    gtk_widget_init_template                        (GtkWidget             *widget);
-
+/* Zeile entfernt */
 GObject *gtk_widget_get_template_child                  (GtkWidget             *widget,
                                                          GType                  widget_type,
                                                          const char            *name);
 GDK_AVAILABLE_IN_4_8
 void    gtk_widget_dispose_template                     (GtkWidget             *widget,
                                                          GType                  widget_type);
-
+/* Zeile entfernt */
 void    gtk_widget_class_set_template                   (GtkWidgetClass        *widget_class,
                                                          GBytes                *template_bytes);
-
+/* Zeile entfernt */
 void    gtk_widget_class_set_template_from_resource     (GtkWidgetClass        *widget_class,
                                                          const char            *resource_name);
-
+/* Zeile entfernt */
 void    gtk_widget_class_bind_template_callback_full    (GtkWidgetClass        *widget_class,
                                                          const char            *callback_name,
                                                          GCallback              callback_symbol);
-
+/* Zeile entfernt */
 void    gtk_widget_class_set_template_scope             (GtkWidgetClass        *widget_class,
                                                          GtkBuilderScope       *scope);
-
+/* Zeile entfernt */
 void    gtk_widget_class_bind_template_child_full       (GtkWidgetClass        *widget_class,
                                                          const char            *name,
                                                          gboolean               internal_child,
                                                          gssize                 struct_offset);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_insert_action_group  (GtkWidget    *widget,
                                                          const char   *name,
                                                          GActionGroup *group);
 
-
+/* Zeile entfernt */
 gboolean                gtk_widget_activate_action      (GtkWidget  *widget,
                                                          const char *name,
                                                          const char *format_string,
                                                          ...);
-
+/* Zeile entfernt */
 gboolean                gtk_widget_activate_action_variant (GtkWidget  *widget,
                                                             const char *name,
                                                             GVariant   *args);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_activate_default     (GtkWidget *widget);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_set_font_map         (GtkWidget             *widget,
                                                          PangoFontMap          *font_map);
-
+/* Zeile entfernt */
 PangoFontMap *          gtk_widget_get_font_map         (GtkWidget             *widget);
 
-
+/* Zeile entfernt */
 GtkWidget *             gtk_widget_get_first_child      (GtkWidget *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_widget_get_last_child       (GtkWidget *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_widget_get_next_sibling     (GtkWidget *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_widget_get_prev_sibling     (GtkWidget *widget);
-
+/* Zeile entfernt */
 GListModel *            gtk_widget_observe_children     (GtkWidget *widget);
-
+/* Zeile entfernt */
 GListModel *            gtk_widget_observe_controllers  (GtkWidget *widget);
-
+/* Zeile entfernt */
 void                    gtk_widget_insert_after         (GtkWidget *widget,
                                                          GtkWidget *parent,
                                                          GtkWidget *previous_sibling);
-
+/* Zeile entfernt */
 void                    gtk_widget_insert_before        (GtkWidget *widget,
                                                          GtkWidget *parent,
                                                          GtkWidget *next_sibling);
-
+/* Zeile entfernt */
 void                    gtk_widget_set_focus_child      (GtkWidget *widget,
                                                          GtkWidget *child);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_widget_get_focus_child      (GtkWidget *widget);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_snapshot_child       (GtkWidget   *widget,
                                                          GtkWidget   *child,
                                                          GtkSnapshot *snapshot);
-
+/* Zeile entfernt */
 gboolean                gtk_widget_should_layout        (GtkWidget   *widget);
-
-const char *            gtk_widget_get_css_name         (GtkWidget   *self) G_GNUC_PURE;
-
+/* Zeile entfernt */
+const char *            gtk_widget_get_css_name         (GtkWidget   *self) ;
+/* Zeile entfernt */
 void                    gtk_widget_add_css_class        (GtkWidget   *widget,
                                                          const char  *css_class);
-
+/* Zeile entfernt */
 void                    gtk_widget_remove_css_class     (GtkWidget   *widget,
                                                          const char  *css_class);
-
+/* Zeile entfernt */
 gboolean                gtk_widget_has_css_class        (GtkWidget   *widget,
                                                          const char  *css_class);
-
+/* Zeile entfernt */
 char **                 gtk_widget_get_css_classes      (GtkWidget   *widget);
-
+/* Zeile entfernt */
 void                    gtk_widget_set_css_classes      (GtkWidget   *widget,
                                                          const char **classes);
 
@@ -946,18 +946,18 @@ typedef void (* GtkWidgetActionActivateFunc) (GtkWidget  *widget,
                                               const char *action_name,
                                               GVariant   *parameter);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_class_install_action (GtkWidgetClass              *widget_class,
                                                          const char                  *action_name,
                                                          const char                  *parameter_type,
                                                          GtkWidgetActionActivateFunc  activate);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_class_install_property_action (GtkWidgetClass *widget_class,
                                                                   const char     *action_name,
                                                                   const char     *property_name);
 
-
+/* Zeile entfernt */
 gboolean               gtk_widget_class_query_action  (GtkWidgetClass      *widget_class,
                                                        guint                index_,
                                                        GType               *owner,
@@ -965,21 +965,21 @@ gboolean               gtk_widget_class_query_action  (GtkWidgetClass      *widg
                                                        const GVariantType **parameter_type,
                                                        const char         **property_name);
 
-
+/* Zeile entfernt */
 void                    gtk_widget_action_set_enabled (GtkWidget  *widget,
                                                        const char *action_name,
                                                        gboolean    enabled);
 
 
-
+/* Zeile entfernt */
 void                    gtk_widget_class_set_accessible_role    (GtkWidgetClass    *widget_class,
                                                                  GtkAccessibleRole  accessible_role);
-
+/* Zeile entfernt */
 GtkAccessibleRole       gtk_widget_class_get_accessible_role    (GtkWidgetClass    *widget_class);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWidget, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_WIDGET_H__ */

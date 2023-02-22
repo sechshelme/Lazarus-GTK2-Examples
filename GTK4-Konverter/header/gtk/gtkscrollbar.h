@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SCROLLBAR            (gtk_scrollbar_get_type ())
 #define GTK_SCROLLBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCROLLBAR, GtkScrollbar))
@@ -43,17 +43,17 @@
 typedef struct _GtkScrollbar        GtkScrollbar;
 
 
-
-GType       gtk_scrollbar_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_scrollbar_get_type (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_scrollbar_new      (GtkOrientation  orientation,
                                     GtkAdjustment  *adjustment);
-
+/* Zeile entfernt */
 void           gtk_scrollbar_set_adjustment (GtkScrollbar  *self,
                                              GtkAdjustment *adjustment);
-
+/* Zeile entfernt */
 GtkAdjustment *gtk_scrollbar_get_adjustment (GtkScrollbar  *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SCROLLBAR_H__ */

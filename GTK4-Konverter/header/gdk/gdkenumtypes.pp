@@ -12,201 +12,143 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
   { enumerations from "gdkdevice.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_input_source_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_INPUT_SOURCE : longint; { return type might be wrong }
 
   { enumerations from "gdkdevicepad.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_device_pad_feature_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_DEVICE_PAD_FEATURE : longint; { return type might be wrong }
 
   { enumerations from "gdkdevicetool.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_device_tool_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_DEVICE_TOOL_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gdkdrag.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_drag_cancel_reason_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_DRAG_CANCEL_REASON : longint; { return type might be wrong }
 
   { enumerations from "gdkenums.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_gravity_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_GRAVITY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_modifier_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_MODIFIER_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_gl_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_GL_ERROR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_vulkan_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_VULKAN_ERROR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_axis_use_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_AXIS_USE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_axis_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_AXIS_FLAGS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_drag_action_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_DRAG_ACTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_memory_format_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_MEMORY_FORMAT : longint; { return type might be wrong }
 
   { enumerations from "gdkevents.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_event_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_EVENT_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_touchpad_gesture_phase_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_TOUCHPAD_GESTURE_PHASE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_scroll_direction_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_SCROLL_DIRECTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_scroll_unit_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_SCROLL_UNIT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_notify_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_NOTIFY_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_crossing_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_CROSSING_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_key_match_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_KEY_MATCH : longint; { return type might be wrong }
 
   { enumerations from "gdkframeclock.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_frame_clock_phase_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_FRAME_CLOCK_PHASE : longint; { return type might be wrong }
 
   { enumerations from "gdkglcontext.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_gl_api_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_GL_API : longint; { return type might be wrong }
 
   { enumerations from "gdkmonitor.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_subpixel_layout_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_SUBPIXEL_LAYOUT : longint; { return type might be wrong }
 
   { enumerations from "gdkpaintable.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_paintable_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_PAINTABLE_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gdkpopuplayout.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_anchor_hints_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_ANCHOR_HINTS : longint; { return type might be wrong }
 
   { enumerations from "gdkseat.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_seat_capabilities_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_SEAT_CAPABILITIES : longint; { return type might be wrong }
 
   { enumerations from "gdktexture.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_texture_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_TEXTURE_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gdktoplevel.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_surface_edge_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_SURFACE_EDGE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_fullscreen_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_FULLSCREEN_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_toplevel_state_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_TOPLEVEL_STATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gdk_titlebar_gesture_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_TITLEBAR_GESTURE : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_ENUM_TYPES_H__  }
   { Generated data ends here  }

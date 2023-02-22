@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_RANGE            (gtk_range_get_type ())
@@ -77,78 +77,78 @@ struct _GtkRangeClass
 };
 
 
+/* Zeile entfernt */
+GType              gtk_range_get_type                      (void) ;
 
-GType              gtk_range_get_type                      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void               gtk_range_set_adjustment                (GtkRange      *range,
                                                             GtkAdjustment *adjustment);
-
+/* Zeile entfernt */
 GtkAdjustment*     gtk_range_get_adjustment                (GtkRange      *range);
 
-
+/* Zeile entfernt */
 void               gtk_range_set_inverted                  (GtkRange      *range,
                                                             gboolean       setting);
-
+/* Zeile entfernt */
 gboolean           gtk_range_get_inverted                  (GtkRange      *range);
 
-
+/* Zeile entfernt */
 void               gtk_range_set_flippable                 (GtkRange      *range,
                                                             gboolean       flippable);
-
+/* Zeile entfernt */
 gboolean           gtk_range_get_flippable                 (GtkRange      *range);
 
-
+/* Zeile entfernt */
 void               gtk_range_set_slider_size_fixed         (GtkRange      *range,
                                                             gboolean       size_fixed);
-
+/* Zeile entfernt */
 gboolean           gtk_range_get_slider_size_fixed         (GtkRange      *range);
 
-
+/* Zeile entfernt */
 void               gtk_range_get_range_rect                (GtkRange      *range,
                                                             GdkRectangle  *range_rect);
-
+/* Zeile entfernt */
 void               gtk_range_get_slider_range              (GtkRange      *range,
                                                             int           *slider_start,
                                                             int           *slider_end);
 
-
+/* Zeile entfernt */
 void               gtk_range_set_increments                (GtkRange      *range,
                                                             double         step,
                                                             double         page);
-
+/* Zeile entfernt */
 void               gtk_range_set_range                     (GtkRange      *range,
                                                             double         min,
                                                             double         max);
-
+/* Zeile entfernt */
 void               gtk_range_set_value                     (GtkRange      *range,
                                                             double         value);
-
+/* Zeile entfernt */
 double             gtk_range_get_value                     (GtkRange      *range);
 
-
+/* Zeile entfernt */
 void               gtk_range_set_show_fill_level           (GtkRange      *range,
                                                             gboolean       show_fill_level);
-
+/* Zeile entfernt */
 gboolean           gtk_range_get_show_fill_level           (GtkRange      *range);
-
+/* Zeile entfernt */
 void               gtk_range_set_restrict_to_fill_level    (GtkRange      *range,
                                                             gboolean       restrict_to_fill_level);
-
+/* Zeile entfernt */
 gboolean           gtk_range_get_restrict_to_fill_level    (GtkRange      *range);
-
+/* Zeile entfernt */
 void               gtk_range_set_fill_level                (GtkRange      *range,
                                                             double         fill_level);
-
+/* Zeile entfernt */
 double             gtk_range_get_fill_level                (GtkRange      *range);
-
+/* Zeile entfernt */
 void               gtk_range_set_round_digits              (GtkRange      *range,
                                                             int            round_digits);
-
+/* Zeile entfernt */
 int                 gtk_range_get_round_digits              (GtkRange      *range);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_RANGE_H__ */

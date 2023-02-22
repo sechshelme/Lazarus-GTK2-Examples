@@ -33,43 +33,43 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 
 /* --- Accelerators--- */
-
+/* Zeile entfernt */
 gboolean gtk_accelerator_valid		      (guint	        keyval,
-					       GdkModifierType  modifiers) G_GNUC_CONST;
-
+					       GdkModifierType  modifiers) ;
+/* Zeile entfernt */
 gboolean gtk_accelerator_parse		      (const char      *accelerator,
 					       guint	       *accelerator_key,
 					       GdkModifierType *accelerator_mods);
-
+/* Zeile entfernt */
 gboolean gtk_accelerator_parse_with_keycode   (const char      *accelerator,
                                                GdkDisplay      *display,
                                                guint           *accelerator_key,
                                                guint          **accelerator_codes,
                                                GdkModifierType *accelerator_mods);
-
+/* Zeile entfernt */
 char *	 gtk_accelerator_name		      (guint	        accelerator_key,
 					       GdkModifierType  accelerator_mods);
-
+/* Zeile entfernt */
 char *	 gtk_accelerator_name_with_keycode    (GdkDisplay      *display,
                                                guint            accelerator_key,
                                                guint            keycode,
                                                GdkModifierType  accelerator_mods);
-
+/* Zeile entfernt */
 char *   gtk_accelerator_get_label            (guint           accelerator_key,
                                                GdkModifierType accelerator_mods);
-
+/* Zeile entfernt */
 char *   gtk_accelerator_get_label_with_keycode (GdkDisplay      *display,
                                                  guint            accelerator_key,
                                                  guint            keycode,
                                                  GdkModifierType  accelerator_mods);
+/* Zeile entfernt */
+GdkModifierType gtk_accelerator_get_default_mod_mask (void) ;
 
-GdkModifierType gtk_accelerator_get_default_mod_mask (void) G_GNUC_CONST;
 
-
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ACCEL_GROUP_H__ */

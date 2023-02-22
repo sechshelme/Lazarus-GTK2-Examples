@@ -26,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <wayland-client.h>
 
-
+/* Zeile entfernt */
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandSeat GdkWaylandSeat;
@@ -40,10 +40,10 @@ typedef struct _GdkWaylandSeatClass GdkWaylandSeatClass;
 #define GDK_WAYLAND_SEAT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_WAYLAND_SEAT, GdkWaylandSeat))
 #define GDK_IS_WAYLAND_SEAT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GDK_TYPE_WAYLAND_SEAT))
 
+/* Zeile entfernt */
+GType gdk_wayland_seat_get_type (void) ;
 
-GType gdk_wayland_seat_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 struct wl_seat *        gdk_wayland_seat_get_wl_seat    (GdkSeat *seat);
 
-
+/* Zeile entfernt */

@@ -34,17 +34,23 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkspinbutton.h>}
+  { Zeile entfernt  }
   { --- Gtk+ Test Utility API ---  }
+  { Zeile entfernt  }
 
   procedure gtk_test_init(argcp:Plongint; argvp:PPPchar; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_test_register_all_types;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_test_list_all_types(n_types:Pguint):^GType;
 
+  { Zeile entfernt  }
   procedure gtk_test_widget_wait_for_draw(widget:PGtkWidget);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TEST_UTILS_H__  }
   procedure gtk_test_init(argcp:Plongint; argvp:PPPchar);

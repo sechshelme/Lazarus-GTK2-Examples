@@ -32,9 +32,12 @@
 {$include <gdk/x11/gdkx11devicemanager-xi2.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
   function gdk_x11_device_manager_lookup(device_manager:PGdkX11DeviceManagerXI2; device_id:longint):^GdkDevice;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_DEVICE_MANAGER_H__  }
   function gdk_x11_device_manager_lookup(device_manager:PGdkX11DeviceManagerXI2; device_id:longint):PGdkDevice;

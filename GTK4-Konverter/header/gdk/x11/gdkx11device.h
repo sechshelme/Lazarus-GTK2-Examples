@@ -24,11 +24,11 @@
 
 #include <gdk/gdk.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 int   gdk_x11_device_get_id  (GdkDevice *device);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_DEVICE_H__ */

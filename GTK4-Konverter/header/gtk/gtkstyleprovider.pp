@@ -28,6 +28,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STYLE_PROVIDER : longint; { return type might be wrong }
@@ -93,12 +94,11 @@
   type
     _GtkStyleProvider = GtkStyleProvider;
   { dummy typedef  }
-(* error 
-GType gtk_style_provider_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_style_provider_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STYLE_PROVIDER_H__  }
   { was #define dname def_expr }
@@ -123,4 +123,8 @@ GType gtk_style_provider_get_type (void) G_GNUC_CONST;
     GTK_IS_STYLE_PROVIDER:=G_TYPE_CHECK_INSTANCE_TYPE(o,GTK_TYPE_STYLE_PROVIDER);
   end;
 
+  function gtk_style_provider_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

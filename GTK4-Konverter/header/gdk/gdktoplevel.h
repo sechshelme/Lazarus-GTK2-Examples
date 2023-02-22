@@ -28,7 +28,7 @@
 #include <gdk/gdksurface.h>
 #include <gdk/gdktoplevellayout.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GdkSurfaceEdge:
@@ -133,68 +133,68 @@ typedef enum
 
 #define GDK_TYPE_TOPLEVEL (gdk_toplevel_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GdkToplevel, gdk_toplevel, GDK, TOPLEVEL, GObject)
-
-
+/* Zeile entfernt */
 void            gdk_toplevel_present            (GdkToplevel       *toplevel,
                                                  GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 gboolean        gdk_toplevel_minimize           (GdkToplevel       *toplevel);
 
-
+/* Zeile entfernt */
 gboolean        gdk_toplevel_lower              (GdkToplevel       *toplevel);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_focus              (GdkToplevel       *toplevel,
                                                  guint32            timestamp);
 
-
+/* Zeile entfernt */
 GdkToplevelState gdk_toplevel_get_state          (GdkToplevel       *toplevel);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_set_title          (GdkToplevel       *toplevel,
                                                  const char        *title);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_set_startup_id     (GdkToplevel       *toplevel,
                                                  const char        *startup_id);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_set_transient_for  (GdkToplevel       *toplevel,
                                                  GdkSurface        *parent);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_set_modal          (GdkToplevel       *toplevel,
                                                  gboolean           modal);
 
-
+/* Zeile entfernt */
 void            gdk_toplevel_set_icon_list      (GdkToplevel       *toplevel,
                                                  GList             *surfaces);
 
-
+/* Zeile entfernt */
 gboolean        gdk_toplevel_show_window_menu   (GdkToplevel       *toplevel,
                                                  GdkEvent          *event);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_set_decorated         (GdkToplevel      *toplevel,
                                                   gboolean          decorated);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_set_deletable         (GdkToplevel      *toplevel,
                                                   gboolean          deletable);
-
+/* Zeile entfernt */
 gboolean      gdk_toplevel_supports_edge_constraints (GdkToplevel *toplevel);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_inhibit_system_shortcuts  (GdkToplevel *toplevel,
                                                       GdkEvent    *event);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_restore_system_shortcuts  (GdkToplevel *toplevel);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_begin_resize              (GdkToplevel    *toplevel,
                                                       GdkSurfaceEdge  edge,
                                                       GdkDevice      *device,
@@ -203,7 +203,7 @@ void          gdk_toplevel_begin_resize              (GdkToplevel    *toplevel,
                                                       double          y,
                                                       guint32         timestamp);
 
-
+/* Zeile entfernt */
 void          gdk_toplevel_begin_move                (GdkToplevel    *toplevel,
                                                       GdkDevice      *device,
                                                       int             button,
@@ -211,10 +211,10 @@ void          gdk_toplevel_begin_move                (GdkToplevel    *toplevel,
                                                       double          y,
                                                       guint32         timestamp);
 
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplevel,
                                                       GdkTitlebarGesture  gesture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_TOPLEVEL_H__ */

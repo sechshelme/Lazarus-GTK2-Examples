@@ -35,6 +35,7 @@
 {$endif}
 {$include <gtk/gtkfilefilter.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FILE_CHOOSER : longint; { return type might be wrong }
@@ -70,19 +71,16 @@
     GtkFileChooserAction = (GTK_FILE_CHOOSER_ACTION_OPEN,GTK_FILE_CHOOSER_ACTION_SAVE,
       GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER
       );
-(* error 
-GType gtk_file_chooser_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_file_chooser_get_type:GType;
+
   { GError enumeration for GtkFileChooser  }
   {*
    * GTK_FILE_CHOOSER_ERROR:
    *
    * Used to get the `GError` quark for `GtkFileChooser` errors.
     }
-
   { was #define dname def_expr }
   function GTK_FILE_CHOOSER_ERROR : longint; { return type might be wrong }
 
@@ -104,76 +102,103 @@ GType gtk_file_chooser_get_type (void) G_GNUC_CONST;
       GTK_FILE_CHOOSER_ERROR_ALREADY_EXISTS,
       GTK_FILE_CHOOSER_ERROR_INCOMPLETE_HOSTNAME
       );
+  { Zeile entfernt  }
 
   function gtk_file_chooser_error_quark:GQuark;
 
   { Configuration  }
+  { Zeile entfernt  }
   procedure gtk_file_chooser_set_action(chooser:PGtkFileChooser; action:GtkFileChooserAction);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_action(chooser:PGtkFileChooser):GtkFileChooserAction;
 
+  { Zeile entfernt  }
   procedure gtk_file_chooser_set_select_multiple(chooser:PGtkFileChooser; select_multiple:gboolean);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_select_multiple(chooser:PGtkFileChooser):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_file_chooser_set_create_folders(chooser:PGtkFileChooser; create_folders:gboolean);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_create_folders(chooser:PGtkFileChooser):gboolean;
 
   { Suggested name for the Save-type actions  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_chooser_set_current_name(chooser:PGtkFileChooser; name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_current_name(chooser:PGtkFileChooser):^char;
 
   { GFile manipulation  }
+  { Zeile entfernt  }
   function gtk_file_chooser_get_file(chooser:PGtkFileChooser):^GFile;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_set_file(chooser:PGtkFileChooser; file:PGFile; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_files(chooser:PGtkFileChooser):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_set_current_folder(chooser:PGtkFileChooser; file:PGFile; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_current_folder(chooser:PGtkFileChooser):^GFile;
 
   { List of user selectable filters  }
+  { Zeile entfernt  }
   procedure gtk_file_chooser_add_filter(chooser:PGtkFileChooser; filter:PGtkFileFilter);
 
+  { Zeile entfernt  }
   procedure gtk_file_chooser_remove_filter(chooser:PGtkFileChooser; filter:PGtkFileFilter);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_filters(chooser:PGtkFileChooser):^GListModel;
 
   { Current filter  }
+  { Zeile entfernt  }
   procedure gtk_file_chooser_set_filter(chooser:PGtkFileChooser; filter:PGtkFileFilter);
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_filter(chooser:PGtkFileChooser):^GtkFileFilter;
 
   { Per-application shortcut folders  }
+  { Zeile entfernt  }
   function gtk_file_chooser_add_shortcut_folder(chooser:PGtkFileChooser; folder:PGFile; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_remove_shortcut_folder(chooser:PGtkFileChooser; folder:PGFile; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_file_chooser_get_shortcut_folders(chooser:PGtkFileChooser):^GListModel;
 
   { Custom widgets  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_file_chooser_add_choice(chooser:PGtkFileChooser; id:Pchar; _label:Pchar; options:PPchar; option_labels:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_chooser_remove_choice(chooser:PGtkFileChooser; id:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_file_chooser_set_choice(chooser:PGtkFileChooser; id:Pchar; option:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_file_chooser_get_choice(chooser:PGtkFileChooser; id:Pchar):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FILE_CHOOSER_H__  }
   { was #define dname def_expr }
@@ -198,6 +223,10 @@ GType gtk_file_chooser_get_type (void) G_GNUC_CONST;
     GTK_IS_FILE_CHOOSER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_FILE_CHOOSER);
   end;
 
+  function gtk_file_chooser_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_FILE_CHOOSER_ERROR : longint; { return type might be wrong }
     begin

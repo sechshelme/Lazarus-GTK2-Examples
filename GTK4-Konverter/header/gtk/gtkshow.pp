@@ -35,16 +35,21 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwindow.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   procedure gtk_show_uri_full(parent:PGtkWindow; uri:Pchar; timestamp:guint32; cancellable:PGCancellable; callback:GAsyncReadyCallback; 
               user_data:gpointer);
 
+  { Zeile entfernt  }
   function gtk_show_uri_full_finish(parent:PGtkWindow; result:PGAsyncResult; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_show_uri(parent:PGtkWindow; uri:Pchar; timestamp:guint32);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHOW_H__  }
   procedure gtk_show_uri_full(parent:PGtkWindow; uri:Pchar; timestamp:guint32; cancellable:PGCancellable; callback:GAsyncReadyCallback; 

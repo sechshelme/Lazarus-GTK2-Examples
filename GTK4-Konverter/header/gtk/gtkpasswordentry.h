@@ -27,7 +27,7 @@
 
 #include <gtk/gtkentry.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PASSWORD_ENTRY                 (gtk_password_entry_get_type ())
 #define GTK_PASSWORD_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PASSWORD_ENTRY, GtkPasswordEntry))
@@ -36,24 +36,24 @@
 typedef struct _GtkPasswordEntry       GtkPasswordEntry;
 typedef struct _GtkPasswordEntryClass  GtkPasswordEntryClass;
 
+/* Zeile entfernt */
+GType           gtk_password_entry_get_type (void) ;
 
-GType           gtk_password_entry_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_password_entry_new      (void);
 
-
+/* Zeile entfernt */
 void            gtk_password_entry_set_show_peek_icon (GtkPasswordEntry *entry,
                                                        gboolean          show_peek_icon);
-
+/* Zeile entfernt */
 gboolean        gtk_password_entry_get_show_peek_icon (GtkPasswordEntry *entry);
 
-
+/* Zeile entfernt */
 void            gtk_password_entry_set_extra_menu     (GtkPasswordEntry *entry,
                                                        GMenuModel       *model);
-
+/* Zeile entfernt */
 GMenuModel *    gtk_password_entry_get_extra_menu     (GtkPasswordEntry *entry);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PASSWORD_ENTRY_H__ */

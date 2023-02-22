@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-
+/* Zeile entfernt */
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDevice GdkWaylandDevice;
@@ -43,21 +43,21 @@ typedef struct _GdkWaylandDeviceClass GdkWaylandDeviceClass;
 #define GDK_IS_WAYLAND_DEVICE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), GDK_TYPE_WAYLAND_DEVICE))
 #define GDK_WAYLAND_DEVICE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GDK_TYPE_WAYLAND_DEVICE, GdkWaylandDeviceClass))
 
-
+/* Zeile entfernt */
 GType                gdk_wayland_device_get_type            (void);
 
-
+/* Zeile entfernt */
 struct wl_seat      *gdk_wayland_device_get_wl_seat         (GdkDevice *device);
-
+/* Zeile entfernt */
 struct wl_pointer   *gdk_wayland_device_get_wl_pointer      (GdkDevice *device);
-
+/* Zeile entfernt */
 struct wl_keyboard  *gdk_wayland_device_get_wl_keyboard     (GdkDevice *device);
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 struct xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
 
-
+/* Zeile entfernt */
 const char          *gdk_wayland_device_get_node_path       (GdkDevice *device);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_WAYLAND_DEVICE_H__ */

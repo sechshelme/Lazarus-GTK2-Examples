@@ -51,6 +51,7 @@
 {$include <gdk/gdkframeclock.h>}
 {$include <gdk/gdkmonitor.h>}
 {$include <gdk/gdkpopuplayout.h>}
+  { Zeile entfernt  }
 
   type
     _GdkSurfaceClass = GdkSurfaceClass;
@@ -83,69 +84,92 @@
   { return type might be wrong }   
   function GDK_SURFACE_GET_CLASS(obj : longint) : longint;  
 
-(* error 
-GType         gdk_surface_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_surface_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_surface_new_toplevel(display:PGdkDisplay):^GdkSurface;
 
+  { Zeile entfernt  }
   function gdk_surface_new_popup(parent:PGdkSurface; autohide:gboolean):^GdkSurface;
 
+  { Zeile entfernt  }
   procedure gdk_surface_destroy(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   function gdk_surface_is_destroyed(surface:PGdkSurface):gboolean;
 
+  { Zeile entfernt  }
   function gdk_surface_get_display(surface:PGdkSurface):^GdkDisplay;
 
+  { Zeile entfernt  }
   procedure gdk_surface_hide(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   procedure gdk_surface_set_input_region(surface:PGdkSurface; region:Pcairo_region_t);
 
+  { Zeile entfernt  }
   function gdk_surface_get_mapped(surface:PGdkSurface):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_surface_set_cursor(surface:PGdkSurface; cursor:PGdkCursor);
 
+  { Zeile entfernt  }
   function gdk_surface_get_cursor(surface:PGdkSurface):^GdkCursor;
 
+  { Zeile entfernt  }
   procedure gdk_surface_set_device_cursor(surface:PGdkSurface; device:PGdkDevice; cursor:PGdkCursor);
 
+  { Zeile entfernt  }
   function gdk_surface_get_device_cursor(surface:PGdkSurface; device:PGdkDevice):^GdkCursor;
 
+  { Zeile entfernt  }
   function gdk_surface_get_width(surface:PGdkSurface):longint;
 
+  { Zeile entfernt  }
   function gdk_surface_get_height(surface:PGdkSurface):longint;
 
+  { Zeile entfernt  }
   function gdk_surface_translate_coordinates(from:PGdkSurface; to:PGdkSurface; x:Pdouble; y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gdk_surface_get_scale_factor(surface:PGdkSurface):longint;
 
+  { Zeile entfernt  }
   function gdk_surface_get_device_position(surface:PGdkSurface; device:PGdkDevice; x:Pdouble; y:Pdouble; mask:PGdkModifierType):gboolean;
 
+  { Zeile entfernt  }
   function gdk_surface_create_similar_surface(surface:PGdkSurface; content:cairo_content_t; width:longint; height:longint):^cairo_surface_t;
 
+  { Zeile entfernt  }
   procedure gdk_surface_beep(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   procedure gdk_surface_queue_render(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   procedure gdk_surface_request_layout(surface:PGdkSurface);
 
+  { Zeile entfernt  }
   function gdk_surface_get_frame_clock(surface:PGdkSurface):^GdkFrameClock;
 
+  { Zeile entfernt  }
   procedure gdk_surface_set_opaque_region(surface:PGdkSurface; region:Pcairo_region_t);
 
+  { Zeile entfernt  }
   function gdk_surface_create_cairo_context(surface:PGdkSurface):^GdkCairoContext;
 
+  { Zeile entfernt  }
   function gdk_surface_create_gl_context(surface:PGdkSurface; error:PPGError):^GdkGLContext;
 
+  { Zeile entfernt  }
   function gdk_surface_create_vulkan_context(surface:PGdkSurface; error:PPGError):^GdkVulkanContext;
 
 (* error 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
 (* error 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
+  { Zeile entfernt  }
 {$endif}
   { __GDK_SURFACE_H__  }
   { was #define dname def_expr }
@@ -194,6 +218,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
     GDK_SURFACE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GDK_TYPE_SURFACE,GdkSurfaceClass);
   end;
 
+  function gdk_surface_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_surface_new_toplevel(display:PGdkDisplay):PGdkSurface;
   begin
     { You must implement this function }

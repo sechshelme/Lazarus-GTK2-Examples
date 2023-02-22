@@ -59,7 +59,7 @@
 #include <gtk/gtkenums.h>
 
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkTextIter GtkTextIter;
 typedef struct _GtkTextTagTable GtkTextTagTable;
@@ -91,20 +91,20 @@ struct _GtkTextTagClass
   gpointer padding[8];
 };
 
-
-GType        gtk_text_tag_get_type     (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_text_tag_get_type     (void) ;
+/* Zeile entfernt */
 GtkTextTag  *gtk_text_tag_new          (const char        *name);
-
+/* Zeile entfernt */
 int          gtk_text_tag_get_priority (GtkTextTag        *tag);
-
+/* Zeile entfernt */
 void         gtk_text_tag_set_priority (GtkTextTag        *tag,
                                         int                priority);
-
+/* Zeile entfernt */
 void         gtk_text_tag_changed      (GtkTextTag        *tag,
                                         gboolean           size_changed);
 
-
+/* Zeile entfernt */
 
 #endif
 

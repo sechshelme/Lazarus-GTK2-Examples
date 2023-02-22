@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_DRAG_SOURCE         (gtk_drag_source_get_type ())
 #define GTK_DRAG_SOURCE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_DRAG_SOURCE, GtkDragSource))
@@ -46,36 +46,36 @@
 typedef struct _GtkDragSource GtkDragSource;
 typedef struct _GtkDragSourceClass GtkDragSourceClass;
 
+/* Zeile entfernt */
+GType              gtk_drag_source_get_type  (void) ;
 
-GType              gtk_drag_source_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkDragSource      *gtk_drag_source_new        (void);
 
-
+/* Zeile entfernt */
 void                gtk_drag_source_set_content (GtkDragSource     *source,
                                                  GdkContentProvider *content);
-
+/* Zeile entfernt */
 GdkContentProvider *gtk_drag_source_get_content (GtkDragSource     *source);
 
-
+/* Zeile entfernt */
 void               gtk_drag_source_set_actions (GtkDragSource     *source,
                                                 GdkDragAction      actions);
-
+/* Zeile entfernt */
 GdkDragAction      gtk_drag_source_get_actions (GtkDragSource     *source);
 
-
+/* Zeile entfernt */
 void               gtk_drag_source_set_icon    (GtkDragSource     *source,
                                                 GdkPaintable      *paintable,
                                                 int                hot_x,
                                                 int                hot_y);
-
+/* Zeile entfernt */
 void               gtk_drag_source_drag_cancel (GtkDragSource     *source);
 
-
+/* Zeile entfernt */
 GdkDrag *          gtk_drag_source_get_drag    (GtkDragSource     *source);
 
-
+/* Zeile entfernt */
 gboolean           gtk_drag_check_threshold    (GtkWidget         *widget,
                                                 int                start_x,
                                                 int                start_y,
@@ -83,6 +83,6 @@ gboolean           gtk_drag_check_threshold    (GtkWidget         *widget,
                                                 int                current_y);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DRAG_SOURCE_H__ */

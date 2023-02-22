@@ -36,6 +36,7 @@
 {$error "Only <gdk/gdk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdkframetimings.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_FRAME_CLOCK : longint; { return type might be wrong }
@@ -92,34 +93,42 @@
       GDK_FRAME_CLOCK_PHASE_PAINT := 1 shl 4,GDK_FRAME_CLOCK_PHASE_RESUME_EVENTS := 1 shl 5,
       GDK_FRAME_CLOCK_PHASE_AFTER_PAINT := 1 shl 6
       );
-(* error 
-GType    gdk_frame_clock_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_frame_clock_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_frame_clock_get_frame_time(frame_clock:PGdkFrameClock):gint64;
 
+  { Zeile entfernt  }
   procedure gdk_frame_clock_request_phase(frame_clock:PGdkFrameClock; phase:GdkFrameClockPhase);
 
+  { Zeile entfernt  }
   procedure gdk_frame_clock_begin_updating(frame_clock:PGdkFrameClock);
 
+  { Zeile entfernt  }
   procedure gdk_frame_clock_end_updating(frame_clock:PGdkFrameClock);
 
   { Frame history  }
+  { Zeile entfernt  }
   function gdk_frame_clock_get_frame_counter(frame_clock:PGdkFrameClock):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_clock_get_history_start(frame_clock:PGdkFrameClock):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_clock_get_timings(frame_clock:PGdkFrameClock; frame_counter:gint64):^GdkFrameTimings;
 
+  { Zeile entfernt  }
   function gdk_frame_clock_get_current_timings(frame_clock:PGdkFrameClock):^GdkFrameTimings;
 
+  { Zeile entfernt  }
   procedure gdk_frame_clock_get_refresh_info(frame_clock:PGdkFrameClock; base_time:gint64; refresh_interval_return:Pgint64; presentation_time_return:Pgint64);
 
+  { Zeile entfernt  }
   function gdk_frame_clock_get_fps(frame_clock:PGdkFrameClock):double;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_FRAME_CLOCK_H__  }
   { was #define dname def_expr }
@@ -168,6 +177,10 @@ GType    gdk_frame_clock_get_type             (void) G_GNUC_CONST;
     GDK_FRAME_CLOCK_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GDK_TYPE_FRAME_CLOCK,GdkFrameClockClass);
   end;
 
+  function gdk_frame_clock_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_frame_clock_get_frame_time(frame_clock:PGdkFrameClock):gint64;
   begin
     { You must implement this function }

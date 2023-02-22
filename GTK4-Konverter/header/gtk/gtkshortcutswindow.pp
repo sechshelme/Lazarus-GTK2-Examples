@@ -27,6 +27,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwindow.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUTS_WINDOW : longint; { return type might be wrong }
@@ -44,16 +45,12 @@
 
   type
     _GtkShortcutsWindow = GtkShortcutsWindow;
-(* error 
-GType gtk_shortcuts_window_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkShortcutsWindow, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkShortcutsWindow, g_object_unref)
+  function gtk_shortcuts_window_get_type:GType;
+
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { GTK_SHORTCUTS_WINDOW _H  }
   { was #define dname def_expr }
@@ -78,4 +75,8 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkShortcutsWindow, g_object_unref)
     GTK_IS_SHORTCUTS_WINDOW:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SHORTCUTS_WINDOW);
   end;
 
+  function gtk_shortcuts_window_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

@@ -31,7 +31,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_BROADWAY_CURSOR              (gdk_broadway_cursor_get_type ())
 #define GDK_BROADWAY_CURSOR(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_BROADWAY_CURSOR, GdkBroadwayCursor))
@@ -47,9 +47,9 @@ typedef GdkCursor GdkBroadwayCursor;
 #endif
 typedef struct _GdkBroadwayCursorClass GdkBroadwayCursorClass;
 
-
+/* Zeile entfernt */
 GType    gdk_broadway_cursor_get_type          (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_BROADWAY_CURSOR_H__ */

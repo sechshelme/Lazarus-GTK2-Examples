@@ -28,30 +28,30 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_DRAW_CONTEXT             (gdk_draw_context_get_type ())
 #define GDK_DRAW_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_DRAW_CONTEXT, GdkDrawContext))
 #define GDK_IS_DRAW_CONTEXT(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_DRAW_CONTEXT))
 
+/* Zeile entfernt */
+GType gdk_draw_context_get_type (void) ;
 
-GType gdk_draw_context_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay *            gdk_draw_context_get_display            (GdkDrawContext         *context);
-
+/* Zeile entfernt */
 GdkSurface *            gdk_draw_context_get_surface            (GdkDrawContext         *context);
 
-
+/* Zeile entfernt */
 void                    gdk_draw_context_begin_frame            (GdkDrawContext         *context,
                                                                  const cairo_region_t   *region);
-
+/* Zeile entfernt */
 void                    gdk_draw_context_end_frame              (GdkDrawContext         *context);
-
+/* Zeile entfernt */
 gboolean                gdk_draw_context_is_in_frame            (GdkDrawContext         *context);
-
+/* Zeile entfernt */
 const cairo_region_t *  gdk_draw_context_get_frame_region       (GdkDrawContext         *context);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DRAW_CONTEXT__ */

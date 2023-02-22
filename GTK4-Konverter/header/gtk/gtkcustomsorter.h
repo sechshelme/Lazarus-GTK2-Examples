@@ -27,23 +27,23 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CUSTOM_SORTER             (gtk_custom_sorter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkCustomSorter, gtk_custom_sorter, GTK, CUSTOM_SORTER, GtkSorter)
-
-
+/* Zeile entfernt */
 GtkCustomSorter *       gtk_custom_sorter_new                   (GCompareDataFunc        sort_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 void                    gtk_custom_sorter_set_sort_func         (GtkCustomSorter        *self,
                                                                  GCompareDataFunc        sort_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CUSTOM_SORTER_H__ */

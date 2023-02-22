@@ -24,21 +24,21 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_WINDOW_HANDLE (gtk_window_handle_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkWindowHandle, gtk_window_handle, GTK, WINDOW_HANDLE, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget * gtk_window_handle_new       (void);
 
-
+/* Zeile entfernt */
 GtkWidget * gtk_window_handle_get_child (GtkWindowHandle *self);
 
-
+/* Zeile entfernt */
 void        gtk_window_handle_set_child (GtkWindowHandle *self,
                                          GtkWidget       *child);
 
-
+/* Zeile entfernt */

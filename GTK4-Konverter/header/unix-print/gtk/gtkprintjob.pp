@@ -38,6 +38,7 @@
 {$include <cairo.h>}
 {$include <gtk/gtk.h>}
 {$include <gtk/gtkprinter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_JOB : longint; { return type might be wrong }
@@ -69,78 +70,107 @@
 (* Const before type ignored *)
 
     GtkPrintJobCompleteFunc = procedure (print_job:PGtkPrintJob; user_data:gpointer; error:PGError);cdecl;
-(* error 
-GType                    gtk_print_job_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_print_job_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_print_job_new(title:Pchar; printer:PGtkPrinter; settings:PGtkPrintSettings; page_setup:PGtkPageSetup):^GtkPrintJob;
 
+  { Zeile entfernt  }
   function gtk_print_job_get_settings(job:PGtkPrintJob):^GtkPrintSettings;
 
+  { Zeile entfernt  }
   function gtk_print_job_get_printer(job:PGtkPrintJob):^GtkPrinter;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_job_get_title(job:PGtkPrintJob):^char;
 
+  { Zeile entfernt  }
   function gtk_print_job_get_status(job:PGtkPrintJob):GtkPrintStatus;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_job_set_source_file(job:PGtkPrintJob; filename:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_print_job_set_source_fd(job:PGtkPrintJob; fd:longint; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gtk_print_job_get_surface(job:PGtkPrintJob; error:PPGError):^cairo_surface_t;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_track_print_status(job:PGtkPrintJob; track_status:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_track_print_status(job:PGtkPrintJob):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_send(job:PGtkPrintJob; callback:GtkPrintJobCompleteFunc; user_data:gpointer; dnotify:GDestroyNotify);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_pages(job:PGtkPrintJob):GtkPrintPages;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_pages(job:PGtkPrintJob; pages:GtkPrintPages);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_page_ranges(job:PGtkPrintJob; n_ranges:Plongint):^GtkPageRange;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_page_ranges(job:PGtkPrintJob; ranges:PGtkPageRange; n_ranges:longint);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_page_set(job:PGtkPrintJob):GtkPageSet;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_page_set(job:PGtkPrintJob; page_set:GtkPageSet);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_num_copies(job:PGtkPrintJob):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_num_copies(job:PGtkPrintJob; num_copies:longint);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_scale(job:PGtkPrintJob):double;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_scale(job:PGtkPrintJob; scale:double);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_n_up(job:PGtkPrintJob):guint;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_n_up(job:PGtkPrintJob; n_up:guint);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_n_up_layout(job:PGtkPrintJob):GtkNumberUpLayout;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_n_up_layout(job:PGtkPrintJob; layout:GtkNumberUpLayout);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_rotate(job:PGtkPrintJob):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_rotate(job:PGtkPrintJob; rotate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_collate(job:PGtkPrintJob):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_collate(job:PGtkPrintJob; collate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_job_get_reverse(job:PGtkPrintJob):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_job_set_reverse(job:PGtkPrintJob; reverse:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_JOB_H__  }
   { was #define dname def_expr }
@@ -165,6 +195,10 @@ GType                    gtk_print_job_get_type               (void) G_GNUC_CONS
     GTK_IS_PRINT_JOB:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PRINT_JOB);
   end;
 
+  function gtk_print_job_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_print_job_new(title:Pchar; printer:PGtkPrinter; settings:PGtkPrintSettings; page_setup:PGtkPageSetup):PGtkPrintJob;
   begin
     { You must implement this function }

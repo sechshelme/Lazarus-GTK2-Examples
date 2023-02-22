@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT_ACTION (gtk_shortcut_action_get_type ())
 
@@ -58,18 +58,18 @@ typedef enum {
   GTK_SHORTCUT_ACTION_EXCLUSIVE = 1 << 0
 } GtkShortcutActionFlags;
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutAction, gtk_shortcut_action, GTK, SHORTCUT_ACTION, GObject)
-
-
+/* Zeile entfernt */
 char *                  gtk_shortcut_action_to_string           (GtkShortcutAction      *self);
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_shortcut_action_parse_string        (const char *            string);
 
-
+/* Zeile entfernt */
 void                    gtk_shortcut_action_print               (GtkShortcutAction      *self,
                                                                  GString                *string);
-
+/* Zeile entfernt */
 gboolean                gtk_shortcut_action_activate            (GtkShortcutAction      *self,
                                                                  GtkShortcutActionFlags  flags,
                                                                  GtkWidget              *widget,
@@ -82,10 +82,10 @@ gboolean                gtk_shortcut_action_activate            (GtkShortcutActi
  *
  * A `GtkShortcutAction` that does nothing.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkNothingAction, gtk_nothing_action, GTK, NOTHING_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_nothing_action_get                  (void);
 
 #define GTK_TYPE_CALLBACK_ACTION (gtk_callback_action_get_type())
@@ -95,10 +95,10 @@ GtkShortcutAction *     gtk_nothing_action_get                  (void);
  *
  * A `GtkShortcutAction` that invokes a callback.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkCallbackAction, gtk_callback_action, GTK, CALLBACK_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_callback_action_new                 (GtkShortcutFunc         callback,
                                                                  gpointer                data,
                                                                  GDestroyNotify          destroy);
@@ -110,10 +110,10 @@ GtkShortcutAction *     gtk_callback_action_new                 (GtkShortcutFunc
  *
  * A `GtkShortcutAction` that calls gtk_widget_mnemonic_activate().
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicAction, gtk_mnemonic_action, GTK, MNEMONIC_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_mnemonic_action_get                 (void);
 
 #define GTK_TYPE_ACTIVATE_ACTION (gtk_activate_action_get_type())
@@ -123,10 +123,10 @@ GtkShortcutAction *     gtk_mnemonic_action_get                 (void);
  *
  * A `GtkShortcutAction` that calls gtk_widget_activate().
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkActivateAction, gtk_activate_action, GTK, ACTIVATE_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_activate_action_get                 (void);
 
 #define GTK_TYPE_SIGNAL_ACTION (gtk_signal_action_get_type())
@@ -139,12 +139,12 @@ GtkShortcutAction *     gtk_activate_action_get                 (void);
  * Signals that are used in this way are referred to as keybinding signals,
  * and they are expected to be defined with the %G_SIGNAL_ACTION flag.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkSignalAction, gtk_signal_action, GTK, SIGNAL_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_signal_action_new                   (const char      *signal_name);
-
+/* Zeile entfernt */
 const char *            gtk_signal_action_get_signal_name       (GtkSignalAction *self);
 
 #define GTK_TYPE_NAMED_ACTION (gtk_named_action_get_type())
@@ -154,14 +154,14 @@ const char *            gtk_signal_action_get_signal_name       (GtkSignalAction
  *
  * A `GtkShortcutAction` that activates an action by name.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkNamedAction, gtk_named_action, GTK, NAMED_ACTION, GtkShortcutAction)
-
-
+/* Zeile entfernt */
 GtkShortcutAction *     gtk_named_action_new                    (const char     *name);
-
+/* Zeile entfernt */
 const char *            gtk_named_action_get_action_name        (GtkNamedAction *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUT_ACTION_H__ */

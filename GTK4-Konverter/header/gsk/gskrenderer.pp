@@ -36,6 +36,7 @@
 {$endif}
 {$include <gsk/gsktypes.h>}
 {$include <gsk/gskrendernode.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_RENDERER : longint; { return type might be wrong }
@@ -53,29 +54,34 @@
 
   type
     _GskRendererClass = GskRendererClass;
-(* error 
-GType gsk_renderer_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gsk_renderer_get_type:GType;
 
+  { Zeile entfernt  }
   function gsk_renderer_new_for_surface(surface:PGdkSurface):^GskRenderer;
 
+  { Zeile entfernt  }
   function gsk_renderer_get_surface(renderer:PGskRenderer):^GdkSurface;
 
+  { Zeile entfernt  }
   function gsk_renderer_realize(renderer:PGskRenderer; surface:PGdkSurface; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   procedure gsk_renderer_unrealize(renderer:PGskRenderer);
 
+  { Zeile entfernt  }
   function gsk_renderer_is_realized(renderer:PGskRenderer):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gsk_renderer_render_texture(renderer:PGskRenderer; root:PGskRenderNode; viewport:Pgraphene_rect_t):^GdkTexture;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gsk_renderer_render(renderer:PGskRenderer; root:PGskRenderNode; region:Pcairo_region_t);
 
+  { Zeile entfernt  }
 {$endif}
   { __GSK_RENDERER_H__  }
   { was #define dname def_expr }
@@ -100,6 +106,10 @@ GType gsk_renderer_get_type (void) G_GNUC_CONST;
     GSK_IS_RENDERER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GSK_TYPE_RENDERER);
   end;
 
+  function gsk_renderer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_renderer_new_for_surface(surface:PGdkSurface):PGskRenderer;
   begin
     { You must implement this function }

@@ -35,48 +35,63 @@
 {$endif}
 {$include <gtk/gtkmediastream.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_VIDEO : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkVideo, gtk_video, GTK, VIDEO, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkVideo, gtk_video, GTK, VIDEO, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_video_new:^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_video_new_for_media_stream(stream:PGtkMediaStream):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_video_new_for_file(file:PGFile):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_video_new_for_filename(filename:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_video_new_for_resource(resource_path:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_video_get_media_stream(self:PGtkVideo):^GtkMediaStream;
 
+  { Zeile entfernt  }
   procedure gtk_video_set_media_stream(self:PGtkVideo; stream:PGtkMediaStream);
 
+  { Zeile entfernt  }
   function gtk_video_get_file(self:PGtkVideo):^GFile;
 
+  { Zeile entfernt  }
   procedure gtk_video_set_file(self:PGtkVideo; file:PGFile);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_video_set_filename(self:PGtkVideo; filename:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_video_set_resource(self:PGtkVideo; resource_path:Pchar);
 
+  { Zeile entfernt  }
   function gtk_video_get_autoplay(self:PGtkVideo):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_video_set_autoplay(self:PGtkVideo; autoplay:gboolean);
 
+  { Zeile entfernt  }
   function gtk_video_get_loop(self:PGtkVideo):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_video_set_loop(self:PGtkVideo; loop:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_VIDEO_H__  }
   { was #define dname def_expr }
@@ -85,6 +100,10 @@ G_DECLARE_FINAL_TYPE (GtkVideo, gtk_video, GTK, VIDEO, GtkWidget)
       GTK_TYPE_VIDEO:=gtk_video_get_type;
     end;
 
+  function gtk_video_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_video_new_for_media_stream(stream:PGtkMediaStream):PGtkWidget;
   begin
     { You must implement this function }

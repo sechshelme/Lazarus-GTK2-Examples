@@ -35,6 +35,7 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   type
     _GtkBorder = GtkBorder;
@@ -62,26 +63,27 @@
         bottom : gint16;
       end;
 
-(* error 
-GType      gtk_border_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_border_get_type:GType;
+
+  { Zeile entfernt  }
 (* error 
 GtkBorder *gtk_border_new      (void) G_GNUC_MALLOC;
  in declarator_list *)
+
+    var
  : GtkBorder;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_border_copy(border_:PGtkBorder):^GtkBorder;
 
+  { Zeile entfernt  }
   procedure gtk_border_free(border_:PGtkBorder);
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBorder, gtk_border_free)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBorder, gtk_border_free)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BORDER_H__  }
   { was #define dname def_expr }
@@ -90,6 +92,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBorder, gtk_border_free)
       GTK_TYPE_BORDER:=gtk_border_get_type;
     end;
 
+  function gtk_border_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_border_copy(border_:PGtkBorder):PGtkBorder;
   begin
     { You must implement this function }

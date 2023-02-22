@@ -37,15 +37,15 @@
 #include <glib.h>
 #include <gdk/gdk.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 void gtk_hsv_to_rgb (float  h, float  s, float  v,
                      float *r, float *g, float *b);
-
+/* Zeile entfernt */
 void gtk_rgb_to_hsv (float  r, float  g, float  b,
                      float *h, float *s, float *v);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_COLOR_UTILS_H__ */

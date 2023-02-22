@@ -1,10 +1,10 @@
 
-    Type
-    Pchar  = ^char;
-    PGMenuModel  = ^GMenuModel;
-    PGtkMenuButton  = ^GtkMenuButton;
-    PGtkPopover  = ^GtkPopover;
-    PGtkWidget  = ^GtkWidget;
+  Type
+  Pchar  = ^char;
+  PGMenuModel  = ^GMenuModel;
+  PGtkMenuButton  = ^GtkMenuButton;
+  PGtkPopover  = ^GtkPopover;
+  PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -36,6 +36,7 @@
 {$endif}
 {$include <gtk/gtktogglebutton.h>}
 {$include <gtk/gtkpopover.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MENU_BUTTON : longint; { return type might be wrong }
@@ -67,73 +68,89 @@
     }
 
     GtkMenuButtonCreatePopupFunc = procedure (menu_button:PGtkMenuButton; user_data:gpointer);cdecl;
-(* error 
-GType        gtk_menu_button_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_menu_button_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_menu_button_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_menu_button_set_popover(menu_button:PGtkMenuButton; popover:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_menu_button_get_popover(menu_button:PGtkMenuButton):^GtkPopover;
 
+  { Zeile entfernt  }
   procedure gtk_menu_button_set_direction(menu_button:PGtkMenuButton; direction:GtkArrowType);
 
+  { Zeile entfernt  }
   function gtk_menu_button_get_direction(menu_button:PGtkMenuButton):GtkArrowType;
 
+  { Zeile entfernt  }
   procedure gtk_menu_button_set_menu_model(menu_button:PGtkMenuButton; menu_model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_menu_button_get_menu_model(menu_button:PGtkMenuButton):^GMenuModel;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_menu_button_set_icon_name(menu_button:PGtkMenuButton; icon_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_menu_button_get_icon_name(menu_button:PGtkMenuButton):^char;
 
-(* error 
-void         gtk_menu_button_set_always_show_arrow (GtkMenuButton *menu_button,
-in declaration at line 85 *)
-(* error 
-gboolean     gtk_menu_button_get_always_show_arrow (GtkMenuButton *menu_button);
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_always_show_arrow(menu_button:PGtkMenuButton; always_show_arrow:gboolean);
+
+  { Zeile entfernt  }
+  function gtk_menu_button_get_always_show_arrow(menu_button:PGtkMenuButton):gboolean;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-    procedure gtk_menu_button_set_label(menu_button:PGtkMenuButton; _label:Pchar);
+  procedure gtk_menu_button_set_label(menu_button:PGtkMenuButton; _label:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-    function gtk_menu_button_get_label(menu_button:PGtkMenuButton):^char;
+  function gtk_menu_button_get_label(menu_button:PGtkMenuButton):^char;
 
-    procedure gtk_menu_button_set_use_underline(menu_button:PGtkMenuButton; use_underline:gboolean);
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_use_underline(menu_button:PGtkMenuButton; use_underline:gboolean);
 
-    function gtk_menu_button_get_use_underline(menu_button:PGtkMenuButton):gboolean;
+  { Zeile entfernt  }
+  function gtk_menu_button_get_use_underline(menu_button:PGtkMenuButton):gboolean;
 
-    procedure gtk_menu_button_set_has_frame(menu_button:PGtkMenuButton; has_frame:gboolean);
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_has_frame(menu_button:PGtkMenuButton; has_frame:gboolean);
 
-    function gtk_menu_button_get_has_frame(menu_button:PGtkMenuButton):gboolean;
+  { Zeile entfernt  }
+  function gtk_menu_button_get_has_frame(menu_button:PGtkMenuButton):gboolean;
 
-    procedure gtk_menu_button_popup(menu_button:PGtkMenuButton);
+  { Zeile entfernt  }
+  procedure gtk_menu_button_popup(menu_button:PGtkMenuButton);
 
-    procedure gtk_menu_button_popdown(menu_button:PGtkMenuButton);
+  { Zeile entfernt  }
+  procedure gtk_menu_button_popdown(menu_button:PGtkMenuButton);
 
-    procedure gtk_menu_button_set_create_popup_func(menu_button:PGtkMenuButton; func:GtkMenuButtonCreatePopupFunc; user_data:gpointer; destroy_notify:GDestroyNotify);
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_create_popup_func(menu_button:PGtkMenuButton; func:GtkMenuButtonCreatePopupFunc; user_data:gpointer; destroy_notify:GDestroyNotify);
 
-(* error 
-void          gtk_menu_button_set_primary (GtkMenuButton *menu_button,
-in declaration at line 120 *)
-(* error 
-gboolean      gtk_menu_button_get_primary (GtkMenuButton *menu_button);
- in declarator_list *)
-(* error 
-void          gtk_menu_button_set_child   (GtkMenuButton *menu_button,
-in declaration at line 126 *)
-(* error 
-GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_primary(menu_button:PGtkMenuButton; primary:gboolean);
+
+  { Zeile entfernt  }
+  function gtk_menu_button_get_primary(menu_button:PGtkMenuButton):gboolean;
+
+  { Zeile entfernt  }
+  procedure gtk_menu_button_set_child(menu_button:PGtkMenuButton; child:PGtkWidget);
+
+  { Zeile entfernt  }
+  function gtk_menu_button_get_child(menu_button:PGtkMenuButton):^GtkWidget;
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_MENU_BUTTON_H__  }
+  { __GTK_MENU_BUTTON_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_MENU_BUTTON : longint; { return type might be wrong }
     begin
@@ -156,6 +173,10 @@ GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
     GTK_IS_MENU_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_MENU_BUTTON);
   end;
 
+  function gtk_menu_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_menu_button_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -192,40 +213,64 @@ GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
   begin
     { You must implement this function }
   end;
-    procedure gtk_menu_button_set_label(menu_button:PGtkMenuButton; _label:Pchar);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_menu_button_get_label(menu_button:PGtkMenuButton):Pchar;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_menu_button_set_use_underline(menu_button:PGtkMenuButton; use_underline:gboolean);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_menu_button_get_use_underline(menu_button:PGtkMenuButton):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_menu_button_set_has_frame(menu_button:PGtkMenuButton; has_frame:gboolean);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_menu_button_get_has_frame(menu_button:PGtkMenuButton):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_menu_button_popup(menu_button:PGtkMenuButton);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_menu_button_popdown(menu_button:PGtkMenuButton);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_menu_button_set_create_popup_func(menu_button:PGtkMenuButton; func:GtkMenuButtonCreatePopupFunc; user_data:gpointer; destroy_notify:GDestroyNotify);
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_menu_button_set_always_show_arrow(menu_button:PGtkMenuButton; always_show_arrow:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_always_show_arrow(menu_button:PGtkMenuButton):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_label(menu_button:PGtkMenuButton; _label:Pchar);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_label(menu_button:PGtkMenuButton):Pchar;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_use_underline(menu_button:PGtkMenuButton; use_underline:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_use_underline(menu_button:PGtkMenuButton):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_has_frame(menu_button:PGtkMenuButton; has_frame:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_has_frame(menu_button:PGtkMenuButton):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_popup(menu_button:PGtkMenuButton);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_popdown(menu_button:PGtkMenuButton);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_create_popup_func(menu_button:PGtkMenuButton; func:GtkMenuButtonCreatePopupFunc; user_data:gpointer; destroy_notify:GDestroyNotify);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_primary(menu_button:PGtkMenuButton; primary:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_primary(menu_button:PGtkMenuButton):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_menu_button_set_child(menu_button:PGtkMenuButton; child:PGtkWidget);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_menu_button_get_child(menu_button:PGtkMenuButton):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
 

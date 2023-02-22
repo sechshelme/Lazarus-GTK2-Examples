@@ -1,5 +1,6 @@
 
   Type
+  PGdkDisplay  = ^GdkDisplay;
   PGtkRoot  = ^GtkRoot;
   PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
@@ -32,20 +33,23 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ROOT : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_root_get_display(self:PGtkRoot):^GdkDisplay;
+
+  { Zeile entfernt  }
   procedure gtk_root_set_focus(self:PGtkRoot; focus:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_root_get_focus(self:PGtkRoot):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ROOT_H__  }
   { was #define dname def_expr }
@@ -54,6 +58,10 @@ G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
       GTK_TYPE_ROOT:=gtk_root_get_type;
     end;
 
+  function gtk_root_get_display(self:PGtkRoot):PGdkDisplay;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_root_set_focus(self:PGtkRoot; focus:PGtkWidget);
   begin
     { You must implement this function }

@@ -39,6 +39,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkbuilder.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BUILDABLE : longint; { return type might be wrong }
@@ -232,28 +233,32 @@
         get_internal_child : function (buildable:PGtkBuildable; builder:PGtkBuilder; childname:Pchar):PGObject;cdecl;
       end;
 
-(* error 
-GType     gtk_buildable_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_buildable_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_buildable_get_buildable_id(buildable:PGtkBuildable):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_buildable_parse_context_push(context:PGtkBuildableParseContext; parser:PGtkBuildableParser; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gtk_buildable_parse_context_pop(context:PGtkBuildableParseContext):gpointer;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_buildable_parse_context_get_element(context:PGtkBuildableParseContext):^char;
 
+  { Zeile entfernt  }
   function gtk_buildable_parse_context_get_element_stack(context:PGtkBuildableParseContext):^GPtrArray;
 
+  { Zeile entfernt  }
   procedure gtk_buildable_parse_context_get_position(context:PGtkBuildableParseContext; line_number:Plongint; char_number:Plongint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BUILDABLE_H__  }
   { was #define dname def_expr }
@@ -286,6 +291,10 @@ GType     gtk_buildable_get_type               (void) G_GNUC_CONST;
     GTK_BUILDABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_BUILDABLE,GtkBuildableIface);
   end;
 
+  function gtk_buildable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_buildable_get_buildable_id(buildable:PGtkBuildable):Pchar;
   begin
     { You must implement this function }

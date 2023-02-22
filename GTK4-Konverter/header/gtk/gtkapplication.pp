@@ -36,6 +36,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APPLICATION : longint; { return type might be wrong }
@@ -91,24 +92,27 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType            gtk_application_get_type      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_application_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_application_new(application_id:Pchar; flags:GApplicationFlags):^GtkApplication;
 
+  { Zeile entfernt  }
   procedure gtk_application_add_window(application:PGtkApplication; window:PGtkWindow);
 
+  { Zeile entfernt  }
   procedure gtk_application_remove_window(application:PGtkApplication; window:PGtkWindow);
 
+  { Zeile entfernt  }
   function gtk_application_get_windows(application:PGtkApplication):^GList;
 
+  { Zeile entfernt  }
   function gtk_application_get_menubar(application:PGtkApplication):^GMenuModel;
 
+  { Zeile entfernt  }
   procedure gtk_application_set_menubar(application:PGtkApplication; menubar:PGMenuModel);
 
 
@@ -117,36 +121,43 @@ GType            gtk_application_get_type      (void) G_GNUC_CONST;
       GTK_APPLICATION_INHIBIT_SWITCH := 1 shl 1,
       GTK_APPLICATION_INHIBIT_SUSPEND := 1 shl 2,
       GTK_APPLICATION_INHIBIT_IDLE := 1 shl 3);
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gtk_application_inhibit(application:PGtkApplication; window:PGtkWindow; flags:GtkApplicationInhibitFlags; reason:Pchar):guint;
 
+  { Zeile entfernt  }
   procedure gtk_application_uninhibit(application:PGtkApplication; cookie:guint);
 
+  { Zeile entfernt  }
   function gtk_application_get_window_by_id(application:PGtkApplication; id:guint):^GtkWindow;
 
+  { Zeile entfernt  }
   function gtk_application_get_active_window(application:PGtkApplication):^GtkWindow;
 
+  { Zeile entfernt  }
   function gtk_application_list_action_descriptions(application:PGtkApplication):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_application_get_accels_for_action(application:PGtkApplication; detailed_action_name:Pchar):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_application_get_actions_for_accel(application:PGtkApplication; accel:Pchar):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   procedure gtk_application_set_accels_for_action(application:PGtkApplication; detailed_action_name:Pchar; accels:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_application_get_menu_by_id(application:PGtkApplication; id:Pchar):^GMenu;
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkApplication, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkApplication, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APPLICATION_H__  }
   { was #define dname def_expr }
@@ -195,6 +206,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkApplication, g_object_unref)
     GTK_APPLICATION_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_APPLICATION,GtkApplicationClass);
   end;
 
+  function gtk_application_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_application_new(application_id:Pchar; flags:GApplicationFlags):PGtkApplication;
   begin
     { You must implement this function }

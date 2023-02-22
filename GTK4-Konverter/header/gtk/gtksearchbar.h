@@ -35,7 +35,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkeditable.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SEARCH_BAR                 (gtk_search_bar_get_type ())
 #define GTK_SEARCH_BAR(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEARCH_BAR, GtkSearchBar))
@@ -43,41 +43,41 @@
 
 typedef struct _GtkSearchBar        GtkSearchBar;
 
+/* Zeile entfernt */
+GType       gtk_search_bar_get_type        (void) ;
 
-GType       gtk_search_bar_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget*  gtk_search_bar_new             (void);
 
-
+/* Zeile entfernt */
 void        gtk_search_bar_connect_entry   (GtkSearchBar *bar,
                                             GtkEditable  *entry);
 
-
+/* Zeile entfernt */
 gboolean    gtk_search_bar_get_search_mode (GtkSearchBar *bar);
-
+/* Zeile entfernt */
 void        gtk_search_bar_set_search_mode (GtkSearchBar *bar,
                                             gboolean      search_mode);
 
-
+/* Zeile entfernt */
 gboolean    gtk_search_bar_get_show_close_button (GtkSearchBar *bar);
-
+/* Zeile entfernt */
 void        gtk_search_bar_set_show_close_button (GtkSearchBar *bar,
                                                   gboolean      visible);
 
-
+/* Zeile entfernt */
 void        gtk_search_bar_set_key_capture_widget (GtkSearchBar *bar,
                                                    GtkWidget    *widget);
-
+/* Zeile entfernt */
 GtkWidget * gtk_search_bar_get_key_capture_widget (GtkSearchBar *bar);
 
-
+/* Zeile entfernt */
 void        gtk_search_bar_set_child          (GtkSearchBar *bar,
                                                GtkWidget    *child);
-
+/* Zeile entfernt */
 GtkWidget * gtk_search_bar_get_child          (GtkSearchBar *bar);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SEARCH_BAR_H__ */

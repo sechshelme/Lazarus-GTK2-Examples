@@ -36,7 +36,7 @@
 #include <gdk/gdkmonitor.h>
 #include <gdk/gdkpopuplayout.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GdkSurfaceClass GdkSurfaceClass;
 
@@ -48,98 +48,98 @@ typedef struct _GdkSurfaceClass GdkSurfaceClass;
 #define GDK_SURFACE_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GDK_TYPE_SURFACE, GdkSurfaceClass))
 
 
-
-GType         gdk_surface_get_type              (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gdk_surface_get_type              (void) ;
+/* Zeile entfernt */
 GdkSurface *   gdk_surface_new_toplevel         (GdkDisplay    *display);
-
+/* Zeile entfernt */
 GdkSurface *   gdk_surface_new_popup            (GdkSurface    *parent,
                                                  gboolean       autohide);
 
-
+/* Zeile entfernt */
 void          gdk_surface_destroy               (GdkSurface     *surface);
-
+/* Zeile entfernt */
 gboolean      gdk_surface_is_destroyed          (GdkSurface     *surface);
 
-
+/* Zeile entfernt */
 GdkDisplay *  gdk_surface_get_display           (GdkSurface     *surface);
-
+/* Zeile entfernt */
 void          gdk_surface_hide                  (GdkSurface     *surface);
 
-
+/* Zeile entfernt */
 void          gdk_surface_set_input_region      (GdkSurface     *surface,
                                                  cairo_region_t *region);
 
-
+/* Zeile entfernt */
 gboolean      gdk_surface_get_mapped   (GdkSurface *surface);
 
-
+/* Zeile entfernt */
 void          gdk_surface_set_cursor     (GdkSurface      *surface,
                                           GdkCursor       *cursor);
-
+/* Zeile entfernt */
 GdkCursor    *gdk_surface_get_cursor      (GdkSurface       *surface);
-
+/* Zeile entfernt */
 void          gdk_surface_set_device_cursor (GdkSurface   *surface,
                                              GdkDevice     *device,
                                              GdkCursor     *cursor);
-
+/* Zeile entfernt */
 GdkCursor    *gdk_surface_get_device_cursor (GdkSurface     *surface,
                                              GdkDevice     *device);
-
+/* Zeile entfernt */
 int           gdk_surface_get_width       (GdkSurface       *surface);
-
+/* Zeile entfernt */
 int           gdk_surface_get_height      (GdkSurface       *surface);
-
+/* Zeile entfernt */
 gboolean gdk_surface_translate_coordinates (GdkSurface *from,
                                             GdkSurface *to,
                                             double     *x,
                                             double     *y);
 
-
+/* Zeile entfernt */
 int           gdk_surface_get_scale_factor  (GdkSurface     *surface);
 
-
+/* Zeile entfernt */
 gboolean      gdk_surface_get_device_position (GdkSurface      *surface,
                                                GdkDevice       *device,
                                                double          *x,
                                                double          *y,
                                                GdkModifierType *mask);
 
-
+/* Zeile entfernt */
 cairo_surface_t *
               gdk_surface_create_similar_surface (GdkSurface *surface,
                                                   cairo_content_t  content,
                                                   int              width,
                                                   int              height);
 
-
+/* Zeile entfernt */
 void          gdk_surface_beep            (GdkSurface       *surface);
 
-
+/* Zeile entfernt */
 void       gdk_surface_queue_render       (GdkSurface       *surface);
 
-
+/* Zeile entfernt */
 void       gdk_surface_request_layout     (GdkSurface       *surface);
 
-
+/* Zeile entfernt */
 GdkFrameClock* gdk_surface_get_frame_clock      (GdkSurface     *surface);
 
-
+/* Zeile entfernt */
 void       gdk_surface_set_opaque_region        (GdkSurface      *surface,
                                                  cairo_region_t *region);
 
-
+/* Zeile entfernt */
 GdkCairoContext *gdk_surface_create_cairo_context(GdkSurface    *surface);
-
+/* Zeile entfernt */
 GdkGLContext * gdk_surface_create_gl_context    (GdkSurface     *surface,
                                                  GError        **error);
-
+/* Zeile entfernt */
 GdkVulkanContext *
                gdk_surface_create_vulkan_context(GdkSurface     *surface,
                                                  GError        **error);
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_SURFACE_H__ */

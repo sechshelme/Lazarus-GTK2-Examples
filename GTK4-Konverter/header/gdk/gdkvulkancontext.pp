@@ -36,6 +36,7 @@
 {$ifdef GDK_RENDERING_VULKAN}
 {$include <vulkan/vulkan.h>}
 {$endif}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_VULKAN_CONTEXT : longint; { return type might be wrong }
@@ -53,44 +54,54 @@
   { was #define dname def_expr }
   function GDK_VULKAN_ERROR : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gdk_vulkan_error_quark:GQuark;
 
-(* error 
-GType gdk_vulkan_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_vulkan_context_get_type:GType;
 
-    var
- : GType;
 {$ifndef __GI_SCANNER__}
 {$ifdef GDK_RENDERING_VULKAN}
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   function gdk_vulkan_strerror(result:VkResult):^char;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_instance(context:PGdkVulkanContext):VkInstance;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_physical_device(context:PGdkVulkanContext):VkPhysicalDevice;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_device(context:PGdkVulkanContext):VkDevice;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_queue(context:PGdkVulkanContext):VkQueue;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_queue_family_index(context:PGdkVulkanContext):uint32_t;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_image_format(context:PGdkVulkanContext):VkFormat;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_n_images(context:PGdkVulkanContext):uint32_t;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_image(context:PGdkVulkanContext; id:guint):VkImage;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_draw_index(context:PGdkVulkanContext):uint32_t;
 
+  { Zeile entfernt  }
   function gdk_vulkan_context_get_draw_semaphore(context:PGdkVulkanContext):VkSemaphore;
 
 {$endif}
   { GDK_RENDERING_VULKAN  }
 {$endif}
   { __GI_SCANNER__  }
+  { Zeile entfernt  }
 {$endif}
   { __GDK_VULKAN_CONTEXT__  }
   { was #define dname def_expr }
@@ -122,6 +133,10 @@ GType gdk_vulkan_context_get_type (void) G_GNUC_CONST;
     end;
 
   function gdk_vulkan_error_quark:GQuark;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_vulkan_context_get_type:GType;
   begin
     { You must implement this function }
   end;

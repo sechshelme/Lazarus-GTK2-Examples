@@ -29,6 +29,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <wayland-client.h>}
+  { Zeile entfernt  }
 {$ifdef GTK_COMPILATION}
 
   type
@@ -55,15 +56,14 @@
   { return type might be wrong }   
   function GDK_IS_WAYLAND_SEAT(o : longint) : longint;  
 
-(* error 
-GType gdk_wayland_seat_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_wayland_seat_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* error 
 struct wl_seat *        gdk_wayland_seat_get_wl_seat    (GdkSeat *seat);
 in declaration at line 47 *)
+    { Zeile entfernt  }
   { was #define dname def_expr }
   function GDK_TYPE_WAYLAND_SEAT : longint; { return type might be wrong }
     begin
@@ -86,4 +86,8 @@ in declaration at line 47 *)
     GDK_IS_WAYLAND_SEAT:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_WAYLAND_SEAT);
   end;
 
+  function gdk_wayland_seat_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

@@ -1,12 +1,12 @@
 
-    Type
-    Pchar  = ^char;
-    Pgraphene_matrix_t  = ^graphene_matrix_t;
-    Pgraphene_point_t  = ^graphene_point_t;
-    Pgraphene_rect_t  = ^graphene_rect_t;
-    PGskTransform  = ^GskTransform;
-    PGString  = ^GString;
-    Psingle  = ^single;
+  Type
+  Pchar  = ^char;
+  Pgraphene_matrix_t  = ^graphene_matrix_t;
+  Pgraphene_point_t  = ^graphene_point_t;
+  Pgraphene_rect_t  = ^graphene_rect_t;
+  PGskTransform  = ^GskTransform;
+  PGString  = ^GString;
+  Psingle  = ^single;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -37,123 +37,139 @@
 {$endif}
 {$include <gsk/gskenums.h>}
 {$include <gsk/gsktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_TRANSFORM : longint; { return type might be wrong }
 
-(* error 
-GType                   gsk_transform_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gsk_transform_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gsk_transform_ref(self:PGskTransform):^GskTransform;
 
+  { Zeile entfernt  }
   procedure gsk_transform_unref(self:PGskTransform);
 
+  { Zeile entfernt  }
   procedure gsk_transform_print(self:PGskTransform; _string:PGString);
 
+  { Zeile entfernt  }
   function gsk_transform_to_string(self:PGskTransform):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gsk_transform_parse(_string:Pchar; out_transform:PPGskTransform):gboolean;
 
+  { Zeile entfernt  }
   procedure gsk_transform_to_matrix(self:PGskTransform; out_matrix:Pgraphene_matrix_t);
 
+  { Zeile entfernt  }
   procedure gsk_transform_to_2d(self:PGskTransform; out_xx:Psingle; out_yx:Psingle; out_xy:Psingle; out_yy:Psingle; 
               out_dx:Psingle; out_dy:Psingle);
 
-(* error 
-void                    gsk_transform_to_2d_components          (GskTransform                   *self,
-in declaration at line 70 *)
-    procedure gsk_transform_to_affine(self:PGskTransform; out_scale_x:Psingle; out_scale_y:Psingle; out_dx:Psingle; out_dy:Psingle);
+  { Zeile entfernt  }
+  procedure gsk_transform_to_2d_components(self:PGskTransform; out_skew_x:Psingle; out_skew_y:Psingle; out_scale_x:Psingle; out_scale_y:Psingle; 
+              out_angle:Psingle; out_dx:Psingle; out_dy:Psingle);
 
-    procedure gsk_transform_to_translate(self:PGskTransform; out_dx:Psingle; out_dy:Psingle);
+  { Zeile entfernt  }
+  procedure gsk_transform_to_affine(self:PGskTransform; out_scale_x:Psingle; out_scale_y:Psingle; out_dx:Psingle; out_dy:Psingle);
 
-(* error 
-GskTransformCategory    gsk_transform_get_category              (GskTransform                   *self) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gsk_transform_to_translate(self:PGskTransform; out_dx:Psingle; out_dy:Psingle);
 
-      var
- : GskTransformCategory;
-(* error 
-                                                                 GskTransform                   *second) G_GNUC_PURE;
- in declarator_list *)
- : gboolean;
+  { Zeile entfernt  }
+  function gsk_transform_get_category(self:PGskTransform):GskTransformCategory;
 
-    function gsk_transform_new:^GskTransform;
+  { Zeile entfernt  }
+  function gsk_transform_equal(first:PGskTransform; second:PGskTransform):gboolean;
 
+  { Zeile entfernt  }
+  function gsk_transform_new:^GskTransform;
+
+  { Zeile entfernt  }
 (* error 
                                                                  GskTransform                   *other) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
 
-      var
+    var
  : GskTransform;
+  { Zeile entfernt  }
 (* error 
 GskTransform *          gsk_transform_invert                    (GskTransform                   *self) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  const graphene_matrix_t        *matrix) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  const graphene_point_t         *point) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  const graphene_point3d_t       *point) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
-(* error 
-GskTransform *          gsk_transform_skew                      (GskTransform                   *next,
-(* error 
-                                                                 float                           skew_x,
+  { Zeile entfernt  }
 (* error 
                                                                  float                           skew_y) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+ : GskTransform;
+  { Zeile entfernt  }
 (* error 
                                                                  float                           angle) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  const graphene_vec3_t          *axis) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* error 
                                                                  float                           factor_y) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* error 
                                                                  float                           factor_z) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* error 
                                                                  float                           depth) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GskTransform;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
-    procedure gsk_transform_transform_bounds(self:PGskTransform; rect:Pgraphene_rect_t; out_rect:Pgraphene_rect_t);
+  procedure gsk_transform_transform_bounds(self:PGskTransform; rect:Pgraphene_rect_t; out_rect:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-    procedure gsk_transform_transform_point(self:PGskTransform; point:Pgraphene_point_t; out_point:Pgraphene_point_t);
+  procedure gsk_transform_transform_point(self:PGskTransform; point:Pgraphene_point_t; out_point:Pgraphene_point_t);
 
+  { Zeile entfernt  }
 {$endif}
-    { __GSK_TRANSFORM_H__  }
+  { __GSK_TRANSFORM_H__  }
   { was #define dname def_expr }
   function GSK_TYPE_TRANSFORM : longint; { return type might be wrong }
     begin
       GSK_TYPE_TRANSFORM:=gsk_transform_get_type;
     end;
 
+  function gsk_transform_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_transform_ref(self:PGskTransform):PGskTransform;
   begin
     { You must implement this function }
@@ -183,24 +199,37 @@ GskTransform *          gsk_transform_skew                      (GskTransform   
   begin
     { You must implement this function }
   end;
-    procedure gsk_transform_to_affine(self:PGskTransform; out_scale_x:Psingle; out_scale_y:Psingle; out_dx:Psingle; out_dy:Psingle);
-    begin
-      { You must implement this function }
-    end;
-    procedure gsk_transform_to_translate(self:PGskTransform; out_dx:Psingle; out_dy:Psingle);
-    begin
-      { You must implement this function }
-    end;
-    function gsk_transform_new:PGskTransform;
-    begin
-      { You must implement this function }
-    end;
-    procedure gsk_transform_transform_bounds(self:PGskTransform; rect:Pgraphene_rect_t; out_rect:Pgraphene_rect_t);
-    begin
-      { You must implement this function }
-    end;
-    procedure gsk_transform_transform_point(self:PGskTransform; point:Pgraphene_point_t; out_point:Pgraphene_point_t);
-    begin
-      { You must implement this function }
-    end;
+  procedure gsk_transform_to_2d_components(self:PGskTransform; out_skew_x:Psingle; out_skew_y:Psingle; out_scale_x:Psingle; out_scale_y:Psingle; 
+              out_angle:Psingle; out_dx:Psingle; out_dy:Psingle);
+  begin
+    { You must implement this function }
+  end;
+  procedure gsk_transform_to_affine(self:PGskTransform; out_scale_x:Psingle; out_scale_y:Psingle; out_dx:Psingle; out_dy:Psingle);
+  begin
+    { You must implement this function }
+  end;
+  procedure gsk_transform_to_translate(self:PGskTransform; out_dx:Psingle; out_dy:Psingle);
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_get_category(self:PGskTransform):GskTransformCategory;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_equal(first:PGskTransform; second:PGskTransform):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_transform_new:PGskTransform;
+  begin
+    { You must implement this function }
+  end;
+  procedure gsk_transform_transform_bounds(self:PGskTransform; rect:Pgraphene_rect_t; out_rect:Pgraphene_rect_t);
+  begin
+    { You must implement this function }
+  end;
+  procedure gsk_transform_transform_point(self:PGskTransform; point:Pgraphene_point_t; out_point:Pgraphene_point_t);
+  begin
+    { You must implement this function }
+  end;
 

@@ -38,6 +38,7 @@
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreesortable.h>}
 {$include <gtk/gtkcellarea.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_VIEW_COLUMN : longint; { return type might be wrong }
@@ -87,140 +88,181 @@
     }
 
     GtkTreeCellDataFunc = procedure (tree_column:PGtkTreeViewColumn; cell:PGtkCellRenderer; tree_model:PGtkTreeModel; iter:PGtkTreeIter; data:gpointer);cdecl;
-(* error 
-GType                   gtk_tree_view_column_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_view_column_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_new:^GtkTreeViewColumn;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_new_with_area(area:PGtkCellArea):^GtkTreeViewColumn;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-								  ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  function gtk_tree_view_column_new_with_attributes(title:Pchar; cell:PGtkCellRenderer; args:array of const):^GtkTreeViewColumn;
 
-    var
- : GtkTreeViewColumn;
-
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_pack_start(tree_column:PGtkTreeViewColumn; cell:PGtkCellRenderer; expand:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_pack_end(tree_column:PGtkTreeViewColumn; cell:PGtkCellRenderer; expand:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_clear(tree_column:PGtkTreeViewColumn);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tree_view_column_add_attribute(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer; attribute:Pchar; column:longint);
 
-(* error 
-								  ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  { Zeile entfernt  }
+  procedure gtk_tree_view_column_set_attributes(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer; args:array of const);
 
-    var
- : pointer;
-
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_cell_data_func(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer; func:GtkTreeCellDataFunc; func_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_clear_attributes(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_spacing(tree_column:PGtkTreeViewColumn; spacing:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_spacing(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_visible(tree_column:PGtkTreeViewColumn; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_visible(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_resizable(tree_column:PGtkTreeViewColumn; resizable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_resizable(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_sizing(tree_column:PGtkTreeViewColumn; _type:GtkTreeViewColumnSizing);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_sizing(tree_column:PGtkTreeViewColumn):GtkTreeViewColumnSizing;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_x_offset(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_width(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_fixed_width(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_fixed_width(tree_column:PGtkTreeViewColumn; fixed_width:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_min_width(tree_column:PGtkTreeViewColumn; min_width:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_min_width(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_max_width(tree_column:PGtkTreeViewColumn; max_width:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_max_width(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_clicked(tree_column:PGtkTreeViewColumn);
 
   { Options for manipulating the column headers
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_tree_view_column_set_title(tree_column:PGtkTreeViewColumn; title:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_view_column_get_title(tree_column:PGtkTreeViewColumn):^char;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_expand(tree_column:PGtkTreeViewColumn; expand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_expand(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_clickable(tree_column:PGtkTreeViewColumn; clickable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_clickable(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_widget(tree_column:PGtkTreeViewColumn; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_widget(tree_column:PGtkTreeViewColumn):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_alignment(tree_column:PGtkTreeViewColumn; xalign:single);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_alignment(tree_column:PGtkTreeViewColumn):single;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_reorderable(tree_column:PGtkTreeViewColumn; reorderable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_reorderable(tree_column:PGtkTreeViewColumn):gboolean;
 
   { You probably only want to use gtk_tree_view_column_set_sort_column_id.  The
    * other sorting functions exist primarily to let others do their own custom sorting.
     }
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_sort_column_id(tree_column:PGtkTreeViewColumn; sort_column_id:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_sort_column_id(tree_column:PGtkTreeViewColumn):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_sort_indicator(tree_column:PGtkTreeViewColumn; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_sort_indicator(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_set_sort_order(tree_column:PGtkTreeViewColumn; order:GtkSortType);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_sort_order(tree_column:PGtkTreeViewColumn):GtkSortType;
 
   { These functions are meant primarily for interaction between the GtkTreeView and the column.
     }
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_cell_set_cell_data(tree_column:PGtkTreeViewColumn; tree_model:PGtkTreeModel; iter:PGtkTreeIter; is_expander:gboolean; is_expanded:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_cell_get_size(tree_column:PGtkTreeViewColumn; x_offset:Plongint; y_offset:Plongint; width:Plongint; height:Plongint);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_cell_is_visible(tree_column:PGtkTreeViewColumn):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_focus_cell(tree_column:PGtkTreeViewColumn; cell:PGtkCellRenderer);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_cell_get_position(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer; x_offset:Plongint; width:Plongint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_view_column_queue_resize(tree_column:PGtkTreeViewColumn);
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_tree_view(tree_column:PGtkTreeViewColumn):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_tree_view_column_get_button(tree_column:PGtkTreeViewColumn):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_VIEW_COLUMN_H__  }
   { was #define dname def_expr }
@@ -245,11 +287,19 @@ GType                   gtk_tree_view_column_get_type            (void) G_GNUC_C
     GTK_IS_TREE_VIEW_COLUMN:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_TREE_VIEW_COLUMN);
   end;
 
+  function gtk_tree_view_column_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_view_column_new:PGtkTreeViewColumn;
   begin
     { You must implement this function }
   end;
   function gtk_tree_view_column_new_with_area(area:PGtkCellArea):PGtkTreeViewColumn;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_view_column_new_with_attributes(title:Pchar; cell:PGtkCellRenderer):PGtkTreeViewColumn;
   begin
     { You must implement this function }
   end;
@@ -266,6 +316,10 @@ GType                   gtk_tree_view_column_get_type            (void) G_GNUC_C
     { You must implement this function }
   end;
   procedure gtk_tree_view_column_add_attribute(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer; attribute:Pchar; column:longint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_tree_view_column_set_attributes(tree_column:PGtkTreeViewColumn; cell_renderer:PGtkCellRenderer);
   begin
     { You must implement this function }
   end;

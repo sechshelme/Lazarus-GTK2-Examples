@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkFontFilterFunc:
@@ -104,63 +104,63 @@ struct _GtkFontChooserIface
   gpointer padding[10];
 };
 
+/* Zeile entfernt */
+GType            gtk_font_chooser_get_type                 (void) ;
 
-GType            gtk_font_chooser_get_type                 (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 PangoFontFamily *gtk_font_chooser_get_font_family          (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 PangoFontFace   *gtk_font_chooser_get_font_face            (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 int              gtk_font_chooser_get_font_size            (GtkFontChooser   *fontchooser);
 
-
+/* Zeile entfernt */
 PangoFontDescription *
                  gtk_font_chooser_get_font_desc            (GtkFontChooser             *fontchooser);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_font_desc            (GtkFontChooser             *fontchooser,
                                                             const PangoFontDescription *font_desc);
 
-
+/* Zeile entfernt */
 char *           gtk_font_chooser_get_font                 (GtkFontChooser   *fontchooser);
 
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_font                 (GtkFontChooser   *fontchooser,
                                                             const char       *fontname);
-
+/* Zeile entfernt */
 char *           gtk_font_chooser_get_preview_text         (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_preview_text         (GtkFontChooser   *fontchooser,
                                                             const char       *text);
-
+/* Zeile entfernt */
 gboolean         gtk_font_chooser_get_show_preview_entry   (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_show_preview_entry   (GtkFontChooser   *fontchooser,
                                                             gboolean          show_preview_entry);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_filter_func          (GtkFontChooser   *fontchooser,
                                                             GtkFontFilterFunc filter,
                                                             gpointer          user_data,
                                                             GDestroyNotify    destroy);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_font_map             (GtkFontChooser   *fontchooser,
                                                             PangoFontMap     *fontmap);
-
+/* Zeile entfernt */
 PangoFontMap *   gtk_font_chooser_get_font_map             (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_level                (GtkFontChooser   *fontchooser,
                                                             GtkFontChooserLevel level);
-
+/* Zeile entfernt */
 GtkFontChooserLevel
                  gtk_font_chooser_get_level                (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 char *           gtk_font_chooser_get_font_features        (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 char *           gtk_font_chooser_get_language             (GtkFontChooser   *fontchooser);
-
+/* Zeile entfernt */
 void             gtk_font_chooser_set_language             (GtkFontChooser   *fontchooser,
                                                             const char       *language);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FONT_CHOOSER_H__ */

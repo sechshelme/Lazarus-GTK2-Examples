@@ -24,7 +24,7 @@
 
 #include <gtk/gtk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PAGE_SETUP_UNIX_DIALOG                  (gtk_page_setup_unix_dialog_get_type ())
 #define GTK_PAGE_SETUP_UNIX_DIALOG(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PAGE_SETUP_UNIX_DIALOG, GtkPageSetupUnixDialog))
@@ -34,22 +34,22 @@
 typedef struct _GtkPageSetupUnixDialog GtkPageSetupUnixDialog;
 
 
-
-GType 		  gtk_page_setup_unix_dialog_get_type	        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType 		  gtk_page_setup_unix_dialog_get_type	        (void) ;
+/* Zeile entfernt */
 GtkWidget *       gtk_page_setup_unix_dialog_new                (const char             *title,
 								 GtkWindow              *parent);
-
+/* Zeile entfernt */
 void              gtk_page_setup_unix_dialog_set_page_setup     (GtkPageSetupUnixDialog *dialog,
 								 GtkPageSetup           *page_setup);
-
+/* Zeile entfernt */
 GtkPageSetup *    gtk_page_setup_unix_dialog_get_page_setup     (GtkPageSetupUnixDialog *dialog);
-
+/* Zeile entfernt */
 void              gtk_page_setup_unix_dialog_set_print_settings (GtkPageSetupUnixDialog *dialog,
 								 GtkPrintSettings       *print_settings);
-
+/* Zeile entfernt */
 GtkPrintSettings *gtk_page_setup_unix_dialog_get_print_settings (GtkPageSetupUnixDialog *dialog);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PAGE_SETUP_UNIX_DIALOG_H__ */

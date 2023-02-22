@@ -32,24 +32,29 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_NUMERIC_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkNumericSorter, gtk_numeric_sorter, GTK, NUMERIC_SORTER, GtkSorter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkNumericSorter, gtk_numeric_sorter, GTK, NUMERIC_SORTER, GtkSorter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_numeric_sorter_new(expression:PGtkExpression):^GtkNumericSorter;
+
+  { Zeile entfernt  }
   function gtk_numeric_sorter_get_expression(self:PGtkNumericSorter):^GtkExpression;
 
+  { Zeile entfernt  }
   procedure gtk_numeric_sorter_set_expression(self:PGtkNumericSorter; expression:PGtkExpression);
 
+  { Zeile entfernt  }
   function gtk_numeric_sorter_get_sort_order(self:PGtkNumericSorter):GtkSortType;
 
+  { Zeile entfernt  }
   procedure gtk_numeric_sorter_set_sort_order(self:PGtkNumericSorter; sort_order:GtkSortType);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_NUMERIC_SORTER_H__  }
   { was #define dname def_expr }
@@ -58,6 +63,10 @@ G_DECLARE_FINAL_TYPE (GtkNumericSorter, gtk_numeric_sorter, GTK, NUMERIC_SORTER,
       GTK_TYPE_NUMERIC_SORTER:=gtk_numeric_sorter_get_type;
     end;
 
+  function gtk_numeric_sorter_new(expression:PGtkExpression):PGtkNumericSorter;
+  begin
+    { You must implement this function }
+  end;
   function gtk_numeric_sorter_get_expression(self:PGtkNumericSorter):PGtkExpression;
   begin
     { You must implement this function }

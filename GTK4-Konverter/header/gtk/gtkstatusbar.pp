@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STATUSBAR : longint; { return type might be wrong }
@@ -54,27 +55,31 @@
 
   type
     _GtkStatusbar = GtkStatusbar;
-(* error 
-GType      gtk_statusbar_get_type     	(void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_statusbar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_statusbar_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_statusbar_get_context_id(statusbar:PGtkStatusbar; context_description:Pchar):guint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_statusbar_push(statusbar:PGtkStatusbar; context_id:guint; text:Pchar):guint;
 
+  { Zeile entfernt  }
   procedure gtk_statusbar_pop(statusbar:PGtkStatusbar; context_id:guint);
 
+  { Zeile entfernt  }
   procedure gtk_statusbar_remove(statusbar:PGtkStatusbar; context_id:guint; message_id:guint);
 
+  { Zeile entfernt  }
   procedure gtk_statusbar_remove_all(statusbar:PGtkStatusbar; context_id:guint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STATUSBAR_H__  }
   { was #define dname def_expr }
@@ -99,6 +104,10 @@ GType      gtk_statusbar_get_type     	(void) G_GNUC_CONST;
     GTK_IS_STATUSBAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_STATUSBAR);
   end;
 
+  function gtk_statusbar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_statusbar_new:PGtkWidget;
   begin
     { You must implement this function }

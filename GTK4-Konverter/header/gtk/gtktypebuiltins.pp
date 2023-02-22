@@ -12,713 +12,493 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   { enumerations from "gtkaboutdialog.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_license_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LICENSE : longint; { return type might be wrong }
 
   { enumerations from "gtkapplication.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_application_inhibit_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_APPLICATION_INHIBIT_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkassistant.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_assistant_page_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ASSISTANT_PAGE_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkbuilder.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_builder_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gtkbuilderscope.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_builder_closure_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER_CLOSURE_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkcellrenderer.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_cell_renderer_state_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_STATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_cell_renderer_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_MODE : longint; { return type might be wrong }
 
   { enumerations from "gtkcellrendereraccel.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_cell_renderer_accel_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_ACCEL_MODE : longint; { return type might be wrong }
 
   { enumerations from "gtkdebug.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_debug_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_DEBUG_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkdialog.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_dialog_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_DIALOG_FLAGS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_response_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_RESPONSE_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkeditable.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_editable_properties_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_EDITABLE_PROPERTIES : longint; { return type might be wrong }
 
   { enumerations from "gtkentry.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_entry_icon_position_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ENTRY_ICON_POSITION : longint; { return type might be wrong }
 
   { enumerations from "gtkenums.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_align_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ALIGN : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_arrow_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ARROW_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_baseline_position_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BASELINE_POSITION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_content_fit_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONTENT_FIT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_delete_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_DELETE_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_direction_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_DIRECTION_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_icon_size_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ICON_SIZE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_sensitivity_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SENSITIVITY_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_text_direction_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_DIRECTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_justification_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_JUSTIFICATION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_message_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_MESSAGE_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_movement_step_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_MOVEMENT_STEP : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_natural_wrap_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_NATURAL_WRAP_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_scroll_step_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SCROLL_STEP : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_orientation_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ORIENTATION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_overflow_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_OVERFLOW : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_pack_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PACK_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_position_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_POSITION_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_scroll_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SCROLL_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_selection_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SELECTION_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_wrap_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_WRAP_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_sort_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SORT_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_pages_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_PAGES : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_page_set_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PAGE_SET : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_number_up_layout_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_NUMBER_UP_LAYOUT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_ordering_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ORDERING : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_page_orientation_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PAGE_ORIENTATION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_quality_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_QUALITY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_duplex_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_DUPLEX : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_unit_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_UNIT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_tree_view_grid_lines_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TREE_VIEW_GRID_LINES : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_size_group_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SIZE_GROUP_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_size_request_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SIZE_REQUEST_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_scrollable_policy_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SCROLLABLE_POLICY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_state_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_STATE_FLAGS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_border_style_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BORDER_STYLE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_level_bar_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_LEVEL_BAR_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_input_purpose_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_INPUT_PURPOSE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_input_hints_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_INPUT_HINTS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_propagation_phase_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PROPAGATION_PHASE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_propagation_limit_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PROPAGATION_LIMIT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_event_sequence_state_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_SEQUENCE_STATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_pan_direction_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PAN_DIRECTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_shortcut_scope_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_SCOPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_pick_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PICK_FLAGS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_constraint_relation_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_RELATION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_constraint_strength_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_STRENGTH : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_constraint_attribute_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_ATTRIBUTE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_constraint_vfl_parser_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_VFL_PARSER_ERROR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_system_setting_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SYSTEM_SETTING : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_symbolic_color_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SYMBOLIC_COLOR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_role_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_ROLE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_state_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_STATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_property_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_PROPERTY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_relation_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_RELATION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_tristate_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_TRISTATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_invalid_state_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_INVALID_STATE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_autocomplete_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_AUTOCOMPLETE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_accessible_sort_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE_SORT : longint; { return type might be wrong }
 
   { enumerations from "gtkeventcontrollerscroll.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_event_controller_scroll_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_SCROLL_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkfilechooser.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_file_chooser_action_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FILE_CHOOSER_ACTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_file_chooser_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FILE_CHOOSER_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gtkfilter.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_filter_match_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FILTER_MATCH : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_filter_change_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FILTER_CHANGE : longint; { return type might be wrong }
 
   { enumerations from "gtkfontchooser.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_font_chooser_level_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_FONT_CHOOSER_LEVEL : longint; { return type might be wrong }
 
   { enumerations from "gtkicontheme.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_icon_lookup_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ICON_LOOKUP_FLAGS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_icon_theme_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ICON_THEME_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gtkiconview.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_icon_view_drop_position_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ICON_VIEW_DROP_POSITION : longint; { return type might be wrong }
 
   { enumerations from "gtkimage.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_image_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_IMAGE_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkinscription.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_inscription_overflow_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_INSCRIPTION_OVERFLOW : longint; { return type might be wrong }
 
   { enumerations from "gtkmessagedialog.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_buttons_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BUTTONS_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtknotebook.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_notebook_tab_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_NOTEBOOK_TAB : longint; { return type might be wrong }
 
   { enumerations from "gtkpadcontroller.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_pad_action_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PAD_ACTION_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkpopovermenu.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_popover_menu_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_POPOVER_MENU_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkprintoperation.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_status_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_STATUS : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_operation_result_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_OPERATION_RESULT : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_operation_action_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_OPERATION_ACTION : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_print_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gtkrecentmanager.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_recent_manager_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_RECENT_MANAGER_ERROR : longint; { return type might be wrong }
 
   { enumerations from "gtkrevealer.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_revealer_transition_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_REVEALER_TRANSITION_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkscrolledwindow.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_corner_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CORNER_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_policy_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_POLICY_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkshortcutaction.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_shortcut_action_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_ACTION_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtkshortcutsshortcut.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_shortcut_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtksorter.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_sorter_order_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SORTER_ORDER : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_sorter_change_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SORTER_CHANGE : longint; { return type might be wrong }
 
   { enumerations from "gtkspinbutton.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_spin_button_update_policy_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SPIN_BUTTON_UPDATE_POLICY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_spin_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_SPIN_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkstack.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_stack_transition_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_STACK_TRANSITION_TYPE : longint; { return type might be wrong }
 
   { enumerations from "gtkstringfilter.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_string_filter_match_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_STRING_FILTER_MATCH_MODE : longint; { return type might be wrong }
 
   { enumerations from "gtkstylecontext.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_style_context_print_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_STYLE_CONTEXT_PRINT_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtktextiter.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_text_search_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_SEARCH_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtktextview.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_text_window_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_WINDOW_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_text_view_layer_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_VIEW_LAYER : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_text_extend_selection_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_EXTEND_SELECTION : longint; { return type might be wrong }
 
   { enumerations from "gtktreemodel.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_tree_model_flags_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TREE_MODEL_FLAGS : longint; { return type might be wrong }
 
   { enumerations from "gtktreeview.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_tree_view_drop_position_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TREE_VIEW_DROP_POSITION : longint; { return type might be wrong }
 
   { enumerations from "gtktreeviewcolumn.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gtk_tree_view_column_sizing_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_TREE_VIEW_COLUMN_SIZING : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TYPE_BUILTINS_H__  }
   { Generated data ends here  }

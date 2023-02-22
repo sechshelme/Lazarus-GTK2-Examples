@@ -31,6 +31,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkgesturesingle.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_CLICK : longint; { return type might be wrong }
@@ -64,15 +65,14 @@
   type
     _GtkGestureClick = GtkGestureClick;
     _GtkGestureClickClass = GtkGestureClickClass;
-(* error 
-GType        gtk_gesture_click_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_click_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_click_new:^GtkGesture;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_CLICK_H__  }
   { was #define dname def_expr }
@@ -121,6 +121,10 @@ GType        gtk_gesture_click_get_type (void) G_GNUC_CONST;
     GTK_GESTURE_CLICK_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_CLICK,GtkGestureClickClass);
   end;
 
+  function gtk_gesture_click_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_click_new:PGtkGesture;
   begin
     { You must implement this function }

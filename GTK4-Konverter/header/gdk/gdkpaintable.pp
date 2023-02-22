@@ -33,15 +33,13 @@
 {$endif}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_PAINTABLE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GdkPaintableFlags:
    * @GDK_PAINTABLE_STATIC_SIZE: The size is immutable.
@@ -55,13 +53,10 @@ G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
    *
    * Implementations use these for optimizations such as caching.
     }
- in declarator_list *)
-(* error 
-  GDK_PAINTABLE_STATIC_SIZE = 1 << 0,
-(* error 
-  GDK_PAINTABLE_STATIC_CONTENTS = 1 << 1
- in declarator_list *)
- in declarator_list *)
+
+  type
+    GdkPaintableFlags = (GDK_PAINTABLE_STATIC_SIZE := 1 shl 0,GDK_PAINTABLE_STATIC_CONTENTS := 1 shl 1
+      );
   {*
    * GdkPaintableInterface:
    * @snapshot: Snapshot the paintable. The given @width and @height are
@@ -102,8 +97,6 @@ G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
   { preferred width of paintable or 0 if it has no width (optional)  }
   { preferred height of paintable or 0 if it has no height (optional)  }
   { aspect ratio (width / height) of paintable or 0 if it has no aspect ratio (optional)  }
-
-  type
     _GdkPaintableInterface = record
         g_iface : GTypeInterface;
         snapshot : procedure (paintable:PGdkPaintable; snapshot:PGdkSnapshot; width:double; height:double);cdecl;
@@ -114,29 +107,40 @@ G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
         get_intrinsic_aspect_ratio : function (paintable:PGdkPaintable):double;cdecl;
       end;
 
+  { Zeile entfernt  }
 
   procedure gdk_paintable_snapshot(paintable:PGdkPaintable; snapshot:PGdkSnapshot; width:double; height:double);
 
+  { Zeile entfernt  }
   function gdk_paintable_get_current_image(paintable:PGdkPaintable):^GdkPaintable;
 
+  { Zeile entfernt  }
   function gdk_paintable_get_flags(paintable:PGdkPaintable):GdkPaintableFlags;
 
+  { Zeile entfernt  }
   function gdk_paintable_get_intrinsic_width(paintable:PGdkPaintable):longint;
 
+  { Zeile entfernt  }
   function gdk_paintable_get_intrinsic_height(paintable:PGdkPaintable):longint;
 
+  { Zeile entfernt  }
   function gdk_paintable_get_intrinsic_aspect_ratio(paintable:PGdkPaintable):double;
 
+  { Zeile entfernt  }
   procedure gdk_paintable_compute_concrete_size(paintable:PGdkPaintable; specified_width:double; specified_height:double; default_width:double; default_height:double; 
               concrete_width:Pdouble; concrete_height:Pdouble);
 
   { for implementations only  }
+  { Zeile entfernt  }
   procedure gdk_paintable_invalidate_contents(paintable:PGdkPaintable);
 
+  { Zeile entfernt  }
   procedure gdk_paintable_invalidate_size(paintable:PGdkPaintable);
 
+  { Zeile entfernt  }
   function gdk_paintable_new_empty(intrinsic_width:longint; intrinsic_height:longint):^GdkPaintable;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_PAINTABLE_H__  }
   { was #define dname def_expr }

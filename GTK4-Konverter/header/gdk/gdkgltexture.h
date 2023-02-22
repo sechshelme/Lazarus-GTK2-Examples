@@ -26,7 +26,7 @@
 #include <gdk/gdkglcontext.h>
 #include <gdk/gdktexture.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_GL_TEXTURE (gdk_gl_texture_get_type ())
 
@@ -36,12 +36,12 @@
 typedef struct _GdkGLTexture            GdkGLTexture;
 typedef struct _GdkGLTextureClass       GdkGLTextureClass;
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkGLTexture, g_object_unref)
+/* Zeile entfernt */
 
+/* Zeile entfernt */
+GType                   gdk_gl_texture_get_type                (void) ;
 
-GType                   gdk_gl_texture_get_type                (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkTexture *            gdk_gl_texture_new                     (GdkGLContext    *context,
                                                                 guint            id,
                                                                 int              width,
@@ -49,10 +49,10 @@ GdkTexture *            gdk_gl_texture_new                     (GdkGLContext    
                                                                 GDestroyNotify   destroy,
                                                                 gpointer         data);
 
-
+/* Zeile entfernt */
 void                    gdk_gl_texture_release                 (GdkGLTexture    *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_GL_TEXTURE_H__ */

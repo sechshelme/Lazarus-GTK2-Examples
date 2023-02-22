@@ -28,7 +28,7 @@
 
 #include <gdk/gdkmonitor.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_BROADWAY_MONITOR           (gdk_broadway_monitor_get_type ())
 #define GDK_BROADWAY_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_BROADWAY_MONITOR, GdkBroadwayMonitor))
@@ -37,10 +37,10 @@
 typedef struct _GdkBroadwayMonitor      GdkBroadwayMonitor;
 typedef struct _GdkBroadwayMonitorClass GdkBroadwayMonitorClass;
 
+/* Zeile entfernt */
+GType             gdk_broadway_monitor_get_type            (void) ;
 
-GType             gdk_broadway_monitor_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif  /* __GDK_BROADWAY_MONITOR_H__ */
 

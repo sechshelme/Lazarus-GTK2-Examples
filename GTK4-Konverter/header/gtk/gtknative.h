@@ -27,33 +27,33 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_NATIVE               (gtk_native_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
-
-
+/* Zeile entfernt */
 void        gtk_native_realize         (GtkNative *self);
 
-
+/* Zeile entfernt */
 void        gtk_native_unrealize       (GtkNative *self);
 
-
+/* Zeile entfernt */
 GtkNative * gtk_native_get_for_surface (GdkSurface *surface);
 
-
+/* Zeile entfernt */
 GdkSurface *gtk_native_get_surface     (GtkNative *self);
 
-
+/* Zeile entfernt */
 GskRenderer *gtk_native_get_renderer   (GtkNative *self);
 
-
+/* Zeile entfernt */
 void         gtk_native_get_surface_transform (GtkNative *self,
                                                double    *x,
                                                double    *y);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_NATIVE_H__ */

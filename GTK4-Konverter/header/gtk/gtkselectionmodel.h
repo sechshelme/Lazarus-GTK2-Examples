@@ -26,12 +26,12 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SELECTION_MODEL       (gtk_selection_model_get_type ())
 
-
-G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODEL, GListModel)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkSelectionModelInterface:
@@ -100,48 +100,48 @@ struct _GtkSelectionModelInterface
                                                                  GtkBitset              *mask);
 };
 
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_is_selected         (GtkSelectionModel      *model,
                                                                  guint                   position);
-
+/* Zeile entfernt */
 GtkBitset *             gtk_selection_model_get_selection       (GtkSelectionModel      *model);
-
+/* Zeile entfernt */
 GtkBitset *             gtk_selection_model_get_selection_in_range
                                                                 (GtkSelectionModel      *model,
                                                                  guint                   position,
                                                                  guint                   n_items);
 
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_select_item         (GtkSelectionModel      *model,
                                                                  guint                   position,
                                                                  gboolean                unselect_rest);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_unselect_item       (GtkSelectionModel      *model,
                                                                  guint                   position);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_select_range        (GtkSelectionModel      *model,
                                                                  guint                   position,
                                                                  guint                   n_items,
                                                                  gboolean                unselect_rest);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_unselect_range      (GtkSelectionModel      *model,
                                                                  guint                   position,
                                                                  guint                   n_items);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_select_all          (GtkSelectionModel      *model);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_unselect_all        (GtkSelectionModel      *model);
-
+/* Zeile entfernt */
 gboolean                gtk_selection_model_set_selection       (GtkSelectionModel      *model,
                                                                  GtkBitset              *selected,
                                                                  GtkBitset              *mask);
 
 /* for implementations only */
-
+/* Zeile entfernt */
 void                    gtk_selection_model_selection_changed   (GtkSelectionModel      *model,
                                                                  guint                   position,
                                                                  guint                   n_items);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SELECTION_MODEL_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkgesture.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_ZOOM         (gtk_gesture_zoom_get_type ())
 #define GTK_GESTURE_ZOOM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_ZOOM, GtkGestureZoom))
@@ -39,15 +39,15 @@
 typedef struct _GtkGestureZoom GtkGestureZoom;
 typedef struct _GtkGestureZoomClass GtkGestureZoomClass;
 
+/* Zeile entfernt */
+GType        gtk_gesture_zoom_get_type        (void) ;
 
-GType        gtk_gesture_zoom_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture * gtk_gesture_zoom_new             (void);
 
-
+/* Zeile entfernt */
 double       gtk_gesture_zoom_get_scale_delta (GtkGestureZoom *gesture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_ZOOM_H__ */

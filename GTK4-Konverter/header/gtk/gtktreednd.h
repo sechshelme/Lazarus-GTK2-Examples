@@ -24,7 +24,7 @@
 
 #include <gtk/gtktreemodel.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GTK_TYPE_TREE_ROW_DATA:
@@ -34,8 +34,8 @@
  * and can be consumed via gtk_tree_get_row_drag_data().
  */
 #define GTK_TYPE_TREE_ROW_DATA (gtk_tree_row_data_get_type ())
-
-GType             gtk_tree_row_data_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType             gtk_tree_row_data_get_type (void) ;
 
 
 #define GTK_TYPE_TREE_DRAG_SOURCE            (gtk_tree_drag_source_get_type ())
@@ -74,23 +74,23 @@ struct _GtkTreeDragSourceIface
                                          GtkTreePath       *path);
 };
 
-
-GType           gtk_tree_drag_source_get_type   (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType           gtk_tree_drag_source_get_type   (void) ;
 
 /* Returns whether the given row can be dragged */
-
+/* Zeile entfernt */
 gboolean gtk_tree_drag_source_row_draggable    (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
 
 /* Deletes the given row, or returns FALSE if it can't */
-
+/* Zeile entfernt */
 gboolean gtk_tree_drag_source_drag_data_delete (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
 
 /* Fills in selection_data with type selection_data->target based on
  * the row denoted by path, returns TRUE if it does anything
  */
-
+/* Zeile entfernt */
 GdkContentProvider *
          gtk_tree_drag_source_drag_data_get    (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
@@ -129,20 +129,20 @@ struct _GtkTreeDragDestIface
                                        const GValue      *value);
 };
 
-
-GType           gtk_tree_drag_dest_get_type   (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType           gtk_tree_drag_dest_get_type   (void) ;
 
 /* Inserts a row before dest which contains data in selection_data,
  * or returns FALSE if it can't
  */
-
+/* Zeile entfernt */
 gboolean gtk_tree_drag_dest_drag_data_received (GtkTreeDragDest   *drag_dest,
 						GtkTreePath       *dest,
 						const GValue      *value);
 
 
 /* Returns TRUE if we can drop before path; path may not exist. */
-
+/* Zeile entfernt */
 gboolean gtk_tree_drag_dest_row_drop_possible  (GtkTreeDragDest   *drag_dest,
 						GtkTreePath       *dest_path,
 						const GValue      *value);
@@ -151,15 +151,15 @@ gboolean gtk_tree_drag_dest_row_drop_possible  (GtkTreeDragDest   *drag_dest,
 /* The selection data would normally have target type GTK_TREE_MODEL_ROW in this
  * case. If the target is wrong these functions return FALSE.
  */
-
+/* Zeile entfernt */
 GdkContentProvider * 
          gtk_tree_create_row_drag_content      (GtkTreeModel      *tree_model,
 						GtkTreePath       *path);
-
+/* Zeile entfernt */
 gboolean gtk_tree_get_row_drag_data            (const GValue      *value,
 						GtkTreeModel     **tree_model,
 						GtkTreePath      **path);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_DND_H__ */

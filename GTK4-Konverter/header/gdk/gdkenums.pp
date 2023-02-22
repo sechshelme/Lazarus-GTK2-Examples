@@ -32,6 +32,7 @@
 {$error "Only <gdk/gdk.h> can be included directly."}
 {$endif}
 {$include <glib.h>}
+  { Zeile entfernt  }
   { Currently, these are the same values numerically as in the
    * X protocol. If you change that, gdksurface-x11.c/gdk_surface_set_geometry_hints()
    * will need fixing.
@@ -273,6 +274,7 @@
       GDK_MEMORY_R32G32B32A32_FLOAT_PREMULTIPLIED,
       GDK_MEMORY_R32G32B32A32_FLOAT,GDK_MEMORY_N_FORMATS
       );
+  { Zeile entfernt  }
 {$endif}
   { __GDK_ENUMS_H__  }
 

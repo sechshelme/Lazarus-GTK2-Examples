@@ -40,6 +40,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SPIN_BUTTON : longint; { return type might be wrong }
@@ -100,65 +101,89 @@
       GTK_SPIN_HOME,GTK_SPIN_END,GTK_SPIN_USER_DEFINED
       );
     _GtkSpinButton = GtkSpinButton;
-(* error 
-GType           gtk_spin_button_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_spin_button_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_configure(spin_button:PGtkSpinButton; adjustment:PGtkAdjustment; climb_rate:double; digits:guint);
 
+  { Zeile entfernt  }
   function gtk_spin_button_new(adjustment:PGtkAdjustment; climb_rate:double; digits:guint):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_spin_button_new_with_range(min:double; max:double; step:double):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_adjustment(spin_button:PGtkSpinButton; adjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_adjustment(spin_button:PGtkSpinButton):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_digits(spin_button:PGtkSpinButton; digits:guint);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_digits(spin_button:PGtkSpinButton):guint;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_increments(spin_button:PGtkSpinButton; step:double; page:double);
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_get_increments(spin_button:PGtkSpinButton; step:Pdouble; page:Pdouble);
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_range(spin_button:PGtkSpinButton; min:double; max:double);
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_get_range(spin_button:PGtkSpinButton; min:Pdouble; max:Pdouble);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_value(spin_button:PGtkSpinButton):double;
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_value_as_int(spin_button:PGtkSpinButton):longint;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_value(spin_button:PGtkSpinButton; value:double);
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_update_policy(spin_button:PGtkSpinButton; policy:GtkSpinButtonUpdatePolicy);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_update_policy(spin_button:PGtkSpinButton):GtkSpinButtonUpdatePolicy;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_numeric(spin_button:PGtkSpinButton; numeric:gboolean);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_numeric(spin_button:PGtkSpinButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_spin(spin_button:PGtkSpinButton; direction:GtkSpinType; increment:double);
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_wrap(spin_button:PGtkSpinButton; wrap:gboolean);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_wrap(spin_button:PGtkSpinButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_snap_to_ticks(spin_button:PGtkSpinButton; snap_to_ticks:gboolean);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_snap_to_ticks(spin_button:PGtkSpinButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_set_climb_rate(spin_button:PGtkSpinButton; climb_rate:double);
 
+  { Zeile entfernt  }
   function gtk_spin_button_get_climb_rate(spin_button:PGtkSpinButton):double;
 
+  { Zeile entfernt  }
   procedure gtk_spin_button_update(spin_button:PGtkSpinButton);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SPIN_BUTTON_H__  }
   { was #define dname def_expr }
@@ -183,6 +208,10 @@ GType           gtk_spin_button_get_type           (void) G_GNUC_CONST;
     GTK_IS_SPIN_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SPIN_BUTTON);
   end;
 
+  function gtk_spin_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_spin_button_configure(spin_button:PGtkSpinButton; adjustment:PGtkAdjustment; climb_rate:double; digits:guint);
   begin
     { You must implement this function }

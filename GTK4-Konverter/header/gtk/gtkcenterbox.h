@@ -28,7 +28,7 @@
 
 #include "gtkwidget.h"
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CENTER_BOX                 (gtk_center_box_get_type ())
 #define GTK_CENTER_BOX(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CENTER_BOX, GtkCenterBox))
@@ -40,34 +40,34 @@
 typedef struct _GtkCenterBox             GtkCenterBox;
 typedef struct _GtkCenterBoxClass        GtkCenterBoxClass;
 
+/* Zeile entfernt */
+GType      gtk_center_box_get_type (void) ;
 
-GType      gtk_center_box_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *gtk_center_box_new (void);
-
+/* Zeile entfernt */
 void       gtk_center_box_set_start_widget   (GtkCenterBox *self,
                                               GtkWidget    *child);
-
+/* Zeile entfernt */
 void       gtk_center_box_set_center_widget  (GtkCenterBox *self,
                                               GtkWidget    *child);
-
+/* Zeile entfernt */
 void       gtk_center_box_set_end_widget     (GtkCenterBox *self,
                                               GtkWidget    *child);
 
-
+/* Zeile entfernt */
 GtkWidget * gtk_center_box_get_start_widget  (GtkCenterBox *self);
-
+/* Zeile entfernt */
 GtkWidget * gtk_center_box_get_center_widget (GtkCenterBox *self);
-
+/* Zeile entfernt */
 GtkWidget * gtk_center_box_get_end_widget    (GtkCenterBox *self);
 
-
+/* Zeile entfernt */
 void                gtk_center_box_set_baseline_position (GtkCenterBox        *self,
                                                           GtkBaselinePosition  position);
-
+/* Zeile entfernt */
 GtkBaselinePosition gtk_center_box_get_baseline_position (GtkCenterBox        *self);
 
-
+/* Zeile entfernt */
 
 #endif

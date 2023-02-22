@@ -27,57 +27,57 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GdkToplevelLayout GdkToplevelLayout;
 
 #define GDK_TYPE_TOPLEVEL_LAYOUT (gdk_toplevel_layout_get_type ())
 
-
+/* Zeile entfernt */
 GType                   gdk_toplevel_layout_get_type    (void);
 
-
+/* Zeile entfernt */
 GdkToplevelLayout *     gdk_toplevel_layout_new         (void);
 
-
+/* Zeile entfernt */
 GdkToplevelLayout *     gdk_toplevel_layout_ref         (GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_toplevel_layout_unref       (GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 GdkToplevelLayout *     gdk_toplevel_layout_copy        (GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 gboolean                gdk_toplevel_layout_equal       (GdkToplevelLayout *layout,
                                                          GdkToplevelLayout *other);
 
-
+/* Zeile entfernt */
 void                    gdk_toplevel_layout_set_maximized (GdkToplevelLayout *layout,
                                                            gboolean           maximized);
-
+/* Zeile entfernt */
 void                    gdk_toplevel_layout_set_fullscreen (GdkToplevelLayout *layout,
                                                             gboolean           fullscreen,
                                                             GdkMonitor        *monitor);
 
-
+/* Zeile entfernt */
 gboolean                gdk_toplevel_layout_get_maximized (GdkToplevelLayout *layout,
                                                            gboolean          *maximized);
 
-
+/* Zeile entfernt */
 gboolean                gdk_toplevel_layout_get_fullscreen (GdkToplevelLayout *layout,
                                                             gboolean          *fullscreen);
 
-
+/* Zeile entfernt */
 GdkMonitor *            gdk_toplevel_layout_get_fullscreen_monitor (GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 void                    gdk_toplevel_layout_set_resizable (GdkToplevelLayout *layout,
                                                            gboolean           resizable);
 
-
+/* Zeile entfernt */
 gboolean                gdk_toplevel_layout_get_resizable (GdkToplevelLayout *layout);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_TOPLEVEL_LAYOUT_H__ */

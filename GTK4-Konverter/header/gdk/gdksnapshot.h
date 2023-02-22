@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 
 typedef struct _GdkSnapshotClass        GdkSnapshotClass;
@@ -37,12 +37,12 @@ typedef struct _GdkSnapshotClass        GdkSnapshotClass;
 #define GDK_SNAPSHOT(obj)               (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_SNAPSHOT, GdkSnapshot))
 #define GDK_IS_SNAPSHOT(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_SNAPSHOT))
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkSnapshot, g_object_unref)
+/* Zeile entfernt */
+
+/* Zeile entfernt */
+GType           gdk_snapshot_get_type   (void) ;
 
 
-GType           gdk_snapshot_get_type   (void) G_GNUC_CONST;
-
-
-
+/* Zeile entfernt */
 
 #endif /* __GDK_SNAPSHOT_H__ */

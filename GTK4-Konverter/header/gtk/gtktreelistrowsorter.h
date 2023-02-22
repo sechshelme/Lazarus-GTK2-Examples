@@ -27,21 +27,21 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_LIST_ROW_SORTER             (gtk_tree_list_row_sorter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_LIST_ROW_SORTER, GtkSorter)
-
-
+/* Zeile entfernt */
 GtkTreeListRowSorter *  gtk_tree_list_row_sorter_new                   (GtkSorter            *sorter);
 
-
+/* Zeile entfernt */
 GtkSorter *             gtk_tree_list_row_sorter_get_sorter            (GtkTreeListRowSorter *self);
-
+/* Zeile entfernt */
 void                    gtk_tree_list_row_sorter_set_sorter            (GtkTreeListRowSorter *self,
                                                                         GtkSorter            *sorter);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_LIST_ROW_SORTER_H__ */

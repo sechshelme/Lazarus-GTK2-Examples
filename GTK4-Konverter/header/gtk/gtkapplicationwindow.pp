@@ -34,6 +34,7 @@
 {$endif}
 {$include <gtk/gtkwindow.h>}
 {$include <gtk/gtkshortcutswindow.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APPLICATION_WINDOW : longint; { return type might be wrong }
@@ -81,25 +82,29 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType       gtk_application_window_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_application_window_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_application_window_new(application:PGtkApplication):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_application_window_set_show_menubar(window:PGtkApplicationWindow; show_menubar:gboolean);
 
+  { Zeile entfernt  }
   function gtk_application_window_get_show_menubar(window:PGtkApplicationWindow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_application_window_get_id(window:PGtkApplicationWindow):guint;
 
+  { Zeile entfernt  }
   procedure gtk_application_window_set_help_overlay(window:PGtkApplicationWindow; help_overlay:PGtkShortcutsWindow);
 
+  { Zeile entfernt  }
   function gtk_application_window_get_help_overlay(window:PGtkApplicationWindow):^GtkShortcutsWindow;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APPLICATION_WINDOW_H__  }
   { was #define dname def_expr }
@@ -148,6 +153,10 @@ GType       gtk_application_window_get_type          (void) G_GNUC_CONST;
     GTK_APPLICATION_WINDOW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(inst,GTK_TYPE_APPLICATION_WINDOW,GtkApplicationWindowClass);
   end;
 
+  function gtk_application_window_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_application_window_new(application:PGtkApplication):PGtkWidget;
   begin
     { You must implement this function }

@@ -26,7 +26,7 @@
 
 #include <gtk/gtkeventcontroller.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER_LEGACY         (gtk_event_controller_legacy_get_type ())
 #define GTK_EVENT_CONTROLLER_LEGACY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_LEGACY, GtkEventControllerLegacy))
@@ -38,12 +38,12 @@
 typedef struct _GtkEventControllerLegacy GtkEventControllerLegacy;
 typedef struct _GtkEventControllerLegacyClass GtkEventControllerLegacyClass;
 
+/* Zeile entfernt */
+GType               gtk_event_controller_legacy_get_type   (void) ;
 
-GType               gtk_event_controller_legacy_get_type   (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *gtk_event_controller_legacy_new        (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_LEGACY_H__ */

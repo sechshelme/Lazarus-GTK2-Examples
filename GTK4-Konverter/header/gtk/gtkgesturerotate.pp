@@ -33,6 +33,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkgesture.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_ROTATE : longint; { return type might be wrong }
@@ -66,17 +67,17 @@
   type
     _GtkGestureRotate = GtkGestureRotate;
     _GtkGestureRotateClass = GtkGestureRotateClass;
-(* error 
-GType        gtk_gesture_rotate_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_rotate_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_rotate_new:^GtkGesture;
 
+  { Zeile entfernt  }
   function gtk_gesture_rotate_get_angle_delta(gesture:PGtkGestureRotate):double;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_ROTATE_H__  }
   { was #define dname def_expr }
@@ -125,6 +126,10 @@ GType        gtk_gesture_rotate_get_type        (void) G_GNUC_CONST;
     GTK_GESTURE_ROTATE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_ROTATE,GtkGestureRotateClass);
   end;
 
+  function gtk_gesture_rotate_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_rotate_new:PGtkGesture;
   begin
     { You must implement this function }

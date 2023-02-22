@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkfilter.h>}
+  { Zeile entfernt  }
   {*
    * GtkCustomFilterFunc:
    * @item: (type GObject): The item to be matched
@@ -50,20 +51,15 @@
   { was #define dname def_expr }
   function GTK_TYPE_CUSTOM_FILTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomFilter, gtk_custom_filter, GTK, CUSTOM_FILTER, GtkFilter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomFilter, gtk_custom_filter, GTK, CUSTOM_FILTER, GtkFilter)
-(* error 
-                                                                 gpointer                user_data,
-(* error 
-                                                                 GDestroyNotify          user_destroy);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_custom_filter_new(match_func:GtkCustomFilterFunc; user_data:gpointer; user_destroy:GDestroyNotify):^GtkCustomFilter;
+
+  { Zeile entfernt  }
   procedure gtk_custom_filter_set_filter_func(self:PGtkCustomFilter; match_func:GtkCustomFilterFunc; user_data:gpointer; user_destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CUSTOM_FILTER_H__  }
   { was #define dname def_expr }
@@ -72,6 +68,10 @@ G_DECLARE_FINAL_TYPE (GtkCustomFilter, gtk_custom_filter, GTK, CUSTOM_FILTER, Gt
       GTK_TYPE_CUSTOM_FILTER:=gtk_custom_filter_get_type;
     end;
 
+  function gtk_custom_filter_new(match_func:GtkCustomFilterFunc; user_data:gpointer; user_destroy:GDestroyNotify):PGtkCustomFilter;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_custom_filter_set_filter_func(self:PGtkCustomFilter; match_func:GtkCustomFilterFunc; user_data:gpointer; user_destroy:GDestroyNotify);
   begin
     { You must implement this function }

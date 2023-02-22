@@ -36,6 +36,7 @@
 {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_STYLUS : longint; { return type might be wrong }
@@ -69,23 +70,26 @@
   type
     _GtkGestureStylus = GtkGestureStylus;
     _GtkGestureStylusClass = GtkGestureStylusClass;
-(* error 
-GType             gtk_gesture_stylus_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_stylus_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_stylus_new:^GtkGesture;
 
+  { Zeile entfernt  }
   function gtk_gesture_stylus_get_axis(gesture:PGtkGestureStylus; axis:GdkAxisUse; value:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_stylus_get_axes(gesture:PGtkGestureStylus; axes:PGdkAxisUse; values:PPdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_stylus_get_backlog(gesture:PGtkGestureStylus; backlog:PPGdkTimeCoord; n_elems:Pguint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_stylus_get_device_tool(gesture:PGtkGestureStylus):^GdkDeviceTool;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_STYLUS_H__  }
   { was #define dname def_expr }
@@ -134,6 +138,10 @@ GType             gtk_gesture_stylus_get_type (void) G_GNUC_CONST;
     GTK_GESTURE_STYLUS_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_STYLUS,GtkGestureStylusClass);
   end;
 
+  function gtk_gesture_stylus_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_stylus_new:PGtkGesture;
   begin
     { You must implement this function }

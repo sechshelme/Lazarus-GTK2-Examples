@@ -26,7 +26,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STYLE_PROVIDER          (gtk_style_provider_get_type ())
 #define GTK_STYLE_PROVIDER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_STYLE_PROVIDER, GtkStyleProvider))
@@ -85,9 +85,9 @@
 
 typedef struct _GtkStyleProvider GtkStyleProvider; /* dummy typedef */
 
+/* Zeile entfernt */
+GType gtk_style_provider_get_type (void) ;
 
-GType gtk_style_provider_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STYLE_PROVIDER_H__ */

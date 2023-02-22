@@ -28,7 +28,7 @@
 #include <gtk/gtkstyleprovider.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STYLE_CONTEXT         (gtk_style_context_get_type ())
 #define GTK_STYLE_CONTEXT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_STYLE_CONTEXT, GtkStyleContext))
@@ -58,75 +58,75 @@ struct _GtkStyleContextClass
 };
 
 
+/* Zeile entfernt */
+GType gtk_style_context_get_type (void) ;
 
-GType gtk_style_context_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void gtk_style_context_add_provider_for_display    (GdkDisplay       *display,
                                                     GtkStyleProvider *provider,
                                                     guint             priority);
-
+/* Zeile entfernt */
 void gtk_style_context_remove_provider_for_display (GdkDisplay       *display,
                                                     GtkStyleProvider *provider);
 
-
+/* Zeile entfernt */
 void gtk_style_context_add_provider    (GtkStyleContext  *context,
                                         GtkStyleProvider *provider,
                                         guint             priority);
 
-
+/* Zeile entfernt */
 void gtk_style_context_remove_provider (GtkStyleContext  *context,
                                         GtkStyleProvider *provider);
 
-
+/* Zeile entfernt */
 void gtk_style_context_save    (GtkStyleContext *context);
-
+/* Zeile entfernt */
 void gtk_style_context_restore (GtkStyleContext *context);
 
-
+/* Zeile entfernt */
 void          gtk_style_context_set_state    (GtkStyleContext *context,
                                               GtkStateFlags    flags);
-
+/* Zeile entfernt */
 GtkStateFlags gtk_style_context_get_state    (GtkStyleContext *context);
 
-
+/* Zeile entfernt */
 void          gtk_style_context_set_scale    (GtkStyleContext *context,
                                               int              scale);
-
+/* Zeile entfernt */
 int           gtk_style_context_get_scale    (GtkStyleContext *context);
 
-
+/* Zeile entfernt */
 void     gtk_style_context_add_class    (GtkStyleContext *context,
                                          const char      *class_name);
-
+/* Zeile entfernt */
 void     gtk_style_context_remove_class (GtkStyleContext *context,
                                          const char      *class_name);
-
+/* Zeile entfernt */
 gboolean gtk_style_context_has_class    (GtkStyleContext *context,
                                          const char      *class_name);
 
-
+/* Zeile entfernt */
 void        gtk_style_context_set_display (GtkStyleContext *context,
                                            GdkDisplay      *display);
-
+/* Zeile entfernt */
 GdkDisplay *gtk_style_context_get_display (GtkStyleContext *context);
 
-
+/* Zeile entfernt */
 gboolean gtk_style_context_lookup_color (GtkStyleContext *context,
                                          const char      *color_name,
                                          GdkRGBA         *color);
 
 /* Some helper functions to retrieve most common properties */
-
+/* Zeile entfernt */
 void gtk_style_context_get_color            (GtkStyleContext *context,
                                              GdkRGBA         *color);
-
+/* Zeile entfernt */
 void gtk_style_context_get_border           (GtkStyleContext *context,
                                              GtkBorder       *border);
-
+/* Zeile entfernt */
 void gtk_style_context_get_padding          (GtkStyleContext *context,
                                              GtkBorder       *padding);
-
+/* Zeile entfernt */
 void gtk_style_context_get_margin           (GtkStyleContext *context,
                                              GtkBorder       *margin);
 
@@ -137,10 +137,10 @@ typedef enum {
   GTK_STYLE_CONTEXT_PRINT_SHOW_CHANGE  = 1 << 2
 } GtkStyleContextPrintFlags;
 
-
+/* Zeile entfernt */
 char * gtk_style_context_to_string (GtkStyleContext           *context,
                                     GtkStyleContextPrintFlags  flags);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STYLE_CONTEXT_H__ */

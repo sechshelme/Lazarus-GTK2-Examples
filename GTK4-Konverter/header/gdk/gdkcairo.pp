@@ -37,24 +37,32 @@
 {$include <gdk/gdkrgba.h>}
 {$include <gdk/gdkpixbuf.h>}
 {$include <pango/pangocairo.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   procedure gdk_cairo_set_source_rgba(cr:Pcairo_t; rgba:PGdkRGBA);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_cairo_set_source_pixbuf(cr:Pcairo_t; pixbuf:PGdkPixbuf; pixbuf_x:double; pixbuf_y:double);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_cairo_rectangle(cr:Pcairo_t; rectangle:PGdkRectangle);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_cairo_region(cr:Pcairo_t; region:Pcairo_region_t);
 
+  { Zeile entfernt  }
   function gdk_cairo_region_create_from_surface(surface:Pcairo_surface_t):^cairo_region_t;
 
+  { Zeile entfernt  }
   procedure gdk_cairo_draw_from_gl(cr:Pcairo_t; surface:PGdkSurface; source:longint; source_type:longint; buffer_scale:longint; 
               x:longint; y:longint; width:longint; height:longint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CAIRO_H__  }
   procedure gdk_cairo_set_source_rgba(cr:Pcairo_t; rgba:PGdkRGBA);

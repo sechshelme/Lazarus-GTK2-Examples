@@ -3,7 +3,9 @@
   Pchar  = ^char;
   PGdkContentFormats  = ^GdkContentFormats;
   PGdkContentFormatsBuilder  = ^GdkContentFormatsBuilder;
+  PGdkFileList  = ^GdkFileList;
   Pgsize  = ^gsize;
+  PGSList  = ^GSList;
   PGString  = ^GString;
   PGType  = ^GType;
 {$IFDEF FPC}
@@ -34,46 +36,54 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CONTENT_FORMATS : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_intern_mime_type(_string:Pchar):^char;
 
-(* error 
-GType                   gdk_content_formats_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_content_formats_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gdk_content_formats_new(mime_types:PPchar; n_mime_types:guint):^GdkContentFormats;
 
+  { Zeile entfernt  }
   function gdk_content_formats_new_for_gtype(_type:GType):^GdkContentFormats;
 
-(* error 
-GdkContentFormats *     gdk_content_formats_parse               (const char                     *string);
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gdk_content_formats_parse(_string:Pchar):^GdkContentFormats;
+
+  { Zeile entfernt  }
   function gdk_content_formats_ref(formats:PGdkContentFormats):^GdkContentFormats;
 
+  { Zeile entfernt  }
   procedure gdk_content_formats_unref(formats:PGdkContentFormats);
 
+  { Zeile entfernt  }
   procedure gdk_content_formats_print(formats:PGdkContentFormats; _string:PGString);
 
+  { Zeile entfernt  }
   function gdk_content_formats_to_string(formats:PGdkContentFormats):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_content_formats_get_gtypes(formats:PGdkContentFormats; n_gtypes:Pgsize):^GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   function gdk_content_formats_get_mime_types(formats:PGdkContentFormats; n_mime_types:Pgsize):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                                  const GdkContentFormats        *second) G_GNUC_WARN_UNUSED_RESULT;
@@ -81,23 +91,28 @@ GdkContentFormats *     gdk_content_formats_parse               (const char     
 
     var
  : GdkContentFormats;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 
   function gdk_content_formats_match(first:PGdkContentFormats; second:PGdkContentFormats):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_content_formats_match_gtype(first:PGdkContentFormats; second:PGdkContentFormats):GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_content_formats_match_mime_type(first:PGdkContentFormats; second:PGdkContentFormats):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_content_formats_contain_gtype(formats:PGdkContentFormats; _type:GType):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_content_formats_contain_mime_type(formats:PGdkContentFormats; mime_type:Pchar):gboolean;
@@ -108,48 +123,50 @@ GdkContentFormats *     gdk_content_formats_parse               (const char     
 
   type
     _GdkContentFormatsBuilder = GdkContentFormatsBuilder;
-(* error 
-GType                   gdk_content_formats_builder_get_type    (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_content_formats_builder_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_content_formats_builder_new:^GdkContentFormatsBuilder;
 
+  { Zeile entfernt  }
   function gdk_content_formats_builder_ref(builder:PGdkContentFormatsBuilder):^GdkContentFormatsBuilder;
 
+  { Zeile entfernt  }
   procedure gdk_content_formats_builder_unref(builder:PGdkContentFormatsBuilder);
 
+  { Zeile entfernt  }
 (* error 
 GdkContentFormats *     gdk_content_formats_builder_free_to_formats (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
 
     var
  : GdkContentFormats;
+  { Zeile entfernt  }
 (* error 
 GdkContentFormats *     gdk_content_formats_builder_to_formats  (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
  in declarator_list *)
  : GdkContentFormats;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 
   procedure gdk_content_formats_builder_add_formats(builder:PGdkContentFormatsBuilder; formats:PGdkContentFormats);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_content_formats_builder_add_mime_type(builder:PGdkContentFormatsBuilder; mime_type:Pchar);
 
+  { Zeile entfernt  }
   procedure gdk_content_formats_builder_add_gtype(builder:PGdkContentFormatsBuilder; _type:GType);
 
   { dunno where else to put this  }
   { was #define dname def_expr }
   function GDK_TYPE_FILE_LIST : longint; { return type might be wrong }
 
-(* error 
-GType gdk_file_list_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_file_list_get_type:GType;
 
-    var
- : GType;
   {*
    * GdkFileList:
    *
@@ -160,9 +177,10 @@ GType gdk_file_list_get_type (void) G_GNUC_CONST;
 
   type
     _GdkFileList = GdkFileList;
-(* error 
-GSList *        gdk_file_list_get_files (GdkFileList *file_list);
- in declarator_list *)
+  { Zeile entfernt  }
+
+  function gdk_file_list_get_files(file_list:PGdkFileList):^GSList;
+
 (* error 
 GdkFileList *   gdk_file_list_new_from_list (GSList *files);
  in declarator_list *)
@@ -172,6 +190,7 @@ GdkFileList *   gdk_file_list_new_from_array (GFile **files,
                                               gsize   n_files);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CONTENT_FORMATS_H__  }
   { was #define dname def_expr }
@@ -184,11 +203,19 @@ GdkFileList *   gdk_file_list_new_from_array (GFile **files,
   begin
     { You must implement this function }
   end;
+  function gdk_content_formats_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_content_formats_new(mime_types:PPchar; n_mime_types:guint):PGdkContentFormats;
   begin
     { You must implement this function }
   end;
   function gdk_content_formats_new_for_gtype(_type:GType):PGdkContentFormats;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_content_formats_parse(_string:Pchar):PGdkContentFormats;
   begin
     { You must implement this function }
   end;
@@ -242,6 +269,10 @@ GdkFileList *   gdk_file_list_new_from_array (GFile **files,
       GDK_TYPE_CONTENT_FORMATS_BUILDER:=gdk_content_formats_builder_get_type;
     end;
 
+  function gdk_content_formats_builder_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_content_formats_builder_new:PGdkContentFormatsBuilder;
   begin
     { You must implement this function }
@@ -272,4 +303,12 @@ GdkFileList *   gdk_file_list_new_from_array (GFile **files,
       GDK_TYPE_FILE_LIST:=gdk_file_list_get_type;
     end;
 
+  function gdk_file_list_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_file_list_get_files(file_list:PGdkFileList):PGSList;
+  begin
+    { You must implement this function }
+  end;
 

@@ -32,6 +32,7 @@
     _GtkListItemFactoryClass = GtkListItemFactoryClass;
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_ITEM_FACTORY : longint; { return type might be wrong }
@@ -61,12 +62,10 @@
   { return type might be wrong }   
   function GTK_LIST_ITEM_FACTORY_GET_CLASS(o : longint) : longint;  
 
-(* error 
-GType        gtk_list_item_factory_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_list_item_factory_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LIST_ITEM_FACTORY_H__  }
   { was #define dname def_expr }
@@ -115,4 +114,8 @@ GType        gtk_list_item_factory_get_type       (void) G_GNUC_CONST;
     GTK_LIST_ITEM_FACTORY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_LIST_ITEM_FACTORY,GtkListItemFactoryClass);
   end;
 
+  function gtk_list_item_factory_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

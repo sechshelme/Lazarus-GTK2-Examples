@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EDITABLE             (gtk_editable_get_type ())
 #define GTK_EDITABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EDITABLE, GtkEditable))
@@ -76,71 +76,71 @@ struct _GtkEditableInterface
   GtkEditable * (* get_delegate)    (GtkEditable    *editable);
 };
 
+/* Zeile entfernt */
+GType    gtk_editable_get_type             (void) ;
 
-GType    gtk_editable_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char * gtk_editable_get_text         (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_text             (GtkEditable *editable,
                                             const char  *text);
-
+/* Zeile entfernt */
 char *   gtk_editable_get_chars            (GtkEditable *editable,
                                             int          start_pos,
                                             int          end_pos) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 void     gtk_editable_insert_text          (GtkEditable *editable,
                                             const char  *text,
                                             int          length,
                                             int         *position);
-
+/* Zeile entfernt */
 void     gtk_editable_delete_text          (GtkEditable *editable,
                                             int          start_pos,
                                             int          end_pos);
 
-
+/* Zeile entfernt */
 gboolean gtk_editable_get_selection_bounds (GtkEditable *editable,
                                             int         *start_pos,
                                             int         *end_pos);
-
+/* Zeile entfernt */
 void     gtk_editable_delete_selection     (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_select_region        (GtkEditable *editable,
                                             int          start_pos,
                                             int          end_pos);
 
-
+/* Zeile entfernt */
 void     gtk_editable_set_position         (GtkEditable *editable,
                                             int          position);
-
+/* Zeile entfernt */
 int      gtk_editable_get_position         (GtkEditable *editable);
 
-
+/* Zeile entfernt */
 gboolean gtk_editable_get_editable         (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_editable         (GtkEditable *editable,
                                             gboolean     is_editable);
 
-
+/* Zeile entfernt */
 float    gtk_editable_get_alignment        (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_alignment        (GtkEditable *editable,
                                             float        xalign);
 
-
+/* Zeile entfernt */
 int      gtk_editable_get_width_chars      (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_width_chars      (GtkEditable *editable,
                                             int          n_chars);
 
-
+/* Zeile entfernt */
 int      gtk_editable_get_max_width_chars  (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_max_width_chars  (GtkEditable *editable,
                                             int          n_chars);
-
+/* Zeile entfernt */
 gboolean gtk_editable_get_enable_undo      (GtkEditable *editable);
-
+/* Zeile entfernt */
 void     gtk_editable_set_enable_undo      (GtkEditable *editable,
                                             gboolean     enable_undo);
 
@@ -175,27 +175,27 @@ typedef enum {
   GTK_EDITABLE_NUM_PROPERTIES
 } GtkEditableProperties;
 
-
+/* Zeile entfernt */
 guint        gtk_editable_install_properties    (GObjectClass *object_class,
                                                  guint         first_prop);
-
+/* Zeile entfernt */
 GtkEditable *gtk_editable_get_delegate          (GtkEditable *editable);
-
+/* Zeile entfernt */
 void         gtk_editable_init_delegate         (GtkEditable  *editable);
-
+/* Zeile entfernt */
 void         gtk_editable_finish_delegate       (GtkEditable  *editable);
-
+/* Zeile entfernt */
 gboolean     gtk_editable_delegate_set_property (GObject      *object,
                                                  guint         prop_id,
                                                  const GValue *value,
                                                  GParamSpec   *pspec);
-
+/* Zeile entfernt */
 gboolean     gtk_editable_delegate_get_property (GObject      *object,
                                                  guint         prop_id,
                                                  GValue       *value,
                                                  GParamSpec   *pspec);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EDITABLE_H__ */

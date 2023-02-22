@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GRID                   (gtk_grid_get_type ())
 #define GTK_GRID(obj)                   (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_GRID, GtkGrid))
@@ -59,82 +59,82 @@ struct _GtkGridClass
   gpointer padding[8];
 };
 
-
-GType      gtk_grid_get_type               (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_grid_get_type               (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_grid_new                    (void);
-
+/* Zeile entfernt */
 void       gtk_grid_attach                 (GtkGrid         *grid,
                                             GtkWidget       *child,
                                             int              column,
                                             int              row,
                                             int              width,
                                             int              height);
-
+/* Zeile entfernt */
 void       gtk_grid_attach_next_to         (GtkGrid         *grid,
                                             GtkWidget       *child,
                                             GtkWidget       *sibling,
                                             GtkPositionType  side,
                                             int              width,
                                             int              height);
-
+/* Zeile entfernt */
 GtkWidget *gtk_grid_get_child_at           (GtkGrid         *grid,
                                             int              column,
                                             int              row);
-
+/* Zeile entfernt */
 void       gtk_grid_remove                 (GtkGrid         *grid,
                                             GtkWidget       *child);
 
-
+/* Zeile entfernt */
 void       gtk_grid_insert_row             (GtkGrid         *grid,
                                             int              position);
-
+/* Zeile entfernt */
 void       gtk_grid_insert_column          (GtkGrid         *grid,
                                             int              position);
-
+/* Zeile entfernt */
 void       gtk_grid_remove_row             (GtkGrid         *grid,
                                             int              position);
-
+/* Zeile entfernt */
 void       gtk_grid_remove_column          (GtkGrid         *grid,
                                             int              position);
-
+/* Zeile entfernt */
 void       gtk_grid_insert_next_to         (GtkGrid         *grid,
                                             GtkWidget       *sibling,
                                             GtkPositionType  side);
-
+/* Zeile entfernt */
 void       gtk_grid_set_row_homogeneous    (GtkGrid         *grid,
                                             gboolean         homogeneous);
-
+/* Zeile entfernt */
 gboolean   gtk_grid_get_row_homogeneous    (GtkGrid         *grid);
-
+/* Zeile entfernt */
 void       gtk_grid_set_row_spacing        (GtkGrid         *grid,
                                             guint            spacing);
-
+/* Zeile entfernt */
 guint      gtk_grid_get_row_spacing        (GtkGrid         *grid);
-
+/* Zeile entfernt */
 void       gtk_grid_set_column_homogeneous (GtkGrid         *grid,
                                             gboolean         homogeneous);
-
+/* Zeile entfernt */
 gboolean   gtk_grid_get_column_homogeneous (GtkGrid         *grid);
-
+/* Zeile entfernt */
 void       gtk_grid_set_column_spacing     (GtkGrid         *grid,
                                             guint            spacing);
-
+/* Zeile entfernt */
 guint      gtk_grid_get_column_spacing     (GtkGrid         *grid);
-
+/* Zeile entfernt */
 void       gtk_grid_set_row_baseline_position (GtkGrid      *grid,
                                                int           row,
                                                GtkBaselinePosition pos);
-
+/* Zeile entfernt */
 GtkBaselinePosition gtk_grid_get_row_baseline_position (GtkGrid      *grid,
                                                         int           row);
-
+/* Zeile entfernt */
 void       gtk_grid_set_baseline_row       (GtkGrid         *grid,
                                             int              row);
-
+/* Zeile entfernt */
 int        gtk_grid_get_baseline_row       (GtkGrid         *grid);
 
-
+/* Zeile entfernt */
 void       gtk_grid_query_child            (GtkGrid         *grid,
                                             GtkWidget       *child,
                                             int             *column,
@@ -142,6 +142,6 @@ void       gtk_grid_query_child            (GtkGrid         *grid,
                                             int             *width,
                                             int             *height);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GRID_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtktreemodel.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_SORTABLE            (gtk_tree_sortable_get_type ())
 #define GTK_TREE_SORTABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_SORTABLE, GtkTreeSortable))
@@ -130,33 +130,33 @@ struct _GtkTreeSortableIface
 };
 
 
+/* Zeile entfernt */
+GType    gtk_tree_sortable_get_type              (void) ;
 
-GType    gtk_tree_sortable_get_type              (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void     gtk_tree_sortable_sort_column_changed   (GtkTreeSortable        *sortable);
-
+/* Zeile entfernt */
 gboolean gtk_tree_sortable_get_sort_column_id    (GtkTreeSortable        *sortable,
 						  int                    *sort_column_id,
 						  GtkSortType            *order);
-
+/* Zeile entfernt */
 void     gtk_tree_sortable_set_sort_column_id    (GtkTreeSortable        *sortable,
 						  int                     sort_column_id,
 						  GtkSortType             order);
-
+/* Zeile entfernt */
 void     gtk_tree_sortable_set_sort_func         (GtkTreeSortable        *sortable,
 						  int                     sort_column_id,
 						  GtkTreeIterCompareFunc  sort_func,
 						  gpointer                user_data,
 						  GDestroyNotify          destroy);
-
+/* Zeile entfernt */
 void     gtk_tree_sortable_set_default_sort_func (GtkTreeSortable        *sortable,
 						  GtkTreeIterCompareFunc  sort_func,
 						  gpointer                user_data,
 						  GDestroyNotify          destroy);
-
+/* Zeile entfernt */
 gboolean gtk_tree_sortable_has_default_sort_func (GtkTreeSortable        *sortable);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_SORTABLE_H__ */

@@ -28,26 +28,26 @@
 #include <gdk/gdk.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FLATTEN_LIST_MODEL (gtk_flatten_list_model_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_LIST_MODEL, GObject)
-
-
+/* Zeile entfernt */
 GtkFlattenListModel *    gtk_flatten_list_model_new             (GListModel             *model);
 
-
+/* Zeile entfernt */
 void                    gtk_flatten_list_model_set_model        (GtkFlattenListModel    *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 GListModel *            gtk_flatten_list_model_get_model        (GtkFlattenListModel    *self);
 
-
+/* Zeile entfernt */
 GListModel *            gtk_flatten_list_model_get_model_for_item (GtkFlattenListModel    *self,
                                                                    guint                   position);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FLATTEN_LIST_MODEL_H__ */

@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_NOTEBOOK                  (gtk_notebook_get_type ())
 #define GTK_NOTEBOOK(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_NOTEBOOK, GtkNotebook))
@@ -65,40 +65,40 @@ typedef struct _GtkNotebook GtkNotebook;
  *           Creation, insertion, deletion                 *
  ***********************************************************/
 
-
-GType   gtk_notebook_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType   gtk_notebook_get_type       (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_notebook_new        (void);
-
+/* Zeile entfernt */
 int gtk_notebook_append_page        (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label);
-
+/* Zeile entfernt */
 int gtk_notebook_append_page_menu   (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label,
 				     GtkWidget   *menu_label);
-
+/* Zeile entfernt */
 int gtk_notebook_prepend_page       (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label);
-
+/* Zeile entfernt */
 int gtk_notebook_prepend_page_menu  (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label,
 				     GtkWidget   *menu_label);
-
+/* Zeile entfernt */
 int gtk_notebook_insert_page        (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label,
 				     int          position);
-
+/* Zeile entfernt */
 int gtk_notebook_insert_page_menu   (GtkNotebook *notebook,
 				     GtkWidget   *child,
 				     GtkWidget   *tab_label,
 				     GtkWidget   *menu_label,
 				     int          position);
-
+/* Zeile entfernt */
 void gtk_notebook_remove_page       (GtkNotebook *notebook,
 				     int          page_num);
 
@@ -106,10 +106,10 @@ void gtk_notebook_remove_page       (GtkNotebook *notebook,
  *           Tabs drag and drop                            *
  ***********************************************************/
 
-
+/* Zeile entfernt */
 void         gtk_notebook_set_group_name (GtkNotebook *notebook,
                                           const char  *group_name);
-
+/* Zeile entfernt */
 const char *gtk_notebook_get_group_name  (GtkNotebook *notebook);
 
 
@@ -118,131 +118,131 @@ const char *gtk_notebook_get_group_name  (GtkNotebook *notebook);
  *            query, set current NotebookPage              *
  ***********************************************************/
 
-
+/* Zeile entfernt */
 int        gtk_notebook_get_current_page (GtkNotebook *notebook);
-
+/* Zeile entfernt */
 GtkWidget* gtk_notebook_get_nth_page     (GtkNotebook *notebook,
 					  int          page_num);
-
+/* Zeile entfernt */
 int        gtk_notebook_get_n_pages      (GtkNotebook *notebook);
-
+/* Zeile entfernt */
 int        gtk_notebook_page_num         (GtkNotebook *notebook,
 					  GtkWidget   *child);
-
+/* Zeile entfernt */
 void       gtk_notebook_set_current_page (GtkNotebook *notebook,
 					  int          page_num);
-
+/* Zeile entfernt */
 void       gtk_notebook_next_page        (GtkNotebook *notebook);
-
+/* Zeile entfernt */
 void       gtk_notebook_prev_page        (GtkNotebook *notebook);
 
 /***********************************************************
  *            set Notebook, NotebookTab style              *
  ***********************************************************/
 
-
+/* Zeile entfernt */
 void     gtk_notebook_set_show_border      (GtkNotebook     *notebook,
 					    gboolean         show_border);
-
+/* Zeile entfernt */
 gboolean gtk_notebook_get_show_border      (GtkNotebook     *notebook);
-
+/* Zeile entfernt */
 void     gtk_notebook_set_show_tabs        (GtkNotebook     *notebook,
 					    gboolean         show_tabs);
-
+/* Zeile entfernt */
 gboolean gtk_notebook_get_show_tabs        (GtkNotebook     *notebook);
-
+/* Zeile entfernt */
 void     gtk_notebook_set_tab_pos          (GtkNotebook     *notebook,
 				            GtkPositionType  pos);
-
+/* Zeile entfernt */
 GtkPositionType gtk_notebook_get_tab_pos   (GtkNotebook     *notebook);
-
+/* Zeile entfernt */
 void     gtk_notebook_set_scrollable       (GtkNotebook     *notebook,
 					    gboolean         scrollable);
-
+/* Zeile entfernt */
 gboolean gtk_notebook_get_scrollable       (GtkNotebook     *notebook);
 
 /***********************************************************
  *               enable/disable PopupMenu                  *
  ***********************************************************/
 
-
+/* Zeile entfernt */
 void gtk_notebook_popup_enable  (GtkNotebook *notebook);
-
+/* Zeile entfernt */
 void gtk_notebook_popup_disable (GtkNotebook *notebook);
 
 /***********************************************************
  *             query/set NotebookPage Properties           *
  ***********************************************************/
 
-
+/* Zeile entfernt */
 GtkWidget * gtk_notebook_get_tab_label    (GtkNotebook *notebook,
 					   GtkWidget   *child);
-
+/* Zeile entfernt */
 void gtk_notebook_set_tab_label           (GtkNotebook *notebook,
 					   GtkWidget   *child,
 					   GtkWidget   *tab_label);
-
+/* Zeile entfernt */
 void          gtk_notebook_set_tab_label_text (GtkNotebook *notebook,
                                                GtkWidget   *child,
                                                const char  *tab_text);
-
+/* Zeile entfernt */
 const char * gtk_notebook_get_tab_label_text  (GtkNotebook *notebook,
                                                GtkWidget   *child);
-
+/* Zeile entfernt */
 GtkWidget * gtk_notebook_get_menu_label   (GtkNotebook *notebook,
 					   GtkWidget   *child);
-
+/* Zeile entfernt */
 void gtk_notebook_set_menu_label          (GtkNotebook *notebook,
 					   GtkWidget   *child,
 					   GtkWidget   *menu_label);
-
+/* Zeile entfernt */
 void          gtk_notebook_set_menu_label_text (GtkNotebook *notebook,
                                                 GtkWidget   *child,
                                                 const char  *menu_text);
-
+/* Zeile entfernt */
 const char * gtk_notebook_get_menu_label_text  (GtkNotebook *notebook,
 						GtkWidget   *child);
-
+/* Zeile entfernt */
 void gtk_notebook_reorder_child           (GtkNotebook *notebook,
 					   GtkWidget   *child,
 					   int          position);
-
+/* Zeile entfernt */
 gboolean gtk_notebook_get_tab_reorderable (GtkNotebook *notebook,
 					   GtkWidget   *child);
-
+/* Zeile entfernt */
 void gtk_notebook_set_tab_reorderable     (GtkNotebook *notebook,
 					   GtkWidget   *child,
 					   gboolean     reorderable);
-
+/* Zeile entfernt */
 gboolean gtk_notebook_get_tab_detachable  (GtkNotebook *notebook,
 					   GtkWidget   *child);
-
+/* Zeile entfernt */
 void gtk_notebook_set_tab_detachable      (GtkNotebook *notebook,
 					   GtkWidget   *child,
 					   gboolean     detachable);
-
+/* Zeile entfernt */
 void gtk_notebook_detach_tab              (GtkNotebook *notebook,
                                            GtkWidget   *child);
 
-
+/* Zeile entfernt */
 GtkWidget* gtk_notebook_get_action_widget (GtkNotebook *notebook,
                                            GtkPackType  pack_type);
-
+/* Zeile entfernt */
 void       gtk_notebook_set_action_widget (GtkNotebook *notebook,
                                            GtkWidget   *widget,
                                            GtkPackType  pack_type);
 
+/* Zeile entfernt */
+GType   gtk_notebook_page_get_type  (void) ;
 
-GType   gtk_notebook_page_get_type  (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkNotebookPage *gtk_notebook_get_page (GtkNotebook *notebook,
                                         GtkWidget   *child);
-
+/* Zeile entfernt */
 GtkWidget *gtk_notebook_page_get_child (GtkNotebookPage *page);
-
+/* Zeile entfernt */
 GListModel *gtk_notebook_get_pages (GtkNotebook *notebook);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_NOTEBOOK_H__ */

@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_X11_SCREEN              (gdk_x11_screen_get_type ())
 #define GDK_X11_SCREEN(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_SCREEN, GdkX11Screen))
@@ -46,30 +46,30 @@
 typedef struct _GdkX11Screen GdkX11Screen;
 typedef struct _GdkX11ScreenClass GdkX11ScreenClass;
 
-
+/* Zeile entfernt */
 GType    gdk_x11_screen_get_type          (void);
 
-
+/* Zeile entfernt */
 Screen * gdk_x11_screen_get_xscreen       (GdkX11Screen   *screen);
-
+/* Zeile entfernt */
 int      gdk_x11_screen_get_screen_number (GdkX11Screen   *screen);
 
-
+/* Zeile entfernt */
 const char* gdk_x11_screen_get_window_manager_name (GdkX11Screen *screen);
 
-
+/* Zeile entfernt */
 gboolean gdk_x11_screen_supports_net_wm_hint (GdkX11Screen *screen,
                                               const char   *property_name);
 
-
+/* Zeile entfernt */
 XID      gdk_x11_screen_get_monitor_output   (GdkX11Screen *screen,
                                               int           monitor_num);
 
-
+/* Zeile entfernt */
 guint32  gdk_x11_screen_get_number_of_desktops (GdkX11Screen *screen);
-
+/* Zeile entfernt */
 guint32  gdk_x11_screen_get_current_desktop    (GdkX11Screen *screen);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_SCREEN_H__ */

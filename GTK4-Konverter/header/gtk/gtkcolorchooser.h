@@ -25,7 +25,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_COLOR_CHOOSER                  (gtk_color_chooser_get_type ())
 #define GTK_COLOR_CHOOSER(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COLOR_CHOOSER, GtkColorChooser))
@@ -60,29 +60,29 @@ struct _GtkColorChooserInterface
   gpointer padding[12];
 };
 
+/* Zeile entfernt */
+GType    gtk_color_chooser_get_type        (void) ;
 
-GType    gtk_color_chooser_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void     gtk_color_chooser_get_rgba       (GtkColorChooser *chooser,
                                            GdkRGBA         *color);
-
+/* Zeile entfernt */
 void     gtk_color_chooser_set_rgba       (GtkColorChooser *chooser,
                                            const GdkRGBA   *color);
-
+/* Zeile entfernt */
 gboolean gtk_color_chooser_get_use_alpha  (GtkColorChooser *chooser);
 
-
+/* Zeile entfernt */
 void     gtk_color_chooser_set_use_alpha  (GtkColorChooser *chooser,
                                            gboolean         use_alpha);
 
-
+/* Zeile entfernt */
 void     gtk_color_chooser_add_palette    (GtkColorChooser *chooser,
                                            GtkOrientation   orientation,
                                            int              colors_per_line,
                                            int              n_colors,
                                            GdkRGBA         *colors);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_COLOR_CHOOSER_H__ */

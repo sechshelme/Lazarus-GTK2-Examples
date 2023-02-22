@@ -11,14 +11,14 @@
 #include <glib-object.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 /* enumerations from "gtkcssenums.h" */
-GDK_AVAILABLE_IN_ALL GType gtk_css_parser_error_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GTK_TYPE_CSS_PARSER_ERROR (gtk_css_parser_error_get_type ())
-GDK_AVAILABLE_IN_ALL GType gtk_css_parser_warning_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GTK_TYPE_CSS_PARSER_WARNING (gtk_css_parser_warning_get_type ())
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CSS_ENUM_TYPES_H__ */
 

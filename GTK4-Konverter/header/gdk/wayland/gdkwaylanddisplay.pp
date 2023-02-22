@@ -30,6 +30,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <wayland-client.h>}
+  { Zeile entfernt  }
 {$ifdef GTK_COMPILATION}
 
   type
@@ -71,29 +72,37 @@
   { return type might be wrong }   
   function GDK_WAYLAND_DISPLAY_GET_CLASS(obj : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_wayland_display_get_type:GType;
 
+  { Zeile entfernt  }
 (* error 
 struct wl_display      *gdk_wayland_display_get_wl_display      (GdkDisplay *display);
 in declaration at line 49 *)
+    { Zeile entfernt  }
 (* error 
 struct wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *display);
 in declaration at line 51 *)
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gdk_wayland_display_set_cursor_theme(display:PGdkDisplay; name:Pchar; size:longint);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gdk_wayland_display_get_startup_notification_id(display:PGdkDisplay):^char;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gdk_wayland_display_set_startup_notification_id(display:PGdkDisplay; startup_id:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gdk_wayland_display_query_registry(display:PGdkDisplay; global:Pchar):gboolean;
 
-(* error 
-gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *display);
- in declarator_list *)
+    { Zeile entfernt  }
+    function gdk_wayland_display_get_egl_display(display:PGdkDisplay):gpointer;
+
+    { Zeile entfernt  }
 {$endif}
     { __GDK_WAYLAND_DISPLAY_H__  }
   { was #define dname def_expr }
@@ -159,6 +168,10 @@ gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *di
       { You must implement this function }
     end;
     function gdk_wayland_display_query_registry(display:PGdkDisplay; global:Pchar):gboolean;
+    begin
+      { You must implement this function }
+    end;
+    function gdk_wayland_display_get_egl_display(display:PGdkDisplay):gpointer;
     begin
       { You must implement this function }
     end;

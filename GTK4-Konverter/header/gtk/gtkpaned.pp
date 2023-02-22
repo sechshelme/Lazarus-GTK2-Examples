@@ -35,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PANED : longint; { return type might be wrong }
@@ -52,47 +53,62 @@
 
   type
     _GtkPaned = GtkPaned;
-(* error 
-GType       gtk_paned_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_paned_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_paned_new(orientation:GtkOrientation):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_start_child(paned:PGtkPaned; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_paned_get_start_child(paned:PGtkPaned):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_resize_start_child(paned:PGtkPaned; resize:gboolean);
 
+  { Zeile entfernt  }
   function gtk_paned_get_resize_start_child(paned:PGtkPaned):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_end_child(paned:PGtkPaned; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_paned_get_end_child(paned:PGtkPaned):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_shrink_start_child(paned:PGtkPaned; resize:gboolean);
 
+  { Zeile entfernt  }
   function gtk_paned_get_shrink_start_child(paned:PGtkPaned):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_resize_end_child(paned:PGtkPaned; resize:gboolean);
 
+  { Zeile entfernt  }
   function gtk_paned_get_resize_end_child(paned:PGtkPaned):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_shrink_end_child(paned:PGtkPaned; resize:gboolean);
 
+  { Zeile entfernt  }
   function gtk_paned_get_shrink_end_child(paned:PGtkPaned):gboolean;
 
+  { Zeile entfernt  }
   function gtk_paned_get_position(paned:PGtkPaned):longint;
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_position(paned:PGtkPaned; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_paned_set_wide_handle(paned:PGtkPaned; wide:gboolean);
 
+  { Zeile entfernt  }
   function gtk_paned_get_wide_handle(paned:PGtkPaned):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PANED_H__  }
   { was #define dname def_expr }
@@ -117,6 +133,10 @@ GType       gtk_paned_get_type     (void) G_GNUC_CONST;
     GTK_IS_PANED:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PANED);
   end;
 
+  function gtk_paned_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_paned_new(orientation:GtkOrientation):PGtkWidget;
   begin
     { You must implement this function }

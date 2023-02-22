@@ -27,26 +27,26 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STRING_SORTER             (gtk_string_sorter_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, GtkSorter)
-
-
+/* Zeile entfernt */
 GtkStringSorter *       gtk_string_sorter_new                   (GtkExpression          *expression);
 
-
+/* Zeile entfernt */
 GtkExpression *         gtk_string_sorter_get_expression        (GtkStringSorter        *self);
-
+/* Zeile entfernt */
 void                    gtk_string_sorter_set_expression        (GtkStringSorter        *self,
                                                                  GtkExpression          *expression);
-
+/* Zeile entfernt */
 gboolean                gtk_string_sorter_get_ignore_case       (GtkStringSorter        *self);
-
+/* Zeile entfernt */
 void                    gtk_string_sorter_set_ignore_case       (GtkStringSorter        *self,
                                                                  gboolean                ignore_case);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STRING_SORTER_H__ */

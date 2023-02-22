@@ -23,7 +23,7 @@
 
 #include <gsk/gskrenderer.h>
 
-
+/* Zeile entfernt */
 
 #define GSK_TYPE_GL_RENDERER (gsk_gl_renderer_get_type())
 
@@ -36,15 +36,15 @@
 typedef struct _GskGLRenderer      GskGLRenderer;
 typedef struct _GskGLRendererClass GskGLRendererClass;
 
-GDK_AVAILABLE_IN_4_2
-GType        gsk_gl_renderer_get_type (void) G_GNUC_CONST;
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
+GType        gsk_gl_renderer_get_type (void) ;
+/* Zeile entfernt */
 GskRenderer *gsk_gl_renderer_new      (void);
 
 GDK_DEPRECATED_IN_4_4_FOR (gsk_gl_renderer_get_type)
-GType        gsk_ngl_renderer_get_type (void) G_GNUC_CONST;
+GType        gsk_ngl_renderer_get_type (void) ;
 GDK_DEPRECATED_IN_4_4_FOR (gsk_gl_renderer_new)
 GskRenderer *gsk_ngl_renderer_new      (void);
-
+/* Zeile entfernt */
 
 #endif /* __GSK_GL_RENDERER__ */

@@ -29,6 +29,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkselectionmodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_BASE : longint; { return type might be wrong }
@@ -67,12 +68,11 @@
   type
     _GtkListBase = GtkListBase;
     _GtkListBaseClass = GtkListBaseClass;
-(* error 
-GType                   gtk_list_base_get_type                  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_list_base_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LIST_BASE_H__  }
   { was #define dname def_expr }
@@ -121,4 +121,8 @@ GType                   gtk_list_base_get_type                  (void) G_GNUC_CO
     GTK_LIST_BASE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_LIST_BASE,GtkListBaseClass);
   end;
 
+  function gtk_list_base_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

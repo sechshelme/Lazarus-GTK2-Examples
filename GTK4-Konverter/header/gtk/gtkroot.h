@@ -27,22 +27,22 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ROOT               (gtk_root_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
-
-
+/* Zeile entfernt */
 GdkDisplay * gtk_root_get_display (GtkRoot *self);
 
-
+/* Zeile entfernt */
 void        gtk_root_set_focus (GtkRoot   *self,
                                 GtkWidget *focus);
-
+/* Zeile entfernt */
 GtkWidget * gtk_root_get_focus (GtkRoot   *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ROOT_H__ */

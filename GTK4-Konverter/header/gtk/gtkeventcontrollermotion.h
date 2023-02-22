@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EVENT_CONTROLLER_MOTION         (gtk_event_controller_motion_get_type ())
 #define GTK_EVENT_CONTROLLER_MOTION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_MOTION, GtkEventControllerMotion))
@@ -39,17 +39,17 @@
 typedef struct _GtkEventControllerMotion GtkEventControllerMotion;
 typedef struct _GtkEventControllerMotionClass GtkEventControllerMotionClass;
 
+/* Zeile entfernt */
+GType               gtk_event_controller_motion_get_type (void) ;
 
-GType               gtk_event_controller_motion_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *gtk_event_controller_motion_new      (void);
 
-
+/* Zeile entfernt */
 gboolean            gtk_event_controller_motion_contains_pointer   (GtkEventControllerMotion *self);
-
+/* Zeile entfernt */
 gboolean            gtk_event_controller_motion_is_pointer         (GtkEventControllerMotion *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EVENT_CONTROLLER_MOTION_H__ */

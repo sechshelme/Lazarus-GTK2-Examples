@@ -26,38 +26,38 @@
 
 #include <gtk/gtkwindow.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TOOLTIP                 (gtk_tooltip_get_type ())
 #define GTK_TOOLTIP(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOOLTIP, GtkTooltip))
 #define GTK_IS_TOOLTIP(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_TOOLTIP))
 
-
+/* Zeile entfernt */
 GType gtk_tooltip_get_type (void);
 
-
+/* Zeile entfernt */
 void gtk_tooltip_set_markup              (GtkTooltip         *tooltip,
                                           const char         *markup);
-
+/* Zeile entfernt */
 void gtk_tooltip_set_text                (GtkTooltip         *tooltip,
                                           const char         *text);
-
+/* Zeile entfernt */
 void gtk_tooltip_set_icon                (GtkTooltip         *tooltip,
                                           GdkPaintable       *paintable);
-
+/* Zeile entfernt */
 void gtk_tooltip_set_icon_from_icon_name (GtkTooltip         *tooltip,
 				          const char         *icon_name);
-
+/* Zeile entfernt */
 void gtk_tooltip_set_icon_from_gicon     (GtkTooltip         *tooltip,
 					  GIcon              *gicon);
-
+/* Zeile entfernt */
 void gtk_tooltip_set_custom	         (GtkTooltip         *tooltip,
                                           GtkWidget          *custom_widget);
 
-
+/* Zeile entfernt */
 void gtk_tooltip_set_tip_area            (GtkTooltip         *tooltip,
                                           const GdkRectangle *rect);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TOOLTIP_H__ */

@@ -37,30 +37,39 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_TRIGGER : longint; { return type might be wrong }
 
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTCUT_TRIGGER, GObject)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTCUT_TRIGGER, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_shortcut_trigger_parse_string(_string:Pchar):^GtkShortcutTrigger;
+
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_to_string(self:PGtkShortcutTrigger):^char;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_trigger_print(self:PGtkShortcutTrigger; _string:PGString);
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_to_label(self:PGtkShortcutTrigger; display:PGdkDisplay):^char;
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_print_label(self:PGtkShortcutTrigger; display:PGdkDisplay; _string:PGString):gboolean;
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_hash(trigger:gconstpointer):guint;
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_equal(trigger1:gconstpointer; trigger2:gconstpointer):gboolean;
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_compare(trigger1:gconstpointer; trigger2:gconstpointer):longint;
 
+  { Zeile entfernt  }
   function gtk_shortcut_trigger_trigger(self:PGtkShortcutTrigger; event:PGdkEvent; enable_mnemonics:gboolean):GdkKeyMatch;
 
   { was #define dname def_expr }
@@ -71,12 +80,11 @@ GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTC
    *
    * A `GtkShortcutTrigger` that never triggers.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNeverTrigger, gtk_never_trigger, GTK, NEVER_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkNeverTrigger, gtk_never_trigger, GTK, NEVER_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_never_trigger_get:^GtkShortcutTrigger;
+
   { was #define dname def_expr }
   function GTK_TYPE_KEYVAL_TRIGGER : longint; { return type might be wrong }
 
@@ -85,17 +93,15 @@ GDK_DECLARE_INTERNAL_TYPE (GtkNeverTrigger, gtk_never_trigger, GTK, NEVER_TRIGGE
    *
    * A `GtkShortcutTrigger` that triggers when a specific keyval and modifiers are pressed.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRIGGER, GtkShortcutTrigger)
-(* error 
-                                                                 GdkModifierType   modifiers);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_keyval_trigger_new(keyval:guint; modifiers:GdkModifierType):^GtkShortcutTrigger;
+
+  { Zeile entfernt  }
   function gtk_keyval_trigger_get_modifiers(self:PGtkKeyvalTrigger):GdkModifierType;
 
+  { Zeile entfernt  }
   function gtk_keyval_trigger_get_keyval(self:PGtkKeyvalTrigger):guint;
 
   { was #define dname def_expr }
@@ -109,12 +115,12 @@ GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRI
    * Mnemonics require a *mnemonic modifier* (typically <kbd>Alt</kbd>) to be
    * pressed together with the mnemonic key.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_mnemonic_trigger_new(keyval:guint):^GtkShortcutTrigger;
+
+  { Zeile entfernt  }
   function gtk_mnemonic_trigger_get_keyval(self:PGtkMnemonicTrigger):guint;
 
   { was #define dname def_expr }
@@ -129,19 +135,18 @@ GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMON
    *
    * This can be cascaded to combine more than two triggers.
     }
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, ALTERNATIVE_TRIGGER, GtkShortcutTrigger)
- in declarator_list *)
-(* error 
-GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, ALTERNATIVE_TRIGGER, GtkShortcutTrigger)
-(* error 
-                                                                 GtkShortcutTrigger    *second);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_alternative_trigger_new(first:PGtkShortcutTrigger; second:PGtkShortcutTrigger):^GtkShortcutTrigger;
+
+  { Zeile entfernt  }
   function gtk_alternative_trigger_get_first(self:PGtkAlternativeTrigger):^GtkShortcutTrigger;
 
+  { Zeile entfernt  }
   function gtk_alternative_trigger_get_second(self:PGtkAlternativeTrigger):^GtkShortcutTrigger;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUT_TRIGGER_H__  }
   { was #define dname def_expr }
@@ -150,6 +155,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, 
       GTK_TYPE_SHORTCUT_TRIGGER:=gtk_shortcut_trigger_get_type;
     end;
 
+  function gtk_shortcut_trigger_parse_string(_string:Pchar):PGtkShortcutTrigger;
+  begin
+    { You must implement this function }
+  end;
   function gtk_shortcut_trigger_to_string(self:PGtkShortcutTrigger):Pchar;
   begin
     { You must implement this function }
@@ -188,12 +197,20 @@ GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, 
       GTK_TYPE_NEVER_TRIGGER:=gtk_never_trigger_get_type;
     end;
 
+  function gtk_never_trigger_get:PGtkShortcutTrigger;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_KEYVAL_TRIGGER : longint; { return type might be wrong }
     begin
       GTK_TYPE_KEYVAL_TRIGGER:=gtk_keyval_trigger_get_type;
     end;
 
+  function gtk_keyval_trigger_new(keyval:guint; modifiers:GdkModifierType):PGtkShortcutTrigger;
+  begin
+    { You must implement this function }
+  end;
   function gtk_keyval_trigger_get_modifiers(self:PGtkKeyvalTrigger):GdkModifierType;
   begin
     { You must implement this function }
@@ -208,6 +225,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, 
       GTK_TYPE_MNEMONIC_TRIGGER:=gtk_mnemonic_trigger_get_type;
     end;
 
+  function gtk_mnemonic_trigger_new(keyval:guint):PGtkShortcutTrigger;
+  begin
+    { You must implement this function }
+  end;
   function gtk_mnemonic_trigger_get_keyval(self:PGtkMnemonicTrigger):guint;
   begin
     { You must implement this function }
@@ -218,6 +239,10 @@ GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, 
       GTK_TYPE_ALTERNATIVE_TRIGGER:=gtk_alternative_trigger_get_type;
     end;
 
+  function gtk_alternative_trigger_new(first:PGtkShortcutTrigger; second:PGtkShortcutTrigger):PGtkShortcutTrigger;
+  begin
+    { You must implement this function }
+  end;
   function gtk_alternative_trigger_get_first(self:PGtkAlternativeTrigger):PGtkShortcutTrigger;
   begin
     { You must implement this function }

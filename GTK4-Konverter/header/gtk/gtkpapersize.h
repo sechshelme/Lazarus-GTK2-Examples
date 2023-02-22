@@ -28,7 +28,7 @@
 #include <gtk/gtkenums.h>
 
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkPaperSize GtkPaperSize;
 
@@ -84,91 +84,91 @@ typedef struct _GtkPaperSize GtkPaperSize;
  */
 #define GTK_PAPER_NAME_LEGAL "na_legal"
 
+/* Zeile entfernt */
+GType gtk_paper_size_get_type (void) ;
 
-GType gtk_paper_size_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new          (const char   *name);
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new_from_ppd (const char   *ppd_name,
 					   const char   *ppd_display_name,
 					   double        width,
 					   double        height);
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new_from_ipp (const char   *ipp_name,
 					   double        width,
 					   double        height);
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new_custom   (const char   *name,
 					   const char   *display_name,
 					   double        width,
 					   double        height,
 					   GtkUnit       unit);
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_copy         (GtkPaperSize *other);
-
+/* Zeile entfernt */
 void          gtk_paper_size_free         (GtkPaperSize *size);
-
+/* Zeile entfernt */
 gboolean      gtk_paper_size_is_equal     (GtkPaperSize *size1,
 					   GtkPaperSize *size2);
 
-
+/* Zeile entfernt */
 GList        *gtk_paper_size_get_paper_sizes (gboolean include_custom);
 
 /* The width is always the shortest side, measure in mm */
-
+/* Zeile entfernt */
 const char *gtk_paper_size_get_name         (GtkPaperSize *size);
-
+/* Zeile entfernt */
 const char *gtk_paper_size_get_display_name (GtkPaperSize *size);
-
+/* Zeile entfernt */
 const char *gtk_paper_size_get_ppd_name     (GtkPaperSize *size);
 
-
+/* Zeile entfernt */
 double   gtk_paper_size_get_width        (GtkPaperSize *size, GtkUnit unit);
-
+/* Zeile entfernt */
 double   gtk_paper_size_get_height       (GtkPaperSize *size, GtkUnit unit);
-
+/* Zeile entfernt */
 gboolean gtk_paper_size_is_custom        (GtkPaperSize *size);
-
+/* Zeile entfernt */
 gboolean gtk_paper_size_is_ipp           (GtkPaperSize *size);
 
 /* Only for custom sizes: */
-
+/* Zeile entfernt */
 void    gtk_paper_size_set_size                  (GtkPaperSize *size, 
                                                   double        width, 
                                                   double        height, 
                                                   GtkUnit       unit);
 
-
+/* Zeile entfernt */
 double gtk_paper_size_get_default_top_margin     (GtkPaperSize *size,
 						  GtkUnit       unit);
-
+/* Zeile entfernt */
 double gtk_paper_size_get_default_bottom_margin  (GtkPaperSize *size,
 						  GtkUnit       unit);
-
+/* Zeile entfernt */
 double gtk_paper_size_get_default_left_margin    (GtkPaperSize *size,
 						  GtkUnit       unit);
-
+/* Zeile entfernt */
 double gtk_paper_size_get_default_right_margin   (GtkPaperSize *size,
 						  GtkUnit       unit);
 
-
+/* Zeile entfernt */
 const char *gtk_paper_size_get_default (void);
 
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new_from_key_file (GKeyFile    *key_file,
 					        const char *group_name,
 					        GError     **error);
-
+/* Zeile entfernt */
 void     gtk_paper_size_to_key_file            (GtkPaperSize *size,
 					        GKeyFile     *key_file,
 					        const char   *group_name);
 
-
+/* Zeile entfernt */
 GtkPaperSize *gtk_paper_size_new_from_gvariant (GVariant     *variant);
-
+/* Zeile entfernt */
 GVariant     *gtk_paper_size_to_gvariant       (GtkPaperSize *paper_size);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PAPER_SIZE_H__ */

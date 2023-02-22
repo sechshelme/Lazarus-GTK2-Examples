@@ -1,6 +1,8 @@
 
   Type
+  Pchar  = ^char;
   PGtkEditableLabel  = ^GtkEditableLabel;
+  PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -28,22 +30,27 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EDITABLE_LABEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkEditableLabel, gtk_editable_label, GTK, EDITABLE_LABEL, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkEditableLabel, gtk_editable_label, GTK, EDITABLE_LABEL, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_editable_label_new(str:Pchar):^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_editable_label_get_editing(self:PGtkEditableLabel):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_editable_label_start_editing(self:PGtkEditableLabel);
 
+  { Zeile entfernt  }
   procedure gtk_editable_label_stop_editing(self:PGtkEditableLabel; commit:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EDITABLE_LABEL_H__  }
   { was #define dname def_expr }
@@ -52,6 +59,10 @@ G_DECLARE_FINAL_TYPE (GtkEditableLabel, gtk_editable_label, GTK, EDITABLE_LABEL,
       GTK_TYPE_EDITABLE_LABEL:=gtk_editable_label_get_type;
     end;
 
+  function gtk_editable_label_new(str:Pchar):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_editable_label_get_editing(self:PGtkEditableLabel):gboolean;
   begin
     { You must implement this function }

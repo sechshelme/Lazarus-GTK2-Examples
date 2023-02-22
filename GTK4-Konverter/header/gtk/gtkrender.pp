@@ -35,41 +35,55 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
   procedure gtk_render_check(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_option(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_arrow(context:PGtkStyleContext; cr:Pcairo_t; angle:double; x:double; y:double; 
               size:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_background(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_frame(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_expander(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_focus(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_layout(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; layout:PPangoLayout);
 
+  { Zeile entfernt  }
   procedure gtk_render_line(context:PGtkStyleContext; cr:Pcairo_t; x0:double; y0:double; x1:double; 
               y1:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_handle(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_activity(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_render_icon(context:PGtkStyleContext; cr:Pcairo_t; texture:PGdkTexture; x:double; y:double);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_RENDER_H__  }
   procedure gtk_render_check(context:PGtkStyleContext; cr:Pcairo_t; x:double; y:double; width:double; 

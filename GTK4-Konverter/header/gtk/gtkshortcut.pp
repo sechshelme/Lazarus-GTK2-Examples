@@ -31,34 +31,39 @@
 {$ifndef __GTK_SHORTCUT_H__}
 {$define __GTK_SHORTCUT_H__}  
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
-(* error 
-                                                                 GtkShortcutAction      *action);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_shortcut_new(trigger:PGtkShortcutTrigger; action:PGtkShortcutAction):^GtkShortcut;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_shortcut_new_with_arguments(trigger:PGtkShortcutTrigger; action:PGtkShortcutAction; format_string:Pchar; args:array of const):^GtkShortcut;
 
+  { Zeile entfernt  }
   function gtk_shortcut_get_trigger(self:PGtkShortcut):^GtkShortcutTrigger;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_set_trigger(self:PGtkShortcut; trigger:PGtkShortcutTrigger);
 
+  { Zeile entfernt  }
   function gtk_shortcut_get_action(self:PGtkShortcut):^GtkShortcutAction;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_set_action(self:PGtkShortcut; action:PGtkShortcutAction);
 
+  { Zeile entfernt  }
   function gtk_shortcut_get_arguments(self:PGtkShortcut):^GVariant;
 
+  { Zeile entfernt  }
   procedure gtk_shortcut_set_arguments(self:PGtkShortcut; args:PGVariant);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUT_H__  }
   { was #define dname def_expr }
@@ -67,6 +72,10 @@ G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
       GTK_TYPE_SHORTCUT:=gtk_shortcut_get_type;
     end;
 
+  function gtk_shortcut_new(trigger:PGtkShortcutTrigger; action:PGtkShortcutAction):PGtkShortcut;
+  begin
+    { You must implement this function }
+  end;
   function gtk_shortcut_new_with_arguments(trigger:PGtkShortcutTrigger; action:PGtkShortcutAction; format_string:Pchar):PGtkShortcut;
   begin
     { You must implement this function }

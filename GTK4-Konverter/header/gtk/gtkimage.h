@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_IMAGE                  (gtk_image_get_type ())
 #define GTK_IMAGE(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IMAGE, GtkImage))
@@ -66,66 +66,66 @@ typedef enum
   GTK_IMAGE_PAINTABLE
 } GtkImageType;
 
+/* Zeile entfernt */
+GType      gtk_image_get_type (void) ;
 
-GType      gtk_image_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new                (void);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_file      (const char      *filename);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_resource  (const char      *resource_path);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_pixbuf    (GdkPixbuf       *pixbuf);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_paintable (GdkPaintable    *paintable);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_icon_name (const char      *icon_name);
-
+/* Zeile entfernt */
 GtkWidget* gtk_image_new_from_gicon     (GIcon           *icon);
 
-
+/* Zeile entfernt */
 void gtk_image_clear              (GtkImage        *image);
-
+/* Zeile entfernt */
 void gtk_image_set_from_file      (GtkImage        *image,
                                    const char      *filename);
-
+/* Zeile entfernt */
 void gtk_image_set_from_resource  (GtkImage        *image,
                                    const char      *resource_path);
-
+/* Zeile entfernt */
 void gtk_image_set_from_pixbuf    (GtkImage        *image,
                                    GdkPixbuf       *pixbuf);
-
+/* Zeile entfernt */
 void gtk_image_set_from_paintable (GtkImage        *image,
                                    GdkPaintable    *paintable);
-
+/* Zeile entfernt */
 void gtk_image_set_from_icon_name (GtkImage        *image,
 				   const char      *icon_name);
-
+/* Zeile entfernt */
 void gtk_image_set_from_gicon     (GtkImage        *image,
 				   GIcon           *icon);
-
+/* Zeile entfernt */
 void gtk_image_set_pixel_size     (GtkImage        *image,
 				   int              pixel_size);
-
+/* Zeile entfernt */
 void gtk_image_set_icon_size      (GtkImage        *image,
                                    GtkIconSize      icon_size);
 
-
+/* Zeile entfernt */
 GtkImageType gtk_image_get_storage_type (GtkImage   *image);
 
-
+/* Zeile entfernt */
 GdkPaintable *gtk_image_get_paintable (GtkImage       *image);
 
-
+/* Zeile entfernt */
 const char *gtk_image_get_icon_name (GtkImage     *image);
-
+/* Zeile entfernt */
 GIcon *    gtk_image_get_gicon     (GtkImage              *image);
-
+/* Zeile entfernt */
 int        gtk_image_get_pixel_size (GtkImage             *image);
-
+/* Zeile entfernt */
 GtkIconSize gtk_image_get_icon_size (GtkImage             *image);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_IMAGE_H__ */

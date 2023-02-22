@@ -39,6 +39,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_NOTEBOOK : longint; { return type might be wrong }
@@ -83,133 +84,173 @@
   {**********************************************************
    *           Creation, insertion, deletion                 *
    ********************************************************** }
-(* error 
-GType   gtk_notebook_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_notebook_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_notebook_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_notebook_append_page(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_append_page_menu(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget; menu_label:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_prepend_page(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_prepend_page_menu(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget; menu_label:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_insert_page(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget; position:longint):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_insert_page_menu(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget; menu_label:PGtkWidget; position:longint):longint;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_remove_page(notebook:PGtkNotebook; page_num:longint);
 
   {**********************************************************
    *           Tabs drag and drop                            *
    ********************************************************** }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_notebook_set_group_name(notebook:PGtkNotebook; group_name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_notebook_get_group_name(notebook:PGtkNotebook):^char;
 
   {**********************************************************
    *            query, set current NotebookPage              *
    ********************************************************** }
+  { Zeile entfernt  }
   function gtk_notebook_get_current_page(notebook:PGtkNotebook):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_get_nth_page(notebook:PGtkNotebook; page_num:longint):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_notebook_get_n_pages(notebook:PGtkNotebook):longint;
 
+  { Zeile entfernt  }
   function gtk_notebook_page_num(notebook:PGtkNotebook; child:PGtkWidget):longint;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_current_page(notebook:PGtkNotebook; page_num:longint);
 
+  { Zeile entfernt  }
   procedure gtk_notebook_next_page(notebook:PGtkNotebook);
 
+  { Zeile entfernt  }
   procedure gtk_notebook_prev_page(notebook:PGtkNotebook);
 
   {**********************************************************
    *            set Notebook, NotebookTab style              *
    ********************************************************** }
+  { Zeile entfernt  }
   procedure gtk_notebook_set_show_border(notebook:PGtkNotebook; show_border:gboolean);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_show_border(notebook:PGtkNotebook):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_show_tabs(notebook:PGtkNotebook; show_tabs:gboolean);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_show_tabs(notebook:PGtkNotebook):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_tab_pos(notebook:PGtkNotebook; pos:GtkPositionType);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_tab_pos(notebook:PGtkNotebook):GtkPositionType;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_scrollable(notebook:PGtkNotebook; scrollable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_scrollable(notebook:PGtkNotebook):gboolean;
 
   {**********************************************************
    *               enable/disable PopupMenu                  *
    ********************************************************** }
+  { Zeile entfernt  }
   procedure gtk_notebook_popup_enable(notebook:PGtkNotebook);
 
+  { Zeile entfernt  }
   procedure gtk_notebook_popup_disable(notebook:PGtkNotebook);
 
   {**********************************************************
    *             query/set NotebookPage Properties           *
    ********************************************************** }
+  { Zeile entfernt  }
   function gtk_notebook_get_tab_label(notebook:PGtkNotebook; child:PGtkWidget):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_tab_label(notebook:PGtkNotebook; child:PGtkWidget; tab_label:PGtkWidget);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_notebook_set_tab_label_text(notebook:PGtkNotebook; child:PGtkWidget; tab_text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_notebook_get_tab_label_text(notebook:PGtkNotebook; child:PGtkWidget):^char;
 
+  { Zeile entfernt  }
   function gtk_notebook_get_menu_label(notebook:PGtkNotebook; child:PGtkWidget):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_menu_label(notebook:PGtkNotebook; child:PGtkWidget; menu_label:PGtkWidget);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_notebook_set_menu_label_text(notebook:PGtkNotebook; child:PGtkWidget; menu_text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_notebook_get_menu_label_text(notebook:PGtkNotebook; child:PGtkWidget):^char;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_reorder_child(notebook:PGtkNotebook; child:PGtkWidget; position:longint);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_tab_reorderable(notebook:PGtkNotebook; child:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_tab_reorderable(notebook:PGtkNotebook; child:PGtkWidget; reorderable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_tab_detachable(notebook:PGtkNotebook; child:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_tab_detachable(notebook:PGtkNotebook; child:PGtkWidget; detachable:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_notebook_detach_tab(notebook:PGtkNotebook; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_notebook_get_action_widget(notebook:PGtkNotebook; pack_type:GtkPackType):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_notebook_set_action_widget(notebook:PGtkNotebook; widget:PGtkWidget; pack_type:GtkPackType);
 
-(* error 
-GType   gtk_notebook_page_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_notebook_page_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_notebook_get_page(notebook:PGtkNotebook; child:PGtkWidget):^GtkNotebookPage;
 
+  { Zeile entfernt  }
   function gtk_notebook_page_get_child(page:PGtkNotebookPage):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_notebook_get_pages(notebook:PGtkNotebook):^GListModel;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_NOTEBOOK_H__  }
   { was #define dname def_expr }
@@ -256,6 +297,10 @@ GType   gtk_notebook_page_get_type  (void) G_GNUC_CONST;
     GTK_IS_NOTEBOOK_PAGE:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_NOTEBOOK_PAGE);
   end;
 
+  function gtk_notebook_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_notebook_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -425,6 +470,10 @@ GType   gtk_notebook_page_get_type  (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   procedure gtk_notebook_set_action_widget(notebook:PGtkNotebook; widget:PGtkWidget; pack_type:GtkPackType);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_notebook_page_get_type:GType;
   begin
     { You must implement this function }
   end;

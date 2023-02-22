@@ -23,7 +23,7 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EXPRESSION (gtk_expression_get_type ())
 #define GTK_TYPE_EXPRESSION_WATCH (gtk_expression_watch_get_type())
@@ -43,100 +43,100 @@ typedef struct _GtkExpressionWatch GtkExpressionWatch;
  */
 typedef void            (* GtkExpressionNotify)                 (gpointer                        user_data);
 
+/* Zeile entfernt */
+GType                   gtk_expression_get_type                 (void) ;
 
-GType                   gtk_expression_get_type                 (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_expression_ref                      (GtkExpression                  *self);
-
+/* Zeile entfernt */
 void                    gtk_expression_unref                    (GtkExpression                  *self);
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkExpression, gtk_expression_unref)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 GType                   gtk_expression_get_value_type           (GtkExpression                  *self);
-
+/* Zeile entfernt */
 gboolean                gtk_expression_is_static                (GtkExpression                  *self);
-
+/* Zeile entfernt */
 gboolean                gtk_expression_evaluate                 (GtkExpression                  *self,
                                                                  gpointer                        this_,
                                                                  GValue                         *value);
-
+/* Zeile entfernt */
 GtkExpressionWatch *    gtk_expression_watch                    (GtkExpression                  *self,
                                                                  gpointer                        this_,
                                                                  GtkExpressionNotify             notify,
                                                                  gpointer                        user_data,
                                                                  GDestroyNotify                  user_destroy);
-
+/* Zeile entfernt */
 GtkExpressionWatch *    gtk_expression_bind                     (GtkExpression                  *self,
                                                                  gpointer                        target,
                                                                  const char *                    property,
                                                                  gpointer                        this_);
 
-GDK_AVAILABLE_IN_4_2
-GType                   gtk_expression_watch_get_type           (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gtk_expression_watch_get_type           (void) ;
+/* Zeile entfernt */
 GtkExpressionWatch *    gtk_expression_watch_ref                (GtkExpressionWatch             *watch);
-
+/* Zeile entfernt */
 void                    gtk_expression_watch_unref              (GtkExpressionWatch             *watch);
-
+/* Zeile entfernt */
 gboolean                gtk_expression_watch_evaluate           (GtkExpressionWatch             *watch,
                                                                  GValue                         *value);
-
+/* Zeile entfernt */
 void                    gtk_expression_watch_unwatch            (GtkExpressionWatch             *watch);
 
 #define GTK_TYPE_PROPERTY_EXPRESSION (gtk_property_expression_get_type())
 typedef struct _GtkPropertyExpression   GtkPropertyExpression;
 
+/* Zeile entfernt */
+GType                   gtk_property_expression_get_type        (void) ;
 
-GType                   gtk_property_expression_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_property_expression_new             (GType                           this_type,
                                                                  GtkExpression                  *expression,
                                                                  const char                     *property_name);
-
+/* Zeile entfernt */
 GtkExpression *         gtk_property_expression_new_for_pspec   (GtkExpression                  *expression,
                                                                  GParamSpec                     *pspec);
 
-
+/* Zeile entfernt */
 GtkExpression *         gtk_property_expression_get_expression  (GtkExpression                  *expression);
-
+/* Zeile entfernt */
 GParamSpec *            gtk_property_expression_get_pspec       (GtkExpression                  *expression);
 
 #define GTK_TYPE_CONSTANT_EXPRESSION (gtk_constant_expression_get_type())
 typedef struct _GtkConstantExpression   GtkConstantExpression;
 
+/* Zeile entfernt */
+GType                   gtk_constant_expression_get_type        (void) ;
 
-GType                   gtk_constant_expression_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_constant_expression_new             (GType                           value_type,
                                                                  ...);
-
+/* Zeile entfernt */
 GtkExpression *         gtk_constant_expression_new_for_value   (const GValue                   *value);
 
-
+/* Zeile entfernt */
 const GValue *          gtk_constant_expression_get_value       (GtkExpression                  *expression);
 
 #define GTK_TYPE_OBJECT_EXPRESSION (gtk_object_expression_get_type())
 typedef struct _GtkObjectExpression     GtkObjectExpression;
 
+/* Zeile entfernt */
+GType                   gtk_object_expression_get_type          (void) ;
 
-GType                   gtk_object_expression_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_object_expression_new               (GObject                        *object);
 
-
+/* Zeile entfernt */
 GObject *               gtk_object_expression_get_object        (GtkExpression                  *expression);
 
 #define GTK_TYPE_CLOSURE_EXPRESSION (gtk_closure_expression_get_type())
 typedef struct _GtkClosureExpression    GtkClosureExpression;
 
+/* Zeile entfernt */
+GType                   gtk_closure_expression_get_type         (void) ;
 
-GType                   gtk_closure_expression_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_closure_expression_new              (GType                           value_type,
                                                                  GClosure                       *closure,
                                                                  guint                           n_params,
@@ -145,10 +145,10 @@ GtkExpression *         gtk_closure_expression_new              (GType          
 #define GTK_TYPE_CCLOSURE_EXPRESSION (gtk_cclosure_expression_get_type())
 typedef struct _GtkCClosureExpression   GtkCClosureExpression;
 
+/* Zeile entfernt */
+GType                   gtk_cclosure_expression_get_type        (void) ;
 
-GType                   gtk_cclosure_expression_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkExpression *         gtk_cclosure_expression_new             (GType                           value_type,
                                                                  GClosureMarshal                 marshal,
                                                                  guint                           n_params,
@@ -167,15 +167,15 @@ GtkExpression *         gtk_cclosure_expression_new             (GType          
  */
 #define GTK_VALUE_HOLDS_EXPRESSION(value)       (G_VALUE_HOLDS ((value), GTK_TYPE_EXPRESSION))
 
-
+/* Zeile entfernt */
 void            gtk_value_set_expression        (GValue        *value,
                                                  GtkExpression *expression);
-
+/* Zeile entfernt */
 void            gtk_value_take_expression       (GValue        *value,
                                                  GtkExpression *expression);
-
+/* Zeile entfernt */
 GtkExpression * gtk_value_get_expression        (const GValue  *value);
-
+/* Zeile entfernt */
 GtkExpression * gtk_value_dup_expression        (const GValue  *value);
 
 #define GTK_TYPE_PARAM_SPEC_EXPRESSION (gtk_param_expression_get_type())
@@ -192,14 +192,14 @@ typedef struct {
   GParamSpec parent_instance;
 } GtkParamSpecExpression;
 
-
-GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType           gtk_param_expression_get_type   (void) ;
+/* Zeile entfernt */
 GParamSpec *    gtk_param_spec_expression       (const char    *name,
                                                  const char    *nick,
                                                  const char    *blurb,
                                                  GParamFlags    flags);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EXPRESSION_H__ */

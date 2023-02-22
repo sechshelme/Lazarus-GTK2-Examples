@@ -1,8 +1,8 @@
 
-    Type
-    PGdkRGBA  = ^GdkRGBA;
-    PGdkSnapshot  = ^GdkSnapshot;
-    PGtkSymbolicPaintable  = ^GtkSymbolicPaintable;
+  Type
+  PGdkRGBA  = ^GdkRGBA;
+  PGdkSnapshot  = ^GdkSnapshot;
+  PGtkSymbolicPaintable  = ^GtkSymbolicPaintable;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -32,10 +32,13 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SYMBOLIC_PAINTABLE : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkSymbolicPaintableInterface:
    * @snapshot_symbolic: Snapshot the paintable using the given colors. 
@@ -46,31 +49,35 @@
    * The list of virtual functions for the `GtkSymbolicPaintable` interface.
    * No function must be implemented, default implementations exist for each one.
     }
-(* error 
-struct _GtkSymbolicPaintableInterface
- in declarator_list *)
   {< private > }
-(* error 
-  GTypeInterface g_iface;
- in declarator_list *)
   {< public > }
 (* Const before type ignored *)
 
-    var
-      snapshot_symbolic : procedure (paintable:PGtkSymbolicPaintable; snapshot:PGdkSnapshot; width:double; height:double; colors:PGdkRGBA; 
-                    n_colors:gsize);cvar;public;
-(* error 
-};
-in declaration at line 58 *)
-(* error 
-void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymbolicPaintable   *paintable,
-in declaration at line 66 *)
+  type
+    _GtkSymbolicPaintableInterface = record
+        g_iface : GTypeInterface;
+        snapshot_symbolic : procedure (paintable:PGtkSymbolicPaintable; snapshot:PGdkSnapshot; width:double; height:double; colors:PGdkRGBA; 
+                      n_colors:gsize);cdecl;
+      end;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+
+  procedure gtk_symbolic_paintable_snapshot_symbolic(paintable:PGtkSymbolicPaintable; snapshot:PGdkSnapshot; width:double; height:double; colors:PGdkRGBA; 
+              n_colors:gsize);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_SYMBOLIC_PAINTABLE_H__  }
+  { __GTK_SYMBOLIC_PAINTABLE_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_SYMBOLIC_PAINTABLE : longint; { return type might be wrong }
     begin
       GTK_TYPE_SYMBOLIC_PAINTABLE:=gtk_symbolic_paintable_get_type;
     end;
 
+  procedure gtk_symbolic_paintable_snapshot_symbolic(paintable:PGtkSymbolicPaintable; snapshot:PGdkSnapshot; width:double; height:double; colors:PGdkRGBA; 
+              n_colors:gsize);
+  begin
+    { You must implement this function }
+  end;
 

@@ -39,6 +39,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CALENDAR : longint; { return type might be wrong }
@@ -56,39 +57,50 @@
 
   type
     _GtkCalendar = GtkCalendar;
-(* error 
-GType	   gtk_calendar_get_type	(void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_calendar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_calendar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_calendar_select_day(self:PGtkCalendar; date:PGDateTime);
 
+  { Zeile entfernt  }
   procedure gtk_calendar_mark_day(calendar:PGtkCalendar; day:guint);
 
+  { Zeile entfernt  }
   procedure gtk_calendar_unmark_day(calendar:PGtkCalendar; day:guint);
 
+  { Zeile entfernt  }
   procedure gtk_calendar_clear_marks(calendar:PGtkCalendar);
 
+  { Zeile entfernt  }
   procedure gtk_calendar_set_show_week_numbers(self:PGtkCalendar; value:gboolean);
 
+  { Zeile entfernt  }
   function gtk_calendar_get_show_week_numbers(self:PGtkCalendar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_calendar_set_show_heading(self:PGtkCalendar; value:gboolean);
 
+  { Zeile entfernt  }
   function gtk_calendar_get_show_heading(self:PGtkCalendar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_calendar_set_show_day_names(self:PGtkCalendar; value:gboolean);
 
+  { Zeile entfernt  }
   function gtk_calendar_get_show_day_names(self:PGtkCalendar):gboolean;
 
+  { Zeile entfernt  }
   function gtk_calendar_get_date(self:PGtkCalendar):^GDateTime;
 
+  { Zeile entfernt  }
   function gtk_calendar_get_day_is_marked(calendar:PGtkCalendar; day:guint):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CALENDAR_H__  }
   { was #define dname def_expr }
@@ -113,6 +125,10 @@ GType	   gtk_calendar_get_type	(void) G_GNUC_CONST;
     GTK_IS_CALENDAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_CALENDAR);
   end;
 
+  function gtk_calendar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_calendar_new:PGtkWidget;
   begin
     { You must implement this function }

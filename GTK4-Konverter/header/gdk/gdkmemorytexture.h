@@ -27,7 +27,7 @@
 #include <gdk/gdkenums.h>
 #include <gdk/gdktexture.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GDK_MEMORY_DEFAULT:
@@ -56,13 +56,13 @@
 typedef struct _GdkMemoryTexture        GdkMemoryTexture;
 typedef struct _GdkMemoryTextureClass   GdkMemoryTextureClass;
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkMemoryTexture, g_object_unref)
+/* Zeile entfernt */
 
 
+/* Zeile entfernt */
+GType                   gdk_memory_texture_get_type         (void) ;
 
-GType                   gdk_memory_texture_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkTexture *            gdk_memory_texture_new              (int                width,
                                                              int                height,
                                                              GdkMemoryFormat    format,
@@ -70,6 +70,6 @@ GdkTexture *            gdk_memory_texture_new              (int                
                                                              gsize              stride);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_MEMORY_TEXTURE_H__ */

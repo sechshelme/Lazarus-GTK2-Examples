@@ -8,50 +8,38 @@
 {$ifndef __GSK_ENUM_TYPES_H__}
 {$define __GSK_ENUM_TYPES_H__}  
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   { enumerations from "gskenums.h"  }
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_render_node_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_RENDER_NODE_TYPE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_scaling_filter_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_SCALING_FILTER : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_blend_mode_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_BLEND_MODE : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_corner_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_CORNER : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_serialization_error_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_SERIALIZATION_ERROR : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_transform_category_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_TRANSFORM_CATEGORY : longint; { return type might be wrong }
 
-(* error 
-GDK_AVAILABLE_IN_ALL GType gsk_gl_uniform_type_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GSK_TYPE_GL_UNIFORM_TYPE : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
 {$endif}
   { __GSK_ENUM_TYPES_H__  }
   { Generated data ends here  }

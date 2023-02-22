@@ -28,7 +28,7 @@
 #include <gtk/gtkcellareacontext.h>
 #include <gtk/gtktreemodel.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_VIEW                (gtk_cell_view_get_type ())
 #define GTK_CELL_VIEW(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_VIEW, GtkCellView))
@@ -36,40 +36,40 @@
 
 typedef struct _GtkCellView             GtkCellView;
 
-
-GType             gtk_cell_view_get_type                (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType             gtk_cell_view_get_type                (void) ;
+/* Zeile entfernt */
 GtkWidget        *gtk_cell_view_new                     (void);
-
+/* Zeile entfernt */
 GtkWidget        *gtk_cell_view_new_with_context        (GtkCellArea        *area,
                                                          GtkCellAreaContext *context);
-
+/* Zeile entfernt */
 GtkWidget        *gtk_cell_view_new_with_text           (const char      *text);
-
+/* Zeile entfernt */
 GtkWidget        *gtk_cell_view_new_with_markup         (const char      *markup);
-
+/* Zeile entfernt */
 GtkWidget        *gtk_cell_view_new_with_texture        (GdkTexture      *texture);
-
+/* Zeile entfernt */
 void              gtk_cell_view_set_model               (GtkCellView     *cell_view,
                                                          GtkTreeModel    *model);
-
+/* Zeile entfernt */
 GtkTreeModel     *gtk_cell_view_get_model               (GtkCellView     *cell_view);
-
+/* Zeile entfernt */
 void              gtk_cell_view_set_displayed_row       (GtkCellView     *cell_view,
                                                          GtkTreePath     *path);
-
+/* Zeile entfernt */
 GtkTreePath      *gtk_cell_view_get_displayed_row       (GtkCellView     *cell_view);
-
+/* Zeile entfernt */
 gboolean          gtk_cell_view_get_draw_sensitive      (GtkCellView     *cell_view);
-
+/* Zeile entfernt */
 void              gtk_cell_view_set_draw_sensitive      (GtkCellView     *cell_view,
                                                          gboolean         draw_sensitive);
-
+/* Zeile entfernt */
 gboolean          gtk_cell_view_get_fit_model           (GtkCellView     *cell_view);
-
+/* Zeile entfernt */
 void              gtk_cell_view_set_fit_model           (GtkCellView     *cell_view,
                                                          gboolean         fit_model);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_VIEW_H__ */

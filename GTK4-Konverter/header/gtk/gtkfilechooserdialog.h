@@ -26,7 +26,7 @@
 #include <gtk/gtkdialog.h>
 #include <gtk/gtkfilechooser.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FILE_CHOOSER_DIALOG             (gtk_file_chooser_dialog_get_type ())
 #define GTK_FILE_CHOOSER_DIALOG(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_CHOOSER_DIALOG, GtkFileChooserDialog))
@@ -34,15 +34,15 @@
 
 typedef struct _GtkFileChooserDialog        GtkFileChooserDialog;
 
-
-GType      gtk_file_chooser_dialog_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_file_chooser_dialog_get_type         (void) ;
+/* Zeile entfernt */
 GtkWidget *gtk_file_chooser_dialog_new              (const char           *title,
 						     GtkWindow            *parent,
 						     GtkFileChooserAction  action,
 						     const char           *first_button_text,
-						     ...) G_GNUC_NULL_TERMINATED;
+						     ...) ;
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FILE_CHOOSER_DIALOG_H__ */

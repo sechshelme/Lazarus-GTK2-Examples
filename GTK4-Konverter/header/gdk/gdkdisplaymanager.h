@@ -32,7 +32,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkdisplay.h>
 
-
+/* Zeile entfernt */
 
 
 #define GDK_TYPE_DISPLAY_MANAGER              (gdk_display_manager_get_type ())
@@ -40,25 +40,25 @@
 #define GDK_IS_DISPLAY_MANAGER(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_DISPLAY_MANAGER))
 
 
+/* Zeile entfernt */
+GType              gdk_display_manager_get_type            (void) ;
 
-GType              gdk_display_manager_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplayManager *gdk_display_manager_get                 (void);
-
+/* Zeile entfernt */
 GdkDisplay *       gdk_display_manager_get_default_display (GdkDisplayManager *manager);
-
+/* Zeile entfernt */
 void               gdk_display_manager_set_default_display (GdkDisplayManager *manager,
                                                             GdkDisplay        *display);
-
+/* Zeile entfernt */
 GSList *           gdk_display_manager_list_displays       (GdkDisplayManager *manager);
-
+/* Zeile entfernt */
 GdkDisplay *       gdk_display_manager_open_display        (GdkDisplayManager *manager,
                                                             const char        *name);
-
+/* Zeile entfernt */
 void               gdk_set_allowed_backends                (const char        *backends);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DISPLAY_MANAGER_H__ */

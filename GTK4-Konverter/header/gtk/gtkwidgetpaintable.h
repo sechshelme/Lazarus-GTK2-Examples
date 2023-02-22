@@ -22,22 +22,22 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_WIDGET_PAINTABLE (gtk_widget_paintable_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAINTABLE, GObject)
-
-
+/* Zeile entfernt */
 GdkPaintable *  gtk_widget_paintable_new                (GtkWidget              *widget);
 
-
+/* Zeile entfernt */
 GtkWidget *     gtk_widget_paintable_get_widget         (GtkWidgetPaintable     *self);
-
+/* Zeile entfernt */
 void            gtk_widget_paintable_set_widget         (GtkWidgetPaintable     *self,
                                                          GtkWidget              *widget);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_WIDGET_PAINTABLE_H__ */

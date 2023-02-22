@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SPINNER : longint; { return type might be wrong }
@@ -51,23 +52,26 @@
 
   type
     _GtkSpinner = GtkSpinner;
-(* error 
-GType      gtk_spinner_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_spinner_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_spinner_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_spinner_start(spinner:PGtkSpinner);
 
+  { Zeile entfernt  }
   procedure gtk_spinner_stop(spinner:PGtkSpinner);
 
+  { Zeile entfernt  }
   procedure gtk_spinner_set_spinning(spinner:PGtkSpinner; spinning:gboolean);
 
+  { Zeile entfernt  }
   function gtk_spinner_get_spinning(spinner:PGtkSpinner):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SPINNER_H__  }
   { was #define dname def_expr }
@@ -92,6 +96,10 @@ GType      gtk_spinner_get_type     (void) G_GNUC_CONST;
     GTK_IS_SPINNER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SPINNER);
   end;
 
+  function gtk_spinner_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_spinner_new:PGtkWidget;
   begin
     { You must implement this function }

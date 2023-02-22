@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtklistbase.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GRID_VIEW : longint; { return type might be wrong }
@@ -66,39 +67,50 @@
   type
     _GtkGridView = GtkGridView;
     _GtkGridViewClass = GtkGridViewClass;
-(* error 
-GType           gtk_grid_view_get_type                          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_grid_view_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_grid_view_new(model:PGtkSelectionModel; factory:PGtkListItemFactory):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_model(self:PGtkGridView):^GtkSelectionModel;
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_model(self:PGtkGridView; model:PGtkSelectionModel);
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_factory(self:PGtkGridView; factory:PGtkListItemFactory);
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_factory(self:PGtkGridView):^GtkListItemFactory;
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_min_columns(self:PGtkGridView):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_min_columns(self:PGtkGridView; min_columns:guint);
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_max_columns(self:PGtkGridView):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_max_columns(self:PGtkGridView; max_columns:guint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_enable_rubberband(self:PGtkGridView; enable_rubberband:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_enable_rubberband(self:PGtkGridView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_grid_view_set_single_click_activate(self:PGtkGridView; single_click_activate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_view_get_single_click_activate(self:PGtkGridView):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GRID_VIEW_H__  }
   { was #define dname def_expr }
@@ -147,6 +159,10 @@ GType           gtk_grid_view_get_type                          (void) G_GNUC_CO
     GTK_GRID_VIEW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GRID_VIEW,GtkGridViewClass);
   end;
 
+  function gtk_grid_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_grid_view_new(model:PGtkSelectionModel; factory:PGtkListItemFactory):PGtkWidget;
   begin
     { You must implement this function }

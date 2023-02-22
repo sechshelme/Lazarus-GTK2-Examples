@@ -33,7 +33,7 @@
 #include <gtk/gtkbutton.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TOGGLE_BUTTON                  (gtk_toggle_button_get_type ())
 #define GTK_TOGGLE_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOGGLE_BUTTON, GtkToggleButton))
@@ -63,27 +63,27 @@ struct _GtkToggleButtonClass
 };
 
 
+/* Zeile entfernt */
+GType      gtk_toggle_button_get_type          (void) ;
 
-GType      gtk_toggle_button_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget* gtk_toggle_button_new               (void);
-
+/* Zeile entfernt */
 GtkWidget* gtk_toggle_button_new_with_label    (const char      *label);
-
+/* Zeile entfernt */
 GtkWidget* gtk_toggle_button_new_with_mnemonic (const char      *label);
-
+/* Zeile entfernt */
 void       gtk_toggle_button_set_active        (GtkToggleButton *toggle_button,
                                                 gboolean         is_active);
-
+/* Zeile entfernt */
 gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
-
+/* Zeile entfernt */
 void       gtk_toggle_button_toggled           (GtkToggleButton *toggle_button);
-
+/* Zeile entfernt */
 void       gtk_toggle_button_set_group         (GtkToggleButton *toggle_button,
                                                 GtkToggleButton *group);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TOGGLE_BUTTON_H__ */

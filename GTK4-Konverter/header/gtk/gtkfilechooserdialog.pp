@@ -1,4 +1,8 @@
 
+  Type
+  Pchar  = ^char;
+  PGtkWidget  = ^GtkWidget;
+  PGtkWindow  = ^GtkWindow;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -28,6 +32,7 @@
 {$endif}
 {$include <gtk/gtkdialog.h>}
 {$include <gtk/gtkfilechooser.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FILE_CHOOSER_DIALOG : longint; { return type might be wrong }
@@ -45,18 +50,16 @@
 
   type
     _GtkFileChooserDialog = GtkFileChooserDialog;
-(* error 
-GType      gtk_file_chooser_dialog_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_file_chooser_dialog_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-						     ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
- : GtkWidget;
+  function gtk_file_chooser_dialog_new(title:Pchar; parent:PGtkWindow; action:GtkFileChooserAction; first_button_text:Pchar; args:array of const):^GtkWidget;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FILE_CHOOSER_DIALOG_H__  }
   { was #define dname def_expr }
@@ -81,4 +84,12 @@ GType      gtk_file_chooser_dialog_get_type         (void) G_GNUC_CONST;
     GTK_IS_FILE_CHOOSER_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_FILE_CHOOSER_DIALOG);
   end;
 
+  function gtk_file_chooser_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_file_chooser_dialog_new(title:Pchar; parent:PGtkWindow; action:GtkFileChooserAction; first_button_text:Pchar):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
 

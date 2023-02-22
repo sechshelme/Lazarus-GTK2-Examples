@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ICON_PAINTABLE    (gtk_icon_paintable_get_type ())
 #define GTK_ICON_PAINTABLE(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ICON_PAINTABLE, GtkIconPaintable))
@@ -75,54 +75,54 @@ typedef enum {
   GTK_ICON_THEME_FAILED
 } GtkIconThemeError;
 
-
+/* Zeile entfernt */
 GQuark gtk_icon_theme_error_quark (void);
 
+/* Zeile entfernt */
+GType            gtk_icon_theme_get_type             (void) ;
 
-GType            gtk_icon_theme_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkIconTheme    *gtk_icon_theme_new                  (void);
-
+/* Zeile entfernt */
 GtkIconTheme    *gtk_icon_theme_get_for_display      (GdkDisplay                  *display);
 
-
+/* Zeile entfernt */
 GdkDisplay *     gtk_icon_theme_get_display          (GtkIconTheme                *self);
 
-
+/* Zeile entfernt */
 void             gtk_icon_theme_set_search_path      (GtkIconTheme                *self,
                                                       const char * const          *path);
-
+/* Zeile entfernt */
 char **          gtk_icon_theme_get_search_path      (GtkIconTheme                *self);
-
+/* Zeile entfernt */
 void             gtk_icon_theme_add_search_path      (GtkIconTheme                *self,
                                                       const char                  *path);
 
-
+/* Zeile entfernt */
 void             gtk_icon_theme_set_resource_path    (GtkIconTheme                *self,
                                                       const char * const          *path);
-
+/* Zeile entfernt */
 char **          gtk_icon_theme_get_resource_path    (GtkIconTheme                *self);
-
+/* Zeile entfernt */
 void             gtk_icon_theme_add_resource_path    (GtkIconTheme                *self,
                                                       const char                  *path);
 
-
+/* Zeile entfernt */
 void             gtk_icon_theme_set_theme_name       (GtkIconTheme                *self,
                                                       const char                  *theme_name);
-
+/* Zeile entfernt */
 char *           gtk_icon_theme_get_theme_name       (GtkIconTheme                *self);
 
-
+/* Zeile entfernt */
 gboolean         gtk_icon_theme_has_icon             (GtkIconTheme                *self,
                                                       const char                  *icon_name);
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 gboolean         gtk_icon_theme_has_gicon            (GtkIconTheme                *self,
                                                       GIcon                       *gicon);
-
+/* Zeile entfernt */
 int              *gtk_icon_theme_get_icon_sizes      (GtkIconTheme                *self,
                                                       const char                  *icon_name);
-
+/* Zeile entfernt */
 GtkIconPaintable *gtk_icon_theme_lookup_icon         (GtkIconTheme                *self,
                                                       const char                  *icon_name,
                                                       const char                  *fallbacks[],
@@ -130,30 +130,30 @@ GtkIconPaintable *gtk_icon_theme_lookup_icon         (GtkIconTheme              
                                                       int                          scale,
                                                       GtkTextDirection             direction,
                                                       GtkIconLookupFlags           flags);
-
+/* Zeile entfernt */
 GtkIconPaintable *gtk_icon_theme_lookup_by_gicon     (GtkIconTheme                *self,
                                                       GIcon                       *icon,
                                                       int                          size,
                                                       int                          scale,
                                                       GtkTextDirection             direction,
                                                       GtkIconLookupFlags           flags);
-
+/* Zeile entfernt */
 GtkIconPaintable *gtk_icon_paintable_new_for_file    (GFile                       *file,
                                                       int                          size,
                                                       int                          scale);
-
+/* Zeile entfernt */
 char **               gtk_icon_theme_get_icon_names  (GtkIconTheme                *self);
 
+/* Zeile entfernt */
+GType                 gtk_icon_paintable_get_type         (void) ;
 
-GType                 gtk_icon_paintable_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GFile *               gtk_icon_paintable_get_file          (GtkIconPaintable  *self);
-
+/* Zeile entfernt */
 const char *         gtk_icon_paintable_get_icon_name     (GtkIconPaintable  *self);
-
+/* Zeile entfernt */
 gboolean              gtk_icon_paintable_is_symbolic       (GtkIconPaintable  *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ICON_THEME_H__ */

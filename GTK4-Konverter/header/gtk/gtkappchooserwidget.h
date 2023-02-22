@@ -32,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APP_CHOOSER_WIDGET            (gtk_app_chooser_widget_get_type ())
 #define GTK_APP_CHOOSER_WIDGET(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER_WIDGET, GtkAppChooserWidget))
@@ -40,48 +40,48 @@
 
 typedef struct _GtkAppChooserWidget        GtkAppChooserWidget;
 
+/* Zeile entfernt */
+GType         gtk_app_chooser_widget_get_type             (void) ;
 
-GType         gtk_app_chooser_widget_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *   gtk_app_chooser_widget_new                  (const char          *content_type);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_show_default     (GtkAppChooserWidget *self,
                                                            gboolean             setting);
-
+/* Zeile entfernt */
 gboolean      gtk_app_chooser_widget_get_show_default     (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_show_recommended (GtkAppChooserWidget *self,
                                                            gboolean             setting);
-
+/* Zeile entfernt */
 gboolean      gtk_app_chooser_widget_get_show_recommended (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_show_fallback    (GtkAppChooserWidget *self,
                                                            gboolean             setting);
-
+/* Zeile entfernt */
 gboolean      gtk_app_chooser_widget_get_show_fallback    (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_show_other       (GtkAppChooserWidget *self,
                                                            gboolean             setting);
-
+/* Zeile entfernt */
 gboolean      gtk_app_chooser_widget_get_show_other       (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_show_all         (GtkAppChooserWidget *self,
                                                            gboolean             setting);
-
+/* Zeile entfernt */
 gboolean      gtk_app_chooser_widget_get_show_all         (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 void          gtk_app_chooser_widget_set_default_text     (GtkAppChooserWidget *self,
                                                            const char          *text);
-
+/* Zeile entfernt */
 const char * gtk_app_chooser_widget_get_default_text     (GtkAppChooserWidget *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APP_CHOOSER_WIDGET_H__ */

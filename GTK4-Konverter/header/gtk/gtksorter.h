@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkSorterOrder:
@@ -70,8 +70,8 @@ typedef enum {
 
 #define GTK_TYPE_SORTER             (gtk_sorter_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkSorterClass
@@ -103,20 +103,20 @@ struct _GtkSorterClass
   void (*_gtk_reserved8) (void);
 };
 
-
+/* Zeile entfernt */
 GtkOrdering             gtk_sorter_compare                      (GtkSorter              *self,
                                                                  gpointer                item1,
                                                                  gpointer                item2);
-
+/* Zeile entfernt */
 GtkSorterOrder          gtk_sorter_get_order                    (GtkSorter              *self);
 
 /* for sorter implementations */
-
+/* Zeile entfernt */
 void                    gtk_sorter_changed                      (GtkSorter              *self,
                                                                  GtkSorterChange         change);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SORTER_H__ */
 

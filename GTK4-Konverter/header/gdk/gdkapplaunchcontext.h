@@ -28,33 +28,33 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_APP_LAUNCH_CONTEXT         (gdk_app_launch_context_get_type ())
 #define GDK_APP_LAUNCH_CONTEXT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_APP_LAUNCH_CONTEXT, GdkAppLaunchContext))
 #define GDK_IS_APP_LAUNCH_CONTEXT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GDK_TYPE_APP_LAUNCH_CONTEXT))
 
 
-
+/* Zeile entfernt */
 GType                gdk_app_launch_context_get_type      (void);
 
-
+/* Zeile entfernt */
 GdkDisplay *         gdk_app_launch_context_get_display   (GdkAppLaunchContext *context);
 
-
+/* Zeile entfernt */
 void                 gdk_app_launch_context_set_desktop   (GdkAppLaunchContext *context,
                                                            int                  desktop);
-
+/* Zeile entfernt */
 void                 gdk_app_launch_context_set_timestamp (GdkAppLaunchContext *context,
                                                            guint32              timestamp);
-
+/* Zeile entfernt */
 void                 gdk_app_launch_context_set_icon      (GdkAppLaunchContext *context,
                                                            GIcon               *icon);
-
+/* Zeile entfernt */
 void                 gdk_app_launch_context_set_icon_name (GdkAppLaunchContext *context,
                                                            const char          *icon_name);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_APP_LAUNCH_CONTEXT_H__ */

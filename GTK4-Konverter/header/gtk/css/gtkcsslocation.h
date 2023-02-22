@@ -24,7 +24,7 @@
 
 #include <glib.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkCssLocation GtkCssLocation;
 
@@ -38,6 +38,6 @@ struct _GtkCssLocation
 };
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CSS_LOCATION_H__ */

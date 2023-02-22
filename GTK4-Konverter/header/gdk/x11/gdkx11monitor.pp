@@ -33,6 +33,7 @@
 {$error "Only <gdk/x11/gdkx.h> can be included directly."}
 {$endif}
 {$include <gdk/gdkmonitor.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_MONITOR : longint; { return type might be wrong }
@@ -51,17 +52,17 @@
   type
     _GdkX11Monitor = GdkX11Monitor;
     _GdkX11MonitorClass = GdkX11MonitorClass;
-(* error 
-GType             gdk_x11_monitor_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_x11_monitor_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_x11_monitor_get_output(monitor:PGdkMonitor):XID;
 
+  { Zeile entfernt  }
   procedure gdk_x11_monitor_get_workarea(monitor:PGdkMonitor; workarea:PGdkRectangle);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_MONITOR_H__  }
   { was #define dname def_expr }
@@ -86,6 +87,10 @@ GType             gdk_x11_monitor_get_type            (void) G_GNUC_CONST;
     GDK_IS_X11_MONITOR:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_X11_MONITOR);
   end;
 
+  function gdk_x11_monitor_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_x11_monitor_get_output(monitor:PGdkMonitor):XID;
   begin
     { You must implement this function }

@@ -23,12 +23,12 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtklayoutchild.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LAYOUT_MANAGER (gtk_layout_manager_get_type ())
 
-
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkLayoutManagerClass:
@@ -98,7 +98,7 @@ struct _GtkLayoutManagerClass
   gpointer _padding[16];
 };
 
-
+/* Zeile entfernt */
 void                    gtk_layout_manager_measure              (GtkLayoutManager *manager,
                                                                  GtkWidget        *widget,
                                                                  GtkOrientation    orientation,
@@ -107,23 +107,23 @@ void                    gtk_layout_manager_measure              (GtkLayoutManage
                                                                  int              *natural,
                                                                  int              *minimum_baseline,
                                                                  int              *natural_baseline);
-
+/* Zeile entfernt */
 void                    gtk_layout_manager_allocate             (GtkLayoutManager *manager,
                                                                  GtkWidget        *widget,
                                                                  int               width,
                                                                  int               height,
                                                                  int               baseline);
-
+/* Zeile entfernt */
 GtkSizeRequestMode      gtk_layout_manager_get_request_mode     (GtkLayoutManager *manager);
 
-
+/* Zeile entfernt */
 GtkWidget *             gtk_layout_manager_get_widget           (GtkLayoutManager *manager);
 
-
+/* Zeile entfernt */
 void                    gtk_layout_manager_layout_changed       (GtkLayoutManager *manager);
 
-
+/* Zeile entfernt */
 GtkLayoutChild *        gtk_layout_manager_get_layout_child     (GtkLayoutManager *manager,
                                                                  GtkWidget        *child);
 
-
+/* Zeile entfernt */

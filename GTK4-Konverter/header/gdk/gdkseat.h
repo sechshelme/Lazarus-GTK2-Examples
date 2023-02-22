@@ -29,7 +29,7 @@
 #include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_SEAT  (gdk_seat_get_type ())
 #define GDK_SEAT(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_SEAT, GdkSeat))
@@ -64,28 +64,28 @@ struct _GdkSeat
   GObject parent_instance;
 };
 
+/* Zeile entfernt */
+GType          gdk_seat_get_type         (void) ;
 
-GType          gdk_seat_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay *   gdk_seat_get_display             (GdkSeat             *seat);
 
-
+/* Zeile entfernt */
 GdkSeatCapabilities
                gdk_seat_get_capabilities        (GdkSeat             *seat);
 
-
+/* Zeile entfernt */
 GList *        gdk_seat_get_devices             (GdkSeat             *seat,
                                                  GdkSeatCapabilities  capabilities);
 
-
+/* Zeile entfernt */
 GList *        gdk_seat_get_tools               (GdkSeat *seat);
 
-
+/* Zeile entfernt */
 GdkDevice *    gdk_seat_get_pointer             (GdkSeat             *seat);
-
+/* Zeile entfernt */
 GdkDevice *    gdk_seat_get_keyboard            (GdkSeat             *seat);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_SEAT_H__ */

@@ -33,6 +33,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_DROP_CONTROLLER_MOTION : longint; { return type might be wrong }
@@ -66,21 +67,23 @@
   type
     _GtkDropControllerMotion = GtkDropControllerMotion;
     _GtkDropControllerMotionClass = GtkDropControllerMotionClass;
-(* error 
-GType                   gtk_drop_controller_motion_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_drop_controller_motion_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_drop_controller_motion_new:^GtkEventController;
 
+  { Zeile entfernt  }
   function gtk_drop_controller_motion_contains_pointer(self:PGtkDropControllerMotion):gboolean;
 
+  { Zeile entfernt  }
   function gtk_drop_controller_motion_get_drop(self:PGtkDropControllerMotion):^GdkDrop;
 
+  { Zeile entfernt  }
   function gtk_drop_controller_motion_is_pointer(self:PGtkDropControllerMotion):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DROP_CONTROLLER_MOTION_H__  }
   { was #define dname def_expr }
@@ -129,6 +132,10 @@ GType                   gtk_drop_controller_motion_get_type             (void) G
     GTK_DROP_CONTROLLER_MOTION_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_DROP_CONTROLLER_MOTION,GtkDropControllerMotionClass);
   end;
 
+  function gtk_drop_controller_motion_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_drop_controller_motion_new:PGtkEventController;
   begin
     { You must implement this function }

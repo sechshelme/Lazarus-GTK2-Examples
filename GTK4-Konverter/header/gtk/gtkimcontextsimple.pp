@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkimcontext.h>}
+  { Zeile entfernt  }
   {
    * No longer used by GTK, just left here on the off chance that some
    * 3rd party code used this define.
@@ -81,13 +82,11 @@
         parent_class : GtkIMContextClass;
       end;
 
-(* error 
-GType         gtk_im_context_simple_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_im_context_simple_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_im_context_simple_new:^GtkIMContext;
 
 (* error 
@@ -102,9 +101,11 @@ void          gtk_im_context_simple_add_table (GtkIMContextSimple *context_simpl
  in declarator_list *)
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_im_context_simple_add_compose_file(context_simple:PGtkIMContextSimple; compose_file:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_IM_CONTEXT_SIMPLE_H__  }
   { was #define dname def_expr }
@@ -153,6 +154,10 @@ void          gtk_im_context_simple_add_table (GtkIMContextSimple *context_simpl
     GTK_IM_CONTEXT_SIMPLE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_IM_CONTEXT_SIMPLE,GtkIMContextSimpleClass);
   end;
 
+  function gtk_im_context_simple_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_im_context_simple_new:PGtkIMContext;
   begin
     { You must implement this function }

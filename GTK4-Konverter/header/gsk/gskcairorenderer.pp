@@ -29,6 +29,7 @@
 {$define __GSK_CAIRO_RENDERER_H__}  
 {$include <cairo.h>}
 {$include <gsk/gskrenderer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_CAIRO_RENDERER : longint; { return type might be wrong }
@@ -70,15 +71,14 @@
   type
     _GskCairoRenderer = GskCairoRenderer;
     _GskCairoRendererClass = GskCairoRendererClass;
-(* error 
-GType                   gsk_cairo_renderer_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gsk_cairo_renderer_get_type:GType;
 
+  { Zeile entfernt  }
   function gsk_cairo_renderer_new:^GskRenderer;
 
+  { Zeile entfernt  }
 {$endif}
   { __GSK_CAIRO_RENDERER_H__  }
   { was #define dname def_expr }
@@ -127,6 +127,10 @@ GType                   gsk_cairo_renderer_get_type             (void) G_GNUC_CO
     GSK_CAIRO_RENDERER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GSK_TYPE_CAIRO_RENDERER,GskCairoRendererClass);
   end;
 
+  function gsk_cairo_renderer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gsk_cairo_renderer_new:PGskRenderer;
   begin
     { You must implement this function }

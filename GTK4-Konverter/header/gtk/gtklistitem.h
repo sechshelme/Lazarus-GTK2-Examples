@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LIST_ITEM         (gtk_list_item_get_type ())
 #define GTK_LIST_ITEM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_ITEM, GtkListItem))
@@ -38,33 +38,33 @@
 typedef struct _GtkListItem GtkListItem;
 typedef struct _GtkListItemClass GtkListItemClass;
 
+/* Zeile entfernt */
+GType           gtk_list_item_get_type                          (void) ;
 
-GType           gtk_list_item_get_type                          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 gpointer        gtk_list_item_get_item                          (GtkListItem            *self);
-
-guint           gtk_list_item_get_position                      (GtkListItem            *self) G_GNUC_PURE;
-
-gboolean        gtk_list_item_get_selected                      (GtkListItem            *self) G_GNUC_PURE;
-
-gboolean        gtk_list_item_get_selectable                    (GtkListItem            *self) G_GNUC_PURE;
-
+/* Zeile entfernt */
+guint           gtk_list_item_get_position                      (GtkListItem            *self) ;
+/* Zeile entfernt */
+gboolean        gtk_list_item_get_selected                      (GtkListItem            *self) ;
+/* Zeile entfernt */
+gboolean        gtk_list_item_get_selectable                    (GtkListItem            *self) ;
+/* Zeile entfernt */
 void            gtk_list_item_set_selectable                    (GtkListItem            *self,
                                                                  gboolean                selectable);
-
-gboolean        gtk_list_item_get_activatable                   (GtkListItem            *self) G_GNUC_PURE;
-
+/* Zeile entfernt */
+gboolean        gtk_list_item_get_activatable                   (GtkListItem            *self) ;
+/* Zeile entfernt */
 void            gtk_list_item_set_activatable                   (GtkListItem            *self,
                                                                  gboolean                activatable);
 
-
+/* Zeile entfernt */
 void            gtk_list_item_set_child                         (GtkListItem            *self,
                                                                  GtkWidget              *child);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_list_item_get_child                         (GtkListItem            *self);
 
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_LIST_ITEM_H__ */

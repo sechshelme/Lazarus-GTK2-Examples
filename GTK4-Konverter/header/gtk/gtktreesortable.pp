@@ -33,6 +33,7 @@
 {$endif}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtktreemodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_SORTABLE : longint; { return type might be wrong }
@@ -129,25 +130,29 @@
         has_default_sort_func : function (sortable:PGtkTreeSortable):gboolean;cdecl;
       end;
 
-(* error 
-GType    gtk_tree_sortable_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_sortable_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_tree_sortable_sort_column_changed(sortable:PGtkTreeSortable);
 
+  { Zeile entfernt  }
   function gtk_tree_sortable_get_sort_column_id(sortable:PGtkTreeSortable; sort_column_id:Plongint; order:PGtkSortType):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_sortable_set_sort_column_id(sortable:PGtkTreeSortable; sort_column_id:longint; order:GtkSortType);
 
+  { Zeile entfernt  }
   procedure gtk_tree_sortable_set_sort_func(sortable:PGtkTreeSortable; sort_column_id:longint; sort_func:GtkTreeIterCompareFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_tree_sortable_set_default_sort_func(sortable:PGtkTreeSortable; sort_func:GtkTreeIterCompareFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   function gtk_tree_sortable_has_default_sort_func(sortable:PGtkTreeSortable):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_SORTABLE_H__  }
   { was #define dname def_expr }
@@ -180,6 +185,10 @@ GType    gtk_tree_sortable_get_type              (void) G_GNUC_CONST;
     GTK_TREE_SORTABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_TREE_SORTABLE,GtkTreeSortableIface);
   end;
 
+  function gtk_tree_sortable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_tree_sortable_sort_column_changed(sortable:PGtkTreeSortable);
   begin
     { You must implement this function }

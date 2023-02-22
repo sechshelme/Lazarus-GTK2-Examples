@@ -41,6 +41,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_INFO_BAR : longint; { return type might be wrong }
@@ -58,50 +59,65 @@
 
   type
     _GtkInfoBar = GtkInfoBar;
-(* error 
-GType          gtk_info_bar_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_info_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_info_bar_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_info_bar_new_with_buttons(first_button_text:Pchar; args:array of const):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_add_action_widget(info_bar:PGtkInfoBar; child:PGtkWidget; response_id:longint);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_remove_action_widget(info_bar:PGtkInfoBar; widget:PGtkWidget);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_info_bar_add_button(info_bar:PGtkInfoBar; button_text:Pchar; response_id:longint):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_info_bar_add_buttons(info_bar:PGtkInfoBar; first_button_text:Pchar; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_add_child(info_bar:PGtkInfoBar; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_remove_child(info_bar:PGtkInfoBar; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_set_response_sensitive(info_bar:PGtkInfoBar; response_id:longint; setting:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_set_default_response(info_bar:PGtkInfoBar; response_id:longint);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_response(info_bar:PGtkInfoBar; response_id:longint);
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_set_message_type(info_bar:PGtkInfoBar; message_type:GtkMessageType);
 
+  { Zeile entfernt  }
   function gtk_info_bar_get_message_type(info_bar:PGtkInfoBar):GtkMessageType;
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_set_show_close_button(info_bar:PGtkInfoBar; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_info_bar_get_show_close_button(info_bar:PGtkInfoBar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_info_bar_set_revealed(info_bar:PGtkInfoBar; revealed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_info_bar_get_revealed(info_bar:PGtkInfoBar):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_INFO_BAR_H__   }
   { was #define dname def_expr }
@@ -126,6 +142,10 @@ GType          gtk_info_bar_get_type               (void) G_GNUC_CONST;
     GTK_IS_INFO_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_INFO_BAR);
   end;
 
+  function gtk_info_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_info_bar_new:PGtkWidget;
   begin
     { You must implement this function }

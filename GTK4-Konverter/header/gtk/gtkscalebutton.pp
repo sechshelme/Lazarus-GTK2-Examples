@@ -46,6 +46,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SCALE_BUTTON : longint; { return type might be wrong }
@@ -91,33 +92,40 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType            gtk_scale_button_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_scale_button_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_scale_button_new(min:double; max:double; step:double; icons:PPchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_scale_button_set_icons(button:PGtkScaleButton; icons:PPchar);
 
+  { Zeile entfernt  }
   function gtk_scale_button_get_value(button:PGtkScaleButton):double;
 
+  { Zeile entfernt  }
   procedure gtk_scale_button_set_value(button:PGtkScaleButton; value:double);
 
+  { Zeile entfernt  }
   function gtk_scale_button_get_adjustment(button:PGtkScaleButton):^GtkAdjustment;
 
+  { Zeile entfernt  }
   procedure gtk_scale_button_set_adjustment(button:PGtkScaleButton; adjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_scale_button_get_plus_button(button:PGtkScaleButton):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_scale_button_get_minus_button(button:PGtkScaleButton):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_scale_button_get_popup(button:PGtkScaleButton):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SCALE_BUTTON_H__  }
   { was #define dname def_expr }
@@ -166,6 +174,10 @@ GType            gtk_scale_button_get_type         (void) G_GNUC_CONST;
     GTK_SCALE_BUTTON_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_SCALE_BUTTON,GtkScaleButtonClass);
   end;
 
+  function gtk_scale_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_scale_button_new(min:double; max:double; step:double; icons:PPchar):PGtkWidget;
   begin
     { You must implement this function }

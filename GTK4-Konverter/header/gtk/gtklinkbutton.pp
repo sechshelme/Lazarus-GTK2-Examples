@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkbutton.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LINK_BUTTON : longint; { return type might be wrong }
@@ -53,30 +54,34 @@
 
   type
     _GtkLinkButton = GtkLinkButton;
-(* error 
-GType                 gtk_link_button_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_link_button_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_link_button_new(uri:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_link_button_new_with_label(uri:Pchar; _label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_link_button_get_uri(link_button:PGtkLinkButton):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_link_button_set_uri(link_button:PGtkLinkButton; uri:Pchar);
 
+  { Zeile entfernt  }
   function gtk_link_button_get_visited(link_button:PGtkLinkButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_link_button_set_visited(link_button:PGtkLinkButton; visited:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LINK_BUTTON_H__  }
   { was #define dname def_expr }
@@ -101,6 +106,10 @@ GType                 gtk_link_button_get_type          (void) G_GNUC_CONST;
     GTK_IS_LINK_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_LINK_BUTTON);
   end;
 
+  function gtk_link_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_link_button_new(uri:Pchar):PGtkWidget;
   begin
     { You must implement this function }

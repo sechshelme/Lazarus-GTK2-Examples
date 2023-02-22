@@ -32,7 +32,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkBorder GtkBorder;
 
@@ -57,17 +57,17 @@ struct _GtkBorder
   gint16 bottom;
 };
 
-
-GType      gtk_border_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_border_get_type (void) ;
+/* Zeile entfernt */
 GtkBorder *gtk_border_new      (void) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 GtkBorder *gtk_border_copy     (const GtkBorder *border_);
-
+/* Zeile entfernt */
 void       gtk_border_free     (GtkBorder       *border_);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBorder, gtk_border_free)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BORDER_H__ */

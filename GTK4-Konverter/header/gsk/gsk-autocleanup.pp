@@ -24,13 +24,10 @@
 {$error "Only <gsk/gsk.h> can be included directly."}
 {$endif}
 {$ifndef __GI_SCANNER__}
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GskRenderer, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GskRenderer, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GskRenderNode, gsk_render_node_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GskTransform, gsk_transform_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
+(* error 
+#endif
 

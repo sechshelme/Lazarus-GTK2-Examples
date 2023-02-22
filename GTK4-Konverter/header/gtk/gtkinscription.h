@@ -26,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_INSCRIPTION         (gtk_inscription_get_type ())
 
@@ -50,7 +50,7 @@ typedef enum {
 } GtkInscriptionOverflow;
 
 GDK_AVAILABLE_IN_4_8
-G_DECLARE_FINAL_TYPE (GtkInscription, gtk_inscription, GTK, INSCRIPTION, GtkWidget)
+/* Zeile entfernt */
 
 GDK_AVAILABLE_IN_4_8
 GtkWidget *             gtk_inscription_new                     (const char             *text);
@@ -111,6 +111,6 @@ GDK_AVAILABLE_IN_4_8
 void                    gtk_inscription_set_yalign              (GtkInscription         *self,
                                                                  float                   yalign);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_INSCRIPTION_H__ */

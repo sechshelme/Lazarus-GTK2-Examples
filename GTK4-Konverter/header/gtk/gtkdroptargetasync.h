@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkDropTargetAsync GtkDropTargetAsync;
 typedef struct _GtkDropTargetAsyncClass GtkDropTargetAsyncClass;
@@ -48,30 +48,30 @@ typedef struct _GtkDropTargetAsyncClass GtkDropTargetAsyncClass;
 #define GTK_DROP_TARGET_ASYNC_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GTK_TYPE_DROP_TARGET_ASYNC, GtkDropTargetAsyncClass))
 
 
+/* Zeile entfernt */
+GType                   gtk_drop_target_async_get_type          (void) ;
 
-GType                   gtk_drop_target_async_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkDropTargetAsync *    gtk_drop_target_async_new               (GdkContentFormats      *formats,
                                                                  GdkDragAction           actions);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_async_set_formats       (GtkDropTargetAsync     *self,
                                                                  GdkContentFormats      *formats);
-
+/* Zeile entfernt */
 GdkContentFormats *     gtk_drop_target_async_get_formats       (GtkDropTargetAsync     *self);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_async_set_actions       (GtkDropTargetAsync     *self,
                                                                  GdkDragAction           actions);
-
+/* Zeile entfernt */
 GdkDragAction           gtk_drop_target_async_get_actions       (GtkDropTargetAsync     *self);
 
-
+/* Zeile entfernt */
 void                    gtk_drop_target_async_reject_drop       (GtkDropTargetAsync     *self,
                                                                  GdkDrop                *drop);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DROP_TARGET_ASYNC_H__ */

@@ -32,7 +32,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ADJUSTMENT                  (gtk_adjustment_get_type ())
 #define GTK_ADJUSTMENT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ADJUSTMENT, GtkAdjustment))
@@ -64,9 +64,9 @@ struct _GtkAdjustmentClass
 };
 
 
-
-GType      gtk_adjustment_get_type              (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_adjustment_get_type              (void) ;
+/* Zeile entfernt */
 GtkAdjustment*   gtk_adjustment_new             (double           value,
                                                  double           lower,
                                                  double           upper,
@@ -74,43 +74,43 @@ GtkAdjustment*   gtk_adjustment_new             (double           value,
                                                  double           page_increment,
                                                  double           page_size);
 
-
+/* Zeile entfernt */
 void       gtk_adjustment_clamp_page            (GtkAdjustment   *adjustment,
                                                  double           lower,
                                                  double           upper);
 
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_value             (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_value             (GtkAdjustment   *adjustment,
                                                  double           value);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_lower             (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_lower             (GtkAdjustment   *adjustment,
                                                  double           lower);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_upper             (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_upper             (GtkAdjustment   *adjustment,
                                                  double           upper);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_step_increment    (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_step_increment    (GtkAdjustment   *adjustment,
                                                  double           step_increment);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_page_increment    (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_page_increment    (GtkAdjustment   *adjustment,
                                                  double           page_increment);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_page_size         (GtkAdjustment   *adjustment);
-
+/* Zeile entfernt */
 void       gtk_adjustment_set_page_size         (GtkAdjustment   *adjustment,
                                                  double           page_size);
 
-
+/* Zeile entfernt */
 void       gtk_adjustment_configure             (GtkAdjustment   *adjustment,
                                                  double           value,
                                                  double           lower,
@@ -118,9 +118,9 @@ void       gtk_adjustment_configure             (GtkAdjustment   *adjustment,
                                                  double           step_increment,
                                                  double           page_increment,
                                                  double           page_size);
-
+/* Zeile entfernt */
 double     gtk_adjustment_get_minimum_increment (GtkAdjustment   *adjustment);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ADJUSTMENT_H__ */

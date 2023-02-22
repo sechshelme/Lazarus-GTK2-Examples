@@ -26,7 +26,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtkgesturedrag.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_PAN         (gtk_gesture_pan_get_type ())
 #define GTK_GESTURE_PAN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_PAN, GtkGesturePan))
@@ -38,20 +38,20 @@
 typedef struct _GtkGesturePan GtkGesturePan;
 typedef struct _GtkGesturePanClass GtkGesturePanClass;
 
+/* Zeile entfernt */
+GType             gtk_gesture_pan_get_type        (void) ;
 
-GType             gtk_gesture_pan_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture *      gtk_gesture_pan_new             (GtkOrientation  orientation);
 
-
+/* Zeile entfernt */
 GtkOrientation    gtk_gesture_pan_get_orientation (GtkGesturePan  *gesture);
 
-
+/* Zeile entfernt */
 void              gtk_gesture_pan_set_orientation (GtkGesturePan  *gesture,
                                                    GtkOrientation  orientation);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_PAN_H__ */

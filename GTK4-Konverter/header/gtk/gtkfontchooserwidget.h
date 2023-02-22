@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FONT_CHOOSER_WIDGET              (gtk_font_chooser_widget_get_type ())
 #define GTK_FONT_CHOOSER_WIDGET(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FONT_CHOOSER_WIDGET, GtkFontChooserWidget))
@@ -32,12 +32,12 @@
 
 typedef struct _GtkFontChooserWidget              GtkFontChooserWidget;
 
+/* Zeile entfernt */
+GType        gtk_font_chooser_widget_get_type                 (void) ;
 
-GType        gtk_font_chooser_widget_get_type                 (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget*   gtk_font_chooser_widget_new                      (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FONT_CHOOSER_WIDGET_H__ */

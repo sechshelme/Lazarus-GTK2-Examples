@@ -37,6 +37,7 @@
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdkrectangle.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_MONITOR : longint; { return type might be wrong }
@@ -72,38 +73,47 @@
       GDK_SUBPIXEL_LAYOUT_HORIZONTAL_RGB,GDK_SUBPIXEL_LAYOUT_HORIZONTAL_BGR,
       GDK_SUBPIXEL_LAYOUT_VERTICAL_RGB,GDK_SUBPIXEL_LAYOUT_VERTICAL_BGR
       );
-(* error 
-GType             gdk_monitor_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_monitor_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_monitor_get_display(monitor:PGdkMonitor):^GdkDisplay;
 
+  { Zeile entfernt  }
   procedure gdk_monitor_get_geometry(monitor:PGdkMonitor; geometry:PGdkRectangle);
 
+  { Zeile entfernt  }
   function gdk_monitor_get_width_mm(monitor:PGdkMonitor):longint;
 
+  { Zeile entfernt  }
   function gdk_monitor_get_height_mm(monitor:PGdkMonitor):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_monitor_get_manufacturer(monitor:PGdkMonitor):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_monitor_get_model(monitor:PGdkMonitor):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_monitor_get_connector(monitor:PGdkMonitor):^char;
 
+  { Zeile entfernt  }
   function gdk_monitor_get_scale_factor(monitor:PGdkMonitor):longint;
 
+  { Zeile entfernt  }
   function gdk_monitor_get_refresh_rate(monitor:PGdkMonitor):longint;
 
+  { Zeile entfernt  }
   function gdk_monitor_get_subpixel_layout(monitor:PGdkMonitor):GdkSubpixelLayout;
 
+  { Zeile entfernt  }
   function gdk_monitor_is_valid(monitor:PGdkMonitor):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_MONITOR_H__  }
   { was #define dname def_expr }
@@ -128,6 +138,10 @@ GType             gdk_monitor_get_type            (void) G_GNUC_CONST;
     GDK_IS_MONITOR:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_MONITOR);
   end;
 
+  function gdk_monitor_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_monitor_get_display(monitor:PGdkMonitor):PGdkDisplay;
   begin
     { You must implement this function }

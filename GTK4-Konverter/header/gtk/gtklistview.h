@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistbase.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LIST_VIEW         (gtk_list_view_get_type ())
 #define GTK_LIST_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_VIEW, GtkListView))
@@ -38,46 +38,46 @@
 typedef struct _GtkListView GtkListView;
 typedef struct _GtkListViewClass GtkListViewClass;
 
+/* Zeile entfernt */
+GType           gtk_list_view_get_type                          (void) ;
 
-GType           gtk_list_view_get_type                          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_list_view_new                               (GtkSelectionModel      *model,
                                                                  GtkListItemFactory     *factory);
 
-
+/* Zeile entfernt */
 GtkSelectionModel *
                 gtk_list_view_get_model                         (GtkListView            *self);
-
+/* Zeile entfernt */
 void            gtk_list_view_set_model                         (GtkListView            *self,
                                                                  GtkSelectionModel      *model);
-
+/* Zeile entfernt */
 void            gtk_list_view_set_factory                       (GtkListView            *self,
                                                                  GtkListItemFactory     *factory);
-
+/* Zeile entfernt */
 GtkListItemFactory *
                 gtk_list_view_get_factory                       (GtkListView            *self);
 
-
+/* Zeile entfernt */
 void            gtk_list_view_set_show_separators               (GtkListView            *self,
                                                                  gboolean                show_separators);
-
+/* Zeile entfernt */
 gboolean        gtk_list_view_get_show_separators               (GtkListView            *self);
 
-
+/* Zeile entfernt */
 void            gtk_list_view_set_single_click_activate         (GtkListView            *self,
                                                                  gboolean                single_click_activate);
-
+/* Zeile entfernt */
 gboolean        gtk_list_view_get_single_click_activate         (GtkListView            *self);
 
-
+/* Zeile entfernt */
 void            gtk_list_view_set_enable_rubberband             (GtkListView            *self,
                                                                  gboolean                enable_rubberband);
-
+/* Zeile entfernt */
 gboolean        gtk_list_view_get_enable_rubberband             (GtkListView            *self);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListView, g_object_unref)
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_LIST_VIEW_H__ */

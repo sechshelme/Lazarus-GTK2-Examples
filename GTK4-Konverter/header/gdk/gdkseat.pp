@@ -36,6 +36,7 @@
 {$include <gdk/gdksurface.h>}
 {$include <gdk/gdkevents.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_SEAT : longint; { return type might be wrong }
@@ -74,25 +75,29 @@
         parent_instance : GObject;
       end;
 
-(* error 
-GType          gdk_seat_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_seat_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_seat_get_display(seat:PGdkSeat):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_seat_get_capabilities(seat:PGdkSeat):GdkSeatCapabilities;
 
+  { Zeile entfernt  }
   function gdk_seat_get_devices(seat:PGdkSeat; capabilities:GdkSeatCapabilities):^GList;
 
+  { Zeile entfernt  }
   function gdk_seat_get_tools(seat:PGdkSeat):^GList;
 
+  { Zeile entfernt  }
   function gdk_seat_get_pointer(seat:PGdkSeat):^GdkDevice;
 
+  { Zeile entfernt  }
   function gdk_seat_get_keyboard(seat:PGdkSeat):^GdkDevice;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_SEAT_H__  }
   { was #define dname def_expr }
@@ -117,6 +122,10 @@ GType          gdk_seat_get_type         (void) G_GNUC_CONST;
     GDK_IS_SEAT:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_SEAT);
   end;
 
+  function gdk_seat_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_seat_get_display(seat:PGdkSeat):PGdkDisplay;
   begin
     { You must implement this function }

@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_APP_LAUNCH_CONTEXT : longint; { return type might be wrong }
@@ -49,19 +50,26 @@
   { return type might be wrong }   
   function GDK_IS_APP_LAUNCH_CONTEXT(o : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_app_launch_context_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_app_launch_context_get_display(context:PGdkAppLaunchContext):^GdkDisplay;
 
+  { Zeile entfernt  }
   procedure gdk_app_launch_context_set_desktop(context:PGdkAppLaunchContext; desktop:longint);
 
+  { Zeile entfernt  }
   procedure gdk_app_launch_context_set_timestamp(context:PGdkAppLaunchContext; timestamp:guint32);
 
+  { Zeile entfernt  }
   procedure gdk_app_launch_context_set_icon(context:PGdkAppLaunchContext; icon:PGIcon);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_app_launch_context_set_icon_name(context:PGdkAppLaunchContext; icon_name:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_APP_LAUNCH_CONTEXT_H__  }
   { was #define dname def_expr }

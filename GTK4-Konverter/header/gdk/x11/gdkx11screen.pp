@@ -38,6 +38,7 @@
 {$include <gdk/gdk.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_SCREEN : longint; { return type might be wrong }
@@ -71,25 +72,34 @@
   type
     _GdkX11Screen = GdkX11Screen;
     _GdkX11ScreenClass = GdkX11ScreenClass;
+  { Zeile entfernt  }
 
   function gdk_x11_screen_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_x11_screen_get_xscreen(screen:PGdkX11Screen):^Screen;
 
+  { Zeile entfernt  }
   function gdk_x11_screen_get_screen_number(screen:PGdkX11Screen):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_x11_screen_get_window_manager_name(screen:PGdkX11Screen):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_x11_screen_supports_net_wm_hint(screen:PGdkX11Screen; property_name:Pchar):gboolean;
 
+  { Zeile entfernt  }
   function gdk_x11_screen_get_monitor_output(screen:PGdkX11Screen; monitor_num:longint):XID;
 
+  { Zeile entfernt  }
   function gdk_x11_screen_get_number_of_desktops(screen:PGdkX11Screen):guint32;
 
+  { Zeile entfernt  }
   function gdk_x11_screen_get_current_desktop(screen:PGdkX11Screen):guint32;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_SCREEN_H__  }
   { was #define dname def_expr }

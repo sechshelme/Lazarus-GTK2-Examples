@@ -28,7 +28,7 @@
 
 #include <gdk/gdkmonitor.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_X11_MONITOR           (gdk_x11_monitor_get_type ())
 #define GDK_X11_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_MONITOR, GdkX11Monitor))
@@ -37,16 +37,16 @@
 typedef struct _GdkX11Monitor      GdkX11Monitor;
 typedef struct _GdkX11MonitorClass GdkX11MonitorClass;
 
+/* Zeile entfernt */
+GType             gdk_x11_monitor_get_type            (void) ;
 
-GType             gdk_x11_monitor_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 XID               gdk_x11_monitor_get_output          (GdkMonitor *monitor);
 
-
+/* Zeile entfernt */
 void              gdk_x11_monitor_get_workarea        (GdkMonitor   *monitor,
                                                        GdkRectangle *workarea);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GDK_X11_MONITOR_H__ */

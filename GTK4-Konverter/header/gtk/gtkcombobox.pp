@@ -35,6 +35,7 @@
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreeview.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_COMBO_BOX : longint; { return type might be wrong }
@@ -92,74 +93,100 @@
       end;
 
   { construction  }
-(* error 
-GType         gtk_combo_box_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_combo_box_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_combo_box_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_combo_box_new_with_entry:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_combo_box_new_with_model(model:PGtkTreeModel):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_combo_box_new_with_model_and_entry(model:PGtkTreeModel):^GtkWidget;
 
   { get/set active item  }
+  { Zeile entfernt  }
   function gtk_combo_box_get_active(combo_box:PGtkComboBox):longint;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_active(combo_box:PGtkComboBox; index_:longint);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_active_iter(combo_box:PGtkComboBox; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_active_iter(combo_box:PGtkComboBox; iter:PGtkTreeIter);
 
   { getters and setters  }
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_model(combo_box:PGtkComboBox; model:PGtkTreeModel);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_model(combo_box:PGtkComboBox):^GtkTreeModel;
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_row_separator_func(combo_box:PGtkComboBox):GtkTreeViewRowSeparatorFunc;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_row_separator_func(combo_box:PGtkComboBox; func:GtkTreeViewRowSeparatorFunc; data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_button_sensitivity(combo_box:PGtkComboBox; sensitivity:GtkSensitivityType);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_button_sensitivity(combo_box:PGtkComboBox):GtkSensitivityType;
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_has_entry(combo_box:PGtkComboBox):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_entry_text_column(combo_box:PGtkComboBox; text_column:longint);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_entry_text_column(combo_box:PGtkComboBox):longint;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_popup_fixed_width(combo_box:PGtkComboBox; fixed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_popup_fixed_width(combo_box:PGtkComboBox):gboolean;
 
   { programmatic control  }
+  { Zeile entfernt  }
   procedure gtk_combo_box_popup(combo_box:PGtkComboBox);
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_popup_for_device(combo_box:PGtkComboBox; device:PGdkDevice);
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_popdown(combo_box:PGtkComboBox);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_id_column(combo_box:PGtkComboBox):longint;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_id_column(combo_box:PGtkComboBox; id_column:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_combo_box_get_active_id(combo_box:PGtkComboBox):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_combo_box_set_active_id(combo_box:PGtkComboBox; active_id:Pchar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_set_child(combo_box:PGtkComboBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_combo_box_get_child(combo_box:PGtkComboBox):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COMBO_BOX_H__  }
   { was #define dname def_expr }
@@ -208,6 +235,10 @@ GType         gtk_combo_box_get_type                 (void) G_GNUC_CONST;
     GTK_COMBO_BOX_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(inst,GTK_TYPE_COMBO_BOX,GtkComboBoxClass);
   end;
 
+  function gtk_combo_box_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_combo_box_new:PGtkWidget;
   begin
     { You must implement this function }

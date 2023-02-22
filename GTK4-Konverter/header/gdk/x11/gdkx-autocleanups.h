@@ -21,13 +21,13 @@
 
 #ifndef __GI_SCANNER__
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11AppLaunchContext, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11DeviceManagerXI2, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11DeviceXI2, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11Display, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11Drag, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11GLContext, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11Screen, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkX11Surface, g_object_unref)
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 #endif

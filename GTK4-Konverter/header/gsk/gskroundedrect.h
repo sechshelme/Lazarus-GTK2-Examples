@@ -25,7 +25,7 @@
 
 #include <gsk/gsktypes.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GSK_ROUNDED_RECT_INIT:
@@ -54,47 +54,47 @@ struct _GskRoundedRect
   graphene_size_t corner[4];
 };
 
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_init                   (GskRoundedRect           *self,
                                                                  const graphene_rect_t    *bounds,
                                                                  const graphene_size_t    *top_left,
                                                                  const graphene_size_t    *top_right,
                                                                  const graphene_size_t    *bottom_right,
                                                                  const graphene_size_t    *bottom_left);
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_init_copy              (GskRoundedRect           *self,
                                                                  const GskRoundedRect     *src);
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_init_from_rect         (GskRoundedRect           *self,
                                                                  const graphene_rect_t    *bounds,
                                                                  float                     radius);
 
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_normalize              (GskRoundedRect           *self);
 
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_offset                 (GskRoundedRect           *self,
                                                                  float                     dx,
                                                                  float                     dy);
-
+/* Zeile entfernt */
 GskRoundedRect *        gsk_rounded_rect_shrink                 (GskRoundedRect           *self,
                                                                  float                     top,
                                                                  float                     right,
                                                                  float                     bottom,
                                                                  float                     left);
 
-
-gboolean                gsk_rounded_rect_is_rectilinear         (const GskRoundedRect     *self) G_GNUC_PURE;
-
+/* Zeile entfernt */
+gboolean                gsk_rounded_rect_is_rectilinear         (const GskRoundedRect     *self) ;
+/* Zeile entfernt */
 gboolean                gsk_rounded_rect_contains_point         (const GskRoundedRect     *self,
-                                                                 const graphene_point_t   *point) G_GNUC_PURE;
-
+                                                                 const graphene_point_t   *point) ;
+/* Zeile entfernt */
 gboolean                gsk_rounded_rect_contains_rect          (const GskRoundedRect     *self,
-                                                                 const graphene_rect_t    *rect) G_GNUC_PURE;
-
+                                                                 const graphene_rect_t    *rect) ;
+/* Zeile entfernt */
 gboolean                gsk_rounded_rect_intersects_rect        (const GskRoundedRect     *self,
-                                                                 const graphene_rect_t    *rect) G_GNUC_PURE;
+                                                                 const graphene_rect_t    *rect) ;
 
-
+/* Zeile entfernt */
 
 #endif /* __GSK_ROUNDED_RECT_H__ */

@@ -29,6 +29,7 @@
 {$ifndef __GTK_SIZE_REQUEST_H__}
 {$define __GTK_SIZE_REQUEST_H__}  
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   type
     _GtkRequestedSize = GtkRequestedSize;
@@ -49,9 +50,11 @@
       end;
 
   { General convenience function to aid in allocating natural sizes  }
+  { Zeile entfernt  }
 
   function gtk_distribute_natural_allocation(extra_space:longint; n_requested_sizes:guint; sizes:PGtkRequestedSize):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SIZE_REQUEST_H__  }
   function gtk_distribute_natural_allocation(extra_space:longint; n_requested_sizes:guint; sizes:PGtkRequestedSize):longint;

@@ -26,7 +26,7 @@
 
 #include <gtk/gtkfilter.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkCustomFilterFunc:
@@ -43,19 +43,19 @@
 typedef gboolean (* GtkCustomFilterFunc) (gpointer item, gpointer user_data);
 
 #define GTK_TYPE_CUSTOM_FILTER             (gtk_custom_filter_get_type ())
-
-G_DECLARE_FINAL_TYPE (GtkCustomFilter, gtk_custom_filter, GTK, CUSTOM_FILTER, GtkFilter)
-
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
 GtkCustomFilter *       gtk_custom_filter_new                   (GtkCustomFilterFunc     match_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 void                    gtk_custom_filter_set_filter_func       (GtkCustomFilter        *self,
                                                                  GtkCustomFilterFunc     match_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CUSTOM_FILTER_H__ */

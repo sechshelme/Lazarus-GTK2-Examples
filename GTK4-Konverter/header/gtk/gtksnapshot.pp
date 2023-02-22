@@ -1,26 +1,26 @@
 
-    Type
-    Pcairo_t  = ^cairo_t;
-    PGBytes  = ^GBytes;
-    PGdkPaintable  = ^GdkPaintable;
-    PGdkRGBA  = ^GdkRGBA;
-    PGdkTexture  = ^GdkTexture;
-    Pgraphene_matrix_t  = ^graphene_matrix_t;
-    Pgraphene_point3d_t  = ^graphene_point3d_t;
-    Pgraphene_point_t  = ^graphene_point_t;
-    Pgraphene_rect_t  = ^graphene_rect_t;
-    Pgraphene_size_t  = ^graphene_size_t;
-    Pgraphene_vec3_t  = ^graphene_vec3_t;
-    Pgraphene_vec4_t  = ^graphene_vec4_t;
-    PGskColorStop  = ^GskColorStop;
-    PGskGLShader  = ^GskGLShader;
-    PGskRenderNode  = ^GskRenderNode;
-    PGskRoundedRect  = ^GskRoundedRect;
-    PGskShadow  = ^GskShadow;
-    PGskTransform  = ^GskTransform;
-    PGtkSnapshot  = ^GtkSnapshot;
-    PGtkStyleContext  = ^GtkStyleContext;
-    PPangoLayout  = ^PangoLayout;
+  Type
+  Pcairo_t  = ^cairo_t;
+  PGBytes  = ^GBytes;
+  PGdkPaintable  = ^GdkPaintable;
+  PGdkRGBA  = ^GdkRGBA;
+  PGdkTexture  = ^GdkTexture;
+  Pgraphene_matrix_t  = ^graphene_matrix_t;
+  Pgraphene_point3d_t  = ^graphene_point3d_t;
+  Pgraphene_point_t  = ^graphene_point_t;
+  Pgraphene_rect_t  = ^graphene_rect_t;
+  Pgraphene_size_t  = ^graphene_size_t;
+  Pgraphene_vec3_t  = ^graphene_vec3_t;
+  Pgraphene_vec4_t  = ^graphene_vec4_t;
+  PGskColorStop  = ^GskColorStop;
+  PGskGLShader  = ^GskGLShader;
+  PGskRenderNode  = ^GskRenderNode;
+  PGskRoundedRect  = ^GskRoundedRect;
+  PGskShadow  = ^GskShadow;
+  PGskTransform  = ^GskTransform;
+  PGtkSnapshot  = ^GtkSnapshot;
+  PGtkStyleContext  = ^GtkStyleContext;
+  PPangoLayout  = ^PangoLayout;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -55,6 +55,7 @@
 {$endif}
 {$include <gsk/gsk.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   type
     _GtkSnapshotClass = GtkSnapshotClass;
@@ -72,24 +73,28 @@
   { return type might be wrong }   
   function GTK_IS_SNAPSHOT(obj : longint) : longint;  
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_snapshot_get_type:GType;
+
+  { Zeile entfernt  }
   function gtk_snapshot_new:^GtkSnapshot;
 
+  { Zeile entfernt  }
   function gtk_snapshot_free_to_node(snapshot:PGtkSnapshot):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_snapshot_free_to_paintable(snapshot:PGtkSnapshot; size:Pgraphene_size_t):^GdkPaintable;
 
+  { Zeile entfernt  }
   function gtk_snapshot_to_node(snapshot:PGtkSnapshot):^GskRenderNode;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_snapshot_to_paintable(snapshot:PGtkSnapshot; size:Pgraphene_size_t):^GdkPaintable;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                          ...) G_GNUC_PRINTF (2, 3);
@@ -97,76 +102,104 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
                                                          ...) G_GNUC_PRINTF (2, 3);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
   procedure gtk_snapshot_push_opacity(snapshot:PGtkSnapshot; opacity:double);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_push_blur(snapshot:PGtkSnapshot; radius:double);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_push_color_matrix(snapshot:PGtkSnapshot; color_matrix:Pgraphene_matrix_t; color_offset:Pgraphene_vec4_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_push_repeat(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; child_bounds:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_push_clip(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_push_rounded_clip(snapshot:PGtkSnapshot; bounds:PGskRoundedRect);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_push_shadow(snapshot:PGtkSnapshot; shadow:PGskShadow; n_shadows:gsize);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_push_blend(snapshot:PGtkSnapshot; blend_mode:GskBlendMode);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_push_cross_fade(snapshot:PGtkSnapshot; progress:double);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_push_gl_shader(snapshot:PGtkSnapshot; shader:PGskGLShader; bounds:Pgraphene_rect_t; take_args:PGBytes);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_gl_shader_pop_texture(snapshot:PGtkSnapshot);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_pop(snapshot:PGtkSnapshot);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_save(snapshot:PGtkSnapshot);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_restore(snapshot:PGtkSnapshot);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_transform(snapshot:PGtkSnapshot; transform:PGskTransform);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_transform_matrix(snapshot:PGtkSnapshot; matrix:Pgraphene_matrix_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_translate(snapshot:PGtkSnapshot; point:Pgraphene_point_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_translate_3d(snapshot:PGtkSnapshot; point:Pgraphene_point3d_t);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_rotate(snapshot:PGtkSnapshot; angle:single);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_rotate_3d(snapshot:PGtkSnapshot; angle:single; axis:Pgraphene_vec3_t);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_scale(snapshot:PGtkSnapshot; factor_x:single; factor_y:single);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_scale_3d(snapshot:PGtkSnapshot; factor_x:single; factor_y:single; factor_z:single);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_perspective(snapshot:PGtkSnapshot; depth:single);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_append_node(snapshot:PGtkSnapshot; node:PGskRenderNode);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_snapshot_append_cairo(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t):^cairo_t;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_append_texture(snapshot:PGtkSnapshot; texture:PGdkTexture; bounds:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_color(snapshot:PGtkSnapshot; color:PGdkRGBA; bounds:Pgraphene_rect_t);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
@@ -174,6 +207,7 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
   procedure gtk_snapshot_append_linear_gradient(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; start_point:Pgraphene_point_t; end_point:Pgraphene_point_t; stops:PGskColorStop; 
               n_stops:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
@@ -181,60 +215,72 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
   procedure gtk_snapshot_append_repeating_linear_gradient(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; start_point:Pgraphene_point_t; end_point:Pgraphene_point_t; stops:PGskColorStop; 
               n_stops:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_radial_gradient(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; 
               start:single; end:single; stops:PGskColorStop; n_stops:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_repeating_radial_gradient(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; center:Pgraphene_point_t; hradius:single; vradius:single; 
               start:single; end:single; stops:PGskColorStop; n_stops:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_conic_gradient(snapshot:PGtkSnapshot; bounds:Pgraphene_rect_t; center:Pgraphene_point_t; rotation:single; stops:PGskColorStop; 
               n_stops:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_border(snapshot:PGtkSnapshot; outline:PGskRoundedRect; border_width:array[0..3] of single; border_color:array[0..3] of GdkRGBA);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_inset_shadow(snapshot:PGtkSnapshot; outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; 
               spread:single; blur_radius:single);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_snapshot_append_outset_shadow(snapshot:PGtkSnapshot; outline:PGskRoundedRect; color:PGdkRGBA; dx:single; dy:single; 
               spread:single; blur_radius:single);
 
   { next function implemented in gskpango.c  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_snapshot_append_layout(snapshot:PGtkSnapshot; layout:PPangoLayout; color:PGdkRGBA);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_render_background(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_render_frame(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_render_focus(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; width:double; 
               height:double);
 
+  { Zeile entfernt  }
   procedure gtk_snapshot_render_layout(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; layout:PPangoLayout);
 
-  { in gtkstylecontext.c  }
-(* error 
-void            gtk_snapshot_render_insertion_cursor    (GtkSnapshot            *snapshot,
-in declaration at line 262 *)
+  { Zeile entfernt  }
+  procedure gtk_snapshot_render_insertion_cursor(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; layout:PPangoLayout; 
+              index:longint; direction:PangoDirection);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_SNAPSHOT_H__  }
+  { __GTK_SNAPSHOT_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_SNAPSHOT : longint; { return type might be wrong }
     begin
@@ -257,6 +303,10 @@ in declaration at line 262 *)
     GTK_IS_SNAPSHOT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SNAPSHOT);
   end;
 
+  function gtk_snapshot_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_snapshot_new:PGtkSnapshot;
   begin
     { You must implement this function }
@@ -444,6 +494,11 @@ in declaration at line 262 *)
     { You must implement this function }
   end;
   procedure gtk_snapshot_render_layout(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; layout:PPangoLayout);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_snapshot_render_insertion_cursor(snapshot:PGtkSnapshot; context:PGtkStyleContext; x:double; y:double; layout:PPangoLayout; 
+              index:longint; direction:PangoDirection);
   begin
     { You must implement this function }
   end;

@@ -34,15 +34,15 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 Atom                  gdk_x11_get_xatom_by_name_for_display (GdkDisplay  *display,
                                                              const char *atom_name);
-
+/* Zeile entfernt */
 const char *         gdk_x11_get_xatom_name_for_display (GdkDisplay  *display,
                                                           Atom         xatom);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_PROPERTY_H__ */

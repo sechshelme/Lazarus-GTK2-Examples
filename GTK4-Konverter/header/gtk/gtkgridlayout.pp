@@ -2,6 +2,7 @@
   Type
   PGtkGridLayout  = ^GtkGridLayout;
   PGtkGridLayoutChild  = ^GtkGridLayoutChild;
+  PGtkLayoutManager  = ^GtkLayoutManager;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -27,6 +28,7 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GRID_LAYOUT : longint; { return type might be wrong }
@@ -34,59 +36,74 @@
   { was #define dname def_expr }
   function GTK_TYPE_GRID_LAYOUT_CHILD : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkGridLayout, gtk_grid_layout, GTK, GRID_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkGridLayout, gtk_grid_layout, GTK, GRID_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_grid_layout_new:^GtkLayoutManager;
+
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_row_homogeneous(grid:PGtkGridLayout; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_row_homogeneous(grid:PGtkGridLayout):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_row_spacing(grid:PGtkGridLayout; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_row_spacing(grid:PGtkGridLayout):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_column_homogeneous(grid:PGtkGridLayout; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_column_homogeneous(grid:PGtkGridLayout):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_column_spacing(grid:PGtkGridLayout; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_column_spacing(grid:PGtkGridLayout):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_row_baseline_position(grid:PGtkGridLayout; row:longint; pos:GtkBaselinePosition);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_row_baseline_position(grid:PGtkGridLayout; row:longint):GtkBaselinePosition;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_set_baseline_row(grid:PGtkGridLayout; row:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_get_baseline_row(grid:PGtkGridLayout):longint;
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOUT_CHILD, GtkLayoutChild)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOUT_CHILD, GtkLayoutChild)
-(* error 
-                                                                         int                  row);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gtk_grid_layout_child_set_row(child:PGtkGridLayoutChild; row:longint);
+
+  { Zeile entfernt  }
   function gtk_grid_layout_child_get_row(child:PGtkGridLayoutChild):longint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_child_set_column(child:PGtkGridLayoutChild; column:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_child_get_column(child:PGtkGridLayoutChild):longint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_child_set_column_span(child:PGtkGridLayoutChild; span:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_child_get_column_span(child:PGtkGridLayoutChild):longint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_layout_child_set_row_span(child:PGtkGridLayoutChild; span:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_layout_child_get_row_span(child:PGtkGridLayoutChild):longint;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_GRID_LAYOUT : longint; { return type might be wrong }
     begin
@@ -99,6 +116,10 @@ G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOU
       GTK_TYPE_GRID_LAYOUT_CHILD:=gtk_grid_layout_child_get_type;
     end;
 
+  function gtk_grid_layout_new:PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_grid_layout_set_row_homogeneous(grid:PGtkGridLayout; homogeneous:gboolean);
   begin
     { You must implement this function }
@@ -144,6 +165,10 @@ G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOU
     { You must implement this function }
   end;
   function gtk_grid_layout_get_baseline_row(grid:PGtkGridLayout):longint;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_grid_layout_child_set_row(child:PGtkGridLayoutChild; row:longint);
   begin
     { You must implement this function }
   end;

@@ -47,6 +47,7 @@
 {$include <gtk/gtktextiter.h>}
 {$include <gtk/gtktextmark.h>}
 {$include <gtk/gtktextchild.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_BUFFER : longint; { return type might be wrong }
@@ -137,143 +138,173 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
-(* error 
-GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_buffer_get_type:GType;
+
   { table is NULL to create a new one  }
-
+  { Zeile entfernt  }
   function gtk_text_buffer_new(table:PGtkTextTagTable):^GtkTextBuffer;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_line_count(buffer:PGtkTextBuffer):longint;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_char_count(buffer:PGtkTextBuffer):longint;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_tag_table(buffer:PGtkTextBuffer):^GtkTextTagTable;
 
   { Delete whole buffer, then insert  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_set_text(buffer:PGtkTextBuffer; text:Pchar; len:longint);
 
   { Insert into the buffer  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_insert(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_insert_at_cursor(buffer:PGtkTextBuffer; text:Pchar; len:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_buffer_insert_interactive(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint; default_editable:gboolean):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_buffer_insert_interactive_at_cursor(buffer:PGtkTextBuffer; text:Pchar; len:longint; default_editable:gboolean):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_insert_range(buffer:PGtkTextBuffer; iter:PGtkTextIter; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_buffer_insert_range_interactive(buffer:PGtkTextBuffer; iter:PGtkTextIter; start:PGtkTextIter; end:PGtkTextIter; default_editable:gboolean):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                   ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gtk_text_buffer_insert_with_tags(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint; first_tag:PGtkTextTag; 
+              args:array of const);
 
-    var
- : pointer;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-(* error 
-                                                   ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
- : pointer;
-(* Const before type ignored *)
+  procedure gtk_text_buffer_insert_with_tags_by_name(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint; first_tag_name:Pchar; 
+              args:array of const);
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
   procedure gtk_text_buffer_insert_markup(buffer:PGtkTextBuffer; iter:PGtkTextIter; markup:Pchar; len:longint);
 
   { Delete from the buffer  }
+  { Zeile entfernt  }
   procedure gtk_text_buffer_delete(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_delete_interactive(buffer:PGtkTextBuffer; start_iter:PGtkTextIter; end_iter:PGtkTextIter; default_editable:gboolean):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_backspace(buffer:PGtkTextBuffer; iter:PGtkTextIter; interactive:gboolean; default_editable:gboolean):gboolean;
 
   { Obtain strings from the buffer  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_buffer_get_text(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter; include_hidden_chars:gboolean):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_buffer_get_slice(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter; include_hidden_chars:gboolean):^char;
 
   { Insert a paintable  }
+  { Zeile entfernt  }
   procedure gtk_text_buffer_insert_paintable(buffer:PGtkTextBuffer; iter:PGtkTextIter; paintable:PGdkPaintable);
 
   { Insert a child anchor  }
+  { Zeile entfernt  }
   procedure gtk_text_buffer_insert_child_anchor(buffer:PGtkTextBuffer; iter:PGtkTextIter; anchor:PGtkTextChildAnchor);
 
   { Convenience, create and insert a child anchor  }
+  { Zeile entfernt  }
   function gtk_text_buffer_create_child_anchor(buffer:PGtkTextBuffer; iter:PGtkTextIter):^GtkTextChildAnchor;
 
   { Mark manipulation  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_add_mark(buffer:PGtkTextBuffer; mark:PGtkTextMark; where:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_buffer_create_mark(buffer:PGtkTextBuffer; mark_name:Pchar; where:PGtkTextIter; left_gravity:gboolean):^GtkTextMark;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_move_mark(buffer:PGtkTextBuffer; mark:PGtkTextMark; where:PGtkTextIter);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_delete_mark(buffer:PGtkTextBuffer; mark:PGtkTextMark);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_buffer_get_mark(buffer:PGtkTextBuffer; name:Pchar):^GtkTextMark;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_move_mark_by_name(buffer:PGtkTextBuffer; name:Pchar; where:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_delete_mark_by_name(buffer:PGtkTextBuffer; name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_insert(buffer:PGtkTextBuffer):^GtkTextMark;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_selection_bound(buffer:PGtkTextBuffer):^GtkTextMark;
 
   { efficiently move insert and selection_bound at the same time  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_buffer_place_cursor(buffer:PGtkTextBuffer; where:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_select_range(buffer:PGtkTextBuffer; ins:PGtkTextIter; bound:PGtkTextIter);
 
   { Tag manipulation  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_apply_tag(buffer:PGtkTextBuffer; tag:PGtkTextTag; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_remove_tag(buffer:PGtkTextBuffer; tag:PGtkTextTag; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_apply_tag_by_name(buffer:PGtkTextBuffer; name:Pchar; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_remove_tag_by_name(buffer:PGtkTextBuffer; name:Pchar; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_text_buffer_remove_all_tags(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter);
@@ -281,6 +312,7 @@ GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
   { You can either ignore the return value, or use it to
    * set the attributes of the tag. tag_name can be NULL
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_text_buffer_create_tag(buffer:PGtkTextBuffer; tag_name:Pchar; first_property_name:Pchar; args:array of const):^GtkTextTag;
@@ -288,22 +320,31 @@ GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
   { Obtain iterators pointed at various places, then you can move the
    * iterator around using the GtkTextIter operators
     }
+  { Zeile entfernt  }
   function gtk_text_buffer_get_iter_at_line_offset(buffer:PGtkTextBuffer; iter:PGtkTextIter; line_number:longint; char_offset:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_iter_at_line_index(buffer:PGtkTextBuffer; iter:PGtkTextIter; line_number:longint; byte_index:longint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_iter_at_offset(buffer:PGtkTextBuffer; iter:PGtkTextIter; char_offset:longint);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_iter_at_line(buffer:PGtkTextBuffer; iter:PGtkTextIter; line_number:longint):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_start_iter(buffer:PGtkTextBuffer; iter:PGtkTextIter);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_end_iter(buffer:PGtkTextBuffer; iter:PGtkTextIter);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_bounds(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_iter_at_mark(buffer:PGtkTextBuffer; iter:PGtkTextIter; mark:PGtkTextMark);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_get_iter_at_child_anchor(buffer:PGtkTextBuffer; iter:PGtkTextIter; anchor:PGtkTextChildAnchor);
 
   { There's no get_first_iter because you just get the iter for
@@ -313,52 +354,76 @@ GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
      you save, turn it off. Tags and marks do not affect the modified
      flag, but if you would like them to you can connect a handler to
      the tag/mark signals and call set_modified in your handler  }
+  { Zeile entfernt  }
   function gtk_text_buffer_get_modified(buffer:PGtkTextBuffer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_set_modified(buffer:PGtkTextBuffer; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_has_selection(buffer:PGtkTextBuffer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_add_selection_clipboard(buffer:PGtkTextBuffer; clipboard:PGdkClipboard);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_remove_selection_clipboard(buffer:PGtkTextBuffer; clipboard:PGdkClipboard);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_cut_clipboard(buffer:PGtkTextBuffer; clipboard:PGdkClipboard; default_editable:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_copy_clipboard(buffer:PGtkTextBuffer; clipboard:PGdkClipboard);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_paste_clipboard(buffer:PGtkTextBuffer; clipboard:PGdkClipboard; override_location:PGtkTextIter; default_editable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_selection_bounds(buffer:PGtkTextBuffer; start:PGtkTextIter; end:PGtkTextIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_delete_selection(buffer:PGtkTextBuffer; interactive:gboolean; default_editable:gboolean):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_selection_content(buffer:PGtkTextBuffer):^GdkContentProvider;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_can_undo(buffer:PGtkTextBuffer):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_can_redo(buffer:PGtkTextBuffer):gboolean;
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_enable_undo(buffer:PGtkTextBuffer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_set_enable_undo(buffer:PGtkTextBuffer; enable_undo:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_buffer_get_max_undo_levels(buffer:PGtkTextBuffer):guint;
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_set_max_undo_levels(buffer:PGtkTextBuffer; max_undo_levels:guint);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_undo(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_redo(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_begin_irreversible_action(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_end_irreversible_action(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_begin_user_action(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_buffer_end_user_action(buffer:PGtkTextBuffer);
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_BUFFER : longint; { return type might be wrong }
@@ -406,6 +471,10 @@ GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
     GTK_TEXT_BUFFER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TEXT_BUFFER,GtkTextBufferClass);
   end;
 
+  function gtk_text_buffer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_buffer_new(table:PGtkTextTagTable):PGtkTextBuffer;
   begin
     { You must implement this function }
@@ -447,6 +516,14 @@ GType        gtk_text_buffer_get_type       (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gtk_text_buffer_insert_range_interactive(buffer:PGtkTextBuffer; iter:PGtkTextIter; start:PGtkTextIter; end:PGtkTextIter; default_editable:gboolean):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_text_buffer_insert_with_tags(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint; first_tag:PGtkTextTag);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_text_buffer_insert_with_tags_by_name(buffer:PGtkTextBuffer; iter:PGtkTextIter; text:Pchar; len:longint; first_tag_name:Pchar);
   begin
     { You must implement this function }
   end;

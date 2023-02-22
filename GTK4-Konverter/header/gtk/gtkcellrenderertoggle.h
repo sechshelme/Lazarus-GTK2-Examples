@@ -25,7 +25,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_CELL_RENDERER_TOGGLE			(gtk_cell_renderer_toggle_get_type ())
@@ -35,30 +35,30 @@
 typedef struct _GtkCellRendererToggle              GtkCellRendererToggle;
 
 
-
-GType            gtk_cell_renderer_toggle_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType            gtk_cell_renderer_toggle_get_type       (void) ;
+/* Zeile entfernt */
 GtkCellRenderer *gtk_cell_renderer_toggle_new            (void);
 
-
+/* Zeile entfernt */
 gboolean         gtk_cell_renderer_toggle_get_radio      (GtkCellRendererToggle *toggle);
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_toggle_set_radio      (GtkCellRendererToggle *toggle,
                                                           gboolean               radio);
 
-
+/* Zeile entfernt */
 gboolean        gtk_cell_renderer_toggle_get_active      (GtkCellRendererToggle *toggle);
-
+/* Zeile entfernt */
 void            gtk_cell_renderer_toggle_set_active      (GtkCellRendererToggle *toggle,
                                                           gboolean               setting);
 
-
+/* Zeile entfernt */
 gboolean        gtk_cell_renderer_toggle_get_activatable (GtkCellRendererToggle *toggle);
-
+/* Zeile entfernt */
 void            gtk_cell_renderer_toggle_set_activatable (GtkCellRendererToggle *toggle,
                                                           gboolean               setting);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_RENDERER_TOGGLE_H__ */

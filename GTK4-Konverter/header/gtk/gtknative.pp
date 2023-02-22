@@ -34,26 +34,32 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_NATIVE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gtk_native_realize(self:PGtkNative);
+
+  { Zeile entfernt  }
   procedure gtk_native_unrealize(self:PGtkNative);
 
+  { Zeile entfernt  }
   function gtk_native_get_for_surface(surface:PGdkSurface):^GtkNative;
 
+  { Zeile entfernt  }
   function gtk_native_get_surface(self:PGtkNative):^GdkSurface;
 
+  { Zeile entfernt  }
   function gtk_native_get_renderer(self:PGtkNative):^GskRenderer;
 
+  { Zeile entfernt  }
   procedure gtk_native_get_surface_transform(self:PGtkNative; x:Pdouble; y:Pdouble);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_NATIVE_H__  }
   { was #define dname def_expr }
@@ -62,6 +68,10 @@ G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
       GTK_TYPE_NATIVE:=gtk_native_get_type;
     end;
 
+  procedure gtk_native_realize(self:PGtkNative);
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_native_unrealize(self:PGtkNative);
   begin
     { You must implement this function }

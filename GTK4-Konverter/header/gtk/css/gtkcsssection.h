@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gtk/css/gtkcsslocation.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CSS_SECTION         (gtk_css_section_get_type ())
 
@@ -40,35 +40,35 @@
  */
 typedef struct _GtkCssSection GtkCssSection;
 
+/* Zeile entfernt */
+GType              gtk_css_section_get_type            (void) ;
 
-GType              gtk_css_section_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkCssSection *    gtk_css_section_new                 (GFile                *file,
                                                         const GtkCssLocation *start,
                                                         const GtkCssLocation *end);
-
+/* Zeile entfernt */
 GtkCssSection *    gtk_css_section_ref                 (GtkCssSection        *section);
-
+/* Zeile entfernt */
 void               gtk_css_section_unref               (GtkCssSection        *section);
 
-
+/* Zeile entfernt */
 void               gtk_css_section_print               (const GtkCssSection  *section,
                                                         GString              *string);
-
+/* Zeile entfernt */
 char *             gtk_css_section_to_string           (const GtkCssSection  *section);
 
-
+/* Zeile entfernt */
 GtkCssSection *    gtk_css_section_get_parent          (const GtkCssSection  *section);
-
+/* Zeile entfernt */
 GFile *            gtk_css_section_get_file            (const GtkCssSection  *section);
-
+/* Zeile entfernt */
 const GtkCssLocation *
                    gtk_css_section_get_start_location  (const GtkCssSection  *section);
-
+/* Zeile entfernt */
 const GtkCssLocation *
                    gtk_css_section_get_end_location    (const GtkCssSection  *section);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CSS_SECTION_H__ */

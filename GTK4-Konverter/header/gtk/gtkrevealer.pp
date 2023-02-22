@@ -30,6 +30,7 @@
 {$ifndef __GTK_REVEALER_H__}
 {$define __GTK_REVEALER_H__}  
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_REVEALER : longint; { return type might be wrong }
@@ -58,33 +59,41 @@
       GTK_REVEALER_TRANSITION_TYPE_SWING_UP,
       GTK_REVEALER_TRANSITION_TYPE_SWING_DOWN
       );
-(* error 
-GType                      gtk_revealer_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_revealer_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_revealer_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_revealer_get_reveal_child(revealer:PGtkRevealer):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_revealer_set_reveal_child(revealer:PGtkRevealer; reveal_child:gboolean);
 
+  { Zeile entfernt  }
   function gtk_revealer_get_child_revealed(revealer:PGtkRevealer):gboolean;
 
+  { Zeile entfernt  }
   function gtk_revealer_get_transition_duration(revealer:PGtkRevealer):guint;
 
+  { Zeile entfernt  }
   procedure gtk_revealer_set_transition_duration(revealer:PGtkRevealer; duration:guint);
 
+  { Zeile entfernt  }
   procedure gtk_revealer_set_transition_type(revealer:PGtkRevealer; transition:GtkRevealerTransitionType);
 
+  { Zeile entfernt  }
   function gtk_revealer_get_transition_type(revealer:PGtkRevealer):GtkRevealerTransitionType;
 
+  { Zeile entfernt  }
   procedure gtk_revealer_set_child(revealer:PGtkRevealer; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_revealer_get_child(revealer:PGtkRevealer):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_REVEALER_H__  }
   { was #define dname def_expr }
@@ -109,6 +118,10 @@ GType                      gtk_revealer_get_type                (void) G_GNUC_CO
     GTK_IS_REVEALER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_REVEALER);
   end;
 
+  function gtk_revealer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_revealer_new:PGtkWidget;
   begin
     { You must implement this function }

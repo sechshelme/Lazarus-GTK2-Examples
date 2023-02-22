@@ -36,6 +36,7 @@
 {$include <gtk/gtk.h>}
 {$include <gtk/gtkprinter.h>}
 {$include <gtk/gtkprintjob.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_UNIX_DIALOG : longint; { return type might be wrong }
@@ -53,50 +54,66 @@
 
   type
     _GtkPrintUnixDialog = GtkPrintUnixDialog;
-(* error 
-GType                gtk_print_unix_dialog_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_print_unix_dialog_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_print_unix_dialog_new(title:Pchar; parent:PGtkWindow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_page_setup(dialog:PGtkPrintUnixDialog; page_setup:PGtkPageSetup);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_page_setup(dialog:PGtkPrintUnixDialog):^GtkPageSetup;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_current_page(dialog:PGtkPrintUnixDialog; current_page:longint);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_current_page(dialog:PGtkPrintUnixDialog):longint;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_settings(dialog:PGtkPrintUnixDialog; settings:PGtkPrintSettings);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_settings(dialog:PGtkPrintUnixDialog):^GtkPrintSettings;
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_selected_printer(dialog:PGtkPrintUnixDialog):^GtkPrinter;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_add_custom_tab(dialog:PGtkPrintUnixDialog; child:PGtkWidget; tab_label:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_manual_capabilities(dialog:PGtkPrintUnixDialog; capabilities:GtkPrintCapabilities);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_manual_capabilities(dialog:PGtkPrintUnixDialog):GtkPrintCapabilities;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_support_selection(dialog:PGtkPrintUnixDialog; support_selection:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_support_selection(dialog:PGtkPrintUnixDialog):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_has_selection(dialog:PGtkPrintUnixDialog; has_selection:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_has_selection(dialog:PGtkPrintUnixDialog):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_unix_dialog_set_embed_page_setup(dialog:PGtkPrintUnixDialog; embed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_embed_page_setup(dialog:PGtkPrintUnixDialog):gboolean;
 
+  { Zeile entfernt  }
   function gtk_print_unix_dialog_get_page_setup_set(dialog:PGtkPrintUnixDialog):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_UNIX_DIALOG_H__  }
   { was #define dname def_expr }
@@ -121,6 +138,10 @@ GType                gtk_print_unix_dialog_get_type                (void) G_GNUC
     GTK_IS_PRINT_UNIX_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PRINT_UNIX_DIALOG);
   end;
 
+  function gtk_print_unix_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_print_unix_dialog_new(title:Pchar; parent:PGtkWindow):PGtkWidget;
   begin
     { You must implement this function }

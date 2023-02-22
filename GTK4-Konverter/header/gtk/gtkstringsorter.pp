@@ -32,24 +32,29 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STRING_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, GtkSorter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, GtkSorter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_string_sorter_new(expression:PGtkExpression):^GtkStringSorter;
+
+  { Zeile entfernt  }
   function gtk_string_sorter_get_expression(self:PGtkStringSorter):^GtkExpression;
 
+  { Zeile entfernt  }
   procedure gtk_string_sorter_set_expression(self:PGtkStringSorter; expression:PGtkExpression);
 
+  { Zeile entfernt  }
   function gtk_string_sorter_get_ignore_case(self:PGtkStringSorter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_string_sorter_set_ignore_case(self:PGtkStringSorter; ignore_case:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STRING_SORTER_H__  }
   { was #define dname def_expr }
@@ -58,6 +63,10 @@ G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, Gt
       GTK_TYPE_STRING_SORTER:=gtk_string_sorter_get_type;
     end;
 
+  function gtk_string_sorter_new(expression:PGtkExpression):PGtkStringSorter;
+  begin
+    { You must implement this function }
+  end;
   function gtk_string_sorter_get_expression(self:PGtkStringSorter):PGtkExpression;
   begin
     { You must implement this function }

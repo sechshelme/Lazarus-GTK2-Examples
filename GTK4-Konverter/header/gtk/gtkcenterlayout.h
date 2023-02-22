@@ -19,40 +19,40 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CENTER_LAYOUT (gtk_center_layout_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkCenterLayout, gtk_center_layout, GTK, CENTER_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_center_layout_new                   (void);
-
+/* Zeile entfernt */
 void                    gtk_center_layout_set_orientation       (GtkCenterLayout     *self,
                                                                  GtkOrientation       orientation);
-
+/* Zeile entfernt */
 GtkOrientation          gtk_center_layout_get_orientation       (GtkCenterLayout     *self);
-
+/* Zeile entfernt */
 void                    gtk_center_layout_set_baseline_position (GtkCenterLayout     *self,
                                                                  GtkBaselinePosition  baseline_position);
-
+/* Zeile entfernt */
 GtkBaselinePosition     gtk_center_layout_get_baseline_position (GtkCenterLayout     *self);
-
+/* Zeile entfernt */
 void                    gtk_center_layout_set_start_widget      (GtkCenterLayout     *self,
                                                                  GtkWidget           *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_center_layout_get_start_widget      (GtkCenterLayout     *self);
-
+/* Zeile entfernt */
 void                    gtk_center_layout_set_center_widget     (GtkCenterLayout     *self,
                                                                  GtkWidget           *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_center_layout_get_center_widget     (GtkCenterLayout     *self);
-
+/* Zeile entfernt */
 void                    gtk_center_layout_set_end_widget        (GtkCenterLayout     *self,
                                                                  GtkWidget           *widget);
-
+/* Zeile entfernt */
 GtkWidget *             gtk_center_layout_get_end_widget        (GtkCenterLayout     *self);
 
 
-
+/* Zeile entfernt */

@@ -28,9 +28,12 @@
 {$error "Only <gdk/x11/gdkx.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
   function gdk_x11_device_get_id(device:PGdkDevice):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_DEVICE_H__  }
   function gdk_x11_device_get_id(device:PGdkDevice):longint;

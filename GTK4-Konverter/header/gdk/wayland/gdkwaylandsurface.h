@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-
+/* Zeile entfernt */
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandSurface GdkWaylandSurface;
@@ -50,39 +50,39 @@ typedef GdkPopup GdkWaylandPopup;
 #define GDK_WAYLAND_POPUP(object)             (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_POPUP, GdkWaylandPopup))
 #define GDK_IS_WAYLAND_POPUP(object)          (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_WAYLAND_POPUP))
 
-
+/* Zeile entfernt */
 GType                    gdk_wayland_surface_get_type             (void);
 
-
+/* Zeile entfernt */
 GType                    gdk_wayland_toplevel_get_type            (void);
 
-
+/* Zeile entfernt */
 GType                    gdk_wayland_popup_get_type               (void);
 
-
+/* Zeile entfernt */
 struct wl_surface       *gdk_wayland_surface_get_wl_surface       (GdkSurface *surface);
 
 typedef void (*GdkWaylandToplevelExported) (GdkToplevel *toplevel,
                                             const char  *handle,
                                             gpointer     user_data);
 
-
+/* Zeile entfernt */
 gboolean                 gdk_wayland_toplevel_export_handle (GdkToplevel              *toplevel,
                                                              GdkWaylandToplevelExported callback,
                                                              gpointer                 user_data,
                                                              GDestroyNotify           destroy_func);
 
-
+/* Zeile entfernt */
 void                     gdk_wayland_toplevel_unexport_handle (GdkToplevel *toplevel);
 
-
+/* Zeile entfernt */
 gboolean                 gdk_wayland_toplevel_set_transient_for_exported (GdkToplevel *toplevel,
                                                                          const char   *parent_handle_str);
 
-
+/* Zeile entfernt */
 void                     gdk_wayland_toplevel_set_application_id (GdkToplevel *toplevel,
                                                                   const char  *application_id);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_WAYLAND_SURFACE_H__ */

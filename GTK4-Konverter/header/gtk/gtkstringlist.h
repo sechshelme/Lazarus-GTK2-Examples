@@ -26,51 +26,51 @@
 #endif
 
 #include <gio/gio.h>
-/* for GDK_AVAILABLE_IN_ALL */
+/* Zeile entfernt */
 #include <gdk/gdk.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STRING_OBJECT (gtk_string_object_get_type ())
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkStringObject, gtk_string_object, GTK, STRING_OBJECT, GObject)
-
-
+/* Zeile entfernt */
 GtkStringObject *       gtk_string_object_new        (const char      *string);
-
+/* Zeile entfernt */
 const char *            gtk_string_object_get_string (GtkStringObject *self);
 
 #define GTK_TYPE_STRING_LIST (gtk_string_list_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
-
-
+/* Zeile entfernt */
 GtkStringList * gtk_string_list_new             (const char * const    *strings);
 
-
+/* Zeile entfernt */
 void            gtk_string_list_append          (GtkStringList         *self,
                                                  const char            *string);
 
-
+/* Zeile entfernt */
 void            gtk_string_list_take            (GtkStringList         *self,
                                                  char                  *string);
 
-
+/* Zeile entfernt */
 void            gtk_string_list_remove          (GtkStringList         *self,
                                                  guint                  position);
 
-
+/* Zeile entfernt */
 void            gtk_string_list_splice          (GtkStringList         *self,
                                                  guint                  position,
                                                  guint                  n_removals,
                                                  const char * const    *additions);
 
-
+/* Zeile entfernt */
 const char *    gtk_string_list_get_string      (GtkStringList         *self,
                                                  guint                  position);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STRING_LIST_H__ */

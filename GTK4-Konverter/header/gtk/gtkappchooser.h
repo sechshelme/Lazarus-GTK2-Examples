@@ -30,7 +30,7 @@
 #include <gio/gio.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APP_CHOOSER    (gtk_app_chooser_get_type ())
 #define GTK_APP_CHOOSER(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER, GtkAppChooser))
@@ -38,17 +38,17 @@
 
 typedef struct _GtkAppChooser GtkAppChooser;
 
+/* Zeile entfernt */
+GType      gtk_app_chooser_get_type         (void) ;
 
-GType      gtk_app_chooser_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GAppInfo * gtk_app_chooser_get_app_info     (GtkAppChooser *self);
-
+/* Zeile entfernt */
 char *    gtk_app_chooser_get_content_type (GtkAppChooser *self);
-
+/* Zeile entfernt */
 void       gtk_app_chooser_refresh          (GtkAppChooser *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APP_CHOOSER_H__ */
 

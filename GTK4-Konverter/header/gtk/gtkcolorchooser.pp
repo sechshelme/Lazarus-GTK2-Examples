@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_COLOR_CHOOSER : longint; { return type might be wrong }
@@ -68,24 +69,27 @@
         padding : array[0..11] of gpointer;
       end;
 
-(* error 
-GType    gtk_color_chooser_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_color_chooser_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_color_chooser_get_rgba(chooser:PGtkColorChooser; color:PGdkRGBA);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_color_chooser_set_rgba(chooser:PGtkColorChooser; color:PGdkRGBA);
 
+  { Zeile entfernt  }
   function gtk_color_chooser_get_use_alpha(chooser:PGtkColorChooser):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_color_chooser_set_use_alpha(chooser:PGtkColorChooser; use_alpha:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_color_chooser_add_palette(chooser:PGtkColorChooser; orientation:GtkOrientation; colors_per_line:longint; n_colors:longint; colors:PGdkRGBA);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COLOR_CHOOSER_H__  }
   { was #define dname def_expr }
@@ -118,6 +122,10 @@ GType    gtk_color_chooser_get_type        (void) G_GNUC_CONST;
     GTK_COLOR_CHOOSER_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_COLOR_CHOOSER,GtkColorChooserInterface);
   end;
 
+  function gtk_color_chooser_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_color_chooser_get_rgba(chooser:PGtkColorChooser; color:PGdkRGBA);
   begin
     { You must implement this function }

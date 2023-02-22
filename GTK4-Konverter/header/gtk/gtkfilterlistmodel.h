@@ -29,36 +29,36 @@
 #include <gtk/gtkfilter.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FILTER_LIST_MODEL (gtk_filter_list_model_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIST_MODEL, GObject)
-
-
+/* Zeile entfernt */
 GtkFilterListModel *    gtk_filter_list_model_new               (GListModel             *model,
                                                                  GtkFilter              *filter);
 
-
+/* Zeile entfernt */
 void                    gtk_filter_list_model_set_filter        (GtkFilterListModel     *self,
                                                                  GtkFilter              *filter);
-
+/* Zeile entfernt */
 GtkFilter *             gtk_filter_list_model_get_filter        (GtkFilterListModel     *self);
-
+/* Zeile entfernt */
 void                    gtk_filter_list_model_set_model         (GtkFilterListModel     *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 GListModel *            gtk_filter_list_model_get_model         (GtkFilterListModel     *self);
-
+/* Zeile entfernt */
 void                    gtk_filter_list_model_set_incremental   (GtkFilterListModel     *self,
                                                                  gboolean                incremental);
-
+/* Zeile entfernt */
 gboolean                gtk_filter_list_model_get_incremental   (GtkFilterListModel     *self);
-
+/* Zeile entfernt */
 guint                   gtk_filter_list_model_get_pending       (GtkFilterListModel     *self);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FILTER_LIST_MODEL_H__ */

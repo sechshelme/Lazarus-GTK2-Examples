@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_BOX            (gtk_box_get_type ())
@@ -66,48 +66,48 @@ struct _GtkBoxClass
 };
 
 
-
-GType       gtk_box_get_type            (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_box_get_type            (void) ;
+/* Zeile entfernt */
 GtkWidget*  gtk_box_new                 (GtkOrientation  orientation,
                                          int             spacing);
-
+/* Zeile entfernt */
 void        gtk_box_set_homogeneous     (GtkBox         *box,
                                          gboolean        homogeneous);
-
+/* Zeile entfernt */
 gboolean    gtk_box_get_homogeneous     (GtkBox         *box);
-
+/* Zeile entfernt */
 void        gtk_box_set_spacing         (GtkBox         *box,
                                          int             spacing);
-
+/* Zeile entfernt */
 int         gtk_box_get_spacing         (GtkBox         *box);
-
+/* Zeile entfernt */
 void        gtk_box_set_baseline_position (GtkBox             *box,
                                            GtkBaselinePosition position);
-
+/* Zeile entfernt */
 GtkBaselinePosition gtk_box_get_baseline_position (GtkBox         *box);
 
-
+/* Zeile entfernt */
 void        gtk_box_append             (GtkBox         *box,
                                         GtkWidget      *child);
-
+/* Zeile entfernt */
 void        gtk_box_prepend            (GtkBox         *box,
                                         GtkWidget      *child);
-
+/* Zeile entfernt */
 void        gtk_box_remove             (GtkBox         *box,
                                         GtkWidget      *child);
 
-
+/* Zeile entfernt */
 void        gtk_box_insert_child_after (GtkBox         *box,
                                         GtkWidget      *child,
                                         GtkWidget      *sibling);
 
-
+/* Zeile entfernt */
 void        gtk_box_reorder_child_after (GtkBox         *box,
                                          GtkWidget      *child,
                                          GtkWidget      *sibling);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BOX_H__ */

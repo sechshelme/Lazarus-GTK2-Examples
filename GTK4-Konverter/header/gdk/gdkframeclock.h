@@ -31,7 +31,7 @@
 
 #include <gdk/gdkframetimings.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_FRAME_CLOCK            (gdk_frame_clock_get_type ())
 #define GDK_FRAME_CLOCK(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_FRAME_CLOCK, GdkFrameClock))
@@ -70,42 +70,42 @@ typedef enum {
   GDK_FRAME_CLOCK_PHASE_AFTER_PAINT   = 1 << 6
 } GdkFrameClockPhase;
 
+/* Zeile entfernt */
+GType    gdk_frame_clock_get_type             (void) ;
 
-GType    gdk_frame_clock_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 gint64   gdk_frame_clock_get_frame_time            (GdkFrameClock *frame_clock);
 
-
+/* Zeile entfernt */
 void               gdk_frame_clock_request_phase (GdkFrameClock      *frame_clock,
                                                   GdkFrameClockPhase  phase);
 
-
+/* Zeile entfernt */
 void               gdk_frame_clock_begin_updating (GdkFrameClock      *frame_clock);
-
+/* Zeile entfernt */
 void               gdk_frame_clock_end_updating   (GdkFrameClock      *frame_clock);
 
 /* Frame history */
-
+/* Zeile entfernt */
 gint64           gdk_frame_clock_get_frame_counter (GdkFrameClock *frame_clock);
-
+/* Zeile entfernt */
 gint64           gdk_frame_clock_get_history_start (GdkFrameClock *frame_clock);
-
+/* Zeile entfernt */
 GdkFrameTimings *gdk_frame_clock_get_timings       (GdkFrameClock *frame_clock,
                                                     gint64         frame_counter);
 
-
+/* Zeile entfernt */
 GdkFrameTimings *gdk_frame_clock_get_current_timings (GdkFrameClock *frame_clock);
 
-
+/* Zeile entfernt */
 void gdk_frame_clock_get_refresh_info (GdkFrameClock *frame_clock,
                                        gint64         base_time,
                                        gint64        *refresh_interval_return,
                                        gint64        *presentation_time_return);
 
-
+/* Zeile entfernt */
 double gdk_frame_clock_get_fps (GdkFrameClock *frame_clock);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_FRAME_CLOCK_H__ */

@@ -26,22 +26,22 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
+/* Zeile entfernt */
 
 
-
-
+/* Zeile entfernt */
 GdkContentProvider *    gdk_content_provider_new_for_value              (const GValue           *value);
-
+/* Zeile entfernt */
 GdkContentProvider *    gdk_content_provider_new_typed                  (GType                   type,
                                                                          ...);
-
+/* Zeile entfernt */
 GdkContentProvider *    gdk_content_provider_new_union                  (GdkContentProvider    **providers,
                                                                          gsize                   n_providers);
-
+/* Zeile entfernt */
 GdkContentProvider *    gdk_content_provider_new_for_bytes              (const char             *mime_type,
                                                                          GBytes                 *bytes);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CONTENT_PROVIDER_IMPL_H__ */

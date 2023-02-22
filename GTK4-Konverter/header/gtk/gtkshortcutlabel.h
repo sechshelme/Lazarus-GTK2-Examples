@@ -21,7 +21,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT_LABEL (gtk_shortcut_label_get_type())
 #define GTK_SHORTCUT_LABEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUT_LABEL, GtkShortcutLabel))
@@ -31,26 +31,26 @@
 typedef struct _GtkShortcutLabel      GtkShortcutLabel;
 typedef struct _GtkShortcutLabelClass GtkShortcutLabelClass;
 
+/* Zeile entfernt */
+GType        gtk_shortcut_label_get_type        (void) ;
 
-GType        gtk_shortcut_label_get_type        (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget   *gtk_shortcut_label_new             (const char       *accelerator);
 
-
+/* Zeile entfernt */
 const char *gtk_shortcut_label_get_accelerator (GtkShortcutLabel *self);
 
-
+/* Zeile entfernt */
 void         gtk_shortcut_label_set_accelerator (GtkShortcutLabel *self,
                                                  const char       *accelerator);
 
-
+/* Zeile entfernt */
 const char *gtk_shortcut_label_get_disabled_text (GtkShortcutLabel *self);
 
-
+/* Zeile entfernt */
 void         gtk_shortcut_label_set_disabled_text (GtkShortcutLabel *self,
                                                    const char       *disabled_text);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUT_LABEL_H__ */

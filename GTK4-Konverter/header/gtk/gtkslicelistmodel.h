@@ -29,34 +29,34 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SLICE_LIST_MODEL (gtk_slice_list_model_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_MODEL, GObject)
-
-
+/* Zeile entfernt */
 GtkSliceListModel *     gtk_slice_list_model_new                (GListModel             *model,
                                                                  guint                   offset,
                                                                  guint                   size);
 
-
+/* Zeile entfernt */
 void                    gtk_slice_list_model_set_model          (GtkSliceListModel      *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 GListModel *            gtk_slice_list_model_get_model          (GtkSliceListModel      *self);
-
+/* Zeile entfernt */
 void                    gtk_slice_list_model_set_offset         (GtkSliceListModel      *self,
                                                                  guint                   offset);
-
+/* Zeile entfernt */
 guint                   gtk_slice_list_model_get_offset         (GtkSliceListModel      *self);
-
+/* Zeile entfernt */
 void                    gtk_slice_list_model_set_size           (GtkSliceListModel      *self,
                                                                  guint                   size);
-
+/* Zeile entfernt */
 guint                   gtk_slice_list_model_get_size           (GtkSliceListModel      *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SLICE_LIST_MODEL_H__ */

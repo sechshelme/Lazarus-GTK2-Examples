@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_MODEL            (gtk_tree_model_get_type ())
 #define GTK_TREE_MODEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_MODEL, GtkTreeModel))
@@ -192,57 +192,57 @@ struct _GtkTreeModelIface
 
 
 /* GtkTreePath operations */
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_new              (void);
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_new_from_string  (const char        *path);
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_new_from_indices (int                first_index,
 					     ...);
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_new_from_indicesv (int              *indices,
 					      gsize             length);
-
+/* Zeile entfernt */
 char        *gtk_tree_path_to_string        (GtkTreePath       *path);
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_new_first        (void);
-
+/* Zeile entfernt */
 void         gtk_tree_path_append_index     (GtkTreePath       *path,
 					     int                index_);
-
+/* Zeile entfernt */
 void         gtk_tree_path_prepend_index    (GtkTreePath       *path,
 					     int                index_);
-
+/* Zeile entfernt */
 int          gtk_tree_path_get_depth        (GtkTreePath       *path);
-
+/* Zeile entfernt */
 int         *gtk_tree_path_get_indices      (GtkTreePath       *path);
 
-
+/* Zeile entfernt */
 int         *gtk_tree_path_get_indices_with_depth (GtkTreePath *path,
 						   int         *depth);
 
-
+/* Zeile entfernt */
 void         gtk_tree_path_free             (GtkTreePath       *path);
-
+/* Zeile entfernt */
 GtkTreePath *gtk_tree_path_copy             (const GtkTreePath *path);
-
-GType        gtk_tree_path_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_tree_path_get_type         (void) ;
+/* Zeile entfernt */
 int          gtk_tree_path_compare          (const GtkTreePath *a,
 					     const GtkTreePath *b);
-
+/* Zeile entfernt */
 void         gtk_tree_path_next             (GtkTreePath       *path);
-
+/* Zeile entfernt */
 gboolean     gtk_tree_path_prev             (GtkTreePath       *path);
-
+/* Zeile entfernt */
 gboolean     gtk_tree_path_up               (GtkTreePath       *path);
-
+/* Zeile entfernt */
 void         gtk_tree_path_down             (GtkTreePath       *path);
 
-
+/* Zeile entfernt */
 gboolean     gtk_tree_path_is_ancestor      (GtkTreePath       *path,
                                              GtkTreePath       *descendant);
-
+/* Zeile entfernt */
 gboolean     gtk_tree_path_is_descendant    (GtkTreePath       *path,
                                              GtkTreePath       *ancestor);
 
@@ -254,155 +254,155 @@ gboolean     gtk_tree_path_is_descendant    (GtkTreePath       *path,
  * new GtkTreeRowReference with gtk_tree_row_reference_new().
  */
 
-
-GType                gtk_tree_row_reference_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                gtk_tree_row_reference_get_type (void) ;
+/* Zeile entfernt */
 GtkTreeRowReference *gtk_tree_row_reference_new       (GtkTreeModel        *model,
 						       GtkTreePath         *path);
-
+/* Zeile entfernt */
 GtkTreeRowReference *gtk_tree_row_reference_new_proxy (GObject             *proxy,
 						       GtkTreeModel        *model,
 						       GtkTreePath         *path);
-
+/* Zeile entfernt */
 GtkTreePath         *gtk_tree_row_reference_get_path  (GtkTreeRowReference *reference);
-
+/* Zeile entfernt */
 GtkTreeModel        *gtk_tree_row_reference_get_model (GtkTreeRowReference *reference);
-
+/* Zeile entfernt */
 gboolean             gtk_tree_row_reference_valid     (GtkTreeRowReference *reference);
-
+/* Zeile entfernt */
 GtkTreeRowReference *gtk_tree_row_reference_copy      (GtkTreeRowReference *reference);
-
+/* Zeile entfernt */
 void                 gtk_tree_row_reference_free      (GtkTreeRowReference *reference);
 /* These two functions are only needed if you created the row reference with a
  * proxy object */
-
+/* Zeile entfernt */
 void                 gtk_tree_row_reference_inserted  (GObject     *proxy,
 						       GtkTreePath *path);
-
+/* Zeile entfernt */
 void                 gtk_tree_row_reference_deleted   (GObject     *proxy,
 						       GtkTreePath *path);
-
+/* Zeile entfernt */
 void                 gtk_tree_row_reference_reordered (GObject     *proxy,
 						       GtkTreePath *path,
 						       GtkTreeIter *iter,
 						       int         *new_order);
 
 /* GtkTreeIter operations */
-
+/* Zeile entfernt */
 GtkTreeIter *     gtk_tree_iter_copy             (GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void              gtk_tree_iter_free             (GtkTreeIter  *iter);
+/* Zeile entfernt */
+GType             gtk_tree_iter_get_type         (void) ;
 
-GType             gtk_tree_iter_get_type         (void) G_GNUC_CONST;
-
-
-GType             gtk_tree_model_get_type        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType             gtk_tree_model_get_type        (void) ;
+/* Zeile entfernt */
 GtkTreeModelFlags gtk_tree_model_get_flags       (GtkTreeModel *tree_model);
-
+/* Zeile entfernt */
 int               gtk_tree_model_get_n_columns   (GtkTreeModel *tree_model);
-
+/* Zeile entfernt */
 GType             gtk_tree_model_get_column_type (GtkTreeModel *tree_model,
 						  int           index_);
 
 
 /* Iterator movement */
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_get_iter        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreePath  *path);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_get_iter_from_string (GtkTreeModel *tree_model,
 						       GtkTreeIter  *iter,
 						       const char   *path_string);
-
+/* Zeile entfernt */
 char *           gtk_tree_model_get_string_from_iter (GtkTreeModel *tree_model,
                                                        GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_get_iter_first  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 GtkTreePath *     gtk_tree_model_get_path        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void              gtk_tree_model_get_value       (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  int           column,
 						  GValue       *value);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_previous   (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_next       (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_children   (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_has_child  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 int               gtk_tree_model_iter_n_children (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_nth_child  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent,
 						  int           n);
-
+/* Zeile entfernt */
 gboolean          gtk_tree_model_iter_parent     (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *child);
-
+/* Zeile entfernt */
 void              gtk_tree_model_ref_node        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void              gtk_tree_model_unref_node      (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void              gtk_tree_model_get             (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  ...);
-
+/* Zeile entfernt */
 void              gtk_tree_model_get_valist      (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  va_list       var_args);
 
 
-
+/* Zeile entfernt */
 void              gtk_tree_model_foreach         (GtkTreeModel            *model,
 						  GtkTreeModelForeachFunc  func,
 						  gpointer                 user_data);
 
 /* Signals */
-
+/* Zeile entfernt */
 void gtk_tree_model_row_changed           (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void gtk_tree_model_row_inserted          (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void gtk_tree_model_row_has_child_toggled (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void gtk_tree_model_row_deleted           (GtkTreeModel *tree_model,
 					   GtkTreePath  *path);
-
+/* Zeile entfernt */
 void gtk_tree_model_rows_reordered        (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter,
 					   int          *new_order);
-
+/* Zeile entfernt */
 void gtk_tree_model_rows_reordered_with_length (GtkTreeModel *tree_model,
 						GtkTreePath  *path,
 						GtkTreeIter  *iter,
 						int          *new_order,
 						int           length);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_MODEL_H__ */

@@ -27,12 +27,12 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_PAINTABLE               (gdk_paintable_get_type ())
 
-
-G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GdkPaintableFlags:
@@ -108,25 +108,25 @@ struct _GdkPaintableInterface
   double                (* get_intrinsic_aspect_ratio)  (GdkPaintable           *paintable);
 };
 
-
+/* Zeile entfernt */
 void            gdk_paintable_snapshot                  (GdkPaintable           *paintable,
                                                          GdkSnapshot            *snapshot,
                                                          double                  width,
                                                          double                  height);
-
+/* Zeile entfernt */
 GdkPaintable *  gdk_paintable_get_current_image         (GdkPaintable           *paintable);
 
-
+/* Zeile entfernt */
 GdkPaintableFlags
                 gdk_paintable_get_flags                 (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 int             gdk_paintable_get_intrinsic_width       (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 int             gdk_paintable_get_intrinsic_height      (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 double          gdk_paintable_get_intrinsic_aspect_ratio(GdkPaintable           *paintable);
 
-
+/* Zeile entfernt */
 void            gdk_paintable_compute_concrete_size     (GdkPaintable           *paintable,
                                                          double                  specified_width,
                                                          double                  specified_height,
@@ -135,15 +135,15 @@ void            gdk_paintable_compute_concrete_size     (GdkPaintable           
                                                          double                 *concrete_width,
                                                          double                 *concrete_height);
 /* for implementations only */
-
+/* Zeile entfernt */
 void            gdk_paintable_invalidate_contents       (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 void            gdk_paintable_invalidate_size           (GdkPaintable           *paintable);
-
+/* Zeile entfernt */
 GdkPaintable *  gdk_paintable_new_empty                 (int                     intrinsic_width,
                                                          int                     intrinsic_height);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_PAINTABLE_H__ */

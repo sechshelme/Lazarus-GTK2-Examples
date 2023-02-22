@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkimcontext.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_IM_MULTICONTEXT : longint; { return type might be wrong }
@@ -79,21 +80,22 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
-(* error 
-GType         gtk_im_multicontext_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_im_multicontext_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_im_multicontext_new:^GtkIMContext;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_im_multicontext_get_context_id(context:PGtkIMMulticontext):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_im_multicontext_set_context_id(context:PGtkIMMulticontext; context_id:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_IM_MULTICONTEXT_H__  }
   { was #define dname def_expr }
@@ -142,6 +144,10 @@ GType         gtk_im_multicontext_get_type (void) G_GNUC_CONST;
     GTK_IM_MULTICONTEXT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_IM_MULTICONTEXT,GtkIMMulticontextClass);
   end;
 
+  function gtk_im_multicontext_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_im_multicontext_new:PGtkIMContext;
   begin
     { You must implement this function }

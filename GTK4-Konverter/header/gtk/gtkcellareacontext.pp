@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcellarea.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_AREA_CONTEXT : longint; { return type might be wrong }
@@ -97,40 +98,48 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType        gtk_cell_area_context_get_type              (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_area_context_get_type:GType;
+
   { Main apis  }
-
+  { Zeile entfernt  }
   function gtk_cell_area_context_get_area(context:PGtkCellAreaContext):^GtkCellArea;
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_allocate(context:PGtkCellAreaContext; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_reset(context:PGtkCellAreaContext);
 
   { Apis for GtkCellArea clients to consult cached values
    * for a series of GtkTreeModel rows
     }
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_get_preferred_width(context:PGtkCellAreaContext; minimum_width:Plongint; natural_width:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_get_preferred_height(context:PGtkCellAreaContext; minimum_height:Plongint; natural_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_get_preferred_height_for_width(context:PGtkCellAreaContext; width:longint; minimum_height:Plongint; natural_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_get_preferred_width_for_height(context:PGtkCellAreaContext; height:longint; minimum_width:Plongint; natural_width:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_get_allocation(context:PGtkCellAreaContext; width:Plongint; height:Plongint);
 
   { Apis for GtkCellArea implementations to update cached values
    * for multiple GtkTreeModel rows
     }
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_push_preferred_width(context:PGtkCellAreaContext; minimum_width:longint; natural_width:longint);
 
+  { Zeile entfernt  }
   procedure gtk_cell_area_context_push_preferred_height(context:PGtkCellAreaContext; minimum_height:longint; natural_height:longint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_AREA_CONTEXT_H__  }
   { was #define dname def_expr }
@@ -179,6 +188,10 @@ GType        gtk_cell_area_context_get_type              (void) G_GNUC_CONST;
     GTK_CELL_AREA_CONTEXT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_CELL_AREA_CONTEXT,GtkCellAreaContextClass);
   end;
 
+  function gtk_cell_area_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_area_context_get_area(context:PGtkCellAreaContext):PGtkCellArea;
   begin
     { You must implement this function }

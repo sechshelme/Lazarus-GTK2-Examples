@@ -30,7 +30,7 @@
 #include <gdk/gdkrectangle.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_MONITOR           (gdk_monitor_get_type ())
 #define GDK_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_MONITOR, GdkMonitor))
@@ -60,33 +60,33 @@ typedef enum {
   GDK_SUBPIXEL_LAYOUT_VERTICAL_BGR
 } GdkSubpixelLayout;
 
+/* Zeile entfernt */
+GType             gdk_monitor_get_type            (void) ;
 
-GType             gdk_monitor_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay  *     gdk_monitor_get_display         (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 void              gdk_monitor_get_geometry        (GdkMonitor   *monitor,
                                                    GdkRectangle *geometry);
-
+/* Zeile entfernt */
 int               gdk_monitor_get_width_mm        (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 int               gdk_monitor_get_height_mm       (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 const char *      gdk_monitor_get_manufacturer    (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 const char *      gdk_monitor_get_model           (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 const char *      gdk_monitor_get_connector       (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 int               gdk_monitor_get_scale_factor    (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 int               gdk_monitor_get_refresh_rate    (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 GdkSubpixelLayout gdk_monitor_get_subpixel_layout (GdkMonitor   *monitor);
-
+/* Zeile entfernt */
 gboolean          gdk_monitor_is_valid            (GdkMonitor   *monitor);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GDK_MONITOR_H__ */

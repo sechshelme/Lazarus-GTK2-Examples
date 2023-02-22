@@ -24,7 +24,7 @@
 
 #include <gtk/gtkdialog.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_COLOR_CHOOSER_DIALOG              (gtk_color_chooser_dialog_get_type ())
 #define GTK_COLOR_CHOOSER_DIALOG(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COLOR_CHOOSER_DIALOG, GtkColorChooserDialog))
@@ -32,13 +32,13 @@
 
 typedef struct _GtkColorChooserDialog        GtkColorChooserDialog;
 
+/* Zeile entfernt */
+GType       gtk_color_chooser_dialog_get_type (void) ;
 
-GType       gtk_color_chooser_dialog_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget * gtk_color_chooser_dialog_new      (const char *title,
                                                GtkWindow   *parent);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_COLOR_CHOOSER_DIALOG_H__ */

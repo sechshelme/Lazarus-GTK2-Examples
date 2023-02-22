@@ -25,32 +25,32 @@
 #include <glib-object.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GdkFrameTimings GdkFrameTimings;
 
+/* Zeile entfernt */
+GType            gdk_frame_timings_get_type (void) ;
 
-GType            gdk_frame_timings_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkFrameTimings *gdk_frame_timings_ref   (GdkFrameTimings *timings);
-
+/* Zeile entfernt */
 void             gdk_frame_timings_unref (GdkFrameTimings *timings);
 
-
+/* Zeile entfernt */
 gint64           gdk_frame_timings_get_frame_counter     (GdkFrameTimings *timings);
-
+/* Zeile entfernt */
 gboolean         gdk_frame_timings_get_complete          (GdkFrameTimings *timings);
-
+/* Zeile entfernt */
 gint64           gdk_frame_timings_get_frame_time        (GdkFrameTimings *timings);
-
+/* Zeile entfernt */
 gint64           gdk_frame_timings_get_presentation_time (GdkFrameTimings *timings);
-
+/* Zeile entfernt */
 gint64           gdk_frame_timings_get_refresh_interval  (GdkFrameTimings *timings);
 
-
+/* Zeile entfernt */
 gint64           gdk_frame_timings_get_predicted_presentation_time (GdkFrameTimings *timings);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_FRAME_TIMINGS_H__ */

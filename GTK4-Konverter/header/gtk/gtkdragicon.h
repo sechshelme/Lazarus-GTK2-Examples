@@ -29,32 +29,32 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_DRAG_ICON (gtk_drag_icon_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkDragIcon, gtk_drag_icon, GTK, DRAG_ICON, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget *     gtk_drag_icon_get_for_drag                      (GdkDrag                *drag);
 
-
+/* Zeile entfernt */
 void            gtk_drag_icon_set_child                         (GtkDragIcon            *self,
                                                                  GtkWidget              *child);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_drag_icon_get_child                         (GtkDragIcon            *self);
 
-
+/* Zeile entfernt */
 void            gtk_drag_icon_set_from_paintable (GdkDrag      *drag,
                                                   GdkPaintable *paintable,
                                                   int           hot_x,
                                                   int           hot_y);
 
-
+/* Zeile entfernt */
 GtkWidget *     gtk_drag_icon_create_widget_for_value           (const GValue           *value);
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_DRAG_ICON_H__ */

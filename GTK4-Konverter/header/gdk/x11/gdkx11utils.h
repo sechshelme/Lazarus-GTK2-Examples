@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GDK_XID_TO_POINTER:
@@ -56,6 +56,6 @@
 #define GDK_POINTER_TO_XID(pointer) GPOINTER_TO_UINT(pointer)
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_UTILS_H__ */

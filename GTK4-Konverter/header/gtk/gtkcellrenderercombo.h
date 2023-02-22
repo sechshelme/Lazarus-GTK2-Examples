@@ -25,7 +25,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtkcellrenderertext.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_RENDERER_COMBO		(gtk_cell_renderer_combo_get_type ())
 #define GTK_CELL_RENDERER_COMBO(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_RENDERER_COMBO, GtkCellRendererCombo))
@@ -33,11 +33,11 @@
 
 typedef struct _GtkCellRendererCombo              GtkCellRendererCombo;
 
-
-GType            gtk_cell_renderer_combo_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType            gtk_cell_renderer_combo_get_type (void) ;
+/* Zeile entfernt */
 GtkCellRenderer *gtk_cell_renderer_combo_new      (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_RENDERER_COMBO_H__ */

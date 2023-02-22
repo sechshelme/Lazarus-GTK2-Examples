@@ -30,37 +30,37 @@
 #include <gtk/gtksorter.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SORT_LIST_MODEL (gtk_sort_list_model_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODEL, GObject)
-
-
+/* Zeile entfernt */
 GtkSortListModel *      gtk_sort_list_model_new                 (GListModel            *model,
                                                                  GtkSorter             *sorter);
-
+/* Zeile entfernt */
 void                    gtk_sort_list_model_set_sorter          (GtkSortListModel       *self,
                                                                  GtkSorter              *sorter);
-
+/* Zeile entfernt */
 GtkSorter *             gtk_sort_list_model_get_sorter          (GtkSortListModel       *self);
 
-
+/* Zeile entfernt */
 void                    gtk_sort_list_model_set_model           (GtkSortListModel       *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 GListModel *            gtk_sort_list_model_get_model           (GtkSortListModel       *self);
 
-
+/* Zeile entfernt */
 void                    gtk_sort_list_model_set_incremental     (GtkSortListModel       *self,
                                                                  gboolean                incremental);
-
+/* Zeile entfernt */
 gboolean                gtk_sort_list_model_get_incremental     (GtkSortListModel       *self);
 
-
+/* Zeile entfernt */
 guint                   gtk_sort_list_model_get_pending         (GtkSortListModel       *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SORT_LIST_MODEL_H__ */

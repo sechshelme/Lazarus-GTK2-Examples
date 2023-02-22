@@ -29,62 +29,62 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
+/* Zeile entfernt */
 
-
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkDrop, g_object_unref)
+/* Zeile entfernt */
 
 #define GDK_TYPE_DROP              (gdk_drop_get_type ())
 #define GDK_DROP(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DROP, GdkDrop))
 #define GDK_IS_DROP(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_DROP))
 
+/* Zeile entfernt */
+GType                   gdk_drop_get_type               (void) ;
 
-GType                   gdk_drop_get_type               (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay *            gdk_drop_get_display            (GdkDrop                *self);
-
+/* Zeile entfernt */
 GdkDevice *             gdk_drop_get_device             (GdkDrop                *self);
-
+/* Zeile entfernt */
 GdkSurface *            gdk_drop_get_surface            (GdkDrop                *self);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_drop_get_formats            (GdkDrop                *self);
-
+/* Zeile entfernt */
 GdkDragAction           gdk_drop_get_actions            (GdkDrop                *self);
-
+/* Zeile entfernt */
 GdkDrag *               gdk_drop_get_drag               (GdkDrop                *self);
 
-
+/* Zeile entfernt */
 void                    gdk_drop_status                 (GdkDrop                *self,
                                                          GdkDragAction           actions,
                                                          GdkDragAction           preferred);
-
+/* Zeile entfernt */
 void                    gdk_drop_finish                 (GdkDrop                *self,
                                                          GdkDragAction           action);
 
-
+/* Zeile entfernt */
 void                    gdk_drop_read_async             (GdkDrop                *self,
                                                          const char            **mime_types,
                                                          int                     io_priority,
                                                          GCancellable           *cancellable,
                                                          GAsyncReadyCallback     callback,
                                                          gpointer                user_data);
-
+/* Zeile entfernt */
 GInputStream *          gdk_drop_read_finish            (GdkDrop                *self,
                                                          GAsyncResult           *result,
                                                          const char            **out_mime_type,
                                                          GError                **error);
-
+/* Zeile entfernt */
 void                    gdk_drop_read_value_async       (GdkDrop                *self,
                                                          GType                   type,
                                                          int                     io_priority,
                                                          GCancellable           *cancellable,
                                                          GAsyncReadyCallback     callback,
                                                          gpointer                user_data);
-
+/* Zeile entfernt */
 const GValue *          gdk_drop_read_value_finish      (GdkDrop                *self,
                                                          GAsyncResult           *result,
                                                          GError                **error);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_DROP_H__ */

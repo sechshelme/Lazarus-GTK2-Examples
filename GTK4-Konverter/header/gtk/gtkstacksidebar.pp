@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkstack.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_STACK_SIDEBAR : longint; { return type might be wrong }
@@ -51,19 +52,20 @@
 
   type
     _GtkStackSidebar = GtkStackSidebar;
-(* error 
-GType       gtk_stack_sidebar_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_stack_sidebar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_stack_sidebar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_stack_sidebar_set_stack(self:PGtkStackSidebar; stack:PGtkStack);
 
+  { Zeile entfernt  }
   function gtk_stack_sidebar_get_stack(self:PGtkStackSidebar):^GtkStack;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_STACK_SIDEBAR_H__  }
   { was #define dname def_expr }
@@ -88,6 +90,10 @@ GType       gtk_stack_sidebar_get_type  (void) G_GNUC_CONST;
     GTK_IS_STACK_SIDEBAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_STACK_SIDEBAR);
   end;
 
+  function gtk_stack_sidebar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_stack_sidebar_new:PGtkWidget;
   begin
     { You must implement this function }

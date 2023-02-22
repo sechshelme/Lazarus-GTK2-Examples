@@ -6,24 +6,24 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 /* enumerations from "gskenums.h" */
-GDK_AVAILABLE_IN_ALL GType gsk_render_node_type_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_RENDER_NODE_TYPE (gsk_render_node_type_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_scaling_filter_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_SCALING_FILTER (gsk_scaling_filter_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_blend_mode_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_BLEND_MODE (gsk_blend_mode_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_corner_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_CORNER (gsk_corner_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_serialization_error_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_SERIALIZATION_ERROR (gsk_serialization_error_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_transform_category_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_TRANSFORM_CATEGORY (gsk_transform_category_get_type ())
-GDK_AVAILABLE_IN_ALL GType gsk_gl_uniform_type_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
 #define GSK_TYPE_GL_UNIFORM_TYPE (gsk_gl_uniform_type_get_type ())
-
+/* Zeile entfernt */
 
 #endif /* __GSK_ENUM_TYPES_H__ */
 

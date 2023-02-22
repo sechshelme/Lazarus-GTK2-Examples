@@ -44,6 +44,7 @@
    * (or GTK). One such setting is what windowing API backend is in use.
     }
 {$include <gdk/gdkconfig.h>}
+  { Zeile entfernt  }
   {*
    * GDK_CURRENT_TIME:
    *
@@ -98,26 +99,15 @@
     _GdkGLContext = GdkGLContext;
     _GdkVulkanContext = GdkVulkanContext;
   {
-   * GDK_DECLARE_INTERNAL_TYPE:
-   * @ModuleObjName: The name of the new type, in camel case (like GtkWidget)
-   * @module_obj_name: The name of the new type in lowercase, with words
-   *  separated by '_' (like 'gtk_widget')
-   * @MODULE: The name of the module, in all caps (like 'GTK')
-   * @OBJ_NAME: The bare name of the type, in all caps (like 'WIDGET')
-   * @ParentName: the name of the parent type, in camel case (like GtkWidget)
-   *
-   * A convenience macro for emitting the usual declarations in the
-   * header file for a type which is intended to be subclassed only
-   * by internal consumers.
-   *
-   * This macro differs from %G_DECLARE_DERIVABLE_TYPE and %G_DECLARE_FINAL_TYPE
-   * by declaring a type that is only derivable internally. Internal users can
-   * derive this type, assuming they have access to the instance and class
-   * structures; external users will not be able to subclass this type.
-    }
+  /* Zeile entfernt  }
 (* error 
-  GType module_obj_name##_get_type (void);                                                               \
-in declaration at line 116 *)
+ * @ModuleObjName: The name of the new type, in camel case (like GtkWidget)
+  { Zeile entfernt  }
+in declaration at line 113 *)
+(* error 
+ * structures; external users will not be able to subclass this type.
+    { Zeile entfernt  }
+ in declarator_list *)
 (* error 
   GType module_obj_name##_get_type (void);                                                               \
 (* error 
@@ -171,6 +161,7 @@ in declaration at line 136 *)
           level : longint;
         end;
 
+    { Zeile entfernt  }
 {$endif}
     { __GDK_TYPES_H__  }
 

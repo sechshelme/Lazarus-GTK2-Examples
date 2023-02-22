@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_EDITABLE            (gtk_cell_editable_get_type ())
 #define GTK_CELL_EDITABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_EDITABLE, GtkCellEditable))
@@ -59,18 +59,18 @@ struct _GtkCellEditableIface
 };
 
 
+/* Zeile entfernt */
+GType gtk_cell_editable_get_type      (void) ;
 
-GType gtk_cell_editable_get_type      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void  gtk_cell_editable_start_editing (GtkCellEditable *cell_editable,
 				       GdkEvent        *event);
-
+/* Zeile entfernt */
 void  gtk_cell_editable_editing_done  (GtkCellEditable *cell_editable);
-
+/* Zeile entfernt */
 void  gtk_cell_editable_remove_widget (GtkCellEditable *cell_editable);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_EDITABLE_H__ */

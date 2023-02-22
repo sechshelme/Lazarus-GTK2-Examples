@@ -26,39 +26,39 @@
 #endif
 
 #include <gio/gio.h>
-/* for GDK_AVAILABLE_IN_ALL */
+/* Zeile entfernt */
 #include <gdk/gdk.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BOOKMARK_LIST (gtk_bookmark_list_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkBookmarkList, gtk_bookmark_list, GTK, BOOKMARK_LIST, GObject)
-
-
+/* Zeile entfernt */
 GtkBookmarkList *    gtk_bookmark_list_new                  (const char *filename,
                                                              const char *attributes);
 
-
+/* Zeile entfernt */
 const char *         gtk_bookmark_list_get_filename         (GtkBookmarkList *self);
 
-
+/* Zeile entfernt */
 void                 gtk_bookmark_list_set_attributes       (GtkBookmarkList *self,
                                                              const char      *attributes);
-
+/* Zeile entfernt */
 const char *         gtk_bookmark_list_get_attributes       (GtkBookmarkList *self);
 
-
+/* Zeile entfernt */
 void                 gtk_bookmark_list_set_io_priority      (GtkBookmarkList *self,
                                                              int              io_priority);
-
+/* Zeile entfernt */
 int                  gtk_bookmark_list_get_io_priority      (GtkBookmarkList *self);
 
-
+/* Zeile entfernt */
 gboolean             gtk_bookmark_list_is_loading           (GtkBookmarkList *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BOOKMARK_LIST_H__ */

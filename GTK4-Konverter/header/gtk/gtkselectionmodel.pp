@@ -1,7 +1,7 @@
 
-    Type
-    PGtkBitset  = ^GtkBitset;
-    PGtkSelectionModel  = ^GtkSelectionModel;
+  Type
+  PGtkBitset  = ^GtkBitset;
+  PGtkSelectionModel  = ^GtkSelectionModel;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -31,15 +31,13 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SELECTION_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODEL, GListModel)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODEL, GListModel)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkSelectionModelInterface:
    * @is_selected: Return if the item at the given position is selected.
@@ -76,100 +74,109 @@ G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODE
    * so it is sufficient to implement just that function for full selection
    * support.
     }
- in declarator_list *)
   {< private > }
-(* error 
-  GTypeInterface g_iface;
- in declarator_list *)
   {< public > }
 
-    var
-      is_selected : function (model:PGtkSelectionModel; position:guint):gboolean;cvar;public;
-      get_selection_in_range : function (model:PGtkSelectionModel; position:guint; n_items:guint):PGtkBitset;cvar;public;
-      select_item : function (model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;cvar;public;
-      unselect_item : function (model:PGtkSelectionModel; position:guint):gboolean;cvar;public;
-      select_range : function (model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;cvar;public;
-      unselect_range : function (model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;cvar;public;
-      select_all : function (model:PGtkSelectionModel):gboolean;cvar;public;
-      unselect_all : function (model:PGtkSelectionModel):gboolean;cvar;public;
-      set_selection : function (model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;cvar;public;
-(* error 
-};
-in declaration at line 101 *)
+  type
+    _GtkSelectionModelInterface = record
+        g_iface : GTypeInterface;
+        is_selected : function (model:PGtkSelectionModel; position:guint):gboolean;cdecl;
+        get_selection_in_range : function (model:PGtkSelectionModel; position:guint; n_items:guint):PGtkBitset;cdecl;
+        select_item : function (model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;cdecl;
+        unselect_item : function (model:PGtkSelectionModel; position:guint):gboolean;cdecl;
+        select_range : function (model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;cdecl;
+        unselect_range : function (model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;cdecl;
+        select_all : function (model:PGtkSelectionModel):gboolean;cdecl;
+        unselect_all : function (model:PGtkSelectionModel):gboolean;cdecl;
+        set_selection : function (model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;cdecl;
+      end;
 
-    function gtk_selection_model_is_selected(model:PGtkSelectionModel; position:guint):gboolean;
+  { Zeile entfernt  }
 
-    function gtk_selection_model_get_selection(model:PGtkSelectionModel):^GtkBitset;
+  function gtk_selection_model_is_selected(model:PGtkSelectionModel; position:guint):gboolean;
 
-    function gtk_selection_model_get_selection_in_range(model:PGtkSelectionModel; position:guint; n_items:guint):^GtkBitset;
+  { Zeile entfernt  }
+  function gtk_selection_model_get_selection(model:PGtkSelectionModel):^GtkBitset;
 
-    function gtk_selection_model_select_item(model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_get_selection_in_range(model:PGtkSelectionModel; position:guint; n_items:guint):^GtkBitset;
 
-    function gtk_selection_model_unselect_item(model:PGtkSelectionModel; position:guint):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_select_item(model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;
 
-    function gtk_selection_model_select_range(model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_unselect_item(model:PGtkSelectionModel; position:guint):gboolean;
 
-    function gtk_selection_model_unselect_range(model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_select_range(model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;
 
-    function gtk_selection_model_select_all(model:PGtkSelectionModel):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_unselect_range(model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;
 
-    function gtk_selection_model_unselect_all(model:PGtkSelectionModel):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_select_all(model:PGtkSelectionModel):gboolean;
 
-    function gtk_selection_model_set_selection(model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;
+  { Zeile entfernt  }
+  function gtk_selection_model_unselect_all(model:PGtkSelectionModel):gboolean;
 
-    { for implementations only  }
-    procedure gtk_selection_model_selection_changed(model:PGtkSelectionModel; position:guint; n_items:guint);
+  { Zeile entfernt  }
+  function gtk_selection_model_set_selection(model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;
 
+  { for implementations only  }
+  { Zeile entfernt  }
+  procedure gtk_selection_model_selection_changed(model:PGtkSelectionModel; position:guint; n_items:guint);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_SELECTION_MODEL_H__  }
+  { __GTK_SELECTION_MODEL_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_SELECTION_MODEL : longint; { return type might be wrong }
     begin
       GTK_TYPE_SELECTION_MODEL:=gtk_selection_model_get_type;
     end;
 
-    function gtk_selection_model_is_selected(model:PGtkSelectionModel; position:guint):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_get_selection(model:PGtkSelectionModel):PGtkBitset;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_get_selection_in_range(model:PGtkSelectionModel; position:guint; n_items:guint):PGtkBitset;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_select_item(model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_unselect_item(model:PGtkSelectionModel; position:guint):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_select_range(model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_unselect_range(model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_select_all(model:PGtkSelectionModel):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_unselect_all(model:PGtkSelectionModel):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_selection_model_set_selection(model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_selection_model_selection_changed(model:PGtkSelectionModel; position:guint; n_items:guint);
-    begin
-      { You must implement this function }
-    end;
+  function gtk_selection_model_is_selected(model:PGtkSelectionModel; position:guint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_get_selection(model:PGtkSelectionModel):PGtkBitset;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_get_selection_in_range(model:PGtkSelectionModel; position:guint; n_items:guint):PGtkBitset;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_select_item(model:PGtkSelectionModel; position:guint; unselect_rest:gboolean):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_unselect_item(model:PGtkSelectionModel; position:guint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_select_range(model:PGtkSelectionModel; position:guint; n_items:guint; unselect_rest:gboolean):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_unselect_range(model:PGtkSelectionModel; position:guint; n_items:guint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_select_all(model:PGtkSelectionModel):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_unselect_all(model:PGtkSelectionModel):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_selection_model_set_selection(model:PGtkSelectionModel; selected:PGtkBitset; mask:PGtkBitset):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_selection_model_selection_changed(model:PGtkSelectionModel; position:guint; n_items:guint);
+  begin
+    { You must implement this function }
+  end;
 

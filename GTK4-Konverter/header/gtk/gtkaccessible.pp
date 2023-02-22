@@ -36,49 +36,66 @@
 {$include <glib-object.h>}
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_accessible_get_accessible_role(self:PGtkAccessible):GtkAccessibleRole;
+
+  { Zeile entfernt  }
   procedure gtk_accessible_update_state(self:PGtkAccessible; first_state:GtkAccessibleState; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_update_property(self:PGtkAccessible; first_property:GtkAccessibleProperty; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_update_relation(self:PGtkAccessible; first_relation:GtkAccessibleRelation; args:array of const);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_accessible_update_state_value(self:PGtkAccessible; n_states:longint; states:PGtkAccessibleState; values:PGValue);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_accessible_update_property_value(self:PGtkAccessible; n_properties:longint; properties:PGtkAccessibleProperty; values:PGValue);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_accessible_update_relation_value(self:PGtkAccessible; n_relations:longint; relations:PGtkAccessibleRelation; values:PGValue);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_reset_state(self:PGtkAccessible; state:GtkAccessibleState);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_reset_property(self:PGtkAccessible; _property:GtkAccessibleProperty);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_reset_relation(self:PGtkAccessible; relation:GtkAccessibleRelation);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_state_init_value(state:GtkAccessibleState; value:PGValue);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_property_init_value(_property:GtkAccessibleProperty; value:PGValue);
 
+  { Zeile entfernt  }
   procedure gtk_accessible_relation_init_value(relation:GtkAccessibleRelation; value:PGValue);
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_ACCESSIBLE : longint; { return type might be wrong }
     begin
       GTK_TYPE_ACCESSIBLE:=gtk_accessible_get_type;
     end;
 
+  function gtk_accessible_get_accessible_role(self:PGtkAccessible):GtkAccessibleRole;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_accessible_update_state(self:PGtkAccessible; first_state:GtkAccessibleState);
   begin
     { You must implement this function }

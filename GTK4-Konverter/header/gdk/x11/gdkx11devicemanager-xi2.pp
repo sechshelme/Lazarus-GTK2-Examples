@@ -23,6 +23,7 @@
 {$ifndef __GDK_X11_DEVICE_MANAGER_XI2_H__}
 {$define __GDK_X11_DEVICE_MANAGER_XI2_H__}  
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_DEVICE_MANAGER_XI2 : longint; { return type might be wrong }
@@ -56,12 +57,11 @@
   type
     _GdkX11DeviceManagerXI2 = GdkX11DeviceManagerXI2;
     _GdkX11DeviceManagerXI2Class = GdkX11DeviceManagerXI2Class;
-(* error 
-GType gdk_x11_device_manager_xi2_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_x11_device_manager_xi2_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_DEVICE_MANAGER_XI2_H__  }
   { was #define dname def_expr }
@@ -110,4 +110,8 @@ GType gdk_x11_device_manager_xi2_get_type (void) G_GNUC_CONST;
     GDK_X11_DEVICE_MANAGER_XI2_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GDK_TYPE_X11_DEVICE_MANAGER_XI2,GdkX11DeviceManagerXI2Class);
   end;
 
+  function gdk_x11_device_manager_xi2_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

@@ -24,7 +24,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_X11_APP_LAUNCH_CONTEXT              (gdk_x11_app_launch_context_get_type ())
 #define GDK_X11_APP_LAUNCH_CONTEXT(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_APP_LAUNCH_CONTEXT, GdkX11AppLaunchContext))
@@ -40,9 +40,9 @@ typedef GdkAppLaunchContext GdkX11AppLaunchContext;
 #endif
 typedef struct _GdkX11AppLaunchContextClass GdkX11AppLaunchContextClass;
 
-
+/* Zeile entfernt */
 GType    gdk_x11_app_launch_context_get_type (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_APP_LAUNCH_CONTEXT_H__ */

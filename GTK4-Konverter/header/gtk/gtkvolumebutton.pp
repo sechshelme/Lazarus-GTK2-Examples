@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkscalebutton.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_VOLUME_BUTTON : longint; { return type might be wrong }
@@ -58,15 +59,14 @@
         parent : GtkScaleButton;
       end;
 
-(* error 
-GType		gtk_volume_button_get_type	(void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_volume_button_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_volume_button_new:^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_VOLUME_BUTTON_H__  }
   { was #define dname def_expr }
@@ -91,6 +91,10 @@ GType		gtk_volume_button_get_type	(void) G_GNUC_CONST;
     GTK_IS_VOLUME_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_VOLUME_BUTTON);
   end;
 
+  function gtk_volume_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_volume_button_new:PGtkWidget;
   begin
     { You must implement this function }

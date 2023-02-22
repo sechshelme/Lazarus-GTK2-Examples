@@ -34,6 +34,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreesortable.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_STORE : longint; { return type might be wrong }
@@ -80,57 +81,76 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType         gtk_list_store_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_list_store_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_list_store_new(n_columns:longint; args:array of const):^GtkListStore;
 
+  { Zeile entfernt  }
   function gtk_list_store_newv(n_columns:longint; types:PGType):^GtkListStore;
 
+  { Zeile entfernt  }
   procedure gtk_list_store_set_column_types(list_store:PGtkListStore; n_columns:longint; types:PGType);
 
   { NOTE: use gtk_tree_model_get to get values from a GtkListStore  }
+  { Zeile entfernt  }
   procedure gtk_list_store_set_value(list_store:PGtkListStore; iter:PGtkTreeIter; column:longint; value:PGValue);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_set(list_store:PGtkListStore; iter:PGtkTreeIter; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_set_valuesv(list_store:PGtkListStore; iter:PGtkTreeIter; columns:Plongint; values:PGValue; n_values:longint);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_set_valist(list_store:PGtkListStore; iter:PGtkTreeIter; var_args:va_list);
 
+  { Zeile entfernt  }
   function gtk_list_store_remove(list_store:PGtkListStore; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_store_insert(list_store:PGtkListStore; iter:PGtkTreeIter; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_insert_before(list_store:PGtkListStore; iter:PGtkTreeIter; sibling:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_insert_after(list_store:PGtkListStore; iter:PGtkTreeIter; sibling:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_insert_with_values(list_store:PGtkListStore; iter:PGtkTreeIter; position:longint; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_insert_with_valuesv(list_store:PGtkListStore; iter:PGtkTreeIter; position:longint; columns:Plongint; values:PGValue; 
               n_values:longint);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_prepend(list_store:PGtkListStore; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_append(list_store:PGtkListStore; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_clear(list_store:PGtkListStore);
 
+  { Zeile entfernt  }
   function gtk_list_store_iter_is_valid(list_store:PGtkListStore; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_store_reorder(store:PGtkListStore; new_order:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_swap(store:PGtkListStore; a:PGtkTreeIter; b:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_move_after(store:PGtkListStore; iter:PGtkTreeIter; position:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_list_store_move_before(store:PGtkListStore; iter:PGtkTreeIter; position:PGtkTreeIter);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LIST_STORE_H__  }
   { was #define dname def_expr }
@@ -179,6 +199,10 @@ GType         gtk_list_store_get_type         (void) G_GNUC_CONST;
     GTK_LIST_STORE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_LIST_STORE,GtkListStoreClass);
   end;
 
+  function gtk_list_store_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_list_store_new(n_columns:longint):PGtkListStore;
   begin
     { You must implement this function }

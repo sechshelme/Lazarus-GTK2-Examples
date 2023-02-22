@@ -26,7 +26,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_CELL_RENDERER_TEXT		(gtk_cell_renderer_text_get_type ())
@@ -57,16 +57,16 @@ struct _GtkCellRendererTextClass
   gpointer padding[8];
 };
 
-
-GType            gtk_cell_renderer_text_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType            gtk_cell_renderer_text_get_type (void) ;
+/* Zeile entfernt */
 GtkCellRenderer *gtk_cell_renderer_text_new      (void);
 
-
+/* Zeile entfernt */
 void             gtk_cell_renderer_text_set_fixed_height_from_font (GtkCellRendererText *renderer,
 								    int                  number_of_rows);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_RENDERER_TEXT_H__ */

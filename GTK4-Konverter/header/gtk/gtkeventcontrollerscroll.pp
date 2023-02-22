@@ -32,6 +32,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_SCROLL : longint; { return type might be wrong }
@@ -84,22 +85,23 @@
       GTK_EVENT_CONTROLLER_SCROLL_KINETIC := 1 shl 3,
       GTK_EVENT_CONTROLLER_SCROLL_BOTH_AXES := GTK_EVENT_CONTROLLER_SCROLL_VERTICAL or GTK_EVENT_CONTROLLER_SCROLL_HORIZONTAL
       );
-(* error 
-GType               gtk_event_controller_scroll_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_event_controller_scroll_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_event_controller_scroll_new(flags:GtkEventControllerScrollFlags):^GtkEventController;
 
+  { Zeile entfernt  }
   procedure gtk_event_controller_scroll_set_flags(scroll:PGtkEventControllerScroll; flags:GtkEventControllerScrollFlags);
 
+  { Zeile entfernt  }
   function gtk_event_controller_scroll_get_flags(scroll:PGtkEventControllerScroll):GtkEventControllerScrollFlags;
 
 (* error 
 GdkScrollUnit       gtk_event_controller_scroll_get_unit (GtkEventControllerScroll       *scroll);
  in declarator_list *)
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EVENT_CONTROLLER_SCROLL_H__  }
   { was #define dname def_expr }
@@ -148,6 +150,10 @@ GdkScrollUnit       gtk_event_controller_scroll_get_unit (GtkEventControllerScro
     GTK_EVENT_CONTROLLER_SCROLL_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER_SCROLL,GtkEventControllerScrollClass);
   end;
 
+  function gtk_event_controller_scroll_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_scroll_new(flags:GtkEventControllerScrollFlags):PGtkEventController;
   begin
     { You must implement this function }

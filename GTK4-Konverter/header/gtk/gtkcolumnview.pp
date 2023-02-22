@@ -38,6 +38,7 @@
 {$include <gtk/gtksortlistmodel.h>}
 {$include <gtk/gtkselectionmodel.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_COLUMN_VIEW : longint; { return type might be wrong }
@@ -73,51 +74,68 @@
     _GtkColumnViewClass = GtkColumnViewClass;
   { forward declaration  }
     _GtkColumnViewColumn = GtkColumnViewColumn;
-(* error 
-GType           gtk_column_view_get_type                        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_column_view_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_column_view_new(model:PGtkSelectionModel):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_column_view_get_columns(self:PGtkColumnView):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_append_column(self:PGtkColumnView; column:PGtkColumnViewColumn);
 
+  { Zeile entfernt  }
   procedure gtk_column_view_remove_column(self:PGtkColumnView; column:PGtkColumnViewColumn);
 
+  { Zeile entfernt  }
   procedure gtk_column_view_insert_column(self:PGtkColumnView; position:guint; column:PGtkColumnViewColumn);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_model(self:PGtkColumnView):^GtkSelectionModel;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_model(self:PGtkColumnView; model:PGtkSelectionModel);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_show_row_separators(self:PGtkColumnView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_show_row_separators(self:PGtkColumnView; show_row_separators:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_show_column_separators(self:PGtkColumnView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_show_column_separators(self:PGtkColumnView; show_column_separators:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_sorter(self:PGtkColumnView):^GtkSorter;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_sort_by_column(self:PGtkColumnView; column:PGtkColumnViewColumn; direction:GtkSortType);
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_single_click_activate(self:PGtkColumnView; single_click_activate:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_single_click_activate(self:PGtkColumnView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_reorderable(self:PGtkColumnView; reorderable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_reorderable(self:PGtkColumnView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_column_view_set_enable_rubberband(self:PGtkColumnView; enable_rubberband:gboolean);
 
+  { Zeile entfernt  }
   function gtk_column_view_get_enable_rubberband(self:PGtkColumnView):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COLUMN_VIEW_H__  }
   { was #define dname def_expr }
@@ -166,6 +184,10 @@ GType           gtk_column_view_get_type                        (void) G_GNUC_CO
     GTK_COLUMN_VIEW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_COLUMN_VIEW,GtkColumnViewClass);
   end;
 
+  function gtk_column_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_column_view_new(model:PGtkSelectionModel):PGtkWidget;
   begin
     { You must implement this function }

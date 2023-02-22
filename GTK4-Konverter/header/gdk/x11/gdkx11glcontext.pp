@@ -32,6 +32,7 @@
 {$error "Only <gdk/x11/gdkx.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_GL_CONTEXT : longint; { return type might be wrong }
@@ -50,27 +51,20 @@
   type
     _GdkX11GLContext = GdkX11GLContext;
     _GdkX11GLContextClass = GdkX11GLContextClass;
-(* error 
-GType gdk_x11_gl_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_x11_gl_context_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_glx_version(display:PGdkDisplay; major:Plongint; minor:Plongint):gboolean;
 
-(* error 
-gboolean        gdk_x11_display_get_egl_version (GdkDisplay *display,
-(* error 
-                                                 int        *major,
-(* error 
-                                                 int        *minor);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
-(* error 
-gpointer        gdk_x11_display_get_egl_display (GdkDisplay *display);
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_x11_display_get_egl_version(display:PGdkDisplay; major:Plongint; minor:Plongint):gboolean;
+
+  { Zeile entfernt  }
+  function gdk_x11_display_get_egl_display(display:PGdkDisplay):gpointer;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_GL_CONTEXT_H__  }
   { was #define dname def_expr }
@@ -95,7 +89,19 @@ gpointer        gdk_x11_display_get_egl_display (GdkDisplay *display);
     GDK_X11_IS_GL_CONTEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_X11_GL_CONTEXT);
   end;
 
+  function gdk_x11_gl_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_x11_display_get_glx_version(display:PGdkDisplay; major:Plongint; minor:Plongint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_x11_display_get_egl_version(display:PGdkDisplay; major:Plongint; minor:Plongint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_x11_display_get_egl_display(display:PGdkDisplay):gpointer;
   begin
     { You must implement this function }
   end;

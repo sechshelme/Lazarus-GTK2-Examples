@@ -42,6 +42,7 @@
 {$include <gdk/gdkenums.h>}
 {$include <gdk/gdkevents.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DRAG : longint; { return type might be wrong }
@@ -68,43 +69,48 @@
   type
     GdkDragCancelReason = (GDK_DRAG_CANCEL_NO_TARGET,GDK_DRAG_CANCEL_USER_CANCELLED,
       GDK_DRAG_CANCEL_ERROR);
-(* error 
-GType            gdk_drag_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_drag_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_drag_get_display(drag:PGdkDrag):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_drag_get_device(drag:PGdkDrag):^GdkDevice;
 
+  { Zeile entfernt  }
   function gdk_drag_get_formats(drag:PGdkDrag):^GdkContentFormats;
 
+  { Zeile entfernt  }
   function gdk_drag_get_actions(drag:PGdkDrag):GdkDragAction;
 
+  { Zeile entfernt  }
   function gdk_drag_get_selected_action(drag:PGdkDrag):GdkDragAction;
 
-(* error 
-gboolean         gdk_drag_action_is_unique     (GdkDragAction   action) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_drag_action_is_unique(action:GdkDragAction):gboolean;
 
-    var
- : gboolean;
-
+  { Zeile entfernt  }
   function gdk_drag_begin(surface:PGdkSurface; device:PGdkDevice; content:PGdkContentProvider; actions:GdkDragAction; dx:double; 
              dy:double):^GdkDrag;
 
+  { Zeile entfernt  }
   procedure gdk_drag_drop_done(drag:PGdkDrag; success:gboolean);
 
+  { Zeile entfernt  }
   function gdk_drag_get_drag_surface(drag:PGdkDrag):^GdkSurface;
 
+  { Zeile entfernt  }
   procedure gdk_drag_set_hotspot(drag:PGdkDrag; hot_x:longint; hot_y:longint);
 
+  { Zeile entfernt  }
   function gdk_drag_get_content(drag:PGdkDrag):^GdkContentProvider;
 
+  { Zeile entfernt  }
   function gdk_drag_get_surface(drag:PGdkDrag):^GdkSurface;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DND_H__  }
   { was #define dname def_expr }
@@ -129,6 +135,10 @@ gboolean         gdk_drag_action_is_unique     (GdkDragAction   action) G_GNUC_C
     GDK_IS_DRAG:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_DRAG);
   end;
 
+  function gdk_drag_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_drag_get_display(drag:PGdkDrag):PGdkDisplay;
   begin
     { You must implement this function }
@@ -146,6 +156,10 @@ gboolean         gdk_drag_action_is_unique     (GdkDragAction   action) G_GNUC_C
     { You must implement this function }
   end;
   function gdk_drag_get_selected_action(drag:PGdkDrag):GdkDragAction;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_drag_action_is_unique(action:GdkDragAction):gboolean;
   begin
     { You must implement this function }
   end;

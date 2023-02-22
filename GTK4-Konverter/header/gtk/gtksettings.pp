@@ -31,6 +31,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
   { -- type macros ---  }
 
   { was #define dname def_expr }
@@ -47,20 +48,20 @@
   function GTK_IS_SETTINGS(obj : longint) : longint;  
 
   { --- functions ---  }
-(* error 
-GType           gtk_settings_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_settings_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_settings_get_default:^GtkSettings;
 
+  { Zeile entfernt  }
   function gtk_settings_get_for_display(display:PGdkDisplay):^GtkSettings;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_settings_reset_property(settings:PGtkSettings; name:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SETTINGS_H__  }
   { was #define dname def_expr }
@@ -85,6 +86,10 @@ GType           gtk_settings_get_type                (void) G_GNUC_CONST;
     GTK_IS_SETTINGS:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SETTINGS);
   end;
 
+  function gtk_settings_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_settings_get_default:PGtkSettings;
   begin
     { You must implement this function }

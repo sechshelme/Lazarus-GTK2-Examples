@@ -36,7 +36,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SPIN_BUTTON                  (gtk_spin_button_get_type ())
 #define GTK_SPIN_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SPIN_BUTTON, GtkSpinButton))
@@ -98,105 +98,105 @@ typedef enum
 
 typedef struct _GtkSpinButton              GtkSpinButton;
 
+/* Zeile entfernt */
+GType           gtk_spin_button_get_type           (void) ;
 
-GType           gtk_spin_button_get_type           (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void            gtk_spin_button_configure          (GtkSpinButton  *spin_button,
                                                     GtkAdjustment  *adjustment,
                                                     double          climb_rate,
                                                     guint           digits);
 
-
+/* Zeile entfernt */
 GtkWidget*      gtk_spin_button_new                (GtkAdjustment  *adjustment,
                                                     double          climb_rate,
                                                     guint           digits);
 
-
+/* Zeile entfernt */
 GtkWidget*      gtk_spin_button_new_with_range     (double   min,
                                                     double   max,
                                                     double   step);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_adjustment     (GtkSpinButton  *spin_button,
                                                     GtkAdjustment  *adjustment);
 
-
+/* Zeile entfernt */
 GtkAdjustment*  gtk_spin_button_get_adjustment     (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_digits         (GtkSpinButton  *spin_button,
                                                     guint           digits);
-
+/* Zeile entfernt */
 guint           gtk_spin_button_get_digits         (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_increments     (GtkSpinButton  *spin_button,
                                                     double          step,
                                                     double          page);
-
+/* Zeile entfernt */
 void            gtk_spin_button_get_increments     (GtkSpinButton  *spin_button,
                                                     double         *step,
                                                     double         *page);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_range          (GtkSpinButton  *spin_button,
                                                     double          min,
                                                     double          max);
-
+/* Zeile entfernt */
 void            gtk_spin_button_get_range          (GtkSpinButton  *spin_button,
                                                     double         *min,
                                                     double         *max);
 
-
+/* Zeile entfernt */
 double          gtk_spin_button_get_value          (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 int             gtk_spin_button_get_value_as_int   (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_value          (GtkSpinButton  *spin_button,
                                                     double          value);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_update_policy  (GtkSpinButton  *spin_button,
                                                     GtkSpinButtonUpdatePolicy  policy);
-
+/* Zeile entfernt */
 GtkSpinButtonUpdatePolicy gtk_spin_button_get_update_policy (GtkSpinButton *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_numeric        (GtkSpinButton  *spin_button,
                                                     gboolean        numeric);
-
+/* Zeile entfernt */
 gboolean        gtk_spin_button_get_numeric        (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_spin               (GtkSpinButton  *spin_button,
                                                     GtkSpinType     direction,
                                                     double          increment);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_wrap           (GtkSpinButton  *spin_button,
                                                     gboolean        wrap);
-
+/* Zeile entfernt */
 gboolean        gtk_spin_button_get_wrap           (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_snap_to_ticks  (GtkSpinButton  *spin_button,
                                                     gboolean        snap_to_ticks);
-
+/* Zeile entfernt */
 gboolean        gtk_spin_button_get_snap_to_ticks  (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_set_climb_rate     (GtkSpinButton  *spin_button,
                                                     double          climb_rate);
-
+/* Zeile entfernt */
 double          gtk_spin_button_get_climb_rate     (GtkSpinButton  *spin_button);
 
-
+/* Zeile entfernt */
 void            gtk_spin_button_update             (GtkSpinButton  *spin_button);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SPIN_BUTTON_H__ */

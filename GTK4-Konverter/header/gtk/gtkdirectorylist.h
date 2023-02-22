@@ -26,48 +26,48 @@
 #endif
 
 #include <gio/gio.h>
-/* for GDK_AVAILABLE_IN_ALL */
+/* Zeile entfernt */
 #include <gdk/gdk.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_DIRECTORY_LIST (gtk_directory_list_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST, GObject)
-
-
+/* Zeile entfernt */
 GtkDirectoryList *      gtk_directory_list_new                  (const char             *attributes,
                                                                  GFile                  *file);
 
-
+/* Zeile entfernt */
 void                    gtk_directory_list_set_file             (GtkDirectoryList       *self,
                                                                  GFile                  *file);
-
+/* Zeile entfernt */
 GFile *                 gtk_directory_list_get_file             (GtkDirectoryList       *self);
-
+/* Zeile entfernt */
 void                    gtk_directory_list_set_attributes       (GtkDirectoryList       *self,
                                                                  const char             *attributes);
-
+/* Zeile entfernt */
 const char *            gtk_directory_list_get_attributes       (GtkDirectoryList       *self);
-
+/* Zeile entfernt */
 void                    gtk_directory_list_set_io_priority      (GtkDirectoryList       *self,
                                                                  int                     io_priority);
-
+/* Zeile entfernt */
 int                     gtk_directory_list_get_io_priority      (GtkDirectoryList       *self);
 
-
+/* Zeile entfernt */
 gboolean                gtk_directory_list_is_loading           (GtkDirectoryList       *self);
-
+/* Zeile entfernt */
 const GError *          gtk_directory_list_get_error            (GtkDirectoryList       *self);
 
-
+/* Zeile entfernt */
 void                    gtk_directory_list_set_monitored        (GtkDirectoryList       *self,
                                                                  gboolean                monitored);
-
+/* Zeile entfernt */
 gboolean                gtk_directory_list_get_monitored        (GtkDirectoryList       *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DIRECTORY_LIST_H__ */

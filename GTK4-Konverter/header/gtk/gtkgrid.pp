@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GRID : longint; { return type might be wrong }
@@ -79,62 +80,83 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_grid_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_grid_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_grid_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_grid_attach(grid:PGtkGrid; child:PGtkWidget; column:longint; row:longint; width:longint; 
               height:longint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_attach_next_to(grid:PGtkGrid; child:PGtkWidget; sibling:PGtkWidget; side:GtkPositionType; width:longint; 
               height:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_get_child_at(grid:PGtkGrid; column:longint; row:longint):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_grid_remove(grid:PGtkGrid; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_grid_insert_row(grid:PGtkGrid; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_insert_column(grid:PGtkGrid; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_remove_row(grid:PGtkGrid; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_remove_column(grid:PGtkGrid; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_grid_insert_next_to(grid:PGtkGrid; sibling:PGtkWidget; side:GtkPositionType);
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_row_homogeneous(grid:PGtkGrid; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_get_row_homogeneous(grid:PGtkGrid):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_row_spacing(grid:PGtkGrid; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_grid_get_row_spacing(grid:PGtkGrid):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_column_homogeneous(grid:PGtkGrid; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_grid_get_column_homogeneous(grid:PGtkGrid):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_column_spacing(grid:PGtkGrid; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_grid_get_column_spacing(grid:PGtkGrid):guint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_row_baseline_position(grid:PGtkGrid; row:longint; pos:GtkBaselinePosition);
 
+  { Zeile entfernt  }
   function gtk_grid_get_row_baseline_position(grid:PGtkGrid; row:longint):GtkBaselinePosition;
 
+  { Zeile entfernt  }
   procedure gtk_grid_set_baseline_row(grid:PGtkGrid; row:longint);
 
+  { Zeile entfernt  }
   function gtk_grid_get_baseline_row(grid:PGtkGrid):longint;
 
+  { Zeile entfernt  }
   procedure gtk_grid_query_child(grid:PGtkGrid; child:PGtkWidget; column:Plongint; row:Plongint; width:Plongint; 
               height:Plongint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GRID_H__  }
   { was #define dname def_expr }
@@ -183,6 +205,10 @@ GType      gtk_grid_get_type               (void) G_GNUC_CONST;
     GTK_GRID_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_GRID,GtkGridClass);
   end;
 
+  function gtk_grid_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_grid_new:PGtkWidget;
   begin
     { You must implement this function }

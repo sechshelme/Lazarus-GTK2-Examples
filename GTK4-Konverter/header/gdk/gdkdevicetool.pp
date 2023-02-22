@@ -30,6 +30,7 @@
 {$include <gdk/gdkenums.h>}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DEVICE_TOOL : longint; { return type might be wrong }
@@ -67,21 +68,23 @@
       GDK_DEVICE_TOOL_TYPE_PENCIL,GDK_DEVICE_TOOL_TYPE_AIRBRUSH,
       GDK_DEVICE_TOOL_TYPE_MOUSE,GDK_DEVICE_TOOL_TYPE_LENS
       );
-(* error 
-GType               gdk_device_tool_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_device_tool_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_device_tool_get_serial(tool:PGdkDeviceTool):guint64;
 
+  { Zeile entfernt  }
   function gdk_device_tool_get_hardware_id(tool:PGdkDeviceTool):guint64;
 
+  { Zeile entfernt  }
   function gdk_device_tool_get_tool_type(tool:PGdkDeviceTool):GdkDeviceToolType;
 
+  { Zeile entfernt  }
   function gdk_device_tool_get_axes(tool:PGdkDeviceTool):GdkAxisFlags;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DEVICE_TOOL_H__  }
   { was #define dname def_expr }
@@ -106,6 +109,10 @@ GType               gdk_device_tool_get_type        (void) G_GNUC_CONST;
     GDK_IS_DEVICE_TOOL:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_DEVICE_TOOL);
   end;
 
+  function gdk_device_tool_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_device_tool_get_serial(tool:PGdkDeviceTool):guint64;
   begin
     { You must implement this function }

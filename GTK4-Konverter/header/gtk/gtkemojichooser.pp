@@ -27,6 +27,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EMOJI_CHOOSER : longint; { return type might be wrong }
@@ -60,15 +61,14 @@
   type
     _GtkEmojiChooser = GtkEmojiChooser;
     _GtkEmojiChooserClass = GtkEmojiChooserClass;
-(* error 
-GType      gtk_emoji_chooser_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_emoji_chooser_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_emoji_chooser_new:^GtkWidget;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_EMOJI_CHOOSER : longint; { return type might be wrong }
     begin
@@ -115,6 +115,10 @@ GType      gtk_emoji_chooser_get_type (void) G_GNUC_CONST;
     GTK_EMOJI_CHOOSER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_EMOJI_CHOOSER,GtkEmojiChooserClass);
   end;
 
+  function gtk_emoji_chooser_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_emoji_chooser_new:PGtkWidget;
   begin
     { You must implement this function }

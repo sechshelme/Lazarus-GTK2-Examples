@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcellrenderer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_TEXT : longint; { return type might be wrong }
@@ -76,17 +77,17 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType            gtk_cell_renderer_text_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_renderer_text_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_text_new:^GtkCellRenderer;
 
+  { Zeile entfernt  }
   procedure gtk_cell_renderer_text_set_fixed_height_from_font(renderer:PGtkCellRendererText; number_of_rows:longint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_RENDERER_TEXT_H__  }
   { was #define dname def_expr }
@@ -135,6 +136,10 @@ GType            gtk_cell_renderer_text_get_type (void) G_GNUC_CONST;
     GTK_CELL_RENDERER_TEXT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_CELL_RENDERER_TEXT,GtkCellRendererTextClass);
   end;
 
+  function gtk_cell_renderer_text_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_renderer_text_new:PGtkCellRenderer;
   begin
     { You must implement this function }

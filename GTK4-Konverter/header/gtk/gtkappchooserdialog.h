@@ -32,7 +32,7 @@
 #include <gtk/gtkdialog.h>
 #include <gio/gio.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_APP_CHOOSER_DIALOG            (gtk_app_chooser_dialog_get_type ())
 #define GTK_APP_CHOOSER_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER_DIALOG, GtkAppChooserDialog))
@@ -40,26 +40,26 @@
 
 typedef struct _GtkAppChooserDialog        GtkAppChooserDialog;
 
+/* Zeile entfernt */
+GType         gtk_app_chooser_dialog_get_type             (void) ;
 
-GType         gtk_app_chooser_dialog_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *   gtk_app_chooser_dialog_new                  (GtkWindow           *parent,
                                                            GtkDialogFlags       flags,
                                                            GFile               *file);
-
+/* Zeile entfernt */
 GtkWidget *   gtk_app_chooser_dialog_new_for_content_type (GtkWindow           *parent,
                                                            GtkDialogFlags       flags,
                                                            const char          *content_type);
 
-
+/* Zeile entfernt */
 GtkWidget *   gtk_app_chooser_dialog_get_widget           (GtkAppChooserDialog *self);
-
+/* Zeile entfernt */
 void          gtk_app_chooser_dialog_set_heading          (GtkAppChooserDialog *self,
                                                            const char          *heading);
-
+/* Zeile entfernt */
 const char * gtk_app_chooser_dialog_get_heading          (GtkAppChooserDialog *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_APP_CHOOSER_DIALOG_H__ */

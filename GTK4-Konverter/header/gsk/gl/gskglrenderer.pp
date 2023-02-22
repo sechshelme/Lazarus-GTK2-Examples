@@ -1,4 +1,6 @@
 
+  Type
+  PGskRenderer  = ^GskRenderer;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -26,6 +28,7 @@
 {$ifndef __GSK_GL_RENDERER_H__}
 {$define __GSK_GL_RENDERER_H__}  
 {$include <gsk/gskrenderer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GSK_TYPE_GL_RENDERER : longint; { return type might be wrong }
@@ -59,18 +62,20 @@
   type
     _GskGLRenderer = GskGLRenderer;
     _GskGLRendererClass = GskGLRendererClass;
+  { Zeile entfernt  }
+
+  function gsk_gl_renderer_get_type:GType;
+
+  { Zeile entfernt  }
+  function gsk_gl_renderer_new:^GskRenderer;
+
 (* error 
-GType        gsk_gl_renderer_get_type (void) G_GNUC_CONST;
- in declarator_list *)
-(* error 
-GskRenderer *gsk_gl_renderer_new      (void);
- in declarator_list *)
-(* error 
-GType        gsk_ngl_renderer_get_type (void) G_GNUC_CONST;
+GType        gsk_ngl_renderer_get_type (void) ;
  in declarator_list *)
 (* error 
 GskRenderer *gsk_ngl_renderer_new      (void);
  in declarator_list *)
+  { Zeile entfernt  }
 {$endif}
   { __GSK_GL_RENDERER__  }
   { was #define dname def_expr }
@@ -119,4 +124,12 @@ GskRenderer *gsk_ngl_renderer_new      (void);
     GSK_GL_RENDERER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GSK_TYPE_GL_RENDERER,GskGLRendererClass);
   end;
 
+  function gsk_gl_renderer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gsk_gl_renderer_new:PGskRenderer;
+  begin
+    { You must implement this function }
+  end;
 

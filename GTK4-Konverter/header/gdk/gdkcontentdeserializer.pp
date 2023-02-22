@@ -36,6 +36,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CONTENT_DESERIALIZER : longint; { return type might be wrong }
@@ -65,49 +66,63 @@
     }
 
     GdkContentDeserializeFunc = procedure (deserializer:PGdkContentDeserializer);cdecl;
-(* error 
-GType                   gdk_content_deserializer_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_content_deserializer_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gdk_content_deserializer_get_mime_type(deserializer:PGdkContentDeserializer):^char;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_gtype(deserializer:PGdkContentDeserializer):GType;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_value(deserializer:PGdkContentDeserializer):^GValue;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_input_stream(deserializer:PGdkContentDeserializer):^GInputStream;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_priority(deserializer:PGdkContentDeserializer):longint;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_cancellable(deserializer:PGdkContentDeserializer):^GCancellable;
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_user_data(deserializer:PGdkContentDeserializer):gpointer;
 
+  { Zeile entfernt  }
   procedure gdk_content_deserializer_set_task_data(deserializer:PGdkContentDeserializer; data:gpointer; notify:GDestroyNotify);
 
+  { Zeile entfernt  }
   function gdk_content_deserializer_get_task_data(deserializer:PGdkContentDeserializer):gpointer;
 
+  { Zeile entfernt  }
   procedure gdk_content_deserializer_return_success(deserializer:PGdkContentDeserializer);
 
+  { Zeile entfernt  }
   procedure gdk_content_deserializer_return_error(deserializer:PGdkContentDeserializer; error:PGError);
 
+  { Zeile entfernt  }
   function gdk_content_formats_union_deserialize_gtypes(formats:PGdkContentFormats):^GdkContentFormats;
 
+  { Zeile entfernt  }
   function gdk_content_formats_union_deserialize_mime_types(formats:PGdkContentFormats):^GdkContentFormats;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_content_register_deserializer(mime_type:Pchar; _type:GType; deserialize:GdkContentDeserializeFunc; data:gpointer; notify:GDestroyNotify);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_content_deserialize_async(stream:PGInputStream; mime_type:Pchar; _type:GType; io_priority:longint; cancellable:PGCancellable; 
               callback:GAsyncReadyCallback; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gdk_content_deserialize_finish(result:PGAsyncResult; value:PGValue; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CONTENT_DESERIALIZER_H__  }
   { was #define dname def_expr }
@@ -132,6 +147,10 @@ GType                   gdk_content_deserializer_get_type               (void) G
     GDK_IS_CONTENT_DESERIALIZER:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_CONTENT_DESERIALIZER);
   end;
 
+  function gdk_content_deserializer_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_content_deserializer_get_mime_type(deserializer:PGdkContentDeserializer):Pchar;
   begin
     { You must implement this function }

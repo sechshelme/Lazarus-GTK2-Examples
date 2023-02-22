@@ -1,5 +1,6 @@
 
   Type
+  PGtkLayoutManager  = ^GtkLayoutManager;
   PGtkWidget  = ^GtkWidget;
   Plongint  = ^longint;
 {$IFDEF FPC}
@@ -25,6 +26,7 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CUSTOM_LAYOUT : longint; { return type might be wrong }
@@ -67,22 +69,21 @@
     }
 
     GtkCustomAllocateFunc = procedure (widget:PGtkWidget; width:longint; height:longint; baseline:longint);cdecl;
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomLayout, gtk_custom_layout, GTK, CUSTOM_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomLayout, gtk_custom_layout, GTK, CUSTOM_LAYOUT, GtkLayoutManager)
-(* error 
-                                                 GtkCustomMeasureFunc     measure,
-(* error 
-                                                 GtkCustomAllocateFunc    allocate);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+
+  function gtk_custom_layout_new(request_mode:GtkCustomRequestModeFunc; measure:GtkCustomMeasureFunc; allocate:GtkCustomAllocateFunc):^GtkLayoutManager;
+
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CUSTOM_LAYOUT : longint; { return type might be wrong }
     begin
       GTK_TYPE_CUSTOM_LAYOUT:=gtk_custom_layout_get_type;
     end;
 
+  function gtk_custom_layout_new(request_mode:GtkCustomRequestModeFunc; measure:GtkCustomMeasureFunc; allocate:GtkCustomAllocateFunc):PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
 

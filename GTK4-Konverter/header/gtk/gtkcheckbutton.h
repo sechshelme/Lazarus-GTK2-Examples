@@ -33,7 +33,7 @@
 #include <gtk/gtktogglebutton.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CHECK_BUTTON                  (gtk_check_button_get_type ())
 #define GTK_CHECK_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CHECK_BUTTON, GtkCheckButton))
@@ -63,36 +63,36 @@ struct _GtkCheckButtonClass
 };
 
 
-
-GType           gtk_check_button_get_type           (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType           gtk_check_button_get_type           (void) ;
+/* Zeile entfernt */
 GtkWidget *     gtk_check_button_new                (void);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_check_button_new_with_label     (const char *label);
-
+/* Zeile entfernt */
 GtkWidget *     gtk_check_button_new_with_mnemonic  (const char *label);
-
+/* Zeile entfernt */
 void            gtk_check_button_set_inconsistent   (GtkCheckButton *check_button,
                                                      gboolean        inconsistent);
-
+/* Zeile entfernt */
 gboolean        gtk_check_button_get_inconsistent   (GtkCheckButton *check_button);
 
-
+/* Zeile entfernt */
 gboolean        gtk_check_button_get_active         (GtkCheckButton *self);
-
+/* Zeile entfernt */
 void            gtk_check_button_set_active         (GtkCheckButton *self,
                                                      gboolean        setting);
-
+/* Zeile entfernt */
 const char *    gtk_check_button_get_label          (GtkCheckButton *self);
-
+/* Zeile entfernt */
 void            gtk_check_button_set_label          (GtkCheckButton *self,
                                                      const char     *label);
-
+/* Zeile entfernt */
 void            gtk_check_button_set_group          (GtkCheckButton *self,
                                                      GtkCheckButton *group);
-
+/* Zeile entfernt */
 gboolean        gtk_check_button_get_use_underline  (GtkCheckButton *self);
-
+/* Zeile entfernt */
 void            gtk_check_button_set_use_underline  (GtkCheckButton *self,
                                                      gboolean        setting);
 GDK_AVAILABLE_IN_4_8
@@ -101,6 +101,6 @@ GDK_AVAILABLE_IN_4_8
 void            gtk_check_button_set_child          (GtkCheckButton *button,
                                                      GtkWidget *child);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CHECK_BUTTON_H__ */

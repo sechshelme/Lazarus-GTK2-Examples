@@ -29,7 +29,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MOUNT_OPERATION         (gtk_mount_operation_get_type ())
 #define GTK_MOUNT_OPERATION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_MOUNT_OPERATION, GtkMountOperation))
@@ -67,23 +67,23 @@ struct _GtkMountOperationClass
 };
 
 
-
+/* Zeile entfernt */
 GType            gtk_mount_operation_get_type   (void);
-
+/* Zeile entfernt */
 GMountOperation *gtk_mount_operation_new        (GtkWindow         *parent);
-
+/* Zeile entfernt */
 gboolean         gtk_mount_operation_is_showing (GtkMountOperation *op);
-
+/* Zeile entfernt */
 void             gtk_mount_operation_set_parent (GtkMountOperation *op,
                                                  GtkWindow         *parent);
-
+/* Zeile entfernt */
 GtkWindow *      gtk_mount_operation_get_parent (GtkMountOperation *op);
-
+/* Zeile entfernt */
 void             gtk_mount_operation_set_display(GtkMountOperation *op,
                                                  GdkDisplay        *display);
-
+/* Zeile entfernt */
 GdkDisplay *     gtk_mount_operation_get_display(GtkMountOperation *op);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MOUNT_OPERATION_H__ */

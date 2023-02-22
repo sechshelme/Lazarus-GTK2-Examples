@@ -29,6 +29,7 @@
 {$endif}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   type
     _GdkSnapshotClass = GdkSnapshotClass;
@@ -46,12 +47,11 @@
   { return type might be wrong }   
   function GDK_IS_SNAPSHOT(obj : longint) : longint;  
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkSnapshot, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkSnapshot, g_object_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gdk_snapshot_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_SNAPSHOT_H__  }
   { was #define dname def_expr }
@@ -76,4 +76,8 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkSnapshot, g_object_unref)
     GDK_IS_SNAPSHOT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_SNAPSHOT);
   end;
 
+  function gdk_snapshot_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

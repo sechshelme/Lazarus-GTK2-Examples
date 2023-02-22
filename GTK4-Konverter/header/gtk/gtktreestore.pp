@@ -35,6 +35,7 @@
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreesortable.h>}
 {$include <stdarg.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_STORE : longint; { return type might be wrong }
@@ -80,61 +81,82 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType         gtk_tree_store_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_store_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_tree_store_new(n_columns:longint; args:array of const):^GtkTreeStore;
 
+  { Zeile entfernt  }
   function gtk_tree_store_newv(n_columns:longint; types:PGType):^GtkTreeStore;
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_set_column_types(tree_store:PGtkTreeStore; n_columns:longint; types:PGType);
 
   { NOTE: use gtk_tree_model_get to get values from a GtkTreeStore  }
+  { Zeile entfernt  }
   procedure gtk_tree_store_set_value(tree_store:PGtkTreeStore; iter:PGtkTreeIter; column:longint; value:PGValue);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_set(tree_store:PGtkTreeStore; iter:PGtkTreeIter; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_set_valuesv(tree_store:PGtkTreeStore; iter:PGtkTreeIter; columns:Plongint; values:PGValue; n_values:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_set_valist(tree_store:PGtkTreeStore; iter:PGtkTreeIter; var_args:va_list);
 
+  { Zeile entfernt  }
   function gtk_tree_store_remove(tree_store:PGtkTreeStore; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_insert(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_insert_before(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter; sibling:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_insert_after(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter; sibling:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_insert_with_values(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter; position:longint; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_insert_with_valuesv(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter; position:longint; columns:Plongint; 
               values:PGValue; n_values:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_prepend(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_append(tree_store:PGtkTreeStore; iter:PGtkTreeIter; parent:PGtkTreeIter);
 
+  { Zeile entfernt  }
   function gtk_tree_store_is_ancestor(tree_store:PGtkTreeStore; iter:PGtkTreeIter; descendant:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_store_iter_depth(tree_store:PGtkTreeStore; iter:PGtkTreeIter):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_clear(tree_store:PGtkTreeStore);
 
+  { Zeile entfernt  }
   function gtk_tree_store_iter_is_valid(tree_store:PGtkTreeStore; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_reorder(tree_store:PGtkTreeStore; parent:PGtkTreeIter; new_order:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_swap(tree_store:PGtkTreeStore; a:PGtkTreeIter; b:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_move_before(tree_store:PGtkTreeStore; iter:PGtkTreeIter; position:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_store_move_after(tree_store:PGtkTreeStore; iter:PGtkTreeIter; position:PGtkTreeIter);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_STORE_H__  }
   { was #define dname def_expr }
@@ -183,6 +205,10 @@ GType         gtk_tree_store_get_type         (void) G_GNUC_CONST;
     GTK_TREE_STORE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TREE_STORE,GtkTreeStoreClass);
   end;
 
+  function gtk_tree_store_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_store_new(n_columns:longint):PGtkTreeStore;
   begin
     { You must implement this function }

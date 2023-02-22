@@ -44,6 +44,7 @@
 {$include <gdk/x11/gdkx11screen.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
 {$ifdef GTK_COMPILATION}
 
   type
@@ -85,17 +86,23 @@
   { return type might be wrong }   
   function GDK_X11_DISPLAY_GET_CLASS(obj : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_type:GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_x11_display_open(display_name:Pchar):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_xdisplay(display:PGdkDisplay):^Display;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_xscreen(display:PGdkDisplay):^Screen;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_xrootwindow(display:PGdkDisplay):Window;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_xcursor(display:PGdkDisplay; cursor:PGdkCursor):Cursor;
 
   {*
@@ -111,54 +118,67 @@
   { return type might be wrong }   
   function GDK_DISPLAY_XDISPLAY(display : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_user_time(display:PGdkDisplay):guint32;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_x11_display_get_startup_notification_id(display:PGdkDisplay):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_x11_display_set_startup_notification_id(display:PGdkDisplay; startup_id:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_x11_display_set_program_class(display:PGdkDisplay; program_class:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gdk_x11_display_set_cursor_theme(display:PGdkDisplay; theme:Pchar; size:longint);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-                                                ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  procedure gdk_x11_display_broadcast_startup_message(display:PGdkDisplay; message_type:Pchar; args:array of const);
 
-    var
- : pointer;
-
+  { Zeile entfernt  }
   function gdk_x11_lookup_xdisplay(xdisplay:PDisplay):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_screen(display:PGdkDisplay):^GdkX11Screen;
 
+  { Zeile entfernt  }
   function gdk_x11_display_get_primary_monitor(display:PGdkDisplay):^GdkMonitor;
 
+  { Zeile entfernt  }
   procedure gdk_x11_display_grab(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_x11_display_ungrab(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_x11_display_set_surface_scale(display:PGdkDisplay; scale:longint);
 
+  { Zeile entfernt  }
   procedure gdk_x11_display_error_trap_push(display:PGdkDisplay);
 
   { warn unused because you could use pop_ignored otherwise  }
+  { Zeile entfernt  }
 (* error 
 G_GNUC_WARN_UNUSED_RESULT int  gdk_x11_display_error_trap_pop         (GdkDisplay *display);
 in declaration at line 124 *)
+    { Zeile entfernt  }
     procedure gdk_x11_display_error_trap_pop_ignored(display:PGdkDisplay);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gdk_x11_set_sm_client_id(sm_client_id:Pchar);
 
+    { Zeile entfernt  }
     function gdk_x11_display_get_default_group(display:PGdkDisplay):^GdkSurface;
 
+    { Zeile entfernt  }
 {$endif}
     { __GDK_X11_DISPLAY_H__  }
   { was #define dname def_expr }
@@ -256,6 +276,10 @@ in declaration at line 124 *)
     { You must implement this function }
   end;
   procedure gdk_x11_display_set_cursor_theme(display:PGdkDisplay; theme:Pchar; size:longint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_x11_display_broadcast_startup_message(display:PGdkDisplay; message_type:Pchar);
   begin
     { You must implement this function }
   end;

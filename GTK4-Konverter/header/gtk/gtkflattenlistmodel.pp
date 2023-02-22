@@ -31,22 +31,26 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FLATTEN_LIST_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_LIST_MODEL, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_flatten_list_model_new(model:PGListModel):^GtkFlattenListModel;
+
+  { Zeile entfernt  }
   procedure gtk_flatten_list_model_set_model(self:PGtkFlattenListModel; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_flatten_list_model_get_model(self:PGtkFlattenListModel):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_flatten_list_model_get_model_for_item(self:PGtkFlattenListModel; position:guint):^GListModel;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FLATTEN_LIST_MODEL_H__  }
   { was #define dname def_expr }
@@ -55,6 +59,10 @@ G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_
       GTK_TYPE_FLATTEN_LIST_MODEL:=gtk_flatten_list_model_get_type;
     end;
 
+  function gtk_flatten_list_model_new(model:PGListModel):PGtkFlattenListModel;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_flatten_list_model_set_model(self:PGtkFlattenListModel; model:PGListModel);
   begin
     { You must implement this function }

@@ -28,7 +28,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GdkGLAPI:
@@ -50,70 +50,70 @@ typedef enum { /*< underscore_name=GDK_GL_API >*/
 
 #define GDK_GL_ERROR       (gdk_gl_error_quark ())
 
-
+/* Zeile entfernt */
 GQuark gdk_gl_error_quark (void);
 
+/* Zeile entfernt */
+GType gdk_gl_context_get_type (void) ;
 
-GType gdk_gl_context_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkDisplay *            gdk_gl_context_get_display              (GdkGLContext  *context);
-
+/* Zeile entfernt */
 GdkSurface *            gdk_gl_context_get_surface               (GdkGLContext  *context);
 GDK_DEPRECATED_IN_4_4_FOR(gdk_gl_context_is_shared)
 GdkGLContext *          gdk_gl_context_get_shared_context       (GdkGLContext  *context);
-
+/* Zeile entfernt */
 void                    gdk_gl_context_get_version              (GdkGLContext  *context,
                                                                  int           *major,
                                                                  int           *minor);
-
+/* Zeile entfernt */
 gboolean                gdk_gl_context_is_legacy                (GdkGLContext  *context);
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 gboolean                gdk_gl_context_is_shared                (GdkGLContext  *self,
                                                                  GdkGLContext  *other);
 
-
+/* Zeile entfernt */
 void                    gdk_gl_context_set_required_version     (GdkGLContext  *context,
                                                                  int            major,
                                                                  int            minor);
-
+/* Zeile entfernt */
 void                    gdk_gl_context_get_required_version     (GdkGLContext  *context,
                                                                  int           *major,
                                                                  int           *minor);
-
+/* Zeile entfernt */
 void                    gdk_gl_context_set_debug_enabled        (GdkGLContext  *context,
                                                                  gboolean       enabled);
-
+/* Zeile entfernt */
 gboolean                gdk_gl_context_get_debug_enabled        (GdkGLContext  *context);
-
+/* Zeile entfernt */
 void                    gdk_gl_context_set_forward_compatible   (GdkGLContext  *context,
                                                                  gboolean       compatible);
-
+/* Zeile entfernt */
 gboolean                gdk_gl_context_get_forward_compatible   (GdkGLContext  *context);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 void                    gdk_gl_context_set_allowed_apis         (GdkGLContext  *self,
                                                                  GdkGLAPI       apis);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GdkGLAPI                gdk_gl_context_get_allowed_apis         (GdkGLContext  *self);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GdkGLAPI                gdk_gl_context_get_api                  (GdkGLContext  *self);
 GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_context_set_allowed_apis)
 void                    gdk_gl_context_set_use_es               (GdkGLContext  *context,
                                                                  int            use_es);
-
+/* Zeile entfernt */
 gboolean                gdk_gl_context_get_use_es               (GdkGLContext  *context);
 
-
+/* Zeile entfernt */
 gboolean                gdk_gl_context_realize                  (GdkGLContext  *context,
                                                                  GError       **error);
 
-
+/* Zeile entfernt */
 void                    gdk_gl_context_make_current             (GdkGLContext  *context);
-
+/* Zeile entfernt */
 GdkGLContext *          gdk_gl_context_get_current              (void);
-
+/* Zeile entfernt */
 void                    gdk_gl_context_clear_current            (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_GL_CONTEXT_H__ */

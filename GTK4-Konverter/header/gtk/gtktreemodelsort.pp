@@ -33,6 +33,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktreemodel.h>}
 {$include <gtk/gtktreesortable.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_MODEL_SORT : longint; { return type might be wrong }
@@ -79,31 +80,38 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType         gtk_tree_model_sort_get_type                   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_model_sort_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_new_with_model(child_model:PGtkTreeModel):^GtkTreeModel;
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_get_model(tree_model:PGtkTreeModelSort):^GtkTreeModel;
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_convert_child_path_to_path(tree_model_sort:PGtkTreeModelSort; child_path:PGtkTreePath):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_convert_child_iter_to_iter(tree_model_sort:PGtkTreeModelSort; sort_iter:PGtkTreeIter; child_iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_convert_path_to_child_path(tree_model_sort:PGtkTreeModelSort; sorted_path:PGtkTreePath):^GtkTreePath;
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_sort_convert_iter_to_child_iter(tree_model_sort:PGtkTreeModelSort; child_iter:PGtkTreeIter; sorted_iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_sort_reset_default_sort_func(tree_model_sort:PGtkTreeModelSort);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_sort_clear_cache(tree_model_sort:PGtkTreeModelSort);
 
+  { Zeile entfernt  }
   function gtk_tree_model_sort_iter_is_valid(tree_model_sort:PGtkTreeModelSort; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_MODEL_SORT_H__  }
   { was #define dname def_expr }
@@ -152,6 +160,10 @@ GType         gtk_tree_model_sort_get_type                   (void) G_GNUC_CONST
     GTK_TREE_MODEL_SORT_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TREE_MODEL_SORT,GtkTreeModelSortClass);
   end;
 
+  function gtk_tree_model_sort_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_model_sort_new_with_model(child_model:PGtkTreeModel):PGtkTreeModel;
   begin
     { You must implement this function }

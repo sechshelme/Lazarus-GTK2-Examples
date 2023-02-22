@@ -29,6 +29,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_EDITABLE : longint; { return type might be wrong }
@@ -72,19 +73,20 @@
         start_editing : procedure (cell_editable:PGtkCellEditable; event:PGdkEvent);cdecl;
       end;
 
-(* error 
-GType gtk_cell_editable_get_type      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_editable_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gtk_cell_editable_start_editing(cell_editable:PGtkCellEditable; event:PGdkEvent);
 
+  { Zeile entfernt  }
   procedure gtk_cell_editable_editing_done(cell_editable:PGtkCellEditable);
 
+  { Zeile entfernt  }
   procedure gtk_cell_editable_remove_widget(cell_editable:PGtkCellEditable);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_EDITABLE_H__  }
   { was #define dname def_expr }
@@ -117,6 +119,10 @@ GType gtk_cell_editable_get_type      (void) G_GNUC_CONST;
     GTK_CELL_EDITABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_CELL_EDITABLE,GtkCellEditableIface);
   end;
 
+  function gtk_cell_editable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_cell_editable_start_editing(cell_editable:PGtkCellEditable; event:PGdkEvent);
   begin
     { You must implement this function }

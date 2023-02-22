@@ -22,7 +22,7 @@
 #include <gtk/gtkbutton.h>
 #include <gio/gio.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LOCK_BUTTON         (gtk_lock_button_get_type ())
 #define GTK_LOCK_BUTTON(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LOCK_BUTTON, GtkLockButton))
@@ -30,17 +30,17 @@
 
 typedef struct _GtkLockButton        GtkLockButton;
 
-
-GType        gtk_lock_button_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_lock_button_get_type       (void) ;
+/* Zeile entfernt */
 GtkWidget   *gtk_lock_button_new            (GPermission   *permission);
-
+/* Zeile entfernt */
 GPermission *gtk_lock_button_get_permission (GtkLockButton *button);
-
+/* Zeile entfernt */
 void         gtk_lock_button_set_permission (GtkLockButton *button,
                                              GPermission   *permission);
 
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_LOCK_BUTTON_H__ */

@@ -22,41 +22,41 @@
 #include <gtk/gtkconstraint.h>
 #include <gtk/gtkconstraintguide.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CONSTRAINT_LAYOUT (gtk_constraint_layout_get_type ())
 #define GTK_TYPE_CONSTRAINT_LAYOUT_CHILD (gtk_constraint_layout_child_get_type ())
 #define GTK_CONSTRAINT_VFL_PARSER_ERROR (gtk_constraint_vfl_parser_error_quark ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkConstraintLayoutChild, gtk_constraint_layout_child, GTK, CONSTRAINT_LAYOUT_CHILD, GtkLayoutChild)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-
-G_DECLARE_FINAL_TYPE (GtkConstraintLayout, gtk_constraint_layout, GTK, CONSTRAINT_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GQuark                  gtk_constraint_vfl_parser_error_quark   (void);
 
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_constraint_layout_new               (void);
 
-
+/* Zeile entfernt */
 void                    gtk_constraint_layout_add_constraint    (GtkConstraintLayout *layout,
                                                                  GtkConstraint       *constraint);
-
+/* Zeile entfernt */
 void                    gtk_constraint_layout_remove_constraint (GtkConstraintLayout *layout,
                                                                  GtkConstraint       *constraint);
 
-
+/* Zeile entfernt */
 void                    gtk_constraint_layout_add_guide         (GtkConstraintLayout *layout,
                                                                  GtkConstraintGuide  *guide);
-
+/* Zeile entfernt */
 void                    gtk_constraint_layout_remove_guide      (GtkConstraintLayout *layout,
                                                                  GtkConstraintGuide  *guide);
-
+/* Zeile entfernt */
 void                    gtk_constraint_layout_remove_all_constraints            (GtkConstraintLayout *layout);
 
-
+/* Zeile entfernt */
 GList *                 gtk_constraint_layout_add_constraints_from_description  (GtkConstraintLayout *layout,
                                                                                  const char * const   lines[],
                                                                                  gsize                n_lines,
@@ -64,8 +64,8 @@ GList *                 gtk_constraint_layout_add_constraints_from_description  
                                                                                  int                  vspacing,
                                                                                  GError             **error,
                                                                                  const char          *first_view,
-                                                                                 ...) G_GNUC_NULL_TERMINATED;
-
+                                                                                 ...) ;
+/* Zeile entfernt */
 GList *                 gtk_constraint_layout_add_constraints_from_descriptionv (GtkConstraintLayout *layout,
                                                                                  const char * const   lines[],
                                                                                  gsize                n_lines,
@@ -74,9 +74,9 @@ GList *                 gtk_constraint_layout_add_constraints_from_descriptionv 
                                                                                  GHashTable          *views,
                                                                                  GError             **error);
 
-
+/* Zeile entfernt */
 GListModel *          gtk_constraint_layout_observe_constraints (GtkConstraintLayout *layout);
-
+/* Zeile entfernt */
 GListModel *          gtk_constraint_layout_observe_guides (GtkConstraintLayout *layout);
 
-
+/* Zeile entfernt */

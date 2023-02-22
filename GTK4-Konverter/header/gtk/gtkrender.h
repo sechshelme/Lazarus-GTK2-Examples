@@ -29,30 +29,30 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypes.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 void        gtk_render_check       (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_option      (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_arrow       (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               angle,
                                     double               x,
                                     double               y,
                                     double               size);
-
+/* Zeile entfernt */
 void        gtk_render_background  (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
@@ -60,60 +60,60 @@ void        gtk_render_background  (GtkStyleContext     *context,
                                     double               width,
                                     double               height);
 
-
+/* Zeile entfernt */
 void        gtk_render_frame       (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_expander    (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_focus       (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_layout      (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     PangoLayout         *layout);
-
+/* Zeile entfernt */
 void        gtk_render_line        (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x0,
                                     double               y0,
                                     double               x1,
                                     double               y1);
-
+/* Zeile entfernt */
 void        gtk_render_handle      (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_activity    (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     double               x,
                                     double               y,
                                     double               width,
                                     double               height);
-
+/* Zeile entfernt */
 void        gtk_render_icon        (GtkStyleContext     *context,
                                     cairo_t             *cr,
                                     GdkTexture          *texture,
                                     double               x,
                                     double               y);
-
+/* Zeile entfernt */
 
 #endif /* __GTK_RENDER_H__ */

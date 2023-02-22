@@ -36,17 +36,17 @@
 #include <gdk/gdktexture.h>
 
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 GdkPixbuf *gdk_pixbuf_get_from_surface (cairo_surface_t *surface,
                                         int              src_x,
                                         int              src_y,
                                         int              width,
                                         int              height);
-
+/* Zeile entfernt */
 GdkPixbuf *gdk_pixbuf_get_from_texture (GdkTexture      *texture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_PIXBUF_H__ */

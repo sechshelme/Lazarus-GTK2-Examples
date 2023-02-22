@@ -36,42 +36,54 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PICTURE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkPicture, gtk_picture, GTK, PICTURE, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkPicture, gtk_picture, GTK, PICTURE, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_picture_new:^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_picture_new_for_paintable(paintable:PGdkPaintable):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_picture_new_for_pixbuf(pixbuf:PGdkPixbuf):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_picture_new_for_file(file:PGFile):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_picture_new_for_filename(filename:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_picture_new_for_resource(resource_path:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_picture_set_paintable(self:PGtkPicture; paintable:PGdkPaintable);
 
+  { Zeile entfernt  }
   function gtk_picture_get_paintable(self:PGtkPicture):^GdkPaintable;
 
+  { Zeile entfernt  }
   procedure gtk_picture_set_file(self:PGtkPicture; file:PGFile);
 
+  { Zeile entfernt  }
   function gtk_picture_get_file(self:PGtkPicture):^GFile;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_picture_set_filename(self:PGtkPicture; filename:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_picture_set_resource(self:PGtkPicture; resource_path:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_picture_set_pixbuf(self:PGtkPicture; pixbuf:PGdkPixbuf);
 
 (* error 
@@ -83,8 +95,10 @@ void            gtk_picture_set_keep_aspect_ratio       (GtkPicture             
 (* error 
 gboolean        gtk_picture_get_keep_aspect_ratio       (GtkPicture             *self);
  in declarator_list *)
+  { Zeile entfernt  }
   procedure gtk_picture_set_can_shrink(self:PGtkPicture; can_shrink:gboolean);
 
+  { Zeile entfernt  }
   function gtk_picture_get_can_shrink(self:PGtkPicture):gboolean;
 
 (* error 
@@ -93,12 +107,15 @@ in declaration at line 85 *)
 (* error 
 GtkContentFit   gtk_picture_get_content_fit             (GtkPicture             *self);
  in declarator_list *)
+    { Zeile entfernt  }
 (* Const before type ignored *)
     procedure gtk_picture_set_alternative_text(self:PGtkPicture; alternative_text:Pchar);
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
     function gtk_picture_get_alternative_text(self:PGtkPicture):^char;
 
+    { Zeile entfernt  }
 {$endif}
     { __GTK_PICTURE_H__  }
   { was #define dname def_expr }
@@ -107,6 +124,10 @@ GtkContentFit   gtk_picture_get_content_fit             (GtkPicture             
       GTK_TYPE_PICTURE:=gtk_picture_get_type;
     end;
 
+  function gtk_picture_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_picture_new_for_paintable(paintable:PGdkPaintable):PGtkWidget;
   begin
     { You must implement this function }

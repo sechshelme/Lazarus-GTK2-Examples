@@ -36,7 +36,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_INFO_BAR              (gtk_info_bar_get_type())
 #define GTK_INFO_BAR(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), GTK_TYPE_INFO_BAR, GtkInfoBar))
@@ -44,67 +44,67 @@
 
 typedef struct _GtkInfoBar GtkInfoBar;
 
-
-GType          gtk_info_bar_get_type               (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType          gtk_info_bar_get_type               (void) ;
+/* Zeile entfernt */
 GtkWidget     *gtk_info_bar_new                    (void);
 
-
+/* Zeile entfernt */
 GtkWidget     *gtk_info_bar_new_with_buttons       (const char     *first_button_text,
                                                     ...);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_add_action_widget      (GtkInfoBar     *info_bar,
                                                     GtkWidget      *child,
                                                     int             response_id);
-
+/* Zeile entfernt */
 void           gtk_info_bar_remove_action_widget   (GtkInfoBar     *info_bar,
                                                     GtkWidget      *widget);
-
+/* Zeile entfernt */
 GtkWidget     *gtk_info_bar_add_button             (GtkInfoBar     *info_bar,
                                                     const char     *button_text,
                                                     int             response_id);
-
+/* Zeile entfernt */
 void           gtk_info_bar_add_buttons            (GtkInfoBar     *info_bar,
                                                     const char     *first_button_text,
                                                     ...);
-
+/* Zeile entfernt */
 void           gtk_info_bar_add_child              (GtkInfoBar     *info_bar,
                                                     GtkWidget      *widget);
-
+/* Zeile entfernt */
 void           gtk_info_bar_remove_child           (GtkInfoBar     *info_bar,
                                                     GtkWidget      *widget);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_set_response_sensitive (GtkInfoBar     *info_bar,
                                                     int             response_id,
                                                     gboolean        setting);
-
+/* Zeile entfernt */
 void           gtk_info_bar_set_default_response   (GtkInfoBar     *info_bar,
                                                     int             response_id);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_response               (GtkInfoBar     *info_bar,
                                                     int             response_id);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_set_message_type       (GtkInfoBar     *info_bar,
                                                     GtkMessageType  message_type);
-
+/* Zeile entfernt */
 GtkMessageType gtk_info_bar_get_message_type       (GtkInfoBar     *info_bar);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_set_show_close_button  (GtkInfoBar     *info_bar,
                                                     gboolean        setting);
-
+/* Zeile entfernt */
 gboolean       gtk_info_bar_get_show_close_button  (GtkInfoBar     *info_bar);
 
-
+/* Zeile entfernt */
 void           gtk_info_bar_set_revealed           (GtkInfoBar     *info_bar,
                                                     gboolean        revealed);
-
+/* Zeile entfernt */
 gboolean       gtk_info_bar_get_revealed           (GtkInfoBar     *info_bar);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_INFO_BAR_H__  */

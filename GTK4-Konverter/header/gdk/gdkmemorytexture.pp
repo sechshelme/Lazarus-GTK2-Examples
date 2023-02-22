@@ -32,6 +32,7 @@
 {$endif}
 {$include <gdk/gdkenums.h>}
 {$include <gdk/gdktexture.h>}
+  { Zeile entfernt  }
   {*
    * GDK_MEMORY_DEFAULT:
    *
@@ -72,15 +73,15 @@
   type
     _GdkMemoryTexture = GdkMemoryTexture;
     _GdkMemoryTextureClass = GdkMemoryTextureClass;
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkMemoryTexture, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkMemoryTexture, g_object_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 
+  function gdk_memory_texture_get_type:GType;
+
+  { Zeile entfernt  }
   function gdk_memory_texture_new(width:longint; height:longint; format:GdkMemoryFormat; bytes:PGBytes; stride:gsize):^GdkTexture;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_MEMORY_TEXTURE_H__  }
   { was #define dname def_expr }
@@ -105,6 +106,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkMemoryTexture, g_object_unref)
     GDK_IS_MEMORY_TEXTURE:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_MEMORY_TEXTURE);
   end;
 
+  function gdk_memory_texture_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_memory_texture_new(width:longint; height:longint; format:GdkMemoryFormat; bytes:PGBytes; stride:gsize):PGdkTexture;
   begin
     { You must implement this function }

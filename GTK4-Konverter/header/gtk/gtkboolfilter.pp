@@ -32,24 +32,29 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtkfilter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BOOL_FILTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBoolFilter, gtk_bool_filter, GTK, BOOL_FILTER, GtkFilter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBoolFilter, gtk_bool_filter, GTK, BOOL_FILTER, GtkFilter)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_bool_filter_new(expression:PGtkExpression):^GtkBoolFilter;
+
+  { Zeile entfernt  }
   function gtk_bool_filter_get_expression(self:PGtkBoolFilter):^GtkExpression;
 
+  { Zeile entfernt  }
   procedure gtk_bool_filter_set_expression(self:PGtkBoolFilter; expression:PGtkExpression);
 
+  { Zeile entfernt  }
   function gtk_bool_filter_get_invert(self:PGtkBoolFilter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_bool_filter_set_invert(self:PGtkBoolFilter; invert:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BOOL_FILTER_H__  }
   { was #define dname def_expr }
@@ -58,6 +63,10 @@ G_DECLARE_FINAL_TYPE (GtkBoolFilter, gtk_bool_filter, GTK, BOOL_FILTER, GtkFilte
       GTK_TYPE_BOOL_FILTER:=gtk_bool_filter_get_type;
     end;
 
+  function gtk_bool_filter_new(expression:PGtkExpression):PGtkBoolFilter;
+  begin
+    { You must implement this function }
+  end;
   function gtk_bool_filter_get_expression(self:PGtkBoolFilter):PGtkExpression;
   begin
     { You must implement this function }

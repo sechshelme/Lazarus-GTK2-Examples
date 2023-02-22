@@ -28,7 +28,7 @@
 #include <gdk/gdk.h>
 #include <time.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_RECENT_INFO			(gtk_recent_info_get_type ())
 
@@ -142,115 +142,115 @@ typedef enum
  * The `GError` domain for `GtkRecentManager` errors.
  */
 #define GTK_RECENT_MANAGER_ERROR	(gtk_recent_manager_error_quark ())
-
+/* Zeile entfernt */
 GQuark 	gtk_recent_manager_error_quark (void);
 
 
+/* Zeile entfernt */
+GType 		  gtk_recent_manager_get_type       (void) ;
 
-GType 		  gtk_recent_manager_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkRecentManager *gtk_recent_manager_new            (void);
-
+/* Zeile entfernt */
 GtkRecentManager *gtk_recent_manager_get_default    (void);
 
-
+/* Zeile entfernt */
 gboolean          gtk_recent_manager_add_item       (GtkRecentManager     *manager,
 						     const char           *uri);
-
+/* Zeile entfernt */
 gboolean          gtk_recent_manager_add_full       (GtkRecentManager     *manager,
 						     const char           *uri,
 						     const GtkRecentData  *recent_data);
-
+/* Zeile entfernt */
 gboolean          gtk_recent_manager_remove_item    (GtkRecentManager     *manager,
 						     const char           *uri,
 						     GError              **error);
-
+/* Zeile entfernt */
 GtkRecentInfo *   gtk_recent_manager_lookup_item    (GtkRecentManager     *manager,
 						     const char           *uri,
 						     GError              **error);
-
+/* Zeile entfernt */
 gboolean          gtk_recent_manager_has_item       (GtkRecentManager     *manager,
 						     const char           *uri);
-
+/* Zeile entfernt */
 gboolean          gtk_recent_manager_move_item      (GtkRecentManager     *manager,
 						     const char           *uri,
 						     const char           *new_uri,
 						     GError              **error);
-
+/* Zeile entfernt */
 GList *           gtk_recent_manager_get_items      (GtkRecentManager     *manager);
-
+/* Zeile entfernt */
 int               gtk_recent_manager_purge_items    (GtkRecentManager     *manager,
 						     GError              **error);
 
 
+/* Zeile entfernt */
+GType	              gtk_recent_info_get_type             (void) ;
 
-GType	              gtk_recent_info_get_type             (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkRecentInfo *       gtk_recent_info_ref                  (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 void                  gtk_recent_info_unref                (GtkRecentInfo  *info);
 
-
+/* Zeile entfernt */
 const char *         gtk_recent_info_get_uri              (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 const char *         gtk_recent_info_get_display_name     (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 const char *         gtk_recent_info_get_description      (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 const char *         gtk_recent_info_get_mime_type        (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 GDateTime *          gtk_recent_info_get_added            (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 GDateTime *          gtk_recent_info_get_modified         (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 GDateTime *          gtk_recent_info_get_visited          (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 gboolean             gtk_recent_info_get_private_hint     (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 gboolean             gtk_recent_info_get_application_info (GtkRecentInfo  *info,
                                                            const char     *app_name,
                                                            const char    **app_exec,
                                                            guint          *count,
                                                            GDateTime     **stamp);
-
+/* Zeile entfernt */
 GAppInfo *            gtk_recent_info_create_app_info      (GtkRecentInfo  *info,
                                                             const char     *app_name,
                                                             GError        **error);
-
+/* Zeile entfernt */
 char **              gtk_recent_info_get_applications     (GtkRecentInfo  *info,
 							    gsize          *length) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 char *               gtk_recent_info_last_application     (GtkRecentInfo  *info) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 gboolean              gtk_recent_info_has_application      (GtkRecentInfo  *info,
 							    const char     *app_name);
-
+/* Zeile entfernt */
 char **              gtk_recent_info_get_groups           (GtkRecentInfo  *info,
 							    gsize          *length) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 gboolean              gtk_recent_info_has_group            (GtkRecentInfo  *info,
 							    const char     *group_name);
-
+/* Zeile entfernt */
 GIcon *               gtk_recent_info_get_gicon            (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 char *               gtk_recent_info_get_short_name       (GtkRecentInfo  *info) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info) G_GNUC_MALLOC;
-
+/* Zeile entfernt */
 int                   gtk_recent_info_get_age              (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 gboolean              gtk_recent_info_is_local             (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 gboolean              gtk_recent_info_exists               (GtkRecentInfo  *info);
-
+/* Zeile entfernt */
 gboolean              gtk_recent_info_match                (GtkRecentInfo  *info_a,
 							    GtkRecentInfo  *info_b);
 
 /* private */
 void _gtk_recent_manager_sync (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_RECENT_MANAGER_H__ */

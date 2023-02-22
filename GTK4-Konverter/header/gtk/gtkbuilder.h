@@ -26,7 +26,7 @@
 #include <gtk/gtkbuilderscope.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BUILDER                 (gtk_builder_get_type ())
 #define GTK_BUILDER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUILDER, GtkBuilder))
@@ -90,92 +90,92 @@ typedef enum
   GTK_BUILDER_ERROR_INVALID_FUNCTION
 } GtkBuilderError;
 
-
+/* Zeile entfernt */
 GQuark gtk_builder_error_quark (void);
 
-
-GType        gtk_builder_get_type                (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_builder_get_type                (void) ;
+/* Zeile entfernt */
 GtkBuilder*  gtk_builder_new                     (void);
 
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_from_file           (GtkBuilder    *builder,
                                                   const char    *filename,
                                                   GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_from_resource       (GtkBuilder    *builder,
                                                   const char    *resource_path,
                                                   GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_from_string         (GtkBuilder    *builder,
                                                   const char    *buffer,
                                                   gssize         length,
                                                   GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_objects_from_file   (GtkBuilder    *builder,
                                                   const char    *filename,
                                                   const char   **object_ids,
                                                   GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_objects_from_resource(GtkBuilder    *builder,
                                                   const char    *resource_path,
                                                   const char   **object_ids,
                                                   GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_add_objects_from_string (GtkBuilder    *builder,
                                                   const char    *buffer,
                                                   gssize         length,
                                                   const char   **object_ids,
                                                   GError       **error);
-
+/* Zeile entfernt */
 GObject*     gtk_builder_get_object              (GtkBuilder    *builder,
                                                   const char    *name);
-
+/* Zeile entfernt */
 GSList*      gtk_builder_get_objects             (GtkBuilder    *builder);
-
+/* Zeile entfernt */
 void         gtk_builder_expose_object           (GtkBuilder    *builder,
                                                   const char    *name,
                                                   GObject       *object);
-
+/* Zeile entfernt */
 GObject *    gtk_builder_get_current_object      (GtkBuilder    *builder);
-
+/* Zeile entfernt */
 void         gtk_builder_set_current_object      (GtkBuilder    *builder,
                                                   GObject       *current_object);
-
+/* Zeile entfernt */
 void         gtk_builder_set_translation_domain  (GtkBuilder   	*builder,
                                                   const char   	*domain);
-
+/* Zeile entfernt */
 const char * gtk_builder_get_translation_domain  (GtkBuilder   	*builder);
-
+/* Zeile entfernt */
 GtkBuilderScope *gtk_builder_get_scope           (GtkBuilder    *builder);
-
+/* Zeile entfernt */
 void         gtk_builder_set_scope               (GtkBuilder    *builder,
                                                   GtkBuilderScope *scope);
-
+/* Zeile entfernt */
 GType        gtk_builder_get_type_from_name      (GtkBuilder   	*builder,
                                                   const char   	*type_name);
 
-
+/* Zeile entfernt */
 gboolean     gtk_builder_value_from_string       (GtkBuilder    *builder,
 						  GParamSpec   	*pspec,
                                                   const char   	*string,
                                                   GValue       	*value,
 						  GError       **error);
-
+/* Zeile entfernt */
 gboolean     gtk_builder_value_from_string_type  (GtkBuilder    *builder,
 						  GType        	 type,
                                                   const char   	*string,
                                                   GValue       	*value,
 						  GError       **error);
-
+/* Zeile entfernt */
 GtkBuilder * gtk_builder_new_from_file           (const char    *filename);
-
+/* Zeile entfernt */
 GtkBuilder * gtk_builder_new_from_resource       (const char    *resource_path);
-
+/* Zeile entfernt */
 GtkBuilder * gtk_builder_new_from_string         (const char    *string,
                                                   gssize         length);
 
-
+/* Zeile entfernt */
 GClosure *   gtk_builder_create_closure          (GtkBuilder    *builder,
                                                   const char    *function_name,
                                                   GtkBuilderClosureFlags flags,
@@ -195,7 +195,7 @@ GClosure *   gtk_builder_create_closure          (GtkBuilder    *builder,
 #define GTK_BUILDER_WARN_INVALID_CHILD_TYPE(object, type) \
   g_warning ("'%s' is not a valid child type of '%s'", type, g_type_name (G_OBJECT_TYPE (object)))
 
-
+/* Zeile entfernt */
 gboolean  gtk_builder_extend_with_template  (GtkBuilder    *builder,
                                              GObject       *object,
                                              GType          template_type,
@@ -203,6 +203,6 @@ gboolean  gtk_builder_extend_with_template  (GtkBuilder    *builder,
                                              gssize         length,
                                              GError       **error);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_BUILDER_H__ */

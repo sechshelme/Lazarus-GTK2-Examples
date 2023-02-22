@@ -31,24 +31,20 @@
 {$endif}
 {$include <gtk/gtkexpression.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CUSTOM_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomSorter, gtk_custom_sorter, GTK, CUSTOM_SORTER, GtkSorter)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkCustomSorter, gtk_custom_sorter, GTK, CUSTOM_SORTER, GtkSorter)
-(* error 
-                                                                 gpointer                user_data,
-(* error 
-                                                                 GDestroyNotify          user_destroy);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_custom_sorter_new(sort_func:GCompareDataFunc; user_data:gpointer; user_destroy:GDestroyNotify):^GtkCustomSorter;
+
+  { Zeile entfernt  }
   procedure gtk_custom_sorter_set_sort_func(self:PGtkCustomSorter; sort_func:GCompareDataFunc; user_data:gpointer; user_destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CUSTOM_SORTER_H__  }
   { was #define dname def_expr }
@@ -57,6 +53,10 @@ G_DECLARE_FINAL_TYPE (GtkCustomSorter, gtk_custom_sorter, GTK, CUSTOM_SORTER, Gt
       GTK_TYPE_CUSTOM_SORTER:=gtk_custom_sorter_get_type;
     end;
 
+  function gtk_custom_sorter_new(sort_func:GCompareDataFunc; user_data:gpointer; user_destroy:GDestroyNotify):PGtkCustomSorter;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_custom_sorter_set_sort_func(self:PGtkCustomSorter; sort_func:GCompareDataFunc; user_data:gpointer; user_destroy:GDestroyNotify);
   begin
     { You must implement this function }

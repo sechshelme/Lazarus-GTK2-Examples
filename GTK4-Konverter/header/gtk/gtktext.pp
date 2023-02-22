@@ -1,12 +1,13 @@
 
-    Type
-    Pchar  = ^char;
-    PGMenuModel  = ^GMenuModel;
-    PGtkEntryBuffer  = ^GtkEntryBuffer;
-    PGtkText  = ^GtkText;
-    PGtkWidget  = ^GtkWidget;
-    PPangoAttrList  = ^PangoAttrList;
-    PPangoTabArray  = ^PangoTabArray;
+  Type
+  Pchar  = ^char;
+  PGMenuModel  = ^GMenuModel;
+  Pgraphene_rect_t  = ^graphene_rect_t;
+  PGtkEntryBuffer  = ^GtkEntryBuffer;
+  PGtkText  = ^GtkText;
+  PGtkWidget  = ^GtkWidget;
+  PPangoAttrList  = ^PangoAttrList;
+  PPangoTabArray  = ^PangoTabArray;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -45,6 +46,7 @@
 {$endif}
 {$include <gtk/gtkeditable.h>}
 {$include <gtk/gtkentrybuffer.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TEXT : longint; { return type might be wrong }
@@ -67,90 +69,123 @@
         parent_instance : GtkWidget;
       end;
 
-(* error 
-GType           gtk_text_get_type                       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_text_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_text_new_with_buffer(buffer:PGtkEntryBuffer):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_text_get_buffer(self:PGtkText):^GtkEntryBuffer;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_buffer(self:PGtkText; buffer:PGtkEntryBuffer);
 
+  { Zeile entfernt  }
   procedure gtk_text_set_visibility(self:PGtkText; visible:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_visibility(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_invisible_char(self:PGtkText; ch:gunichar);
 
+  { Zeile entfernt  }
   function gtk_text_get_invisible_char(self:PGtkText):gunichar;
 
+  { Zeile entfernt  }
   procedure gtk_text_unset_invisible_char(self:PGtkText);
 
+  { Zeile entfernt  }
   procedure gtk_text_set_overwrite_mode(self:PGtkText; overwrite:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_overwrite_mode(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_max_length(self:PGtkText; length:longint);
 
+  { Zeile entfernt  }
   function gtk_text_get_max_length(self:PGtkText):longint;
 
+  { Zeile entfernt  }
   function gtk_text_get_text_length(self:PGtkText):guint16;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_activates_default(self:PGtkText; activates:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_activates_default(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_text_get_placeholder_text(self:PGtkText):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_text_set_placeholder_text(self:PGtkText; text:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_text_set_input_purpose(self:PGtkText; purpose:GtkInputPurpose);
 
+  { Zeile entfernt  }
   function gtk_text_get_input_purpose(self:PGtkText):GtkInputPurpose;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_input_hints(self:PGtkText; hints:GtkInputHints);
 
+  { Zeile entfernt  }
   function gtk_text_get_input_hints(self:PGtkText):GtkInputHints;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_attributes(self:PGtkText; attrs:PPangoAttrList);
 
+  { Zeile entfernt  }
   function gtk_text_get_attributes(self:PGtkText):^PangoAttrList;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_tabs(self:PGtkText; tabs:PPangoTabArray);
 
+  { Zeile entfernt  }
   function gtk_text_get_tabs(self:PGtkText):^PangoTabArray;
 
+  { Zeile entfernt  }
   function gtk_text_grab_focus_without_selecting(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_extra_menu(self:PGtkText; model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_text_get_extra_menu(self:PGtkText):^GMenuModel;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_enable_emoji_completion(self:PGtkText; enable_emoji_completion:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_enable_emoji_completion(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_propagate_text_width(self:PGtkText; propagate_text_width:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_propagate_text_width(self:PGtkText):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_text_set_truncate_multiline(self:PGtkText; truncate_multiline:gboolean);
 
+  { Zeile entfernt  }
   function gtk_text_get_truncate_multiline(self:PGtkText):gboolean;
 
-(* error 
-void            gtk_text_compute_cursor_extents         (GtkText         *self,
-in declaration at line 166 *)
+  { Zeile entfernt  }
+  procedure gtk_text_compute_cursor_extents(self:PGtkText; position:gsize; strong:Pgraphene_rect_t; weak:Pgraphene_rect_t);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_TEXT_H__  }
+  { __GTK_TEXT_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_TEXT : longint; { return type might be wrong }
     begin
@@ -173,6 +208,10 @@ in declaration at line 166 *)
     GTK_IS_TEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_TEXT);
   end;
 
+  function gtk_text_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -310,6 +349,10 @@ in declaration at line 166 *)
     { You must implement this function }
   end;
   function gtk_text_get_truncate_multiline(self:PGtkText):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_text_compute_cursor_extents(self:PGtkText; position:gsize; strong:Pgraphene_rect_t; weak:Pgraphene_rect_t);
   begin
     { You must implement this function }
   end;

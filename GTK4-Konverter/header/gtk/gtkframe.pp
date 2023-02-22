@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FRAME : longint; { return type might be wrong }
@@ -87,34 +88,41 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_frame_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_frame_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_frame_new(_label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_frame_set_label(frame:PGtkFrame; _label:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_frame_get_label(frame:PGtkFrame):^char;
 
+  { Zeile entfernt  }
   procedure gtk_frame_set_label_widget(frame:PGtkFrame; label_widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_frame_get_label_widget(frame:PGtkFrame):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_frame_set_label_align(frame:PGtkFrame; xalign:single);
 
+  { Zeile entfernt  }
   function gtk_frame_get_label_align(frame:PGtkFrame):single;
 
+  { Zeile entfernt  }
   procedure gtk_frame_set_child(frame:PGtkFrame; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_frame_get_child(frame:PGtkFrame):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FRAME_H__  }
   { was #define dname def_expr }
@@ -163,6 +171,10 @@ GType      gtk_frame_get_type         (void) G_GNUC_CONST;
     GTK_FRAME_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_FRAME,GtkFrameClass);
   end;
 
+  function gtk_frame_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_frame_new(_label:Pchar):PGtkWidget;
   begin
     { You must implement this function }

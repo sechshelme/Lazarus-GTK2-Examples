@@ -32,7 +32,7 @@
 #include <glib.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GtkDebugFlags:
@@ -87,11 +87,11 @@ typedef enum {
 
 #ifdef G_ENABLE_DEBUG
 
-#define GTK_DEBUG_CHECK(type) G_UNLIKELY (gtk_get_debug_flags () & GTK_DEBUG_##type)
+#define GTK_DEBUG_CHECK(type)  (gtk_get_debug_flags () & GTK_DEBUG_##type)
 
-#define GTK_NOTE(type,action)                G_STMT_START {     \
+#define GTK_NOTE(type,action)                 {     \
     if (GTK_DEBUG_CHECK (type))		                        \
-       { action; };                          } G_STMT_END
+       { action; };                          } 
 
 #else /* !G_ENABLE_DEBUG */
 
@@ -100,11 +100,11 @@ typedef enum {
 
 #endif /* G_ENABLE_DEBUG */
 
-
+/* Zeile entfernt */
 GtkDebugFlags gtk_get_debug_flags (void);
-
+/* Zeile entfernt */
 void          gtk_set_debug_flags (GtkDebugFlags flags);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_DEBUG_H__ */

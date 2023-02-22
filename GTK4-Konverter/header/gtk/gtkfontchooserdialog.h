@@ -24,7 +24,7 @@
 
 #include <gtk/gtkdialog.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FONT_CHOOSER_DIALOG              (gtk_font_chooser_dialog_get_type ())
 #define GTK_FONT_CHOOSER_DIALOG(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FONT_CHOOSER_DIALOG, GtkFontChooserDialog))
@@ -32,12 +32,12 @@
 
 typedef struct _GtkFontChooserDialog              GtkFontChooserDialog;
 
-
-GType      gtk_font_chooser_dialog_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_font_chooser_dialog_get_type         (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_font_chooser_dialog_new              (const char           *title,
                                                      GtkWindow            *parent);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FONT_CHOOSER_DIALOG_H__ */

@@ -1,6 +1,6 @@
 
-    Type
-    PGtkFilter  = ^GtkFilter;
+  Type
+  PGtkFilter  = ^GtkFilter;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   {*
    * GtkFilterMatch:
    * @GTK_FILTER_MATCH_SOME: The filter matches some items,
@@ -74,58 +75,56 @@
   { was #define dname def_expr }
   function GTK_TYPE_FILTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkFilter, gtk_filter, GTK, FILTER, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkFilter, gtk_filter, GTK, FILTER, GObject)
- in declarator_list *)
-(* error 
-  GObjectClass parent_class;
- in declarator_list *)
-
-    var
-      match : function (self:PGtkFilter; item:gpointer):gboolean;cvar;public;
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   { optional  }
-      get_strictness : function (self:PGtkFilter):GtkFilterMatch;cvar;public;
   { Padding for future expansion  }
-      _gtk_reserved1 : procedure ;cvar;public;
-      _gtk_reserved2 : procedure ;cvar;public;
-      _gtk_reserved3 : procedure ;cvar;public;
-      _gtk_reserved4 : procedure ;cvar;public;
-      _gtk_reserved5 : procedure ;cvar;public;
-      _gtk_reserved6 : procedure ;cvar;public;
-      _gtk_reserved7 : procedure ;cvar;public;
-      _gtk_reserved8 : procedure ;cvar;public;
-(* error 
-};
-in declaration at line 100 *)
 
-    function gtk_filter_match(self:PGtkFilter; item:gpointer):gboolean;
+  type
+    _GtkFilterClass = record
+        parent_class : GObjectClass;
+        match : function (self:PGtkFilter; item:gpointer):gboolean;cdecl;
+        get_strictness : function (self:PGtkFilter):GtkFilterMatch;cdecl;
+        _gtk_reserved1 : procedure ;cdecl;
+        _gtk_reserved2 : procedure ;cdecl;
+        _gtk_reserved3 : procedure ;cdecl;
+        _gtk_reserved4 : procedure ;cdecl;
+        _gtk_reserved5 : procedure ;cdecl;
+        _gtk_reserved6 : procedure ;cdecl;
+        _gtk_reserved7 : procedure ;cdecl;
+        _gtk_reserved8 : procedure ;cdecl;
+      end;
 
-    function gtk_filter_get_strictness(self:PGtkFilter):GtkFilterMatch;
+  { Zeile entfernt  }
 
-    { for filter implementations  }
-    procedure gtk_filter_changed(self:PGtkFilter; change:GtkFilterChange);
+  function gtk_filter_match(self:PGtkFilter; item:gpointer):gboolean;
 
+  { Zeile entfernt  }
+  function gtk_filter_get_strictness(self:PGtkFilter):GtkFilterMatch;
+
+  { for filter implementations  }
+  { Zeile entfernt  }
+  procedure gtk_filter_changed(self:PGtkFilter; change:GtkFilterChange);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_FILTER_H__  }
+  { __GTK_FILTER_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_FILTER : longint; { return type might be wrong }
     begin
       GTK_TYPE_FILTER:=gtk_filter_get_type;
     end;
 
-    function gtk_filter_match(self:PGtkFilter; item:gpointer):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_filter_get_strictness(self:PGtkFilter):GtkFilterMatch;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_filter_changed(self:PGtkFilter; change:GtkFilterChange);
-    begin
-      { You must implement this function }
-    end;
+  function gtk_filter_match(self:PGtkFilter; item:gpointer):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_filter_get_strictness(self:PGtkFilter):GtkFilterMatch;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_filter_changed(self:PGtkFilter; change:GtkFilterChange);
+  begin
+    { You must implement this function }
+  end;
 

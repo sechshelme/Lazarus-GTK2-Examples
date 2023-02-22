@@ -1,8 +1,8 @@
 
-    Type
-    Pchar  = ^char;
-    PGtkFileFilter  = ^GtkFileFilter;
-    PGVariant  = ^GVariant;
+  Type
+  Pchar  = ^char;
+  PGtkFileFilter  = ^GtkFileFilter;
+  PGVariant  = ^GVariant;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -32,6 +32,7 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FILE_FILTER : longint; { return type might be wrong }
@@ -49,41 +50,49 @@
 
   type
     _GtkFileFilter = GtkFileFilter;
-(* error 
-GType           gtk_file_filter_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_file_filter_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_file_filter_new:^GtkFileFilter;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_filter_set_name(filter:PGtkFileFilter; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_file_filter_get_name(filter:PGtkFileFilter):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_filter_add_mime_type(filter:PGtkFileFilter; mime_type:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_filter_add_pattern(filter:PGtkFileFilter; pattern:Pchar);
 
-(* error 
-void            gtk_file_filter_add_suffix         (GtkFileFilter *filter,
-in declaration at line 58 *)
-    procedure gtk_file_filter_add_pixbuf_formats(filter:PGtkFileFilter);
-
+  { Zeile entfernt  }
 (* Const before type ignored *)
-    function gtk_file_filter_get_attributes(filter:PGtkFileFilter):^^char;
+  procedure gtk_file_filter_add_suffix(filter:PGtkFileFilter; suffix:Pchar);
 
-    function gtk_file_filter_to_gvariant(filter:PGtkFileFilter):^GVariant;
+  { Zeile entfernt  }
+  procedure gtk_file_filter_add_pixbuf_formats(filter:PGtkFileFilter);
 
-    function gtk_file_filter_new_from_gvariant(variant:PGVariant):^GtkFileFilter;
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_file_filter_get_attributes(filter:PGtkFileFilter):^^char;
 
+  { Zeile entfernt  }
+  function gtk_file_filter_to_gvariant(filter:PGtkFileFilter):^GVariant;
+
+  { Zeile entfernt  }
+  function gtk_file_filter_new_from_gvariant(variant:PGVariant):^GtkFileFilter;
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_FILE_FILTER_H__  }
+  { __GTK_FILE_FILTER_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_FILE_FILTER : longint; { return type might be wrong }
     begin
@@ -106,6 +115,10 @@ in declaration at line 58 *)
     GTK_IS_FILE_FILTER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_FILE_FILTER);
   end;
 
+  function gtk_file_filter_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_file_filter_new:PGtkFileFilter;
   begin
     { You must implement this function }
@@ -126,20 +139,24 @@ in declaration at line 58 *)
   begin
     { You must implement this function }
   end;
-    procedure gtk_file_filter_add_pixbuf_formats(filter:PGtkFileFilter);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_file_filter_get_attributes(filter:PGtkFileFilter):PPchar;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_file_filter_to_gvariant(filter:PGtkFileFilter):PGVariant;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_file_filter_new_from_gvariant(variant:PGVariant):PGtkFileFilter;
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_file_filter_add_suffix(filter:PGtkFileFilter; suffix:Pchar);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_file_filter_add_pixbuf_formats(filter:PGtkFileFilter);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_file_filter_get_attributes(filter:PGtkFileFilter):PPchar;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_file_filter_to_gvariant(filter:PGtkFileFilter):PGVariant;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_file_filter_new_from_gvariant(variant:PGVariant):PGtkFileFilter;
+  begin
+    { You must implement this function }
+  end;
 

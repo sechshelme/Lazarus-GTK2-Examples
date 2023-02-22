@@ -32,7 +32,7 @@
 
 #include <gtk/gtkcellrenderer.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_RENDERER_PROGRESS (gtk_cell_renderer_progress_get_type ())
 #define GTK_CELL_RENDERER_PROGRESS(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_RENDERER_PROGRESS, GtkCellRendererProgress))
@@ -40,11 +40,11 @@
 
 typedef struct _GtkCellRendererProgress         GtkCellRendererProgress;
 
-
-GType		 gtk_cell_renderer_progress_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType		 gtk_cell_renderer_progress_get_type (void) ;
+/* Zeile entfernt */
 GtkCellRenderer* gtk_cell_renderer_progress_new      (void);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_CELL_RENDERER_PROGRESS_H__ */

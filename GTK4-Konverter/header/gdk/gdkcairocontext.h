@@ -30,7 +30,7 @@
 
 #include <cairo.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_CAIRO_CONTEXT             (gdk_cairo_context_get_type ())
 #define GDK_CAIRO_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CAIRO_CONTEXT, GdkCairoContext))
@@ -38,12 +38,12 @@
 
 #define GDK_CAIRO_ERROR                    (gdk_cairo_error_quark ())
 
+/* Zeile entfernt */
+GType                   gdk_cairo_context_get_type                      (void) ;
 
-GType                   gdk_cairo_context_get_type                      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 cairo_t *               gdk_cairo_context_cairo_create                  (GdkCairoContext        *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CAIRO_CONTEXT__ */

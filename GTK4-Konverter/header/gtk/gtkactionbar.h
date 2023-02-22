@@ -26,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ACTION_BAR            (gtk_action_bar_get_type ())
 #define GTK_ACTION_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ACTION_BAR, GtkActionBar))
@@ -34,34 +34,34 @@
 
 typedef struct _GtkActionBar              GtkActionBar;
 
-
-GType        gtk_action_bar_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType        gtk_action_bar_get_type          (void) ;
+/* Zeile entfernt */
 GtkWidget   *gtk_action_bar_new               (void);
-
+/* Zeile entfernt */
 GtkWidget   *gtk_action_bar_get_center_widget (GtkActionBar *action_bar);
-
+/* Zeile entfernt */
 void         gtk_action_bar_set_center_widget (GtkActionBar *action_bar,
                                                GtkWidget    *center_widget);
 
-
+/* Zeile entfernt */
 void         gtk_action_bar_pack_start        (GtkActionBar *action_bar,
                                                GtkWidget    *child);
-
+/* Zeile entfernt */
 void         gtk_action_bar_pack_end          (GtkActionBar *action_bar,
                                                GtkWidget    *child);
 
-
+/* Zeile entfernt */
 void         gtk_action_bar_remove            (GtkActionBar *action_bar,
                                                GtkWidget    *child);
 
-
+/* Zeile entfernt */
 void        gtk_action_bar_set_revealed       (GtkActionBar *action_bar,
                                                gboolean      revealed);
-
+/* Zeile entfernt */
 gboolean    gtk_action_bar_get_revealed       (GtkActionBar *action_bar);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ACTION_BAR_H__ */

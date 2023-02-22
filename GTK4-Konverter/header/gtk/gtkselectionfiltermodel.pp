@@ -32,20 +32,23 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkselectionmodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SELECTION_FILTER_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSelectionFilterModel, gtk_selection_filter_model, GTK, SELECTION_FILTER_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSelectionFilterModel, gtk_selection_filter_model, GTK, SELECTION_FILTER_MODEL, GObject)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_selection_filter_model_new(model:PGtkSelectionModel):^GtkSelectionFilterModel;
+
+  { Zeile entfernt  }
   procedure gtk_selection_filter_model_set_model(self:PGtkSelectionFilterModel; model:PGtkSelectionModel);
 
+  { Zeile entfernt  }
   function gtk_selection_filter_model_get_model(self:PGtkSelectionFilterModel):^GtkSelectionModel;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SELECTION_FILTER_MODEL_H__  }
   { was #define dname def_expr }
@@ -54,6 +57,10 @@ G_DECLARE_FINAL_TYPE (GtkSelectionFilterModel, gtk_selection_filter_model, GTK, 
       GTK_TYPE_SELECTION_FILTER_MODEL:=gtk_selection_filter_model_get_type;
     end;
 
+  function gtk_selection_filter_model_new(model:PGtkSelectionModel):PGtkSelectionFilterModel;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_selection_filter_model_set_model(self:PGtkSelectionFilterModel; model:PGtkSelectionModel);
   begin
     { You must implement this function }

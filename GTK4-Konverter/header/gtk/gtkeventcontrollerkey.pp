@@ -35,6 +35,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
 {$include <gtk/gtkimcontext.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_KEY : longint; { return type might be wrong }
@@ -68,23 +69,26 @@
   type
     _GtkEventControllerKey = GtkEventControllerKey;
     _GtkEventControllerKeyClass = GtkEventControllerKeyClass;
-(* error 
-GType               gtk_event_controller_key_get_type  (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_event_controller_key_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_event_controller_key_new:^GtkEventController;
 
+  { Zeile entfernt  }
   procedure gtk_event_controller_key_set_im_context(controller:PGtkEventControllerKey; im_context:PGtkIMContext);
 
+  { Zeile entfernt  }
   function gtk_event_controller_key_get_im_context(controller:PGtkEventControllerKey):^GtkIMContext;
 
+  { Zeile entfernt  }
   function gtk_event_controller_key_forward(controller:PGtkEventControllerKey; widget:PGtkWidget):gboolean;
 
+  { Zeile entfernt  }
   function gtk_event_controller_key_get_group(controller:PGtkEventControllerKey):guint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EVENT_CONTROLLER_KEY_H__  }
   { was #define dname def_expr }
@@ -133,6 +137,10 @@ GType               gtk_event_controller_key_get_type  (void) G_GNUC_CONST;
     GTK_EVENT_CONTROLLER_KEY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER_KEY,GtkEventControllerKeyClass);
   end;
 
+  function gtk_event_controller_key_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_key_new:PGtkEventController;
   begin
     { You must implement this function }

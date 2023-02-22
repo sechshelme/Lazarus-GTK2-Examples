@@ -26,7 +26,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtktreesortable.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_MODEL_SORT			(gtk_tree_model_sort_get_type ())
 #define GTK_TREE_MODEL_SORT(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_MODEL_SORT, GtkTreeModelSort))
@@ -56,36 +56,36 @@ struct _GtkTreeModelSortClass
 };
 
 
-
-GType         gtk_tree_model_sort_get_type                   (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_tree_model_sort_get_type                   (void) ;
+/* Zeile entfernt */
 GtkTreeModel *gtk_tree_model_sort_new_with_model             (GtkTreeModel     *child_model);
 
-
+/* Zeile entfernt */
 GtkTreeModel *gtk_tree_model_sort_get_model                  (GtkTreeModelSort *tree_model);
-
+/* Zeile entfernt */
 GtkTreePath  *gtk_tree_model_sort_convert_child_path_to_path (GtkTreeModelSort *tree_model_sort,
 							      GtkTreePath      *child_path);
-
+/* Zeile entfernt */
 gboolean      gtk_tree_model_sort_convert_child_iter_to_iter (GtkTreeModelSort *tree_model_sort,
 							      GtkTreeIter      *sort_iter,
 							      GtkTreeIter      *child_iter);
-
+/* Zeile entfernt */
 GtkTreePath  *gtk_tree_model_sort_convert_path_to_child_path (GtkTreeModelSort *tree_model_sort,
 							      GtkTreePath      *sorted_path);
-
+/* Zeile entfernt */
 void          gtk_tree_model_sort_convert_iter_to_child_iter (GtkTreeModelSort *tree_model_sort,
 							      GtkTreeIter      *child_iter,
 							      GtkTreeIter      *sorted_iter);
-
+/* Zeile entfernt */
 void          gtk_tree_model_sort_reset_default_sort_func    (GtkTreeModelSort *tree_model_sort);
-
+/* Zeile entfernt */
 void          gtk_tree_model_sort_clear_cache                (GtkTreeModelSort *tree_model_sort);
-
+/* Zeile entfernt */
 gboolean      gtk_tree_model_sort_iter_is_valid              (GtkTreeModelSort *tree_model_sort,
                                                               GtkTreeIter      *iter);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_MODEL_SORT_H__ */

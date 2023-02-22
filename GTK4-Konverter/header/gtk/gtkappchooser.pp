@@ -36,6 +36,7 @@
 {$include <glib.h>}
 {$include <gio/gio.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APP_CHOOSER : longint; { return type might be wrong }
@@ -53,19 +54,20 @@
 
   type
     _GtkAppChooser = GtkAppChooser;
-(* error 
-GType      gtk_app_chooser_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_app_chooser_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_app_chooser_get_app_info(self:PGtkAppChooser):^GAppInfo;
 
+  { Zeile entfernt  }
   function gtk_app_chooser_get_content_type(self:PGtkAppChooser):^char;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_refresh(self:PGtkAppChooser);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APP_CHOOSER_H__  }
   { was #define dname def_expr }
@@ -90,6 +92,10 @@ GType      gtk_app_chooser_get_type         (void) G_GNUC_CONST;
     GTK_IS_APP_CHOOSER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_APP_CHOOSER);
   end;
 
+  function gtk_app_chooser_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_app_chooser_get_app_info(self:PGtkAppChooser):PGAppInfo;
   begin
     { You must implement this function }

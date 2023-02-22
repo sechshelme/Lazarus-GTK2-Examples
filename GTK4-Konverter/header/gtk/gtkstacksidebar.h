@@ -28,7 +28,7 @@
 
 #include <gtk/gtkstack.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_STACK_SIDEBAR           (gtk_stack_sidebar_get_type ())
 #define GTK_STACK_SIDEBAR(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STACK_SIDEBAR, GtkStackSidebar))
@@ -36,16 +36,16 @@
 
 typedef struct _GtkStackSidebar GtkStackSidebar;
 
-
-GType       gtk_stack_sidebar_get_type  (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType       gtk_stack_sidebar_get_type  (void) ;
+/* Zeile entfernt */
 GtkWidget * gtk_stack_sidebar_new       (void);
-
+/* Zeile entfernt */
 void        gtk_stack_sidebar_set_stack (GtkStackSidebar *self,
                                          GtkStack        *stack);
-
+/* Zeile entfernt */
 GtkStack *  gtk_stack_sidebar_get_stack (GtkStackSidebar *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_STACK_SIDEBAR_H__ */

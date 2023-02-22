@@ -23,7 +23,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ACTIONABLE                                 (gtk_actionable_get_type ())
 #define GTK_ACTIONABLE(inst)                                (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
@@ -51,30 +51,30 @@ struct _GtkActionableInterface
                                                  GVariant      *target_value);
 };
 
+/* Zeile entfernt */
+GType                   gtk_actionable_get_type                         (void) ;
 
-GType                   gtk_actionable_get_type                         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 const char *            gtk_actionable_get_action_name                  (GtkActionable *actionable);
-
+/* Zeile entfernt */
 void                    gtk_actionable_set_action_name                  (GtkActionable *actionable,
                                                                          const char    *action_name);
 
-
+/* Zeile entfernt */
 GVariant *              gtk_actionable_get_action_target_value          (GtkActionable *actionable);
-
+/* Zeile entfernt */
 void                    gtk_actionable_set_action_target_value          (GtkActionable *actionable,
                                                                          GVariant      *target_value);
 
-
+/* Zeile entfernt */
 void                    gtk_actionable_set_action_target                (GtkActionable *actionable,
                                                                          const char    *format_string,
                                                                          ...);
 
-
+/* Zeile entfernt */
 void                    gtk_actionable_set_detailed_action_name         (GtkActionable *actionable,
                                                                          const char    *detailed_action_name);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ACTIONABLE_H__ */

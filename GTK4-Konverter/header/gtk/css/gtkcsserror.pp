@@ -26,6 +26,7 @@
 {$define __GTK_CSS_ERROR_H__}  
 {$include <glib.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
   {*
    * GTK_CSS_PARSER_ERROR:
    *
@@ -35,6 +36,7 @@
   { was #define dname def_expr }
   function GTK_CSS_PARSER_ERROR : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gtk_css_parser_error_quark:GQuark;
 
   {*
@@ -45,8 +47,10 @@
   { was #define dname def_expr }
   function GTK_CSS_PARSER_WARNING : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gtk_css_parser_warning_quark:GQuark;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CSS_ERROR_H__  }
   { was #define dname def_expr }

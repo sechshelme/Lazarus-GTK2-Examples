@@ -6,12 +6,15 @@
   PGdkDevice  = ^GdkDevice;
   PGdkDisplay  = ^GdkDisplay;
   PGdkEvent  = ^GdkEvent;
+  PGdkGLContext  = ^GdkGLContext;
   PGdkKeymapKey  = ^GdkKeymapKey;
   PGdkModifierType  = ^GdkModifierType;
   PGdkMonitor  = ^GdkMonitor;
   PGdkSeat  = ^GdkSeat;
   PGdkSurface  = ^GdkSurface;
+  PGError  = ^GError;
   PGList  = ^GList;
+  PGListModel  = ^GListModel;
   Pguint  = ^guint;
   PGValue  = ^GValue;
   Plongint  = ^longint;
@@ -50,6 +53,7 @@
 {$include <gdk/gdkevents.h>}
 {$include <gdk/gdkseat.h>}
 {$include <gdk/gdkmonitor.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DISPLAY : longint; { return type might be wrong }
@@ -64,88 +68,100 @@
   { return type might be wrong }   
   function GDK_IS_DISPLAY(object : longint) : longint;  
 
-(* error 
-GType       gdk_display_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_display_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gdk_display_open(display_name:Pchar):^GdkDisplay;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_display_get_name(display:PGdkDisplay):^char;
 
+  { Zeile entfernt  }
   function gdk_display_device_is_grabbed(display:PGdkDisplay; device:PGdkDevice):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_display_beep(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_display_sync(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_display_flush(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_display_close(display:PGdkDisplay);
 
+  { Zeile entfernt  }
   function gdk_display_is_closed(display:PGdkDisplay):gboolean;
 
+  { Zeile entfernt  }
   function gdk_display_is_composited(display:PGdkDisplay):gboolean;
 
+  { Zeile entfernt  }
   function gdk_display_is_rgba(display:PGdkDisplay):gboolean;
 
+  { Zeile entfernt  }
   function gdk_display_supports_input_shapes(display:PGdkDisplay):gboolean;
 
-(* error 
-gboolean    gdk_display_prepare_gl         (GdkDisplay  *self,
-(* error 
-                                            GError     **error);
- in declarator_list *)
- in declarator_list *)
-(* error 
-GdkGLContext *gdk_display_create_gl_context(GdkDisplay  *self,
-(* error 
-                                            GError     **error);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_display_prepare_gl(self:PGdkDisplay; error:PPGError):gboolean;
+
+  { Zeile entfernt  }
+  function gdk_display_create_gl_context(self:PGdkDisplay; error:PPGError):^GdkGLContext;
+
+  { Zeile entfernt  }
   function gdk_display_get_default:^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_display_get_clipboard(display:PGdkDisplay):^GdkClipboard;
 
+  { Zeile entfernt  }
   function gdk_display_get_primary_clipboard(display:PGdkDisplay):^GdkClipboard;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_display_notify_startup_complete(display:PGdkDisplay; startup_id:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_display_get_startup_notification_id(display:PGdkDisplay):^char;
 
+  { Zeile entfernt  }
   function gdk_display_get_app_launch_context(display:PGdkDisplay):^GdkAppLaunchContext;
 
+  { Zeile entfernt  }
   function gdk_display_get_default_seat(display:PGdkDisplay):^GdkSeat;
 
+  { Zeile entfernt  }
   function gdk_display_list_seats(display:PGdkDisplay):^GList;
 
-(* error 
-GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_display_get_monitors(self:PGdkDisplay):^GListModel;
 
-    var
- : GListModel;
-
+  { Zeile entfernt  }
   function gdk_display_get_monitor_at_surface(display:PGdkDisplay; surface:PGdkSurface):^GdkMonitor;
 
+  { Zeile entfernt  }
   procedure gdk_display_put_event(display:PGdkDisplay; event:PGdkEvent);
 
+  { Zeile entfernt  }
   function gdk_display_map_keyval(display:PGdkDisplay; keyval:guint; keys:PPGdkKeymapKey; n_keys:Plongint):gboolean;
 
+  { Zeile entfernt  }
   function gdk_display_map_keycode(display:PGdkDisplay; keycode:guint; keys:PPGdkKeymapKey; keyvals:PPguint; n_entries:Plongint):gboolean;
 
+  { Zeile entfernt  }
   function gdk_display_translate_key(display:PGdkDisplay; keycode:guint; state:GdkModifierType; group:longint; keyval:Pguint; 
              effective_group:Plongint; level:Plongint; consumed:PGdkModifierType):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_display_get_setting(display:PGdkDisplay; name:Pchar; value:PGValue):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DISPLAY_H__  }
   { was #define dname def_expr }
@@ -170,6 +186,10 @@ GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
     GDK_IS_DISPLAY:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_DISPLAY);
   end;
 
+  function gdk_display_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_display_open(display_name:Pchar):PGdkDisplay;
   begin
     { You must implement this function }
@@ -214,6 +234,14 @@ GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
   begin
     { You must implement this function }
   end;
+  function gdk_display_prepare_gl(self:PGdkDisplay; error:PPGError):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_display_create_gl_context(self:PGdkDisplay; error:PPGError):PGdkGLContext;
+  begin
+    { You must implement this function }
+  end;
   function gdk_display_get_default:PGdkDisplay;
   begin
     { You must implement this function }
@@ -243,6 +271,10 @@ GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
     { You must implement this function }
   end;
   function gdk_display_list_seats(display:PGdkDisplay):PGList;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_display_get_monitors(self:PGdkDisplay):PGListModel;
   begin
     { You must implement this function }
   end;

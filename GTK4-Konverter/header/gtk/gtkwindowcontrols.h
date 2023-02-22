@@ -24,31 +24,31 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_WINDOW_CONTROLS (gtk_window_controls_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget *  gtk_window_controls_new                   (GtkPackType        side);
 
-
+/* Zeile entfernt */
 GtkPackType  gtk_window_controls_get_side              (GtkWindowControls *self);
 
-
+/* Zeile entfernt */
 void         gtk_window_controls_set_side              (GtkWindowControls *self,
                                                         GtkPackType        side);
 
-
+/* Zeile entfernt */
 const char * gtk_window_controls_get_decoration_layout (GtkWindowControls *self);
 
-
+/* Zeile entfernt */
 void         gtk_window_controls_set_decoration_layout (GtkWindowControls *self,
                                                         const char        *layout);
 
-
+/* Zeile entfernt */
 gboolean     gtk_window_controls_get_empty             (GtkWindowControls *self);
 
-
+/* Zeile entfernt */

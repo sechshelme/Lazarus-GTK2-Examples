@@ -27,7 +27,7 @@
 #include <gtk/gtkbuildable.h>
 #include <gtk/gtkbuilder.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_CELL_LAYOUT            (gtk_cell_layout_get_type ())
 #define GTK_CELL_LAYOUT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_LAYOUT, GtkCellLayout))
@@ -108,43 +108,43 @@ struct _GtkCellLayoutIface
   GtkCellArea *(* get_area)   (GtkCellLayout         *cell_layout);
 };
 
-
-GType gtk_cell_layout_get_type           (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType gtk_cell_layout_get_type           (void) ;
+/* Zeile entfernt */
 void  gtk_cell_layout_pack_start         (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           gboolean               expand);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_pack_end           (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           gboolean               expand);
-
+/* Zeile entfernt */
 GList *gtk_cell_layout_get_cells         (GtkCellLayout         *cell_layout);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_clear              (GtkCellLayout         *cell_layout);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_set_attributes     (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
-                                          ...) G_GNUC_NULL_TERMINATED;
-
+                                          ...) ;
+/* Zeile entfernt */
 void  gtk_cell_layout_add_attribute      (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           const char            *attribute,
                                           int                    column);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_set_cell_data_func (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           GtkCellLayoutDataFunc  func,
                                           gpointer               func_data,
                                           GDestroyNotify         destroy);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_clear_attributes   (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell);
-
+/* Zeile entfernt */
 void  gtk_cell_layout_reorder            (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           int                    position);
-
+/* Zeile entfernt */
 GtkCellArea *gtk_cell_layout_get_area    (GtkCellLayout         *cell_layout);
 
 gboolean _gtk_cell_layout_buildable_custom_tag_start (GtkBuildable       *buildable,
@@ -163,6 +163,6 @@ void     _gtk_cell_layout_buildable_add_child        (GtkBuildable       *builda
                                                       GObject            *child,
                                                       const char         *type);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CELL_LAYOUT_H__ */

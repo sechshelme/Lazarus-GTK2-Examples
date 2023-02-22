@@ -31,6 +31,7 @@
 {$endif}
 {$include <gdk/gdktypes.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   type
     _GdkToplevelSize = GdkToplevelSize;
@@ -38,16 +39,22 @@
   { was #define dname def_expr }
   function GDK_TYPE_TOPLEVEL_SIZE : longint; { return type might be wrong }
 
+  { Zeile entfernt  }
   function gdk_toplevel_size_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_size_get_bounds(size:PGdkToplevelSize; bounds_width:Plongint; bounds_height:Plongint);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_size_set_size(size:PGdkToplevelSize; width:longint; height:longint);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_size_set_min_size(size:PGdkToplevelSize; min_width:longint; min_height:longint);
 
+  { Zeile entfernt  }
   procedure gdk_toplevel_size_set_shadow_width(size:PGdkToplevelSize; left:longint; right:longint; top:longint; bottom:longint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_TOPLEVEL_SIZE_H__  }
   { was #define dname def_expr }

@@ -22,28 +22,28 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FIXED_LAYOUT (gtk_fixed_layout_get_type ())
 #define GTK_TYPE_FIXED_LAYOUT_CHILD (gtk_fixed_layout_child_get_type ())
 
 /* GtkFixedLayout */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkFixedLayout, gtk_fixed_layout, GTK, FIXED_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_fixed_layout_new    (void);
 
 /* GtkFixedLayoutChild */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild)
-
-
+/* Zeile entfernt */
 void            gtk_fixed_layout_child_set_transform    (GtkFixedLayoutChild *child,
                                                          GskTransform        *transform);
-
+/* Zeile entfernt */
 GskTransform *  gtk_fixed_layout_child_get_transform    (GtkFixedLayoutChild *child);
 
-
+/* Zeile entfernt */

@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcombobox.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_COMBO_BOX_TEXT : longint; { return type might be wrong }
@@ -48,44 +49,53 @@
 
   type
     _GtkComboBoxText = GtkComboBoxText;
-(* error 
-GType         gtk_combo_box_text_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_combo_box_text_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_combo_box_text_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_combo_box_text_new_with_entry:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_combo_box_text_append_text(combo_box:PGtkComboBoxText; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_combo_box_text_insert_text(combo_box:PGtkComboBoxText; position:longint; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_combo_box_text_prepend_text(combo_box:PGtkComboBoxText; text:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_text_remove(combo_box:PGtkComboBoxText; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_combo_box_text_remove_all(combo_box:PGtkComboBoxText);
 
+  { Zeile entfernt  }
   function gtk_combo_box_text_get_active_text(combo_box:PGtkComboBoxText):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_combo_box_text_insert(combo_box:PGtkComboBoxText; position:longint; id:Pchar; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_combo_box_text_append(combo_box:PGtkComboBoxText; id:Pchar; text:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_combo_box_text_prepend(combo_box:PGtkComboBoxText; id:Pchar; text:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_COMBO_BOX_TEXT_H__  }
   { was #define dname def_expr }
@@ -110,6 +120,10 @@ GType         gtk_combo_box_text_get_type        (void) G_GNUC_CONST;
     GTK_IS_COMBO_BOX_TEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_COMBO_BOX_TEXT);
   end;
 
+  function gtk_combo_box_text_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_combo_box_text_new:PGtkWidget;
   begin
     { You must implement this function }

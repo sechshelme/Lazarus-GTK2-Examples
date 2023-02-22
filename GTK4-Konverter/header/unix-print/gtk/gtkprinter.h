@@ -25,7 +25,7 @@
 #include <cairo.h>
 #include <gtk/gtk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PRINT_CAPABILITIES (gtk_print_capabilities_get_type ())
 
@@ -69,8 +69,8 @@ typedef enum
   GTK_PRINT_CAPABILITY_NUMBER_UP_LAYOUT = 1 << 9
 } GtkPrintCapabilities;
 
-
-GType gtk_print_capabilities_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType gtk_print_capabilities_get_type (void) ;
 
 #define GTK_TYPE_PRINTER                  (gtk_printer_get_type ())
 #define GTK_PRINTER(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINTER, GtkPrinter))
@@ -79,60 +79,60 @@ GType gtk_print_capabilities_get_type (void) G_GNUC_CONST;
 typedef struct _GtkPrinter      GtkPrinter;
 typedef struct _GtkPrintBackend GtkPrintBackend;
 
-
-GType                    gtk_printer_get_type              (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                    gtk_printer_get_type              (void) ;
+/* Zeile entfernt */
 GtkPrinter              *gtk_printer_new                   (const char      *name,
 							    GtkPrintBackend *backend,
 							    gboolean         virtual_);
-
+/* Zeile entfernt */
 GtkPrintBackend         *gtk_printer_get_backend           (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 const char *            gtk_printer_get_name              (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 const char *            gtk_printer_get_state_message     (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 const char *            gtk_printer_get_description       (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 const char *            gtk_printer_get_location          (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 const char *            gtk_printer_get_icon_name         (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 int                      gtk_printer_get_job_count         (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_is_active             (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_is_paused             (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_is_accepting_jobs     (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_is_virtual            (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_is_default            (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_accepts_pdf           (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_accepts_ps            (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 GList                   *gtk_printer_list_papers           (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 GtkPageSetup            *gtk_printer_get_default_page_size (GtkPrinter      *printer);
-
+/* Zeile entfernt */
 int                      gtk_printer_compare               (GtkPrinter *a,
 						    	    GtkPrinter *b);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_has_details           (GtkPrinter       *printer);
-
+/* Zeile entfernt */
 void                     gtk_printer_request_details       (GtkPrinter       *printer);
-
+/* Zeile entfernt */
 GtkPrintCapabilities     gtk_printer_get_capabilities      (GtkPrinter       *printer);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_get_hard_margins      (GtkPrinter       *printer,
                                                             double           *top,
                                                             double           *bottom,
                                                             double           *left,
                                                             double           *right);
-
+/* Zeile entfernt */
 gboolean                 gtk_printer_get_hard_margins_for_paper_size (GtkPrinter       *printer,
 								      GtkPaperSize     *paper_size,
 								      double           *top,
@@ -155,12 +155,12 @@ gboolean                 gtk_printer_get_hard_margins_for_paper_size (GtkPrinter
 typedef gboolean (*GtkPrinterFunc) (GtkPrinter *printer,
 				    gpointer    data);
 
-
+/* Zeile entfernt */
 void                     gtk_enumerate_printers        (GtkPrinterFunc   func,
 							gpointer         data,
 							GDestroyNotify   destroy,
 							gboolean         wait);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PRINTER_H__ */

@@ -23,22 +23,22 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkselectionmodel.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MULTI_SELECTION (gtk_multi_selection_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTION, GObject)
-
-
+/* Zeile entfernt */
 GtkMultiSelection * gtk_multi_selection_new                (GListModel           *model);
 
-
+/* Zeile entfernt */
 GListModel *        gtk_multi_selection_get_model          (GtkMultiSelection    *self);
-
+/* Zeile entfernt */
 void                gtk_multi_selection_set_model          (GtkMultiSelection    *self,
                                                             GListModel           *model);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MULTI_SELECTION_H__ */

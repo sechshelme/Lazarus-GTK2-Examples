@@ -31,6 +31,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DEVICE_PAD : longint; { return type might be wrong }
@@ -60,21 +61,23 @@
 
     GdkDevicePadFeature = (GDK_DEVICE_PAD_FEATURE_BUTTON,GDK_DEVICE_PAD_FEATURE_RING,
       GDK_DEVICE_PAD_FEATURE_STRIP);
-(* error 
-GType gdk_device_pad_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_device_pad_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_device_pad_get_n_groups(pad:PGdkDevicePad):longint;
 
+  { Zeile entfernt  }
   function gdk_device_pad_get_group_n_modes(pad:PGdkDevicePad; group_idx:longint):longint;
 
+  { Zeile entfernt  }
   function gdk_device_pad_get_n_features(pad:PGdkDevicePad; feature:GdkDevicePadFeature):longint;
 
+  { Zeile entfernt  }
   function gdk_device_pad_get_feature_group(pad:PGdkDevicePad; feature:GdkDevicePadFeature; feature_idx:longint):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DEVICE_PAD_H__  }
   { was #define dname def_expr }
@@ -99,6 +102,10 @@ GType gdk_device_pad_get_type          (void) G_GNUC_CONST;
     GDK_IS_DEVICE_PAD:=G_TYPE_CHECK_INSTANCE_TYPE(o,GDK_TYPE_DEVICE_PAD);
   end;
 
+  function gdk_device_pad_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_device_pad_get_n_groups(pad:PGdkDevicePad):longint;
   begin
     { You must implement this function }

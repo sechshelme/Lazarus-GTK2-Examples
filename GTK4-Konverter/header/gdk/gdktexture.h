@@ -27,20 +27,20 @@
 #include <gdk/gdktypes.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_TEXTURE (gdk_texture_get_type ())
 
 #define GDK_TEXTURE(obj)               (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_TEXTURE, GdkTexture))
 #define GDK_IS_TEXTURE(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_TEXTURE))
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkTexture, g_object_unref)
+/* Zeile entfernt */
 
 typedef struct _GdkTextureClass        GdkTextureClass;
 
 #define GDK_TEXTURE_ERROR       (gdk_texture_error_quark ())
 
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GQuark gdk_texture_error_quark (void);
 
 /**
@@ -63,43 +63,43 @@ typedef enum
   GDK_TEXTURE_ERROR_UNSUPPORTED_FORMAT,
 } GdkTextureError;
 
+/* Zeile entfernt */
+GType                   gdk_texture_get_type                   (void) ;
 
-GType                   gdk_texture_get_type                   (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkTexture *            gdk_texture_new_for_pixbuf             (GdkPixbuf       *pixbuf);
-
+/* Zeile entfernt */
 GdkTexture *            gdk_texture_new_from_resource          (const char      *resource_path);
-
+/* Zeile entfernt */
 GdkTexture *            gdk_texture_new_from_file              (GFile           *file,
                                                                 GError         **error);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GdkTexture *            gdk_texture_new_from_filename          (const char      *path,
                                                                 GError         **error);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GdkTexture *            gdk_texture_new_from_bytes             (GBytes          *bytes,
                                                                 GError         **error);
 
+/* Zeile entfernt */
+int                     gdk_texture_get_width                  (GdkTexture      *texture) ;
+/* Zeile entfernt */
+int                     gdk_texture_get_height                 (GdkTexture      *texture) ;
 
-int                     gdk_texture_get_width                  (GdkTexture      *texture) G_GNUC_PURE;
-
-int                     gdk_texture_get_height                 (GdkTexture      *texture) G_GNUC_PURE;
-
-
+/* Zeile entfernt */
 void                    gdk_texture_download                   (GdkTexture      *texture,
                                                                 guchar          *data,
                                                                 gsize            stride);
-
+/* Zeile entfernt */
 gboolean                gdk_texture_save_to_png                (GdkTexture      *texture,
                                                                 const char      *filename);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GBytes *                gdk_texture_save_to_png_bytes          (GdkTexture      *texture);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 gboolean                gdk_texture_save_to_tiff               (GdkTexture      *texture,
                                                                 const char      *filename);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_TEXTURE_H__ */

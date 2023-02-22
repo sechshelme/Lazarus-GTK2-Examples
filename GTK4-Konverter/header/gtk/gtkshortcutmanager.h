@@ -27,12 +27,12 @@
 #include <gtk/gtkshortcutcontroller.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT_MANAGER               (gtk_shortcut_manager_get_type ())
 
-
-G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MANAGER, GtkWidget)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkShortcutManagerInterface:
@@ -59,6 +59,6 @@ struct _GtkShortcutManagerInterface
 };
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUT_MANAGER_H__ */

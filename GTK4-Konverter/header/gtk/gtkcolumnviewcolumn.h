@@ -27,7 +27,7 @@
 #include <gtk/gtkcolumnview.h>
 #include <gtk/gtksorter.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_COLUMN_VIEW_COLUMN         (gtk_column_view_column_get_type ())
 #define GTK_COLUMN_VIEW_COLUMN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_COLUMN_VIEW_COLUMN, GtkColumnViewColumn))
@@ -35,68 +35,68 @@
 #define GTK_IS_COLUMN_VIEW_COLUMN(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GTK_TYPE_COLUMN_VIEW_COLUMN))
 #define GTK_IS_COLUMN_VIEW_COLUMN_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GTK_TYPE_COLUMN_VIEW_COLUMN))
 #define GTK_COLUMN_VIEW_COLUMN_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GTK_TYPE_COLUMN_VIEW_COLUMN, GtkColumnViewColumnClass))
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkColumnViewColumn, g_object_unref)
+/* Zeile entfernt */
 
 typedef struct _GtkColumnViewColumnClass GtkColumnViewColumnClass;
 
+/* Zeile entfernt */
+GType                   gtk_column_view_column_get_type                 (void) ;
 
-GType                   gtk_column_view_column_get_type                 (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkColumnViewColumn *   gtk_column_view_column_new                      (const char             *title,
                                                                          GtkListItemFactory     *factory);
 
-
+/* Zeile entfernt */
 GtkColumnView *         gtk_column_view_column_get_column_view          (GtkColumnViewColumn    *self);
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_factory              (GtkColumnViewColumn    *self,
                                                                          GtkListItemFactory     *factory);
-
+/* Zeile entfernt */
 GtkListItemFactory *    gtk_column_view_column_get_factory              (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_title                (GtkColumnViewColumn    *self,
                                                                          const char             *title);
-
+/* Zeile entfernt */
 const char *            gtk_column_view_column_get_title                (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_sorter               (GtkColumnViewColumn    *self,
                                                                          GtkSorter              *sorter);
-
+/* Zeile entfernt */
 GtkSorter *             gtk_column_view_column_get_sorter               (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_visible              (GtkColumnViewColumn    *self,
                                                                          gboolean                visible);
-
+/* Zeile entfernt */
 gboolean                gtk_column_view_column_get_visible              (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 
 void                    gtk_column_view_column_set_header_menu          (GtkColumnViewColumn    *self,
                                                                          GMenuModel             *menu);
-
+/* Zeile entfernt */
 GMenuModel *            gtk_column_view_column_get_header_menu          (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_fixed_width          (GtkColumnViewColumn    *self,
                                                                          int                     fixed_width);
-
+/* Zeile entfernt */
 int                     gtk_column_view_column_get_fixed_width          (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_resizable            (GtkColumnViewColumn    *self,
                                                                          gboolean                resizable);
-
+/* Zeile entfernt */
 gboolean                gtk_column_view_column_get_resizable            (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 void                    gtk_column_view_column_set_expand               (GtkColumnViewColumn    *self,
                                                                          gboolean                expand);
-
+/* Zeile entfernt */
 gboolean                gtk_column_view_column_get_expand            (GtkColumnViewColumn    *self);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_COLUMN_VIEW_COLUMN_H__ */

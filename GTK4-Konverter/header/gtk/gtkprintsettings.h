@@ -25,7 +25,7 @@
 
 #include <gtk/gtkpapersize.h>
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkPrintSettings GtkPrintSettings;
 
@@ -54,90 +54,90 @@ struct _GtkPageRange
   int end;
 };
 
-
-GType             gtk_print_settings_get_type                (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType             gtk_print_settings_get_type                (void) ;
+/* Zeile entfernt */
 GtkPrintSettings *gtk_print_settings_new                     (void);
 
-
+/* Zeile entfernt */
 GtkPrintSettings *gtk_print_settings_copy                    (GtkPrintSettings     *other);
 
-
+/* Zeile entfernt */
 GtkPrintSettings *gtk_print_settings_new_from_file           (const char           *file_name,
 							      GError              **error);
-
+/* Zeile entfernt */
 gboolean          gtk_print_settings_load_file               (GtkPrintSettings     *settings,
 							      const char           *file_name,
 							      GError              **error);
-
+/* Zeile entfernt */
 gboolean          gtk_print_settings_to_file                 (GtkPrintSettings     *settings,
 							      const char           *file_name,
 							      GError              **error);
-
+/* Zeile entfernt */
 GtkPrintSettings *gtk_print_settings_new_from_key_file       (GKeyFile             *key_file,
 							      const char           *group_name,
 							      GError              **error);
-
+/* Zeile entfernt */
 gboolean          gtk_print_settings_load_key_file           (GtkPrintSettings     *settings,
 							      GKeyFile             *key_file,
 							      const char           *group_name,
 							      GError              **error);
-
+/* Zeile entfernt */
 void              gtk_print_settings_to_key_file             (GtkPrintSettings     *settings,
 							      GKeyFile             *key_file,
 							      const char           *group_name);
-
+/* Zeile entfernt */
 gboolean          gtk_print_settings_has_key                 (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 const char *     gtk_print_settings_get                     (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 void              gtk_print_settings_set                     (GtkPrintSettings     *settings,
 							      const char           *key,
 							      const char           *value);
-
+/* Zeile entfernt */
 void              gtk_print_settings_unset                   (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 void              gtk_print_settings_foreach                 (GtkPrintSettings     *settings,
 							      GtkPrintSettingsFunc  func,
 							      gpointer              user_data);
-
+/* Zeile entfernt */
 gboolean          gtk_print_settings_get_bool                (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 void              gtk_print_settings_set_bool                (GtkPrintSettings     *settings,
 							      const char           *key,
 							      gboolean              value);
-
+/* Zeile entfernt */
 double            gtk_print_settings_get_double              (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 double            gtk_print_settings_get_double_with_default (GtkPrintSettings     *settings,
 							      const char           *key,
 							      double                def);
-
+/* Zeile entfernt */
 void              gtk_print_settings_set_double              (GtkPrintSettings     *settings,
 							      const char           *key,
 							      double                value);
-
+/* Zeile entfernt */
 double            gtk_print_settings_get_length              (GtkPrintSettings     *settings,
 							      const char           *key,
 							      GtkUnit               unit);
-
+/* Zeile entfernt */
 void              gtk_print_settings_set_length              (GtkPrintSettings     *settings,
 							      const char           *key,
 							      double                value,
 							      GtkUnit               unit);
-
+/* Zeile entfernt */
 int               gtk_print_settings_get_int                 (GtkPrintSettings     *settings,
 							      const char           *key);
-
+/* Zeile entfernt */
 int               gtk_print_settings_get_int_with_default    (GtkPrintSettings     *settings,
 							      const char           *key,
 							      int                   def);
-
+/* Zeile entfernt */
 void              gtk_print_settings_set_int                 (GtkPrintSettings     *settings,
 							      const char           *key,
 							      int                   value);
@@ -208,147 +208,147 @@ void              gtk_print_settings_set_int                 (GtkPrintSettings  
 
 /* Helpers: */
 
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_printer           (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_printer           (GtkPrintSettings   *settings,
 								const char         *printer);
-
+/* Zeile entfernt */
 GtkPageOrientation    gtk_print_settings_get_orientation       (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_orientation       (GtkPrintSettings   *settings,
 								GtkPageOrientation  orientation);
-
+/* Zeile entfernt */
 GtkPaperSize *        gtk_print_settings_get_paper_size        (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_paper_size        (GtkPrintSettings   *settings,
 								GtkPaperSize       *paper_size);
-
+/* Zeile entfernt */
 double                gtk_print_settings_get_paper_width       (GtkPrintSettings   *settings,
 								GtkUnit             unit);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_paper_width       (GtkPrintSettings   *settings,
 								double              width,
 								GtkUnit             unit);
-
+/* Zeile entfernt */
 double                gtk_print_settings_get_paper_height      (GtkPrintSettings   *settings,
 								GtkUnit             unit);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_paper_height      (GtkPrintSettings   *settings,
 								double              height,
 								GtkUnit             unit);
-
+/* Zeile entfernt */
 gboolean              gtk_print_settings_get_use_color         (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_use_color         (GtkPrintSettings   *settings,
 								gboolean            use_color);
-
+/* Zeile entfernt */
 gboolean              gtk_print_settings_get_collate           (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_collate           (GtkPrintSettings   *settings,
 								gboolean            collate);
-
+/* Zeile entfernt */
 gboolean              gtk_print_settings_get_reverse           (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_reverse           (GtkPrintSettings   *settings,
 								gboolean            reverse);
-
+/* Zeile entfernt */
 GtkPrintDuplex        gtk_print_settings_get_duplex            (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_duplex            (GtkPrintSettings   *settings,
 								GtkPrintDuplex      duplex);
-
+/* Zeile entfernt */
 GtkPrintQuality       gtk_print_settings_get_quality           (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_quality           (GtkPrintSettings   *settings,
 								GtkPrintQuality     quality);
-
+/* Zeile entfernt */
 int                   gtk_print_settings_get_n_copies          (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_n_copies          (GtkPrintSettings   *settings,
 								int                 num_copies);
-
+/* Zeile entfernt */
 int                   gtk_print_settings_get_number_up         (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_number_up         (GtkPrintSettings   *settings,
 								int                 number_up);
-
+/* Zeile entfernt */
 GtkNumberUpLayout     gtk_print_settings_get_number_up_layout  (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_number_up_layout  (GtkPrintSettings   *settings,
 								GtkNumberUpLayout   number_up_layout);
-
+/* Zeile entfernt */
 int                   gtk_print_settings_get_resolution        (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_resolution        (GtkPrintSettings   *settings,
 								int                 resolution);
-
+/* Zeile entfernt */
 int                   gtk_print_settings_get_resolution_x      (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 int                   gtk_print_settings_get_resolution_y      (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_resolution_xy     (GtkPrintSettings   *settings,
 								int                 resolution_x,
 								int                 resolution_y);
-
+/* Zeile entfernt */
 double                gtk_print_settings_get_printer_lpi       (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_printer_lpi       (GtkPrintSettings   *settings,
 								double              lpi);
-
+/* Zeile entfernt */
 double                gtk_print_settings_get_scale             (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_scale             (GtkPrintSettings   *settings,
 								double              scale);
-
+/* Zeile entfernt */
 GtkPrintPages         gtk_print_settings_get_print_pages       (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_print_pages       (GtkPrintSettings   *settings,
 								GtkPrintPages       pages);
-
+/* Zeile entfernt */
 GtkPageRange *        gtk_print_settings_get_page_ranges       (GtkPrintSettings   *settings,
 								int                *num_ranges);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_page_ranges       (GtkPrintSettings   *settings,
 								GtkPageRange       *page_ranges,
 								int                 num_ranges);
-
+/* Zeile entfernt */
 GtkPageSet            gtk_print_settings_get_page_set          (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_page_set          (GtkPrintSettings   *settings,
 								GtkPageSet          page_set);
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_default_source    (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_default_source    (GtkPrintSettings   *settings,
 								const char         *default_source);
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_media_type        (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_media_type        (GtkPrintSettings   *settings,
 								const char         *media_type);
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_dither            (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_dither            (GtkPrintSettings   *settings,
 								const char         *dither);
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_finishings        (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_finishings        (GtkPrintSettings   *settings,
 								const char         *finishings);
-
+/* Zeile entfernt */
 const char *         gtk_print_settings_get_output_bin        (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 void                  gtk_print_settings_set_output_bin        (GtkPrintSettings   *settings,
 								const char         *output_bin);
 
-
+/* Zeile entfernt */
 GVariant             *gtk_print_settings_to_gvariant           (GtkPrintSettings   *settings);
-
+/* Zeile entfernt */
 GtkPrintSettings     *gtk_print_settings_new_from_gvariant     (GVariant           *variant);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PRINT_SETTINGS_H__ */

@@ -26,56 +26,56 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_CONTENT_FORMATS    (gdk_content_formats_get_type ())
 
-
+/* Zeile entfernt */
 const char *            gdk_intern_mime_type                    (const char                     *string);
 
-
-GType                   gdk_content_formats_get_type            (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_content_formats_get_type            (void) ;
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_new                 (const char                    **mime_types,
                                                                  guint                           n_mime_types);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_new_for_gtype       (GType                           type);
-GDK_AVAILABLE_IN_4_4
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_parse               (const char                     *string);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_ref                 (GdkContentFormats              *formats);
-
+/* Zeile entfernt */
 void                    gdk_content_formats_unref               (GdkContentFormats              *formats);
 
-
+/* Zeile entfernt */
 void                    gdk_content_formats_print               (GdkContentFormats              *formats,
                                                                  GString                        *string);
-
+/* Zeile entfernt */
 char *                  gdk_content_formats_to_string           (GdkContentFormats              *formats);
 
-
+/* Zeile entfernt */
 const GType *           gdk_content_formats_get_gtypes          (const GdkContentFormats        *formats,
                                                                  gsize                          *n_gtypes);
-
+/* Zeile entfernt */
 const char * const *    gdk_content_formats_get_mime_types      (const GdkContentFormats        *formats,
                                                                  gsize                          *n_mime_types);
 
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_union               (GdkContentFormats              *first,
                                                                  const GdkContentFormats        *second) G_GNUC_WARN_UNUSED_RESULT;
-
+/* Zeile entfernt */
 gboolean                gdk_content_formats_match               (const GdkContentFormats        *first,
                                                                  const GdkContentFormats        *second);
-
+/* Zeile entfernt */
 GType                   gdk_content_formats_match_gtype         (const GdkContentFormats        *first,
                                                                  const GdkContentFormats        *second);
-
+/* Zeile entfernt */
 const char *            gdk_content_formats_match_mime_type     (const GdkContentFormats        *first,
                                                                  const GdkContentFormats        *second);
-
+/* Zeile entfernt */
 gboolean                gdk_content_formats_contain_gtype       (const GdkContentFormats        *formats,
                                                                  GType                           type);
-
+/* Zeile entfernt */
 gboolean                gdk_content_formats_contain_mime_type   (const GdkContentFormats        *formats,
                                                                  const char                     *mime_type);
 
@@ -83,33 +83,33 @@ gboolean                gdk_content_formats_contain_mime_type   (const GdkConten
 
 typedef struct _GdkContentFormatsBuilder GdkContentFormatsBuilder;
 
+/* Zeile entfernt */
+GType                   gdk_content_formats_builder_get_type    (void) ;
 
-GType                   gdk_content_formats_builder_get_type    (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkContentFormatsBuilder *gdk_content_formats_builder_new        (void);
-
+/* Zeile entfernt */
 GdkContentFormatsBuilder *gdk_content_formats_builder_ref       (GdkContentFormatsBuilder       *builder);
-
+/* Zeile entfernt */
 void                    gdk_content_formats_builder_unref       (GdkContentFormatsBuilder       *builder);
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_builder_free_to_formats (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
-
+/* Zeile entfernt */
 GdkContentFormats *     gdk_content_formats_builder_to_formats  (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
-
+/* Zeile entfernt */
 void                    gdk_content_formats_builder_add_formats (GdkContentFormatsBuilder       *builder,
                                                                  const GdkContentFormats        *formats);
-
+/* Zeile entfernt */
 void                    gdk_content_formats_builder_add_mime_type(GdkContentFormatsBuilder      *builder,
                                                                  const char                     *mime_type);
-
+/* Zeile entfernt */
 void                    gdk_content_formats_builder_add_gtype   (GdkContentFormatsBuilder       *builder,
                                                                  GType                           type);
 
 /* dunno where else to put this */
 #define GDK_TYPE_FILE_LIST (gdk_file_list_get_type ())
-
-GType gdk_file_list_get_type (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType gdk_file_list_get_type (void) ;
 
 /**
  * GdkFileList:
@@ -120,7 +120,7 @@ GType gdk_file_list_get_type (void) G_GNUC_CONST;
  */
 typedef struct _GdkFileList GdkFileList;
 
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 GSList *        gdk_file_list_get_files (GdkFileList *file_list);
 GDK_AVAILABLE_IN_4_8
 GdkFileList *   gdk_file_list_new_from_list (GSList *files);
@@ -128,6 +128,6 @@ GDK_AVAILABLE_IN_4_8
 GdkFileList *   gdk_file_list_new_from_array (GFile **files,
                                               gsize   n_files);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_CONTENT_FORMATS_H__ */

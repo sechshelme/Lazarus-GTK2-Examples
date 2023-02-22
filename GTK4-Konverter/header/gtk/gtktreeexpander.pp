@@ -1,8 +1,8 @@
 
-    Type
-    PGtkTreeExpander  = ^GtkTreeExpander;
-    PGtkTreeListRow  = ^GtkTreeListRow;
-    PGtkWidget  = ^GtkWidget;
+  Type
+  PGtkTreeExpander  = ^GtkTreeExpander;
+  PGtkTreeListRow  = ^GtkTreeListRow;
+  PGtkWidget  = ^GtkWidget;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -33,40 +33,50 @@
 {$endif}
 {$include <gtk/gtktreelistmodel.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_EXPANDER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_tree_expander_new:^GtkWidget;
+
+  { Zeile entfernt  }
   function gtk_tree_expander_get_child(self:PGtkTreeExpander):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_tree_expander_set_child(self:PGtkTreeExpander; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_tree_expander_get_item(self:PGtkTreeExpander):gpointer;
 
+  { Zeile entfernt  }
   function gtk_tree_expander_get_list_row(self:PGtkTreeExpander):^GtkTreeListRow;
 
+  { Zeile entfernt  }
   procedure gtk_tree_expander_set_list_row(self:PGtkTreeExpander; list_row:PGtkTreeListRow);
 
-(* error 
-gboolean                gtk_tree_expander_get_indent_for_icon (GtkTreeExpander        *self);
- in declarator_list *)
-(* error 
-void                    gtk_tree_expander_set_indent_for_icon (GtkTreeExpander        *self,
-in declaration at line 57 *)
+  { Zeile entfernt  }
+  function gtk_tree_expander_get_indent_for_icon(self:PGtkTreeExpander):gboolean;
+
+  { Zeile entfernt  }
+  procedure gtk_tree_expander_set_indent_for_icon(self:PGtkTreeExpander; indent_for_icon:gboolean);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_TREE_EXPANDER_H__  }
+  { __GTK_TREE_EXPANDER_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_TREE_EXPANDER : longint; { return type might be wrong }
     begin
       GTK_TYPE_TREE_EXPANDER:=gtk_tree_expander_get_type;
     end;
 
+  function gtk_tree_expander_new:PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_expander_get_child(self:PGtkTreeExpander):PGtkWidget;
   begin
     { You must implement this function }
@@ -84,6 +94,14 @@ in declaration at line 57 *)
     { You must implement this function }
   end;
   procedure gtk_tree_expander_set_list_row(self:PGtkTreeExpander; list_row:PGtkTreeListRow);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_expander_get_indent_for_icon(self:PGtkTreeExpander):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_tree_expander_set_indent_for_icon(self:PGtkTreeExpander; indent_for_icon:gboolean);
   begin
     { You must implement this function }
   end;

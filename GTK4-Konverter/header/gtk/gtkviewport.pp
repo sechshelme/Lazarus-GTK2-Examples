@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_VIEWPORT : longint; { return type might be wrong }
@@ -53,23 +54,26 @@
 
   type
     _GtkViewport = GtkViewport;
-(* error 
-GType          gtk_viewport_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_viewport_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_viewport_new(hadjustment:PGtkAdjustment; vadjustment:PGtkAdjustment):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_viewport_get_scroll_to_focus(viewport:PGtkViewport):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_viewport_set_scroll_to_focus(viewport:PGtkViewport; scroll_to_focus:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_viewport_set_child(viewport:PGtkViewport; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_viewport_get_child(viewport:PGtkViewport):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_VIEWPORT_H__  }
   { was #define dname def_expr }
@@ -94,6 +98,10 @@ GType          gtk_viewport_get_type        (void) G_GNUC_CONST;
     GTK_IS_VIEWPORT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_VIEWPORT);
   end;
 
+  function gtk_viewport_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_viewport_new(hadjustment:PGtkAdjustment; vadjustment:PGtkAdjustment):PGtkWidget;
   begin
     { You must implement this function }

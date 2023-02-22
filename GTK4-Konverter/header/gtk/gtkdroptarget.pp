@@ -1,6 +1,7 @@
 
   Type
   PGdkContentFormats  = ^GdkContentFormats;
+  PGdkDrop  = ^GdkDrop;
   Pgsize  = ^gsize;
   PGtkDropTarget  = ^GtkDropTarget;
   PGType  = ^GType;
@@ -34,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   type
     _GtkDropTarget = GtkDropTarget;
@@ -69,41 +71,49 @@
 
   type
     _GtkDropTargetClass = GtkDropTargetClass;
-(* error 
-GType                   gtk_drop_target_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_drop_target_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_drop_target_new(_type:GType; actions:GdkDragAction):^GtkDropTarget;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_set_gtypes(self:PGtkDropTarget; types:PGType; n_types:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_drop_target_get_gtypes(self:PGtkDropTarget; n_types:Pgsize):^GType;
 
+  { Zeile entfernt  }
   function gtk_drop_target_get_formats(self:PGtkDropTarget):^GdkContentFormats;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_set_actions(self:PGtkDropTarget; actions:GdkDragAction);
 
+  { Zeile entfernt  }
   function gtk_drop_target_get_actions(self:PGtkDropTarget):GdkDragAction;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_set_preload(self:PGtkDropTarget; preload:gboolean);
 
+  { Zeile entfernt  }
   function gtk_drop_target_get_preload(self:PGtkDropTarget):gboolean;
 
 (* error 
 GdkDrop *               gtk_drop_target_get_drop         (GtkDropTarget         *self);
  in declarator_list *)
-(* error 
-GdkDrop *               gtk_drop_target_get_current_drop (GtkDropTarget         *self);
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_drop_target_get_current_drop(self:PGtkDropTarget):^GdkDrop;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_drop_target_get_value(self:PGtkDropTarget):^GValue;
 
+  { Zeile entfernt  }
   procedure gtk_drop_target_reject(self:PGtkDropTarget);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DROP_TARGET_H__  }
   { was #define dname def_expr }
@@ -152,6 +162,10 @@ GdkDrop *               gtk_drop_target_get_current_drop (GtkDropTarget         
     GTK_DROP_TARGET_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_DROP_TARGET,GtkDropTargetClass);
   end;
 
+  function gtk_drop_target_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_drop_target_new(_type:GType; actions:GdkDragAction):PGtkDropTarget;
   begin
     { You must implement this function }
@@ -181,6 +195,10 @@ GdkDrop *               gtk_drop_target_get_current_drop (GtkDropTarget         
     { You must implement this function }
   end;
   function gtk_drop_target_get_preload(self:PGtkDropTarget):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_drop_target_get_current_drop(self:PGtkDropTarget):PGdkDrop;
   begin
     { You must implement this function }
   end;

@@ -29,34 +29,45 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdkversionmacros.h>}
+  { Zeile entfernt  }
 
   type
     _GdkFrameTimings = GdkFrameTimings;
-(* error 
-GType            gdk_frame_timings_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_frame_timings_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_ref(timings:PGdkFrameTimings):^GdkFrameTimings;
 
+  { Zeile entfernt  }
   procedure gdk_frame_timings_unref(timings:PGdkFrameTimings);
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_frame_counter(timings:PGdkFrameTimings):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_complete(timings:PGdkFrameTimings):gboolean;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_frame_time(timings:PGdkFrameTimings):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_presentation_time(timings:PGdkFrameTimings):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_refresh_interval(timings:PGdkFrameTimings):gint64;
 
+  { Zeile entfernt  }
   function gdk_frame_timings_get_predicted_presentation_time(timings:PGdkFrameTimings):gint64;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_FRAME_TIMINGS_H__  }
+  function gdk_frame_timings_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_frame_timings_ref(timings:PGdkFrameTimings):PGdkFrameTimings;
   begin
     { You must implement this function }

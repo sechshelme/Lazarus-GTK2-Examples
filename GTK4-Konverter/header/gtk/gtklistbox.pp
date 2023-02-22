@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LIST_BOX : longint; { return type might be wrong }
@@ -158,119 +159,153 @@
     }
 
     GtkListBoxCreateWidgetFunc = function (item:gpointer; user_data:gpointer):PGtkWidget;cdecl;
-(* error 
-GType      gtk_list_box_row_get_type      (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_list_box_row_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_list_box_row_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_row_set_child(row:PGtkListBoxRow; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_list_box_row_get_child(row:PGtkListBoxRow):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_list_box_row_get_header(row:PGtkListBoxRow):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_row_set_header(row:PGtkListBoxRow; header:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_list_box_row_get_index(row:PGtkListBoxRow):longint;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_row_changed(row:PGtkListBoxRow);
 
+  { Zeile entfernt  }
   function gtk_list_box_row_is_selected(row:PGtkListBoxRow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_row_set_selectable(row:PGtkListBoxRow; selectable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_box_row_get_selectable(row:PGtkListBoxRow):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_row_set_activatable(row:PGtkListBoxRow; activatable:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_box_row_get_activatable(row:PGtkListBoxRow):gboolean;
 
-(* error 
-GType          gtk_list_box_get_type                     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_list_box_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   procedure gtk_list_box_prepend(box:PGtkListBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_append(box:PGtkListBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_insert(box:PGtkListBox; child:PGtkWidget; position:longint);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_remove(box:PGtkListBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_selected_row(box:PGtkListBox):^GtkListBoxRow;
 
+  { Zeile entfernt  }
   function gtk_list_box_get_row_at_index(box:PGtkListBox; index_:longint):^GtkListBoxRow;
 
+  { Zeile entfernt  }
   function gtk_list_box_get_row_at_y(box:PGtkListBox; y:longint):^GtkListBoxRow;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_select_row(box:PGtkListBox; row:PGtkListBoxRow);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_placeholder(box:PGtkListBox; placeholder:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_adjustment(box:PGtkListBox; adjustment:PGtkAdjustment);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_adjustment(box:PGtkListBox):^GtkAdjustment;
 
 
   type
 
     GtkListBoxForeachFunc = procedure (box:PGtkListBox; row:PGtkListBoxRow; user_data:gpointer);cdecl;
+  { Zeile entfernt  }
 
   procedure gtk_list_box_selected_foreach(box:PGtkListBox; func:GtkListBoxForeachFunc; data:gpointer);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_selected_rows(box:PGtkListBox):^GList;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_unselect_row(box:PGtkListBox; row:PGtkListBoxRow);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_select_all(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_unselect_all(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_selection_mode(box:PGtkListBox; mode:GtkSelectionMode);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_selection_mode(box:PGtkListBox):GtkSelectionMode;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_filter_func(box:PGtkListBox; filter_func:GtkListBoxFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_header_func(box:PGtkListBox; update_header:GtkListBoxUpdateHeaderFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_invalidate_filter(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_invalidate_sort(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_invalidate_headers(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_sort_func(box:PGtkListBox; sort_func:GtkListBoxSortFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_activate_on_single_click(box:PGtkListBox; single:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_activate_on_single_click(box:PGtkListBox):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_drag_unhighlight_row(box:PGtkListBox);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_drag_highlight_row(box:PGtkListBox; row:PGtkListBoxRow);
 
+  { Zeile entfernt  }
   function gtk_list_box_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_list_box_bind_model(box:PGtkListBox; model:PGListModel; create_widget_func:GtkListBoxCreateWidgetFunc; user_data:gpointer; user_data_free_func:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_list_box_set_show_separators(box:PGtkListBox; show_separators:gboolean);
 
+  { Zeile entfernt  }
   function gtk_list_box_get_show_separators(box:PGtkListBox):gboolean;
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBox, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBox, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBoxRow, g_object_unref)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_LIST_BOX : longint; { return type might be wrong }
@@ -340,6 +375,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBoxRow, g_object_unref)
     GTK_LIST_BOX_ROW_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_LIST_BOX_ROW,GtkListBoxRowClass);
   end;
 
+  function gtk_list_box_row_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_list_box_row_new:PGtkWidget;
   begin
     { You must implement this function }
@@ -385,6 +424,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBoxRow, g_object_unref)
     { You must implement this function }
   end;
   function gtk_list_box_row_get_activatable(row:PGtkListBoxRow):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_list_box_get_type:GType;
   begin
     { You must implement this function }
   end;

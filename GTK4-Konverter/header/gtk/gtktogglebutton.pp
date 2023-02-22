@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkbutton.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TOGGLE_BUTTON : longint; { return type might be wrong }
@@ -81,29 +82,34 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType      gtk_toggle_button_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_toggle_button_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_toggle_button_new:^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_toggle_button_new_with_label(_label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_toggle_button_new_with_mnemonic(_label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_toggle_button_set_active(toggle_button:PGtkToggleButton; is_active:gboolean);
 
+  { Zeile entfernt  }
   function gtk_toggle_button_get_active(toggle_button:PGtkToggleButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_toggle_button_toggled(toggle_button:PGtkToggleButton);
 
+  { Zeile entfernt  }
   procedure gtk_toggle_button_set_group(toggle_button:PGtkToggleButton; group:PGtkToggleButton);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TOGGLE_BUTTON_H__  }
   { was #define dname def_expr }
@@ -152,6 +158,10 @@ GType      gtk_toggle_button_get_type          (void) G_GNUC_CONST;
     GTK_TOGGLE_BUTTON_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TOGGLE_BUTTON,GtkToggleButtonClass);
   end;
 
+  function gtk_toggle_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_toggle_button_new:PGtkWidget;
   begin
     { You must implement this function }

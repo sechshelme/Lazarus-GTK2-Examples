@@ -26,6 +26,7 @@
 {$error "Only <gdk/x11/gdkx.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_DRAG : longint; { return type might be wrong }
@@ -67,9 +68,11 @@
 
   type
     _GdkX11DragClass = GdkX11DragClass;
+  { Zeile entfernt  }
 
   function gdk_x11_drag_get_type:GType;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_DRAG_H__  }
   { was #define dname def_expr }

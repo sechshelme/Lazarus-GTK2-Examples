@@ -33,44 +33,53 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gio/gio.h>}
-  { for GDK_AVAILABLE_IN_ALL  }
+  { Zeile entfernt  }
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_DIRECTORY_LIST : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST, GObject)
-(* error 
-                                                                 GFile                  *file);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_directory_list_new(attributes:Pchar; file:PGFile):^GtkDirectoryList;
+
+  { Zeile entfernt  }
   procedure gtk_directory_list_set_file(self:PGtkDirectoryList; file:PGFile);
 
+  { Zeile entfernt  }
   function gtk_directory_list_get_file(self:PGtkDirectoryList):^GFile;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_directory_list_set_attributes(self:PGtkDirectoryList; attributes:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_directory_list_get_attributes(self:PGtkDirectoryList):^char;
 
+  { Zeile entfernt  }
   procedure gtk_directory_list_set_io_priority(self:PGtkDirectoryList; io_priority:longint);
 
+  { Zeile entfernt  }
   function gtk_directory_list_get_io_priority(self:PGtkDirectoryList):longint;
 
+  { Zeile entfernt  }
   function gtk_directory_list_is_loading(self:PGtkDirectoryList):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_directory_list_get_error(self:PGtkDirectoryList):^GError;
 
+  { Zeile entfernt  }
   procedure gtk_directory_list_set_monitored(self:PGtkDirectoryList; monitored:gboolean);
 
+  { Zeile entfernt  }
   function gtk_directory_list_get_monitored(self:PGtkDirectoryList):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_DIRECTORY_LIST_H__  }
   { was #define dname def_expr }
@@ -79,6 +88,10 @@ G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST,
       GTK_TYPE_DIRECTORY_LIST:=gtk_directory_list_get_type;
     end;
 
+  function gtk_directory_list_new(attributes:Pchar; file:PGFile):PGtkDirectoryList;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_directory_list_set_file(self:PGtkDirectoryList; file:PGFile);
   begin
     { You must implement this function }

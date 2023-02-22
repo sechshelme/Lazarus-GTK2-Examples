@@ -28,6 +28,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkcellrenderertext.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_RENDERER_SPIN : longint; { return type might be wrong }
@@ -45,11 +46,14 @@
 
   type
     _GtkCellRendererSpin = GtkCellRendererSpin;
+  { Zeile entfernt  }
 
   function gtk_cell_renderer_spin_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_renderer_spin_new:^GtkCellRenderer;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_RENDERER_SPIN_H__  }
   { was #define dname def_expr }

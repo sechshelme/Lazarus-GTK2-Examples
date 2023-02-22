@@ -26,6 +26,7 @@
 {$error "Only <gtk/css/gtkcss.h> can be included directly."}
 {$endif}
 {$include <glib.h>}
+  { Zeile entfernt  }
 
   type
     _GtkCssLocation = GtkCssLocation;
@@ -37,6 +38,7 @@
         line_chars : gsize;
       end;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CSS_LOCATION_H__  }
 

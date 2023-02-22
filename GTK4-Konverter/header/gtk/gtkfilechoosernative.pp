@@ -2,6 +2,7 @@
   Type
   Pchar  = ^char;
   PGtkFileChooserNative  = ^GtkFileChooserNative;
+  PGtkWindow  = ^GtkWindow;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -31,40 +32,36 @@
 {$endif}
 {$include <gtk/gtkfilechooser.h>}
 {$include <gtk/gtknativedialog.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FILE_CHOOSER_NATIVE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFileChooserNative, gtk_file_chooser_native, GTK, FILE_CHOOSER_NATIVE, GtkNativeDialog)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkFileChooserNative, gtk_file_chooser_native, GTK, FILE_CHOOSER_NATIVE, GtkNativeDialog)
-(* error 
-                                                   GtkWindow            *parent,
-(* error 
-                                                   GtkFileChooserAction  action,
-(* error 
-                                                   const char           *accept_label,
-(* error 
-                                                   const char           *cancel_label);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
+  function gtk_file_chooser_native_new(title:Pchar; parent:PGtkWindow; action:GtkFileChooserAction; accept_label:Pchar; cancel_label:Pchar):^GtkFileChooserNative;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_file_chooser_native_get_accept_label(self:PGtkFileChooserNative):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_chooser_native_set_accept_label(self:PGtkFileChooserNative; accept_label:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_file_chooser_native_get_cancel_label(self:PGtkFileChooserNative):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_file_chooser_native_set_cancel_label(self:PGtkFileChooserNative; cancel_label:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FILE_CHOOSER_NATIVE_H__  }
   { was #define dname def_expr }
@@ -73,6 +70,10 @@ G_DECLARE_FINAL_TYPE (GtkFileChooserNative, gtk_file_chooser_native, GTK, FILE_C
       GTK_TYPE_FILE_CHOOSER_NATIVE:=gtk_file_chooser_native_get_type;
     end;
 
+  function gtk_file_chooser_native_new(title:Pchar; parent:PGtkWindow; action:GtkFileChooserAction; accept_label:Pchar; cancel_label:Pchar):PGtkFileChooserNative;
+  begin
+    { You must implement this function }
+  end;
   function gtk_file_chooser_native_get_accept_label(self:PGtkFileChooserNative):Pchar;
   begin
     { You must implement this function }

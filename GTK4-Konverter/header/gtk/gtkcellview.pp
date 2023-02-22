@@ -39,6 +39,7 @@
 {$include <gtk/gtkcellarea.h>}
 {$include <gtk/gtkcellareacontext.h>}
 {$include <gtk/gtktreemodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CELL_VIEW : longint; { return type might be wrong }
@@ -56,41 +57,52 @@
 
   type
     _GtkCellView = GtkCellView;
-(* error 
-GType             gtk_cell_view_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cell_view_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cell_view_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_cell_view_new_with_context(area:PGtkCellArea; context:PGtkCellAreaContext):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_view_new_with_text(text:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_cell_view_new_with_markup(markup:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_cell_view_new_with_texture(texture:PGdkTexture):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_cell_view_set_model(cell_view:PGtkCellView; model:PGtkTreeModel);
 
+  { Zeile entfernt  }
   function gtk_cell_view_get_model(cell_view:PGtkCellView):^GtkTreeModel;
 
+  { Zeile entfernt  }
   procedure gtk_cell_view_set_displayed_row(cell_view:PGtkCellView; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   function gtk_cell_view_get_displayed_row(cell_view:PGtkCellView):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_cell_view_get_draw_sensitive(cell_view:PGtkCellView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_view_set_draw_sensitive(cell_view:PGtkCellView; draw_sensitive:gboolean);
 
+  { Zeile entfernt  }
   function gtk_cell_view_get_fit_model(cell_view:PGtkCellView):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_cell_view_set_fit_model(cell_view:PGtkCellView; fit_model:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CELL_VIEW_H__  }
   { was #define dname def_expr }
@@ -115,6 +127,10 @@ GType             gtk_cell_view_get_type                (void) G_GNUC_CONST;
     GTK_IS_CELL_VIEW:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_CELL_VIEW);
   end;
 
+  function gtk_cell_view_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cell_view_new:PGtkWidget;
   begin
     { You must implement this function }

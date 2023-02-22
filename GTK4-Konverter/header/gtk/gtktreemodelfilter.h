@@ -25,7 +25,7 @@
 
 #include <gtk/gtktreemodel.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_MODEL_FILTER              (gtk_tree_model_filter_get_type ())
 #define GTK_TREE_MODEL_FILTER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_MODEL_FILTER, GtkTreeModelFilter))
@@ -103,52 +103,52 @@ struct _GtkTreeModelFilterClass
 };
 
 /* base */
-
-GType         gtk_tree_model_filter_get_type                   (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_tree_model_filter_get_type                   (void) ;
+/* Zeile entfernt */
 GtkTreeModel *gtk_tree_model_filter_new                        (GtkTreeModel                 *child_model,
                                                                 GtkTreePath                  *root);
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_set_visible_func           (GtkTreeModelFilter           *filter,
                                                                 GtkTreeModelFilterVisibleFunc func,
                                                                 gpointer                      data,
                                                                 GDestroyNotify                destroy);
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_set_modify_func            (GtkTreeModelFilter           *filter,
                                                                 int                           n_columns,
                                                                 GType                        *types,
                                                                 GtkTreeModelFilterModifyFunc  func,
                                                                 gpointer                      data,
                                                                 GDestroyNotify                destroy);
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_set_visible_column         (GtkTreeModelFilter           *filter,
                                                                 int                           column);
 
-
+/* Zeile entfernt */
 GtkTreeModel *gtk_tree_model_filter_get_model                  (GtkTreeModelFilter           *filter);
 
 /* conversion */
-
+/* Zeile entfernt */
 gboolean      gtk_tree_model_filter_convert_child_iter_to_iter (GtkTreeModelFilter           *filter,
                                                                 GtkTreeIter                  *filter_iter,
                                                                 GtkTreeIter                  *child_iter);
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_convert_iter_to_child_iter (GtkTreeModelFilter           *filter,
                                                                 GtkTreeIter                  *child_iter,
                                                                 GtkTreeIter                  *filter_iter);
-
+/* Zeile entfernt */
 GtkTreePath  *gtk_tree_model_filter_convert_child_path_to_path (GtkTreeModelFilter           *filter,
                                                                 GtkTreePath                  *child_path);
-
+/* Zeile entfernt */
 GtkTreePath  *gtk_tree_model_filter_convert_path_to_child_path (GtkTreeModelFilter           *filter,
                                                                 GtkTreePath                  *filter_path);
 
 /* extras */
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_refilter                   (GtkTreeModelFilter           *filter);
-
+/* Zeile entfernt */
 void          gtk_tree_model_filter_clear_cache                (GtkTreeModelFilter           *filter);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_MODEL_FILTER_H__ */

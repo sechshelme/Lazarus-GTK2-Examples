@@ -28,6 +28,7 @@
 {$ifndef __GTK_SHORTCUT_LABEL_H__}
 {$define __GTK_SHORTCUT_LABEL_H__}  
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUT_LABEL : longint; { return type might be wrong }
@@ -46,28 +47,31 @@
   type
     _GtkShortcutLabel = GtkShortcutLabel;
     _GtkShortcutLabelClass = GtkShortcutLabelClass;
-(* error 
-GType        gtk_shortcut_label_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_shortcut_label_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_shortcut_label_new(accelerator:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_shortcut_label_get_accelerator(self:PGtkShortcutLabel):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_shortcut_label_set_accelerator(self:PGtkShortcutLabel; accelerator:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_shortcut_label_get_disabled_text(self:PGtkShortcutLabel):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_shortcut_label_set_disabled_text(self:PGtkShortcutLabel; disabled_text:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SHORTCUT_LABEL_H__  }
   { was #define dname def_expr }
@@ -92,6 +96,10 @@ GType        gtk_shortcut_label_get_type        (void) G_GNUC_CONST;
     GTK_IS_SHORTCUT_LABEL:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SHORTCUT_LABEL);
   end;
 
+  function gtk_shortcut_label_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_shortcut_label_new(accelerator:Pchar):PGtkWidget;
   begin
     { You must implement this function }

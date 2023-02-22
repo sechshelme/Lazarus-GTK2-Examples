@@ -1,5 +1,6 @@
 
   Type
+  PGtkLayoutManager  = ^GtkLayoutManager;
   PGtkOverlayLayoutChild  = ^GtkOverlayLayoutChild;
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -27,6 +28,7 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_OVERLAY_LAYOUT : longint; { return type might be wrong }
@@ -35,28 +37,27 @@
   function GTK_TYPE_OVERLAY_LAYOUT_CHILD : longint; { return type might be wrong }
 
   { GtkOverlayLayout  }
-(* error 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayout, gtk_overlay_layout, GTK, OVERLAY_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayout, gtk_overlay_layout, GTK, OVERLAY_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_overlay_layout_new:^GtkLayoutManager;
+
   { GtkOverlayLayoutChild  }
-(* error 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayoutChild, gtk_overlay_layout_child, GTK, OVERLAY_LAYOUT_CHILD, GtkLayoutChild)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkOverlayLayoutChild, gtk_overlay_layout_child, GTK, OVERLAY_LAYOUT_CHILD, GtkLayoutChild)
-(* error 
-                                                      gboolean               measure);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  procedure gtk_overlay_layout_child_set_measure(child:PGtkOverlayLayoutChild; measure:gboolean);
+
+  { Zeile entfernt  }
   function gtk_overlay_layout_child_get_measure(child:PGtkOverlayLayoutChild):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_overlay_layout_child_set_clip_overlay(child:PGtkOverlayLayoutChild; clip_overlay:gboolean);
 
+  { Zeile entfernt  }
   function gtk_overlay_layout_child_get_clip_overlay(child:PGtkOverlayLayoutChild):gboolean;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_OVERLAY_LAYOUT : longint; { return type might be wrong }
     begin
@@ -69,6 +70,14 @@ G_DECLARE_FINAL_TYPE (GtkOverlayLayoutChild, gtk_overlay_layout_child, GTK, OVER
       GTK_TYPE_OVERLAY_LAYOUT_CHILD:=gtk_overlay_layout_child_get_type;
     end;
 
+  function gtk_overlay_layout_new:PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_overlay_layout_child_set_measure(child:PGtkOverlayLayoutChild; measure:gboolean);
+  begin
+    { You must implement this function }
+  end;
   function gtk_overlay_layout_child_get_measure(child:PGtkOverlayLayoutChild):gboolean;
   begin
     { You must implement this function }

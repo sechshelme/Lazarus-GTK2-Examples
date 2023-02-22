@@ -44,7 +44,7 @@
  */
 #include <gdk/gdkconfig.h>
 
-
+/* Zeile entfernt */
 
 /**
  * GDK_CURRENT_TIME:
@@ -95,7 +95,7 @@ typedef struct _GdkGLContext          GdkGLContext;
 typedef struct _GdkVulkanContext      GdkVulkanContext;
 
 /*
- * GDK_DECLARE_INTERNAL_TYPE:
+/* Zeile entfernt */
  * @ModuleObjName: The name of the new type, in camel case (like GtkWidget)
  * @module_obj_name: The name of the new type in lowercase, with words
  *  separated by '_' (like 'gtk_widget')
@@ -107,12 +107,12 @@ typedef struct _GdkVulkanContext      GdkVulkanContext;
  * header file for a type which is intended to be subclassed only
  * by internal consumers.
  *
- * This macro differs from %G_DECLARE_DERIVABLE_TYPE and %G_DECLARE_FINAL_TYPE
+/* Zeile entfernt */
  * by declaring a type that is only derivable internally. Internal users can
  * derive this type, assuming they have access to the instance and class
  * structures; external users will not be able to subclass this type.
  */
-#define GDK_DECLARE_INTERNAL_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) \
+/* Zeile entfernt */
   GType module_obj_name##_get_type (void);                                                               \
   G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                       \
   typedef struct _##ModuleObjName ModuleObjName;                                                         \
@@ -159,6 +159,6 @@ struct _GdkKeymapKey
   int   level;
 };
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_TYPES_H__ */

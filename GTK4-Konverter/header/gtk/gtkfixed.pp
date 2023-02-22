@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_FIXED : longint; { return type might be wrong }
@@ -80,27 +81,32 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType gtk_fixed_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_fixed_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_fixed_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_fixed_put(fixed:PGtkFixed; widget:PGtkWidget; x:double; y:double);
 
+  { Zeile entfernt  }
   procedure gtk_fixed_remove(fixed:PGtkFixed; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_fixed_move(fixed:PGtkFixed; widget:PGtkWidget; x:double; y:double);
 
+  { Zeile entfernt  }
   procedure gtk_fixed_get_child_position(fixed:PGtkFixed; widget:PGtkWidget; x:Pdouble; y:Pdouble);
 
+  { Zeile entfernt  }
   procedure gtk_fixed_set_child_transform(fixed:PGtkFixed; widget:PGtkWidget; transform:PGskTransform);
 
+  { Zeile entfernt  }
   function gtk_fixed_get_child_transform(fixed:PGtkFixed; widget:PGtkWidget):^GskTransform;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FIXED_H__  }
   { was #define dname def_expr }
@@ -149,6 +155,10 @@ GType gtk_fixed_get_type (void) G_GNUC_CONST;
     GTK_FIXED_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_FIXED,GtkFixedClass);
   end;
 
+  function gtk_fixed_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_fixed_new:PGtkWidget;
   begin
     { You must implement this function }

@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ACTION_BAR : longint; { return type might be wrong }
@@ -48,29 +49,35 @@
 
   type
     _GtkActionBar = GtkActionBar;
-(* error 
-GType        gtk_action_bar_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_action_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_action_bar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_action_bar_get_center_widget(action_bar:PGtkActionBar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_action_bar_set_center_widget(action_bar:PGtkActionBar; center_widget:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_action_bar_pack_start(action_bar:PGtkActionBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_action_bar_pack_end(action_bar:PGtkActionBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_action_bar_remove(action_bar:PGtkActionBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_action_bar_set_revealed(action_bar:PGtkActionBar; revealed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_action_bar_get_revealed(action_bar:PGtkActionBar):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ACTION_BAR_H__  }
   { was #define dname def_expr }
@@ -95,6 +102,10 @@ GType        gtk_action_bar_get_type          (void) G_GNUC_CONST;
     GTK_IS_ACTION_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_ACTION_BAR);
   end;
 
+  function gtk_action_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_action_bar_new:PGtkWidget;
   begin
     { You must implement this function }

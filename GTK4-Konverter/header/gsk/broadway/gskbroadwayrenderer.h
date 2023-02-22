@@ -25,7 +25,7 @@
 
 #include <gdk/broadway/gdkbroadway.h>
 
-
+/* Zeile entfernt */
 
 #define GSK_TYPE_BROADWAY_RENDERER (gsk_broadway_renderer_get_type ())
 
@@ -39,13 +39,13 @@ typedef struct _GskBroadwayRenderer                GskBroadwayRenderer;
 typedef struct _GskBroadwayRendererClass           GskBroadwayRendererClass;
 
 
+/* Zeile entfernt */
+GType                   gsk_broadway_renderer_get_type          (void) ;
 
-GType                   gsk_broadway_renderer_get_type          (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GskRenderer *           gsk_broadway_renderer_new               (void);
 
-
+/* Zeile entfernt */
 
 #endif /* GDK_WINDOWING_BROADWAY */
 

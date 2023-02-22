@@ -34,6 +34,7 @@
 {$include <gio/gio.h>}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gtk/css/gtkcsslocation.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CSS_SECTION : longint; { return type might be wrong }
@@ -49,41 +50,48 @@
 
   type
     _GtkCssSection = GtkCssSection;
-(* error 
-GType              gtk_css_section_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_css_section_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-
   function gtk_css_section_new(file:PGFile; start:PGtkCssLocation; end:PGtkCssLocation):^GtkCssSection;
 
+  { Zeile entfernt  }
   function gtk_css_section_ref(section:PGtkCssSection):^GtkCssSection;
 
+  { Zeile entfernt  }
   procedure gtk_css_section_unref(section:PGtkCssSection);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_css_section_print(section:PGtkCssSection; _string:PGString);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_css_section_to_string(section:PGtkCssSection):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_css_section_get_parent(section:PGtkCssSection):^GtkCssSection;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_css_section_get_file(section:PGtkCssSection):^GFile;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_css_section_get_start_location(section:PGtkCssSection):^GtkCssLocation;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_css_section_get_end_location(section:PGtkCssSection):^GtkCssLocation;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_CSS_SECTION_H__  }
   { was #define dname def_expr }
@@ -92,6 +100,10 @@ GType              gtk_css_section_get_type            (void) G_GNUC_CONST;
       GTK_TYPE_CSS_SECTION:=gtk_css_section_get_type;
     end;
 
+  function gtk_css_section_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_css_section_new(file:PGFile; start:PGtkCssLocation; end:PGtkCssLocation):PGtkCssSection;
   begin
     { You must implement this function }

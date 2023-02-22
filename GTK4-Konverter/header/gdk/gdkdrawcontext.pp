@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DRAW_CONTEXT : longint; { return type might be wrong }
@@ -49,27 +50,30 @@
   { return type might be wrong }   
   function GDK_IS_DRAW_CONTEXT(obj : longint) : longint;  
 
-(* error 
-GType gdk_draw_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_draw_context_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_draw_context_get_display(context:PGdkDrawContext):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_draw_context_get_surface(context:PGdkDrawContext):^GdkSurface;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_draw_context_begin_frame(context:PGdkDrawContext; region:Pcairo_region_t);
 
+  { Zeile entfernt  }
   procedure gdk_draw_context_end_frame(context:PGdkDrawContext);
 
+  { Zeile entfernt  }
   function gdk_draw_context_is_in_frame(context:PGdkDrawContext):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_draw_context_get_frame_region(context:PGdkDrawContext):^cairo_region_t;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DRAW_CONTEXT__  }
   { was #define dname def_expr }
@@ -94,6 +98,10 @@ GType gdk_draw_context_get_type (void) G_GNUC_CONST;
     GDK_IS_DRAW_CONTEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_DRAW_CONTEXT);
   end;
 
+  function gdk_draw_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_draw_context_get_display(context:PGdkDrawContext):PGdkDisplay;
   begin
     { You must implement this function }

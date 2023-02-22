@@ -23,7 +23,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EMOJI_CHOOSER                 (gtk_emoji_chooser_get_type ())
 #define GTK_EMOJI_CHOOSER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EMOJI_CHOOSER, GtkEmojiChooser))
@@ -35,9 +35,9 @@
 typedef struct _GtkEmojiChooser      GtkEmojiChooser;
 typedef struct _GtkEmojiChooserClass GtkEmojiChooserClass;
 
-
-GType      gtk_emoji_chooser_get_type (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_emoji_chooser_get_type (void) ;
+/* Zeile entfernt */
 GtkWidget *gtk_emoji_chooser_new      (void);
 
-
+/* Zeile entfernt */

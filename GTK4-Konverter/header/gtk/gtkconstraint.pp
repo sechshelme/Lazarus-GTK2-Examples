@@ -28,6 +28,7 @@
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   type
     _GtkConstraintTarget = GtkConstraintTarget;
@@ -43,66 +44,71 @@
    *
    * Besides `GtkWidget`, it is also implemented by `GtkConstraintGuide`.
     }
-(* error 
-G_DECLARE_INTERFACE (GtkConstraintTarget, gtk_constraint_target, GTK, CONSTRAINT_TARGET, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GtkConstraintTarget, gtk_constraint_target, GTK, CONSTRAINT_TARGET, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraint, gtk_constraint, GTK, CONSTRAINT, GObject)
-(* error 
-                                                                 GtkConstraintAttribute  target_attribute,
-(* error 
-                                                                 GtkConstraintRelation   relation,
-(* error 
-                                                                 gpointer                source,
-(* error 
-                                                                 GtkConstraintAttribute  source_attribute,
-(* error 
-                                                                 double                  multiplier,
-(* error 
-                                                                 double                  constant,
-(* error 
-                                                                 int                     strength);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { was #define dname def_expr }
+  function GTK_TYPE_CONSTRAINT : longint; { return type might be wrong }
+
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_constraint_new(target:gpointer; target_attribute:GtkConstraintAttribute; relation:GtkConstraintRelation; source:gpointer; source_attribute:GtkConstraintAttribute; 
+             multiplier:double; constant:double; strength:longint):^GtkConstraint;
+
+  { Zeile entfernt  }
   function gtk_constraint_new_constant(target:gpointer; target_attribute:GtkConstraintAttribute; relation:GtkConstraintRelation; constant:double; strength:longint):^GtkConstraint;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_target(constraint:PGtkConstraint):^GtkConstraintTarget;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_target_attribute(constraint:PGtkConstraint):GtkConstraintAttribute;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_source(constraint:PGtkConstraint):^GtkConstraintTarget;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_source_attribute(constraint:PGtkConstraint):GtkConstraintAttribute;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_relation(constraint:PGtkConstraint):GtkConstraintRelation;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_multiplier(constraint:PGtkConstraint):double;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_constant(constraint:PGtkConstraint):double;
 
+  { Zeile entfernt  }
   function gtk_constraint_get_strength(constraint:PGtkConstraint):longint;
 
+  { Zeile entfernt  }
   function gtk_constraint_is_required(constraint:PGtkConstraint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_constraint_is_attached(constraint:PGtkConstraint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_constraint_is_constant(constraint:PGtkConstraint):gboolean;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_TARGET : longint; { return type might be wrong }
     begin
       GTK_TYPE_CONSTRAINT_TARGET:=gtk_constraint_target_get_type;
     end;
 
+  { was #define dname def_expr }
+  function GTK_TYPE_CONSTRAINT : longint; { return type might be wrong }
+    begin
+      GTK_TYPE_CONSTRAINT:=gtk_constraint_get_type;
+    end;
+
+  function gtk_constraint_new(target:gpointer; target_attribute:GtkConstraintAttribute; relation:GtkConstraintRelation; source:gpointer; source_attribute:GtkConstraintAttribute; 
+             multiplier:double; constant:double; strength:longint):PGtkConstraint;
+  begin
+    { You must implement this function }
+  end;
   function gtk_constraint_new_constant(target:gpointer; target_attribute:GtkConstraintAttribute; relation:GtkConstraintRelation; constant:double; strength:longint):PGtkConstraint;
   begin
     { You must implement this function }

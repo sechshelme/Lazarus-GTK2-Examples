@@ -27,7 +27,7 @@
 #include <gtk/gtktreesortable.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_LIST_STORE	       (gtk_list_store_get_type ())
@@ -58,96 +58,96 @@ struct _GtkListStoreClass
 };
 
 
-
-GType         gtk_list_store_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_list_store_get_type         (void) ;
+/* Zeile entfernt */
 GtkListStore *gtk_list_store_new              (int           n_columns,
 					       ...);
-
+/* Zeile entfernt */
 GtkListStore *gtk_list_store_newv             (int           n_columns,
 					       GType        *types);
-
+/* Zeile entfernt */
 void          gtk_list_store_set_column_types (GtkListStore *list_store,
 					       int           n_columns,
 					       GType        *types);
 
 /* NOTE: use gtk_tree_model_get to get values from a GtkListStore */
 
-
+/* Zeile entfernt */
 void          gtk_list_store_set_value        (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int           column,
 					       GValue       *value);
-
+/* Zeile entfernt */
 void          gtk_list_store_set              (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       ...);
-
+/* Zeile entfernt */
 void          gtk_list_store_set_valuesv      (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int          *columns,
 					       GValue       *values,
 					       int           n_values);
-
+/* Zeile entfernt */
 void          gtk_list_store_set_valist       (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       va_list       var_args);
-
+/* Zeile entfernt */
 gboolean      gtk_list_store_remove           (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_list_store_insert           (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int           position);
-
+/* Zeile entfernt */
 void          gtk_list_store_insert_before    (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *sibling);
-
+/* Zeile entfernt */
 void          gtk_list_store_insert_after     (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *sibling);
-
+/* Zeile entfernt */
 void          gtk_list_store_insert_with_values  (GtkListStore *list_store,
 						  GtkTreeIter  *iter,
 						  int           position,
 						  ...);
-
+/* Zeile entfernt */
 void          gtk_list_store_insert_with_valuesv (GtkListStore *list_store,
 						  GtkTreeIter  *iter,
 						  int           position,
 						  int          *columns,
 						  GValue       *values,
 						  int           n_values);
-
+/* Zeile entfernt */
 void          gtk_list_store_prepend          (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_list_store_append           (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_list_store_clear            (GtkListStore *list_store);
-
+/* Zeile entfernt */
 gboolean      gtk_list_store_iter_is_valid    (GtkListStore *list_store,
                                                GtkTreeIter  *iter);
-
+/* Zeile entfernt */
 void          gtk_list_store_reorder          (GtkListStore *store,
                                                int          *new_order);
-
+/* Zeile entfernt */
 void          gtk_list_store_swap             (GtkListStore *store,
                                                GtkTreeIter  *a,
                                                GtkTreeIter  *b);
-
+/* Zeile entfernt */
 void          gtk_list_store_move_after       (GtkListStore *store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
-
+/* Zeile entfernt */
 void          gtk_list_store_move_before      (GtkListStore *store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_LIST_STORE_H__ */

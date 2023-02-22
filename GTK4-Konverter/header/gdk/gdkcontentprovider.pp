@@ -38,6 +38,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CONTENT_PROVIDER : longint; { return type might be wrong }
@@ -99,27 +100,31 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType                   gdk_content_provider_get_type                   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_content_provider_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_content_provider_ref_formats(provider:PGdkContentProvider):^GdkContentFormats;
 
+  { Zeile entfernt  }
   function gdk_content_provider_ref_storable_formats(provider:PGdkContentProvider):^GdkContentFormats;
 
+  { Zeile entfernt  }
   procedure gdk_content_provider_content_changed(provider:PGdkContentProvider);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_content_provider_write_mime_type_async(provider:PGdkContentProvider; mime_type:Pchar; stream:PGOutputStream; io_priority:longint; cancellable:PGCancellable; 
               callback:GAsyncReadyCallback; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gdk_content_provider_write_mime_type_finish(provider:PGdkContentProvider; result:PGAsyncResult; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
   function gdk_content_provider_get_value(provider:PGdkContentProvider; value:PGValue; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CONTENT_PROVIDER_H__  }
   { was #define dname def_expr }
@@ -168,6 +173,10 @@ GType                   gdk_content_provider_get_type                   (void) G
     GDK_CONTENT_PROVIDER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GDK_TYPE_CONTENT_PROVIDER,GdkContentProviderClass);
   end;
 
+  function gdk_content_provider_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_content_provider_ref_formats(provider:PGdkContentProvider):PGdkContentFormats;
   begin
     { You must implement this function }

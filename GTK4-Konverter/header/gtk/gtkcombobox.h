@@ -26,7 +26,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtktreeview.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_COMBO_BOX             (gtk_combo_box_get_type ())
 #define GTK_COMBO_BOX(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COMBO_BOX, GtkComboBox))
@@ -69,92 +69,92 @@ struct _GtkComboBoxClass
 
 
 /* construction */
-
-GType         gtk_combo_box_get_type                 (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_combo_box_get_type                 (void) ;
+/* Zeile entfernt */
 GtkWidget    *gtk_combo_box_new                      (void);
-
+/* Zeile entfernt */
 GtkWidget    *gtk_combo_box_new_with_entry           (void);
-
+/* Zeile entfernt */
 GtkWidget    *gtk_combo_box_new_with_model           (GtkTreeModel *model);
-
+/* Zeile entfernt */
 GtkWidget    *gtk_combo_box_new_with_model_and_entry (GtkTreeModel *model);
 
 /* get/set active item */
-
+/* Zeile entfernt */
 int           gtk_combo_box_get_active       (GtkComboBox     *combo_box);
-
+/* Zeile entfernt */
 void          gtk_combo_box_set_active       (GtkComboBox     *combo_box,
                                               int              index_);
-
+/* Zeile entfernt */
 gboolean      gtk_combo_box_get_active_iter  (GtkComboBox     *combo_box,
                                               GtkTreeIter     *iter);
-
+/* Zeile entfernt */
 void          gtk_combo_box_set_active_iter  (GtkComboBox     *combo_box,
                                               GtkTreeIter     *iter);
 
 /* getters and setters */
-
+/* Zeile entfernt */
 void          gtk_combo_box_set_model        (GtkComboBox     *combo_box,
                                               GtkTreeModel    *model);
-
+/* Zeile entfernt */
 GtkTreeModel *gtk_combo_box_get_model        (GtkComboBox     *combo_box);
 
-
+/* Zeile entfernt */
 GtkTreeViewRowSeparatorFunc gtk_combo_box_get_row_separator_func (GtkComboBox                *combo_box);
-
+/* Zeile entfernt */
 void                        gtk_combo_box_set_row_separator_func (GtkComboBox                *combo_box,
                                                                   GtkTreeViewRowSeparatorFunc func,
                                                                   gpointer                    data,
                                                                   GDestroyNotify              destroy);
 
-
+/* Zeile entfernt */
 void               gtk_combo_box_set_button_sensitivity (GtkComboBox        *combo_box,
                                                          GtkSensitivityType  sensitivity);
-
+/* Zeile entfernt */
 GtkSensitivityType gtk_combo_box_get_button_sensitivity (GtkComboBox        *combo_box);
 
-
+/* Zeile entfernt */
 gboolean           gtk_combo_box_get_has_entry          (GtkComboBox        *combo_box);
-
+/* Zeile entfernt */
 void               gtk_combo_box_set_entry_text_column  (GtkComboBox        *combo_box,
                                                          int                 text_column);
-
+/* Zeile entfernt */
 int                gtk_combo_box_get_entry_text_column  (GtkComboBox        *combo_box);
 
-
+/* Zeile entfernt */
 void               gtk_combo_box_set_popup_fixed_width  (GtkComboBox      *combo_box,
                                                          gboolean          fixed);
-
+/* Zeile entfernt */
 gboolean           gtk_combo_box_get_popup_fixed_width  (GtkComboBox      *combo_box);
 
 /* programmatic control */
-
+/* Zeile entfernt */
 void          gtk_combo_box_popup            (GtkComboBox     *combo_box);
-
+/* Zeile entfernt */
 void          gtk_combo_box_popup_for_device (GtkComboBox     *combo_box,
                                               GdkDevice       *device);
-
+/* Zeile entfernt */
 void          gtk_combo_box_popdown          (GtkComboBox     *combo_box);
 
-
+/* Zeile entfernt */
 int           gtk_combo_box_get_id_column        (GtkComboBox *combo_box);
-
+/* Zeile entfernt */
 void          gtk_combo_box_set_id_column        (GtkComboBox *combo_box,
                                                   int          id_column);
-
+/* Zeile entfernt */
 const char * gtk_combo_box_get_active_id        (GtkComboBox *combo_box);
-
+/* Zeile entfernt */
 gboolean      gtk_combo_box_set_active_id        (GtkComboBox *combo_box,
                                                   const char *active_id);
 
-
+/* Zeile entfernt */
 void          gtk_combo_box_set_child            (GtkComboBox *combo_box,
                                                   GtkWidget   *child);
-
+/* Zeile entfernt */
 GtkWidget *   gtk_combo_box_get_child            (GtkComboBox *combo_box);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_COMBO_BOX_H__ */

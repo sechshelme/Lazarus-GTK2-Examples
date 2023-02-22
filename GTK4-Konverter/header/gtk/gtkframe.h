@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_FRAME                  (gtk_frame_get_type ())
@@ -71,36 +71,36 @@ struct _GtkFrameClass
 };
 
 
-
-GType      gtk_frame_get_type         (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_frame_get_type         (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_frame_new              (const char    *label);
 
-
+/* Zeile entfernt */
 void          gtk_frame_set_label (GtkFrame    *frame,
                                    const char *label);
-
+/* Zeile entfernt */
 const char * gtk_frame_get_label (GtkFrame    *frame);
 
-
+/* Zeile entfernt */
 void       gtk_frame_set_label_widget (GtkFrame      *frame,
                                        GtkWidget     *label_widget);
-
+/* Zeile entfernt */
 GtkWidget *gtk_frame_get_label_widget (GtkFrame      *frame);
-
+/* Zeile entfernt */
 void       gtk_frame_set_label_align  (GtkFrame      *frame,
                                        float          xalign);
-
+/* Zeile entfernt */
 float      gtk_frame_get_label_align  (GtkFrame      *frame);
 
-
+/* Zeile entfernt */
 void       gtk_frame_set_child        (GtkFrame      *frame,
                                        GtkWidget     *child);
-
+/* Zeile entfernt */
 GtkWidget *gtk_frame_get_child        (GtkFrame      *frame);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_FRAME_H__ */

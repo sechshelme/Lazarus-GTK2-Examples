@@ -30,6 +30,7 @@
 {$error "Only <gdk/wayland/gdkwayland.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_WAYLAND_GL_CONTEXT : longint; { return type might be wrong }
@@ -48,12 +49,11 @@
   type
     _GdkWaylandGLContext = GdkWaylandGLContext;
     _GdkWaylandGLContextClass = GdkWaylandGLContextClass;
-(* error 
-GType gdk_wayland_gl_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_wayland_gl_context_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_WAYLAND_GL_CONTEXT_H__  }
   { was #define dname def_expr }
@@ -78,4 +78,8 @@ GType gdk_wayland_gl_context_get_type (void) G_GNUC_CONST;
     GDK_WAYLAND_IS_GL_CONTEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_WAYLAND_GL_CONTEXT);
   end;
 
+  function gdk_wayland_gl_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

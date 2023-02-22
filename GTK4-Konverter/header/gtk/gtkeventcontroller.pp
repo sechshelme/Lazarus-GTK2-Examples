@@ -40,6 +40,7 @@
 {$include <gdk/gdk.h>}
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER : longint; { return type might be wrong }
@@ -69,42 +70,51 @@
   { return type might be wrong }   
   function GTK_EVENT_CONTROLLER_GET_CLASS(o : longint) : longint;  
 
-(* error 
-GType        gtk_event_controller_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_event_controller_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_event_controller_get_widget(controller:PGtkEventController):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_event_controller_reset(controller:PGtkEventController);
 
+  { Zeile entfernt  }
   function gtk_event_controller_get_propagation_phase(controller:PGtkEventController):GtkPropagationPhase;
 
+  { Zeile entfernt  }
   procedure gtk_event_controller_set_propagation_phase(controller:PGtkEventController; phase:GtkPropagationPhase);
 
+  { Zeile entfernt  }
   function gtk_event_controller_get_propagation_limit(controller:PGtkEventController):GtkPropagationLimit;
 
+  { Zeile entfernt  }
   procedure gtk_event_controller_set_propagation_limit(controller:PGtkEventController; limit:GtkPropagationLimit);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_event_controller_get_name(controller:PGtkEventController):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_event_controller_set_name(controller:PGtkEventController; name:Pchar);
 
 (* error 
 void                gtk_event_controller_set_static_name       (GtkEventController *controller,
 in declaration at line 73 *)
+    { Zeile entfernt  }
     function gtk_event_controller_get_current_event(controller:PGtkEventController):^GdkEvent;
 
+    { Zeile entfernt  }
     function gtk_event_controller_get_current_event_time(controller:PGtkEventController):guint32;
 
+    { Zeile entfernt  }
     function gtk_event_controller_get_current_event_device(controller:PGtkEventController):^GdkDevice;
 
+    { Zeile entfernt  }
     function gtk_event_controller_get_current_event_state(controller:PGtkEventController):GdkModifierType;
 
+    { Zeile entfernt  }
 {$endif}
     { __GTK_EVENT_CONTROLLER_H__  }
   { was #define dname def_expr }
@@ -153,6 +163,10 @@ in declaration at line 73 *)
     GTK_EVENT_CONTROLLER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER,GtkEventControllerClass);
   end;
 
+  function gtk_event_controller_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_get_widget(controller:PGtkEventController):PGtkWidget;
   begin
     { You must implement this function }

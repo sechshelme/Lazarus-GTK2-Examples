@@ -29,12 +29,12 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_MAP_LIST_MODEL (gtk_map_list_model_get_type ())
 
-
-G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkMapListModelMapFunc:
@@ -51,25 +51,25 @@ G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, 
  */
 typedef gpointer (* GtkMapListModelMapFunc) (gpointer item, gpointer user_data);
 
-
+/* Zeile entfernt */
 GtkMapListModel *       gtk_map_list_model_new                  (GListModel             *model,
                                                                  GtkMapListModelMapFunc  map_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 void                    gtk_map_list_model_set_map_func         (GtkMapListModel        *self,
                                                                  GtkMapListModelMapFunc  map_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
-
+/* Zeile entfernt */
 void                    gtk_map_list_model_set_model            (GtkMapListModel        *self,
                                                                  GListModel             *model);
-
+/* Zeile entfernt */
 GListModel *            gtk_map_list_model_get_model            (GtkMapListModel        *self);
-
+/* Zeile entfernt */
 gboolean                gtk_map_list_model_has_map              (GtkMapListModel        *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_MAP_LIST_MODEL_H__ */

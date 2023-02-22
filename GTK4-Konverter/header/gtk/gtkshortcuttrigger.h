@@ -26,39 +26,39 @@
 
 #include <gtk/gtktypes.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT_TRIGGER (gtk_shortcut_trigger_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTCUT_TRIGGER, GObject)
-
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_shortcut_trigger_parse_string       (const char         *string);
 
-
+/* Zeile entfernt */
 char *                  gtk_shortcut_trigger_to_string          (GtkShortcutTrigger *self);
-
+/* Zeile entfernt */
 void                    gtk_shortcut_trigger_print              (GtkShortcutTrigger *self,
                                                                  GString            *string);
-
+/* Zeile entfernt */
 char *                  gtk_shortcut_trigger_to_label           (GtkShortcutTrigger *self,
                                                                  GdkDisplay         *display);
-
+/* Zeile entfernt */
 gboolean                gtk_shortcut_trigger_print_label        (GtkShortcutTrigger *self,
                                                                  GdkDisplay         *display,
                                                                  GString            *string);
 
-
+/* Zeile entfernt */
 guint                   gtk_shortcut_trigger_hash               (gconstpointer       trigger);
-
+/* Zeile entfernt */
 gboolean                gtk_shortcut_trigger_equal              (gconstpointer       trigger1,
                                                                  gconstpointer       trigger2);
-
+/* Zeile entfernt */
 int                     gtk_shortcut_trigger_compare            (gconstpointer       trigger1,
                                                                  gconstpointer       trigger2);
 
-
+/* Zeile entfernt */
 GdkKeyMatch             gtk_shortcut_trigger_trigger            (GtkShortcutTrigger *self,
                                                                  GdkEvent           *event,
                                                                  gboolean            enable_mnemonics);
@@ -71,10 +71,10 @@ GdkKeyMatch             gtk_shortcut_trigger_trigger            (GtkShortcutTrig
  *
  * A `GtkShortcutTrigger` that never triggers.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkNeverTrigger, gtk_never_trigger, GTK, NEVER_TRIGGER, GtkShortcutTrigger)
-
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_never_trigger_get                   (void);
 
 #define GTK_TYPE_KEYVAL_TRIGGER (gtk_keyval_trigger_get_type())
@@ -85,15 +85,15 @@ GtkShortcutTrigger *    gtk_never_trigger_get                   (void);
  * A `GtkShortcutTrigger` that triggers when a specific keyval and modifiers are pressed.
  */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRIGGER, GtkShortcutTrigger)
-
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_keyval_trigger_new                  (guint             keyval,
                                                                  GdkModifierType   modifiers);
-
+/* Zeile entfernt */
 GdkModifierType         gtk_keyval_trigger_get_modifiers        (GtkKeyvalTrigger *self);
-
+/* Zeile entfernt */
 guint                   gtk_keyval_trigger_get_keyval           (GtkKeyvalTrigger *self);
 
 #define GTK_TYPE_MNEMONIC_TRIGGER (gtk_mnemonic_trigger_get_type())
@@ -106,12 +106,12 @@ guint                   gtk_keyval_trigger_get_keyval           (GtkKeyvalTrigge
  * Mnemonics require a *mnemonic modifier* (typically <kbd>Alt</kbd>) to be
  * pressed together with the mnemonic key.
  */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger)
-
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_mnemonic_trigger_new                (guint               keyval);
-
+/* Zeile entfernt */
 guint                   gtk_mnemonic_trigger_get_keyval         (GtkMnemonicTrigger *self);
 
 #define GTK_TYPE_ALTERNATIVE_TRIGGER (gtk_alternative_trigger_get_type())
@@ -126,17 +126,17 @@ guint                   gtk_mnemonic_trigger_get_keyval         (GtkMnemonicTrig
  * This can be cascaded to combine more than two triggers.
  */
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, ALTERNATIVE_TRIGGER, GtkShortcutTrigger)
-
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_alternative_trigger_new             (GtkShortcutTrigger    *first,
                                                                  GtkShortcutTrigger    *second);
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_alternative_trigger_get_first       (GtkAlternativeTrigger *self);
-
+/* Zeile entfernt */
 GtkShortcutTrigger *    gtk_alternative_trigger_get_second      (GtkAlternativeTrigger *self);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUT_TRIGGER_H__ */

@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LEVEL_BAR : longint; { return type might be wrong }
@@ -70,46 +71,59 @@
 
   type
     _GtkLevelBar = GtkLevelBar;
-(* error 
-GType      gtk_level_bar_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_level_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_level_bar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_level_bar_new_for_interval(min_value:double; max_value:double):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_level_bar_set_mode(self:PGtkLevelBar; mode:GtkLevelBarMode);
 
+  { Zeile entfernt  }
   function gtk_level_bar_get_mode(self:PGtkLevelBar):GtkLevelBarMode;
 
+  { Zeile entfernt  }
   procedure gtk_level_bar_set_value(self:PGtkLevelBar; value:double);
 
+  { Zeile entfernt  }
   function gtk_level_bar_get_value(self:PGtkLevelBar):double;
 
+  { Zeile entfernt  }
   procedure gtk_level_bar_set_min_value(self:PGtkLevelBar; value:double);
 
+  { Zeile entfernt  }
   function gtk_level_bar_get_min_value(self:PGtkLevelBar):double;
 
+  { Zeile entfernt  }
   procedure gtk_level_bar_set_max_value(self:PGtkLevelBar; value:double);
 
+  { Zeile entfernt  }
   function gtk_level_bar_get_max_value(self:PGtkLevelBar):double;
 
+  { Zeile entfernt  }
   procedure gtk_level_bar_set_inverted(self:PGtkLevelBar; inverted:gboolean);
 
+  { Zeile entfernt  }
   function gtk_level_bar_get_inverted(self:PGtkLevelBar):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_level_bar_add_offset_value(self:PGtkLevelBar; name:Pchar; value:double);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_level_bar_remove_offset_value(self:PGtkLevelBar; name:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_level_bar_get_offset_value(self:PGtkLevelBar; name:Pchar; value:Pdouble):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_LEVEL_BAR_H__  }
   { was #define dname def_expr }
@@ -134,6 +148,10 @@ GType      gtk_level_bar_get_type           (void) G_GNUC_CONST;
     GTK_IS_LEVEL_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_LEVEL_BAR);
   end;
 
+  function gtk_level_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_level_bar_new:PGtkWidget;
   begin
     { You must implement this function }

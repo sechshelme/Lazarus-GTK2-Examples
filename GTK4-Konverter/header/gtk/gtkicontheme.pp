@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ICON_PAINTABLE : longint; { return type might be wrong }
@@ -101,83 +102,94 @@
   type
     GtkIconThemeError = (GTK_ICON_THEME_NOT_FOUND,GTK_ICON_THEME_FAILED
       );
+  { Zeile entfernt  }
 
   function gtk_icon_theme_error_quark:GQuark;
 
-(* error 
-GType            gtk_icon_theme_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_icon_theme_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_icon_theme_new:^GtkIconTheme;
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_for_display(display:PGdkDisplay):^GtkIconTheme;
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_display(self:PGtkIconTheme):^GdkDisplay;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   procedure gtk_icon_theme_set_search_path(self:PGtkIconTheme; path:PPchar);
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_search_path(self:PGtkIconTheme):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_icon_theme_add_search_path(self:PGtkIconTheme; path:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
   procedure gtk_icon_theme_set_resource_path(self:PGtkIconTheme; path:PPchar);
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_resource_path(self:PGtkIconTheme):^^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_icon_theme_add_resource_path(self:PGtkIconTheme; path:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_icon_theme_set_theme_name(self:PGtkIconTheme; theme_name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_theme_name(self:PGtkIconTheme):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_icon_theme_has_icon(self:PGtkIconTheme; icon_name:Pchar):gboolean;
 
-(* error 
-gboolean         gtk_icon_theme_has_gicon            (GtkIconTheme                *self,
-(* error 
-                                                      GIcon                       *gicon);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_icon_theme_has_gicon(self:PGtkIconTheme; gicon:PGIcon):gboolean;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_icon_theme_get_icon_sizes(self:PGtkIconTheme; icon_name:Pchar):^longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_icon_theme_lookup_icon(self:PGtkIconTheme; icon_name:Pchar; fallbacks:PPchar; size:longint; scale:longint; 
              direction:GtkTextDirection; flags:GtkIconLookupFlags):^GtkIconPaintable;
 
+  { Zeile entfernt  }
   function gtk_icon_theme_lookup_by_gicon(self:PGtkIconTheme; icon:PGIcon; size:longint; scale:longint; direction:GtkTextDirection; 
              flags:GtkIconLookupFlags):^GtkIconPaintable;
 
+  { Zeile entfernt  }
   function gtk_icon_paintable_new_for_file(file:PGFile; size:longint; scale:longint):^GtkIconPaintable;
 
+  { Zeile entfernt  }
   function gtk_icon_theme_get_icon_names(self:PGtkIconTheme):^^char;
 
-(* error 
-GType                 gtk_icon_paintable_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_icon_paintable_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_icon_paintable_get_file(self:PGtkIconPaintable):^GFile;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_icon_paintable_get_icon_name(self:PGtkIconPaintable):^char;
 
+  { Zeile entfernt  }
   function gtk_icon_paintable_is_symbolic(self:PGtkIconPaintable):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ICON_THEME_H__  }
   { was #define dname def_expr }
@@ -234,6 +246,10 @@ GType                 gtk_icon_paintable_get_type         (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gtk_icon_theme_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_icon_theme_new:PGtkIconTheme;
   begin
     { You must implement this function }
@@ -282,6 +298,10 @@ GType                 gtk_icon_paintable_get_type         (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gtk_icon_theme_has_gicon(self:PGtkIconTheme; gicon:PGIcon):gboolean;
+  begin
+    { You must implement this function }
+  end;
   function gtk_icon_theme_get_icon_sizes(self:PGtkIconTheme; icon_name:Pchar):Plongint;
   begin
     { You must implement this function }
@@ -301,6 +321,10 @@ GType                 gtk_icon_paintable_get_type         (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gtk_icon_theme_get_icon_names(self:PGtkIconTheme):PPchar;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_icon_paintable_get_type:GType;
   begin
     { You must implement this function }
   end;

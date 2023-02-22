@@ -32,6 +32,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkeventcontroller.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EVENT_CONTROLLER_MOTION : longint; { return type might be wrong }
@@ -65,19 +66,20 @@
   type
     _GtkEventControllerMotion = GtkEventControllerMotion;
     _GtkEventControllerMotionClass = GtkEventControllerMotionClass;
-(* error 
-GType               gtk_event_controller_motion_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_event_controller_motion_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_event_controller_motion_new:^GtkEventController;
 
+  { Zeile entfernt  }
   function gtk_event_controller_motion_contains_pointer(self:PGtkEventControllerMotion):gboolean;
 
+  { Zeile entfernt  }
   function gtk_event_controller_motion_is_pointer(self:PGtkEventControllerMotion):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EVENT_CONTROLLER_MOTION_H__  }
   { was #define dname def_expr }
@@ -126,6 +128,10 @@ GType               gtk_event_controller_motion_get_type (void) G_GNUC_CONST;
     GTK_EVENT_CONTROLLER_MOTION_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_EVENT_CONTROLLER_MOTION,GtkEventControllerMotionClass);
   end;
 
+  function gtk_event_controller_motion_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_event_controller_motion_new:PGtkEventController;
   begin
     { You must implement this function }

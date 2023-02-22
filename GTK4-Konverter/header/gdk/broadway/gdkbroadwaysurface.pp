@@ -29,6 +29,7 @@
 {$ifndef __GDK_BROADWAY_SURFACE_H__}
 {$define __GDK_BROADWAY_SURFACE_H__}  
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_BROADWAY_SURFACE : longint; { return type might be wrong }
@@ -70,9 +71,11 @@
 
   type
     _GdkBroadwaySurfaceClass = GdkBroadwaySurfaceClass;
+  { Zeile entfernt  }
 
   function gdk_broadway_surface_get_type:GType;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_BROADWAY_SURFACE_H__  }
   { was #define dname def_expr }

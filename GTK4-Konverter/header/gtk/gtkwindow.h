@@ -34,7 +34,7 @@
 #include <gtk/gtkaccelgroup.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_WINDOW			(gtk_window_get_type ())
 #define GTK_WINDOW(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_WINDOW, GtkWindow))
@@ -83,183 +83,183 @@ struct _GtkWindowClass
   gpointer padding[8];
 };
 
-
-GType      gtk_window_get_type                 (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_window_get_type                 (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_window_new                      (void);
-
+/* Zeile entfernt */
 void       gtk_window_set_title                (GtkWindow           *window,
 						const char          *title);
-
+/* Zeile entfernt */
 const char * gtk_window_get_title             (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_startup_id           (GtkWindow           *window,
                                                 const char          *startup_id);
-
+/* Zeile entfernt */
 void       gtk_window_set_focus                (GtkWindow           *window,
 						GtkWidget           *focus);
-
+/* Zeile entfernt */
 GtkWidget *gtk_window_get_focus                (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_default_widget       (GtkWindow           *window,
 						GtkWidget           *default_widget);
-
+/* Zeile entfernt */
 GtkWidget *gtk_window_get_default_widget       (GtkWindow           *window);
 
-
+/* Zeile entfernt */
 void       gtk_window_set_transient_for        (GtkWindow           *window,
 						GtkWindow           *parent);
-
+/* Zeile entfernt */
 GtkWindow *gtk_window_get_transient_for        (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_destroy_with_parent  (GtkWindow           *window,
                                                 gboolean             setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_destroy_with_parent  (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_hide_on_close        (GtkWindow           *window,
                                                 gboolean             setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_hide_on_close        (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_mnemonics_visible    (GtkWindow           *window,
                                                 gboolean             setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_mnemonics_visible    (GtkWindow           *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_focus_visible        (GtkWindow           *window,
                                                 gboolean             setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_focus_visible        (GtkWindow           *window);
 
-
+/* Zeile entfernt */
 void       gtk_window_set_resizable            (GtkWindow           *window,
                                                 gboolean             resizable);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_resizable            (GtkWindow           *window);
 
-
+/* Zeile entfernt */
 void	   gtk_window_set_display              (GtkWindow	    *window,
 						GdkDisplay          *display);
 
-
+/* Zeile entfernt */
 gboolean   gtk_window_is_active                (GtkWindow           *window);
 
-
+/* Zeile entfernt */
 void       gtk_window_set_decorated            (GtkWindow *window,
                                                 gboolean   setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_decorated            (GtkWindow *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_deletable            (GtkWindow *window,
                                                 gboolean   setting);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_deletable            (GtkWindow *window);
 
-
+/* Zeile entfernt */
 void       gtk_window_set_icon_name                (GtkWindow   *window,
 						    const char *name);
-
+/* Zeile entfernt */
 const char * gtk_window_get_icon_name             (GtkWindow  *window);
-
+/* Zeile entfernt */
 void       gtk_window_set_default_icon_name        (const char *name);
-
+/* Zeile entfernt */
 const char * gtk_window_get_default_icon_name     (void);
 
-
+/* Zeile entfernt */
 void       gtk_window_set_auto_startup_notification (gboolean setting);
 
 /* If window is set modal, input will be grabbed when show and released when hide */
-
+/* Zeile entfernt */
 void       gtk_window_set_modal      (GtkWindow *window,
 				      gboolean   modal);
-
+/* Zeile entfernt */
 gboolean   gtk_window_get_modal      (GtkWindow *window);
-
+/* Zeile entfernt */
 GListModel *gtk_window_get_toplevels (void);
-
+/* Zeile entfernt */
 GList*     gtk_window_list_toplevels (void);
 
-
+/* Zeile entfernt */
 void     gtk_window_present            (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_present_with_time  (GtkWindow *window,
 				        guint32    timestamp);
-
+/* Zeile entfernt */
 void     gtk_window_minimize      (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_unminimize    (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_maximize      (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_unmaximize    (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_fullscreen    (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_unfullscreen  (GtkWindow *window);
-
+/* Zeile entfernt */
 void     gtk_window_fullscreen_on_monitor (GtkWindow  *window,
                                            GdkMonitor *monitor);
-
+/* Zeile entfernt */
 void     gtk_window_close         (GtkWindow *window);
 
 /* Set initial default size of the window (does not constrain user
  * resize operations)
  */
-
+/* Zeile entfernt */
 void     gtk_window_set_default_size (GtkWindow   *window,
                                       int          width,
                                       int          height);
-
+/* Zeile entfernt */
 void     gtk_window_get_default_size (GtkWindow   *window,
                                       int         *width,
                                       int         *height);
 
-
+/* Zeile entfernt */
 GtkWindowGroup *gtk_window_get_group (GtkWindow   *window);
-
+/* Zeile entfernt */
 gboolean gtk_window_has_group        (GtkWindow   *window);
 
 
-
+/* Zeile entfernt */
 GtkApplication *gtk_window_get_application      (GtkWindow          *window);
-
+/* Zeile entfernt */
 void            gtk_window_set_application      (GtkWindow          *window,
                                                  GtkApplication     *application);
 
-
+/* Zeile entfernt */
 void     gtk_window_set_child              (GtkWindow    *window,
                                             GtkWidget    *child);
-
+/* Zeile entfernt */
 GtkWidget *gtk_window_get_child            (GtkWindow    *window);
 
-
+/* Zeile entfernt */
 void     gtk_window_set_titlebar           (GtkWindow    *window,
                                             GtkWidget    *titlebar);
-
+/* Zeile entfernt */
 GtkWidget *gtk_window_get_titlebar         (GtkWindow    *window);
 
-
+/* Zeile entfernt */
 gboolean gtk_window_is_maximized           (GtkWindow    *window);
 
-
+/* Zeile entfernt */
 gboolean gtk_window_is_fullscreen          (GtkWindow    *window);
 
-
+/* Zeile entfernt */
 void     gtk_window_destroy                (GtkWindow    *window);
 
-
+/* Zeile entfernt */
 void     gtk_window_set_interactive_debugging (gboolean enable);
 
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 void     gtk_window_set_handle_menubar_accel (GtkWindow *window,
                                               gboolean   handle_menubar_accel);
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 gboolean gtk_window_get_handle_menubar_accel (GtkWindow *window);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindow, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindowGroup, g_object_unref)
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_WINDOW_H__ */

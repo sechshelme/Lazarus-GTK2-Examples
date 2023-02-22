@@ -1,6 +1,7 @@
 
-    Type
-    PGdkBroadwayDisplay  = ^GdkBroadwayDisplay;
+  Type
+  PGdkBroadwayDisplay  = ^GdkBroadwayDisplay;
+  PGdkDisplay  = ^GdkDisplay;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -28,6 +29,7 @@
 {$error "Only <gdk/broadway/gdkbroadway.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 {$ifdef GTK_COMPILATION}
 
   type
@@ -69,20 +71,24 @@
   { return type might be wrong }   
   function GDK_BROADWAY_DISPLAY_GET_CLASS(obj : longint) : longint;  
 
+  { Zeile entfernt  }
   function gdk_broadway_display_get_type:GType;
 
+  { Zeile entfernt  }
   procedure gdk_broadway_display_show_keyboard(display:PGdkBroadwayDisplay);
 
+  { Zeile entfernt  }
   procedure gdk_broadway_display_hide_keyboard(display:PGdkBroadwayDisplay);
 
-(* error 
-int                     gdk_broadway_display_get_surface_scale   (GdkDisplay *display);
-in declaration at line 52 *)
-(* error 
-void                    gdk_broadway_display_set_surface_scale   (GdkDisplay *display,
-in declaration at line 55 *)
+  { Zeile entfernt  }
+  function gdk_broadway_display_get_surface_scale(display:PGdkDisplay):longint;
+
+  { Zeile entfernt  }
+  procedure gdk_broadway_display_set_surface_scale(display:PGdkDisplay; scale:longint);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GDK_BROADWAY_DISPLAY_H__  }
+  { __GDK_BROADWAY_DISPLAY_H__  }
   { was #define dname def_expr }
   function GDK_TYPE_BROADWAY_DISPLAY : longint; { return type might be wrong }
     begin
@@ -138,6 +144,14 @@ in declaration at line 55 *)
     { You must implement this function }
   end;
   procedure gdk_broadway_display_hide_keyboard(display:PGdkBroadwayDisplay);
+  begin
+    { You must implement this function }
+  end;
+  function gdk_broadway_display_get_surface_scale(display:PGdkDisplay):longint;
+  begin
+    { You must implement this function }
+  end;
+  procedure gdk_broadway_display_set_surface_scale(display:PGdkDisplay; scale:longint);
   begin
     { You must implement this function }
   end;

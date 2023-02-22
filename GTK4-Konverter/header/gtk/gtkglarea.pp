@@ -35,6 +35,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GL_AREA : longint; { return type might be wrong }
@@ -92,48 +93,63 @@
         _padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType gtk_gl_area_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gl_area_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gl_area_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_set_use_es(area:PGtkGLArea; use_es:gboolean);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_use_es(area:PGtkGLArea):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_set_required_version(area:PGtkGLArea; major:longint; minor:longint);
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_get_required_version(area:PGtkGLArea; major:Plongint; minor:Plongint);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_has_depth_buffer(area:PGtkGLArea):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_set_has_depth_buffer(area:PGtkGLArea; has_depth_buffer:gboolean);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_has_stencil_buffer(area:PGtkGLArea):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_set_has_stencil_buffer(area:PGtkGLArea; has_stencil_buffer:gboolean);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_auto_render(area:PGtkGLArea):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_set_auto_render(area:PGtkGLArea; auto_render:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_queue_render(area:PGtkGLArea);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_context(area:PGtkGLArea):^GdkGLContext;
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_make_current(area:PGtkGLArea);
 
+  { Zeile entfernt  }
   procedure gtk_gl_area_attach_buffers(area:PGtkGLArea);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_gl_area_set_error(area:PGtkGLArea; error:PGError);
 
+  { Zeile entfernt  }
   function gtk_gl_area_get_error(area:PGtkGLArea):^GError;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GL_AREA_H__  }
   { was #define dname def_expr }
@@ -182,6 +198,10 @@ GType gtk_gl_area_get_type (void) G_GNUC_CONST;
     GTK_GL_AREA_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_GL_AREA,GtkGLAreaClass);
   end;
 
+  function gtk_gl_area_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gl_area_new:PGtkWidget;
   begin
     { You must implement this function }

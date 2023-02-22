@@ -24,26 +24,26 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EDITABLE_LABEL (gtk_editable_label_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkEditableLabel, gtk_editable_label, GTK, EDITABLE_LABEL, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget *           gtk_editable_label_new            (const char       *str);
 
-
+/* Zeile entfernt */
 gboolean              gtk_editable_label_get_editing    (GtkEditableLabel *self);
 
-
+/* Zeile entfernt */
 void                  gtk_editable_label_start_editing  (GtkEditableLabel *self);
 
-
+/* Zeile entfernt */
 void                  gtk_editable_label_stop_editing   (GtkEditableLabel *self,
                                                          gboolean          commit);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EDITABLE_LABEL_H__ */

@@ -35,6 +35,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   type
     _GtkPaperSize = GtkPaperSize;
@@ -86,77 +87,100 @@
    * Name for the Legal paper size.
     }
     GTK_PAPER_NAME_LEGAL = 'na_legal';    
-(* error 
-GType gtk_paper_size_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_paper_size_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_paper_size_new(name:Pchar):^GtkPaperSize;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_paper_size_new_from_ppd(ppd_name:Pchar; ppd_display_name:Pchar; width:double; height:double):^GtkPaperSize;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_new_from_ipp(ipp_name:Pchar; width:double; height:double):^GtkPaperSize;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_paper_size_new_custom(name:Pchar; display_name:Pchar; width:double; height:double; unit:GtkUnit):^GtkPaperSize;
 
+  { Zeile entfernt  }
   function gtk_paper_size_copy(other:PGtkPaperSize):^GtkPaperSize;
 
+  { Zeile entfernt  }
   procedure gtk_paper_size_free(size:PGtkPaperSize);
 
+  { Zeile entfernt  }
   function gtk_paper_size_is_equal(size1:PGtkPaperSize; size2:PGtkPaperSize):gboolean;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_paper_sizes(include_custom:gboolean):^GList;
 
   { The width is always the shortest side, measure in mm  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_get_name(size:PGtkPaperSize):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_get_display_name(size:PGtkPaperSize):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_get_ppd_name(size:PGtkPaperSize):^char;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_width(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_height(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_paper_size_is_custom(size:PGtkPaperSize):gboolean;
 
+  { Zeile entfernt  }
   function gtk_paper_size_is_ipp(size:PGtkPaperSize):gboolean;
 
   { Only for custom sizes:  }
+  { Zeile entfernt  }
   procedure gtk_paper_size_set_size(size:PGtkPaperSize; width:double; height:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_default_top_margin(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_default_bottom_margin(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_default_left_margin(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_paper_size_get_default_right_margin(size:PGtkPaperSize; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_get_default:^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_paper_size_new_from_key_file(key_file:PGKeyFile; group_name:Pchar; error:PPGError):^GtkPaperSize;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_paper_size_to_key_file(size:PGtkPaperSize; key_file:PGKeyFile; group_name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_paper_size_new_from_gvariant(variant:PGVariant):^GtkPaperSize;
 
+  { Zeile entfernt  }
   function gtk_paper_size_to_gvariant(paper_size:PGtkPaperSize):^GVariant;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PAPER_SIZE_H__  }
   { was #define dname def_expr }
@@ -165,6 +189,10 @@ GType gtk_paper_size_get_type (void) G_GNUC_CONST;
       GTK_TYPE_PAPER_SIZE:=gtk_paper_size_get_type;
     end;
 
+  function gtk_paper_size_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_paper_size_new(name:Pchar):PGtkPaperSize;
   begin
     { You must implement this function }

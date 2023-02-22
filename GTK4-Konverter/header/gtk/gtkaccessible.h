@@ -28,62 +28,62 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ACCESSIBLE (gtk_accessible_get_type())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
-
-
+/* Zeile entfernt */
 GtkAccessibleRole       gtk_accessible_get_accessible_role      (GtkAccessible         *self);
 
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_state             (GtkAccessible         *self,
                                                                  GtkAccessibleState     first_state,
                                                                  ...);
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_property          (GtkAccessible         *self,
                                                                  GtkAccessibleProperty  first_property,
                                                                  ...);
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_relation          (GtkAccessible         *self,
                                                                  GtkAccessibleRelation  first_relation,
                                                                  ...);
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_state_value       (GtkAccessible         *self,
                                                                  int                    n_states,
                                                                  GtkAccessibleState     states[],
                                                                  const GValue           values[]);
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_property_value    (GtkAccessible         *self,
                                                                  int                    n_properties,
                                                                  GtkAccessibleProperty  properties[],
                                                                  const GValue           values[]);
-
+/* Zeile entfernt */
 void                    gtk_accessible_update_relation_value    (GtkAccessible         *self,
                                                                  int                    n_relations,
                                                                  GtkAccessibleRelation  relations[],
                                                                  const GValue           values[]);
 
-
+/* Zeile entfernt */
 void                    gtk_accessible_reset_state              (GtkAccessible         *self,
                                                                  GtkAccessibleState     state);
-
+/* Zeile entfernt */
 void                    gtk_accessible_reset_property           (GtkAccessible         *self,
                                                                  GtkAccessibleProperty  property);
-
+/* Zeile entfernt */
 void                    gtk_accessible_reset_relation           (GtkAccessible         *self,
                                                                  GtkAccessibleRelation  relation);
 
-
+/* Zeile entfernt */
 void                    gtk_accessible_state_init_value         (GtkAccessibleState     state,
                                                                  GValue                *value);
-
+/* Zeile entfernt */
 void                    gtk_accessible_property_init_value      (GtkAccessibleProperty  property,
                                                                  GValue                *value);
-
+/* Zeile entfernt */
 void                    gtk_accessible_relation_init_value      (GtkAccessibleRelation  relation,
                                                                  GValue                *value);
 
-
+/* Zeile entfernt */

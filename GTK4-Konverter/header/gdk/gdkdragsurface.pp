@@ -1,4 +1,6 @@
 
+  Type
+  PGdkDragSurface  = ^GdkDragSurface;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -28,22 +30,17 @@
 {$error "Only <gdk/gdk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdksurface.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_DRAG_SURFACE : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObject)
-(* error 
-                                   int             width,
-(* error 
-                                   int             height);
- in declarator_list *)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gdk_drag_surface_present(drag_surface:PGdkDragSurface; width:longint; height:longint):gboolean;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_DRAG_SURFACE_H__  }
   { was #define dname def_expr }
@@ -52,4 +49,8 @@ G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObjec
       GDK_TYPE_DRAG_SURFACE:=gdk_drag_surface_get_type;
     end;
 
+  function gdk_drag_surface_present(drag_surface:PGdkDragSurface; width:longint; height:longint):gboolean;
+  begin
+    { You must implement this function }
+  end;
 

@@ -27,7 +27,7 @@
 
 #include <gtk/gtkeventcontroller.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUT_CONTROLLER         (gtk_shortcut_controller_get_type ())
 #define GTK_SHORTCUT_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_SHORTCUT_CONTROLLER, GtkShortcutController))
@@ -39,32 +39,32 @@
 typedef struct _GtkShortcutController GtkShortcutController;
 typedef struct _GtkShortcutControllerClass GtkShortcutControllerClass;
 
+/* Zeile entfernt */
+GType                   gtk_shortcut_controller_get_type                (void) ;
 
-GType                   gtk_shortcut_controller_get_type                (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkEventController *    gtk_shortcut_controller_new                     (void);
-
+/* Zeile entfernt */
 GtkEventController *    gtk_shortcut_controller_new_for_model           (GListModel             *model);
 
-
+/* Zeile entfernt */
 void                    gtk_shortcut_controller_set_mnemonics_modifiers (GtkShortcutController  *self,
                                                                          GdkModifierType         modifiers);
-
+/* Zeile entfernt */
 GdkModifierType         gtk_shortcut_controller_get_mnemonics_modifiers (GtkShortcutController  *self);
-
+/* Zeile entfernt */
 void                    gtk_shortcut_controller_set_scope               (GtkShortcutController  *self,
                                                                          GtkShortcutScope        scope);
-
+/* Zeile entfernt */
 GtkShortcutScope        gtk_shortcut_controller_get_scope               (GtkShortcutController  *self);
 
-
+/* Zeile entfernt */
 void                    gtk_shortcut_controller_add_shortcut            (GtkShortcutController  *self,
                                                                          GtkShortcut            *shortcut);
-
+/* Zeile entfernt */
 void                    gtk_shortcut_controller_remove_shortcut         (GtkShortcutController  *self,
                                                                          GtkShortcut            *shortcut);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SHORTCUT_CONTROLLER_H__ */

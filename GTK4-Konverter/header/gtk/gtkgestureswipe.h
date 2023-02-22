@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_GESTURE_SWIPE         (gtk_gesture_swipe_get_type ())
 #define GTK_GESTURE_SWIPE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_SWIPE, GtkGestureSwipe))
@@ -39,17 +39,17 @@
 typedef struct _GtkGestureSwipe GtkGestureSwipe;
 typedef struct _GtkGestureSwipeClass GtkGestureSwipeClass;
 
+/* Zeile entfernt */
+GType           gtk_gesture_swipe_get_type      (void) ;
 
-GType           gtk_gesture_swipe_get_type      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkGesture *    gtk_gesture_swipe_new           (void);
 
-
+/* Zeile entfernt */
 gboolean        gtk_gesture_swipe_get_velocity  (GtkGestureSwipe *gesture,
                                                  double          *velocity_x,
                                                  double          *velocity_y);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_GESTURE_SWIPE_H__ */

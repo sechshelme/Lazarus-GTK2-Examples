@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkgesture.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_SINGLE : longint; { return type might be wrong }
@@ -65,29 +66,35 @@
   type
     _GtkGestureSingle = GtkGestureSingle;
     _GtkGestureSingleClass = GtkGestureSingleClass;
-(* error 
-GType       gtk_gesture_single_get_type       (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_single_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_single_get_touch_only(gesture:PGtkGestureSingle):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_single_set_touch_only(gesture:PGtkGestureSingle; touch_only:gboolean);
 
+  { Zeile entfernt  }
   function gtk_gesture_single_get_exclusive(gesture:PGtkGestureSingle):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_single_set_exclusive(gesture:PGtkGestureSingle; exclusive:gboolean);
 
+  { Zeile entfernt  }
   function gtk_gesture_single_get_button(gesture:PGtkGestureSingle):guint;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_single_set_button(gesture:PGtkGestureSingle; button:guint);
 
+  { Zeile entfernt  }
   function gtk_gesture_single_get_current_button(gesture:PGtkGestureSingle):guint;
 
+  { Zeile entfernt  }
   function gtk_gesture_single_get_current_sequence(gesture:PGtkGestureSingle):^GdkEventSequence;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_SINGLE_H__  }
   { was #define dname def_expr }
@@ -136,6 +143,10 @@ GType       gtk_gesture_single_get_type       (void) G_GNUC_CONST;
     GTK_GESTURE_SINGLE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_SINGLE,GtkGestureSingleClass);
   end;
 
+  function gtk_gesture_single_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_single_get_touch_only(gesture:PGtkGestureSingle):gboolean;
   begin
     { You must implement this function }

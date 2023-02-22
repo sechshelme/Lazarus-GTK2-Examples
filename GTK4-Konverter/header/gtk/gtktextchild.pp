@@ -1,5 +1,6 @@
 
   Type
+  Pchar  = ^char;
   PGtkTextChildAnchor  = ^GtkTextChildAnchor;
   PGtkWidget  = ^GtkWidget;
   Pguint  = ^guint;
@@ -38,6 +39,7 @@
 {$include <gdk/gdk.h>}
 {$include <glib-object.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
   {*
    * GtkTextChildAnchor:
    *
@@ -96,22 +98,24 @@
         _gtk_reserved4 : procedure ;cdecl;
       end;
 
-(* error 
-GType gtk_text_child_anchor_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_child_anchor_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_text_child_anchor_new:^GtkTextChildAnchor;
 
-(* error 
-GtkTextChildAnchor *gtk_text_child_anchor_new_with_replacement (const char *character);
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gtk_text_child_anchor_new_with_replacement(character:Pchar):^GtkTextChildAnchor;
+
+  { Zeile entfernt  }
   function gtk_text_child_anchor_get_widgets(anchor:PGtkTextChildAnchor; out_len:Pguint):^^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_text_child_anchor_get_deleted(anchor:PGtkTextChildAnchor):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_CHILD_ANCHOR : longint; { return type might be wrong }
@@ -159,7 +163,15 @@ GtkTextChildAnchor *gtk_text_child_anchor_new_with_replacement (const char *char
     GTK_TEXT_CHILD_ANCHOR_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TEXT_CHILD_ANCHOR,GtkTextChildAnchorClass);
   end;
 
+  function gtk_text_child_anchor_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_child_anchor_new:PGtkTextChildAnchor;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_text_child_anchor_new_with_replacement(character:Pchar):PGtkTextChildAnchor;
   begin
     { You must implement this function }
   end;

@@ -1,6 +1,6 @@
 
-    Type
-    PGtkSorter  = ^GtkSorter;
+  Type
+  PGtkSorter  = ^GtkSorter;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -31,6 +31,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
   {*
    * GtkSorterOrder:
    * @GTK_SORTER_ORDER_PARTIAL: A partial order. Any `GtkOrdering` is possible.
@@ -69,11 +70,8 @@
   { was #define dname def_expr }
   function GTK_TYPE_SORTER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkSorterClass
    * @compare: Compare two items. See gtk_sorter_compare() for details.
@@ -82,53 +80,54 @@ G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
    *
    * The virtual table for `GtkSorter`.
     }
- in declarator_list *)
-(* error 
-  GObjectClass parent_class;
- in declarator_list *)
-
-    var
-      compare : function (self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;cvar;public;
   { optional  }
-      get_order : function (self:PGtkSorter):GtkSorterOrder;cvar;public;
   { Padding for future expansion  }
-      _gtk_reserved1 : procedure ;cvar;public;
-      _gtk_reserved2 : procedure ;cvar;public;
-      _gtk_reserved3 : procedure ;cvar;public;
-      _gtk_reserved4 : procedure ;cvar;public;
-      _gtk_reserved5 : procedure ;cvar;public;
-      _gtk_reserved6 : procedure ;cvar;public;
-      _gtk_reserved7 : procedure ;cvar;public;
-      _gtk_reserved8 : procedure ;cvar;public;
-(* error 
-};
-in declaration at line 104 *)
 
-    function gtk_sorter_compare(self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;
+  type
+    _GtkSorterClass = record
+        parent_class : GObjectClass;
+        compare : function (self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;cdecl;
+        get_order : function (self:PGtkSorter):GtkSorterOrder;cdecl;
+        _gtk_reserved1 : procedure ;cdecl;
+        _gtk_reserved2 : procedure ;cdecl;
+        _gtk_reserved3 : procedure ;cdecl;
+        _gtk_reserved4 : procedure ;cdecl;
+        _gtk_reserved5 : procedure ;cdecl;
+        _gtk_reserved6 : procedure ;cdecl;
+        _gtk_reserved7 : procedure ;cdecl;
+        _gtk_reserved8 : procedure ;cdecl;
+      end;
 
-    function gtk_sorter_get_order(self:PGtkSorter):GtkSorterOrder;
+  { Zeile entfernt  }
 
-    { for sorter implementations  }
-    procedure gtk_sorter_changed(self:PGtkSorter; change:GtkSorterChange);
+  function gtk_sorter_compare(self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;
 
+  { Zeile entfernt  }
+  function gtk_sorter_get_order(self:PGtkSorter):GtkSorterOrder;
+
+  { for sorter implementations  }
+  { Zeile entfernt  }
+  procedure gtk_sorter_changed(self:PGtkSorter; change:GtkSorterChange);
+
+  { Zeile entfernt  }
 {$endif}
-    { __GTK_SORTER_H__  }
+  { __GTK_SORTER_H__  }
   { was #define dname def_expr }
   function GTK_TYPE_SORTER : longint; { return type might be wrong }
     begin
       GTK_TYPE_SORTER:=gtk_sorter_get_type;
     end;
 
-    function gtk_sorter_compare(self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_sorter_get_order(self:PGtkSorter):GtkSorterOrder;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_sorter_changed(self:PGtkSorter; change:GtkSorterChange);
-    begin
-      { You must implement this function }
-    end;
+  function gtk_sorter_compare(self:PGtkSorter; item1:gpointer; item2:gpointer):GtkOrdering;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_sorter_get_order(self:PGtkSorter):GtkSorterOrder;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_sorter_changed(self:PGtkSorter; change:GtkSorterChange);
+  begin
+    { You must implement this function }
+  end;
 

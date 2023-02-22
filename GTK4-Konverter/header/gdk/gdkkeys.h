@@ -32,32 +32,32 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
+/* Zeile entfernt */
 
+/* Zeile entfernt */
+const char *gdk_keyval_name      (guint        keyval) ;
 
-
-const char *gdk_keyval_name      (guint        keyval) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 guint    gdk_keyval_from_name    (const char *keyval_name);
-
+/* Zeile entfernt */
 void     gdk_keyval_convert_case (guint        symbol,
 				  guint       *lower,
 				  guint       *upper);
+/* Zeile entfernt */
+guint    gdk_keyval_to_upper     (guint        keyval) ;
+/* Zeile entfernt */
+guint    gdk_keyval_to_lower     (guint        keyval) ;
+/* Zeile entfernt */
+gboolean gdk_keyval_is_upper     (guint        keyval) ;
+/* Zeile entfernt */
+gboolean gdk_keyval_is_lower     (guint        keyval) ;
 
-guint    gdk_keyval_to_upper     (guint        keyval) G_GNUC_CONST;
-
-guint    gdk_keyval_to_lower     (guint        keyval) G_GNUC_CONST;
-
-gboolean gdk_keyval_is_upper     (guint        keyval) G_GNUC_CONST;
-
-gboolean gdk_keyval_is_lower     (guint        keyval) G_GNUC_CONST;
+/* Zeile entfernt */
+guint32  gdk_keyval_to_unicode   (guint        keyval) ;
+/* Zeile entfernt */
+guint    gdk_unicode_to_keyval   (guint32      wc) ;
 
 
-guint32  gdk_keyval_to_unicode   (guint        keyval) G_GNUC_CONST;
-
-guint    gdk_unicode_to_keyval   (guint32      wc) G_GNUC_CONST;
-
-
-
+/* Zeile entfernt */
 
 #endif /* __GDK_KEYS_H__ */

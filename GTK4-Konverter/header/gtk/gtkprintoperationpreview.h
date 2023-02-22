@@ -26,7 +26,7 @@
 #include <cairo.h>
 #include <gtk/gtkprintcontext.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PRINT_OPERATION_PREVIEW                  (gtk_print_operation_preview_get_type ())
 #define GTK_PRINT_OPERATION_PREVIEW(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_OPERATION_PREVIEW, GtkPrintOperationPreview))
@@ -66,18 +66,18 @@ struct _GtkPrintOperationPreviewIface
   void (*_gtk_reserved8) (void);
 };
 
+/* Zeile entfernt */
+GType   gtk_print_operation_preview_get_type       (void) ;
 
-GType   gtk_print_operation_preview_get_type       (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void     gtk_print_operation_preview_render_page (GtkPrintOperationPreview *preview,
 						  int                       page_nr);
-
+/* Zeile entfernt */
 void     gtk_print_operation_preview_end_preview (GtkPrintOperationPreview *preview);
-
+/* Zeile entfernt */
 gboolean gtk_print_operation_preview_is_selected (GtkPrintOperationPreview *preview,
 						  int                       page_nr);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PRINT_OPERATION_PREVIEW_H__ */

@@ -36,6 +36,7 @@
 {$endif}
 {$include <gtk/gtkwidget.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_APP_CHOOSER_BUTTON : longint; { return type might be wrong }
@@ -53,43 +54,53 @@
 
   type
     _GtkAppChooserButton = GtkAppChooserButton;
-(* error 
-GType       gtk_app_chooser_button_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_app_chooser_button_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_app_chooser_button_new(content_type:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_button_append_separator(self:PGtkAppChooserButton);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   procedure gtk_app_chooser_button_append_custom_item(self:PGtkAppChooserButton; name:Pchar; _label:Pchar; icon:PGIcon);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_app_chooser_button_set_active_custom_item(self:PGtkAppChooserButton; name:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_button_set_show_dialog_item(self:PGtkAppChooserButton; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_button_get_show_dialog_item(self:PGtkAppChooserButton):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_app_chooser_button_set_heading(self:PGtkAppChooserButton; heading:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_app_chooser_button_get_heading(self:PGtkAppChooserButton):^char;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_button_set_show_default_item(self:PGtkAppChooserButton; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_app_chooser_button_get_show_default_item(self:PGtkAppChooserButton):gboolean;
 
+  { Zeile entfernt  }
   function gtk_app_chooser_button_get_modal(self:PGtkAppChooserButton):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_app_chooser_button_set_modal(self:PGtkAppChooserButton; modal:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_APP_CHOOSER_BUTTON_H__  }
   { was #define dname def_expr }
@@ -114,6 +125,10 @@ GType       gtk_app_chooser_button_get_type           (void) G_GNUC_CONST;
     GTK_IS_APP_CHOOSER_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_APP_CHOOSER_BUTTON);
   end;
 
+  function gtk_app_chooser_button_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_app_chooser_button_new(content_type:Pchar):PGtkWidget;
   begin
     { You must implement this function }

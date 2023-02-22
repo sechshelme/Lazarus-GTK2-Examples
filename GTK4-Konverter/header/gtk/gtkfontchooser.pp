@@ -36,6 +36,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
   {*
    * GtkFontFilterFunc:
    * @family: a `PangoFontFamily`
@@ -117,55 +118,72 @@
         padding : array[0..9] of gpointer;
       end;
 
-(* error 
-GType            gtk_font_chooser_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_font_chooser_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_family(fontchooser:PGtkFontChooser):^PangoFontFamily;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_face(fontchooser:PGtkFontChooser):^PangoFontFace;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_size(fontchooser:PGtkFontChooser):longint;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_desc(fontchooser:PGtkFontChooser):^PangoFontDescription;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_font_chooser_set_font_desc(fontchooser:PGtkFontChooser; font_desc:PPangoFontDescription);
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font(fontchooser:PGtkFontChooser):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_font_chooser_set_font(fontchooser:PGtkFontChooser; fontname:Pchar);
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_preview_text(fontchooser:PGtkFontChooser):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_font_chooser_set_preview_text(fontchooser:PGtkFontChooser; text:Pchar);
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_show_preview_entry(fontchooser:PGtkFontChooser):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_font_chooser_set_show_preview_entry(fontchooser:PGtkFontChooser; show_preview_entry:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_font_chooser_set_filter_func(fontchooser:PGtkFontChooser; filter:GtkFontFilterFunc; user_data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_font_chooser_set_font_map(fontchooser:PGtkFontChooser; fontmap:PPangoFontMap);
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_map(fontchooser:PGtkFontChooser):^PangoFontMap;
 
+  { Zeile entfernt  }
   procedure gtk_font_chooser_set_level(fontchooser:PGtkFontChooser; level:GtkFontChooserLevel);
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_level(fontchooser:PGtkFontChooser):GtkFontChooserLevel;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_font_features(fontchooser:PGtkFontChooser):^char;
 
+  { Zeile entfernt  }
   function gtk_font_chooser_get_language(fontchooser:PGtkFontChooser):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_font_chooser_set_language(fontchooser:PGtkFontChooser; language:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_FONT_CHOOSER_H__  }
   { was #define dname def_expr }
@@ -198,6 +216,10 @@ GType            gtk_font_chooser_get_type                 (void) G_GNUC_CONST;
     GTK_FONT_CHOOSER_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_FONT_CHOOSER,GtkFontChooserIface);
   end;
 
+  function gtk_font_chooser_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_font_chooser_get_font_family(fontchooser:PGtkFontChooser):PPangoFontFamily;
   begin
     { You must implement this function }

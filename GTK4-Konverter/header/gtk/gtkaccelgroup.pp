@@ -38,36 +38,42 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
   { --- Accelerators---  }
-(* error 
-					       GdkModifierType  modifiers) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : gboolean;
+  function gtk_accelerator_valid(keyval:guint; modifiers:GdkModifierType):gboolean;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_accelerator_parse(accelerator:Pchar; accelerator_key:Pguint; accelerator_mods:PGdkModifierType):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_accelerator_parse_with_keycode(accelerator:Pchar; display:PGdkDisplay; accelerator_key:Pguint; accelerator_codes:PPguint; accelerator_mods:PGdkModifierType):gboolean;
 
+  { Zeile entfernt  }
   function gtk_accelerator_name(accelerator_key:guint; accelerator_mods:GdkModifierType):^char;
 
+  { Zeile entfernt  }
   function gtk_accelerator_name_with_keycode(display:PGdkDisplay; accelerator_key:guint; keycode:guint; accelerator_mods:GdkModifierType):^char;
 
+  { Zeile entfernt  }
   function gtk_accelerator_get_label(accelerator_key:guint; accelerator_mods:GdkModifierType):^char;
 
+  { Zeile entfernt  }
   function gtk_accelerator_get_label_with_keycode(display:PGdkDisplay; accelerator_key:guint; keycode:guint; accelerator_mods:GdkModifierType):^char;
 
-(* error 
-GdkModifierType gtk_accelerator_get_default_mod_mask (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_accelerator_get_default_mod_mask:GdkModifierType;
 
-    var
- : GdkModifierType;
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ACCEL_GROUP_H__  }
+  function gtk_accelerator_valid(keyval:guint; modifiers:GdkModifierType):gboolean;
+  begin
+    { You must implement this function }
+  end;
   function gtk_accelerator_parse(accelerator:Pchar; accelerator_key:Pguint; accelerator_mods:PGdkModifierType):gboolean;
   begin
     { You must implement this function }
@@ -89,6 +95,10 @@ GdkModifierType gtk_accelerator_get_default_mod_mask (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gtk_accelerator_get_label_with_keycode(display:PGdkDisplay; accelerator_key:guint; keycode:guint; accelerator_mods:GdkModifierType):Pchar;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_accelerator_get_default_mod_mask:GdkModifierType;
   begin
     { You must implement this function }
   end;

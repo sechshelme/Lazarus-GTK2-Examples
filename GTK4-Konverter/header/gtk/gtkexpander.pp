@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EXPANDER : longint; { return type might be wrong }
@@ -51,49 +52,63 @@
 
   type
     _GtkExpander = GtkExpander;
-(* error 
-GType                 gtk_expander_get_type            (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_expander_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_expander_new(_label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_expander_new_with_mnemonic(_label:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_expanded(expander:PGtkExpander; expanded:gboolean);
 
+  { Zeile entfernt  }
   function gtk_expander_get_expanded(expander:PGtkExpander):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_expander_set_label(expander:PGtkExpander; _label:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_expander_get_label(expander:PGtkExpander):^char;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_use_underline(expander:PGtkExpander; use_underline:gboolean);
 
+  { Zeile entfernt  }
   function gtk_expander_get_use_underline(expander:PGtkExpander):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_use_markup(expander:PGtkExpander; use_markup:gboolean);
 
+  { Zeile entfernt  }
   function gtk_expander_get_use_markup(expander:PGtkExpander):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_label_widget(expander:PGtkExpander; label_widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_expander_get_label_widget(expander:PGtkExpander):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_resize_toplevel(expander:PGtkExpander; resize_toplevel:gboolean);
 
+  { Zeile entfernt  }
   function gtk_expander_get_resize_toplevel(expander:PGtkExpander):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_expander_set_child(expander:PGtkExpander; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_expander_get_child(expander:PGtkExpander):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EXPANDER_H__  }
   { was #define dname def_expr }
@@ -118,6 +133,10 @@ GType                 gtk_expander_get_type            (void) G_GNUC_CONST;
     GTK_IS_EXPANDER:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_EXPANDER);
   end;
 
+  function gtk_expander_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_expander_new(_label:Pchar):PGtkWidget;
   begin
     { You must implement this function }

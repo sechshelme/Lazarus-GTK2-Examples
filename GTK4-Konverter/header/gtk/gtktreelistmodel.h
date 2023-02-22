@@ -29,15 +29,15 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_LIST_MODEL (gtk_tree_list_model_get_type ())
 #define GTK_TYPE_TREE_LIST_ROW (gtk_tree_list_row_get_type ())
 
-
-G_DECLARE_FINAL_TYPE (GtkTreeListModel, gtk_tree_list_model, GTK, TREE_LIST_MODEL, GObject)
-
-G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GObject)
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
+/* Zeile entfernt */
 
 /**
  * GtkTreeListModelCreateModelFunc:
@@ -57,7 +57,7 @@ G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GOb
  */
 typedef GListModel * (* GtkTreeListModelCreateModelFunc) (gpointer item, gpointer user_data);
 
-
+/* Zeile entfernt */
 GtkTreeListModel *      gtk_tree_list_model_new                 (GListModel             *root,
                                                                  gboolean                passthrough,
                                                                  gboolean                autoexpand,
@@ -65,45 +65,45 @@ GtkTreeListModel *      gtk_tree_list_model_new                 (GListModel     
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-
+/* Zeile entfernt */
 GListModel *            gtk_tree_list_model_get_model           (GtkTreeListModel       *self);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_list_model_get_passthrough     (GtkTreeListModel       *self);
-
+/* Zeile entfernt */
 void                    gtk_tree_list_model_set_autoexpand      (GtkTreeListModel       *self,
                                                                  gboolean                autoexpand);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_list_model_get_autoexpand      (GtkTreeListModel       *self);
 
-
+/* Zeile entfernt */
 GtkTreeListRow *        gtk_tree_list_model_get_child_row       (GtkTreeListModel       *self,
                                                                  guint                   position);
-
+/* Zeile entfernt */
 GtkTreeListRow *        gtk_tree_list_model_get_row             (GtkTreeListModel       *self,
                                                                  guint                   position);
 
-
+/* Zeile entfernt */
 gpointer                gtk_tree_list_row_get_item              (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 void                    gtk_tree_list_row_set_expanded          (GtkTreeListRow         *self,
                                                                  gboolean                expanded);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_list_row_get_expanded          (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 gboolean                gtk_tree_list_row_is_expandable         (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 guint                   gtk_tree_list_row_get_position          (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 guint                   gtk_tree_list_row_get_depth             (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 GListModel *            gtk_tree_list_row_get_children          (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 GtkTreeListRow *        gtk_tree_list_row_get_parent            (GtkTreeListRow         *self);
-
+/* Zeile entfernt */
 GtkTreeListRow *        gtk_tree_list_row_get_child_row         (GtkTreeListRow         *self,
                                                                  guint                   position);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_TREE_LIST_MODEL_H__ */

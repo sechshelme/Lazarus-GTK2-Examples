@@ -23,6 +23,7 @@
 {$ifndef __GDK_X11_DEVICE_XI2_H__}
 {$define __GDK_X11_DEVICE_XI2_H__}  
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_X11_DEVICE_XI2 : longint; { return type might be wrong }
@@ -59,12 +60,11 @@
 
     GdkX11DeviceType = (GDK_X11_DEVICE_TYPE_LOGICAL,GDK_X11_DEVICE_TYPE_PHYSICAL,
       GDK_X11_DEVICE_TYPE_FLOATING);
-(* error 
-GType gdk_x11_device_xi2_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_x11_device_xi2_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_DEVICE_XI2_H__  }
   { was #define dname def_expr }
@@ -113,4 +113,8 @@ GType gdk_x11_device_xi2_get_type (void) G_GNUC_CONST;
     GDK_X11_DEVICE_XI2_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GDK_TYPE_X11_DEVICE_XI2,GdkX11DeviceXI2Class);
   end;
 
+  function gdk_x11_device_xi2_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

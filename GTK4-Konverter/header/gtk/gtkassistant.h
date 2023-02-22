@@ -30,7 +30,7 @@
 
 #include <gtk/gtkwindow.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_ASSISTANT         (gtk_assistant_get_type ())
 #define GTK_ASSISTANT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_ASSISTANT, GtkAssistant))
@@ -99,87 +99,87 @@ typedef struct _GtkAssistantPage GtkAssistantPage;
  */
 typedef int (*GtkAssistantPageFunc) (int current_page, gpointer data);
 
-
-GType                 gtk_assistant_page_get_type         (void) G_GNUC_CONST;
-
-GType                 gtk_assistant_get_type              (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                 gtk_assistant_page_get_type         (void) ;
+/* Zeile entfernt */
+GType                 gtk_assistant_get_type              (void) ;
+/* Zeile entfernt */
 GtkWidget            *gtk_assistant_new                   (void);
-
+/* Zeile entfernt */
 void                  gtk_assistant_next_page             (GtkAssistant         *assistant);
-
+/* Zeile entfernt */
 void                  gtk_assistant_previous_page         (GtkAssistant         *assistant);
-
+/* Zeile entfernt */
 int                   gtk_assistant_get_current_page      (GtkAssistant         *assistant);
-
+/* Zeile entfernt */
 void                  gtk_assistant_set_current_page      (GtkAssistant         *assistant,
                                                            int                   page_num);
-
+/* Zeile entfernt */
 int                   gtk_assistant_get_n_pages           (GtkAssistant         *assistant);
-
+/* Zeile entfernt */
 GtkWidget            *gtk_assistant_get_nth_page          (GtkAssistant         *assistant,
                                                            int                   page_num);
-
+/* Zeile entfernt */
 int                   gtk_assistant_prepend_page          (GtkAssistant         *assistant,
                                                            GtkWidget            *page);
-
+/* Zeile entfernt */
 int                   gtk_assistant_append_page           (GtkAssistant         *assistant,
                                                            GtkWidget            *page);
-
+/* Zeile entfernt */
 int                   gtk_assistant_insert_page           (GtkAssistant         *assistant,
                                                            GtkWidget            *page,
                                                            int                   position);
-
+/* Zeile entfernt */
 void                  gtk_assistant_remove_page           (GtkAssistant         *assistant,
                                                            int                   page_num);
-
+/* Zeile entfernt */
 void                  gtk_assistant_set_forward_page_func (GtkAssistant         *assistant,
                                                            GtkAssistantPageFunc  page_func,
                                                            gpointer              data,
                                                            GDestroyNotify        destroy);
-
+/* Zeile entfernt */
 void                  gtk_assistant_set_page_type         (GtkAssistant         *assistant,
                                                            GtkWidget            *page,
                                                            GtkAssistantPageType  type);
-
+/* Zeile entfernt */
 GtkAssistantPageType  gtk_assistant_get_page_type         (GtkAssistant         *assistant,
                                                            GtkWidget            *page);
-
+/* Zeile entfernt */
 void                  gtk_assistant_set_page_title        (GtkAssistant         *assistant,
                                                            GtkWidget            *page,
                                                            const char           *title);
-
+/* Zeile entfernt */
 const char *         gtk_assistant_get_page_title        (GtkAssistant         *assistant,
                                                            GtkWidget            *page);
 
-
+/* Zeile entfernt */
 void                  gtk_assistant_set_page_complete     (GtkAssistant         *assistant,
                                                            GtkWidget            *page,
                                                            gboolean              complete);
-
+/* Zeile entfernt */
 gboolean              gtk_assistant_get_page_complete     (GtkAssistant         *assistant,
                                                            GtkWidget            *page);
-
+/* Zeile entfernt */
 void                  gtk_assistant_add_action_widget     (GtkAssistant         *assistant,
                                                            GtkWidget            *child);
-
+/* Zeile entfernt */
 void                  gtk_assistant_remove_action_widget  (GtkAssistant         *assistant,
                                                            GtkWidget            *child);
 
-
+/* Zeile entfernt */
 void                  gtk_assistant_update_buttons_state  (GtkAssistant *assistant);
-
+/* Zeile entfernt */
 void                  gtk_assistant_commit                (GtkAssistant *assistant);
 
-
+/* Zeile entfernt */
 GtkAssistantPage *    gtk_assistant_get_page       (GtkAssistant     *assistant,
                                                     GtkWidget        *child);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_assistant_page_get_child (GtkAssistantPage *page);
 
-
+/* Zeile entfernt */
 GListModel *          gtk_assistant_get_pages (GtkAssistant *assistant);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_ASSISTANT_H__ */

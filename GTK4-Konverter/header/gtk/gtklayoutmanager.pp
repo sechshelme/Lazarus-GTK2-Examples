@@ -1,9 +1,9 @@
 
-    Type
-    PGtkLayoutChild  = ^GtkLayoutChild;
-    PGtkLayoutManager  = ^GtkLayoutManager;
-    PGtkWidget  = ^GtkWidget;
-    Plongint  = ^longint;
+  Type
+  PGtkLayoutChild  = ^GtkLayoutChild;
+  PGtkLayoutManager  = ^GtkLayoutManager;
+  PGtkWidget  = ^GtkWidget;
+  Plongint  = ^longint;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -32,15 +32,13 @@
 {$include <gtk/gtktypes.h>}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtklayoutchild.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LAYOUT_MANAGER : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkLayoutManagerClass:
    * @get_request_mode: a virtual function, used to return the preferred
@@ -62,19 +60,8 @@ G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANA
    * should only be accessed through the provided API, or when subclassing
    * `GtkLayoutManager`.
     }
- in declarator_list *)
   {< private > }
-(* error 
-  GObjectClass parent_class;
- in declarator_list *)
   {< public > }
-
-    var
-      get_request_mode : function (manager:PGtkLayoutManager; widget:PGtkWidget):GtkSizeRequestMode;cvar;public;
-      measure : procedure (manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
-                    natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);cvar;public;
-      allocate : procedure (manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);cvar;public;
-      layout_child_type : GType;cvar;public;
   {*
      * GtkLayoutManagerClass::create_layout_child:
      * @manager: the `GtkLayoutManager`
@@ -85,57 +72,72 @@ G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANA
      *
      * Returns: (transfer full): a `GtkLayoutChild`
       }
-      create_layout_child : function (manager:PGtkLayoutManager; widget:PGtkWidget; for_child:PGtkWidget):PGtkLayoutChild;cvar;public;
-      root : procedure (manager:PGtkLayoutManager);cvar;public;
-      unroot : procedure (manager:PGtkLayoutManager);cvar;public;
   {< private > }
-      _padding : array[0..15] of gpointer;cvar;public;
-(* error 
-};
-in declaration at line 99 *)
 
-    procedure gtk_layout_manager_measure(manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
-                natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);
+  type
+    _GtkLayoutManagerClass = record
+        parent_class : GObjectClass;
+        get_request_mode : function (manager:PGtkLayoutManager; widget:PGtkWidget):GtkSizeRequestMode;cdecl;
+        measure : procedure (manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
+                      natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);cdecl;
+        allocate : procedure (manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);cdecl;
+        layout_child_type : GType;
+        create_layout_child : function (manager:PGtkLayoutManager; widget:PGtkWidget; for_child:PGtkWidget):PGtkLayoutChild;cdecl;
+        root : procedure (manager:PGtkLayoutManager);cdecl;
+        unroot : procedure (manager:PGtkLayoutManager);cdecl;
+        _padding : array[0..15] of gpointer;
+      end;
 
-    procedure gtk_layout_manager_allocate(manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);
+  { Zeile entfernt  }
 
-    function gtk_layout_manager_get_request_mode(manager:PGtkLayoutManager):GtkSizeRequestMode;
+  procedure gtk_layout_manager_measure(manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
+              natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);
 
-    function gtk_layout_manager_get_widget(manager:PGtkLayoutManager):^GtkWidget;
+  { Zeile entfernt  }
+  procedure gtk_layout_manager_allocate(manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);
 
-    procedure gtk_layout_manager_layout_changed(manager:PGtkLayoutManager);
+  { Zeile entfernt  }
+  function gtk_layout_manager_get_request_mode(manager:PGtkLayoutManager):GtkSizeRequestMode;
 
-    function gtk_layout_manager_get_layout_child(manager:PGtkLayoutManager; child:PGtkWidget):^GtkLayoutChild;
+  { Zeile entfernt  }
+  function gtk_layout_manager_get_widget(manager:PGtkLayoutManager):^GtkWidget;
 
+  { Zeile entfernt  }
+  procedure gtk_layout_manager_layout_changed(manager:PGtkLayoutManager);
+
+  { Zeile entfernt  }
+  function gtk_layout_manager_get_layout_child(manager:PGtkLayoutManager; child:PGtkWidget):^GtkLayoutChild;
+
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_LAYOUT_MANAGER : longint; { return type might be wrong }
     begin
       GTK_TYPE_LAYOUT_MANAGER:=gtk_layout_manager_get_type;
     end;
 
-    procedure gtk_layout_manager_measure(manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
-                natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_layout_manager_allocate(manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_layout_manager_get_request_mode(manager:PGtkLayoutManager):GtkSizeRequestMode;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_layout_manager_get_widget(manager:PGtkLayoutManager):PGtkWidget;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_layout_manager_layout_changed(manager:PGtkLayoutManager);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_layout_manager_get_layout_child(manager:PGtkLayoutManager; child:PGtkWidget):PGtkLayoutChild;
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_layout_manager_measure(manager:PGtkLayoutManager; widget:PGtkWidget; orientation:GtkOrientation; for_size:longint; minimum:Plongint; 
+              natural:Plongint; minimum_baseline:Plongint; natural_baseline:Plongint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_layout_manager_allocate(manager:PGtkLayoutManager; widget:PGtkWidget; width:longint; height:longint; baseline:longint);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_layout_manager_get_request_mode(manager:PGtkLayoutManager):GtkSizeRequestMode;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_layout_manager_get_widget(manager:PGtkLayoutManager):PGtkWidget;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_layout_manager_layout_changed(manager:PGtkLayoutManager);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_layout_manager_get_layout_child(manager:PGtkLayoutManager; child:PGtkWidget):PGtkLayoutChild;
+  begin
+    { You must implement this function }
+  end;
 

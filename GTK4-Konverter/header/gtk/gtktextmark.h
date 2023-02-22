@@ -54,7 +54,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-
+/* Zeile entfernt */
 
 typedef struct _GtkTextMark      GtkTextMark;
 typedef struct _GtkTextMarkClass GtkTextMarkClass;
@@ -83,27 +83,27 @@ struct _GtkTextMarkClass
   gpointer padding[8];
 };
 
+/* Zeile entfernt */
+GType                 gtk_text_mark_get_type         (void) ;
 
-GType                 gtk_text_mark_get_type         (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkTextMark          *gtk_text_mark_new              (const char *name,
                                                       gboolean     left_gravity);
-
+/* Zeile entfernt */
 void                  gtk_text_mark_set_visible      (GtkTextMark *mark,
                                                       gboolean     setting);
-
+/* Zeile entfernt */
 gboolean              gtk_text_mark_get_visible      (GtkTextMark *mark);
 
-
+/* Zeile entfernt */
 const char *         gtk_text_mark_get_name         (GtkTextMark *mark);
-
+/* Zeile entfernt */
 gboolean              gtk_text_mark_get_deleted      (GtkTextMark *mark);
-
+/* Zeile entfernt */
 GtkTextBuffer*        gtk_text_mark_get_buffer       (GtkTextMark *mark);
-
+/* Zeile entfernt */
 gboolean              gtk_text_mark_get_left_gravity (GtkTextMark *mark);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_TEXT_MARK_H__ */

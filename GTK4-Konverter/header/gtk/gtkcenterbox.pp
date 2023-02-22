@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include "gtkwidget.h"}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CENTER_BOX : longint; { return type might be wrong }
@@ -66,31 +67,38 @@
   type
     _GtkCenterBox = GtkCenterBox;
     _GtkCenterBoxClass = GtkCenterBoxClass;
-(* error 
-GType      gtk_center_box_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_center_box_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_center_box_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_center_box_set_start_widget(self:PGtkCenterBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_center_box_set_center_widget(self:PGtkCenterBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_center_box_set_end_widget(self:PGtkCenterBox; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_center_box_get_start_widget(self:PGtkCenterBox):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_center_box_get_center_widget(self:PGtkCenterBox):^GtkWidget;
 
+  { Zeile entfernt  }
   function gtk_center_box_get_end_widget(self:PGtkCenterBox):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_center_box_set_baseline_position(self:PGtkCenterBox; position:GtkBaselinePosition);
 
+  { Zeile entfernt  }
   function gtk_center_box_get_baseline_position(self:PGtkCenterBox):GtkBaselinePosition;
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_CENTER_BOX : longint; { return type might be wrong }
@@ -138,6 +146,10 @@ GType      gtk_center_box_get_type (void) G_GNUC_CONST;
     GTK_CENTER_BOX_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_CENTER_BOX,GtkCenterBoxClass);
   end;
 
+  function gtk_center_box_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_center_box_new:PGtkWidget;
   begin
     { You must implement this function }

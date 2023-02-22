@@ -37,6 +37,7 @@
 {$endif}
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CURSOR : longint; { return type might be wrong }
@@ -53,29 +54,33 @@
 
   { Cursors
     }
-(* error 
-GType      gdk_cursor_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_cursor_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_cursor_new_from_texture(texture:PGdkTexture; hotspot_x:longint; hotspot_y:longint; fallback:PGdkCursor):^GdkCursor;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_cursor_new_from_name(name:Pchar; fallback:PGdkCursor):^GdkCursor;
 
+  { Zeile entfernt  }
   function gdk_cursor_get_fallback(cursor:PGdkCursor):^GdkCursor;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_cursor_get_name(cursor:PGdkCursor):^char;
 
+  { Zeile entfernt  }
   function gdk_cursor_get_texture(cursor:PGdkCursor):^GdkTexture;
 
+  { Zeile entfernt  }
   function gdk_cursor_get_hotspot_x(cursor:PGdkCursor):longint;
 
+  { Zeile entfernt  }
   function gdk_cursor_get_hotspot_y(cursor:PGdkCursor):longint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CURSOR_H__  }
   { was #define dname def_expr }
@@ -100,6 +105,10 @@ GType      gdk_cursor_get_type           (void) G_GNUC_CONST;
     GDK_IS_CURSOR:=G_TYPE_CHECK_INSTANCE_TYPE(object,GDK_TYPE_CURSOR);
   end;
 
+  function gdk_cursor_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_cursor_new_from_texture(texture:PGdkTexture; hotspot_x:longint; hotspot_y:longint; fallback:PGdkCursor):PGdkCursor;
   begin
     { You must implement this function }

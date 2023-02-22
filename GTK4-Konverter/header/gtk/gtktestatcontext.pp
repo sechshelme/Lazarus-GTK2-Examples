@@ -31,6 +31,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkatcontext.h>}
+  { Zeile entfernt  }
   {*
    * gtk_test_accessible_assert_role:
    * @accessible: a `GtkAccessible`
@@ -40,10 +41,10 @@
    * and raises an assertion if the condition is failed.
     }
 (* error 
-G_STMT_START { \
+ { \
 in declaration at line 41 *)
 (* error 
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+  GtkAccessible *__a =  (accessible); \
 (* error 
   GtkAccessibleRole __r1 = (role); \
 in declaration at line 42 *)
@@ -76,7 +77,7 @@ in declaration at line 47 *)
       }
 in declaration at line 63 *)
 (* error 
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+  GtkAccessible *__a =  (accessible); \
 (* error 
   GtkAccessibleProperty __p = (property); \
 in declaration at line 64 *)
@@ -119,7 +120,7 @@ in declaration at line 69 *)
       }
 in declaration at line 85 *)
 (* error 
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+  GtkAccessible *__a =  (accessible); \
 (* error 
   GtkAccessibleRelation __r = (relation); \
 in declaration at line 86 *)
@@ -162,7 +163,7 @@ in declaration at line 91 *)
       }
 in declaration at line 107 *)
 (* error 
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+  GtkAccessible *__a =  (accessible); \
 (* error 
   GtkAccessibleState __s = (state); \
 in declaration at line 108 *)
@@ -193,20 +194,28 @@ in declaration at line 113 *)
     g_free (msg__); \
 (* error 
   } \
+    { Zeile entfernt  }
 in declaration at line 119 *)
+    { Zeile entfernt  }
 
     function gtk_test_accessible_has_property(accessible:PGtkAccessible; _property:GtkAccessibleProperty):gboolean;
 
+    { Zeile entfernt  }
     function gtk_test_accessible_has_relation(accessible:PGtkAccessible; relation:GtkAccessibleRelation):gboolean;
 
+    { Zeile entfernt  }
     function gtk_test_accessible_has_state(accessible:PGtkAccessible; state:GtkAccessibleState):gboolean;
 
+    { Zeile entfernt  }
     function gtk_test_accessible_check_property(accessible:PGtkAccessible; _property:GtkAccessibleProperty; args:array of const):^char;
 
+    { Zeile entfernt  }
     function gtk_test_accessible_check_relation(accessible:PGtkAccessible; relation:GtkAccessibleRelation; args:array of const):^char;
 
+    { Zeile entfernt  }
     function gtk_test_accessible_check_state(accessible:PGtkAccessible; state:GtkAccessibleState; args:array of const):^char;
 
+    { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 (* Const before type ignored *)
@@ -214,6 +223,7 @@ in declaration at line 119 *)
     procedure gtk_test_accessible_assertion_message_role(domain:Pchar; file:Pchar; line:longint; func:Pchar; expr:Pchar; 
                 accessible:PGtkAccessible; expected_role:GtkAccessibleRole; actual_role:GtkAccessibleRole);
 
+    { Zeile entfernt  }
     function gtk_test_accessible_has_property(accessible:PGtkAccessible; _property:GtkAccessibleProperty):gboolean;
     begin
       { You must implement this function }

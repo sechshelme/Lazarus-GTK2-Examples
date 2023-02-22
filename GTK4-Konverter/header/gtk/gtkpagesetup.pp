@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkpapersize.h>}
+  { Zeile entfernt  }
 
   type
     _GtkPageSetup = GtkPageSetup;
@@ -51,76 +52,100 @@
   { return type might be wrong }   
   function GTK_IS_PAGE_SETUP(obj : longint) : longint;  
 
-(* error 
-GType              gtk_page_setup_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_page_setup_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_page_setup_new:^GtkPageSetup;
 
+  { Zeile entfernt  }
   function gtk_page_setup_copy(other:PGtkPageSetup):^GtkPageSetup;
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_orientation(setup:PGtkPageSetup):GtkPageOrientation;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_orientation(setup:PGtkPageSetup; orientation:GtkPageOrientation);
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_paper_size(setup:PGtkPageSetup):^GtkPaperSize;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_paper_size(setup:PGtkPageSetup; size:PGtkPaperSize);
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_top_margin(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_top_margin(setup:PGtkPageSetup; margin:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_bottom_margin(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_bottom_margin(setup:PGtkPageSetup; margin:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_left_margin(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_left_margin(setup:PGtkPageSetup; margin:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_right_margin(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_right_margin(setup:PGtkPageSetup; margin:double; unit:GtkUnit);
 
+  { Zeile entfernt  }
   procedure gtk_page_setup_set_paper_size_and_default_margins(setup:PGtkPageSetup; size:PGtkPaperSize);
 
   { These take orientation, but not margins into consideration  }
+  { Zeile entfernt  }
   function gtk_page_setup_get_paper_width(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_paper_height(setup:PGtkPageSetup; unit:GtkUnit):double;
 
   { These take orientation, and margins into consideration  }
+  { Zeile entfernt  }
   function gtk_page_setup_get_page_width(setup:PGtkPageSetup; unit:GtkUnit):double;
 
+  { Zeile entfernt  }
   function gtk_page_setup_get_page_height(setup:PGtkPageSetup; unit:GtkUnit):double;
 
   { Saving and restoring page setup  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_page_setup_new_from_file(file_name:Pchar; error:PPGError):^GtkPageSetup;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_page_setup_load_file(setup:PGtkPageSetup; file_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_page_setup_to_file(setup:PGtkPageSetup; file_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_page_setup_new_from_key_file(key_file:PGKeyFile; group_name:Pchar; error:PPGError):^GtkPageSetup;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_page_setup_load_key_file(setup:PGtkPageSetup; key_file:PGKeyFile; group_name:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_page_setup_to_key_file(setup:PGtkPageSetup; key_file:PGKeyFile; group_name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_page_setup_to_gvariant(setup:PGtkPageSetup):^GVariant;
 
+  { Zeile entfernt  }
   function gtk_page_setup_new_from_gvariant(variant:PGVariant):^GtkPageSetup;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PAGE_SETUP_H__  }
   { was #define dname def_expr }
@@ -145,6 +170,10 @@ GType              gtk_page_setup_get_type          (void) G_GNUC_CONST;
     GTK_IS_PAGE_SETUP:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PAGE_SETUP);
   end;
 
+  function gtk_page_setup_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_page_setup_new:PGtkPageSetup;
   begin
     { You must implement this function }

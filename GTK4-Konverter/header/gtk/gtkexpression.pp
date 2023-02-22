@@ -33,6 +33,7 @@
 {$ifndef __GTK_EXPRESSION_H__}
 {$define __GTK_EXPRESSION_H__}  
 {$include <gtk/gtktypes.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_EXPRESSION : longint; { return type might be wrong }
@@ -63,41 +64,46 @@
     }
 
     GtkExpressionNotify = procedure (user_data:gpointer);cdecl;
-(* error 
-GType                   gtk_expression_get_type                 (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_expression_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_expression_ref(self:PGtkExpression):^GtkExpression;
 
+  { Zeile entfernt  }
   procedure gtk_expression_unref(self:PGtkExpression);
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkExpression, gtk_expression_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkExpression, gtk_expression_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_expression_get_value_type(self:PGtkExpression):GType;
+
+  { Zeile entfernt  }
   function gtk_expression_is_static(self:PGtkExpression):gboolean;
 
+  { Zeile entfernt  }
   function gtk_expression_evaluate(self:PGtkExpression; this_:gpointer; value:PGValue):gboolean;
 
+  { Zeile entfernt  }
   function gtk_expression_watch(self:PGtkExpression; this_:gpointer; notify:GtkExpressionNotify; user_data:gpointer; user_destroy:GDestroyNotify):^GtkExpressionWatch;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_expression_bind(self:PGtkExpression; target:gpointer; _property:Pchar; this_:gpointer):^GtkExpressionWatch;
 
-(* error 
-GType                   gtk_expression_watch_get_type           (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_expression_watch_get_type:GType;
+
+  { Zeile entfernt  }
   function gtk_expression_watch_ref(watch:PGtkExpressionWatch):^GtkExpressionWatch;
 
+  { Zeile entfernt  }
   procedure gtk_expression_watch_unref(watch:PGtkExpressionWatch);
 
+  { Zeile entfernt  }
   function gtk_expression_watch_evaluate(watch:PGtkExpressionWatch; value:PGValue):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_expression_watch_unwatch(watch:PGtkExpressionWatch);
 
   { was #define dname def_expr }
@@ -106,20 +112,21 @@ GType                   gtk_expression_watch_get_type           (void) G_GNUC_CO
 
   type
     _GtkPropertyExpression = GtkPropertyExpression;
-(* error 
-GType                   gtk_property_expression_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_property_expression_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_property_expression_new(this_type:GType; expression:PGtkExpression; property_name:Pchar):^GtkExpression;
 
+  { Zeile entfernt  }
   function gtk_property_expression_new_for_pspec(expression:PGtkExpression; pspec:PGParamSpec):^GtkExpression;
 
+  { Zeile entfernt  }
   function gtk_property_expression_get_expression(expression:PGtkExpression):^GtkExpression;
 
+  { Zeile entfernt  }
   function gtk_property_expression_get_pspec(expression:PGtkExpression):^GParamSpec;
 
   { was #define dname def_expr }
@@ -128,18 +135,18 @@ GType                   gtk_property_expression_get_type        (void) G_GNUC_CO
 
   type
     _GtkConstantExpression = GtkConstantExpression;
-(* error 
-GType                   gtk_constant_expression_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_constant_expression_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_constant_expression_new(value_type:GType; args:array of const):^GtkExpression;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_constant_expression_new_for_value(value:PGValue):^GtkExpression;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_constant_expression_get_value(expression:PGtkExpression):^GValue;
 
@@ -149,15 +156,14 @@ GType                   gtk_constant_expression_get_type        (void) G_GNUC_CO
 
   type
     _GtkObjectExpression = GtkObjectExpression;
-(* error 
-GType                   gtk_object_expression_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_object_expression_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_object_expression_new(object:PGObject):^GtkExpression;
 
+  { Zeile entfernt  }
   function gtk_object_expression_get_object(expression:PGtkExpression):^GObject;
 
   { was #define dname def_expr }
@@ -166,13 +172,11 @@ GType                   gtk_object_expression_get_type          (void) G_GNUC_CO
 
   type
     _GtkClosureExpression = GtkClosureExpression;
-(* error 
-GType                   gtk_closure_expression_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_closure_expression_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_closure_expression_new(value_type:GType; closure:PGClosure; n_params:guint; params:PPGtkExpression):^GtkExpression;
 
   { was #define dname def_expr }
@@ -181,13 +185,11 @@ GType                   gtk_closure_expression_get_type         (void) G_GNUC_CO
 
   type
     _GtkCClosureExpression = GtkCClosureExpression;
-(* error 
-GType                   gtk_cclosure_expression_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_cclosure_expression_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_cclosure_expression_new(value_type:GType; marshal:GClosureMarshal; n_params:guint; params:PPGtkExpression; callback_func:GCallback; 
              user_data:gpointer; user_destroy:GClosureNotify):^GtkExpression;
 
@@ -203,13 +205,17 @@ GType                   gtk_cclosure_expression_get_type        (void) G_GNUC_CO
   { return type might be wrong }   
   function GTK_VALUE_HOLDS_EXPRESSION(value : longint) : longint;  
 
+  { Zeile entfernt  }
   procedure gtk_value_set_expression(value:PGValue; expression:PGtkExpression);
 
+  { Zeile entfernt  }
   procedure gtk_value_take_expression(value:PGValue; expression:PGtkExpression);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_value_get_expression(value:PGValue):^GtkExpression;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_value_dup_expression(value:PGValue):^GtkExpression;
 
@@ -237,18 +243,17 @@ GType                   gtk_cclosure_expression_get_type        (void) G_GNUC_CO
     GtkParamSpecExpression = record
         parent_instance : GParamSpec;
       end;
-(* error 
-GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+  function gtk_param_expression_get_type:GType;
 
+  { Zeile entfernt  }
+(* Const before type ignored *)
+(* Const before type ignored *)
+(* Const before type ignored *)
   function gtk_param_spec_expression(name:Pchar; nick:Pchar; blurb:Pchar; flags:GParamFlags):^GParamSpec;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_EXPRESSION_H__  }
   { was #define dname def_expr }
@@ -279,11 +284,19 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
     GTK_EXPRESSION:=G_TYPE_CHECK_INSTANCE_CAST(obj,GTK_TYPE_EXPRESSION,GtkExpression);
   end;
 
+  function gtk_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_expression_ref(self:PGtkExpression):PGtkExpression;
   begin
     { You must implement this function }
   end;
   procedure gtk_expression_unref(self:PGtkExpression);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_expression_get_value_type(self:PGtkExpression):GType;
   begin
     { You must implement this function }
   end;
@@ -300,6 +313,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gtk_expression_bind(self:PGtkExpression; target:gpointer; _property:Pchar; this_:gpointer):PGtkExpressionWatch;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_expression_watch_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -325,6 +342,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_PROPERTY_EXPRESSION:=gtk_property_expression_get_type;
     end;
 
+  function gtk_property_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_property_expression_new(this_type:GType; expression:PGtkExpression; property_name:Pchar):PGtkExpression;
   begin
     { You must implement this function }
@@ -347,6 +368,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_CONSTANT_EXPRESSION:=gtk_constant_expression_get_type;
     end;
 
+  function gtk_constant_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_constant_expression_new(value_type:GType):PGtkExpression;
   begin
     { You must implement this function }
@@ -365,6 +390,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_OBJECT_EXPRESSION:=gtk_object_expression_get_type;
     end;
 
+  function gtk_object_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_object_expression_new(object:PGObject):PGtkExpression;
   begin
     { You must implement this function }
@@ -379,6 +408,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_CLOSURE_EXPRESSION:=gtk_closure_expression_get_type;
     end;
 
+  function gtk_closure_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_closure_expression_new(value_type:GType; closure:PGClosure; n_params:guint; params:PPGtkExpression):PGtkExpression;
   begin
     { You must implement this function }
@@ -389,6 +422,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_CCLOSURE_EXPRESSION:=gtk_cclosure_expression_get_type;
     end;
 
+  function gtk_cclosure_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_cclosure_expression_new(value_type:GType; marshal:GClosureMarshal; n_params:guint; params:PPGtkExpression; callback_func:GCallback; 
              user_data:gpointer; user_destroy:GClosureNotify):PGtkExpression;
   begin
@@ -440,6 +477,10 @@ GType           gtk_param_expression_get_type   (void) G_GNUC_CONST;
     GTK_IS_PARAM_SPEC_EXPRESSION:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PARAM_SPEC_EXPRESSION);
   end;
 
+  function gtk_param_expression_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_param_spec_expression(name:Pchar; nick:Pchar; blurb:Pchar; flags:GParamFlags):PGParamSpec;
   begin
     { You must implement this function }

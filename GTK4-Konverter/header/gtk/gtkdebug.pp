@@ -33,6 +33,7 @@
 {$endif}
 {$include <glib.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
   {*
    * GtkDebugFlags:
    * @GTK_DEBUG_TEXT: Information about GtkTextView
@@ -76,16 +77,16 @@
       );
 {$ifdef G_ENABLE_DEBUG}
 (* error 
-#define GTK_DEBUG_CHECK(type) G_UNLIKELY (gtk_get_debug_flags () & GTK_DEBUG_##type)
+#define GTK_DEBUG_CHECK(type)  (gtk_get_debug_flags () & GTK_DEBUG_##type)
 in define line 90 *)
 (* error 
-#define GTK_NOTE(type,action)                G_STMT_START {     \
+#define GTK_NOTE(type,action)                 {     \
 in declaration at line 94 *)
 (* error 
-       { action; };                          } G_STMT_END
+       { action; };                          } 
 in declaration at line 94 *)
 (* error 
-       { action; };                          } G_STMT_END
+       { action; };                          } 
 {$else}
     { !G_ENABLE_DEBUG  }
 in define line 98 *)
@@ -94,11 +95,14 @@ in define line 98 *)
 in define line 99 *)
 {$endif}
     { G_ENABLE_DEBUG  }
+    { Zeile entfernt  }
 
     function gtk_get_debug_flags:GtkDebugFlags;
 
+    { Zeile entfernt  }
     procedure gtk_set_debug_flags(flags:GtkDebugFlags);
 
+    { Zeile entfernt  }
 {$endif}
     { __GTK_DEBUG_H__  }
     function gtk_get_debug_flags:GtkDebugFlags;

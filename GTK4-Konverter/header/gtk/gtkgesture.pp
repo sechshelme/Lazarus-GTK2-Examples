@@ -38,6 +38,7 @@
 {$endif}
 {$include <gtk/gtkeventcontroller.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE : longint; { return type might be wrong }
@@ -70,47 +71,62 @@
 
   type
     _GtkGestureClass = GtkGestureClass;
-(* error 
-GType       gtk_gesture_get_type             (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_device(gesture:PGtkGesture):^GdkDevice;
 
+  { Zeile entfernt  }
   function gtk_gesture_set_state(gesture:PGtkGesture; state:GtkEventSequenceState):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_sequence_state(gesture:PGtkGesture; sequence:PGdkEventSequence):GtkEventSequenceState;
 
+  { Zeile entfernt  }
   function gtk_gesture_set_sequence_state(gesture:PGtkGesture; sequence:PGdkEventSequence; state:GtkEventSequenceState):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_sequences(gesture:PGtkGesture):^GList;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_last_updated_sequence(gesture:PGtkGesture):^GdkEventSequence;
 
+  { Zeile entfernt  }
   function gtk_gesture_handles_sequence(gesture:PGtkGesture; sequence:PGdkEventSequence):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_last_event(gesture:PGtkGesture; sequence:PGdkEventSequence):^GdkEvent;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_point(gesture:PGtkGesture; sequence:PGdkEventSequence; x:Pdouble; y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_bounding_box(gesture:PGtkGesture; rect:PGdkRectangle):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_get_bounding_box_center(gesture:PGtkGesture; x:Pdouble; y:Pdouble):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_is_active(gesture:PGtkGesture):gboolean;
 
+  { Zeile entfernt  }
   function gtk_gesture_is_recognized(gesture:PGtkGesture):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_group(group_gesture:PGtkGesture; gesture:PGtkGesture);
 
+  { Zeile entfernt  }
   procedure gtk_gesture_ungroup(gesture:PGtkGesture);
 
+  { Zeile entfernt  }
   function gtk_gesture_get_group(gesture:PGtkGesture):^GList;
 
+  { Zeile entfernt  }
   function gtk_gesture_is_grouped_with(gesture:PGtkGesture; other:PGtkGesture):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_H__  }
   { was #define dname def_expr }
@@ -159,6 +175,10 @@ GType       gtk_gesture_get_type             (void) G_GNUC_CONST;
     GTK_GESTURE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE,GtkGestureClass);
   end;
 
+  function gtk_gesture_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_get_device(gesture:PGtkGesture):PGdkDevice;
   begin
     { You must implement this function }

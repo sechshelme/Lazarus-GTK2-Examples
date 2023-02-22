@@ -25,30 +25,30 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtklayoutmanager.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_BOX_LAYOUT (gtk_box_layout_get_type())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkBoxLayout, gtk_box_layout, GTK, BOX_LAYOUT, GtkLayoutManager)
-
-
+/* Zeile entfernt */
 GtkLayoutManager *      gtk_box_layout_new                      (GtkOrientation  orientation);
 
-
+/* Zeile entfernt */
 void                    gtk_box_layout_set_homogeneous          (GtkBoxLayout        *box_layout,
                                                                  gboolean             homogeneous);
-
+/* Zeile entfernt */
 gboolean                gtk_box_layout_get_homogeneous          (GtkBoxLayout        *box_layout);
-
+/* Zeile entfernt */
 void                    gtk_box_layout_set_spacing              (GtkBoxLayout        *box_layout,
                                                                  guint                spacing);
-
+/* Zeile entfernt */
 guint                   gtk_box_layout_get_spacing              (GtkBoxLayout        *box_layout);
-
+/* Zeile entfernt */
 void                    gtk_box_layout_set_baseline_position    (GtkBoxLayout        *box_layout,
                                                                  GtkBaselinePosition  position);
-
+/* Zeile entfernt */
 GtkBaselinePosition     gtk_box_layout_get_baseline_position    (GtkBoxLayout        *box_layout);
 
-
+/* Zeile entfernt */

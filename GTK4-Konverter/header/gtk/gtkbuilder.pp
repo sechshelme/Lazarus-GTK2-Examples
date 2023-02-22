@@ -38,6 +38,7 @@
 {$endif}
 {$include <gtk/gtkbuilderscope.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER : longint; { return type might be wrong }
@@ -116,79 +117,99 @@
       GTK_BUILDER_ERROR_INVALID_PROPERTY,GTK_BUILDER_ERROR_INVALID_SIGNAL,
       GTK_BUILDER_ERROR_INVALID_ID,GTK_BUILDER_ERROR_INVALID_FUNCTION
       );
+  { Zeile entfernt  }
 
   function gtk_builder_error_quark:GQuark;
 
-(* error 
-GType        gtk_builder_get_type                (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_builder_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_builder_new:^GtkBuilder;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_add_from_file(builder:PGtkBuilder; filename:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_add_from_resource(builder:PGtkBuilder; resource_path:Pchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_add_from_string(builder:PGtkBuilder; buffer:Pchar; length:gssize; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_builder_add_objects_from_file(builder:PGtkBuilder; filename:Pchar; object_ids:PPchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_builder_add_objects_from_resource(builder:PGtkBuilder; resource_path:Pchar; object_ids:PPchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gtk_builder_add_objects_from_string(builder:PGtkBuilder; buffer:Pchar; length:gssize; object_ids:PPchar; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_get_object(builder:PGtkBuilder; name:Pchar):^GObject;
 
+  { Zeile entfernt  }
   function gtk_builder_get_objects(builder:PGtkBuilder):^GSList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_builder_expose_object(builder:PGtkBuilder; name:Pchar; object:PGObject);
 
+  { Zeile entfernt  }
   function gtk_builder_get_current_object(builder:PGtkBuilder):^GObject;
 
+  { Zeile entfernt  }
   procedure gtk_builder_set_current_object(builder:PGtkBuilder; current_object:PGObject);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_builder_set_translation_domain(builder:PGtkBuilder; domain:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_get_translation_domain(builder:PGtkBuilder):^char;
 
+  { Zeile entfernt  }
   function gtk_builder_get_scope(builder:PGtkBuilder):^GtkBuilderScope;
 
+  { Zeile entfernt  }
   procedure gtk_builder_set_scope(builder:PGtkBuilder; scope:PGtkBuilderScope);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_get_type_from_name(builder:PGtkBuilder; type_name:Pchar):GType;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_value_from_string(builder:PGtkBuilder; pspec:PGParamSpec; _string:Pchar; value:PGValue; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_value_from_string_type(builder:PGtkBuilder; _type:GType; _string:Pchar; value:PGValue; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_new_from_file(filename:Pchar):^GtkBuilder;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_new_from_resource(resource_path:Pchar):^GtkBuilder;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_new_from_string(_string:Pchar; length:gssize):^GtkBuilder;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_create_closure(builder:PGtkBuilder; function_name:Pchar; flags:GtkBuilderClosureFlags; object:PGObject; error:PPGError):^GClosure;
 
@@ -205,10 +226,12 @@ GType        gtk_builder_get_type                (void) G_GNUC_CONST;
   { return type might be wrong }   
   function GTK_BUILDER_WARN_INVALID_CHILD_TYPE(object,_type : longint) : longint;  
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_extend_with_template(builder:PGtkBuilder; object:PGObject; template_type:GType; buffer:Pchar; length:gssize; 
              error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BUILDER_H__  }
   { was #define dname def_expr }
@@ -264,6 +287,10 @@ GType        gtk_builder_get_type                (void) G_GNUC_CONST;
     end;
 
   function gtk_builder_error_quark:GQuark;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_builder_get_type:GType;
   begin
     { You must implement this function }
   end;

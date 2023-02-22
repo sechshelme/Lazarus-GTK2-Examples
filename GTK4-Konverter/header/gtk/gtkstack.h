@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkselectionmodel.h>
 
-
+/* Zeile entfernt */
 
 
 #define GTK_TYPE_STACK (gtk_stack_get_type ())
@@ -70,115 +70,115 @@ typedef enum {
   GTK_STACK_TRANSITION_TYPE_ROTATE_LEFT_RIGHT
 } GtkStackTransitionType;
 
-
-GType                  gtk_stack_page_get_type            (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                  gtk_stack_page_get_type            (void) ;
+/* Zeile entfernt */
 GtkWidget *            gtk_stack_page_get_child           (GtkStackPage           *self);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_page_get_visible         (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_visible         (GtkStackPage           *self,
                                                            gboolean                visible);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_page_get_needs_attention (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_needs_attention (GtkStackPage           *self,
                                                            gboolean                setting);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_page_get_use_underline   (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_use_underline   (GtkStackPage           *self,
                                                            gboolean                setting);
-
+/* Zeile entfernt */
 const char *           gtk_stack_page_get_name            (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_name            (GtkStackPage           *self,
                                                             const char            *setting);
-
+/* Zeile entfernt */
 const char *           gtk_stack_page_get_title           (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_title           (GtkStackPage           *self,
                                                            const char             *setting);
-
+/* Zeile entfernt */
 const char *           gtk_stack_page_get_icon_name       (GtkStackPage           *self);
-
+/* Zeile entfernt */
 void                   gtk_stack_page_set_icon_name       (GtkStackPage           *self,
                                                            const char             *setting);
 
 
 
+/* Zeile entfernt */
+GType                  gtk_stack_get_type                (void) ;
 
-GType                  gtk_stack_get_type                (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *            gtk_stack_new                     (void);
-
+/* Zeile entfernt */
 GtkStackPage *         gtk_stack_add_child               (GtkStack               *stack,
                                                           GtkWidget              *child);
-
+/* Zeile entfernt */
 GtkStackPage *         gtk_stack_add_named               (GtkStack               *stack,
                                                           GtkWidget              *child,
                                                           const char             *name);
-
+/* Zeile entfernt */
 GtkStackPage *         gtk_stack_add_titled              (GtkStack               *stack,
                                                           GtkWidget              *child,
                                                           const char             *name,
                                                           const char             *title);
-
+/* Zeile entfernt */
 void                   gtk_stack_remove                  (GtkStack               *stack,
                                                           GtkWidget              *child);
 
-
+/* Zeile entfernt */
 GtkStackPage *         gtk_stack_get_page                (GtkStack               *stack,
                                                           GtkWidget              *child);
-
+/* Zeile entfernt */
 GtkWidget *            gtk_stack_get_child_by_name       (GtkStack               *stack,
                                                           const char             *name);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_visible_child       (GtkStack               *stack,
                                                           GtkWidget              *child);
-
+/* Zeile entfernt */
 GtkWidget *            gtk_stack_get_visible_child       (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_visible_child_name  (GtkStack               *stack,
                                                           const char             *name);
-
+/* Zeile entfernt */
 const char *          gtk_stack_get_visible_child_name  (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_visible_child_full  (GtkStack               *stack,
                                                           const char             *name,
                                                           GtkStackTransitionType  transition);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_hhomogeneous        (GtkStack               *stack,
                                                           gboolean                hhomogeneous);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_get_hhomogeneous        (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_vhomogeneous        (GtkStack               *stack,
                                                           gboolean                vhomogeneous);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_get_vhomogeneous        (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_transition_duration (GtkStack               *stack,
                                                           guint                   duration);
-
+/* Zeile entfernt */
 guint                  gtk_stack_get_transition_duration (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_transition_type     (GtkStack               *stack,
                                                           GtkStackTransitionType  transition);
-
+/* Zeile entfernt */
 GtkStackTransitionType gtk_stack_get_transition_type     (GtkStack               *stack);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_get_transition_running  (GtkStack               *stack);
-
+/* Zeile entfernt */
 void                   gtk_stack_set_interpolate_size    (GtkStack *stack,
                                                           gboolean  interpolate_size);
-
+/* Zeile entfernt */
 gboolean               gtk_stack_get_interpolate_size    (GtkStack *stack);
 
-
+/* Zeile entfernt */
 GtkSelectionModel *    gtk_stack_get_pages               (GtkStack *stack);
 
-
+/* Zeile entfernt */
 
 #endif

@@ -25,7 +25,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SHORTCUTS_SHORTCUT (gtk_shortcuts_shortcut_get_type())
 #define GTK_SHORTCUTS_SHORTCUT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_SHORTCUT, GtkShortcutsShortcut))
@@ -77,9 +77,9 @@ typedef enum {
   GTK_SHORTCUT_GESTURE_SWIPE_RIGHT
 } GtkShortcutType;
 
+/* Zeile entfernt */
+GType        gtk_shortcuts_shortcut_get_type (void) ;
 
-GType        gtk_shortcuts_shortcut_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 
 #endif /* GTK_SHORTCUTS_SHORTCUT_H */

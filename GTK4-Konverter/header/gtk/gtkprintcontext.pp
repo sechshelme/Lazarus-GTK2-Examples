@@ -36,6 +36,7 @@
 {$endif}
 {$include <pango/pango.h>}
 {$include <gtk/gtkpagesetup.h>}
+  { Zeile entfernt  }
 
   type
     _GtkPrintContext = GtkPrintContext;
@@ -53,38 +54,46 @@
   { return type might be wrong }   
   function GTK_IS_PRINT_CONTEXT(obj : longint) : longint;  
 
-(* error 
-GType          gtk_print_context_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_print_context_get_type:GType;
 
-    var
- : GType;
   { Rendering  }
-
+  { Zeile entfernt  }
   function gtk_print_context_get_cairo_context(context:PGtkPrintContext):^cairo_t;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_page_setup(context:PGtkPrintContext):^GtkPageSetup;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_width(context:PGtkPrintContext):double;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_height(context:PGtkPrintContext):double;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_dpi_x(context:PGtkPrintContext):double;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_dpi_y(context:PGtkPrintContext):double;
 
+  { Zeile entfernt  }
   function gtk_print_context_get_hard_margins(context:PGtkPrintContext; top:Pdouble; bottom:Pdouble; left:Pdouble; right:Pdouble):gboolean;
 
   { Fonts  }
+  { Zeile entfernt  }
   function gtk_print_context_get_pango_fontmap(context:PGtkPrintContext):^PangoFontMap;
 
+  { Zeile entfernt  }
   function gtk_print_context_create_pango_context(context:PGtkPrintContext):^PangoContext;
 
+  { Zeile entfernt  }
   function gtk_print_context_create_pango_layout(context:PGtkPrintContext):^PangoLayout;
 
   { Needed for preview implementations  }
+  { Zeile entfernt  }
   procedure gtk_print_context_set_cairo_context(context:PGtkPrintContext; cr:Pcairo_t; dpi_x:double; dpi_y:double);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_CONTEXT_H__  }
   { was #define dname def_expr }
@@ -109,6 +118,10 @@ GType          gtk_print_context_get_type (void) G_GNUC_CONST;
     GTK_IS_PRINT_CONTEXT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PRINT_CONTEXT);
   end;
 
+  function gtk_print_context_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_print_context_get_cairo_context(context:PGtkPrintContext):Pcairo_t;
   begin
     { You must implement this function }

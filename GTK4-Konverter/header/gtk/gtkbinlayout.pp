@@ -1,4 +1,6 @@
 
+  Type
+  PGtkLayoutManager  = ^GtkLayoutManager;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -22,20 +24,25 @@
     }
 (** unsupported pragma#pragma once*)
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BIN_LAYOUT : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBinLayout, gtk_bin_layout, GTK, BIN_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBinLayout, gtk_bin_layout, GTK, BIN_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_bin_layout_new:^GtkLayoutManager;
+
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BIN_LAYOUT : longint; { return type might be wrong }
     begin
       GTK_TYPE_BIN_LAYOUT:=gtk_bin_layout_get_type;
     end;
 
+  function gtk_bin_layout_new:PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
 

@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_HEADER_BAR : longint; { return type might be wrong }
@@ -49,35 +50,43 @@
 
   type
     _GtkHeaderBar = GtkHeaderBar;
-(* error 
-GType        gtk_header_bar_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_header_bar_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_header_bar_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_header_bar_set_title_widget(bar:PGtkHeaderBar; title_widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_header_bar_get_title_widget(bar:PGtkHeaderBar):^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_header_bar_pack_start(bar:PGtkHeaderBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_header_bar_pack_end(bar:PGtkHeaderBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   procedure gtk_header_bar_remove(bar:PGtkHeaderBar; child:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_header_bar_get_show_title_buttons(bar:PGtkHeaderBar):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_header_bar_set_show_title_buttons(bar:PGtkHeaderBar; setting:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_header_bar_set_decoration_layout(bar:PGtkHeaderBar; layout:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_header_bar_get_decoration_layout(bar:PGtkHeaderBar):^char;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_HEADER_BAR_H__  }
   { was #define dname def_expr }
@@ -102,6 +111,10 @@ GType        gtk_header_bar_get_type          (void) G_GNUC_CONST;
     GTK_IS_HEADER_BAR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_HEADER_BAR);
   end;
 
+  function gtk_header_bar_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_header_bar_new:PGtkWidget;
   begin
     { You must implement this function }

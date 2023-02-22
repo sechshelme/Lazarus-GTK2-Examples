@@ -1,6 +1,7 @@
 
   Type
   Pchar  = ^char;
+  PGBytes  = ^GBytes;
   PGdkPixbuf  = ^GdkPixbuf;
   PGdkTexture  = ^GdkTexture;
   PGError  = ^GError;
@@ -36,6 +37,7 @@
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
 {$include <gdk-pixbuf/gdk-pixbuf.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_TEXTURE : longint; { return type might be wrong }
@@ -50,18 +52,17 @@
   { return type might be wrong }   
   function GDK_IS_TEXTURE(obj : longint) : longint;  
 
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkTexture, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkTexture, g_object_unref)
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+
+  type
+    _GdkTextureClass = GdkTextureClass;
+
   { was #define dname def_expr }
   function GDK_TEXTURE_ERROR : longint; { return type might be wrong }
 
-(* error 
-GQuark gdk_texture_error_quark (void);
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_texture_error_quark:GQuark;
+
   {*
    * GdkTextureError:
    * @GDK_TEXTURE_ERROR_TOO_LARGE: Not enough memory to handle this image
@@ -80,60 +81,51 @@ GQuark gdk_texture_error_quark (void);
       GDK_TEXTURE_ERROR_UNSUPPORTED_CONTENT,
       GDK_TEXTURE_ERROR_UNSUPPORTED_FORMAT
       );
-(* error 
-GType                   gdk_texture_get_type                   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gdk_texture_get_type:GType;
 
+  { Zeile entfernt  }
   function gdk_texture_new_for_pixbuf(pixbuf:PGdkPixbuf):^GdkTexture;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_texture_new_from_resource(resource_path:Pchar):^GdkTexture;
 
+  { Zeile entfernt  }
   function gdk_texture_new_from_file(file:PGFile; error:PPGError):^GdkTexture;
 
-(* error 
-GdkTexture *            gdk_texture_new_from_filename          (const char      *path,
-(* error 
-                                                                GError         **error);
- in declarator_list *)
- in declarator_list *)
-(* error 
-GdkTexture *            gdk_texture_new_from_bytes             (GBytes          *bytes,
-(* error 
-                                                                GError         **error);
- in declarator_list *)
- in declarator_list *)
-(* error 
-int                     gdk_texture_get_width                  (GdkTexture      *texture) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gdk_texture_new_from_filename(path:Pchar; error:PPGError):^GdkTexture;
 
-    var
- : longint;
-(* error 
-int                     gdk_texture_get_height                 (GdkTexture      *texture) G_GNUC_PURE;
- in declarator_list *)
- : longint;
+  { Zeile entfernt  }
+  function gdk_texture_new_from_bytes(bytes:PGBytes; error:PPGError):^GdkTexture;
 
+  { Zeile entfernt  }
+  function gdk_texture_get_width(texture:PGdkTexture):longint;
+
+  { Zeile entfernt  }
+  function gdk_texture_get_height(texture:PGdkTexture):longint;
+
+  { Zeile entfernt  }
   procedure gdk_texture_download(texture:PGdkTexture; data:Pguchar; stride:gsize);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_texture_save_to_png(texture:PGdkTexture; filename:Pchar):gboolean;
 
-(* error 
-GBytes *                gdk_texture_save_to_png_bytes          (GdkTexture      *texture);
- in declarator_list *)
-(* error 
-gboolean                gdk_texture_save_to_tiff               (GdkTexture      *texture,
-(* error 
-                                                                const char      *filename);
- in declarator_list *)
- in declarator_list *)
-(* error 
-GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_texture_save_to_png_bytes(texture:PGdkTexture):^GBytes;
+
+  { Zeile entfernt  }
+(* Const before type ignored *)
+  function gdk_texture_save_to_tiff(texture:PGdkTexture; filename:Pchar):gboolean;
+
+  { Zeile entfernt  }
+  function gdk_texture_save_to_tiff_bytes(texture:PGdkTexture):^GBytes;
+
+  { Zeile entfernt  }
 {$endif}
   { __GDK_TEXTURE_H__  }
   { was #define dname def_expr }
@@ -164,6 +156,14 @@ GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      
       GDK_TEXTURE_ERROR:=gdk_texture_error_quark;
     end;
 
+  function gdk_texture_error_quark:GQuark;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_texture_new_for_pixbuf(pixbuf:PGdkPixbuf):PGdkTexture;
   begin
     { You must implement this function }
@@ -176,11 +176,39 @@ GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      
   begin
     { You must implement this function }
   end;
+  function gdk_texture_new_from_filename(path:Pchar; error:PPGError):PGdkTexture;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_new_from_bytes(bytes:PGBytes; error:PPGError):PGdkTexture;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_get_width(texture:PGdkTexture):longint;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_get_height(texture:PGdkTexture):longint;
+  begin
+    { You must implement this function }
+  end;
   procedure gdk_texture_download(texture:PGdkTexture; data:Pguchar; stride:gsize);
   begin
     { You must implement this function }
   end;
   function gdk_texture_save_to_png(texture:PGdkTexture; filename:Pchar):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_save_to_png_bytes(texture:PGdkTexture):PGBytes;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_save_to_tiff(texture:PGdkTexture; filename:Pchar):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gdk_texture_save_to_tiff_bytes(texture:PGdkTexture):PGBytes;
   begin
     { You must implement this function }
   end;

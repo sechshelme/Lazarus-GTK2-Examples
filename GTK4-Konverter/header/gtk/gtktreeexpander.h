@@ -27,35 +27,35 @@
 #include <gtk/gtktreelistmodel.h>
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_TREE_EXPANDER         (gtk_tree_expander_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
-
-
+/* Zeile entfernt */
 GtkWidget *             gtk_tree_expander_new                 (void);
 
-
+/* Zeile entfernt */
 GtkWidget *             gtk_tree_expander_get_child           (GtkTreeExpander        *self);
-
+/* Zeile entfernt */
 void                    gtk_tree_expander_set_child           (GtkTreeExpander        *self,
                                                                GtkWidget              *child);
 
-
+/* Zeile entfernt */
 gpointer                gtk_tree_expander_get_item            (GtkTreeExpander        *self);
-
+/* Zeile entfernt */
 GtkTreeListRow *        gtk_tree_expander_get_list_row        (GtkTreeExpander        *self);
-
+/* Zeile entfernt */
 void                    gtk_tree_expander_set_list_row        (GtkTreeExpander        *self,
                                                                GtkTreeListRow         *list_row);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 gboolean                gtk_tree_expander_get_indent_for_icon (GtkTreeExpander        *self);
-GDK_AVAILABLE_IN_4_6
+/* Zeile entfernt */
 void                    gtk_tree_expander_set_indent_for_icon (GtkTreeExpander        *self,
                                                                gboolean               indent_for_icon);
 
-
+/* Zeile entfernt */
 
 #endif  /* __GTK_TREE_EXPANDER_H__ */

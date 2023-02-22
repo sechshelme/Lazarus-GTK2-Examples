@@ -28,7 +28,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_EXPANDER            (gtk_expander_get_type ())
 #define GTK_EXPANDER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EXPANDER, GtkExpander))
@@ -36,56 +36,56 @@
 
 typedef struct _GtkExpander        GtkExpander;
 
+/* Zeile entfernt */
+GType                 gtk_expander_get_type            (void) ;
 
-GType                 gtk_expander_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget            *gtk_expander_new                 (const char *label);
-
+/* Zeile entfernt */
 GtkWidget            *gtk_expander_new_with_mnemonic   (const char *label);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_expanded        (GtkExpander *expander,
                                                         gboolean     expanded);
-
+/* Zeile entfernt */
 gboolean              gtk_expander_get_expanded        (GtkExpander *expander);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_label           (GtkExpander *expander,
                                                         const char *label);
-
+/* Zeile entfernt */
 const char *         gtk_expander_get_label           (GtkExpander *expander);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_use_underline   (GtkExpander *expander,
                                                         gboolean     use_underline);
-
+/* Zeile entfernt */
 gboolean              gtk_expander_get_use_underline   (GtkExpander *expander);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_use_markup      (GtkExpander *expander,
                                                         gboolean    use_markup);
-
+/* Zeile entfernt */
 gboolean              gtk_expander_get_use_markup      (GtkExpander *expander);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_label_widget    (GtkExpander *expander,
                                                         GtkWidget   *label_widget);
-
+/* Zeile entfernt */
 GtkWidget            *gtk_expander_get_label_widget    (GtkExpander *expander);
-
+/* Zeile entfernt */
 void                  gtk_expander_set_resize_toplevel (GtkExpander *expander,
                                                         gboolean     resize_toplevel);
-
+/* Zeile entfernt */
 gboolean              gtk_expander_get_resize_toplevel (GtkExpander *expander);
 
-
+/* Zeile entfernt */
 void                  gtk_expander_set_child           (GtkExpander *expander,
                                                         GtkWidget      *child);
-
+/* Zeile entfernt */
 GtkWidget *           gtk_expander_get_child           (GtkExpander *expander);
 
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_EXPANDER_H__ */

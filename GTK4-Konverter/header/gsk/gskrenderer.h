@@ -26,7 +26,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskrendernode.h>
 
-
+/* Zeile entfernt */
 
 #define GSK_TYPE_RENDERER (gsk_renderer_get_type ())
 
@@ -35,34 +35,34 @@
 
 typedef struct _GskRendererClass        GskRendererClass;
 
+/* Zeile entfernt */
+GType gsk_renderer_get_type (void) ;
 
-GType gsk_renderer_get_type (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GskRenderer *           gsk_renderer_new_for_surface            (GdkSurface               *surface);
 
-
+/* Zeile entfernt */
 GdkSurface *            gsk_renderer_get_surface                (GskRenderer             *renderer);
 
-
+/* Zeile entfernt */
 gboolean                gsk_renderer_realize                    (GskRenderer             *renderer,
                                                                  GdkSurface              *surface,
                                                                  GError                 **error);
-
+/* Zeile entfernt */
 void                    gsk_renderer_unrealize                  (GskRenderer             *renderer);
-
+/* Zeile entfernt */
 gboolean                gsk_renderer_is_realized                (GskRenderer             *renderer);
 
-
+/* Zeile entfernt */
 GdkTexture *            gsk_renderer_render_texture             (GskRenderer             *renderer,
                                                                  GskRenderNode           *root,
                                                                  const graphene_rect_t   *viewport);
 
-
+/* Zeile entfernt */
 void                    gsk_renderer_render                     (GskRenderer             *renderer,
                                                                  GskRenderNode           *root,
                                                                  const cairo_region_t    *region);
 
-
+/* Zeile entfernt */
 
 #endif /* __GSK_RENDERER_H__ */

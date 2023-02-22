@@ -39,26 +39,33 @@
 {$include <gdk/gdk.h>}
 {$include <X11/Xlib.h>}
 {$include <X11/Xutil.h>}
+  { Zeile entfernt  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
 
   function gdk_x11_display_text_property_to_text_list(display:PGdkDisplay; encoding:Pchar; format:longint; text:Pguchar; length:longint; 
              list:PPPchar):longint;
 
+  { Zeile entfernt  }
   procedure gdk_x11_free_text_list(list:PPchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_x11_display_string_to_compound_text(display:PGdkDisplay; str:Pchar; encoding:PPchar; format:Plongint; ctext:PPguchar; 
              length:Plongint):longint;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
   function gdk_x11_display_utf8_to_compound_text(display:PGdkDisplay; str:Pchar; encoding:PPchar; format:Plongint; ctext:PPguchar; 
              length:Plongint):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_x11_free_compound_text(ctext:Pguchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_X11_SELECTION_H__  }
   function gdk_x11_display_text_property_to_text_list(display:PGdkDisplay; encoding:Pchar; format:longint; text:Pguchar; length:longint; 

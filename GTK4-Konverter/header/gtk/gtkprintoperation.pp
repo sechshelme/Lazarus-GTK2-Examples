@@ -43,6 +43,7 @@
 {$include <gtk/gtkprintsettings.h>}
 {$include <gtk/gtkprintcontext.h>}
 {$include <gtk/gtkprintoperationpreview.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PRINT_OPERATION : longint; { return type might be wrong }
@@ -209,80 +210,108 @@
     GtkPrintError = (GTK_PRINT_ERROR_GENERAL,GTK_PRINT_ERROR_INTERNAL_ERROR,
       GTK_PRINT_ERROR_NOMEM,GTK_PRINT_ERROR_INVALID_FILE
       );
+  { Zeile entfernt  }
 
   function gtk_print_error_quark:GQuark;
 
-(* error 
-GType                   gtk_print_operation_get_type               (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_print_operation_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_print_operation_new:^GtkPrintOperation;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_default_page_setup(op:PGtkPrintOperation; default_page_setup:PGtkPageSetup);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_default_page_setup(op:PGtkPrintOperation):^GtkPageSetup;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_print_settings(op:PGtkPrintOperation; print_settings:PGtkPrintSettings);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_print_settings(op:PGtkPrintOperation):^GtkPrintSettings;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_operation_set_job_name(op:PGtkPrintOperation; job_name:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_n_pages(op:PGtkPrintOperation; n_pages:longint);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_current_page(op:PGtkPrintOperation; current_page:longint);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_use_full_page(op:PGtkPrintOperation; full_page:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_unit(op:PGtkPrintOperation; unit:GtkUnit);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_operation_set_export_filename(op:PGtkPrintOperation; filename:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_track_print_status(op:PGtkPrintOperation; track_status:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_show_progress(op:PGtkPrintOperation; show_progress:gboolean);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_allow_async(op:PGtkPrintOperation; allow_async:gboolean);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_print_operation_set_custom_tab_label(op:PGtkPrintOperation; _label:Pchar);
 
+  { Zeile entfernt  }
   function gtk_print_operation_run(op:PGtkPrintOperation; action:GtkPrintOperationAction; parent:PGtkWindow; error:PPGError):GtkPrintOperationResult;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_get_error(op:PGtkPrintOperation; error:PPGError);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_status(op:PGtkPrintOperation):GtkPrintStatus;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_print_operation_get_status_string(op:PGtkPrintOperation):^char;
 
+  { Zeile entfernt  }
   function gtk_print_operation_is_finished(op:PGtkPrintOperation):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_cancel(op:PGtkPrintOperation);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_draw_page_finish(op:PGtkPrintOperation);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_defer_drawing(op:PGtkPrintOperation);
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_support_selection(op:PGtkPrintOperation; support_selection:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_support_selection(op:PGtkPrintOperation):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_has_selection(op:PGtkPrintOperation; has_selection:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_has_selection(op:PGtkPrintOperation):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_print_operation_set_embed_page_setup(op:PGtkPrintOperation; embed:gboolean);
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_embed_page_setup(op:PGtkPrintOperation):gboolean;
 
+  { Zeile entfernt  }
   function gtk_print_operation_get_n_pages_to_print(op:PGtkPrintOperation):longint;
 
+  { Zeile entfernt  }
   function gtk_print_run_page_setup_dialog(parent:PGtkWindow; page_setup:PGtkPageSetup; settings:PGtkPrintSettings):^GtkPageSetup;
 
   {*
@@ -302,9 +331,11 @@ GType                   gtk_print_operation_get_type               (void) G_GNUC
   type
 
     GtkPageSetupDoneFunc = procedure (page_setup:PGtkPageSetup; data:gpointer);cdecl;
+  { Zeile entfernt  }
 
   procedure gtk_print_run_page_setup_dialog_async(parent:PGtkWindow; page_setup:PGtkPageSetup; settings:PGtkPrintSettings; done_cb:GtkPageSetupDoneFunc; data:gpointer);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PRINT_OPERATION_H__  }
   { was #define dname def_expr }
@@ -360,6 +391,10 @@ GType                   gtk_print_operation_get_type               (void) G_GNUC
     end;
 
   function gtk_print_error_quark:GQuark;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_print_operation_get_type:GType;
   begin
     { You must implement this function }
   end;

@@ -30,6 +30,7 @@
 {$define __GTK_ACTIONABLE_H__}  
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_ACTIONABLE : longint; { return type might be wrong }
@@ -65,29 +66,33 @@
         set_action_target_value : procedure (actionable:PGtkActionable; target_value:PGVariant);cdecl;
       end;
 
-(* error 
-GType                   gtk_actionable_get_type                         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_actionable_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_actionable_get_action_name(actionable:PGtkActionable):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_actionable_set_action_name(actionable:PGtkActionable; action_name:Pchar);
 
+  { Zeile entfernt  }
   function gtk_actionable_get_action_target_value(actionable:PGtkActionable):^GVariant;
 
+  { Zeile entfernt  }
   procedure gtk_actionable_set_action_target_value(actionable:PGtkActionable; target_value:PGVariant);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_actionable_set_action_target(actionable:PGtkActionable; format_string:Pchar; args:array of const);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_actionable_set_detailed_action_name(actionable:PGtkActionable; detailed_action_name:Pchar);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_ACTIONABLE_H__  }
   { was #define dname def_expr }
@@ -120,6 +125,10 @@ GType                   gtk_actionable_get_type                         (void) G
     GTK_ACTIONABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_ACTIONABLE,GtkActionableInterface);
   end;
 
+  function gtk_actionable_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_actionable_get_action_name(actionable:PGtkActionable):Pchar;
   begin
     { You must implement this function }

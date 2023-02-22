@@ -33,6 +33,7 @@
 {$endif}
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_LIST_MODEL : longint; { return type might be wrong }
@@ -40,14 +41,10 @@
   { was #define dname def_expr }
   function GTK_TYPE_TREE_LIST_ROW : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeListModel, gtk_tree_list_model, GTK, TREE_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeListModel, gtk_tree_list_model, GTK, TREE_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GObject)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
   {*
    * GtkTreeListModelCreateModelFunc:
    * @item: (type GObject): The item that is being expanded
@@ -64,43 +61,60 @@ G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GOb
    * Returns: (nullable) (transfer full): The model tracking the children of
    *   @item or %NULL if @item can never have children
     }
-(* error 
-typedef GListModel * (* GtkTreeListModelCreateModelFunc) (gpointer item, gpointer user_data);
- in declarator_list *)
- in declarator_list *)
+
+  type
+    GtkTreeListModelCreateModelFunc = function (item:gpointer; user_data:gpointer):PGListModel;cdecl;
+  { Zeile entfernt  }
+
   function gtk_tree_list_model_new(root:PGListModel; passthrough:gboolean; autoexpand:gboolean; create_func:GtkTreeListModelCreateModelFunc; user_data:gpointer; 
              user_destroy:GDestroyNotify):^GtkTreeListModel;
 
+  { Zeile entfernt  }
   function gtk_tree_list_model_get_model(self:PGtkTreeListModel):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_tree_list_model_get_passthrough(self:PGtkTreeListModel):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_list_model_set_autoexpand(self:PGtkTreeListModel; autoexpand:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_list_model_get_autoexpand(self:PGtkTreeListModel):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_list_model_get_child_row(self:PGtkTreeListModel; position:guint):^GtkTreeListRow;
 
+  { Zeile entfernt  }
   function gtk_tree_list_model_get_row(self:PGtkTreeListModel; position:guint):^GtkTreeListRow;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_item(self:PGtkTreeListRow):gpointer;
 
+  { Zeile entfernt  }
   procedure gtk_tree_list_row_set_expanded(self:PGtkTreeListRow; expanded:gboolean);
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_expanded(self:PGtkTreeListRow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_is_expandable(self:PGtkTreeListRow):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_position(self:PGtkTreeListRow):guint;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_depth(self:PGtkTreeListRow):guint;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_children(self:PGtkTreeListRow):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_parent(self:PGtkTreeListRow):^GtkTreeListRow;
 
+  { Zeile entfernt  }
   function gtk_tree_list_row_get_child_row(self:PGtkTreeListRow; position:guint):^GtkTreeListRow;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_LIST_MODEL_H__  }
   { was #define dname def_expr }

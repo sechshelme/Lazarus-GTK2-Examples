@@ -30,6 +30,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtklistitemfactory.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY : longint; { return type might be wrong }
@@ -63,15 +64,14 @@
   type
     _GtkSignalListItemFactory = GtkSignalListItemFactory;
     _GtkSignalListItemFactoryClass = GtkSignalListItemFactoryClass;
-(* error 
-GType                   gtk_signal_list_item_factory_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_signal_list_item_factory_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_signal_list_item_factory_new:^GtkListItemFactory;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SIGNAL_LIST_ITEM_FACTORY_H__  }
   { was #define dname def_expr }
@@ -120,6 +120,10 @@ GType                   gtk_signal_list_item_factory_get_type   (void) G_GNUC_CO
     GTK_SIGNAL_LIST_ITEM_FACTORY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY,GtkSignalListItemFactoryClass);
   end;
 
+  function gtk_signal_list_item_factory_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_signal_list_item_factory_new:PGtkListItemFactory;
   begin
     { You must implement this function }

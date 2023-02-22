@@ -26,31 +26,31 @@
 #include <gtk/gtkfilechooser.h>
 #include <gtk/gtknativedialog.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_FILE_CHOOSER_NATIVE             (gtk_file_chooser_native_get_type ())
 
+/* Zeile entfernt */
+/* Zeile entfernt */
 
-G_DECLARE_FINAL_TYPE (GtkFileChooserNative, gtk_file_chooser_native, GTK, FILE_CHOOSER_NATIVE, GtkNativeDialog)
-
-
+/* Zeile entfernt */
 GtkFileChooserNative *gtk_file_chooser_native_new (const char           *title,
                                                    GtkWindow            *parent,
                                                    GtkFileChooserAction  action,
                                                    const char           *accept_label,
                                                    const char           *cancel_label);
 
-
+/* Zeile entfernt */
 const char *gtk_file_chooser_native_get_accept_label (GtkFileChooserNative *self);
-
+/* Zeile entfernt */
 void        gtk_file_chooser_native_set_accept_label (GtkFileChooserNative *self,
                                                       const char           *accept_label);
-
+/* Zeile entfernt */
 const char *gtk_file_chooser_native_get_cancel_label (GtkFileChooserNative *self);
-
+/* Zeile entfernt */
 void        gtk_file_chooser_native_set_cancel_label (GtkFileChooserNative *self,
                                                       const char           *cancel_label);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_FILE_CHOOSER_NATIVE_H__ */

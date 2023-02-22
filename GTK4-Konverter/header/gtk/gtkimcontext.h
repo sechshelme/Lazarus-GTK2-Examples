@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_IM_CONTEXT              (gtk_im_context_get_type ())
 #define GTK_IM_CONTEXT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IM_CONTEXT, GtkIMContext))
@@ -104,22 +104,22 @@ struct _GtkIMContextClass
   void (*_gtk_reserved5) (void);
 };
 
+/* Zeile entfernt */
+GType    gtk_im_context_get_type            (void) ;
 
-GType    gtk_im_context_get_type            (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 void     gtk_im_context_set_client_widget   (GtkIMContext       *context,
                                              GtkWidget          *widget);
-
+/* Zeile entfernt */
 void     gtk_im_context_get_preedit_string  (GtkIMContext       *context,
 					     char              **str,
 					     PangoAttrList     **attrs,
 					     int                *cursor_pos);
-
+/* Zeile entfernt */
 gboolean gtk_im_context_filter_keypress     (GtkIMContext       *context,
                                              GdkEvent           *event);
 
-
+/* Zeile entfernt */
 gboolean gtk_im_context_filter_key          (GtkIMContext       *context,
                                              gboolean            press,
                                              GdkSurface         *surface,
@@ -129,16 +129,16 @@ gboolean gtk_im_context_filter_key          (GtkIMContext       *context,
                                              GdkModifierType     state,
                                              int                 group);
 
-
+/* Zeile entfernt */
 void     gtk_im_context_focus_in            (GtkIMContext       *context);
-
+/* Zeile entfernt */
 void     gtk_im_context_focus_out           (GtkIMContext       *context);
-
+/* Zeile entfernt */
 void     gtk_im_context_reset               (GtkIMContext       *context);
-
+/* Zeile entfernt */
 void     gtk_im_context_set_cursor_location (GtkIMContext       *context,
 					     const GdkRectangle *area);
-
+/* Zeile entfernt */
 void     gtk_im_context_set_use_preedit     (GtkIMContext       *context,
 					     gboolean            use_preedit);
 GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_set_surrounding_with_selection)
@@ -150,24 +150,24 @@ GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_get_surrounding_with_selection)
 gboolean gtk_im_context_get_surrounding     (GtkIMContext       *context,
                                              char              **text,
                                              int                *cursor_index);
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 void     gtk_im_context_set_surrounding_with_selection
                                             (GtkIMContext       *context,
                                              const char         *text,
                                              int                 len,
                                              int                 cursor_index,
                                              int                 anchor_index);
-GDK_AVAILABLE_IN_4_2
+/* Zeile entfernt */
 gboolean gtk_im_context_get_surrounding_with_selection
                                             (GtkIMContext       *context,
                                              char              **text,
                                              int                *cursor_index,
                                              int                *anchor_index);
-
+/* Zeile entfernt */
 gboolean gtk_im_context_delete_surrounding  (GtkIMContext       *context,
 					     int                 offset,
 					     int                 n_chars);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_IM_CONTEXT_H__ */

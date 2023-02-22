@@ -27,30 +27,30 @@
 #include <gdk/gdkpixbuf.h>
 #include <pango/pangocairo.h>
 
+/* Zeile entfernt */
 
-
-
+/* Zeile entfernt */
 void       gdk_cairo_set_source_rgba    (cairo_t              *cr,
                                          const GdkRGBA        *rgba);
-
+/* Zeile entfernt */
 void       gdk_cairo_set_source_pixbuf  (cairo_t              *cr,
                                          const GdkPixbuf      *pixbuf,
                                          double                pixbuf_x,
                                          double                pixbuf_y);
 
-
+/* Zeile entfernt */
 void       gdk_cairo_rectangle          (cairo_t              *cr,
                                          const GdkRectangle   *rectangle);
-
+/* Zeile entfernt */
 void       gdk_cairo_region             (cairo_t              *cr,
                                          const cairo_region_t *region);
 
-
+/* Zeile entfernt */
 cairo_region_t *
            gdk_cairo_region_create_from_surface
                                         (cairo_surface_t      *surface);
 
-
+/* Zeile entfernt */
 void       gdk_cairo_draw_from_gl (cairo_t              *cr,
                                    GdkSurface            *surface,
                                    int                   source,
@@ -61,6 +61,6 @@ void       gdk_cairo_draw_from_gl (cairo_t              *cr,
                                    int                   width,
                                    int                   height);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_CAIRO_H__ */

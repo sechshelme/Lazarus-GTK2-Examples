@@ -27,6 +27,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SHORTCUTS_SHORTCUT : longint; { return type might be wrong }
@@ -82,12 +83,11 @@
       GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_RIGHT,
       GTK_SHORTCUT_GESTURE,GTK_SHORTCUT_GESTURE_SWIPE_LEFT,
       GTK_SHORTCUT_GESTURE_SWIPE_RIGHT);
-(* error 
-GType        gtk_shortcuts_shortcut_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_shortcuts_shortcut_get_type:GType;
+
+  { Zeile entfernt  }
 {$endif}
   { GTK_SHORTCUTS_SHORTCUT_H  }
   { was #define dname def_expr }
@@ -112,4 +112,8 @@ GType        gtk_shortcuts_shortcut_get_type (void) G_GNUC_CONST;
     GTK_IS_SHORTCUTS_SHORTCUT:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SHORTCUTS_SHORTCUT);
   end;
 
+  function gtk_shortcuts_shortcut_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
 

@@ -2,6 +2,7 @@
   Type
   Pchar  = ^char;
   PGBytes  = ^GBytes;
+  PGtkBuilderListItemFactory  = ^GtkBuilderListItemFactory;
   PGtkBuilderScope  = ^GtkBuilderScope;
   PGtkListItemFactory  = ^GtkListItemFactory;
 {$IFDEF FPC}
@@ -33,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtklistitemfactory.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BUILDER_LIST_ITEM_FACTORY : longint; { return type might be wrong }
@@ -66,33 +68,28 @@
   type
     _GtkBuilderListItemFactory = GtkBuilderListItemFactory;
     _GtkBuilderListItemFactoryClass = GtkBuilderListItemFactoryClass;
-(* error 
-GType                   gtk_builder_list_item_factory_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_builder_list_item_factory_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_builder_list_item_factory_new_from_bytes(scope:PGtkBuilderScope; bytes:PGBytes):^GtkListItemFactory;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_builder_list_item_factory_new_from_resource(scope:PGtkBuilderScope; resource_path:Pchar):^GtkListItemFactory;
 
-(* error 
-GBytes *                gtk_builder_list_item_factory_get_bytes         (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_builder_list_item_factory_get_bytes(self:PGtkBuilderListItemFactory):^GBytes;
 
-    var
- : GBytes;
+  { Zeile entfernt  }
 (* Const before type ignored *)
-(* error 
-const char *            gtk_builder_list_item_factory_get_resource      (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
- in declarator_list *)
- : char;
-(* error 
-GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
- in declarator_list *)
- : GtkBuilderScope;
+  function gtk_builder_list_item_factory_get_resource(self:PGtkBuilderListItemFactory):^char;
+
+  { Zeile entfernt  }
+  function gtk_builder_list_item_factory_get_scope(self:PGtkBuilderListItemFactory):^GtkBuilderScope;
+
+  { Zeile entfernt  }
 {$endif}
   { __GTK_BUILDER_LIST_ITEM_FACTORY_H__  }
   { was #define dname def_expr }
@@ -141,11 +138,27 @@ GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuil
     GTK_BUILDER_LIST_ITEM_FACTORY_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_BUILDER_LIST_ITEM_FACTORY,GtkBuilderListItemFactoryClass);
   end;
 
+  function gtk_builder_list_item_factory_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_builder_list_item_factory_new_from_bytes(scope:PGtkBuilderScope; bytes:PGBytes):PGtkListItemFactory;
   begin
     { You must implement this function }
   end;
   function gtk_builder_list_item_factory_new_from_resource(scope:PGtkBuilderScope; resource_path:Pchar):PGtkListItemFactory;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_builder_list_item_factory_get_bytes(self:PGtkBuilderListItemFactory):PGBytes;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_builder_list_item_factory_get_resource(self:PGtkBuilderListItemFactory):Pchar;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_builder_list_item_factory_get_scope(self:PGtkBuilderListItemFactory):PGtkBuilderScope;
   begin
     { You must implement this function }
   end;

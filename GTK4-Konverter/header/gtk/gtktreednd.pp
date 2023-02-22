@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktreemodel.h>}
+  { Zeile entfernt  }
   {*
    * GTK_TYPE_TREE_ROW_DATA:
    * Magic `GType` to use when dragging rows in a `GtkTreeModel`.
@@ -44,12 +45,8 @@
   { was #define dname def_expr }
   function GTK_TYPE_TREE_ROW_DATA : longint; { return type might be wrong }
 
-(* error 
-GType             gtk_tree_row_data_get_type (void) G_GNUC_CONST;
- in declarator_list *)
-
-    var
- : GType;
+  { Zeile entfernt  }
+  function gtk_tree_row_data_get_type:GType;
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_DRAG_SOURCE : longint; { return type might be wrong }
@@ -93,22 +90,22 @@ GType             gtk_tree_row_data_get_type (void) G_GNUC_CONST;
         drag_data_delete : function (drag_source:PGtkTreeDragSource; path:PGtkTreePath):gboolean;cdecl;
       end;
 
-(* error 
-GType           gtk_tree_drag_source_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_drag_source_get_type:GType;
+
   { Returns whether the given row can be dragged  }
-
+  { Zeile entfernt  }
   function gtk_tree_drag_source_row_draggable(drag_source:PGtkTreeDragSource; path:PGtkTreePath):gboolean;
 
   { Deletes the given row, or returns FALSE if it can't  }
+  { Zeile entfernt  }
   function gtk_tree_drag_source_drag_data_delete(drag_source:PGtkTreeDragSource; path:PGtkTreePath):gboolean;
 
   { Fills in selection_data with type selection_data->target based on
    * the row denoted by path, returns TRUE if it does anything
     }
+  { Zeile entfernt  }
   function gtk_tree_drag_source_drag_data_get(drag_source:PGtkTreeDragSource; path:PGtkTreePath):^GdkContentProvider;
 
   { was #define dname def_expr }
@@ -153,31 +150,33 @@ GType           gtk_tree_drag_source_get_type   (void) G_GNUC_CONST;
         row_drop_possible : function (drag_dest:PGtkTreeDragDest; dest_path:PGtkTreePath; value:PGValue):gboolean;cdecl;
       end;
 
-(* error 
-GType           gtk_tree_drag_dest_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_drag_dest_get_type:GType;
+
   { Inserts a row before dest which contains data in selection_data,
    * or returns FALSE if it can't
     }
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_tree_drag_dest_drag_data_received(drag_dest:PGtkTreeDragDest; dest:PGtkTreePath; value:PGValue):gboolean;
 
   { Returns TRUE if we can drop before path; path may not exist.  }
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_drag_dest_row_drop_possible(drag_dest:PGtkTreeDragDest; dest_path:PGtkTreePath; value:PGValue):gboolean;
 
   { The selection data would normally have target type GTK_TREE_MODEL_ROW in this
    * case. If the target is wrong these functions return FALSE.
     }
+  { Zeile entfernt  }
   function gtk_tree_create_row_drag_content(tree_model:PGtkTreeModel; path:PGtkTreePath):^GdkContentProvider;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_get_row_drag_data(value:PGValue; tree_model:PPGtkTreeModel; path:PPGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_DND_H__  }
   { was #define dname def_expr }
@@ -186,6 +185,10 @@ GType           gtk_tree_drag_dest_get_type   (void) G_GNUC_CONST;
       GTK_TYPE_TREE_ROW_DATA:=gtk_tree_row_data_get_type;
     end;
 
+  function gtk_tree_row_data_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   { was #define dname def_expr }
   function GTK_TYPE_TREE_DRAG_SOURCE : longint; { return type might be wrong }
     begin
@@ -216,6 +219,10 @@ GType           gtk_tree_drag_dest_get_type   (void) G_GNUC_CONST;
     GTK_TREE_DRAG_SOURCE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_TREE_DRAG_SOURCE,GtkTreeDragSourceIface);
   end;
 
+  function gtk_tree_drag_source_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_drag_source_row_draggable(drag_source:PGtkTreeDragSource; path:PGtkTreePath):gboolean;
   begin
     { You must implement this function }
@@ -258,6 +265,10 @@ GType           gtk_tree_drag_dest_get_type   (void) G_GNUC_CONST;
     GTK_TREE_DRAG_DEST_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(obj,GTK_TYPE_TREE_DRAG_DEST,GtkTreeDragDestIface);
   end;
 
+  function gtk_tree_drag_dest_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_drag_dest_drag_data_received(drag_dest:PGtkTreeDragDest; dest:PGtkTreePath; value:PGValue):gboolean;
   begin
     { You must implement this function }

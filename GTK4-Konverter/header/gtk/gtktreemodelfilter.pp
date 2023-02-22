@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtktreemodel.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_MODEL_FILTER : longint; { return type might be wrong }
@@ -114,38 +115,47 @@
       end;
 
   { base  }
-(* error 
-GType         gtk_tree_model_filter_get_type                   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_tree_model_filter_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_tree_model_filter_new(child_model:PGtkTreeModel; root:PGtkTreePath):^GtkTreeModel;
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_set_visible_func(filter:PGtkTreeModelFilter; func:GtkTreeModelFilterVisibleFunc; data:gpointer; destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_set_modify_func(filter:PGtkTreeModelFilter; n_columns:longint; types:PGType; func:GtkTreeModelFilterModifyFunc; data:gpointer; 
               destroy:GDestroyNotify);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_set_visible_column(filter:PGtkTreeModelFilter; column:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_model_filter_get_model(filter:PGtkTreeModelFilter):^GtkTreeModel;
 
   { conversion  }
+  { Zeile entfernt  }
   function gtk_tree_model_filter_convert_child_iter_to_iter(filter:PGtkTreeModelFilter; filter_iter:PGtkTreeIter; child_iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_convert_iter_to_child_iter(filter:PGtkTreeModelFilter; child_iter:PGtkTreeIter; filter_iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   function gtk_tree_model_filter_convert_child_path_to_path(filter:PGtkTreeModelFilter; child_path:PGtkTreePath):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_model_filter_convert_path_to_child_path(filter:PGtkTreeModelFilter; filter_path:PGtkTreePath):^GtkTreePath;
 
   { extras  }
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_refilter(filter:PGtkTreeModelFilter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_filter_clear_cache(filter:PGtkTreeModelFilter);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_MODEL_FILTER_H__  }
   { was #define dname def_expr }
@@ -194,6 +204,10 @@ GType         gtk_tree_model_filter_get_type                   (void) G_GNUC_CON
     GTK_TREE_MODEL_FILTER_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TREE_MODEL_FILTER,GtkTreeModelFilterClass);
   end;
 
+  function gtk_tree_model_filter_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_model_filter_new(child_model:PGtkTreeModel; root:PGtkTreePath):PGtkTreeModel;
   begin
     { You must implement this function }

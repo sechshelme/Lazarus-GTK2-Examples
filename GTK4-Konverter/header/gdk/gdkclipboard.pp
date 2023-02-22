@@ -41,6 +41,7 @@
 {$include <gdk/gdkversionmacros.h>}
 {$include <gdk/gdktypes.h>}
 {$include <gio/gio.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GDK_TYPE_CLIPBOARD : longint; { return type might be wrong }
@@ -55,60 +56,77 @@
   { return type might be wrong }   
   function GDK_IS_CLIPBOARD(obj : longint) : longint;  
 
-(* error 
-GType                   gdk_clipboard_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gdk_clipboard_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gdk_clipboard_get_display(clipboard:PGdkClipboard):^GdkDisplay;
 
+  { Zeile entfernt  }
   function gdk_clipboard_get_formats(clipboard:PGdkClipboard):^GdkContentFormats;
 
+  { Zeile entfernt  }
   function gdk_clipboard_is_local(clipboard:PGdkClipboard):gboolean;
 
+  { Zeile entfernt  }
   function gdk_clipboard_get_content(clipboard:PGdkClipboard):^GdkContentProvider;
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_store_async(clipboard:PGdkClipboard; io_priority:longint; cancellable:PGCancellable; callback:GAsyncReadyCallback; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gdk_clipboard_store_finish(clipboard:PGdkClipboard; result:PGAsyncResult; error:PPGError):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_clipboard_read_async(clipboard:PGdkClipboard; mime_types:PPchar; io_priority:longint; cancellable:PGCancellable; callback:GAsyncReadyCallback; 
               user_data:gpointer);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_clipboard_read_finish(clipboard:PGdkClipboard; result:PGAsyncResult; out_mime_type:PPchar; error:PPGError):^GInputStream;
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_read_value_async(clipboard:PGdkClipboard; _type:GType; io_priority:longint; cancellable:PGCancellable; callback:GAsyncReadyCallback; 
               user_data:gpointer);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gdk_clipboard_read_value_finish(clipboard:PGdkClipboard; result:PGAsyncResult; error:PPGError):^GValue;
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_read_texture_async(clipboard:PGdkClipboard; cancellable:PGCancellable; callback:GAsyncReadyCallback; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gdk_clipboard_read_texture_finish(clipboard:PGdkClipboard; result:PGAsyncResult; error:PPGError):^GdkTexture;
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_read_text_async(clipboard:PGdkClipboard; cancellable:PGCancellable; callback:GAsyncReadyCallback; user_data:gpointer);
 
+  { Zeile entfernt  }
   function gdk_clipboard_read_text_finish(clipboard:PGdkClipboard; result:PGAsyncResult; error:PPGError):^char;
 
+  { Zeile entfernt  }
   function gdk_clipboard_set_content(clipboard:PGdkClipboard; provider:PGdkContentProvider):gboolean;
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_set(clipboard:PGdkClipboard; _type:GType; args:array of const);
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_set_valist(clipboard:PGdkClipboard; _type:GType; args:va_list);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_clipboard_set_value(clipboard:PGdkClipboard; value:PGValue);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gdk_clipboard_set_text(clipboard:PGdkClipboard; text:Pchar);
 
+  { Zeile entfernt  }
   procedure gdk_clipboard_set_texture(clipboard:PGdkClipboard; texture:PGdkTexture);
 
+  { Zeile entfernt  }
 {$endif}
   { __GDK_CLIPBOARD_H__  }
   { was #define dname def_expr }
@@ -133,6 +151,10 @@ GType                   gdk_clipboard_get_type          (void) G_GNUC_CONST;
     GDK_IS_CLIPBOARD:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GDK_TYPE_CLIPBOARD);
   end;
 
+  function gdk_clipboard_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gdk_clipboard_get_display(clipboard:PGdkClipboard):PGdkDisplay;
   begin
     { You must implement this function }

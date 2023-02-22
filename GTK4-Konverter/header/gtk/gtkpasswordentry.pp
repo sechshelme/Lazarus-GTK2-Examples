@@ -33,6 +33,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkentry.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_PASSWORD_ENTRY : longint; { return type might be wrong }
@@ -51,23 +52,26 @@
   type
     _GtkPasswordEntry = GtkPasswordEntry;
     _GtkPasswordEntryClass = GtkPasswordEntryClass;
-(* error 
-GType           gtk_password_entry_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_password_entry_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_password_entry_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_password_entry_set_show_peek_icon(entry:PGtkPasswordEntry; show_peek_icon:gboolean);
 
+  { Zeile entfernt  }
   function gtk_password_entry_get_show_peek_icon(entry:PGtkPasswordEntry):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_password_entry_set_extra_menu(entry:PGtkPasswordEntry; model:PGMenuModel);
 
+  { Zeile entfernt  }
   function gtk_password_entry_get_extra_menu(entry:PGtkPasswordEntry):^GMenuModel;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_PASSWORD_ENTRY_H__  }
   { was #define dname def_expr }
@@ -92,6 +96,10 @@ GType           gtk_password_entry_get_type (void) G_GNUC_CONST;
     GTK_IS_PASSWORD_ENTRY:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_PASSWORD_ENTRY);
   end;
 
+  function gtk_password_entry_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_password_entry_new:PGtkWidget;
   begin
     { You must implement this function }

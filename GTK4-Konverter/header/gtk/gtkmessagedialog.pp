@@ -37,6 +37,7 @@
 {$endif}
 {$include <gtk/gtkdialog.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_MESSAGE_DIALOG : longint; { return type might be wrong }
@@ -81,12 +82,11 @@
     GtkButtonsType = (GTK_BUTTONS_NONE,GTK_BUTTONS_OK,GTK_BUTTONS_CLOSE,
       GTK_BUTTONS_CANCEL,GTK_BUTTONS_YES_NO,
       GTK_BUTTONS_OK_CANCEL);
-(* error 
-GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_message_dialog_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                         ...) G_GNUC_PRINTF (5, 6);
@@ -94,6 +94,7 @@ GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
                                         ...) G_GNUC_PRINTF (5, 6);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                  ...) G_GNUC_PRINTF (5, 6);
@@ -101,10 +102,11 @@ GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
                                                  ...) G_GNUC_PRINTF (5, 6);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   procedure gtk_message_dialog_set_markup(message_dialog:PGtkMessageDialog; str:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                      ...) G_GNUC_PRINTF (2, 3);
@@ -112,6 +114,7 @@ GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
                                                      ...) G_GNUC_PRINTF (2, 3);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* error 
                                                        ...) G_GNUC_PRINTF (2, 3);
@@ -119,8 +122,10 @@ GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
                                                        ...) G_GNUC_PRINTF (2, 3);
  in declarator_list *)
  in declarator_list *)
+  { Zeile entfernt  }
   function gtk_message_dialog_get_message_area(message_dialog:PGtkMessageDialog):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MESSAGE_DIALOG_H__  }
   { was #define dname def_expr }
@@ -145,6 +150,10 @@ GType      gtk_message_dialog_get_type (void) G_GNUC_CONST;
     GTK_IS_MESSAGE_DIALOG:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_MESSAGE_DIALOG);
   end;
 
+  function gtk_message_dialog_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_message_dialog_set_markup(message_dialog:PGtkMessageDialog; str:Pchar);
   begin
     { You must implement this function }

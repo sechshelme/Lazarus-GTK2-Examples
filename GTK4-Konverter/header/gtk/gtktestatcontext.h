@@ -26,7 +26,7 @@
 
 #include <gtk/gtkatcontext.h>
 
-
+/* Zeile entfernt */
 
 /**
  * gtk_test_accessible_assert_role:
@@ -37,8 +37,8 @@
  * and raises an assertion if the condition is failed.
  */
 #define gtk_test_accessible_assert_role(accessible,role) \
-G_STMT_START { \
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+ { \
+  GtkAccessible *__a =  (accessible); \
   GtkAccessibleRole __r1 = (role); \
   GtkAccessibleRole __r2 = gtk_accessible_get_accessible_role (__a); \
   if (__r1 == __r2) ; else { \
@@ -46,7 +46,7 @@ G_STMT_START { \
                                                 #accessible ".accessible-role == " #role, \
                                                 __a, __r1, __r2); \
   } \
-} G_STMT_END
+} 
 
 /**
  * gtk_test_accessible_assert_property:
@@ -59,8 +59,8 @@ G_STMT_START { \
  * condition is not satisfied.
  */
 #define gtk_test_accessible_assert_property(accessible,property,...) \
-G_STMT_START { \
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+ { \
+  GtkAccessible *__a =  (accessible); \
   GtkAccessibleProperty __p = (property); \
   char *value__ = gtk_test_accessible_check_property (__a, __p, __VA_ARGS__); \
   if (value__ == NULL) ; else { \
@@ -68,7 +68,7 @@ G_STMT_START { \
     g_assertion_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg__); \
     g_free (msg__); \
   } \
-} G_STMT_END
+} 
 
 /**
  * gtk_test_accessible_assert_relation:
@@ -81,8 +81,8 @@ G_STMT_START { \
  * condition is not satisfied.
  */
 #define gtk_test_accessible_assert_relation(accessible,relation,...) \
-G_STMT_START { \
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+ { \
+  GtkAccessible *__a =  (accessible); \
   GtkAccessibleRelation __r = (relation); \
   char *value__ = gtk_test_accessible_check_relation (__a, __r, __VA_ARGS__); \
   if (value__ == NULL); else { \
@@ -90,7 +90,7 @@ G_STMT_START { \
     g_assertion_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg__); \
     g_free (msg__); \
   } \
-} G_STMT_END
+} 
 
 /**
  * gtk_test_accessible_assert_state:
@@ -103,8 +103,8 @@ G_STMT_START { \
  * condition is not satisfied.
  */
 #define gtk_test_accessible_assert_state(accessible,state,...) \
-G_STMT_START { \
-  GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
+ { \
+  GtkAccessible *__a =  (accessible); \
   GtkAccessibleState __s = (state); \
   char *value__ = gtk_test_accessible_check_state (__a, __s, __VA_ARGS__); \
   if (value__ == NULL); else { \
@@ -112,35 +112,35 @@ G_STMT_START { \
     g_assertion_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg__); \
     g_free (msg__); \
   } \
-} G_STMT_END
+} 
 
-
+/* Zeile entfernt */
 gboolean        gtk_test_accessible_has_role            (GtkAccessible         *accessible,
                                                          GtkAccessibleRole      role);
-
+/* Zeile entfernt */
 gboolean        gtk_test_accessible_has_property        (GtkAccessible         *accessible,
                                                          GtkAccessibleProperty  property);
-
+/* Zeile entfernt */
 gboolean        gtk_test_accessible_has_relation        (GtkAccessible         *accessible,
                                                          GtkAccessibleRelation  relation);
-
+/* Zeile entfernt */
 gboolean        gtk_test_accessible_has_state           (GtkAccessible         *accessible,
                                                          GtkAccessibleState     state);
 
-
+/* Zeile entfernt */
 char *          gtk_test_accessible_check_property      (GtkAccessible         *accessible,
                                                          GtkAccessibleProperty  property,
                                                          ...);
-
+/* Zeile entfernt */
 char *          gtk_test_accessible_check_relation      (GtkAccessible         *accessible,
                                                          GtkAccessibleRelation  relation,
                                                          ...);
-
+/* Zeile entfernt */
 char *          gtk_test_accessible_check_state         (GtkAccessible         *accessible,
                                                          GtkAccessibleState     state,
                                                          ...);
 
-
+/* Zeile entfernt */
 void    gtk_test_accessible_assertion_message_role      (const char        *domain,
                                                          const char        *file,
                                                          int                line,
@@ -150,4 +150,4 @@ void    gtk_test_accessible_assertion_message_role      (const char        *doma
                                                          GtkAccessibleRole  expected_role,
                                                          GtkAccessibleRole  actual_role);
 
-
+/* Zeile entfernt */

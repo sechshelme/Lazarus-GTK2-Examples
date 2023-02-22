@@ -31,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_PROGRESS_BAR            (gtk_progress_bar_get_type ())
 #define GTK_PROGRESS_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PROGRESS_BAR, GtkProgressBar))
@@ -41,48 +41,48 @@
 typedef struct _GtkProgressBar              GtkProgressBar;
 
 
-
-GType      gtk_progress_bar_get_type             (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType      gtk_progress_bar_get_type             (void) ;
+/* Zeile entfernt */
 GtkWidget* gtk_progress_bar_new                  (void);
 
-
+/* Zeile entfernt */
 void       gtk_progress_bar_pulse                (GtkProgressBar *pbar);
-
+/* Zeile entfernt */
 void       gtk_progress_bar_set_text             (GtkProgressBar *pbar,
                                                   const char     *text);
-
+/* Zeile entfernt */
 void       gtk_progress_bar_set_fraction         (GtkProgressBar *pbar,
                                                   double          fraction);
 
-
+/* Zeile entfernt */
 void       gtk_progress_bar_set_pulse_step       (GtkProgressBar *pbar,
                                                   double          fraction);
-
+/* Zeile entfernt */
 void       gtk_progress_bar_set_inverted         (GtkProgressBar *pbar,
                                                   gboolean        inverted);
 
-
+/* Zeile entfernt */
 const char *      gtk_progress_bar_get_text       (GtkProgressBar *pbar);
-
+/* Zeile entfernt */
 double             gtk_progress_bar_get_fraction   (GtkProgressBar *pbar);
-
+/* Zeile entfernt */
 double             gtk_progress_bar_get_pulse_step (GtkProgressBar *pbar);
 
-
+/* Zeile entfernt */
 gboolean           gtk_progress_bar_get_inverted    (GtkProgressBar *pbar);
-
+/* Zeile entfernt */
 void               gtk_progress_bar_set_ellipsize (GtkProgressBar     *pbar,
                                                    PangoEllipsizeMode  mode);
-
+/* Zeile entfernt */
 PangoEllipsizeMode gtk_progress_bar_get_ellipsize (GtkProgressBar     *pbar);
 
-
+/* Zeile entfernt */
 void               gtk_progress_bar_set_show_text (GtkProgressBar     *pbar,
                                                    gboolean            show_text);
-
+/* Zeile entfernt */
 gboolean           gtk_progress_bar_get_show_text (GtkProgressBar     *pbar);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_PROGRESS_BAR_H__ */

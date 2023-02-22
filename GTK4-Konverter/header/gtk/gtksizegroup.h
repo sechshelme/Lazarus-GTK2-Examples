@@ -25,7 +25,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_SIZE_GROUP            (gtk_size_group_get_type ())
 #define GTK_SIZE_GROUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SIZE_GROUP, GtkSizeGroup))
@@ -38,25 +38,25 @@ struct _GtkSizeGroup
   GObject parent_instance;
 };
 
+/* Zeile entfernt */
+GType            gtk_size_group_get_type      (void) ;
 
-GType            gtk_size_group_get_type      (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkSizeGroup *   gtk_size_group_new           (GtkSizeGroupMode  mode);
-
+/* Zeile entfernt */
 void             gtk_size_group_set_mode      (GtkSizeGroup     *size_group,
 					       GtkSizeGroupMode  mode);
-
+/* Zeile entfernt */
 GtkSizeGroupMode gtk_size_group_get_mode      (GtkSizeGroup     *size_group);
-
+/* Zeile entfernt */
 void             gtk_size_group_add_widget    (GtkSizeGroup     *size_group,
 					       GtkWidget        *widget);
-
+/* Zeile entfernt */
 void             gtk_size_group_remove_widget (GtkSizeGroup     *size_group,
 					       GtkWidget        *widget);
-
+/* Zeile entfernt */
 GSList *         gtk_size_group_get_widgets   (GtkSizeGroup     *size_group);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_SIZE_GROUP_H__ */

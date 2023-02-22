@@ -1,6 +1,7 @@
 
   Type
   PGtkBoxLayout  = ^GtkBoxLayout;
+  PGtkLayoutManager  = ^GtkLayoutManager;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -29,34 +30,45 @@
 {$endif}
 {$include <gtk/gtkenums.h>}
 {$include <gtk/gtklayoutmanager.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_BOX_LAYOUT : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBoxLayout, gtk_box_layout, GTK, BOX_LAYOUT, GtkLayoutManager)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkBoxLayout, gtk_box_layout, GTK, BOX_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_box_layout_new(orientation:GtkOrientation):^GtkLayoutManager;
+
+  { Zeile entfernt  }
   procedure gtk_box_layout_set_homogeneous(box_layout:PGtkBoxLayout; homogeneous:gboolean);
 
+  { Zeile entfernt  }
   function gtk_box_layout_get_homogeneous(box_layout:PGtkBoxLayout):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_box_layout_set_spacing(box_layout:PGtkBoxLayout; spacing:guint);
 
+  { Zeile entfernt  }
   function gtk_box_layout_get_spacing(box_layout:PGtkBoxLayout):guint;
 
+  { Zeile entfernt  }
   procedure gtk_box_layout_set_baseline_position(box_layout:PGtkBoxLayout; position:GtkBaselinePosition);
 
+  { Zeile entfernt  }
   function gtk_box_layout_get_baseline_position(box_layout:PGtkBoxLayout):GtkBaselinePosition;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_BOX_LAYOUT : longint; { return type might be wrong }
     begin
       GTK_TYPE_BOX_LAYOUT:=gtk_box_layout_get_type;
     end;
 
+  function gtk_box_layout_new(orientation:GtkOrientation):PGtkLayoutManager;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_box_layout_set_homogeneous(box_layout:PGtkBoxLayout; homogeneous:gboolean);
   begin
     { You must implement this function }

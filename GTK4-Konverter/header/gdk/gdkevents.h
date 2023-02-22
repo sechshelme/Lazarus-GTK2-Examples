@@ -36,7 +36,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-
+/* Zeile entfernt */
 
 
 #define GDK_TYPE_EVENT          (gdk_event_get_type ())
@@ -359,166 +359,166 @@ typedef enum
   GDK_CROSSING_DEVICE_SWITCH
 } GdkCrossingMode;
 
+/* Zeile entfernt */
+GType                   gdk_event_get_type              (void) ;
+/* Zeile entfernt */
+GType                   gdk_event_sequence_get_type     (void) ;
 
-GType                   gdk_event_get_type              (void) G_GNUC_CONST;
-
-GType                   gdk_event_sequence_get_type     (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GdkEvent *              gdk_event_ref                   (GdkEvent *event);
-
+/* Zeile entfernt */
 void                    gdk_event_unref                 (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkEventType            gdk_event_get_event_type        (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkSurface *            gdk_event_get_surface           (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkSeat *               gdk_event_get_seat              (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkDevice *             gdk_event_get_device            (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkDeviceTool *         gdk_event_get_device_tool       (GdkEvent *event);
 
-
+/* Zeile entfernt */
 guint32                 gdk_event_get_time              (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkDisplay *            gdk_event_get_display           (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkEventSequence *      gdk_event_get_event_sequence    (GdkEvent *event);
 
-
+/* Zeile entfernt */
 GdkModifierType         gdk_event_get_modifier_state    (GdkEvent *event);
 
-
+/* Zeile entfernt */
 gboolean                gdk_event_get_position          (GdkEvent  *event,
 					                 double	   *x,
 					                 double	   *y);
-
+/* Zeile entfernt */
 gboolean                gdk_event_get_axes              (GdkEvent  *event,
                                                          double   **axes,
                                                          guint     *n_axes);
-
+/* Zeile entfernt */
 gboolean                gdk_event_get_axis              (GdkEvent   *event,
                                                          GdkAxisUse  axis_use,
                                                          double     *value);
-
+/* Zeile entfernt */
 GdkTimeCoord *          gdk_event_get_history           (GdkEvent *event,
                                                          guint    *out_n_coords);
-
+/* Zeile entfernt */
 gboolean                gdk_event_get_pointer_emulated (GdkEvent *event);
 
-
-GType                   gdk_button_event_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_button_event_get_type       (void) ;
+/* Zeile entfernt */
 guint                   gdk_button_event_get_button     (GdkEvent *event);
-
-GType                   gdk_scroll_event_get_type       (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_scroll_event_get_type       (void) ;
+/* Zeile entfernt */
 GdkScrollDirection      gdk_scroll_event_get_direction  (GdkEvent *event);
-
+/* Zeile entfernt */
 void                    gdk_scroll_event_get_deltas     (GdkEvent *event,
                                                          double   *delta_x,
                                                          double   *delta_y);
 GDK_AVAILABLE_IN_4_8
 GdkScrollUnit           gdk_scroll_event_get_unit       (GdkEvent *event);
 
-
+/* Zeile entfernt */
 gboolean                gdk_scroll_event_is_stop        (GdkEvent *event);
-
-GType                   gdk_key_event_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_key_event_get_type          (void) ;
+/* Zeile entfernt */
 guint                   gdk_key_event_get_keyval        (GdkEvent *event);
-
+/* Zeile entfernt */
 guint                   gdk_key_event_get_keycode       (GdkEvent *event);
-
+/* Zeile entfernt */
 GdkModifierType         gdk_key_event_get_consumed_modifiers (GdkEvent *event);
-
+/* Zeile entfernt */
 guint                   gdk_key_event_get_layout        (GdkEvent *event);
-
+/* Zeile entfernt */
 guint                   gdk_key_event_get_level         (GdkEvent *event);
-
+/* Zeile entfernt */
 gboolean                gdk_key_event_is_modifier       (GdkEvent *event);
-
-GType                   gdk_focus_event_get_type        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_focus_event_get_type        (void) ;
+/* Zeile entfernt */
 gboolean                gdk_focus_event_get_in          (GdkEvent *event);
-
-GType                   gdk_touch_event_get_type        (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_touch_event_get_type        (void) ;
+/* Zeile entfernt */
 gboolean                gdk_touch_event_get_emulating_pointer (GdkEvent *event);
-
-GType                   gdk_crossing_event_get_type     (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_crossing_event_get_type     (void) ;
+/* Zeile entfernt */
 GdkCrossingMode         gdk_crossing_event_get_mode     (GdkEvent *event);
-
+/* Zeile entfernt */
 GdkNotifyType           gdk_crossing_event_get_detail   (GdkEvent *event);
-
+/* Zeile entfernt */
 gboolean                gdk_crossing_event_get_focus    (GdkEvent *event);
-
-GType                   gdk_touchpad_event_get_type     (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_touchpad_event_get_type     (void) ;
+/* Zeile entfernt */
 GdkTouchpadGesturePhase
                         gdk_touchpad_event_get_gesture_phase (GdkEvent *event);
-
+/* Zeile entfernt */
 guint                   gdk_touchpad_event_get_n_fingers     (GdkEvent *event);
-
+/* Zeile entfernt */
 void                    gdk_touchpad_event_get_deltas        (GdkEvent *event,
                                                               double   *dx,
                                                               double   *dy);
-
+/* Zeile entfernt */
 double                  gdk_touchpad_event_get_pinch_angle_delta (GdkEvent *event);
-
+/* Zeile entfernt */
 double                  gdk_touchpad_event_get_pinch_scale       (GdkEvent *event);
-
-GType                   gdk_pad_event_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_pad_event_get_type          (void) ;
+/* Zeile entfernt */
 guint                   gdk_pad_event_get_button        (GdkEvent *event);
-
+/* Zeile entfernt */
 void                    gdk_pad_event_get_axis_value    (GdkEvent *event,
                                                          guint    *index,
                                                          double   *value);
-
+/* Zeile entfernt */
 void                    gdk_pad_event_get_group_mode    (GdkEvent *event,
                                                          guint    *group,
                                                          guint    *mode);
-
-GType                   gdk_dnd_event_get_type          (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_dnd_event_get_type          (void) ;
+/* Zeile entfernt */
 GdkDrop *               gdk_dnd_event_get_drop          (GdkEvent *event);
-
-GType                   gdk_grab_broken_event_get_type  (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType                   gdk_grab_broken_event_get_type  (void) ;
+/* Zeile entfernt */
 GdkSurface *            gdk_grab_broken_event_get_grab_surface (GdkEvent *event);
-
+/* Zeile entfernt */
 gboolean                gdk_grab_broken_event_get_implicit     (GdkEvent *event);
 
+/* Zeile entfernt */
+GType                   gdk_motion_event_get_type       (void) ;
 
-GType                   gdk_motion_event_get_type       (void) G_GNUC_CONST;
+/* Zeile entfernt */
+GType                   gdk_delete_event_get_type       (void) ;
+/* Zeile entfernt */
+GType                   gdk_proximity_event_get_type    (void) ;
 
-
-GType                   gdk_delete_event_get_type       (void) G_GNUC_CONST;
-
-GType                   gdk_proximity_event_get_type    (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 gboolean                gdk_event_triggers_context_menu (GdkEvent *event);
 
-
+/* Zeile entfernt */
 gboolean                gdk_events_get_distance         (GdkEvent *event1,
                                                          GdkEvent *event2,
                                                          double   *distance);
-
+/* Zeile entfernt */
 gboolean                gdk_events_get_angle            (GdkEvent *event1,
                                                          GdkEvent *event2,
                                                          double   *angle);
-
+/* Zeile entfernt */
 gboolean                gdk_events_get_center           (GdkEvent *event1,
                                                          GdkEvent *event2,
                                                          double   *x,
@@ -541,16 +541,16 @@ typedef enum {
   GDK_KEY_MATCH_EXACT
 } GdkKeyMatch;
 
-
+/* Zeile entfernt */
 GdkKeyMatch            gdk_key_event_matches (GdkEvent        *event,
                                               guint            keyval,
                                               GdkModifierType  modifiers);
 
-
+/* Zeile entfernt */
 gboolean               gdk_key_event_get_match (GdkEvent        *event,
                                                 guint           *keyval,
                                                 GdkModifierType *modifiers);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_EVENTS_H__ */

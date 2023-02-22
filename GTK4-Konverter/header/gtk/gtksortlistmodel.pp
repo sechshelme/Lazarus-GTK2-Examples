@@ -34,33 +34,38 @@
 {$include <gio/gio.h>}
 {$include <gtk/gtkwidget.h>}
 {$include <gtk/gtksorter.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SORT_LIST_MODEL : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODEL, GObject)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODEL, GObject)
-(* error 
-                                                                 GtkSorter             *sorter);
- in declarator_list *)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_sort_list_model_new(model:PGListModel; sorter:PGtkSorter):^GtkSortListModel;
+
+  { Zeile entfernt  }
   procedure gtk_sort_list_model_set_sorter(self:PGtkSortListModel; sorter:PGtkSorter);
 
+  { Zeile entfernt  }
   function gtk_sort_list_model_get_sorter(self:PGtkSortListModel):^GtkSorter;
 
+  { Zeile entfernt  }
   procedure gtk_sort_list_model_set_model(self:PGtkSortListModel; model:PGListModel);
 
+  { Zeile entfernt  }
   function gtk_sort_list_model_get_model(self:PGtkSortListModel):^GListModel;
 
+  { Zeile entfernt  }
   procedure gtk_sort_list_model_set_incremental(self:PGtkSortListModel; incremental:gboolean);
 
+  { Zeile entfernt  }
   function gtk_sort_list_model_get_incremental(self:PGtkSortListModel):gboolean;
 
+  { Zeile entfernt  }
   function gtk_sort_list_model_get_pending(self:PGtkSortListModel):guint;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SORT_LIST_MODEL_H__  }
   { was #define dname def_expr }
@@ -69,6 +74,10 @@ G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODE
       GTK_TYPE_SORT_LIST_MODEL:=gtk_sort_list_model_get_type;
     end;
 
+  function gtk_sort_list_model_new(model:PGListModel; sorter:PGtkSorter):PGtkSortListModel;
+  begin
+    { You must implement this function }
+  end;
   procedure gtk_sort_list_model_set_sorter(self:PGtkSortListModel; sorter:PGtkSorter);
   begin
     { You must implement this function }

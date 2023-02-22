@@ -36,6 +36,7 @@
 {$include <gtk/gtklayoutmanager.h>}
 {$include <gtk/gtkconstraint.h>}
 {$include <gtk/gtkconstraintguide.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_LAYOUT : longint; { return type might be wrong }
@@ -46,46 +47,51 @@
   { was #define dname def_expr }
   function GTK_CONSTRAINT_VFL_PARSER_ERROR : longint; { return type might be wrong }
 
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraintLayoutChild, gtk_constraint_layout_child, GTK, CONSTRAINT_LAYOUT_CHILD, GtkLayoutChild)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraintLayoutChild, gtk_constraint_layout_child, GTK, CONSTRAINT_LAYOUT_CHILD, GtkLayoutChild)
- in declarator_list *)
-(* error 
-G_DECLARE_FINAL_TYPE (GtkConstraintLayout, gtk_constraint_layout, GTK, CONSTRAINT_LAYOUT, GtkLayoutManager)
- in declarator_list *)
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  { Zeile entfernt  }
+  function gtk_constraint_vfl_parser_error_quark:GQuark;
+
+  { Zeile entfernt  }
   function gtk_constraint_layout_new:^GtkLayoutManager;
 
+  { Zeile entfernt  }
   procedure gtk_constraint_layout_add_constraint(layout:PGtkConstraintLayout; constraint:PGtkConstraint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_layout_remove_constraint(layout:PGtkConstraintLayout; constraint:PGtkConstraint);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_layout_add_guide(layout:PGtkConstraintLayout; guide:PGtkConstraintGuide);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_layout_remove_guide(layout:PGtkConstraintLayout; guide:PGtkConstraintGuide);
 
+  { Zeile entfernt  }
   procedure gtk_constraint_layout_remove_all_constraints(layout:PGtkConstraintLayout);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
 (* Const before type ignored *)
-(* error 
-                                                                                 ...) G_GNUC_NULL_TERMINATED;
- in declarator_list *)
+  function gtk_constraint_layout_add_constraints_from_description(layout:PGtkConstraintLayout; lines:PPchar; n_lines:gsize; hspacing:longint; vspacing:longint; 
+             error:PPGError; first_view:Pchar; args:array of const):^GList;
 
-    var
- : GList;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before declarator ignored *)
-
   function gtk_constraint_layout_add_constraints_from_descriptionv(layout:PGtkConstraintLayout; lines:PPchar; n_lines:gsize; hspacing:longint; vspacing:longint; 
              views:PGHashTable; error:PPGError):^GList;
 
+  { Zeile entfernt  }
   function gtk_constraint_layout_observe_constraints(layout:PGtkConstraintLayout):^GListModel;
 
+  { Zeile entfernt  }
   function gtk_constraint_layout_observe_guides(layout:PGtkConstraintLayout):^GListModel;
 
+  { Zeile entfernt  }
   { was #define dname def_expr }
   function GTK_TYPE_CONSTRAINT_LAYOUT : longint; { return type might be wrong }
     begin
@@ -104,6 +110,10 @@ G_DECLARE_FINAL_TYPE (GtkConstraintLayout, gtk_constraint_layout, GTK, CONSTRAIN
       GTK_CONSTRAINT_VFL_PARSER_ERROR:=gtk_constraint_vfl_parser_error_quark;
     end;
 
+  function gtk_constraint_vfl_parser_error_quark:GQuark;
+  begin
+    { You must implement this function }
+  end;
   function gtk_constraint_layout_new:PGtkLayoutManager;
   begin
     { You must implement this function }
@@ -125,6 +135,11 @@ G_DECLARE_FINAL_TYPE (GtkConstraintLayout, gtk_constraint_layout, GTK, CONSTRAIN
     { You must implement this function }
   end;
   procedure gtk_constraint_layout_remove_all_constraints(layout:PGtkConstraintLayout);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_constraint_layout_add_constraints_from_description(layout:PGtkConstraintLayout; lines:PPchar; n_lines:gsize; hspacing:longint; vspacing:longint; 
+             error:PPGError; first_view:Pchar):PGList;
   begin
     { You must implement this function }
   end;

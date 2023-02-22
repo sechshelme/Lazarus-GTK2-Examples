@@ -37,6 +37,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SWITCH : longint; { return type might be wrong }
@@ -54,23 +55,26 @@
 
   type
     _GtkSwitch = GtkSwitch;
-(* error 
-GType gtk_switch_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_switch_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_switch_new:^GtkWidget;
 
+  { Zeile entfernt  }
   procedure gtk_switch_set_active(self:PGtkSwitch; is_active:gboolean);
 
+  { Zeile entfernt  }
   function gtk_switch_get_active(self:PGtkSwitch):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_switch_set_state(self:PGtkSwitch; state:gboolean);
 
+  { Zeile entfernt  }
   function gtk_switch_get_state(self:PGtkSwitch):gboolean;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SWITCH_H__  }
   { was #define dname def_expr }
@@ -95,6 +99,10 @@ GType gtk_switch_get_type (void) G_GNUC_CONST;
     GTK_IS_SWITCH:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SWITCH);
   end;
 
+  function gtk_switch_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_switch_new:PGtkWidget;
   begin
     { You must implement this function }

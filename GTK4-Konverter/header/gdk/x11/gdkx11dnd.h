@@ -24,7 +24,7 @@
 
 #include <gdk/gdk.h>
 
-
+/* Zeile entfernt */
 
 #define GDK_TYPE_X11_DRAG              (gdk_x11_drag_get_type ())
 #define GDK_X11_DRAG(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_DRAG, GdkX11Drag))
@@ -40,9 +40,9 @@ typedef GdkDrag GdkX11Drag;
 #endif
 typedef struct _GdkX11DragClass GdkX11DragClass;
 
-
+/* Zeile entfernt */
 GType    gdk_x11_drag_get_type (void);
 
-
+/* Zeile entfernt */
 
 #endif /* __GDK_X11_DRAG_H__ */

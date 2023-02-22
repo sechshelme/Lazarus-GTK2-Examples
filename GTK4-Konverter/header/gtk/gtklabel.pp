@@ -40,6 +40,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_LABEL : longint; { return type might be wrong }
@@ -57,122 +58,166 @@
 
   type
     _GtkLabel = GtkLabel;
-(* error 
-GType                 gtk_label_get_type          (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_label_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_label_new(str:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_label_new_with_mnemonic(str:Pchar):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_label_set_text(self:PGtkLabel; str:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_label_get_text(self:PGtkLabel):^char;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_attributes(self:PGtkLabel; attrs:PPangoAttrList);
 
+  { Zeile entfernt  }
   function gtk_label_get_attributes(self:PGtkLabel):^PangoAttrList;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_label_set_label(self:PGtkLabel; str:Pchar);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_label_get_label(self:PGtkLabel):^char;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_label_set_markup(self:PGtkLabel; str:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_label_set_use_markup(self:PGtkLabel; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_label_get_use_markup(self:PGtkLabel):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_use_underline(self:PGtkLabel; setting:gboolean);
 
+  { Zeile entfernt  }
   function gtk_label_get_use_underline(self:PGtkLabel):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_label_set_markup_with_mnemonic(self:PGtkLabel; str:Pchar);
 
+  { Zeile entfernt  }
   function gtk_label_get_mnemonic_keyval(self:PGtkLabel):guint;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_mnemonic_widget(self:PGtkLabel; widget:PGtkWidget);
 
+  { Zeile entfernt  }
   function gtk_label_get_mnemonic_widget(self:PGtkLabel):^GtkWidget;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   procedure gtk_label_set_text_with_mnemonic(self:PGtkLabel; str:Pchar);
 
+  { Zeile entfernt  }
   procedure gtk_label_set_justify(self:PGtkLabel; jtype:GtkJustification);
 
+  { Zeile entfernt  }
   function gtk_label_get_justify(self:PGtkLabel):GtkJustification;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_ellipsize(self:PGtkLabel; mode:PangoEllipsizeMode);
 
+  { Zeile entfernt  }
   function gtk_label_get_ellipsize(self:PGtkLabel):PangoEllipsizeMode;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_width_chars(self:PGtkLabel; n_chars:longint);
 
+  { Zeile entfernt  }
   function gtk_label_get_width_chars(self:PGtkLabel):longint;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_max_width_chars(self:PGtkLabel; n_chars:longint);
 
+  { Zeile entfernt  }
   function gtk_label_get_max_width_chars(self:PGtkLabel):longint;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_lines(self:PGtkLabel; lines:longint);
 
+  { Zeile entfernt  }
   function gtk_label_get_lines(self:PGtkLabel):longint;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_wrap(self:PGtkLabel; wrap:gboolean);
 
+  { Zeile entfernt  }
   function gtk_label_get_wrap(self:PGtkLabel):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_label_set_wrap_mode(self:PGtkLabel; wrap_mode:PangoWrapMode);
 
+  { Zeile entfernt  }
   function gtk_label_get_wrap_mode(self:PGtkLabel):PangoWrapMode;
 
-(* error 
-void          gtk_label_set_natural_wrap_mode     (GtkLabel         *self,
-in declaration at line 127 *)
-(* error 
-GtkNaturalWrapMode gtk_label_get_natural_wrap_mode(GtkLabel         *self);
- in declarator_list *)
-    procedure gtk_label_set_selectable(self:PGtkLabel; setting:gboolean);
+  { Zeile entfernt  }
+  procedure gtk_label_set_natural_wrap_mode(self:PGtkLabel; wrap_mode:GtkNaturalWrapMode);
 
-    function gtk_label_get_selectable(self:PGtkLabel):gboolean;
+  { Zeile entfernt  }
+  function gtk_label_get_natural_wrap_mode(self:PGtkLabel):GtkNaturalWrapMode;
 
-    procedure gtk_label_select_region(self:PGtkLabel; start_offset:longint; end_offset:longint);
+  { Zeile entfernt  }
+  procedure gtk_label_set_selectable(self:PGtkLabel; setting:gboolean);
 
-    function gtk_label_get_selection_bounds(self:PGtkLabel; start:Plongint; end:Plongint):gboolean;
+  { Zeile entfernt  }
+  function gtk_label_get_selectable(self:PGtkLabel):gboolean;
 
-    function gtk_label_get_layout(self:PGtkLabel):^PangoLayout;
+  { Zeile entfernt  }
+  procedure gtk_label_select_region(self:PGtkLabel; start_offset:longint; end_offset:longint);
 
-    procedure gtk_label_get_layout_offsets(self:PGtkLabel; x:Plongint; y:Plongint);
+  { Zeile entfernt  }
+  function gtk_label_get_selection_bounds(self:PGtkLabel; start:Plongint; end:Plongint):gboolean;
 
-    procedure gtk_label_set_single_line_mode(self:PGtkLabel; single_line_mode:gboolean);
+  { Zeile entfernt  }
+  function gtk_label_get_layout(self:PGtkLabel):^PangoLayout;
 
-    function gtk_label_get_single_line_mode(self:PGtkLabel):gboolean;
+  { Zeile entfernt  }
+  procedure gtk_label_get_layout_offsets(self:PGtkLabel; x:Plongint; y:Plongint);
 
+  { Zeile entfernt  }
+  procedure gtk_label_set_single_line_mode(self:PGtkLabel; single_line_mode:gboolean);
+
+  { Zeile entfernt  }
+  function gtk_label_get_single_line_mode(self:PGtkLabel):gboolean;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-    function gtk_label_get_current_uri(self:PGtkLabel):^char;
+  function gtk_label_get_current_uri(self:PGtkLabel):^char;
 
-    procedure gtk_label_set_xalign(self:PGtkLabel; xalign:single);
+  { Zeile entfernt  }
+  procedure gtk_label_set_xalign(self:PGtkLabel; xalign:single);
 
-    function gtk_label_get_xalign(self:PGtkLabel):single;
+  { Zeile entfernt  }
+  function gtk_label_get_xalign(self:PGtkLabel):single;
 
-    procedure gtk_label_set_yalign(self:PGtkLabel; yalign:single);
+  { Zeile entfernt  }
+  procedure gtk_label_set_yalign(self:PGtkLabel; yalign:single);
 
-    function gtk_label_get_yalign(self:PGtkLabel):single;
+  { Zeile entfernt  }
+  function gtk_label_get_yalign(self:PGtkLabel):single;
 
-    procedure gtk_label_set_extra_menu(self:PGtkLabel; model:PGMenuModel);
+  { Zeile entfernt  }
+  procedure gtk_label_set_extra_menu(self:PGtkLabel; model:PGMenuModel);
 
-    function gtk_label_get_extra_menu(self:PGtkLabel):^GMenuModel;
+  { Zeile entfernt  }
+  function gtk_label_get_extra_menu(self:PGtkLabel):^GMenuModel;
 
 (* error 
 void             gtk_label_set_tabs (GtkLabel      *self,
@@ -180,10 +225,8 @@ in declaration at line 182 *)
 (* error 
 PangoTabArray * gtk_label_get_tabs  (GtkLabel      *self);
  in declarator_list *)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkLabel, g_object_unref)
-(* error 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkLabel, g_object_unref)
+    { Zeile entfernt  }
+    { Zeile entfernt  }
 {$endif}
     { __GTK_LABEL_H__  }
   { was #define dname def_expr }
@@ -208,6 +251,10 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkLabel, g_object_unref)
     GTK_IS_LABEL:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_LABEL);
   end;
 
+  function gtk_label_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_label_new(str:Pchar):PGtkWidget;
   begin
     { You must implement this function }
@@ -336,64 +383,72 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkLabel, g_object_unref)
   begin
     { You must implement this function }
   end;
-    procedure gtk_label_set_selectable(self:PGtkLabel; setting:gboolean);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_selectable(self:PGtkLabel):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_select_region(self:PGtkLabel; start_offset:longint; end_offset:longint);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_selection_bounds(self:PGtkLabel; start:Plongint; end:Plongint):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_layout(self:PGtkLabel):PPangoLayout;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_get_layout_offsets(self:PGtkLabel; x:Plongint; y:Plongint);
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_set_single_line_mode(self:PGtkLabel; single_line_mode:gboolean);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_single_line_mode(self:PGtkLabel):gboolean;
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_current_uri(self:PGtkLabel):Pchar;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_set_xalign(self:PGtkLabel; xalign:single);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_xalign(self:PGtkLabel):single;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_set_yalign(self:PGtkLabel; yalign:single);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_yalign(self:PGtkLabel):single;
-    begin
-      { You must implement this function }
-    end;
-    procedure gtk_label_set_extra_menu(self:PGtkLabel; model:PGMenuModel);
-    begin
-      { You must implement this function }
-    end;
-    function gtk_label_get_extra_menu(self:PGtkLabel):PGMenuModel;
-    begin
-      { You must implement this function }
-    end;
+  procedure gtk_label_set_natural_wrap_mode(self:PGtkLabel; wrap_mode:GtkNaturalWrapMode);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_natural_wrap_mode(self:PGtkLabel):GtkNaturalWrapMode;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_set_selectable(self:PGtkLabel; setting:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_selectable(self:PGtkLabel):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_select_region(self:PGtkLabel; start_offset:longint; end_offset:longint);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_selection_bounds(self:PGtkLabel; start:Plongint; end:Plongint):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_layout(self:PGtkLabel):PPangoLayout;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_get_layout_offsets(self:PGtkLabel; x:Plongint; y:Plongint);
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_set_single_line_mode(self:PGtkLabel; single_line_mode:gboolean);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_single_line_mode(self:PGtkLabel):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_current_uri(self:PGtkLabel):Pchar;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_set_xalign(self:PGtkLabel; xalign:single);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_xalign(self:PGtkLabel):single;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_set_yalign(self:PGtkLabel; yalign:single);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_yalign(self:PGtkLabel):single;
+  begin
+    { You must implement this function }
+  end;
+  procedure gtk_label_set_extra_menu(self:PGtkLabel; model:PGMenuModel);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_label_get_extra_menu(self:PGtkLabel):PGMenuModel;
+  begin
+    { You must implement this function }
+  end;
 

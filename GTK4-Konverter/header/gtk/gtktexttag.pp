@@ -62,6 +62,7 @@
 {$endif}
 {$include <gdk/gdk.h>}
 {$include <gtk/gtkenums.h>}
+  { Zeile entfernt  }
 
   type
     _GtkTextIter = GtkTextIter;
@@ -111,22 +112,24 @@
         padding : array[0..7] of gpointer;
       end;
 
-(* error 
-GType        gtk_text_tag_get_type     (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_text_tag_get_type:GType;
+
+  { Zeile entfernt  }
 (* Const before type ignored *)
-
   function gtk_text_tag_new(name:Pchar):^GtkTextTag;
 
+  { Zeile entfernt  }
   function gtk_text_tag_get_priority(tag:PGtkTextTag):longint;
 
+  { Zeile entfernt  }
   procedure gtk_text_tag_set_priority(tag:PGtkTextTag; priority:longint);
 
+  { Zeile entfernt  }
   procedure gtk_text_tag_changed(tag:PGtkTextTag; size_changed:gboolean);
 
+  { Zeile entfernt  }
 {$endif}
   { was #define dname def_expr }
   function GTK_TYPE_TEXT_TAG : longint; { return type might be wrong }
@@ -174,6 +177,10 @@ GType        gtk_text_tag_get_type     (void) G_GNUC_CONST;
     GTK_TEXT_TAG_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_TEXT_TAG,GtkTextTagClass);
   end;
 
+  function gtk_text_tag_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_text_tag_new(name:Pchar):PGtkTextTag;
   begin
     { You must implement this function }

@@ -34,6 +34,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkwidget.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_SEPARATOR : longint; { return type might be wrong }
@@ -51,15 +52,14 @@
 
   type
     _GtkSeparator = GtkSeparator;
-(* error 
-GType       gtk_separator_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_separator_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_separator_new(orientation:GtkOrientation):^GtkWidget;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_SEPARATOR_H__  }
   { was #define dname def_expr }
@@ -84,6 +84,10 @@ GType       gtk_separator_get_type (void) G_GNUC_CONST;
     GTK_IS_SEPARATOR:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_SEPARATOR);
   end;
 
+  function gtk_separator_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_separator_new(orientation:GtkOrientation):PGtkWidget;
   begin
     { You must implement this function }

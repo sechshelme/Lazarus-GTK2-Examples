@@ -32,6 +32,7 @@
 {$error "Only <gtk/gtk.h> can be included directly."}
 {$endif}
 {$include <gtk/gtkgesturesingle.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_GESTURE_LONG_PRESS : longint; { return type might be wrong }
@@ -65,19 +66,20 @@
   type
     _GtkGestureLongPress = GtkGestureLongPress;
     _GtkGestureLongPressClass = GtkGestureLongPressClass;
-(* error 
-GType        gtk_gesture_long_press_get_type   (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
 
-    var
- : GType;
+  function gtk_gesture_long_press_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_gesture_long_press_new:^GtkGesture;
 
+  { Zeile entfernt  }
   procedure gtk_gesture_long_press_set_delay_factor(gesture:PGtkGestureLongPress; delay_factor:double);
 
+  { Zeile entfernt  }
   function gtk_gesture_long_press_get_delay_factor(gesture:PGtkGestureLongPress):double;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_GESTURE_LONG_PRESS_H__  }
   { was #define dname def_expr }
@@ -126,6 +128,10 @@ GType        gtk_gesture_long_press_get_type   (void) G_GNUC_CONST;
     GTK_GESTURE_LONG_PRESS_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_LONG_PRESS,GtkGestureLongPressClass);
   end;
 
+  function gtk_gesture_long_press_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_gesture_long_press_new:PGtkGesture;
   begin
     { You must implement this function }

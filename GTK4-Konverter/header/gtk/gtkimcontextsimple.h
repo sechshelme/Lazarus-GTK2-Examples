@@ -25,7 +25,7 @@
 #include <gtk/gtkimcontext.h>
 
 
-
+/* Zeile entfernt */
 
 /*
  * No longer used by GTK, just left here on the off chance that some
@@ -58,9 +58,9 @@ struct _GtkIMContextSimpleClass
   GtkIMContextClass parent_class;
 };
 
-
-GType         gtk_im_context_simple_get_type  (void) G_GNUC_CONST;
-
+/* Zeile entfernt */
+GType         gtk_im_context_simple_get_type  (void) ;
+/* Zeile entfernt */
 GtkIMContext *gtk_im_context_simple_new       (void);
 
 GDK_DEPRECATED_IN_4_4_FOR(gtk_im_context_simple_add_compose_file)
@@ -68,12 +68,12 @@ void          gtk_im_context_simple_add_table (GtkIMContextSimple *context_simpl
                                                guint16            *data,
                                                int                 max_seq_len,
                                                int                 n_seqs);
-
+/* Zeile entfernt */
 void          gtk_im_context_simple_add_compose_file (GtkIMContextSimple *context_simple,
                                                       const char         *compose_file);
 
 
-
+/* Zeile entfernt */
 
 
 #endif /* __GTK_IM_CONTEXT_SIMPLE_H__ */

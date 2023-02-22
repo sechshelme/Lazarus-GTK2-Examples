@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-
+/* Zeile entfernt */
 
 #define GTK_TYPE_LEVEL_BAR            (gtk_level_bar_get_type ())
 #define GTK_LEVEL_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LEVEL_BAR, GtkLevelBar))
@@ -57,59 +57,59 @@
 typedef struct _GtkLevelBar        GtkLevelBar;
 
 
+/* Zeile entfernt */
+GType      gtk_level_bar_get_type           (void) ;
 
-GType      gtk_level_bar_get_type           (void) G_GNUC_CONST;
-
-
+/* Zeile entfernt */
 GtkWidget *gtk_level_bar_new                (void);
 
-
+/* Zeile entfernt */
 GtkWidget *gtk_level_bar_new_for_interval   (double       min_value,
                                              double       max_value);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_set_mode           (GtkLevelBar *self,
                                              GtkLevelBarMode mode);
-
+/* Zeile entfernt */
 GtkLevelBarMode gtk_level_bar_get_mode      (GtkLevelBar *self);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_set_value          (GtkLevelBar *self,
                                              double       value);
-
+/* Zeile entfernt */
 double     gtk_level_bar_get_value          (GtkLevelBar *self);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_set_min_value      (GtkLevelBar *self,
                                              double       value);
-
+/* Zeile entfernt */
 double     gtk_level_bar_get_min_value      (GtkLevelBar *self);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_set_max_value      (GtkLevelBar *self,
                                              double       value);
-
+/* Zeile entfernt */
 double     gtk_level_bar_get_max_value      (GtkLevelBar *self);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_set_inverted       (GtkLevelBar *self,
                                              gboolean     inverted);
 
-
+/* Zeile entfernt */
 gboolean   gtk_level_bar_get_inverted       (GtkLevelBar *self);
 
-
+/* Zeile entfernt */
 void       gtk_level_bar_add_offset_value   (GtkLevelBar *self,
                                              const char *name,
                                              double       value);
-
+/* Zeile entfernt */
 void       gtk_level_bar_remove_offset_value (GtkLevelBar *self,
                                               const char *name);
-
+/* Zeile entfernt */
 gboolean   gtk_level_bar_get_offset_value   (GtkLevelBar *self,
                                              const char *name,
                                              double      *value);
 
-
+/* Zeile entfernt */
 
 #endif /* __GTK_LEVEL_BAR_H__ */

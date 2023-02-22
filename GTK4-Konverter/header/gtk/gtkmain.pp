@@ -1,4 +1,6 @@
 
+  Type
+  PPangoLanguage  = ^PangoLanguage;
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
@@ -37,6 +39,7 @@
 {$include <gtk/gtkbox.h>}
 {$include <gtk/gtkwindow.h>}
 {$endif}
+  { Zeile entfernt  }
   {*
    * GTK_PRIORITY_RESIZE: (value 110)
    *
@@ -51,19 +54,24 @@
     GTK_PRIORITY_RESIZE = G_PRIORITY_HIGH_IDLE+10;    
   { Initialization, exit, mainloop and miscellaneous routines
     }
+  { Zeile entfernt  }
 
   procedure gtk_init;
 
+  { Zeile entfernt  }
   function gtk_init_check:gboolean;
 
+  { Zeile entfernt  }
   function gtk_is_initialized:gboolean;
 
 {$ifdef G_OS_WIN32}
   { Variants that are used to check for correct struct packing
    * when building GTK+-using code.
     }
+  { Zeile entfernt  }
   procedure gtk_init_abi_check(num_checks:longint; sizeof_GtkWindow:size_t; sizeof_GtkBox:size_t);
 
+  { Zeile entfernt  }
   function gtk_init_check_abi_check(num_checks:longint; sizeof_GtkWindow:size_t; sizeof_GtkBox:size_t):gboolean;
 
   { was #define dname(params) para_def_expr }
@@ -75,18 +83,17 @@
   function gtk_init_check : longint;  
 
 {$endif}
+  { Zeile entfernt  }
 
   procedure gtk_disable_setlocale;
 
-(* error 
-PangoLanguage *   gtk_get_default_language (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_get_default_language:^PangoLanguage;
 
-    var
- : PangoLanguage;
-
+  { Zeile entfernt  }
   function gtk_get_locale_direction:GtkTextDirection;
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_MAIN_H__  }
   procedure gtk_init;
@@ -124,6 +131,10 @@ PangoLanguage *   gtk_get_default_language (void) G_GNUC_CONST;
   end;
 
   procedure gtk_disable_setlocale;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_get_default_language:PPangoLanguage;
   begin
     { You must implement this function }
   end;

@@ -36,6 +36,7 @@
 {$endif}
 {$include <glib-object.h>}
 {$include <gdk/gdk.h>}
+  { Zeile entfernt  }
 
   { was #define dname def_expr }
   function GTK_TYPE_TREE_MODEL : longint; { return type might be wrong }
@@ -182,56 +183,72 @@
       end;
 
   { GtkTreePath operations  }
+  { Zeile entfernt  }
 
   function gtk_tree_path_new:^GtkTreePath;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_path_new_from_string(path:Pchar):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_path_new_from_indices(first_index:longint; args:array of const):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_path_new_from_indicesv(indices:Plongint; length:gsize):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_path_to_string(path:PGtkTreePath):^char;
 
+  { Zeile entfernt  }
   function gtk_tree_path_new_first:^GtkTreePath;
 
+  { Zeile entfernt  }
   procedure gtk_tree_path_append_index(path:PGtkTreePath; index_:longint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_path_prepend_index(path:PGtkTreePath; index_:longint);
 
+  { Zeile entfernt  }
   function gtk_tree_path_get_depth(path:PGtkTreePath):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_path_get_indices(path:PGtkTreePath):^longint;
 
+  { Zeile entfernt  }
   function gtk_tree_path_get_indices_with_depth(path:PGtkTreePath; depth:Plongint):^longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_path_free(path:PGtkTreePath);
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_path_copy(path:PGtkTreePath):^GtkTreePath;
 
-(* error 
-GType        gtk_tree_path_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_tree_path_get_type:GType;
 
-    var
- : GType;
+  { Zeile entfernt  }
 (* Const before type ignored *)
 (* Const before type ignored *)
-
   function gtk_tree_path_compare(a:PGtkTreePath; b:PGtkTreePath):longint;
 
+  { Zeile entfernt  }
   procedure gtk_tree_path_next(path:PGtkTreePath);
 
+  { Zeile entfernt  }
   function gtk_tree_path_prev(path:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_path_up(path:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_path_down(path:PGtkTreePath);
 
+  { Zeile entfernt  }
   function gtk_tree_path_is_ancestor(path:PGtkTreePath; descendant:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_path_is_descendant(path:PGtkTreePath; ancestor:PGtkTreePath):gboolean;
 
   {*
@@ -241,108 +258,139 @@ GType        gtk_tree_path_get_type         (void) G_GNUC_CONST;
    * same row (a `GtkTreePath` refers to a position, not a fixed row). Create a
    * new GtkTreeRowReference with gtk_tree_row_reference_new().
     }
-(* error 
-GType                gtk_tree_row_reference_get_type (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_tree_row_reference_get_type:GType;
 
-    var
- : GType;
-
+  { Zeile entfernt  }
   function gtk_tree_row_reference_new(model:PGtkTreeModel; path:PGtkTreePath):^GtkTreeRowReference;
 
+  { Zeile entfernt  }
   function gtk_tree_row_reference_new_proxy(proxy:PGObject; model:PGtkTreeModel; path:PGtkTreePath):^GtkTreeRowReference;
 
+  { Zeile entfernt  }
   function gtk_tree_row_reference_get_path(reference:PGtkTreeRowReference):^GtkTreePath;
 
+  { Zeile entfernt  }
   function gtk_tree_row_reference_get_model(reference:PGtkTreeRowReference):^GtkTreeModel;
 
+  { Zeile entfernt  }
   function gtk_tree_row_reference_valid(reference:PGtkTreeRowReference):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_row_reference_copy(reference:PGtkTreeRowReference):^GtkTreeRowReference;
 
+  { Zeile entfernt  }
   procedure gtk_tree_row_reference_free(reference:PGtkTreeRowReference);
 
   { These two functions are only needed if you created the row reference with a
    * proxy object  }
+  { Zeile entfernt  }
   procedure gtk_tree_row_reference_inserted(proxy:PGObject; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   procedure gtk_tree_row_reference_deleted(proxy:PGObject; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   procedure gtk_tree_row_reference_reordered(proxy:PGObject; path:PGtkTreePath; iter:PGtkTreeIter; new_order:Plongint);
 
   { GtkTreeIter operations  }
+  { Zeile entfernt  }
   function gtk_tree_iter_copy(iter:PGtkTreeIter):^GtkTreeIter;
 
+  { Zeile entfernt  }
   procedure gtk_tree_iter_free(iter:PGtkTreeIter);
 
-(* error 
-GType             gtk_tree_iter_get_type         (void) G_GNUC_CONST;
- in declarator_list *)
+  { Zeile entfernt  }
+  function gtk_tree_iter_get_type:GType;
 
-    var
- : GType;
-(* error 
-GType             gtk_tree_model_get_type        (void) G_GNUC_CONST;
- in declarator_list *)
- : GType;
+  { Zeile entfernt  }
+  function gtk_tree_model_get_type:GType;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_flags(tree_model:PGtkTreeModel):GtkTreeModelFlags;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_n_columns(tree_model:PGtkTreeModel):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_column_type(tree_model:PGtkTreeModel; index_:longint):GType;
 
   { Iterator movement  }
+  { Zeile entfernt  }
   function gtk_tree_model_get_iter(tree_model:PGtkTreeModel; iter:PGtkTreeIter; path:PGtkTreePath):gboolean;
 
+  { Zeile entfernt  }
 (* Const before type ignored *)
   function gtk_tree_model_get_iter_from_string(tree_model:PGtkTreeModel; iter:PGtkTreeIter; path_string:Pchar):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_string_from_iter(tree_model:PGtkTreeModel; iter:PGtkTreeIter):^char;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_iter_first(tree_model:PGtkTreeModel; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_get_path(tree_model:PGtkTreeModel; iter:PGtkTreeIter):^GtkTreePath;
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_get_value(tree_model:PGtkTreeModel; iter:PGtkTreeIter; column:longint; value:PGValue);
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_previous(tree_model:PGtkTreeModel; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_next(tree_model:PGtkTreeModel; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_children(tree_model:PGtkTreeModel; iter:PGtkTreeIter; parent:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_has_child(tree_model:PGtkTreeModel; iter:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_n_children(tree_model:PGtkTreeModel; iter:PGtkTreeIter):longint;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_nth_child(tree_model:PGtkTreeModel; iter:PGtkTreeIter; parent:PGtkTreeIter; n:longint):gboolean;
 
+  { Zeile entfernt  }
   function gtk_tree_model_iter_parent(tree_model:PGtkTreeModel; iter:PGtkTreeIter; child:PGtkTreeIter):gboolean;
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_ref_node(tree_model:PGtkTreeModel; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_unref_node(tree_model:PGtkTreeModel; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_get(tree_model:PGtkTreeModel; iter:PGtkTreeIter; args:array of const);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_get_valist(tree_model:PGtkTreeModel; iter:PGtkTreeIter; var_args:va_list);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_foreach(model:PGtkTreeModel; func:GtkTreeModelForeachFunc; user_data:gpointer);
 
   { Signals  }
+  { Zeile entfernt  }
   procedure gtk_tree_model_row_changed(tree_model:PGtkTreeModel; path:PGtkTreePath; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_row_inserted(tree_model:PGtkTreeModel; path:PGtkTreePath; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_row_has_child_toggled(tree_model:PGtkTreeModel; path:PGtkTreePath; iter:PGtkTreeIter);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_row_deleted(tree_model:PGtkTreeModel; path:PGtkTreePath);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_rows_reordered(tree_model:PGtkTreeModel; path:PGtkTreePath; iter:PGtkTreeIter; new_order:Plongint);
 
+  { Zeile entfernt  }
   procedure gtk_tree_model_rows_reordered_with_length(tree_model:PGtkTreeModel; path:PGtkTreePath; iter:PGtkTreeIter; new_order:Plongint; length:longint);
 
+  { Zeile entfernt  }
 {$endif}
   { __GTK_TREE_MODEL_H__  }
   { was #define dname def_expr }
@@ -445,6 +493,10 @@ GType             gtk_tree_model_get_type        (void) G_GNUC_CONST;
   begin
     { You must implement this function }
   end;
+  function gtk_tree_path_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
   function gtk_tree_path_compare(a:PGtkTreePath; b:PGtkTreePath):longint;
   begin
     { You must implement this function }
@@ -470,6 +522,10 @@ GType             gtk_tree_model_get_type        (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   function gtk_tree_path_is_descendant(path:PGtkTreePath; ancestor:PGtkTreePath):gboolean;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_row_reference_get_type:GType;
   begin
     { You must implement this function }
   end;
@@ -518,6 +574,14 @@ GType             gtk_tree_model_get_type        (void) G_GNUC_CONST;
     { You must implement this function }
   end;
   procedure gtk_tree_iter_free(iter:PGtkTreeIter);
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_iter_get_type:GType;
+  begin
+    { You must implement this function }
+  end;
+  function gtk_tree_model_get_type:GType;
   begin
     { You must implement this function }
   end;
