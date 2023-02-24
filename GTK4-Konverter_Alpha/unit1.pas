@@ -12,6 +12,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    BtnConvert2: TButton;
     Load: TButton;
     Convert: TButton;
     BtnCopy: TButton;
@@ -19,6 +20,7 @@ type
     SynEdit1: TSynEdit;
     SynEdit2: TSynEdit;
     procedure BtnCloseClick(Sender: TObject);
+    procedure BtnConvert2Click(Sender: TObject);
     procedure BtnCopyClick(Sender: TObject);
     procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -39,10 +41,11 @@ implementation
 
 const
   HeaderPath = '/usr/include/gtk-4.0';
-  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
+  //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
+  HeaderDespPath = '/tmp/GTK4-Konverter-header';
 
   HeaderMask = 'gtkb*.h';
-//  HeaderMask = '*.h';
+  //  HeaderMask = '*.h';
   //  HeaderMask='gtk-autocleanups.h';
 
   //  ListPos1: TStringArray = ('GDK_AVAILABLE_IN_ALL', 'G_BEGIN_DECLS', 'G_END_DECLS', 'GDK_DEPRECATED_IN_4_6_FOR(');
@@ -64,7 +67,7 @@ const
     'G_STMT_START',
     'G_STMT_END',
     'G_UNLIKELY',
-
+    'G_GNUC_MALLOC',
 
     'G_GNUC_PURE',
     'GTK_ACCESSIBLE',
@@ -161,8 +164,8 @@ begin
     ms := TMemoryStream.Create;
     BytesRead := 0;
     myProcess := TProcess.Create(nil);
-    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -v -p -T -S -d -c';
-//    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
+    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -v -p -t -S -d -c';
+    //    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
     myProcess.Options := [poUsePipes, poStderrToOutPut];
     myProcess.Execute;
     while myProcess.Running do begin
@@ -206,6 +209,27 @@ end;
 procedure TForm1.BtnCloseClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TForm1.BtnConvert2Click(Sender: TObject);
+var
+  slppFiles, sl: TStringList;
+  path: string;
+  i: integer;
+begin
+  slppFiles := FindAllFiles(HeaderDespPath, '*.pp', True);
+  WriteLn(slppFiles.Count);
+  for i := 0 to slppFiles.Count - 1 do begin
+    path := slppFiles[i];
+    sl := TStringList.Create;
+    sl.LoadFromFile(path);
+    path :=StringReplace(path, '.pp', '.pas', []);
+    WriteLn(path);
+
+    sl.SaveToFile(path);
+    sl.Free;
+  end;
+  slppFiles.Free;
 end;
 
 end.

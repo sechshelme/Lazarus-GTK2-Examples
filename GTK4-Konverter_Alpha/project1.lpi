@@ -80,6 +80,9 @@
       <Item>
         <Name Value="EFCreateError"/>
       </Item>
+      <Item>
+        <Name Value="EStringListError"/>
+      </Item>
     </Exceptions>
   </Debugging>
 </CONFIG>
