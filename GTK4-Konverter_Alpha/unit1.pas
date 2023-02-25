@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-//  GTK4,
+  //  GTK4,
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
 
 type
@@ -14,11 +14,9 @@ type
 
   TForm1 = class(TForm)
     BtnPPToPas: TButton;
-    Load: TButton;
     h2pas: TButton;
     BtnIncludeToTmp: TButton;
     BtnClose: TButton;
-    SynEdit1: TSynEdit;
     SynEdit2: TSynEdit;
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnPPToPasClick(Sender: TObject);
@@ -48,9 +46,9 @@ const
   //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
   HeaderDespPath = '/tmp/GTK4-Konverter-header';
 
-  HeaderMask = 'gtkb*.h';
-  HeaderMask4 = 'gtk4b*.h';
-  //  HeaderMask = '*.h';
+  //  HeaderMask = 'gtkb*.h';
+  HeaderMask = '*.h';
+  HeaderMask4 = '*.h';
 
   ListPos1: TStringArray = (
     'GDK_DECLARE_INTERNAL_TYPE',
@@ -79,19 +77,9 @@ const
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  Width := Screen.Width - 1800;
+  Width := Screen.Width div 2;
   Left := 100;
   Height := Screen.Height - 100;
-  SynEdit1.ReadOnly := True;
-end;
-
-procedure TForm1.LoadClick(Sender: TObject);
-var
-  slHeaderList: TStringList;
-begin
-  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
-  SynEdit1.Lines := slHeaderList;
-  slHeaderList.Free;
 end;
 
 procedure TForm1.DeletePos1(sl: TStringList; const Source: string);
@@ -102,7 +90,7 @@ begin
   for i := 0 to sl.Count - 1 do begin
     p := pos(Source, sl[i]);
     if p >= 1 then begin
-      sl[i] := '/* Zeile entfernt: ' + sl[i] + ' */';
+      sl[i] := '//// Zeile entfernt: ' + sl[i];
     end;
   end;
 end;
@@ -116,10 +104,19 @@ begin
   end;
 end;
 
+procedure TForm1.LoadClick(Sender: TObject);
+var
+  slHeaderList: TStringList;
+begin
+  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
+  //  SynEdit1.Lines := slHeaderList;
+  slHeaderList.Free;
+end;
+
 procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
 var
   i, j: integer;
-  sl: TStringList;
+  sl, slHeaderList: TStringList;
   path: string;
 
 
@@ -135,10 +132,11 @@ var
   end;
 
 begin
+  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
   sl := TStringList.Create;
-  for i := 0 to SynEdit1.Lines.Count - 1 do begin
-    path := SynEdit1.Lines[i];
-    sl.LoadFromFile(SynEdit1.Lines[i]);
+  for i := 0 to slHeaderList.Count - 1 do begin
+    path := slHeaderList[i];
+    sl.LoadFromFile(slHeaderList[i]);
     Delete(path, 1, Length(HeaderPath));
     path := HeaderDespPath + path;
     ForceDirectories(ExtractFileDir(path));
@@ -155,6 +153,7 @@ begin
 
     sl.SaveToFile(path);
   end;
+  slHeaderList.Free;
   sl.Free;
 end;
 
@@ -229,8 +228,8 @@ end;
 procedure TForm1.BtnPPToPasClick(Sender: TObject);
 var
   slppFiles, sl: TStringList;
-  path: string;
-  i: integer;
+  path, s: string;
+  i, index: integer;
   slGTK4Pas: TStringList;
 
   procedure DeleteTypes(sl: TStringList);
@@ -242,7 +241,8 @@ var
       if index >= sl.Count then begin
         Exit;
       end;
-      if sl[index] = 'Type' then begin
+      if Pos('Type', sl[index]) > 0 then begin
+        //        if sl[index] = 'Type' then begin
         sl[index] := '//// ' + sl[index];
         isType := True;
       end;
@@ -254,8 +254,8 @@ var
       if index >= sl.Count then begin
         Exit;
       end;
-
-      if sl[index] = 'Type' then begin
+      if (Pos('Type', sl[index]) > 0) or (pos('{$IFDEF FPC}', sl[index]) > 0) then begin
+        //        if (sl[index] = 'Type') or (pos('{$IFDEF FPC}', sl[index]) > 0) then begin
         isType := True;
       end else begin
         sl[index] := '//// ' + sl[index];
@@ -274,32 +274,39 @@ var
           sl[i] := '//// ' + sl[i];
         end;
       end;
+      if pos('(* error', sl[i]) = 1 then begin
+        if sl[i] <> '{' then begin
+          sl[i] := '//// ' + sl[i];
+          sl[i + 1] := '//// ' + sl[i + 1];
+        end;
+      end;
     end;
   end;
 
-  procedure AddGTK4Pas(slGTK4pas: TStringList; Source: TStringList; const Headername:String);
+  procedure AddGTK4Pas(slGTK4pas: TStringList; Source: TStringList; const Headername: string);
   var
     i, start, ende: integer;
   begin
     start := Source.IndexOf('interface');
     ende := Source.IndexOf('implementation');
-    WriteLn(start);
-    WriteLn(ende);
     if (start < 1) or (ende < 1) then begin
       WriteLn('Ungültige Unit');
+      WriteLn(start);
+      WriteLn(ende);
+      WriteLn(Headername);
       Exit;
     end;
 
     slGTK4pas.Insert(ImplementationIndex, '// -------------------------------------------------');
-    slGTK4pas.Insert(ImplementationIndex, '// '+Headername);
+    slGTK4pas.Insert(ImplementationIndex, '// ' + Headername);
     slGTK4pas.Insert(ImplementationIndex, '// --------- Implementation ------------------------');
 
     slGTK4pas.Insert(InterfaceIndex, '// -------------------------------------------------');
-    slGTK4pas.Insert(InterfaceIndex, '// '+Headername);
+    slGTK4pas.Insert(InterfaceIndex, '// ' + Headername);
     slGTK4pas.Insert(InterfaceIndex, '// --------- inteface ------------------------------');
 
-    Inc(InterfaceIndex,3);
-    Inc(ImplementationIndex,6);
+    Inc(InterfaceIndex, 3);
+    Inc(ImplementationIndex, 6);
 
     for i := start + 1 to ende - 1 do begin
       slGTK4pas.Insert(InterfaceIndex, Source[i]);
@@ -311,8 +318,25 @@ var
       slGTK4pas.Insert(ImplementationIndex, Source[i]);
       Inc(ImplementationIndex);
     end;
-
   end;
+
+  function IndexOf(sl: TStringList; const HeaderFolg: string): integer;
+  var
+    i: integer;
+  begin
+    Result := -1;
+    for i := 0 to sl.Count - 1 do begin
+      if pos('4' + HeaderFolg + '.pp', sl[i]) > 0 then begin
+        Result := i;
+        Exit;
+      end;
+    end;
+  end;
+
+const
+  HeaderFolge: TStringArray = (
+    'gtkprinter',
+    'widget');
 
 begin
   slGTK4Pas := TStringList.Create;
@@ -324,6 +348,19 @@ begin
   slGTK4Pas.Add('');
 
   slppFiles := FindAllFiles(HeaderDespPath, '*.pp', True);
+
+  for i := Length(HeaderFolge) - 1 downto 0 do begin
+    index := IndexOf(slppFiles, HeaderFolge[i]);
+    if index > 0 then begin
+      s := slppFiles[index];
+      slppFiles.Delete(index);
+      slppFiles.Insert(0, s);
+      WriteLn(index);
+
+    end;
+  end;
+  WriteLn(slppFiles.Text);
+
 
   InterfaceIndex := slGTK4Pas.IndexOf('interface') + 1;
   ImplementationIndex := slGTK4Pas.IndexOf('implementation') + 1;
