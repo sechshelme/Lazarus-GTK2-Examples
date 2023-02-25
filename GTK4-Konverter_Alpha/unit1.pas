@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-//  gtkbuilder,
+  //  gtkbuilder,
+  GTK4,
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
 
 type
@@ -27,8 +28,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure LoadClick(Sender: TObject);
   private
-    procedure DeletePos1(var sl: TStringList; const Source: string);
-    procedure DeleteSR(var sl: TStringList; const Source: string);
+    var
+      InterfaceIndex: integer;
+      ImplementationIndex: integer;
+    procedure DeletePos1(sl: TStringList; const Source: string);
+    procedure DeleteSR(sl: TStringList; const Source: string);
   public
 
   end;
@@ -45,7 +49,7 @@ const
   //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
   HeaderDespPath = '/tmp/GTK4-Konverter-header';
 
-  HeaderMask = 'gtkb*.h';
+  HeaderMask = 'gtk4b*.h';
   //  HeaderMask = '*.h';
 
   ListPos1: TStringArray = (
@@ -91,7 +95,7 @@ begin
   slHeaderList.Free;
 end;
 
-procedure TForm1.DeletePos1(var sl: TStringList; const Source: string);
+procedure TForm1.DeletePos1(sl: TStringList; const Source: string);
 var
   i: integer;
   p: SizeInt;
@@ -99,15 +103,12 @@ begin
   for i := 0 to sl.Count - 1 do begin
     p := pos(Source, sl[i]);
     if p >= 1 then begin
-      sl[i] := '/* Zeile entfernt */';
-
-      //      sl[i] := '#error "Leerzeile"';
-
+      sl[i] := '/* Zeile entfernt: ' + sl[i] + ' */';
     end;
   end;
 end;
 
-procedure TForm1.DeleteSR(var sl: TStringList; const Source: string);
+procedure TForm1.DeleteSR(sl: TStringList; const Source: string);
 var
   i: integer;
 begin
@@ -121,6 +122,19 @@ var
   i, j: integer;
   sl: TStringList;
   path: string;
+
+
+  function PosBack(const s: string): integer;
+  var
+    l: SizeInt;
+  begin
+    l := Length(s);
+    while (l > 1) and (s[l] <> '/') do begin
+      Dec(l);
+    end;
+    Result := l;
+  end;
+
 begin
   sl := TStringList.Create;
   for i := 0 to SynEdit1.Lines.Count - 1 do begin
@@ -136,6 +150,9 @@ begin
     for j := 0 to Length(ListSR) - 1 do begin
       DeleteSR(sl, ListSR[j]);
     end;
+
+    Insert('4', path, PosBack(path) + 4);
+    WriteLn((path));
 
     sl.SaveToFile(path);
   end;
@@ -157,13 +174,16 @@ begin
   SynEdit2.Lines.Clear;
   //  slHeaderFiles := FindAllFiles(HeaderDespPath, '*.h', True);
   slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask, True);
+  WriteLn('Arschlocj');
+  WriteLn(slHeaderFiles.Text);
 
 
   for i := 0 to slHeaderFiles.Count - 1 do begin
     ms := TMemoryStream.Create;
     BytesRead := 0;
     myProcess := TProcess.Create(nil);
-    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -v -t -S -d -c';
+    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -t -S -d -c';
+    //        myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -t -S -d -c';
     //    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
     myProcess.Options := [poUsePipes, poStderrToOutPut];
     myProcess.Execute;
@@ -215,6 +235,7 @@ var
   slppFiles, sl: TStringList;
   path: string;
   i: integer;
+  slGTK4Pas: TStringList;
 
   procedure DeleteTypes(sl: TStringList);
   var
@@ -253,28 +274,84 @@ var
   begin
     for i := 0 to sl.Count - 1 do begin
       if pos('{', sl[i]) = 1 then begin
-        if sl[i]<> '{'then
-        sl[i] := '//// ' + sl[i];
+        if sl[i] <> '{' then begin
+          sl[i] := '//// ' + sl[i];
+        end;
       end;
     end;
   end;
 
+  procedure AddGTK4Pas(slGTK4pas: TStringList; Source: TStringList; const Headername:String);
+  var
+    i, start, ende: integer;
+  begin
+    start := Source.IndexOf('interface');
+    ende := Source.IndexOf('implementation');
+    WriteLn(start);
+    WriteLn(ende);
+    if (start < 1) or (ende < 1) then begin
+      WriteLn('Ungültige Unit');
+      Exit;
+    end;
+
+//    slGTK4pas.Insert(ImplementationIndex, '// --------- inteface -------------------------');
+//    slGTK4pas.Insert(ImplementationIndex, '// '+Headername);
+//    slGTK4pas.Insert(ImplementationIndex, '// --------------------------------------------');
+//
+//    slGTK4pas.Insert(InterfaceIndex, '// --------- inteface -------------------------');
+//    slGTK4pas.Insert(InterfaceIndex, '// '+Headername);
+//    slGTK4pas.Insert(InterfaceIndex, '// --------------------------------------------');
+//
+////    Inc(ImplementationIndex,3);
+////    Inc(ImplementationIndex,6);
+
+    for i := start + 1 to ende - 1 do begin
+      slGTK4pas.Insert(InterfaceIndex, Source[i]);
+      Inc(InterfaceIndex);
+      Inc(ImplementationIndex);
+    end;
+
+    for i := ende + 1 to Source.Count - 2 do begin
+      slGTK4pas.Insert(ImplementationIndex, Source[i]);
+      Inc(ImplementationIndex);
+    end;
+
+  end;
+
 begin
+  slGTK4Pas := TStringList.Create;
+  slGTK4Pas.Add('unit GTK4;');
+  slGTK4Pas.Add('');
+  slGTK4Pas.Add('interface');
+  slGTK4Pas.Add('');
+  slGTK4Pas.Add('implementation');
+  slGTK4Pas.Add('');
+
   slppFiles := FindAllFiles(HeaderDespPath, '*.pp', True);
-  WriteLn(slppFiles.Count);
+
+  InterfaceIndex := slGTK4Pas.IndexOf('interface') + 1;
+  ImplementationIndex := slGTK4Pas.IndexOf('implementation') + 1;
+
   for i := 0 to slppFiles.Count - 1 do begin
     path := slppFiles[i];
     sl := TStringList.Create;
     sl.LoadFromFile(path);
 
     DeleteClamp(sl);
-//    DeleteTypes(sl);
+    DeleteTypes(sl);
+
+    AddGTK4Pas(slGTK4Pas, sl, path);
 
     path := StringReplace(path, '.pp', '.pas', []);
     sl.SaveToFile(path);
     sl.Free;
   end;
   slppFiles.Free;
+
+  slGTK4Pas.Add('');
+  slGTK4Pas.Add('end.');
+  slGTK4Pas.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter_Alpha/gtk4.pas');
+  slGTK4Pas.Free;
 end;
 
 end.
