@@ -335,7 +335,7 @@ var
 
 const
   HeaderFolge: TStringArray = (
-    'gtkprinter',
+    'types',
     'widget');
 
 begin

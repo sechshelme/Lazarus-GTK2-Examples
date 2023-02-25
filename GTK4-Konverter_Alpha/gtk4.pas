@@ -2,6 +2,77 @@ unit GTK4;
 
 interface
 // --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
+// -------------------------------------------------
+
+{
+  Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4types.h
+  The following command line parameters were used:
+    /tmp/GTK4-Konverter-header/gtk/gtk4types.h
+    -p
+    -t
+    -S
+    -d
+    -c
+}
+
+//// { Pointers to basic pascal types, inserted by h2pas conversion program.}
+//// Type
+////   PLongint  = ^Longint;
+////   PSmallInt = ^SmallInt;
+////   PByte     = ^Byte;
+////   PWord     = ^Word;
+////   PDWord    = ^DWord;
+////   PDouble   = ^Double;
+//// 
+Type
+PGtkSnapshot  = ^TGtkSnapshot;
+//// {$IFDEF FPC}
+//// {$PACKRECORDS C}
+//// {$ENDIF}
+
+
+
+
+//// {$ifndef __GTK_TYPES_H__}
+//// {$define __GTK_TYPES_H__}
+//// {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
+//// {$error "Only <gtk/gtk.h> can be included directly."}
+//// {$endif}
+//// {$include <gdk/gdk.h>}
+type
+  T_GtkAdjustment = TGtkAdjustment;
+  T_GtkBitset = TGtkBitset;
+  T_GtkBuilder = TGtkBuilder;
+  T_GtkBuilderScope = TGtkBuilderScope;
+  T_GtkCssStyleChange = TGtkCssStyleChange;
+  T_GtkEventController = TGtkEventController;
+  T_GtkGesture = TGtkGesture;
+  T_GtkLayoutManager = TGtkLayoutManager;
+  T_GtkListItem = TGtkListItem;
+  T_GtkListItemFactory = TGtkListItemFactory;
+  T_GtkNative = TGtkNative;
+  T_GtkRequisition = TGtkRequisition;
+  T_GtkRoot = TGtkRoot;
+  T_GtkSettings = TGtkSettings;
+  T_GtkShortcut = TGtkShortcut;
+  T_GtkShortcutAction = TGtkShortcutAction;
+  T_GtkShortcutTrigger = TGtkShortcutTrigger;
+
+  PGtkSnapshot = ^TGtkSnapshot;
+  TGtkSnapshot = TGdkSnapshot;
+  T_GtkStyleContext = TGtkStyleContext;
+  T_GtkTooltip = TGtkTooltip;
+  T_GtkWidget = TGtkWidget;
+  T_GtkWindow = TGtkWindow;
+
+
+function GTK_INVALID_LIST_POSITION : Tguint;  
+
+//// {$endif}
+
+
+// --------- inteface ------------------------------
 // /tmp/GTK4-Konverter-header/gtk/gtk4widget.pp
 // -------------------------------------------------
 
@@ -11572,77 +11643,6 @@ type
 function gtk_gesture_swipe_get_type:TGType;cdecl;external;
 function gtk_gesture_swipe_new:PGtkGesture;cdecl;external;
 function gtk_gesture_swipe_get_velocity(gesture:PGtkGestureSwipe; velocity_x:Pdouble; velocity_y:Pdouble):Tgboolean;cdecl;external;
-//// {$endif}
-
-
-// --------- inteface ------------------------------
-// /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
-// -------------------------------------------------
-
-{
-  Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4types.h
-  The following command line parameters were used:
-    /tmp/GTK4-Konverter-header/gtk/gtk4types.h
-    -p
-    -t
-    -S
-    -d
-    -c
-}
-
-//// { Pointers to basic pascal types, inserted by h2pas conversion program.}
-//// Type
-////   PLongint  = ^Longint;
-////   PSmallInt = ^SmallInt;
-////   PByte     = ^Byte;
-////   PWord     = ^Word;
-////   PDWord    = ^DWord;
-////   PDouble   = ^Double;
-//// 
-Type
-PGtkSnapshot  = ^GtkSnapshot;
-//// {$IFDEF FPC}
-//// {$PACKRECORDS C}
-//// {$ENDIF}
-
-
-
-
-//// {$ifndef __GTK_TYPES_H__}
-//// {$define __GTK_TYPES_H__}
-//// {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
-//// {$error "Only <gtk/gtk.h> can be included directly."}
-//// {$endif}
-//// {$include <gdk/gdk.h>}
-type
-  T_GtkAdjustment = TGtkAdjustment;
-  T_GtkBitset = TGtkBitset;
-  T_GtkBuilder = TGtkBuilder;
-  T_GtkBuilderScope = TGtkBuilderScope;
-  T_GtkCssStyleChange = TGtkCssStyleChange;
-  T_GtkEventController = TGtkEventController;
-  T_GtkGesture = TGtkGesture;
-  T_GtkLayoutManager = TGtkLayoutManager;
-  T_GtkListItem = TGtkListItem;
-  T_GtkListItemFactory = TGtkListItemFactory;
-  T_GtkNative = TGtkNative;
-  T_GtkRequisition = TGtkRequisition;
-  T_GtkRoot = TGtkRoot;
-  T_GtkSettings = TGtkSettings;
-  T_GtkShortcut = TGtkShortcut;
-  T_GtkShortcutAction = TGtkShortcutAction;
-  T_GtkShortcutTrigger = TGtkShortcutTrigger;
-
-  PGtkSnapshot = ^TGtkSnapshot;
-  TGtkSnapshot = TGdkSnapshot;
-  T_GtkStyleContext = TGtkStyleContext;
-  T_GtkTooltip = TGtkTooltip;
-  T_GtkWidget = TGtkWidget;
-  T_GtkWindow = TGtkWindow;
-
-
-function GTK_INVALID_LIST_POSITION : Tguint;  
-
 //// {$endif}
 
 
@@ -31079,6 +31079,16 @@ function gsk_gl_renderer_new:PGskRenderer;cdecl;external;
 
 implementation
 // --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
+// -------------------------------------------------
+
+function GTK_INVALID_LIST_POSITION : Tguint;
+  begin
+    GTK_INVALID_LIST_POSITION:=Tguint($ffffffff);
+  end;
+
+
+// --------- Implementation ------------------------
 // /tmp/GTK4-Konverter-header/gtk/gtk4widget.pp
 // -------------------------------------------------
 
@@ -34241,16 +34251,6 @@ function GTK_GESTURE_SWIPE_GET_CLASS(o : longint) : longint;
 begin
   GTK_GESTURE_SWIPE_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(o,GTK_TYPE_GESTURE_SWIPE,GtkGestureSwipeClass);
 end;
-
-
-// --------- Implementation ------------------------
-// /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
-// -------------------------------------------------
-
-function GTK_INVALID_LIST_POSITION : Tguint;
-  begin
-    GTK_INVALID_LIST_POSITION:=Tguint($ffffffff);
-  end;
 
 
 // --------- Implementation ------------------------
