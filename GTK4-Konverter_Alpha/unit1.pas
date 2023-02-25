@@ -5,8 +5,7 @@ unit Unit1;
 interface
 
 uses
-  //  gtkbuilder,
-  GTK4,
+//  GTK4,
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
 
 type
@@ -49,7 +48,8 @@ const
   //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
   HeaderDespPath = '/tmp/GTK4-Konverter-header';
 
-  HeaderMask = 'gtk4b*.h';
+  HeaderMask = 'gtkb*.h';
+  HeaderMask4 = 'gtk4b*.h';
   //  HeaderMask = '*.h';
 
   ListPos1: TStringArray = (
@@ -89,7 +89,6 @@ procedure TForm1.LoadClick(Sender: TObject);
 var
   slHeaderList: TStringList;
 begin
-  //  slHeaderList := FindAllFiles(HeaderPath, '*.h', True);
   slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
   SynEdit1.Lines := slHeaderList;
   slHeaderList.Free;
@@ -124,7 +123,7 @@ var
   path: string;
 
 
-  function PosBack(const s: string): integer;
+  function SlashPos(const s: string): integer;
   var
     l: SizeInt;
   begin
@@ -151,7 +150,7 @@ begin
       DeleteSR(sl, ListSR[j]);
     end;
 
-    Insert('4', path, PosBack(path) + 4);
+    Insert('4', path, SlashPos(path) + 4);
     WriteLn((path));
 
     sl.SaveToFile(path);
@@ -172,11 +171,8 @@ var
 begin
   sl := TStringList.Create;
   SynEdit2.Lines.Clear;
-  //  slHeaderFiles := FindAllFiles(HeaderDespPath, '*.h', True);
-  slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask, True);
-  WriteLn('Arschlocj');
+  slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask4, True);
   WriteLn(slHeaderFiles.Text);
-
 
   for i := 0 to slHeaderFiles.Count - 1 do begin
     ms := TMemoryStream.Create;
@@ -294,16 +290,16 @@ var
       Exit;
     end;
 
-//    slGTK4pas.Insert(ImplementationIndex, '// --------- inteface -------------------------');
-//    slGTK4pas.Insert(ImplementationIndex, '// '+Headername);
-//    slGTK4pas.Insert(ImplementationIndex, '// --------------------------------------------');
-//
-//    slGTK4pas.Insert(InterfaceIndex, '// --------- inteface -------------------------');
-//    slGTK4pas.Insert(InterfaceIndex, '// '+Headername);
-//    slGTK4pas.Insert(InterfaceIndex, '// --------------------------------------------');
-//
-////    Inc(ImplementationIndex,3);
-////    Inc(ImplementationIndex,6);
+    slGTK4pas.Insert(ImplementationIndex, '// -------------------------------------------------');
+    slGTK4pas.Insert(ImplementationIndex, '// '+Headername);
+    slGTK4pas.Insert(ImplementationIndex, '// --------- Implementation ------------------------');
+
+    slGTK4pas.Insert(InterfaceIndex, '// -------------------------------------------------');
+    slGTK4pas.Insert(InterfaceIndex, '// '+Headername);
+    slGTK4pas.Insert(InterfaceIndex, '// --------- inteface ------------------------------');
+
+    Inc(InterfaceIndex,3);
+    Inc(ImplementationIndex,6);
 
     for i := start + 1 to ende - 1 do begin
       slGTK4pas.Insert(InterfaceIndex, Source[i]);

@@ -1,6 +1,9 @@
 unit GTK4;
 
 interface
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4box.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4box.h
@@ -101,6 +104,9 @@ procedure gtk_box_reorder_child_after(box:PGtkBox; child:PGtkWidget; sibling:PGt
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4boolfilter.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4boolfilter.h
@@ -158,6 +164,9 @@ procedure gtk_bool_filter_set_invert(self:PGtkBoolFilter; invert:Tgboolean);cdec
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builderlistitemfactory.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4builderlistitemfactory.h
@@ -231,6 +240,9 @@ function gtk_builder_list_item_factory_get_scope(self:PGtkBuilderListItemFactory
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4button.h
@@ -341,6 +353,9 @@ function gtk_button_get_child(button:PGtkButton):PGtkWidget;cdecl;external;
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4bookmarklist.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4bookmarklist.h
@@ -403,6 +418,9 @@ function gtk_bookmark_list_is_loading(self:PGtkBookmarkList):Tgboolean;cdecl;ext
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4binlayout.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4binlayout.h
@@ -443,6 +461,9 @@ function GTK_TYPE_BIN_LAYOUT : longint; { return type might be wrong }
 function gtk_bin_layout_new:PGtkLayoutManager;cdecl;external;
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builderscope.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4builderscope.h
@@ -536,6 +557,9 @@ function gtk_builder_cscope_lookup_callback_symbol(self:PGtkBuilderCScope; callb
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4bitset.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4bitset.h
@@ -669,6 +693,9 @@ function gtk_bitset_iter_is_valid(iter:PGtkBitsetIter):Tgboolean;cdecl;external;
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builder.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4builder.h
@@ -805,6 +832,9 @@ function gtk_builder_extend_with_template(builder:PGtkBuilder; object:PGObject; 
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4border.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4border.h
@@ -873,6 +903,9 @@ procedure gtk_border_free(border_:PGtkBorder);cdecl;external;
 //// {$endif}
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4boxlayout.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4boxlayout.h
@@ -930,6 +963,9 @@ procedure gtk_box_layout_set_baseline_position(box_layout:PGtkBoxLayout; positio
 function gtk_box_layout_get_baseline_position(box_layout:PGtkBoxLayout):TGtkBaselinePosition;cdecl;external;
 
 
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4buildable.pp
+// -------------------------------------------------
 
 {
   Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4buildable.h
@@ -1055,6 +1091,9 @@ procedure gtk_buildable_parse_context_get_position(context:PGtkBuildableParseCon
 
 
 implementation
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4box.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BOX : longint; { return type might be wrong }
   begin
@@ -1087,6 +1126,9 @@ begin
 end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4boolfilter.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BOOL_FILTER : longint; { return type might be wrong }
   begin
@@ -1094,6 +1136,9 @@ function GTK_TYPE_BOOL_FILTER : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builderlistitemfactory.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BUILDER_LIST_ITEM_FACTORY : longint; { return type might be wrong }
   begin
@@ -1126,6 +1171,9 @@ begin
 end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BUTTON : longint; { return type might be wrong }
   begin
@@ -1158,8 +1206,14 @@ begin
 end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4bookmarklist.pp
+// -------------------------------------------------
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4binlayout.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BIN_LAYOUT : longint; { return type might be wrong }
   begin
@@ -1167,6 +1221,9 @@ function GTK_TYPE_BIN_LAYOUT : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builderscope.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BUILDER_SCOPE : longint; { return type might be wrong }
   begin
@@ -1179,6 +1236,9 @@ function GTK_TYPE_BUILDER_CSCOPE : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4bitset.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BITSET : longint; { return type might be wrong }
   begin
@@ -1186,6 +1246,9 @@ function GTK_TYPE_BITSET : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4builder.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BUILDER : longint; { return type might be wrong }
   begin
@@ -1228,6 +1291,9 @@ begin
 end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4border.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BORDER : longint; { return type might be wrong }
   begin
@@ -1235,6 +1301,9 @@ function GTK_TYPE_BORDER : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4boxlayout.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BOX_LAYOUT : longint; { return type might be wrong }
   begin
@@ -1242,6 +1311,9 @@ function GTK_TYPE_BOX_LAYOUT : longint; { return type might be wrong }
   end;
 
 
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4buildable.pp
+// -------------------------------------------------
 
 function GTK_TYPE_BUILDABLE : longint; { return type might be wrong }
   begin
