@@ -509,7 +509,7 @@ object Form1: TForm1
     end
   end
   object Load: TButton
-    Left = 88
+    Left = 56
     Height = 25
     Top = 312
     Width = 75
@@ -518,14 +518,14 @@ object Form1: TForm1
     OnClick = LoadClick
     TabOrder = 1
   end
-  object Convert: TButton
+  object h2pas: TButton
     Left = 256
     Height = 25
     Top = 312
     Width = 75
     Anchors = [akRight, akBottom]
-    Caption = 'Convert'
-    OnClick = ConvertClick
+    Caption = 'h -> pp'
+    OnClick = h2pasClick
     TabOrder = 2
   end
   inline SynEdit2: TSynEdit
@@ -1027,14 +1027,14 @@ object Form1: TForm1
       end
     end
   end
-  object BtnCopy: TButton
-    Left = 176
+  object BtnIncludeToTmp: TButton
+    Left = 144
     Height = 25
     Top = 312
-    Width = 75
+    Width = 99
     Anchors = [akRight, akBottom]
-    Caption = 'Copy'
-    OnClick = BtnCopyClick
+    Caption = 'include -> tmp'
+    OnClick = BtnIncludeToTmpClick
     TabOrder = 4
   end
   object BtnClose: TButton
@@ -1047,14 +1047,14 @@ object Form1: TForm1
     OnClick = BtnCloseClick
     TabOrder = 5
   end
-  object BtnConvert2: TButton
+  object BtnPPToPas: TButton
     Left = 344
     Height = 25
     Top = 312
     Width = 75
     Anchors = [akRight, akBottom]
-    Caption = 'Convert2'
-    OnClick = BtnConvert2Click
+    Caption = 'pp -> pas'
+    OnClick = BtnPPToPasClick
     TabOrder = 6
   end
 end

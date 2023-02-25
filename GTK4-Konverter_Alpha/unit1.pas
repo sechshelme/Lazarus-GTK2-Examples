@@ -5,6 +5,7 @@ unit Unit1;
 interface
 
 uses
+//  gtkbuilder,
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
 
 type
@@ -12,17 +13,17 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    BtnConvert2: TButton;
+    BtnPPToPas: TButton;
     Load: TButton;
-    Convert: TButton;
-    BtnCopy: TButton;
+    h2pas: TButton;
+    BtnIncludeToTmp: TButton;
     BtnClose: TButton;
     SynEdit1: TSynEdit;
     SynEdit2: TSynEdit;
     procedure BtnCloseClick(Sender: TObject);
-    procedure BtnConvert2Click(Sender: TObject);
-    procedure BtnCopyClick(Sender: TObject);
-    procedure ConvertClick(Sender: TObject);
+    procedure BtnPPToPasClick(Sender: TObject);
+    procedure BtnIncludeToTmpClick(Sender: TObject);
+    procedure h2pasClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LoadClick(Sender: TObject);
   private
@@ -46,9 +47,7 @@ const
 
   HeaderMask = 'gtkb*.h';
   //  HeaderMask = '*.h';
-  //  HeaderMask='gtk-autocleanups.h';
 
-  //  ListPos1: TStringArray = ('GDK_AVAILABLE_IN_ALL', 'G_BEGIN_DECLS', 'G_END_DECLS', 'GDK_DEPRECATED_IN_4_6_FOR(');
   ListPos1: TStringArray = (
     'GDK_DECLARE_INTERNAL_TYPE',
     'GDK_AVAILABLE_IN_4_4',
@@ -117,7 +116,7 @@ begin
   end;
 end;
 
-procedure TForm1.BtnCopyClick(Sender: TObject);
+procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
 var
   i, j: integer;
   sl: TStringList;
@@ -143,7 +142,7 @@ begin
   sl.Free;
 end;
 
-procedure TForm1.ConvertClick(Sender: TObject);
+procedure TForm1.h2pasClick(Sender: TObject);
 const
   READ_BYTES = 2048;
 var
@@ -164,7 +163,7 @@ begin
     ms := TMemoryStream.Create;
     BytesRead := 0;
     myProcess := TProcess.Create(nil);
-    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -v -p -t -S -d -c';
+    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -v -t -S -d -c';
     //    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
     myProcess.Options := [poUsePipes, poStderrToOutPut];
     myProcess.Execute;
@@ -211,11 +210,55 @@ begin
   Close;
 end;
 
-procedure TForm1.BtnConvert2Click(Sender: TObject);
+procedure TForm1.BtnPPToPasClick(Sender: TObject);
 var
   slppFiles, sl: TStringList;
   path: string;
   i: integer;
+
+  procedure DeleteTypes(sl: TStringList);
+  var
+    index: integer = 0;
+    isType: boolean = False;
+  begin
+    repeat
+      if index >= sl.Count then begin
+        Exit;
+      end;
+      if sl[index] = 'Type' then begin
+        sl[index] := '//// ' + sl[index];
+        isType := True;
+      end;
+      Inc(index);
+    until isType;
+
+    isType := False;
+    repeat
+      if index >= sl.Count then begin
+        Exit;
+      end;
+
+      if sl[index] = 'Type' then begin
+        isType := True;
+      end else begin
+        sl[index] := '//// ' + sl[index];
+      end;
+      Inc(index);
+    until isType;
+  end;
+
+  procedure DeleteClamp(sl: TStringList);
+  var
+    i: integer;
+  begin
+    for i := 0 to sl.Count - 1 do begin
+      if pos('{', sl[i]) = 1 then begin
+        if sl[i]<> '{'then
+        sl[i] := '//// ' + sl[i];
+      end;
+    end;
+  end;
+
 begin
   slppFiles := FindAllFiles(HeaderDespPath, '*.pp', True);
   WriteLn(slppFiles.Count);
@@ -223,9 +266,11 @@ begin
     path := slppFiles[i];
     sl := TStringList.Create;
     sl.LoadFromFile(path);
-    path :=StringReplace(path, '.pp', '.pas', []);
-    WriteLn(path);
 
+    DeleteClamp(sl);
+//    DeleteTypes(sl);
+
+    path := StringReplace(path, '.pp', '.pas', []);
     sl.SaveToFile(path);
     sl.Free;
   end;
