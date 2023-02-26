@@ -8,6 +8,56 @@ uses
   //  GTK4,
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
 
+const
+  HeaderPath = '/usr/include/gtk-4.0';
+  //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
+  HeaderDespPath = '/tmp/GTK4-Konverter-header';
+
+  //  HeaderMask = 'gtkb*.h';
+
+  HeaderMask = 'gtki*.h';
+//     HeaderMask = '*.h';
+  HeaderMask4 = '*.h';
+
+  ListPos1: TStringArray = (
+    'G_BEGIN_DECLS',
+    'G_END_DECLS',
+
+    //    'GDK_DECLARE_INTERNAL_TYPE',
+    'G_DEFINE_AUTOPTR_CLEANUP_FUNC(',
+    'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)');
+
+  ListSR: TStringArray = (
+    'G_STMT_START',
+    'G_STMT_END',
+    'G_UNLIKELY',
+    'G_GNUC_MALLOC',
+
+    'G_GNUC_PURE',
+    'GTK_ACCESSIBLE',
+    'G_GNUC_CONST',
+    'G_GNUC_NULL_TERMINATED');
+
+type
+  TListMacro = record
+    old, new: string;
+  end;
+  TListMacros = array of TListMacro;
+
+const
+  ListRenameMacros: TListMacros = (
+    (old: '#callback,'; new: 'callback,'),
+    (old: 'GDK_AVAILABLE_IN_ALL'; new: 'extern'),
+    (old: 'GDK_AVAILABLE_IN_4_2'; new: 'extern'),
+    (old: 'GDK_AVAILABLE_IN_4_4'; new: 'extern'),
+    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'));
+
+  ListRenameMacrosLine: TListMacros = (
+    (old: 'GDK_DECLARE_INTERNAL_TYPE'; new: 'void blabla();'),
+    (old: 'G_DECLARE_INTERFACE'; new: 'void blabla();'),
+    (old: 'G_DECLARE_FINAL_TYPE'; new: 'void blabla();'),
+    (old: 'G_DECLARE_DERIVABLE_TYPE'; new: 'void blabla();'));
+
 type
 
   { TForm1 }
@@ -30,8 +80,9 @@ type
       ImplementationIndex: integer;
     procedure DeletePos1(sl: TStringList; const Source: string);
     procedure DeleteSR(sl: TStringList; const Source: string);
+    procedure RenameMacro(sl: TStringList; const Source: TListMacro);
+    procedure RenameMacroLines(sl: TStringList; const Source: TListMacro);
   public
-
   end;
 
 var
@@ -40,40 +91,6 @@ var
 implementation
 
 {$R *.lfm}
-
-const
-  HeaderPath = '/usr/include/gtk-4.0';
-  //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
-  HeaderDespPath = '/tmp/GTK4-Konverter-header';
-
-  //  HeaderMask = 'gtkb*.h';
-  HeaderMask = '*.h';
-  HeaderMask4 = '*.h';
-
-  ListPos1: TStringArray = (
-    'GDK_DECLARE_INTERNAL_TYPE',
-    'GDK_AVAILABLE_IN_4_4',
-    'GDK_AVAILABLE_IN_4_6',
-    'G_DEFINE_AUTOPTR_CLEANUP_FUNC(',
-    'G_DECLARE_INTERFACE',
-    'G_DECLARE_FINAL_TYPE',
-    'GDK_AVAILABLE_IN_ALL',
-    'G_BEGIN_DECLS',
-    'G_END_DECLS',
-    'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)',
-    'G_DECLARE_DERIVABLE_TYPE',
-    'GDK_AVAILABLE_IN_4_2');
-
-  ListSR: TStringArray = (
-    'G_STMT_START',
-    'G_STMT_END',
-    'G_UNLIKELY',
-    'G_GNUC_MALLOC',
-
-    'G_GNUC_PURE',
-    'GTK_ACCESSIBLE',
-    'G_GNUC_CONST',
-    'G_GNUC_NULL_TERMINATED');
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -104,12 +121,38 @@ begin
   end;
 end;
 
+procedure TForm1.RenameMacro(sl: TStringList; const Source: TListMacro);
+var
+  i: integer;
+  s: string;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    s := sl[i];
+    sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
+    if Pos(Source.old, s) > 0 then begin
+      sl[i] := sl[i] + ' //// ' + s;
+    end;
+  end;
+end;
+
+procedure TForm1.RenameMacroLines(sl: TStringList; const Source: TListMacro);
+var
+  i: integer;
+  s: string;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    s := sl[i];
+    if Pos(Source.old, s) > 0 then begin
+      sl[i] := Source.new + ' //// ' + s;
+    end;
+  end;
+end;
+
 procedure TForm1.LoadClick(Sender: TObject);
 var
   slHeaderList: TStringList;
 begin
   slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
-  //  SynEdit1.Lines := slHeaderList;
   slHeaderList.Free;
 end;
 
@@ -140,6 +183,15 @@ begin
     Delete(path, 1, Length(HeaderPath));
     path := HeaderDespPath + path;
     ForceDirectories(ExtractFileDir(path));
+
+    for j := 0 to Length(ListRenameMacrosLine) - 1 do begin
+      RenameMacroLines(sl, ListRenameMacrosLine[j]);
+    end;
+
+    for j := 0 to Length(ListRenameMacros) - 1 do begin
+      RenameMacro(sl, ListRenameMacros[j]);
+    end;
+
     for j := 0 to Length(ListPos1) - 1 do begin
       DeletePos1(sl, ListPos1[j]);
     end;
@@ -175,12 +227,14 @@ begin
 
   for i := 0 to slHeaderFiles.Count - 1 do begin
     ms := TMemoryStream.Create;
-    BytesRead := 0;
     myProcess := TProcess.Create(nil);
-    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -t -S -d -c';
+    BytesRead := 0;
+
+    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -lgtk4 -p -t -S -d -c';
     //        myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -t -S -d -c';
     //    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
-    myProcess.Options := [poUsePipes, poStderrToOutPut];
+    //    myProcess.Options := [poUsePipes, poStderrToOutPut];
+    myProcess.Options := [poUsePipes];
     myProcess.Execute;
     while myProcess.Running do begin
       ms.SetSize(BytesRead + READ_BYTES);
@@ -196,23 +250,20 @@ begin
       n := myProcess.Output.Read((ms.Memory + BytesRead)^, READ_BYTES);
       Inc(BytesRead, n);
     until n <= 0;
-    if BytesRead > 0 then begin
-      //    WriteLn;
-    end;
-    //ec := myProcess.ExitCode;
-    //if ec <> 0 then begin
-    //  WriteLn('Exit Code:', ec);
-    //  WriteLn(slHeaderFiles[i]);
-    //end;
+    ms.SetSize(BytesRead);
 
     sl.Clear;
-    sl.LoadFromStream(ms);
 
-    SynEdit2.Lines.Add('------- Title ----------------');
-    SynEdit2.Lines.Add('File: ' + slHeaderFiles[i]);
-    SynEdit2.Lines.Add('------------------------------');
-    SynEdit2.Lines.AddStrings(sl);
+    if ms.Size > 0 then begin
+      sl.LoadFromStream(ms);
 
+      SynEdit2.Lines.Add('------- Title ----------------');
+      SynEdit2.Lines.Add('File: ' + slHeaderFiles[i]);
+      SynEdit2.Lines.Add('------------------------------');
+      SynEdit2.Lines.AddStrings(sl);
+    end;
+
+    ms.Free;
     myProcess.Free;
   end;
 

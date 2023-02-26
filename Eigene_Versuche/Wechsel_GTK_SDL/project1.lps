@@ -8,19 +8,19 @@
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="74"/>
-        <CursorPos X="30" Y="100"/>
+        <TopLine Value="73"/>
+        <CursorPos Y="103"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gclosure.inc"/>
+        <Filename Value="../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gclosure.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="48"/>
         <UsageCount Value="11"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkmain.inc"/>
+        <Filename Value="../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkmain.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="46"/>
         <CursorPos X="11" Y="72"/>
@@ -104,18 +104,17 @@
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode="default">
-        <Mode Name="default">
-          <local>
-            <LaunchingApplication Use="True"/>
-          </local>
-        </Mode>
+        <Mode Name="default"/>
       </Modes>
     </RunParams>
     <HistoryLists>
-      <List Name="LaunchingApplication" Type="File" Count="2">
+      <List Name="LaunchingApplication" Type="File" Count="3">
         <Item1 Value="/usr/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
         <Item2 Value="/usr/bin/gnome-terminal -t &apos;Lazarus Run Output&apos; -e &apos;$(LazarusDir)/tools/runwait.sh $(TargetCmdLine)&apos;"/>
+        <Item3 Value="/usr/bin/konsole -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </List>
+      <List Name="WorkingDirectory" Type="File" Count="1"/>
+      <List Name="CommandLineParameters" Count="1"/>
     </HistoryLists>
   </ProjectSession>
 </CONFIG>

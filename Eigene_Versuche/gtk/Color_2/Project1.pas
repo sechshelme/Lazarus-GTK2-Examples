@@ -49,10 +49,6 @@ var
 
     vbox := gtk_vbox_new(False, 0);
 
-    btn := gtk_button_new_with_label('Button 1');
-    g_signal_connect(G_OBJECT(btn), 'enter', G_CALLBACK(@enter_callback), nil);
-
-    gtk_container_add(GTK_CONTAINER(vbox), btn);
     gtk_container_add(GTK_CONTAINER(Window), vbox);
 
     draw := gtk_drawing_area_new;
@@ -64,6 +60,10 @@ var
     gdk_color_parse('#00FFFF', @col);
     gtk_widget_modify_bg(draw, GTK_STATE_NORMAL, @col);
     gtk_container_add(GTK_CONTAINER(vbox), draw);
+
+    btn := gtk_button_new_with_label('Button 1');
+    g_signal_connect(G_OBJECT(btn), 'enter', G_CALLBACK(@enter_callback), nil);
+    gtk_container_add(GTK_CONTAINER(vbox), btn);
 
 
     g_signal_connect(G_OBJECT(window), 'configure-event', G_CALLBACK(@configute_callback), nil);

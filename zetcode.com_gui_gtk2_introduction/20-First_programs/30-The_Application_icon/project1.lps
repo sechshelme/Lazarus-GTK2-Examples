@@ -8,18 +8,18 @@
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos Y="26"/>
+        <CursorPos X="24" Y="14"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gclosure.inc"/>
+        <Filename Value="../../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gclosure.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="48"/>
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkenums.inc"/>
+        <Filename Value="../../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkenums.inc"/>
         <EditorIndex Value="3"/>
         <TopLine Value="411"/>
         <CursorPos X="6" Y="446"/>
@@ -27,21 +27,22 @@
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gdk-pixbuf/gdk2pixbuf.pas"/>
+        <Filename Value="../../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gdk-pixbuf/gdk2pixbuf.pas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="204"/>
+        <TopLine Value="168"/>
+        <CursorPos X="10" Y="195"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gerror.inc"/>
+        <Filename Value="../../../../../fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/glib/gerror.inc"/>
         <EditorIndex Value="1"/>
         <CursorPos X="20" Y="10"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="14">
+    <JumpHistory HistoryIndex="15">
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="14" Column="9"/>
@@ -101,6 +102,10 @@
       <Position>
         <Filename Value="project1.lpr"/>
         <Caret Line="15" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="14" Column="24"/>
       </Position>
     </JumpHistory>
     <RunParams>

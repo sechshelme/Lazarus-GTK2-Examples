@@ -74,6 +74,8 @@ var    start_Games: boolean = False;
 
     gtk_init(@argc, @argv);
     window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_default_size(GTK_WINDOW(window), 220, 150);
+
     vbox := gtk_vbox_new(False, 0);
     gtk_container_add(GTK_CONTAINER(window), vbox);
 
@@ -97,7 +99,9 @@ var    start_Games: boolean = False;
     gtk_widget_show_all(window);
     gtk_main;
 
+    gtk_widget_hide(window);
     gtk_widget_destroy(window);
+    gtk_widget_show_all(window);
   //  ReadLn;
 //   gtk_main_quit;
 

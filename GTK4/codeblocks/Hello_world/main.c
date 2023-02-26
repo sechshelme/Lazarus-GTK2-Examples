@@ -3,8 +3,16 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
+
+
+#define gtk_builder_cscope_add_callback(scope, callback) \
+  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
+
 static void print_hello (GtkWidget *widget, gpointer data)
 {
+
+
+
   g_print ("Hello World\n");
 }
 
