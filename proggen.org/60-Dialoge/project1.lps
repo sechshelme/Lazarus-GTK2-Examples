@@ -7,6 +7,7 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="27" Y="29"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
@@ -33,10 +34,9 @@
       </Unit>
       <Unit>
         <Filename Value="/home/tux/fpcupdeluxe_stable/fpcsrc/packages/gtk2/src/gtk+/gtk/gtkmessagedialog.inc"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="50"/>
-        <CursorPos Y="78"/>
+        <CursorPos X="114" Y="62"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
