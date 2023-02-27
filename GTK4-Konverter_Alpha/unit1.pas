@@ -16,7 +16,7 @@ const
   //  HeaderMask = 'gtkb*.h';
 
   HeaderMask = 'gtki*.h';
-//     HeaderMask = '*.h';
+  //     HeaderMask = '*.h';
   HeaderMask4 = '*.h';
 
   ListPos1: TStringArray = (
@@ -47,10 +47,15 @@ type
 const
   ListRenameMacros: TListMacros = (
     (old: '#callback,'; new: 'callback,'),
+    (old: 'GDK_DEPRECATED_IN_4_2_FOR'; new: 'extern'),
+    (old: 'GDK_DEPRECATED_IN_4_4_FOR'; new: 'extern'),
+    (old: 'GDK_DEPRECATED_IN_4_6_FOR'; new: 'extern'),
+    (old: 'GDK_DEPRECATED_IN_4_8_FOR'; new: 'extern'),
     (old: 'GDK_AVAILABLE_IN_ALL'; new: 'extern'),
     (old: 'GDK_AVAILABLE_IN_4_2'; new: 'extern'),
     (old: 'GDK_AVAILABLE_IN_4_4'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'));
+    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'),
+    (old: 'GDK_AVAILABLE_IN_4_8'; new: 'extern'));
 
   ListRenameMacrosLine: TListMacros = (
     (old: 'GDK_DECLARE_INTERNAL_TYPE'; new: 'void blabla();'),
@@ -121,20 +126,6 @@ begin
   end;
 end;
 
-procedure TForm1.RenameMacro(sl: TStringList; const Source: TListMacro);
-var
-  i: integer;
-  s: string;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    s := sl[i];
-    sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
-    if Pos(Source.old, s) > 0 then begin
-      sl[i] := sl[i] + ' //// ' + s;
-    end;
-  end;
-end;
-
 procedure TForm1.RenameMacroLines(sl: TStringList; const Source: TListMacro);
 var
   i: integer;
@@ -143,8 +134,30 @@ begin
   for i := 0 to sl.Count - 1 do begin
     s := sl[i];
     if Pos(Source.old, s) > 0 then begin
-      sl[i] := Source.new + ' //// ' + s;
+      //      sl[i] := Source.new + ' //// ' + s;
+      sl[i] := '//// ' + s;
+      sl[i - 1] := ' //// ' + sl[i - 1];
     end;
+  end;
+end;
+
+procedure TForm1.RenameMacro(sl: TStringList; const Source: TListMacro);
+var
+  i: integer;
+  s: string;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    s := sl[i];
+    if pos('////',s)=0 then begin
+    sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
+    if Pos(Source.old, s) > 0 then begin
+      if Source.new = 'extern' then begin
+        sl[i] := 'extern ////' + s;
+      end else begin
+        sl[i] := sl[i] + ' //// ' + s;
+      end;
+    end;
+  end;
   end;
 end;
 
@@ -266,6 +279,7 @@ begin
     ms.Free;
     myProcess.Free;
   end;
+  SynEdit2.Lines.Add('****** fertig *******');
 
   slHeaderFiles.Free;
   sl.Free;
