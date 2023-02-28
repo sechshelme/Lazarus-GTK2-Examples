@@ -15,19 +15,24 @@ const
 
   //  HeaderMask = 'gtkb*.h';
 
-  HeaderMask = 'gtki*.h';
-  //     HeaderMask = '*.h';
+      HeaderMask = 'gtkt*.h';
+//  HeaderMask = '*.h';
   HeaderMask4 = '*.h';
 
   ListPos1: TStringArray = (
     'G_BEGIN_DECLS',
     'G_END_DECLS',
 
-    //    'GDK_DECLARE_INTERNAL_TYPE',
     'G_DEFINE_AUTOPTR_CLEANUP_FUNC(',
+    'GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_set_surrounding_with_selection)',
+    'GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_get_surrounding_with_selection)',
+    'GDK_DEPRECATED_IN_4_4_FOR(gtk_im_context_simple_add_compose_file)',
     'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)');
 
   ListSR: TStringArray = (
+    ' G_GNUC_WARN_UNUSED_RESULT',
+    ' G_GNUC_PRINTF (2, 3)',
+    ' G_GNUC_PRINTF (5, 6)',
     'G_STMT_START',
     'G_STMT_END',
     'G_UNLIKELY',
@@ -47,21 +52,24 @@ type
 const
   ListRenameMacros: TListMacros = (
     (old: '#callback,'; new: 'callback,'),
-    (old: 'GDK_DEPRECATED_IN_4_2_FOR'; new: 'extern'),
-    (old: 'GDK_DEPRECATED_IN_4_4_FOR'; new: 'extern'),
-    (old: 'GDK_DEPRECATED_IN_4_6_FOR'; new: 'extern'),
-    (old: 'GDK_DEPRECATED_IN_4_8_FOR'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_ALL'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_4_2'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_4_4'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'),
-    (old: 'GDK_AVAILABLE_IN_4_8'; new: 'extern'));
+    (old: '#member_name,'; new: 'member_name,'),
+    (old: 'GDK_DEPRECATED_IN'; new: 'extern'),
+    //    (old: 'GDK_DEPRECATED_IN_4_2_FOR'; new: 'extern'),
+    //    (old: 'GDK_DEPRECATED_IN_4_4_FOR'; new: 'extern'),
+    //    (old: 'GDK_DEPRECATED_IN_4_6_FOR'; new: 'extern'),
+    //    (old: 'GDK_DEPRECATED_IN_4_8_FOR'; new: 'extern'),
+    //    (old: 'GDK_AVAILABLE_IN_ALL'; new: 'extern'),
+    //    (old: 'GDK_AVAILABLE_IN_4_2'; new: 'extern'),
+    //    (old: 'GDK_AVAILABLE_IN_4_4'; new: 'extern'),
+    //    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'),
+    //    (old: 'GDK_AVAILABLE_IN_4_8'; new: 'extern'));
+    (old: 'GDK_AVAILABLE_IN'; new: 'extern'));
 
-  ListRenameMacrosLine: TListMacros = (
-    (old: 'GDK_DECLARE_INTERNAL_TYPE'; new: 'void blabla();'),
-    (old: 'G_DECLARE_INTERFACE'; new: 'void blabla();'),
-    (old: 'G_DECLARE_FINAL_TYPE'; new: 'void blabla();'),
-    (old: 'G_DECLARE_DERIVABLE_TYPE'; new: 'void blabla();'));
+  ListRenameMacrosLine: TStringArray = (
+    'GDK_DECLARE_INTERNAL_TYPE',
+    'G_DECLARE_INTERFACE',
+    'G_DECLARE_FINAL_TYPE',
+    'G_DECLARE_DERIVABLE_TYPE');
 
 type
 
@@ -86,7 +94,8 @@ type
     procedure DeletePos1(sl: TStringList; const Source: string);
     procedure DeleteSR(sl: TStringList; const Source: string);
     procedure RenameMacro(sl: TStringList; const Source: TListMacro);
-    procedure RenameMacroLines(sl: TStringList; const Source: TListMacro);
+    procedure RenameMacroLines(sl: TStringList; const Source: string);
+    function AddKommentar(const s: string; const kom: string): string;
   public
   end;
 
@@ -120,24 +129,38 @@ end;
 procedure TForm1.DeleteSR(sl: TStringList; const Source: string);
 var
   i: integer;
+  s: string;
 begin
   for i := 0 to sl.Count - 1 do begin
+    s := sl[i];
     sl[i] := StringReplace(sl[i], Source, '', []);
+    if Pos(Source, s) > 0 then  begin
+//      sl[i] := sl[i] + ' //// ' + s;
+      sl[i] :=       AddKommentar(sl[i], ' //// ' + s);
+    end;
   end;
 end;
 
-procedure TForm1.RenameMacroLines(sl: TStringList; const Source: TListMacro);
+procedure TForm1.RenameMacroLines(sl: TStringList; const Source: string);
 var
   i: integer;
   s: string;
 begin
   for i := 0 to sl.Count - 1 do begin
     s := sl[i];
-    if Pos(Source.old, s) > 0 then begin
+    if Pos(Source, s) = 1 then begin
       //      sl[i] := Source.new + ' //// ' + s;
       sl[i] := '//// ' + s;
       sl[i - 1] := ' //// ' + sl[i - 1];
     end;
+  end;
+end;
+
+function TForm1.AddKommentar(const s: string; const kom: string): string;
+begin
+  Result := s;
+  if Pos('\',s) = 0 then begin
+    Result := Result + kom;
   end;
 end;
 
@@ -148,17 +171,37 @@ var
 begin
   for i := 0 to sl.Count - 1 do begin
     s := sl[i];
-    if pos('////',s)=0 then begin
-    sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
-    if Pos(Source.old, s) > 0 then begin
-      if Source.new = 'extern' then begin
-        sl[i] := 'extern ////' + s;
-      end else begin
-        sl[i] := sl[i] + ' //// ' + s;
+    if Source.new = 'extern' then  begin
+      if Pos(Source.old, s) = 1 then  begin
+        if Pos('GDK_AVAILABLE_IN_ALL GType ', s) = 1 then begin
+          sl[i] := StringReplace(s, 'GDK_AVAILABLE_IN_ALL', 'extern', []);
+        end else begin
+          sl[i] := 'extern //// ' + s;
+        end;
+      end;
+    end else begin
+      sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
+      if Pos(Source.old, s) > 0 then  begin
+        //        sl[i] := sl[i] + ' //// ' + s;
       end;
     end;
   end;
-  end;
+
+
+  //
+  //  for i := 0 to sl.Count - 1 do begin
+  //    s := sl[i];
+  //    if pos('////', s) = 0 then begin
+  //      sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
+  //      if Pos(Source.old, s) > 0 then begin
+  //        if (Source.new = 'extern') and (Pos(Source.old, s) = 0) then begin
+  //          sl[i] := 'extern ////' + s;
+  //        end else begin
+  //          sl[i] := sl[i] + ' //// ' + s;
+  //        end;
+  //      end;
+  //    end;
+  //  end;
 end;
 
 procedure TForm1.LoadClick(Sender: TObject);
@@ -188,6 +231,7 @@ var
   end;
 
 begin
+  DeleteDirectory('/tmp/GTK4-Konverter-header', False);
   slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
   sl := TStringList.Create;
   for i := 0 to slHeaderList.Count - 1 do begin
@@ -228,13 +272,15 @@ const
 var
   myProcess: TProcess;
   ms: TMemoryStream;
-  BytesRead, i, ec: integer;
+  BytesRead, i, ec, c: integer;
   n: longint;
   sl, slHeaderFiles: TStringList;
 
 begin
   sl := TStringList.Create;
   SynEdit2.Lines.Clear;
+  SynEdit2.Lines.Add('------- Start ----------------');
+  SynEdit2.Lines.Add('');
   slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask4, True);
   WriteLn(slHeaderFiles.Text);
 
@@ -274,10 +320,16 @@ begin
       SynEdit2.Lines.Add('File: ' + slHeaderFiles[i]);
       SynEdit2.Lines.Add('------------------------------');
       SynEdit2.Lines.AddStrings(sl);
+    end else begin
+      c := SynEdit2.Lines.Count;
+      if c > 0 then begin
+        SynEdit2.Lines[SynEdit2.Lines.Count - 1] := SynEdit2.Lines[SynEdit2.Lines.Count - 1] + '.';
+      end;
     end;
 
     ms.Free;
     myProcess.Free;
+    Application.ProcessMessages;
   end;
   SynEdit2.Lines.Add('****** fertig *******');
 
