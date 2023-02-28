@@ -1,0 +1,26 @@
+------- Start ----------------
+...................................................................................................................................................................................................................................................................................
+------- Title ----------------
+File: /tmp/GTK4-Konverter-header/gdk/gdk4-autocleanup.h
+------------------------------
+at line 45 error : syntax error.........................................
+------- Title ----------------
+File: /tmp/GTK4-Konverter-header/gdk/gdk4versionmacros.h
+------------------------------
+at line 49 error : syntax error
+at line 66 error : syntax error
+at line 67 error : syntax error
+at line 68 error : syntax error...............
+------- Title ----------------
+File: /tmp/GTK4-Konverter-header/gdk/x11/gdk4x-autocleanups.h
+------------------------------
+at line 33 error : syntax error.............
+------- Title ----------------
+File: /tmp/GTK4-Konverter-header/gsk/gsk4-autocleanup.h
+------------------------------
+at line 29 error : syntax error.....
+------- Title ----------------
+File: /tmp/GTK4-Konverter-header/gsk/gsk4roundedrect.h
+------------------------------
+at line 40 error : syntax error......
+****** fertig *******

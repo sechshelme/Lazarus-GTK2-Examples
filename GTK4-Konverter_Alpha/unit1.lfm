@@ -548,4 +548,14 @@ object Form1: TForm1
     OnClick = BtnPPToPasClick
     TabOrder = 4
   end
+  object BtnSave: TButton
+    Left = 24
+    Height = 25
+    Top = 312
+    Width = 99
+    Anchors = [akRight, akBottom]
+    Caption = 'Save'
+    OnClick = BtnSaveClick
+    TabOrder = 5
+  end
 end

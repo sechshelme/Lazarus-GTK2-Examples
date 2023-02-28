@@ -17,11 +17,20 @@ const
 
   //HeaderMask = 'gtke*.h';
   //    HeaderMask = 'gdkt*.h';
-    HeaderMask = '*.h';
+  HeaderMask = '*.h';
   HeaderMask4 = '*.h';
 
+  ListIngFiles: TStringArray = (
+    HeaderPath + '/gdk/x11/gdkx-autocleanups.h',
+    HeaderPath + '/gsk/gsk-autocleanup.h',
+
+    HeaderPath + '/unix-print/gtk/gtkunixprint-autocleanups.h',
+    HeaderPath + '/gdk/gdkversionmacros.h',
+    HeaderPath + '/gtk/gtk-autocleanups.h',
+    HeaderPath + '/gdk/gdk-autocleanup.h');
+
   ListPos1: TStringArray = (
-  'G_DEFINE_AUTOPTR_CLEANUP_FUNC',
+    'G_DEFINE_AUTOPTR_CLEANUP_FUNC',
     'G_BEGIN_DECLS',
     'G_END_DECLS',
 
@@ -32,9 +41,11 @@ const
     'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)');
 
   ListSR: TStringArray = (
-    ' G_GNUC_WARN_UNUSED_RESULT',
-    ' G_GNUC_PRINTF (2, 3)',
-    ' G_GNUC_PRINTF (5, 6)',
+    'G_GNUC_WARN_UNUSED_RESULT',
+    'G_GNUC_PRINTF (2, 3)',
+    'G_GNUC_PRINTF (4, 0)',
+    'G_GNUC_PRINTF (4, 5)',
+    'G_GNUC_PRINTF (5, 6)',
     'G_UNLIKELY',
     'G_GNUC_MALLOC',
 
@@ -74,8 +85,9 @@ const
     'G_DECLARE_DERIVABLE_TYPE');
 
   ListDeleteBlock: TStringArray = (
-    '#define GDK_DECLARE_INTERNAL_TYPE'
-    , '#define GTK_CHECK_VERSION(major,minor,micro)', 'static inline ');
+    '#define GSK_ROUNDED_RECT_INIT(_x,_y,_w,_h)',
+    '#define GDK_DECLARE_INTERNAL_TYPE',
+    '#define GTK_CHECK_VERSION(major,minor,micro)', 'static inline ');
 
 
 type
@@ -83,6 +95,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    BtnSave: TButton;
     BtnPPToPas: TButton;
     h2pas: TButton;
     BtnIncludeToTmp: TButton;
@@ -91,6 +104,7 @@ type
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnPPToPasClick(Sender: TObject);
     procedure BtnIncludeToTmpClick(Sender: TObject);
+    procedure BtnSaveClick(Sender: TObject);
     procedure h2pasClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LoadClick(Sender: TObject);
@@ -265,7 +279,7 @@ end;
 
 procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
 var
-  i, j: integer;
+  i, j, Index: integer;
   sl, slHeaderList: TStringList;
   path: string;
 
@@ -284,6 +298,16 @@ var
 begin
   DeleteDirectory('/tmp/GTK4-Konverter-header', False);
   slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
+
+  for i := 0 to Length(ListIngFiles) - 1 do begin
+    WriteLn(ListIngFiles[i]);
+    Index := slHeaderList.IndexOf(ListIngFiles[i]);
+    WriteLn(Index);
+    if index >= 0 then  begin
+      slHeaderList.Delete(Index);
+    end;
+  end;
+
   sl := TStringList.Create;
   for i := 0 to slHeaderList.Count - 1 do begin
     path := slHeaderList[i];
@@ -325,6 +349,11 @@ begin
   end;
   slHeaderList.Free;
   sl.Free;
+end;
+
+procedure TForm1.BtnSaveClick(Sender: TObject);
+begin
+  SynEdit2.Lines.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter_Alpha/gtk4_output.txt');
 end;
 
 procedure TForm1.h2pasClick(Sender: TObject);
@@ -522,6 +551,9 @@ begin
   slGTK4Pas.Add('');
   slGTK4Pas.Add('interface');
   slGTK4Pas.Add('');
+  slGTK4Pas.Add('uses');
+  slGTK4Pas.Add('  cairo, pango;');
+  slGTK4Pas.Add('');
   slGTK4Pas.Add('implementation');
   slGTK4Pas.Add('');
 
@@ -533,14 +565,12 @@ begin
       s := slppFiles[index];
       slppFiles.Delete(index);
       slppFiles.Insert(0, s);
-      WriteLn(index);
-
     end;
+    WriteLn(index);
   end;
   WriteLn(slppFiles.Text);
 
-
-  InterfaceIndex := slGTK4Pas.IndexOf('interface') + 1;
+  InterfaceIndex := slGTK4Pas.IndexOf('interface') + 4;
   ImplementationIndex := slGTK4Pas.IndexOf('implementation') + 1;
 
   for i := 0 to slppFiles.Count - 1 do begin
@@ -549,7 +579,7 @@ begin
     sl.LoadFromFile(path);
 
     DeleteClamp(sl);
-    DeleteTypes(sl);
+//    DeleteTypes(sl);
 
     AddGTK4Pas(slGTK4Pas, sl, path);
 
