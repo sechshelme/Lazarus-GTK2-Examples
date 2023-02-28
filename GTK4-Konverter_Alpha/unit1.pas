@@ -15,11 +15,13 @@ const
 
   //  HeaderMask = 'gtkb*.h';
 
-      HeaderMask = 'gtkt*.h';
-//  HeaderMask = '*.h';
+  //HeaderMask = 'gtke*.h';
+  //    HeaderMask = 'gdkt*.h';
+    HeaderMask = '*.h';
   HeaderMask4 = '*.h';
 
   ListPos1: TStringArray = (
+  'G_DEFINE_AUTOPTR_CLEANUP_FUNC',
     'G_BEGIN_DECLS',
     'G_END_DECLS',
 
@@ -33,8 +35,6 @@ const
     ' G_GNUC_WARN_UNUSED_RESULT',
     ' G_GNUC_PRINTF (2, 3)',
     ' G_GNUC_PRINTF (5, 6)',
-    'G_STMT_START',
-    'G_STMT_END',
     'G_UNLIKELY',
     'G_GNUC_MALLOC',
 
@@ -66,10 +66,17 @@ const
     (old: 'GDK_AVAILABLE_IN'; new: 'extern'));
 
   ListRenameMacrosLine: TStringArray = (
+    '#define GTK_DEBUG_CHECK',
+    '#define GTK_NOTE',
     'GDK_DECLARE_INTERNAL_TYPE',
     'G_DECLARE_INTERFACE',
     'G_DECLARE_FINAL_TYPE',
     'G_DECLARE_DERIVABLE_TYPE');
+
+  ListDeleteBlock: TStringArray = (
+    '#define GDK_DECLARE_INTERNAL_TYPE'
+    , '#define GTK_CHECK_VERSION(major,minor,micro)', 'static inline ');
+
 
 type
 
@@ -91,11 +98,15 @@ type
     var
       InterfaceIndex: integer;
       ImplementationIndex: integer;
+    procedure Delete_G_STMT_Block(sl: TStringList);
+    procedure DeleteBlock(sl: TStringList; const Source: string);
     procedure DeletePos1(sl: TStringList; const Source: string);
     procedure DeleteSR(sl: TStringList; const Source: string);
     procedure RenameMacro(sl: TStringList; const Source: TListMacro);
     procedure RenameMacroLines(sl: TStringList; const Source: string);
     function AddKommentar(const s: string; const kom: string): string;
+
+    procedure Delete_enums_h(sl: TStringList);
   public
   end;
 
@@ -135,8 +146,8 @@ begin
     s := sl[i];
     sl[i] := StringReplace(sl[i], Source, '', []);
     if Pos(Source, s) > 0 then  begin
-//      sl[i] := sl[i] + ' //// ' + s;
-      sl[i] :=       AddKommentar(sl[i], ' //// ' + s);
+      //      sl[i] := sl[i] + ' //// ' + s;
+      sl[i] := AddKommentar(sl[i], ' //// ' + s);
     end;
   end;
 end;
@@ -159,8 +170,21 @@ end;
 function TForm1.AddKommentar(const s: string; const kom: string): string;
 begin
   Result := s;
-  if Pos('\',s) = 0 then begin
+  if Pos('\', s) = 0 then begin
     Result := Result + kom;
+  end;
+end;
+
+procedure TForm1.Delete_enums_h(sl: TStringList);
+var
+  i, j: integer;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    if Pos('GtkOrdering     gtk_ordering_from_cmpfunc       (int cmpfunc_result);', sl[i]) > 0 then  begin
+      for j := -1 to 16 do begin
+        sl[i + j] := '//// ' + sl[i + j];
+      end;
+    end;
   end;
 end;
 
@@ -186,22 +210,6 @@ begin
       end;
     end;
   end;
-
-
-  //
-  //  for i := 0 to sl.Count - 1 do begin
-  //    s := sl[i];
-  //    if pos('////', s) = 0 then begin
-  //      sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
-  //      if Pos(Source.old, s) > 0 then begin
-  //        if (Source.new = 'extern') and (Pos(Source.old, s) = 0) then begin
-  //          sl[i] := 'extern ////' + s;
-  //        end else begin
-  //          sl[i] := sl[i] + ' //// ' + s;
-  //        end;
-  //      end;
-  //    end;
-  //  end;
 end;
 
 procedure TForm1.LoadClick(Sender: TObject);
@@ -210,6 +218,49 @@ var
 begin
   slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
   slHeaderList.Free;
+end;
+
+procedure TForm1.Delete_G_STMT_Block(sl: TStringList);
+const
+  Anfang = 'G_STMT_START';
+  Ende = 'G_STMT_END';
+var
+  isBlock: boolean = False;
+  i: integer;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    if Pos(Anfang, sl[i]) > 0 then begin
+      isBlock := True;
+      sl[i - 1] := '//// ' + sl[i - 1];
+    end;
+    if Pos(Ende, sl[i]) > 0 then begin
+      isBlock := False;
+      sl[i] := '//// ' + sl[i];
+    end;
+    if isBlock then  begin
+      sl[i] := '//// ' + sl[i];
+    end;
+  end;
+end;
+
+procedure TForm1.DeleteBlock(sl: TStringList; const Source: string);
+var
+  i: integer;
+  isBlock: boolean = False;
+begin
+  for i := 0 to sl.Count - 1 do begin
+    if Pos(Source, sl[i]) > 0 then begin
+      isBlock := True;
+      sl[i - 1] := '//// ' + sl[i - 1];
+    end;
+    if (Length(sl[i]) < 6) and isBlock then begin
+      isBlock := False;
+      sl[i] := '//// ' + sl[i];
+    end;
+    if isBlock then  begin
+      sl[i] := '//// ' + sl[i];
+    end;
+  end;
 end;
 
 procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
@@ -256,6 +307,16 @@ begin
     for j := 0 to Length(ListSR) - 1 do begin
       DeleteSR(sl, ListSR[j]);
     end;
+
+    Delete_G_STMT_Block(sl);
+
+    for j := 0 to Length(ListDeleteBlock) - 1 do begin
+      DeleteBlock(sl, ListDeleteBlock[j]);
+    end;
+    //DeleteBlock(sl, '#define GDK_DECLARE_INTERNAL_TYPE');
+    //DeleteBlock(sl, '#define GTK_CHECK_VERSION(major,minor,micro)');
+    //DeleteBlock(sl, 'static inline ');
+    Delete_enums_h(sl);
 
     Insert('4', path, SlashPos(path) + 4);
     WriteLn((path));

@@ -2,13 +2,15 @@
 
 #include <stdlib.h>
 #include <gtk/gtk.h>
-nnnn
+
 #define blblasd
 #define yyyygtk_test_accessible_assert_role(accessible,role) vcbvc\
-bbbb
+int abn;
 
 #define gtk_builder_cscope_add_callback(scope, callback) \
   gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
+
+  G_STMT_START
 
 static void print_hello (GtkWidget *widget, gpointer data)
 {
