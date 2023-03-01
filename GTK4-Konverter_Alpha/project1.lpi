@@ -44,6 +44,26 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
+      <Unit>
+        <Filename Value="convert_header.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Convert_Header"/>
+      </Unit>
+      <Unit>
+        <Filename Value="convert_h2pas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Convert_H2Pas"/>
+      </Unit>
+      <Unit>
+        <Filename Value="common.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Common"/>
+      </Unit>
+      <Unit>
+        <Filename Value="convert_pp_to_pas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Convert_pp_to_pas"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -86,6 +106,12 @@
       </Item>
       <Item>
         <Name Value="ESynEditStringList"/>
+      </Item>
+      <Item>
+        <Name Value="RunError(216)"/>
+      </Item>
+      <Item>
+        <Name Value="EAccessViolation"/>
       </Item>
     </Exceptions>
   </Debugging>

@@ -5,90 +5,6 @@ interface
 uses
   cairo, pango;
 // --------- inteface ------------------------------
-// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
-// -------------------------------------------------
-
-{
-  Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4button.h
-  The following command line parameters were used:
-    /tmp/GTK4-Konverter-header/gtk/gtk4button.h
-    -lgtk4
-    -p
-    -t
-    -S
-    -d
-    -c
-}
-
-Type
-Pchar  = ^char;
-PGtkButton  = ^GtkButton;
-PGtkWidget  = ^GtkWidget;
-//// {$IFDEF FPC}
-//// {$PACKRECORDS C}
-//// {$ENDIF}
-
-
-
-
-//// {$ifndef __GTK_BUTTON_H__}
-//// {$define __GTK_BUTTON_H__}
-//// {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
-//// {$error "Only <gtk/gtk.h> can be included directly."}
-//// {$endif}
-//// {$include <gtk/gtkwidget.h>}
-
-function GTK_TYPE_BUTTON : longint; { return type might be wrong }
-
-function GTK_BUTTON(obj : longint) : longint;
-
-function GTK_BUTTON_CLASS(klass : longint) : longint;
-
-function GTK_IS_BUTTON(obj : longint) : longint;
-
-function GTK_IS_BUTTON_CLASS(klass : longint) : longint;
-
-function GTK_BUTTON_GET_CLASS(obj : longint) : longint;
-
-type
-  T_GtkButton = TGtkButton;
-  T_GtkButtonPrivate = TGtkButtonPrivate;
-  T_GtkButtonClass = TGtkButtonClass;
-
-  T_GtkButton = record
-      parent_instance : TGtkWidget;
-    end;
-
-
-
-
-  T_GtkButtonClass = record
-      parent_class : TGtkWidgetClass;
-      clicked : procedure (button:PTGtkButton);cdecl;
-      activate : procedure (button:PTGtkButton);cdecl;
-      padding : array[0..7] of Tgpointer;
-    end;
-
-
-function gtk_button_get_type:TGType;cdecl;external;
-function gtk_button_new:^TGtkWidget;cdecl;external;
-function gtk_button_new_with_label(_label:Pchar):^TGtkWidget;cdecl;external;
-function gtk_button_new_from_icon_name(icon_name:Pchar):^TGtkWidget;cdecl;external;
-function gtk_button_new_with_mnemonic(_label:Pchar):^TGtkWidget;cdecl;external;
-procedure gtk_button_set_has_frame(button:PTGtkButton; has_frame:Tgboolean);cdecl;external;
-function gtk_button_get_has_frame(button:PTGtkButton):Tgboolean;cdecl;external;
-procedure gtk_button_set_label(button:PTGtkButton; _label:Pchar);cdecl;external;
-function gtk_button_get_label(button:PTGtkButton):^char;cdecl;external;
-procedure gtk_button_set_use_underline(button:PTGtkButton; use_underline:Tgboolean);cdecl;external;
-function gtk_button_get_use_underline(button:PTGtkButton):Tgboolean;cdecl;external;
-procedure gtk_button_set_icon_name(button:PTGtkButton; icon_name:Pchar);cdecl;external;
-function gtk_button_get_icon_name(button:PTGtkButton):^char;cdecl;external;
-procedure gtk_button_set_child(button:PTGtkButton; child:PTGtkWidget);cdecl;external;
-function gtk_button_get_child(button:PTGtkButton):^TGtkWidget;cdecl;external;
-//// {$endif}
-
-
-// --------- inteface ------------------------------
 // /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
 // -------------------------------------------------
 
@@ -5922,6 +5838,90 @@ type
 
 function gtk_get_debug_flags:TGtkDebugFlags;cdecl;external;
 procedure gtk_set_debug_flags(flags:TGtkDebugFlags);cdecl;external;
+//// {$endif}
+
+
+// --------- inteface ------------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
+// -------------------------------------------------
+
+{
+  Automatically converted by H2Pas 1.0.0 from /tmp/GTK4-Konverter-header/gtk/gtk4button.h
+  The following command line parameters were used:
+    /tmp/GTK4-Konverter-header/gtk/gtk4button.h
+    -lgtk4
+    -p
+    -t
+    -S
+    -d
+    -c
+}
+
+Type
+Pchar  = ^char;
+PGtkButton  = ^GtkButton;
+PGtkWidget  = ^GtkWidget;
+//// {$IFDEF FPC}
+//// {$PACKRECORDS C}
+//// {$ENDIF}
+
+
+
+
+//// {$ifndef __GTK_BUTTON_H__}
+//// {$define __GTK_BUTTON_H__}
+//// {$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
+//// {$error "Only <gtk/gtk.h> can be included directly."}
+//// {$endif}
+//// {$include <gtk/gtkwidget.h>}
+
+function GTK_TYPE_BUTTON : longint; { return type might be wrong }
+
+function GTK_BUTTON(obj : longint) : longint;
+
+function GTK_BUTTON_CLASS(klass : longint) : longint;
+
+function GTK_IS_BUTTON(obj : longint) : longint;
+
+function GTK_IS_BUTTON_CLASS(klass : longint) : longint;
+
+function GTK_BUTTON_GET_CLASS(obj : longint) : longint;
+
+type
+  T_GtkButton = TGtkButton;
+  T_GtkButtonPrivate = TGtkButtonPrivate;
+  T_GtkButtonClass = TGtkButtonClass;
+
+  T_GtkButton = record
+      parent_instance : TGtkWidget;
+    end;
+
+
+
+
+  T_GtkButtonClass = record
+      parent_class : TGtkWidgetClass;
+      clicked : procedure (button:PTGtkButton);cdecl;
+      activate : procedure (button:PTGtkButton);cdecl;
+      padding : array[0..7] of Tgpointer;
+    end;
+
+
+function gtk_button_get_type:TGType;cdecl;external;
+function gtk_button_new:^TGtkWidget;cdecl;external;
+function gtk_button_new_with_label(_label:Pchar):^TGtkWidget;cdecl;external;
+function gtk_button_new_from_icon_name(icon_name:Pchar):^TGtkWidget;cdecl;external;
+function gtk_button_new_with_mnemonic(_label:Pchar):^TGtkWidget;cdecl;external;
+procedure gtk_button_set_has_frame(button:PTGtkButton; has_frame:Tgboolean);cdecl;external;
+function gtk_button_get_has_frame(button:PTGtkButton):Tgboolean;cdecl;external;
+procedure gtk_button_set_label(button:PTGtkButton; _label:Pchar);cdecl;external;
+function gtk_button_get_label(button:PTGtkButton):^char;cdecl;external;
+procedure gtk_button_set_use_underline(button:PTGtkButton; use_underline:Tgboolean);cdecl;external;
+function gtk_button_get_use_underline(button:PTGtkButton):Tgboolean;cdecl;external;
+procedure gtk_button_set_icon_name(button:PTGtkButton; icon_name:Pchar);cdecl;external;
+function gtk_button_get_icon_name(button:PTGtkButton):^char;cdecl;external;
+procedure gtk_button_set_child(button:PTGtkButton; child:PTGtkWidget);cdecl;external;
+function gtk_button_get_child(button:PTGtkButton):^TGtkWidget;cdecl;external;
 //// {$endif}
 
 
@@ -27091,41 +27091,6 @@ function gsk_ngl_renderer_new:^TGskRenderer;cdecl;external;
 
 implementation
 // --------- Implementation ------------------------
-// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
-// -------------------------------------------------
-
-function GTK_TYPE_BUTTON : longint; { return type might be wrong }
-  begin
-    GTK_TYPE_BUTTON:=gtk_button_get_type;
-  end;
-
-function GTK_BUTTON(obj : longint) : longint;
-begin
-  GTK_BUTTON:=G_TYPE_CHECK_INSTANCE_CAST(obj,GTK_TYPE_BUTTON,GtkButton);
-end;
-
-function GTK_BUTTON_CLASS(klass : longint) : longint;
-begin
-  GTK_BUTTON_CLASS:=G_TYPE_CHECK_CLASS_CAST(klass,GTK_TYPE_BUTTON,GtkButtonClass);
-end;
-
-function GTK_IS_BUTTON(obj : longint) : longint;
-begin
-  GTK_IS_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_BUTTON);
-end;
-
-function GTK_IS_BUTTON_CLASS(klass : longint) : longint;
-begin
-  GTK_IS_BUTTON_CLASS:=G_TYPE_CHECK_CLASS_TYPE(klass,GTK_TYPE_BUTTON);
-end;
-
-function GTK_BUTTON_GET_CLASS(obj : longint) : longint;
-begin
-  GTK_BUTTON_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_BUTTON,GtkButtonClass);
-end;
-
-
-// --------- Implementation ------------------------
 // /tmp/GTK4-Konverter-header/gtk/gtk4types.pp
 // -------------------------------------------------
 
@@ -28948,6 +28913,41 @@ end;
 // --------- Implementation ------------------------
 // /tmp/GTK4-Konverter-header/gtk/gtk4debug.pp
 // -------------------------------------------------
+
+
+// --------- Implementation ------------------------
+// /tmp/GTK4-Konverter-header/gtk/gtk4button.pp
+// -------------------------------------------------
+
+function GTK_TYPE_BUTTON : longint; { return type might be wrong }
+  begin
+    GTK_TYPE_BUTTON:=gtk_button_get_type;
+  end;
+
+function GTK_BUTTON(obj : longint) : longint;
+begin
+  GTK_BUTTON:=G_TYPE_CHECK_INSTANCE_CAST(obj,GTK_TYPE_BUTTON,GtkButton);
+end;
+
+function GTK_BUTTON_CLASS(klass : longint) : longint;
+begin
+  GTK_BUTTON_CLASS:=G_TYPE_CHECK_CLASS_CAST(klass,GTK_TYPE_BUTTON,GtkButtonClass);
+end;
+
+function GTK_IS_BUTTON(obj : longint) : longint;
+begin
+  GTK_IS_BUTTON:=G_TYPE_CHECK_INSTANCE_TYPE(obj,GTK_TYPE_BUTTON);
+end;
+
+function GTK_IS_BUTTON_CLASS(klass : longint) : longint;
+begin
+  GTK_IS_BUTTON_CLASS:=G_TYPE_CHECK_CLASS_TYPE(klass,GTK_TYPE_BUTTON);
+end;
+
+function GTK_BUTTON_GET_CLASS(obj : longint) : longint;
+begin
+  GTK_BUTTON_GET_CLASS:=G_TYPE_INSTANCE_GET_CLASS(obj,GTK_TYPE_BUTTON,GtkButtonClass);
+end;
 
 
 // --------- Implementation ------------------------

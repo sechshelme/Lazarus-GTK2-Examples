@@ -6,89 +6,8 @@ interface
 
 uses
   //  GTK4,
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process;
-
-const
-  HeaderPath = '/usr/include/gtk-4.0';
-  //  HeaderDespPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter/header';
-  HeaderDespPath = '/tmp/GTK4-Konverter-header';
-
-  //  HeaderMask = 'gtkb*.h';
-
-  //HeaderMask = 'gtke*.h';
-  //    HeaderMask = 'gdkt*.h';
-  HeaderMask = '*.h';
-  HeaderMask4 = '*.h';
-
-  ListIngFiles: TStringArray = (
-    HeaderPath + '/gdk/x11/gdkx-autocleanups.h',
-    HeaderPath + '/gsk/gsk-autocleanup.h',
-
-    HeaderPath + '/unix-print/gtk/gtkunixprint-autocleanups.h',
-    HeaderPath + '/gdk/gdkversionmacros.h',
-    HeaderPath + '/gtk/gtk-autocleanups.h',
-    HeaderPath + '/gdk/gdk-autocleanup.h');
-
-  ListPos1: TStringArray = (
-    'G_DEFINE_AUTOPTR_CLEANUP_FUNC',
-    'G_BEGIN_DECLS',
-    'G_END_DECLS',
-
-    'G_DEFINE_AUTOPTR_CLEANUP_FUNC(',
-    'GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_set_surrounding_with_selection)',
-    'GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_get_surrounding_with_selection)',
-    'GDK_DEPRECATED_IN_4_4_FOR(gtk_im_context_simple_add_compose_file)',
-    'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)');
-
-  ListSR: TStringArray = (
-    'G_GNUC_WARN_UNUSED_RESULT',
-    'G_GNUC_PRINTF (2, 3)',
-    'G_GNUC_PRINTF (4, 0)',
-    'G_GNUC_PRINTF (4, 5)',
-    'G_GNUC_PRINTF (5, 6)',
-    'G_UNLIKELY',
-    'G_GNUC_MALLOC',
-
-    'G_GNUC_PURE',
-    'GTK_ACCESSIBLE',
-    'G_GNUC_CONST',
-    'G_GNUC_NULL_TERMINATED');
-
-type
-  TListMacro = record
-    old, new: string;
-  end;
-  TListMacros = array of TListMacro;
-
-const
-  ListRenameMacros: TListMacros = (
-    (old: '#callback,'; new: 'callback,'),
-    (old: '#member_name,'; new: 'member_name,'),
-    (old: 'GDK_DEPRECATED_IN'; new: 'extern'),
-    //    (old: 'GDK_DEPRECATED_IN_4_2_FOR'; new: 'extern'),
-    //    (old: 'GDK_DEPRECATED_IN_4_4_FOR'; new: 'extern'),
-    //    (old: 'GDK_DEPRECATED_IN_4_6_FOR'; new: 'extern'),
-    //    (old: 'GDK_DEPRECATED_IN_4_8_FOR'; new: 'extern'),
-    //    (old: 'GDK_AVAILABLE_IN_ALL'; new: 'extern'),
-    //    (old: 'GDK_AVAILABLE_IN_4_2'; new: 'extern'),
-    //    (old: 'GDK_AVAILABLE_IN_4_4'; new: 'extern'),
-    //    (old: 'GDK_AVAILABLE_IN_4_6'; new: 'extern'),
-    //    (old: 'GDK_AVAILABLE_IN_4_8'; new: 'extern'));
-    (old: 'GDK_AVAILABLE_IN'; new: 'extern'));
-
-  ListRenameMacrosLine: TStringArray = (
-    '#define GTK_DEBUG_CHECK',
-    '#define GTK_NOTE',
-    'GDK_DECLARE_INTERNAL_TYPE',
-    'G_DECLARE_INTERFACE',
-    'G_DECLARE_FINAL_TYPE',
-    'G_DECLARE_DERIVABLE_TYPE');
-
-  ListDeleteBlock: TStringArray = (
-    '#define GSK_ROUNDED_RECT_INIT(_x,_y,_w,_h)',
-    '#define GDK_DECLARE_INTERNAL_TYPE',
-    '#define GTK_CHECK_VERSION(major,minor,micro)', 'static inline ');
-
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, SynEdit, FileUtil, process,
+  Convert_Header, Convert_H2Pas, Convert_pp_to_pas, Common;
 
 type
 
@@ -105,22 +24,13 @@ type
     procedure BtnPPToPasClick(Sender: TObject);
     procedure BtnIncludeToTmpClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure h2pasClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LoadClick(Sender: TObject);
   private
-    var
-      InterfaceIndex: integer;
-      ImplementationIndex: integer;
-    procedure Delete_G_STMT_Block(sl: TStringList);
-    procedure DeleteBlock(sl: TStringList; const Source: string);
-    procedure DeletePos1(sl: TStringList; const Source: string);
-    procedure DeleteSR(sl: TStringList; const Source: string);
-    procedure RenameMacro(sl: TStringList; const Source: TListMacro);
-    procedure RenameMacroLines(sl: TStringList; const Source: string);
-    function AddKommentar(const s: string; const kom: string): string;
-
-    procedure Delete_enums_h(sl: TStringList);
+    HeaderConvert: THeaderConvert;
+    H2Pas_Convert: TH2Pas;
+    pp_to_pas_Convert: TConvert_pp_to_pas;
   public
   end;
 
@@ -136,219 +46,14 @@ begin
   Width := Screen.Width div 2;
   Left := 100;
   Height := Screen.Height - 100;
-end;
-
-procedure TForm1.DeletePos1(sl: TStringList; const Source: string);
-var
-  i: integer;
-  p: SizeInt;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    p := pos(Source, sl[i]);
-    if p >= 1 then begin
-      sl[i] := '//// Zeile entfernt: ' + sl[i];
-    end;
-  end;
-end;
-
-procedure TForm1.DeleteSR(sl: TStringList; const Source: string);
-var
-  i: integer;
-  s: string;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    s := sl[i];
-    sl[i] := StringReplace(sl[i], Source, '', []);
-    if Pos(Source, s) > 0 then  begin
-      //      sl[i] := sl[i] + ' //// ' + s;
-      sl[i] := AddKommentar(sl[i], ' //// ' + s);
-    end;
-  end;
-end;
-
-procedure TForm1.RenameMacroLines(sl: TStringList; const Source: string);
-var
-  i: integer;
-  s: string;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    s := sl[i];
-    if Pos(Source, s) = 1 then begin
-      //      sl[i] := Source.new + ' //// ' + s;
-      sl[i] := '//// ' + s;
-      sl[i - 1] := ' //// ' + sl[i - 1];
-    end;
-  end;
-end;
-
-function TForm1.AddKommentar(const s: string; const kom: string): string;
-begin
-  Result := s;
-  if Pos('\', s) = 0 then begin
-    Result := Result + kom;
-  end;
-end;
-
-procedure TForm1.Delete_enums_h(sl: TStringList);
-var
-  i, j: integer;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    if Pos('GtkOrdering     gtk_ordering_from_cmpfunc       (int cmpfunc_result);', sl[i]) > 0 then  begin
-      for j := -1 to 16 do begin
-        sl[i + j] := '//// ' + sl[i + j];
-      end;
-    end;
-  end;
-end;
-
-procedure TForm1.RenameMacro(sl: TStringList; const Source: TListMacro);
-var
-  i: integer;
-  s: string;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    s := sl[i];
-    if Source.new = 'extern' then  begin
-      if Pos(Source.old, s) = 1 then  begin
-        if Pos('GDK_AVAILABLE_IN_ALL GType ', s) = 1 then begin
-          sl[i] := StringReplace(s, 'GDK_AVAILABLE_IN_ALL', 'extern', []);
-        end else begin
-          sl[i] := 'extern //// ' + s;
-        end;
-      end;
-    end else begin
-      sl[i] := StringReplace(sl[i], Source.old, Source.new, []);
-      if Pos(Source.old, s) > 0 then  begin
-        //        sl[i] := sl[i] + ' //// ' + s;
-      end;
-    end;
-  end;
-end;
-
-procedure TForm1.LoadClick(Sender: TObject);
-var
-  slHeaderList: TStringList;
-begin
-  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
-  slHeaderList.Free;
-end;
-
-procedure TForm1.Delete_G_STMT_Block(sl: TStringList);
-const
-  Anfang = 'G_STMT_START';
-  Ende = 'G_STMT_END';
-var
-  isBlock: boolean = False;
-  i: integer;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    if Pos(Anfang, sl[i]) > 0 then begin
-      isBlock := True;
-      sl[i - 1] := '//// ' + sl[i - 1];
-    end;
-    if Pos(Ende, sl[i]) > 0 then begin
-      isBlock := False;
-      sl[i] := '//// ' + sl[i];
-    end;
-    if isBlock then  begin
-      sl[i] := '//// ' + sl[i];
-    end;
-  end;
-end;
-
-procedure TForm1.DeleteBlock(sl: TStringList; const Source: string);
-var
-  i: integer;
-  isBlock: boolean = False;
-begin
-  for i := 0 to sl.Count - 1 do begin
-    if Pos(Source, sl[i]) > 0 then begin
-      isBlock := True;
-      sl[i - 1] := '//// ' + sl[i - 1];
-    end;
-    if (Length(sl[i]) < 6) and isBlock then begin
-      isBlock := False;
-      sl[i] := '//// ' + sl[i];
-    end;
-    if isBlock then  begin
-      sl[i] := '//// ' + sl[i];
-    end;
-  end;
+  HeaderConvert := THeaderConvert.Create;
+  H2Pas_Convert := TH2Pas.Create;
+  pp_to_pas_Convert := TConvert_pp_to_pas.Create;
 end;
 
 procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
-var
-  i, j, Index: integer;
-  sl, slHeaderList: TStringList;
-  path: string;
-
-
-  function SlashPos(const s: string): integer;
-  var
-    l: SizeInt;
-  begin
-    l := Length(s);
-    while (l > 1) and (s[l] <> '/') do begin
-      Dec(l);
-    end;
-    Result := l;
-  end;
-
 begin
-  DeleteDirectory('/tmp/GTK4-Konverter-header', False);
-  slHeaderList := FindAllFiles(HeaderPath, HeaderMask, True);
-
-  for i := 0 to Length(ListIngFiles) - 1 do begin
-    WriteLn(ListIngFiles[i]);
-    Index := slHeaderList.IndexOf(ListIngFiles[i]);
-    WriteLn(Index);
-    if index >= 0 then  begin
-      slHeaderList.Delete(Index);
-    end;
-  end;
-
-  sl := TStringList.Create;
-  for i := 0 to slHeaderList.Count - 1 do begin
-    path := slHeaderList[i];
-    sl.LoadFromFile(slHeaderList[i]);
-    Delete(path, 1, Length(HeaderPath));
-    path := HeaderDespPath + path;
-    ForceDirectories(ExtractFileDir(path));
-
-    for j := 0 to Length(ListRenameMacrosLine) - 1 do begin
-      RenameMacroLines(sl, ListRenameMacrosLine[j]);
-    end;
-
-    for j := 0 to Length(ListRenameMacros) - 1 do begin
-      RenameMacro(sl, ListRenameMacros[j]);
-    end;
-
-    for j := 0 to Length(ListPos1) - 1 do begin
-      DeletePos1(sl, ListPos1[j]);
-    end;
-
-    for j := 0 to Length(ListSR) - 1 do begin
-      DeleteSR(sl, ListSR[j]);
-    end;
-
-    Delete_G_STMT_Block(sl);
-
-    for j := 0 to Length(ListDeleteBlock) - 1 do begin
-      DeleteBlock(sl, ListDeleteBlock[j]);
-    end;
-    //DeleteBlock(sl, '#define GDK_DECLARE_INTERNAL_TYPE');
-    //DeleteBlock(sl, '#define GTK_CHECK_VERSION(major,minor,micro)');
-    //DeleteBlock(sl, 'static inline ');
-    Delete_enums_h(sl);
-
-    Insert('4', path, SlashPos(path) + 4);
-    WriteLn((path));
-
-    sl.SaveToFile(path);
-  end;
-  slHeaderList.Free;
-  sl.Free;
+  HeaderConvert.IncludeToTmp;
 end;
 
 procedure TForm1.BtnSaveClick(Sender: TObject);
@@ -356,75 +61,16 @@ begin
   SynEdit2.Lines.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter_Alpha/gtk4_output.txt');
 end;
 
-procedure TForm1.h2pasClick(Sender: TObject);
-const
-  READ_BYTES = 2048;
-var
-  myProcess: TProcess;
-  ms: TMemoryStream;
-  BytesRead, i, ec, c: integer;
-  n: longint;
-  sl, slHeaderFiles: TStringList;
-
+procedure TForm1.FormDestroy(Sender: TObject);
 begin
-  sl := TStringList.Create;
-  SynEdit2.Lines.Clear;
-  SynEdit2.Lines.Add('------- Start ----------------');
-  SynEdit2.Lines.Add('');
-  slHeaderFiles := FindAllFiles(HeaderDespPath, HeaderMask4, True);
-  WriteLn(slHeaderFiles.Text);
+  HeaderConvert.Free;
+  H2Pas_Convert.Free;
+  pp_to_pas_Convert.Free;
+end;
 
-  for i := 0 to slHeaderFiles.Count - 1 do begin
-    ms := TMemoryStream.Create;
-    myProcess := TProcess.Create(nil);
-    BytesRead := 0;
-
-    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -lgtk4 -p -t -S -d -c';
-    //        myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -t -S -d -c';
-    //    myProcess.CommandLine := '/usr/bin/h2pas' + ' ' + slHeaderFiles[i] + ' -p -T -S -d -c';
-    //    myProcess.Options := [poUsePipes, poStderrToOutPut];
-    myProcess.Options := [poUsePipes];
-    myProcess.Execute;
-    while myProcess.Running do begin
-      ms.SetSize(BytesRead + READ_BYTES);
-      n := myProcess.Output.Read((ms.Memory + BytesRead)^, READ_BYTES);
-      if n > 0 then begin
-        Inc(BytesRead, n);
-      end else begin
-        Sleep(100);
-      end;
-    end;
-    repeat
-      ms.SetSize(BytesRead + READ_BYTES);
-      n := myProcess.Output.Read((ms.Memory + BytesRead)^, READ_BYTES);
-      Inc(BytesRead, n);
-    until n <= 0;
-    ms.SetSize(BytesRead);
-
-    sl.Clear;
-
-    if ms.Size > 0 then begin
-      sl.LoadFromStream(ms);
-
-      SynEdit2.Lines.Add('------- Title ----------------');
-      SynEdit2.Lines.Add('File: ' + slHeaderFiles[i]);
-      SynEdit2.Lines.Add('------------------------------');
-      SynEdit2.Lines.AddStrings(sl);
-    end else begin
-      c := SynEdit2.Lines.Count;
-      if c > 0 then begin
-        SynEdit2.Lines[SynEdit2.Lines.Count - 1] := SynEdit2.Lines[SynEdit2.Lines.Count - 1] + '.';
-      end;
-    end;
-
-    ms.Free;
-    myProcess.Free;
-    Application.ProcessMessages;
-  end;
-  SynEdit2.Lines.Add('****** fertig *******');
-
-  slHeaderFiles.Free;
-  sl.Free;
+procedure TForm1.h2pasClick(Sender: TObject);
+begin
+  H2Pas_Convert.RunH2Pas(SynEdit2);
 end;
 
 procedure TForm1.BtnCloseClick(Sender: TObject);
@@ -433,166 +79,8 @@ begin
 end;
 
 procedure TForm1.BtnPPToPasClick(Sender: TObject);
-var
-  slppFiles, sl: TStringList;
-  path, s: string;
-  i, index: integer;
-  slGTK4Pas: TStringList;
-
-  procedure DeleteTypes(sl: TStringList);
-  var
-    index: integer = 0;
-    isType: boolean = False;
-  begin
-    repeat
-      if index >= sl.Count then begin
-        Exit;
-      end;
-      if Pos('Type', sl[index]) > 0 then begin
-        //        if sl[index] = 'Type' then begin
-        sl[index] := '//// ' + sl[index];
-        isType := True;
-      end;
-      Inc(index);
-    until isType;
-
-    isType := False;
-    repeat
-      if index >= sl.Count then begin
-        Exit;
-      end;
-      if (Pos('Type', sl[index]) > 0) or (pos('{$IFDEF FPC}', sl[index]) > 0) then begin
-        //        if (sl[index] = 'Type') or (pos('{$IFDEF FPC}', sl[index]) > 0) then begin
-        isType := True;
-      end else begin
-        sl[index] := '//// ' + sl[index];
-      end;
-      Inc(index);
-    until isType;
-  end;
-
-  procedure DeleteClamp(sl: TStringList);
-  var
-    i: integer;
-  begin
-    for i := 0 to sl.Count - 1 do begin
-      if pos('{', sl[i]) = 1 then begin
-        if sl[i] <> '{' then begin
-          sl[i] := '//// ' + sl[i];
-        end;
-      end;
-      if pos('(* error', sl[i]) = 1 then begin
-        if sl[i] <> '{' then begin
-          sl[i] := '//// ' + sl[i];
-          sl[i + 1] := '//// ' + sl[i + 1];
-        end;
-      end;
-    end;
-  end;
-
-  procedure AddGTK4Pas(slGTK4pas: TStringList; Source: TStringList; const Headername: string);
-  var
-    i, start, ende: integer;
-  begin
-    start := Source.IndexOf('interface');
-    ende := Source.IndexOf('implementation');
-    if (start < 1) or (ende < 1) then begin
-      WriteLn('Ungültige Unit');
-      WriteLn(start);
-      WriteLn(ende);
-      WriteLn(Headername);
-      Exit;
-    end;
-
-    slGTK4pas.Insert(ImplementationIndex, '// -------------------------------------------------');
-    slGTK4pas.Insert(ImplementationIndex, '// ' + Headername);
-    slGTK4pas.Insert(ImplementationIndex, '// --------- Implementation ------------------------');
-
-    slGTK4pas.Insert(InterfaceIndex, '// -------------------------------------------------');
-    slGTK4pas.Insert(InterfaceIndex, '// ' + Headername);
-    slGTK4pas.Insert(InterfaceIndex, '// --------- inteface ------------------------------');
-
-    Inc(InterfaceIndex, 3);
-    Inc(ImplementationIndex, 6);
-
-    for i := start + 1 to ende - 1 do begin
-      slGTK4pas.Insert(InterfaceIndex, Source[i]);
-      Inc(InterfaceIndex);
-      Inc(ImplementationIndex);
-    end;
-
-    for i := ende + 1 to Source.Count - 2 do begin
-      slGTK4pas.Insert(ImplementationIndex, Source[i]);
-      Inc(ImplementationIndex);
-    end;
-  end;
-
-  function IndexOf(sl: TStringList; const HeaderFolg: string): integer;
-  var
-    i: integer;
-  begin
-    Result := -1;
-    for i := 0 to sl.Count - 1 do begin
-      if pos('4' + HeaderFolg + '.pp', sl[i]) > 0 then begin
-        Result := i;
-        Exit;
-      end;
-    end;
-  end;
-
-const
-  HeaderFolge: TStringArray = (
-    'types',
-    'widget');
-
 begin
-  slGTK4Pas := TStringList.Create;
-  slGTK4Pas.Add('unit GTK4;');
-  slGTK4Pas.Add('');
-  slGTK4Pas.Add('interface');
-  slGTK4Pas.Add('');
-  slGTK4Pas.Add('uses');
-  slGTK4Pas.Add('  cairo, pango;');
-  slGTK4Pas.Add('');
-  slGTK4Pas.Add('implementation');
-  slGTK4Pas.Add('');
-
-  slppFiles := FindAllFiles(HeaderDespPath, '*.pp', True);
-
-  for i := Length(HeaderFolge) - 1 downto 0 do begin
-    index := IndexOf(slppFiles, HeaderFolge[i]);
-    if index > 0 then begin
-      s := slppFiles[index];
-      slppFiles.Delete(index);
-      slppFiles.Insert(0, s);
-    end;
-    WriteLn(index);
-  end;
-  WriteLn(slppFiles.Text);
-
-  InterfaceIndex := slGTK4Pas.IndexOf('interface') + 4;
-  ImplementationIndex := slGTK4Pas.IndexOf('implementation') + 1;
-
-  for i := 0 to slppFiles.Count - 1 do begin
-    path := slppFiles[i];
-    sl := TStringList.Create;
-    sl.LoadFromFile(path);
-
-    DeleteClamp(sl);
-//    DeleteTypes(sl);
-
-    AddGTK4Pas(slGTK4Pas, sl, path);
-
-    path := StringReplace(path, '.pp', '.pas', []);
-    sl.SaveToFile(path);
-    sl.Free;
-  end;
-  slppFiles.Free;
-
-  slGTK4Pas.Add('');
-  slGTK4Pas.Add('end.');
-  slGTK4Pas.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter_Alpha/gtk4.pas');
-  slGTK4Pas.Free;
+  pp_to_pas_Convert.Conver_to_pas;
 end;
 
 end.

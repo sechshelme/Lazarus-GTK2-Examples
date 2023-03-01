@@ -5,11 +5,6 @@ uses
   Gdk2,
   Gtk2;
 
-  procedure press(widget: PGtkWidget; event: PGdkEventButton; user_data: gpointer); cdecl;
-  begin
-    WriteLn('Press Button ', PtrUInt(user_data));
-  end;
-
   procedure main;
   var
     Window, align, label1: PGtkWidget;
