@@ -24,13 +24,9 @@ type
     procedure BtnPPToPasClick(Sender: TObject);
     procedure BtnIncludeToTmpClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
     procedure h2pasClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    HeaderConvert: THeaderConvert;
-    H2Pas_Convert: TH2Pas;
-    pp_to_pas_Convert: TConvert_pp_to_pas;
   public
   end;
 
@@ -46,14 +42,15 @@ begin
   Width := Screen.Width div 2;
   Left := 100;
   Height := Screen.Height - 100;
-  HeaderConvert := THeaderConvert.Create;
-  H2Pas_Convert := TH2Pas.Create;
-  pp_to_pas_Convert := TConvert_pp_to_pas.Create;
 end;
 
 procedure TForm1.BtnIncludeToTmpClick(Sender: TObject);
+var
+  HeaderConvert: THeaderConvert;
 begin
-  HeaderConvert.IncludeToTmp;
+  HeaderConvert := THeaderConvert.Create;
+  HeaderConvert.IncludeToTmp(PackageDirectory);
+  HeaderConvert.Free;
 end;
 
 procedure TForm1.BtnSaveClick(Sender: TObject);
@@ -61,16 +58,13 @@ begin
   SynEdit2.Lines.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4-Konverter_Alpha/gtk4_output.txt');
 end;
 
-procedure TForm1.FormDestroy(Sender: TObject);
-begin
-  HeaderConvert.Free;
-  H2Pas_Convert.Free;
-  pp_to_pas_Convert.Free;
-end;
-
 procedure TForm1.h2pasClick(Sender: TObject);
+var
+  H2Pas_Convert: TH2Pas;
 begin
+  H2Pas_Convert := TH2Pas.Create;
   H2Pas_Convert.RunH2Pas(SynEdit2);
+  H2Pas_Convert.Free;
 end;
 
 procedure TForm1.BtnCloseClick(Sender: TObject);
@@ -79,8 +73,12 @@ begin
 end;
 
 procedure TForm1.BtnPPToPasClick(Sender: TObject);
+var
+  pp_to_pas_Convert: TConvert_pp_to_pas;
 begin
+  pp_to_pas_Convert := TConvert_pp_to_pas.Create;
   pp_to_pas_Convert.Conver_to_pas;
+  pp_to_pas_Convert.Free;
 end;
 
 end.
