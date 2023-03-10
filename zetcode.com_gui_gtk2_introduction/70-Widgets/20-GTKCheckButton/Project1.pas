@@ -34,7 +34,7 @@ uses
     cb := gtk_check_button_new_with_label('Show title');
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(cb), True);
 
-        GTK_WIDGET_UNSET_FLAGS(cb, GTK_CAN_FOCUS);
+    GTK_WIDGET_UNSET_FLAGS(cb, GTK_CAN_FOCUS);
     gtk_container_add(GTK_CONTAINER(halign), cb);
 
     g_signal_connect(G_OBJECT(cb), 'clicked', G_CALLBACK(@button_clicked), G_OBJECT(Window));
