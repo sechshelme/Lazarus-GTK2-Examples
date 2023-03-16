@@ -6,15 +6,13 @@ uses
   Gtk2;
 
 var
-  col: TGdkColor=(pixel:0;red:27000;green:30000;blue:35000);
+  col: TGdkColor = (pixel: 0; red: 27000; green: 30000; blue: 35000);
 
-procedure enter_callback(widget: PGtkWidget; Data: gpointer); cdecl;
-begin
-  WriteLn('enter');
-  gtk_widget_modify_bg(widget,GTK_STATE_PRELIGHT, @col);
-
-
-end;
+  procedure enter_callback(widget: PGtkWidget; Data: gpointer); cdecl;
+  begin
+    WriteLn('enter');
+    gtk_widget_modify_bg(widget, GTK_STATE_PRELIGHT, @col);
+  end;
 
   procedure configute_callback(widget: PGtkWidget; event: PGdkEvent; Data: gpointer); cdecl;
   var
@@ -62,16 +60,16 @@ end;
 
     gtk_widget_show_all(window);
 
-    gdk_color_parse('#0000FF',@col);
+    gdk_color_parse('#0000FF', @col);
 
-    gtk_widget_modify_bg(btn,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(btn,GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_bg(btn, GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_fg(btn, GTK_STATE_PRELIGHT, @col);
 
-    gtk_widget_modify_bg(halign,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(halign,GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_bg(halign, GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_fg(halign, GTK_STATE_PRELIGHT, @col);
 
-    gtk_widget_modify_bg(window,GTK_STATE_PRELIGHT, @col);
-    gtk_widget_modify_fg(window,GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_bg(window, GTK_STATE_PRELIGHT, @col);
+    gtk_widget_modify_fg(window, GTK_STATE_PRELIGHT, @col);
 
 
     GTK_Main;

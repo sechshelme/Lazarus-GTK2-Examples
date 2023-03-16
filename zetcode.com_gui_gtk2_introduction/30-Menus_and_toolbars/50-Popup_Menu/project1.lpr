@@ -41,7 +41,7 @@ const
       bevent := PGdkEventButton(event);
       if bevent^.button = 3 then begin
         WriteLn('recxhts');
-        gtk_menu_popup(GTK_MENU(widget),nil,nil,nil,nil,bevent^.button,bevent^.time);
+        gtk_menu_popup(GTK_MENU(widget), nil, nil, nil, nil, bevent^.button, bevent^.time);
       end;
     end;
   end;
@@ -49,8 +49,7 @@ const
 
   function main(argc: integer; argv: PChar): integer;
   var
-    window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1, toolbar,
-      ebox: PGtkWidget;
+    window, vbox, menubar, fileMi, quitMi, fileMenu, sep, openMi, newMi, testMi0, testMi1, toolbar, ebox: PGtkWidget;
     accel_group: PGtkAccelGroup = nil;
     toolquit, toolNet, toolSave: PGtkToolItem;
   begin
@@ -117,8 +116,8 @@ const
 
     gtk_box_pack_start(GTK_BOX(vbox), toolbar, gFALSE, False, 0);
 
-      ebox := gtk_event_box_new();
-  gtk_container_add(GTK_CONTAINER(window), ebox);
+    ebox := gtk_event_box_new();
+    gtk_container_add(GTK_CONTAINER(window), ebox);
     g_signal_connect_swapped(G_OBJECT(vbox), 'button-press-event', G_CALLBACK(@show_popup), menubar);
 
     g_signal_connect(G_OBJECT(window), 'destroy', G_CALLBACK(@gtk_main_quit), nil);
