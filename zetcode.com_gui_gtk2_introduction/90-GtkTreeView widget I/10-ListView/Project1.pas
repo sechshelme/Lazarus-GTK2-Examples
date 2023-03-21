@@ -48,7 +48,7 @@ const
 
   procedure main;
   var
-    Window, btn1, vbox, label1, list: PGtkWidget;
+    Window, vbox, label1, list: PGtkWidget;
     selection: PGtkTreeSelection;
   begin
     GTK_Init(@argc, @argv);
@@ -60,7 +60,7 @@ const
     gtk_container_set_border_width(GTK_CONTAINER(Window), 10);
 
     list := gtk_tree_view_new;
-    ;
+
     gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(list), False);
 
     vbox := gtk_vbox_new(False, 0);
