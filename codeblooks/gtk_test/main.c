@@ -18,6 +18,9 @@ int main (int argc, char *argv[])
   GtkWidget *vbox = NULL;
   GtkWidget *label = NULL;
 
+  GtkAllocation all;
+
+
   /* Initialize GTK+ */
   g_log_set_handler ("Gtk", G_LOG_LEVEL_WARNING, (GLogFunc) gtk_false, NULL);
   gtk_init (&argc, &argv);
@@ -25,6 +28,10 @@ int main (int argc, char *argv[])
 
   /* Create the main window */
   win = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+
+    gtk_widget_get_allocation(GTK_WIDGET(win), &all);
+
+
   gtk_container_set_border_width (GTK_CONTAINER (win), 8);
   gtk_window_set_title (GTK_WINDOW (win), "Hello World");
   gtk_window_set_position (GTK_WINDOW (win), GTK_WIN_POS_CENTER);

@@ -7,7 +7,7 @@ uses
 
   procedure press(widget: PGtkWidget; event: PGdkEventButton; user_data: gpointer); cdecl;
   begin
-    WriteLn('Press Button ', PtrUInt(user_data));
+    WriteLn('Press Button ', PtrUInt(event));
   end;
 
   procedure main;
