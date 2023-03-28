@@ -30,15 +30,16 @@ const
     store: PGtkListStore;
   begin
     render := gtk_cell_renderer_text_new;
-    //    column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_ITEM, nil);
 
     column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_ITEM, nil);
     gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
 
+//    https://docs.gtk.org/gtk4/ctor.TreeViewColumn.new_with_attributes.html
+
     column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_NO, nil);
     gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
 
-    store := gtk_list_store_new(N_COLUMNS, G_TYPE_STRING, G_TYPE_STRING);
+    store := gtk_list_store_new(N_COLUMNS, G_TYPE_STRING, G_TYPE_INT);
     gtk_tree_view_set_model(GTK_TREE_VIEW(list), GTK_TREE_MODEL(store));
     g_object_unref(store);
 
@@ -51,7 +52,7 @@ const
   begin
     store := GTK_LIST_STORE(gtk_tree_view_get_model(GTK_TREE_VIEW(list)));
     gtk_list_store_append(store, @iter);
-    gtk_list_store_set(store, @iter, LIST_ITEM, str, LIST_NO, str, -1);
+    gtk_list_store_set(store, @iter, LIST_ITEM, str, LIST_NO, 123, -1);
   end;
 
   procedure main;
