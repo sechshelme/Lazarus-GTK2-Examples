@@ -7,8 +7,10 @@ uses
 
 const
   LIST_ITEM = 0;
-  LIST_NO = 1;
-  N_COLUMNS = 2;
+  LIST_NO2 = 1;
+  LIST_NO3 = 2;
+  LIST_TOGGLE = 3;
+  N_COLUMNS = 4;
 
   procedure on_change(w: PGtkWidget; label1: gpointer);
   var
@@ -25,21 +27,28 @@ const
 
   procedure init_list(list: PGtkWidget);
   var
-    render: PGtkCellRenderer;
+    render, togglerender: PGtkCellRenderer;
     column: PGtkTreeViewColumn;
     store: PGtkListStore;
   begin
     render := gtk_cell_renderer_text_new;
+    togglerender := gtk_cell_renderer_toggle_new;
 
     column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_ITEM, nil);
     gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
 
-//    https://docs.gtk.org/gtk4/ctor.TreeViewColumn.new_with_attributes.html
+    //    https://docs.gtk.org/gtk4/ctor.TreeViewColumn.new_with_attributes.html
 
-    column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_NO, nil);
+    column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_NO2, nil);
     gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
 
-    store := gtk_list_store_new(N_COLUMNS, G_TYPE_STRING, G_TYPE_INT);
+    column := gtk_tree_view_column_new_with_attributes('List Items', render, 'text', LIST_NO3, nil);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+    column := gtk_tree_view_column_new_with_attributes('List Items', togglerender, 'active', LIST_TOGGLE, nil);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+    store := gtk_list_store_new(N_COLUMNS, G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT, G_TYPE_BOOLEAN);
     gtk_tree_view_set_model(GTK_TREE_VIEW(list), GTK_TREE_MODEL(store));
     g_object_unref(store);
 
@@ -49,10 +58,12 @@ const
   var
     store: PGtkListStore;
     iter: TGtkTreeIter;
+    b: boolean;
   begin
     store := GTK_LIST_STORE(gtk_tree_view_get_model(GTK_TREE_VIEW(list)));
     gtk_list_store_append(store, @iter);
-    gtk_list_store_set(store, @iter, LIST_ITEM, str, LIST_NO, 123, -1);
+    b := boolean(random(2));
+    gtk_list_store_set(store, @iter, LIST_ITEM, str, LIST_NO2, 123, LIST_NO3, 123, LIST_TOGGLE, b, -1);
   end;
 
   procedure main;
@@ -102,5 +113,6 @@ const
   end;
 
 begin
+  Randomize;
   main;
 end.
