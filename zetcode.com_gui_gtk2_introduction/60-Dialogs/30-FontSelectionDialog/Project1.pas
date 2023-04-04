@@ -7,6 +7,7 @@ uses
   Gtk2,
   gdk2pixbuf;
 
+
   procedure select_Font(widget: PGtkWidget; lab: gpointer); cdecl;
   var
     dialog: PGtkWidget;
