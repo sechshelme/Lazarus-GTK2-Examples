@@ -1,66 +1,111 @@
+/*
+ * message.c
+ *
+ * Example showing message functions
+ */
 
-
-#include <stdio.h>
-#include <string.h>
 #include <glib.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
- * Compare Names
+ * Surfer Print
  *
- * A Comparison function for inserting names alphabetically.
+ * Override function for the g_print function.
  */
-gint HashCompare (gconstpointer sName1, gconstpointer sName2)
+void SurferPrint (const gchar *buf)
 {
-    return (!strcmp ((char *) sName1, (char *) sName2));
+    printf ("Dude, ");
+    fputs (buf, stdout);
 }
 
 /*
- * Make a hash from the first two characters.
- */
-guint HashFunction (gconstpointer key)
-{
-    return (((char *) key)[0] + ((char *) key)[1]);
-}
-
-/*
- * PrintNames
+ * Surfer Message
  *
- * A print function to display the data elements
- * in the list.
+ * Override for the g_message function
  */
-PrintNames (gpointer key, gpointer value, gpointer user_data)
+void SurferMessage (const gchar *buf)
 {
-    g_print ("Key: %s, Value: %s\n",
-		(gchar *) key, (gchar *) value);
+    printf ("Dude, ya got a message -> ");
+    fputs (buf, stdout);
 }
 
+/*
+ * SurferWarning
+ *
+ * Override for the g_warning function
+ */
+void SurferWarning (const gchar *buf)
+{
+    printf ("Bad news Dude. -> ");
+    fputs (buf, stdout);
+}
+
+/*
+ * SurferError
+ *
+ * Override for the g_error function
+ */
+void SurferError (const gchar *buf)
+{
+    printf ("Major wipe out, dude. -> ");
+    fputs (buf, stdout);
+}
+
+/*
+ * ShowParams
+ *
+ * Show the options available for running the program.
+ */
+void ShowParams ()
+{
+    printf ("Must pass in parameter.  Valid parameters are:\n");
+    printf (" 'surfer' - use surfer message handling.\n");
+    printf (" 'normal' - use normal message handling.\n ");
+    exit (0);
+}
+
+/*
+ * main
+ *
+ * Program begins here
+ */
 int main (int argc, char *argv[])
 {
 
-    int         nIndex;
-    char        buffer[88];
-    GHashTable	*hTable;
+    /* --- Not enough args? --- */
+    if (argc <= 1) {
 
-    hTable = g_hash_table_new (HashFunction, HashCompare);
+        ShowParams ();
+    }
 
-    /* --- Insert the names  --- */
-    g_hash_table_insert (hTable, "Fred", "Boring");
-    g_hash_table_insert (hTable, "Mary", "Shifty");
-    g_hash_table_insert (hTable, "Sue", "Nice");
-    g_hash_table_insert (hTable, "John", "Strange");
-    g_hash_table_insert (hTable, "Shelley", "Abnormal");
-    g_hash_table_insert (hTable, "Markus", "Absent minded");
-    g_hash_table_insert (hTable, "Renato", "Paranoid");
-    g_hash_table_insert (hTable, "Renato", "Smart");
-    g_hash_table_insert (hTable, "Renato", "Intelligent");
-    g_hash_table_insert (hTable, "Renato", "Stubby toes");
+    /* --- Normal speech? --- */
+    if (strcmp (argv[1], "normal") == 0) {
 
-    g_print ("Renato is %s\n",
-	     (gchar *) g_hash_table_lookup (hTable, "Renato"));
+        /* --- Do nothing - just verify that parameter is valid. --- */
 
-    g_print ("-----\n");
+    /* --- Surfer speech?  --- */
+    } else if (strcmp (argv[1], "surfer") == 0) {
 
-    /* --- Another way to print each of the data elements. --- */
-    g_hash_table_foreach (hTable, (GHFunc) PrintNames, NULL);
+        /* --- Seems that they want surfer speech for the errors. --- */
+        g_set_error_handler (SurferError);
+        g_set_warning_handler (SurferWarning);
+        g_set_message_handler (SurferMessage);
+        g_set_print_handler (SurferPrint);
+    } else {
+
+        /* --- Can only pick 'normal' or 'surfer' --- */
+        ShowParams ();
+    }
+
+    /*
+     * --- Show functions at work.  If we have custom handlers,
+     * --- the message will be intercepted.
+     */
+
+    g_print ("Here's a print\n");
+    g_message ("Here's a message\n");
+    g_warning ("Here's a warning\n");
+    g_error ("Here's an error\n");
+
 }
