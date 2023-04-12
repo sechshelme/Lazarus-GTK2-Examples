@@ -9,8 +9,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QMainWindow w;
+w.setWindowTitle("Hello World");
 
-    QHBoxLayout l(&w);
+    QHBoxLayout l;
 
 
 
@@ -38,6 +39,7 @@ int main(int argc, char *argv[])
     l.addWidget(&button);
     l.addWidget(&button2);
 
+w.setLayout(&l);
 //    l.show();
     w.show();
 
