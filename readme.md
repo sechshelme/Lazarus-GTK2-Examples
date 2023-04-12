@@ -2,11 +2,7 @@
 
 Folgendes muss installiert werden:
 ```
-sudo apt install libsdl1.2-dev 
-sudo apt install libsdl-image1.2-dev
-sudo apt install libsdl-ttf2.0-dev
-sudo apt install libsdl-mixer1.2-dev 
-sudo apt install libsmpeg-dev 
+apt install libgtk2.0-dev
 ```
 # Wichtig !!
 Unter Linux kann es zu folgendem Fehler kommen und einem den ganzen Fenstermanger runterreisen.
