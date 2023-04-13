@@ -9,6 +9,7 @@ sudo apt install libsdl-mixer1.2-dev
 sudo apt install libsmpeg-dev 
 ```
 
+
 # Wichtig !!
 Unter Linux kann es zu folgendem Fehler kommen und einem den ganzen Fenstermanger runterreisen.
 
