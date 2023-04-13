@@ -2,7 +2,7 @@
 
 Folgendes muss installiert werden:
 ```
-sudo apt install ????
+apt install libgtk2.0-dev
 ```
 
 # Wichtig !!
