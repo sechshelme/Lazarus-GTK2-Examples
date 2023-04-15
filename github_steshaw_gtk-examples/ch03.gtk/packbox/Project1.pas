@@ -37,7 +37,7 @@ uses
     cbsitems: PGSList = nil;
   var
     window, hbox, table, vbox, label_, button1, entry, check,
-    listbox, combo, combpbtn: PGtkWidget;
+    listbox, combo, combpbtn, btn, w: PGtkWidget;
   begin
     GTK_Init(@argc, @argv);
 
@@ -82,6 +82,18 @@ uses
     gtk_entry_set_text(GTK_ENTRY(GTK_COMBO(combo)^.entry), 'Hello');
     gtk_button_set_label(GTK_BUTTON(GTK_COMBO(combo)^.button), '***cb btn***');
 
+
+
+        w:=GTK_COMBO(combo)^.popup;
+
+        btn := gtk_button_new_with_label('new btn 1');
+        gtk_box_pack_end(GTK_BOX(combo), btn, False, False, 0);
+        btn := gtk_button_new_with_label('new btn 2');
+        gtk_box_pack_end(GTK_BOX(combo), btn, False, False, 0);
+//   gtk_container_add(GTK_CONTAINER(combo), btn);
+gtk_box_reorder_child(GTK_BOX(combo),btn,-1);
+
+
     gtk_box_pack_start(GTK_BOX(vbox), combo, False, False, 0);
 
     // Test Sort-list
@@ -102,8 +114,11 @@ uses
     gtk_combo_set_popdown_strings(GTK_COMBO(combo), PGList(cbsitems));
     gtk_box_pack_start(GTK_BOX(vbox), combo, False, False, 0);
 
-
     gtk_container_add(GTK_CONTAINER(window), vbox);
+
+
+    gtk_box_reorder_child(GTK_BOX(vbox),entry,5);
+
 
     gtk_widget_show_all(window);
 
