@@ -12,40 +12,38 @@ uses
 
   function CompareName(a, b: gconstpointer): gint; cdecl;
   begin
-    Result := strcomp(PChar(a), PChar(b));
+    Result := a - b;
   end;
 
   procedure PrintNames(Data, userdata: gpointer; key: gconstpointer); cdecl;
   var
-    message: Pgchar;
+    message: PtrInt;
   begin
-    message := Pgchar(Data);
-    g_print('%s position is ...'#10, message);
+    message := PtrInt(Data);
+    g_print('%d position is ...'#10, message);
   end;
 
   procedure main;
   var
     list: PGSList = nil;
-    buffer: PChar = nil;
     node: PGSList;
+    i: integer;
   begin
-    list := g_slist_insert_sorted(list, PChar('Fred'), @CompareName);
-    list := g_slist_insert_sorted(list, PChar('Joe'), @CompareName);
-    list := g_slist_insert_sorted(list, PChar('Susie'), @CompareName);
-    list := g_slist_insert_sorted(list, PChar('Frank'), @CompareName);
-    list := g_slist_insert_sorted(list, PChar('Wilma'), @CompareName);
-    list := g_slist_insert_sorted(list, PChar('Mary'), @CompareName);
+    Randomize;
+    for i := 0 to 7 do begin
+      list := g_slist_insert_sorted(list, Pointer(Random(1000)), @CompareName);
+    end;
+    g_slist_insert_sorted(list, Pointer(55), @CompareName);
+    for i := 0 to 7 do begin
+      list := g_slist_insert_sorted(list, Pointer(Random(1000)), @CompareName);
+    end;
 
-    Getmem(buffer, 80);
-    strcopy(buffer, 'Wilma');
-    WriteLn(buffer);
-    node := g_slist_find(list, buffer);
+    node := g_slist_find(list, Pointer(55));
     if node <> nil then begin
       g_print('found..'#10);
     end else begin
       g_print('not found..'#10);
     end;
-
 
     g_slist_foreach(list, @PrintNames, list);
   end;
