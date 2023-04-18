@@ -3,7 +3,6 @@
 Folgendes muss installiert werden:
 ```
 apt install libgtk2.0-dev
-apt install libgtk2.0-dev
 ```
 
 # Wichtig !!

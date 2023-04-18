@@ -83,7 +83,6 @@ uses
     gtk_button_set_label(GTK_BUTTON(GTK_COMBO(combo)^.button), '***cb btn***');
 
 
-
         w:=GTK_COMBO(combo)^.popup;
 
         btn := gtk_button_new_with_label('new btn 1');

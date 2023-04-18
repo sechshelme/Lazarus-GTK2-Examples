@@ -54,7 +54,7 @@ const
     gtk_tree_store_set(treestore, @child, COLUMN, 'CC', -1);
 
     gtk_tree_store_append(treestore, @child, @toplevel);
-    gtk_tree_store_set(treestore, @child, COLUMN, PChar('C'), -1);
+    gtk_tree_store_set(treestore, @child, COLUMN, 'C'+'', -1); // Das "+ ''" ist wichtig !
 
     gtk_tree_store_append(treestore, @child, @toplevel);
     gtk_tree_store_set(treestore, @child, COLUMN, 'C++', -1);
