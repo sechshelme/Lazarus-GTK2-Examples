@@ -5,6 +5,7 @@ program Project1;
 uses
   Math,
   SysUtils,
+  pango,
   GLib2,
   Gdk2,
   Gtk2;
@@ -53,6 +54,16 @@ uses
     DisplaySelectedItems(w);
   end;
 
+  procedure ListItemModify(widget: PGtkWidget; data: gpointer); cdecl;
+  var
+    s: String;
+  begin
+       gtk_label_set_angle(GTK_LABEL(widget), 20);
+       s:=gtk_label_get_text(GTK_LABEL(widget));
+       gtk_label_set_markup(GTK_LABEL(widget),PChar( '<i><b><big>'+s+'</big></b></i>'));
+       gtk_label_set_ellipsize(GTK_LABEL(widget) ,PANGO_ELLIPSIZE_NONE);
+  end;
+
   procedure AddListItem(listbox: PGtkWidget; sText: PChar);
   var
     item: PGtkWidget;
@@ -60,6 +71,9 @@ uses
     item := gtk_list_item_new_with_label(sText);
     g_signal_connect(G_OBJECT(item), 'select', GTK_SIGNAL_FUNC(@listitem_selected), sText);
     gtk_container_add(GTK_CONTAINER(listbox), item);
+
+    gtk_container_foreach(GTK_CONTAINER(item), @ListItemModify,nil);
+
     gtk_widget_show(item);
   end;
 
