@@ -82,12 +82,13 @@ uses
 
     gtk_container_set_border_width(GTK_CONTAINER(Window), 10);
 
-    vbox := gtk_vbox_new(False, 0);
+    vbox := gtk_hbox_new(False, 0);
     gtk_container_add(GTK_CONTAINER(Window), vbox);
 
     myBox := CreateBox;
     gtk_box_pack_start(GTK_BOX(vbox), myBox, False, False, 0);
     gtk_container_foreach(GTK_CONTAINER(myBox), @BoxModif, nil);
+//    gtk_container_forall(GTK_CONTAINER(myBox), @BoxModif, nil);
 
 
     label1 := gtk_label_new('Click on Button!');
@@ -104,15 +105,7 @@ uses
 
     gtk_container_foreach(GTK_CONTAINER(button1), @ButtonModif, nil);
 
-
-    //    BtnLabel:=GTK_LABEL(GTK_BUTTON( button1)^.event_window);
-    //    gtk_label_set_text(BtnLabel, '100');
-
-
-    //    gtk_label_set_angle(BtnLabel, 100);
-
     gtk_label_set_angle(GTK_LABEL(label1), pi / 4);
-
 
     gtk_widget_show_all(window);
 
