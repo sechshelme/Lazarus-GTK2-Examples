@@ -14,6 +14,29 @@ var
   //  tooltips: PGtkTooltips;
   win_main: PGtkWidget;
 
+const
+  xpm_new: array of Pgchar = (
+    '16 16 3 1',
+    '  c None',
+    'B c #000000000000',
+    'W c #FFFFFFFFFFFF',
+    '                ',
+    '  BBBBBBBBB     ',
+    '  BWWWWWWWBB    ',
+    '  BWWWWWWWBWB   ',
+    '  BWWWWWWWBBBB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BWWWWWWWWWWB  ',
+    '  BBBBBBBBBBBB  ',
+    '                ');
+
 
   function EndProgram(w: PGtkWidget; Data: pgpointer): gint; cdecl;
   begin
@@ -26,9 +49,28 @@ var
     g_print('%s'#10, Data);
   end;
 
+  procedure ButtonClicked(w: PGtkWidget; Data: pgpointer); cdecl;
+  begin
+
+  end;
+
+  procedure CreateToolBar(vbox_main: PGtkWidget);
+  var
+    toolbar: PGtkWidget;
+  begin
+    //  toolbar:=gtk_toolbar_new(GTK_ORIENTATION_HORIZONTAL,GTK_TOOLBAR_ICONS);
+    toolbar := gtk_toolbar_new;
+    gtk_box_pack_start(GTK_BOX(vbox_main), toolbar, False, True, 0);
+
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new[0]), TGtkSignalFunc(@ButtonClicked), nil);
+
+  end;
+
   procedure CreateMainWindow;
   var
-    vbox_main, menubar, menu, menuitem: PGtkWidget;
+    vbox_main, menubar, menu, menuitem, menufont, menubold,
+    menuColor, menuRed, menuBlue, menuGreen: PGtkWidget;
+    group: PGSList = nil;
   begin
     win_main := gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(win_main), 'Menu Test');
@@ -49,7 +91,6 @@ var
     gtk_widget_show(menubar);
 
     menu := CreateBarSubMenu(menubar, '_Datei');
-
     menuitem := CreateMenuItem(menu, 'Neu', '^N', 'Erzeuge neues Item', GTK_SIGNAL_FUNC(@PrintFunc), PChar('new'));
     menuitem := CreateMenuItem(menu, 'Öffnen', '^O', 'Öffne existierendes Item', GTK_SIGNAL_FUNC(@PrintFunc), PChar('open'));
     menuitem := CreateMenuItem(menu, 'Save', '^S', 'Speichere aktuelles Item', GTK_SIGNAL_FUNC(@PrintFunc), PChar('save'));
@@ -58,11 +99,21 @@ var
     menuitem := CreateMenuItem(menu, 'Beenden', '', 'Beendet das Programm', GTK_SIGNAL_FUNC(@PrintFunc), PChar('quit'));
 
     menu := CreateBarSubMenu(menubar, '_Bearbeiten');
-
     menuitem := CreateMenuItem(menu, 'Ausschneiden', '^X', 'Schneidet den markierten Ausschnitt aus', GTK_SIGNAL_FUNC(@PrintFunc), PChar('cut'));
     menuitem := CreateMenuItem(menu, 'Kopieren', '^C', 'Kopiert den markierten Ausschnitt', GTK_SIGNAL_FUNC(@PrintFunc), PChar('copy'));
     menuitem := CreateMenuItem(menu, 'Einfügen', '^V', 'Fügt den Text von der Zwischenablage ein', GTK_SIGNAL_FUNC(@PrintFunc), PChar('paste'));
 
+    menufont := CreateBarSubMenu(menu, '_Schrift');
+    menubold := CreateMenuCheck(menufont, 'Fett', 'Schreibt den Text fett', GTK_SIGNAL_FUNC(@PrintFunc), PChar('bold'));
+    menubold := CreateMenuCheck(menufont, 'Kursiv', 'Schreibt den Text kursiv', GTK_SIGNAL_FUNC(@PrintFunc), PChar('italics'));
+    menubold := CreateMenuCheck(menufont, 'Unterstrich', 'Schreibt den Text unterstrichen', GTK_SIGNAL_FUNC(@PrintFunc), PChar('underline'));
+
+    menuColor := CreateBarSubMenu(menu, '_Farbe');
+    menuRed := CreateMenuRadio(menuColor, 'Rot', 'Schreibt den Text rot', @group, GTK_SIGNAL_FUNC(@PrintFunc), PChar('red'));
+    menuBlue := CreateMenuRadio(menuColor, 'Blau', 'Schreibt den Text blau', @group, GTK_SIGNAL_FUNC(@PrintFunc), PChar('blue'));
+    menuGreen := CreateMenuRadio(menuColor, 'Grün', 'Schreibt den Text grün', @group, GTK_SIGNAL_FUNC(@PrintFunc), PChar('green'));
+
+    CreateToolBar(vbox_main);
   end;
 
   procedure main;
