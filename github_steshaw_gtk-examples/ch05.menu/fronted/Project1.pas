@@ -10,12 +10,12 @@ uses
   Gtk2,
   misc;
 
-var
+//var
   //  tooltips: PGtkTooltips;
-  win_main: PGtkWidget;
+//  win_main: PGtkWidget;
 
 const
-  xpm_new: array of Pgchar = (
+  xpm_new: array[0..19] of Pgchar = (
     '16 16 3 1',
     '  c None',
     'B c #000000000000',
@@ -61,8 +61,9 @@ const
     //  toolbar:=gtk_toolbar_new(GTK_ORIENTATION_HORIZONTAL,GTK_TOOLBAR_ICONS);
     toolbar := gtk_toolbar_new;
     gtk_box_pack_start(GTK_BOX(vbox_main), toolbar, False, True, 0);
+    gtk_widget_show(toolbar);
 
-    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new), TGtkSignalFunc(@ButtonClicked), nil);
 
   end;
 
