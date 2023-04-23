@@ -59,6 +59,7 @@ const
     toolbar: PGtkWidget;
   begin
     //  toolbar:=gtk_toolbar_new(GTK_ORIENTATION_HORIZONTAL,GTK_TOOLBAR_ICONS);
+
     toolbar := gtk_toolbar_new;
     gtk_box_pack_start(GTK_BOX(vbox_main), toolbar, False, True, 0);
     gtk_widget_show(toolbar);
