@@ -3,7 +3,6 @@ unit misc;
 interface
 
 uses
-  Math,
   Strings,
   SysUtils,
   GLib2,

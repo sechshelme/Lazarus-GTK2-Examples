@@ -8,7 +8,7 @@ uses
   GLib2,
   Gdk2,
   Gtk2,
-  misc;
+  misc, ComboBox;
 
 //var
   //  tooltips: PGtkTooltips;
@@ -60,6 +60,50 @@ const
   ' BBBBBBBBBBB    ',
   '                ');
 
+ xpm_cut: array of Pgchar = (
+ '16 16 2 1',
+ '  c None',
+ 'B c #000000000000',
+ '                ',
+ '                ',
+ '     B   B      ',
+ '     B   B      ',
+ '      B B       ',
+ '      B B       ',
+ '       B        ',
+ '       B        ',
+ '      B B       ',
+ '    BBB BBB     ',
+ '   B  B B  B    ',
+ '   B  B B  B    ',
+ '   B  B  BB     ',
+ '    BB          ',
+ '                ',
+ '                ');
+
+xpm_copy : array of Pgchar = (
+'16 16 4 1',
+ '  c None',
+ 'B c #000000000000',
+ 'W c #FFFFFFFFFFFF',
+ 'G c #666666666666',
+ '                ',
+ ' BBBBBBB        ',
+ ' BWWWWBWB       ',
+ ' BWGGWBBB       ',
+ ' BWWWWWWB       ',
+ ' BWGGGGWB       ',
+ ' BWWWWBBBBBBB   ',
+ ' BWGGGBWWWWBWB  ',
+ ' BWWWWBWGGWBBB  ',
+ ' BBBBBBWWWWWWB  ',
+ '      BWGGGGWB  ',
+ '      BWWWWWWB  ',
+ '      BWGGGGWB  ',
+ '      BWWWWWWB  ',
+ '      BBBBBBBB  ',
+ '                ');
+
   function EndProgram(w: PGtkWidget; Data: pgpointer): gint; cdecl;
   begin
     gtk_main_quit;
@@ -78,7 +122,7 @@ const
 
   procedure CreateToolBar(vbox_main: PGtkWidget);
   var
-    toolbar: PGtkWidget;
+    toolbar, widget: PGtkWidget;
   begin
     //  toolbar:=gtk_toolbar_new(GTK_ORIENTATION_HORIZONTAL,GTK_TOOLBAR_ICONS);
 
@@ -87,8 +131,13 @@ const
     gtk_widget_show(toolbar);
 
     gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new[0]), TGtkSignalFunc(@ButtonClicked), nil);
-    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), 'Open Dialog', 'Datei öffnen','', CreateWidgetFromXpm(vbox_main, @xpm_open[0]), TGtkSignalFunc(@ButtonClicked), nil);
-
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Datei öffnen',nil, CreateWidgetFromXpm(vbox_main, @xpm_open[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Aussschneiden', nil, CreateWidgetFromXpm(vbox_main, @xpm_cut[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Einfügen',nil, CreateWidgetFromXpm(vbox_main, @xpm_copy[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+    widget:=CreateComboBox;
+    gtk_toolbar_append_widget(GTK_TOOLBAR(toolbar),widget,'Schrift','Wähle eine Schrift');
   end;
 
   procedure CreateMainWindow;

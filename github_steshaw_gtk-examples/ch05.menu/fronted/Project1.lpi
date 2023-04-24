@@ -32,6 +32,11 @@
         <Filename Value="misc.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="combobox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ComboBox"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
