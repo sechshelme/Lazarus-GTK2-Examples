@@ -15,7 +15,7 @@ uses
 //  win_main: PGtkWidget;
 
 const
-  xpm_new: array[0..19] of Pgchar = (
+  xpm_new: array of Pgchar = (
     '16 16 3 1',
     '  c None',
     'B c #000000000000',
@@ -37,6 +37,28 @@ const
     '  BBBBBBBBBBBB  ',
     '                ');
 
+ xpm_open: array of Pgchar = (
+  '16 16 4 1',
+  '  c None',
+  'B c #000000000000',
+  'Y c #FFFFFFFF0000',
+  'y c #999999990000',
+  '                ',
+  '          BBB   ',
+  '  BBBBB  B   BB ',
+  '  BYYYB      BB ',
+  ' BYYYYYBBBBB    ',
+  ' BYYYYYYYYYB    ',
+  ' BYYYYYYYYYB    ',
+  ' BYYYYYYYYYB    ',
+  ' BYYBBBBBBBBBBB ',
+  ' BYYByyyyyyyyyB ',
+  ' BYByyyyyyyyyB  ',
+  ' BYByyyyyyyyyB  ',
+  ' BByyyyyyyyyB   ',
+  ' BByyyyyyyyyB   ',
+  ' BBBBBBBBBBB    ',
+  '                ');
 
   function EndProgram(w: PGtkWidget; Data: pgpointer): gint; cdecl;
   begin
@@ -64,7 +86,8 @@ const
     gtk_box_pack_start(GTK_BOX(vbox_main), toolbar, False, True, 0);
     gtk_widget_show(toolbar);
 
-    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), 'Open Dialog', 'Datei öffnen','', CreateWidgetFromXpm(vbox_main, @xpm_open[0]), TGtkSignalFunc(@ButtonClicked), nil);
 
   end;
 

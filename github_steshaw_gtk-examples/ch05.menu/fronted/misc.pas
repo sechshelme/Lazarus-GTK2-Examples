@@ -20,7 +20,7 @@ function CreateMenuItem(menu: PGtkWidget; szName, szAccel, szTip: PChar; func: T
 function CreateMenuCheck(menu: PGtkWidget; szName, szTip: PChar; func: TGtkSignalFunc; Data: gpointer): PGtkWidget;
 function CreateMenuRadio(menu: PGtkWidget; szName, szTip: PChar; group: PPGSList; func: TGtkSignalFunc; Data: gpointer): PGtkWidget;
 
-function CreateWidgetFromXpm(window: PGtkWidget;xpm_data: Pointer): PGtkWidget;
+function CreateWidgetFromXpm(window: PGtkWidget;xpm_data: PPgchar): PGtkWidget;
 
 implementation
 
@@ -112,11 +112,11 @@ begin
   Result := menuitem;
 end;
 
-function CreateWidgetFromXpm(window: PGtkWidget; xpm_data: Pointer): PGtkWidget;
+function CreateWidgetFromXpm(window: PGtkWidget; xpm_data: PPgchar): PGtkWidget;
 var
   pixmap_data: PGdkPixmap;
   pixmap_widget: PGtkWidget;
-  mask: PGdkBitmap;
+  mask: PGdkBitmap=nil;
 begin
   pixmap_data := gdk_pixmap_create_from_xpm_d(win_main^.window, mask, nil, xpm_data);
   pixmap_widget := gtk_pixmap_new(pixmap_data, mask);
