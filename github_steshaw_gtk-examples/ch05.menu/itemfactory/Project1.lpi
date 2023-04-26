@@ -28,20 +28,6 @@
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
-      <Unit>
-        <Filename Value="misc.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="combobox.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="ComboBox"/>
-      </Unit>
-      <Unit>
-        <Filename Value="icons.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Icons"/>
-      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -71,10 +57,7 @@
         <Name Value="EFOpenError"/>
       </Item>
       <Item>
-        <Name Value="EAccessViolation"/>
-      </Item>
-      <Item>
-        <Name Value="RunError(216)"/>
+        <Name Value="EConvertError"/>
       </Item>
     </Exceptions>
   </Debugging>

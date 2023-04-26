@@ -8,101 +8,7 @@ uses
   GLib2,
   Gdk2,
   Gtk2,
-  misc, ComboBox;
-
-//var
-  //  tooltips: PGtkTooltips;
-//  win_main: PGtkWidget;
-
-const
-  xpm_new: array of Pgchar = (
-    '16 16 3 1',
-    '  c None',
-    'B c #000000000000',
-    'W c #FFFFFFFFFFFF',
-    '                ',
-    '  BBBBBBBBB     ',
-    '  BWWWWWWWBB    ',
-    '  BWWWWWWWBWB   ',
-    '  BWWWWWWWBBBB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BWWWWWWWWWWB  ',
-    '  BBBBBBBBBBBB  ',
-    '                ');
-
- xpm_open: array of Pgchar = (
-  '16 16 4 1',
-  '  c None',
-  'B c #000000000000',
-  'Y c #FFFFFFFF0000',
-  'y c #999999990000',
-  '                ',
-  '          BBB   ',
-  '  BBBBB  B   BB ',
-  '  BYYYB      BB ',
-  ' BYYYYYBBBBB    ',
-  ' BYYYYYYYYYB    ',
-  ' BYYYYYYYYYB    ',
-  ' BYYYYYYYYYB    ',
-  ' BYYBBBBBBBBBBB ',
-  ' BYYByyyyyyyyyB ',
-  ' BYByyyyyyyyyB  ',
-  ' BYByyyyyyyyyB  ',
-  ' BByyyyyyyyyB   ',
-  ' BByyyyyyyyyB   ',
-  ' BBBBBBBBBBB    ',
-  '                ');
-
- xpm_cut: array of Pgchar = (
- '16 16 2 1',
- '  c None',
- 'B c #000000000000',
- '                ',
- '                ',
- '     B   B      ',
- '     B   B      ',
- '      B B       ',
- '      B B       ',
- '       B        ',
- '       B        ',
- '      B B       ',
- '    BBB BBB     ',
- '   B  B B  B    ',
- '   B  B B  B    ',
- '   B  B  BB     ',
- '    BB          ',
- '                ',
- '                ');
-
-xpm_copy : array of Pgchar = (
-'16 16 4 1',
- '  c None',
- 'B c #000000000000',
- 'W c #FFFFFFFFFFFF',
- 'G c #666666666666',
- '                ',
- ' BBBBBBB        ',
- ' BWWWWBWB       ',
- ' BWGGWBBB       ',
- ' BWWWWWWB       ',
- ' BWGGGGWB       ',
- ' BWWWWBBBBBBB   ',
- ' BWGGGBWWWWBWB  ',
- ' BWWWWBWGGWBBB  ',
- ' BBBBBBWWWWWWB  ',
- '      BWGGGGWB  ',
- '      BWWWWWWB  ',
- '      BWGGGGWB  ',
- '      BWWWWWWB  ',
- '      BBBBBBBB  ',
- '                ');
+  misc, ComboBox, Icons;
 
   function EndProgram(w: PGtkWidget; Data: pgpointer): gint; cdecl;
   begin
@@ -115,9 +21,18 @@ xpm_copy : array of Pgchar = (
     g_print('%s'#10, Data);
   end;
 
-  procedure ButtonClicked(w: PGtkWidget; Data: pgpointer); cdecl;
-  begin
+procedure SetMenuButton(szButton:PChar;nState:Integer);
+begin
+  end;
 
+  procedure ButtonClicked(w: PGtkWidget; Data: pgpointer); cdecl;
+  var
+    nState: Integer;
+  begin
+//    nState:=GTK_TOGGLE_BUTTON(w)^.flag0;
+    nState:=GTK_BUTTON(w)^.flag0;
+    WriteLn(nState);
+      SetMenuButton(PChar(Data), nState);
   end;
 
   procedure CreateToolBar(vbox_main: PGtkWidget);
@@ -130,7 +45,7 @@ xpm_copy : array of Pgchar = (
     gtk_box_pack_start(GTK_BOX(vbox_main), toolbar, False, True, 0);
     gtk_widget_show(toolbar);
 
-    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main, @xpm_new[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Neues Fenster', nil, CreateWidgetFromXpm(vbox_main,PPChar(xpm_new)), TGtkSignalFunc(@ButtonClicked), nil);
     gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Datei öffnen',nil, CreateWidgetFromXpm(vbox_main, @xpm_open[0]), TGtkSignalFunc(@ButtonClicked), nil);
     gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
     gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Aussschneiden', nil, CreateWidgetFromXpm(vbox_main, @xpm_cut[0]), TGtkSignalFunc(@ButtonClicked), nil);
@@ -138,6 +53,10 @@ xpm_copy : array of Pgchar = (
     gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
     widget:=CreateComboBox;
     gtk_toolbar_append_widget(GTK_TOOLBAR(toolbar),widget,'Schrift','Wähle eine Schrift');
+    gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Fett', nil, CreateWidgetFromXpm(vbox_main, @xpm_bold[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Kursiv', nil, CreateWidgetFromXpm(vbox_main, @xpm_italics[0]), TGtkSignalFunc(@ButtonClicked), nil);
+    gtk_toolbar_append_item(GTK_TOOLBAR(toolbar), nil, 'Unterstrich', nil, CreateWidgetFromXpm(vbox_main, @xpm_underline[0]), TGtkSignalFunc(@ButtonClicked), nil);
   end;
 
   procedure CreateMainWindow;
@@ -148,7 +67,7 @@ xpm_copy : array of Pgchar = (
   begin
     win_main := gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(win_main), 'Menu Test');
-    gtk_widget_set_usize(win_main, 360, 260);
+ //   gtk_widget_set_usize(win_main, 360, 260);
     gtk_window_set_position(GTK_WINDOW(win_main), GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(win_main), 0);
 
@@ -193,11 +112,8 @@ xpm_copy : array of Pgchar = (
   procedure main;
   begin
     GTK_Init(@argc, @argv);
-
     tooltips := gtk_tooltips_new;
-
     CreateMainWindow;
-
     gtk_main;
   end;
 
