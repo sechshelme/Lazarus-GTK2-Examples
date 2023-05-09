@@ -1,11 +1,13 @@
 program Project1;
 
 uses
+  Math,
   pango,
   GLib2,
   Gdk2,
   Gtk2,
   gdk2pixbuf;
+
 
   procedure select_Font(widget: PGtkWidget; lab: gpointer); cdecl;
   var
@@ -13,7 +15,6 @@ uses
     res: TGtkResponseType;
     fontname: Pgchar;
     font_desc: PPangoFontDescription;
-    col: TGtkStateType;
   begin
     dialog := gtk_font_selection_dialog_new('Select Font');
     res := gtk_dialog_run(GTK_DIALOG(dialog));
@@ -47,7 +48,7 @@ uses
     lab:=gtk_label_new('ZetCode');
     gtk_box_pack_start(GTK_BOX(vbox), lab, False, False, 0);
 
-    button1 := gtk_button_new_with_label('About...');
+    button1 := gtk_button_new_with_label('Font...');
     gtk_box_pack_start(GTK_BOX(vbox), button1, False, False, 0);
     g_signal_connect(G_OBJECT(button1), 'clicked', G_CALLBACK(@select_Font), lab);
 
@@ -58,5 +59,6 @@ uses
   end;
 
 begin
+  SetExceptionMask([exDenormalized, exInvalidOp, exOverflow, exPrecision, exUnderflow, exZeroDivide]);
   main;
 end.

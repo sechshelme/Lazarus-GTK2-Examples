@@ -2,27 +2,26 @@ program Project1;
 
 uses
   Math,
+  pango,
   GLib2,
   Gdk2,
-  Gtk2,
-  gdk2pixbuf;
+  Gtk2;
 
   procedure select_Color(widget: PGtkWidget; lab: gpointer); cdecl;
   var
     dialog: PGtkWidget;
-    res: TGtkResponseType;
-    color: TGdkColor;
-    colorsel: PGtkColorSelection;
   begin
-    dialog := gtk_color_selection_dialog_new('Select Font Color');
-    res := gtk_dialog_run(GTK_DIALOG(dialog));
+    dialog := gtk_color_selection_dialog_new('Select Color');
+    gtk_dialog_run(GTK_DIALOG(dialog));
+    gtk_widget_destroy(dialog);
+  end;
 
-    if res = GTK_RESPONSE_OK then begin
-      colorsel := GTK_COLOR_SELECTION(GTK_COLOR_SELECTION_DIALOG(dialog)^.colorsel);
-      gtk_color_selection_get_current_color(colorsel, @color);
-      gtk_widget_modify_fg(GTK_WIDGET(lab), GTK_STATE_NORMAL, @color);
-    end;
-
+  procedure select_Font(widget: PGtkWidget; lab: gpointer); cdecl;
+  var
+    dialog: PGtkWidget;
+  begin
+    dialog := gtk_font_selection_dialog_new('Select Font');
+    gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(dialog);
   end;
 
@@ -33,7 +32,7 @@ uses
     GTK_Init(@argc, @argv);
 
     Window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(Window), 'Color Selection Dialog');
+    gtk_window_set_title(GTK_WINDOW(Window), 'Font Selection Dialog');
     gtk_window_set_default_size(GTK_WINDOW(Window), 500, 500);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
@@ -44,6 +43,10 @@ uses
 
     lab := gtk_label_new('ZetCode');
     gtk_box_pack_start(GTK_BOX(vbox), lab, False, False, 0);
+
+    button1 := gtk_button_new_with_label('Font...');
+    gtk_box_pack_start(GTK_BOX(vbox), button1, False, False, 0);
+    g_signal_connect(G_OBJECT(button1), 'clicked', G_CALLBACK(@select_Font), lab);
 
     button1 := gtk_button_new_with_label('Color...');
     gtk_box_pack_start(GTK_BOX(vbox), button1, False, False, 0);

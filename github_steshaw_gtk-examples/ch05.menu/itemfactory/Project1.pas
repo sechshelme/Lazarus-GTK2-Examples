@@ -14,6 +14,7 @@ uses
     g_print('Click Menü'#10);
 //    g_message('ItemFactory: activated "%s", action %d', [gtk_item_factory_path_from_widget(widget),PtrInt( callback_action)]);
     WriteLn('ItemFactory: activated "'+gtk_item_factory_path_from_widget(widget)+'", action ',PtrInt( callback_action));
+    WriteLn(PtrInt(Data));
   end;
 
 function CloseApp(w: PGtkWidget; Data: pgpointer): gint;     cdecl;
@@ -28,15 +29,32 @@ const
   menu_items: array of TGtkItemFactoryEntry = (
   (path: '/_Datei'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
   (path: '/Datei/tearoff1'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<Tearoff>'; extra_data: nil),
-  (path: '/Datei/_Neu'; accelerator: '<control>N'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Datei/_Neu'; accelerator: '<control>N'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 12340; item_type: nil; extra_data: nil),
   (path: '/Datei/_Öffnen...'; accelerator: '<control>O'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
   (path: '/Datei/_Save'; accelerator: '<control>S'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
   (path: '/Datei/_Speichern _unter...'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
-  (path: '/Datei/sep1'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<Seperator>'; extra_data: nil),
+  (path: '/Datei/sep1'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<Separator>'; extra_data: nil),
   (path: '/Datei/_Beenden'; accelerator: '<control>Q'; callback:TGtkItemFactoryCallback( CloseApp); callback_action: 0; item_type: nil; extra_data: nil),
 
-  (path: '/_Hilfe/tearoff1'; accelerator: nil; callback:nil; callback_action: 0; item_type: '<LastBranch>'; extra_data: nil),
-  (path: '/Hilfe/_About...'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 4321; item_type: nil; extra_data: Pointer(1234)));
+  (path: '/_Bearbeiten'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Bearbeiten/ausschneiden'; accelerator: '<control>X'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Bearbeiten/kopieren'; accelerator: '<control>C'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Bearbeiten/einfügen'; accelerator: '<control>V'; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
+
+  (path: '/Bearbeiten/_Schrift'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Bearbeiten/Schrift/_Fett'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<CheckItem>'; extra_data: nil),
+  (path: '/Bearbeiten/Schrift/_Kursiv'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<CheckItem>'; extra_data: nil),
+  (path: '/Bearbeiten/Schrift/_Unterstrich'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<CheckItem>'; extra_data: nil),
+
+  (path: '/Bearbeiten/_Farbe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Bearbeiten/Farbe/_Rot'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '<RadioItem>'; extra_data: nil),
+  (path: '/Bearbeiten/Farbe/_Blau'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '/Bearbeiten/Farbe/Rot'; extra_data: nil),
+  (path: '/Bearbeiten/Farbe/_Rot'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '/Bearbeiten/Farbe/Rot'; extra_data: nil),
+  (path: '/Bearbeiten/Farbe/_Gelb'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: '/Bearbeiten/Farbe/Rot'; extra_data: nil),
+
+  (path: '/_Hilfe'; accelerator: nil; callback: nil; callback_action: 0; item_type: '<Branch>'; extra_data: nil),
+  (path: '/Hilfe/Hilfe'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil),
+  (path: '/Hilfe/About...'; accelerator: nil; callback:TGtkItemFactoryCallback( ShowMenu); callback_action: 0; item_type: nil; extra_data: nil));
 
   procedure CreateItemFactory;
   var
