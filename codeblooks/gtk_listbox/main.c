@@ -8,6 +8,10 @@
  // https://github.com/steshaw/gtk-examples/blob/master/ch04.button.edit.combo/listbox.c
 
 #include <gtk/gtk.h>
+//#include <ctype.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+
 
 /* --- Prototypes. --- */
 void AddListItem (GtkWidget *listbox, char *sText);
@@ -17,8 +21,17 @@ void AddListItem (GtkWidget *listbox, char *sText);
  *
  * --- Closing down window, end gtk
  */
+
+
+/* The following names are all functions:
+     int isCHARACTERISTIC(int c);
+   which return nonzero iff C has CHARACTERISTIC.
+   For the meaning of the characteristic names, see the `enum' above.  */
+
 gint CloseAppWindow (GtkWidget *widget, gpointer *data)
 {
+printf("%d",  isdigit(12));
+
     gtk_main_quit ();
 
     return (FALSE);

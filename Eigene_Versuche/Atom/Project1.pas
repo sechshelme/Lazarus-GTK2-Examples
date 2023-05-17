@@ -9,10 +9,10 @@ uses
   Gtk2;
 
 const
-  list_Titel:array of Pgchar= ('Nr', 'Name');
+  list_Titel:array of String= ('Nr', 'Name');
 
 
-  function gtk_clist_new_with_titles(columns:gint; titles:ppchar):PGtkWidget; cdecl; external gtklib;
+//  function gtk_clist_new_with_titles(columns:gint; titles:ppchar):PGtkWidget; cdecl; external gtklib;
 
 
   procedure AddList(list: PGtkWidget;Nr:Integer; atom: PChar);
@@ -48,7 +48,7 @@ procedure main;
     gtk_container_add(GTK_CONTAINER(vbox), sb);
 
     ppc:=PPChar(list_Titel);
-    clist:=gtk_clist_new_with_titles(Length(list_Titel),ppc);
+    clist:=gtk_clist_new_with_titles(Length(list_Titel),TPCharArray( ppc));
         gtk_container_add(GTK_CONTAINER(sb), clist);
 
 
