@@ -2,6 +2,7 @@ program Project1;
 
 uses
   Math,
+  Character,
   ctypes,
   SysUtils,
   pango,
@@ -10,7 +11,7 @@ uses
   Gtk2;
 
 const
-  num1: cdouble = 0;
+  num1: cfloat = 0;
   lastChar: char = #0;
   prevCmd: char = #0;
   BUF_SIZE = 88;
@@ -50,9 +51,10 @@ var
 
 const
   lib_stdio = 'c';
+  //var
+  //name :cint;cvar;external lib_stdio;
 
-  function sprintf(desr, src: PChar): cint; varargs cdecl; external lib_stdio;
-  function atof(str: PChar): cdouble; cdecl; external lib_stdio;
+
   function isdigit(i: cint): cint; cdecl; external lib_stdio;
 
 
@@ -102,47 +104,6 @@ var
     Result := (isdigit(cchar(ch)) <> 0) or (ch = '.');
   end;
 
-  procedure TrimTrailingZeros(szDigits: PChar);
-  var
-    nIndex: cint;
-    bDecimal: boolean = False;
-    nPos: cint = -1;
-  begin
-    for nIndex := 0 to strlen(szDigits) - 1 do begin
-      if szDigits[nIndex] = '.' then begin
-        bDecimal := True;
-      end;
-      if bDecimal then begin
-        if szDigits[nIndex] = '0' then begin
-          if nPos < 0 then begin
-            nPos := nIndex;
-          end;
-        end else begin
-          nPos := -1;
-        end;
-      end;
-    end;
-    if nPos > 0 then begin
-      szDigits[nPos] := #0;
-    end;
-  end;
-
-  procedure TrimLeadingZeros(szDigits: PChar);
-  var
-    nPos: cint;
-  begin
-    if szDigits = nil then begin
-      Exit;
-    end;
-    nPos := 0;
-    while (szDigits[nPos] <> #0) and (szDigits[nPos] = '0' + '') do begin
-      if isdigit(cint(szDigits[nPos + 1])) <> 0 then begin
-        szDigits[nPos] := ' ';
-      end;
-      Inc(nPos);
-    end;
-  end;
-
   function Command(ch: char): boolean;
   begin
     Result := ch in ['+', '-', '/', '*', '='];
@@ -155,88 +116,19 @@ var
     len: SizeInt;
   begin
     if Command(lastChar) then begin
-      gtk_label_set(GTK_LABEL(label1), '');
-      if lastChar = '=' then begin
-          lastChar := #0;
-          prevCmd := #0;
-      end;
+      gtk_label_set(GTK_LABEL(label1), @labelText);
     end;
-    gtk_label_get(GTK_LABEL(label1), @labelText);
     strcopy(buffer, labelText);
 
     len := strlen(buffer);
     buffer[len] := gchar(ch);
     buffer[len + 1] := gchar(0);
 
-    TrimLeadingZeros(buffer);
-
-    gtk_label_set(GTK_LABEL(label1), PChar(buffer));
+//    TrimL;
   end;
 
-  procedure MaybeUnaryOperation(str1: PChar);
-  var
-    labelText: PChar;
-    num2: cdouble;
-    buffer: array[0..BUF_SIZE - 1] of char;
-  begin
-    gtk_label_get(GTK_LABEL(label1), @labelText);
-    num2 := atof(labelText);
 
-    if strcomp(str1, '%' + '') = 0 then begin
-      num2 := num2 / 100;
-    end else if strcomp(str1, '1/x') = 0 then begin
-      if num2 = 0 then begin
-        exit;
-      end;
-      num2 := 1 / num2;
-    end else if strcomp(str1, 'sqrt') = 0 then begin
-      num2 := Sqrt(num2);
-    end else if strcomp(str1, 'x^2') = 0 then begin
-      num2 := num2 * num2;
-    end else if strcomp(str1, '+/-') = 0 then begin
-      num2:=num2*-1;
-    end;
-    sprintf(buffer, '%f', num2);
-    TrimTrailingZeros(buffer);
-    TrimLeadingZeros(buffer);
-    gtk_label_set(GTK_LABEL(label1), buffer);
-  end;
-
-  procedure HandleBinaryOperation;
-  var
-    buffer: array[0..BUF_SIZE - 1] of char;
-    labelText: PChar;
-    num2: cdouble;
-  begin
-    gtk_label_get(GTK_LABEL(label1), @labelText);
-    num2 := atof(labelText);
-    case prevCmd of
-      '+': begin
-        num1 := num1 + num2;
-      end;
-      '-': begin
-        num1 := num1 - num2;
-      end;
-      '*': begin
-        num1 := num1 * num2;
-      end;
-      '/': begin
-        num1 := num1 / num2;
-      end;
-      '=': begin
-        num1 := num2;
-      end;
-      else begin
-        num1 := num2;
-      end;
-    end;
-    sprintf(buffer, '%f', num1);
-    TrimTrailingZeros(buffer);
-    TrimLeadingZeros(buffer);
-    gtk_label_set(GTK_LABEL(label1), buffer);
-  end;
-
-  procedure button_clicked(w: PGtkWidget; Data: pgpointer); cdecl;
+  function button_clicked(w: PGtkWidget; Data: pgpointer): gint; cdecl;
   var
     ch: char;
     str1: PChar;
@@ -245,22 +137,8 @@ var
     str1 := PChar(Data);
 
     if FloatigPointChar(ch) and (strlen(str1) = 1) then begin
-      HandleDigit(str1, ch);
-    end else begin
-      if strcomp(str1, 'CE') = 0 then begin
-        gtk_label_set(GTK_LABEL(label1), '0' + '');
-        Exit;
-      end else if strcomp(str1, 'C' + '') = 0 then begin
-        prevCmd := #0;
-        lastChar := #0;
-        gtk_label_set(GTK_LABEL(label1), '0' + '');
-      end else begin
-        MaybeUnaryOperation(str1);
-      end;
-      HandleBinaryOperation;
-      prevCmd := ch;
+   //   Han;
     end;
-    lastChar := ch;
   end;
 
   function CreateButton(table: PGtkWidget; szLabel: PChar; ror, colum: cint): PGtkWidget;
@@ -286,21 +164,7 @@ var
   procedure main;
   var
     Window, btn, table: PGtkWidget;
-
-    buffer:array[0..19]of Char;
-    num2:cdouble=12;
-    labelText: PChar='-.8';
   begin
-
-    num2 := atof(labelText);
-
-
-  sprintf(buffer, '%f', num2);
-  WriteLn(num2:10:5);
-  WriteLn(buffer);
-
-
-
     GTK_Init(@argc, @argv);
 
     Window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -328,7 +192,7 @@ begin
   SetExceptionMask([exDenormalized, exInvalidOp, exOverflow, exPrecision, exUnderflow, exZeroDivide]);
 
   for i := 0 to 255 do begin
-//    WriteLn('No: ', i: 4, ' isdigit', isdigit(i));
+    WriteLn('No: ', i: 4, ' isdigit', isdigit(i));
   end;
 
   main;
