@@ -82,9 +82,6 @@ const
     (szLabel: '.' + ''; row: 5; col: 2; widget: nil),      // --- Decimal ---
     (szLabel: '=' + ''; row: 5; col: 3; widget: nil),      // --- Equals/total ---
     (szLabel: 'x^2' + ''; row: 5; col: 4; widget: nil));
-var
-  i: integer;
-  // --- Squared ---
 
 
   function CloseAppWindow(w: PGtkWidget; Data: pgpointer): gint; cdecl;
@@ -93,8 +90,17 @@ var
     Result := 0;
   end;
 
-  function Key_Press(w: PGtkWidget; Data: pgpointer): gint; cdecl;
+  function Key_Press(w: PGtkWidget; event: PGdkEventKey; Data: pgpointer): gint; cdecl;
+  var
+    nIndex: integer;
   begin
+    for nIndex := 0 to Length(buttonList) - 1 do begin
+      if (Char( event^.keyval) = buttonList[nIndex].szLabel[0]) and (buttonList[nIndex].szLabel[1] = #0) then begin
+        gtk_widget_grab_focus(buttonList[nIndex].widget);
+        gtk_button_clicked(GTK_BUTTON(buttonList[nIndex].widget));
+        Exit;
+      end;
+    end;
   end;
 
   function FloatigPointChar(ch: char): boolean;
@@ -157,8 +163,8 @@ var
     if Command(lastChar) then begin
       gtk_label_set(GTK_LABEL(label1), '');
       if lastChar = '=' then begin
-          lastChar := #0;
-          prevCmd := #0;
+        lastChar := #0;
+        prevCmd := #0;
       end;
     end;
     gtk_label_get(GTK_LABEL(label1), @labelText);
@@ -194,7 +200,7 @@ var
     end else if strcomp(str1, 'x^2') = 0 then begin
       num2 := num2 * num2;
     end else if strcomp(str1, '+/-') = 0 then begin
-      num2:=num2*-1;
+      num2 := num2 * -1;
     end;
     sprintf(buffer, '%f', num2);
     TrimTrailingZeros(buffer);
@@ -287,17 +293,17 @@ var
   var
     Window, btn, table: PGtkWidget;
 
-    buffer:array[0..19]of Char;
-    num2:cdouble=12;
-    labelText: PChar='-.8';
+    buffer: array[0..19] of char;
+    num2: cdouble = 12;
+    labelText: PChar = '-.8';
   begin
 
     num2 := atof(labelText);
 
 
-  sprintf(buffer, '%f', num2);
-  WriteLn(num2:10:5);
-  WriteLn(buffer);
+    sprintf(buffer, '%f', num2);
+    WriteLn(num2: 10: 5);
+    WriteLn(buffer);
 
 
 
@@ -326,10 +332,6 @@ var
 
 begin
   SetExceptionMask([exDenormalized, exInvalidOp, exOverflow, exPrecision, exUnderflow, exZeroDivide]);
-
-  for i := 0 to 255 do begin
-//    WriteLn('No: ', i: 4, ' isdigit', isdigit(i));
-  end;
 
   main;
 end.
