@@ -1,5 +1,7 @@
 program Project1;
 
+// https://stackoverflow.com/questions/65323718/live-image-from-camera-in-gtk
+
 uses
   Math,
   pango,
@@ -13,7 +15,8 @@ const
   Height = 600;
 
 type
-  Prgb=^Trgb;
+  Prgb = ^Trgb;
+
   Trgb = record
     r, g, b: byte;
   end;
@@ -39,15 +42,40 @@ var
     gtk_widget_destroy(dialog);
   end;
 
-  procedure pixbuf_free(pixels: Pguchar; data: gpointer); cdecl;
+  procedure pixbuf_free(pixels: Pguchar; Data: gpointer); cdecl;
   begin
-//     g_free(pixels);
-     WriteLn('pixbuf data freed');
+    //     g_free(pixels);
+    WriteLn('pixbuf data freed');
   end;
 
-  function draw_call(data: gpointer): gboolean; cdecl;
+  function draw_call(Data: gpointer): gboolean; cdecl;
+  var
+    image: PGtkImage;
+    Stride_rgb: integer;
+    buffer_rgb: Prgb;
+    y, x: integer;
+    gray: byte;
+    pixbuf_rgb: PGdkPixbuf;
+  const
+    bascecolor: integer = 0;
   begin
+    image := PGtkImage(Data);
+    Stride_rgb := Width;
+    Getmem(buffer_rgb, Stride_rgb * Height * SizeOf(Trgb));
 
+    for x := 0 to Width - 1 do begin
+      for y := 0 to Height - 1 do begin
+        gray := buffer_8[bascecolor + x + y] and $FF;
+        buffer_rgb[Stride_rgb * y + x].r := gray;
+        buffer_rgb[Stride_rgb * y + x].g := gray;
+        buffer_rgb[Stride_rgb * y + x].b := gray;
+      end;
+    end;
+    Inc(bascecolor, 5);
+
+    pixbuf_rgb := gdk_pixbuf_new_from_data(Pguchar(buffer_rgb), GDK_COLORSPACE_RGB, False, 8, Width, Height, Stride_rgb * 3, @pixbuf_free, nil);
+    gtk_image_set_from_pixbuf(image, pixbuf_rgb);
+    g_object_unref(pixbuf_rgb);
   end;
 
   procedure main;
@@ -57,8 +85,8 @@ var
   var
     Window, image: PGtkWidget;
     y, x: integer;
-    buffer_rgb:Prgb;
-    gray: Byte;
+    buffer_rgb: Prgb;
+    gray: byte;
     pixbuf_rgb: PGdkPixbuf;
   begin
     Getmem(buffer_8, Stride_8 * Height);
@@ -68,10 +96,10 @@ var
       end;
     end;
 
-    Getmem(buffer_rgb, Stride_rgb * Height*SizeOf(Trgb));
+    Getmem(buffer_rgb, Stride_rgb * Height * SizeOf(Trgb));
     for x := 0 to Width - 1 do begin
       for y := 0 to Height - 1 do begin
-        gray:=buffer_8[Stride_8*x+y];
+        gray := buffer_8[Stride_8 * y + x];
         buffer_rgb[Stride_rgb * y + x].r := gray;
         buffer_rgb[Stride_rgb * y + x].g := gray;
         buffer_rgb[Stride_rgb * y + x].b := gray;
@@ -83,16 +111,16 @@ var
     Window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(Window), 'Frame-Buffer');
 
-    g_signal_connect(Window,'destroy',G_CALLBACK(@gtk_main_quit),nil);
+    g_signal_connect(Window, 'destroy', G_CALLBACK(@gtk_main_quit), nil);
 
-    pixbuf_rgb:=gdk_pixbuf_new_from_data(Pguchar(buffer_rgb),GDK_COLORSPACE_RGB,False,8,Width,Height,Stride_rgb*3,@pixbuf_free,nil);
-    image:=gtk_image_new_from_pixbuf(pixbuf_rgb);
+    pixbuf_rgb := gdk_pixbuf_new_from_data(Pguchar(buffer_rgb), GDK_COLORSPACE_RGB, False, 8, Width, Height, Stride_rgb * 3, @pixbuf_free, nil);
+    image := gtk_image_new_from_pixbuf(pixbuf_rgb);
     g_object_unref(pixbuf_rgb);
 
     gtk_container_add(GTK_CONTAINER(Window), image);
     gtk_widget_show_all(window);
 
-    g_timeout_add(1000, @draw_call,image);
+    g_timeout_add(100, @draw_call, image);
     GTK_Main;
   end;
 
