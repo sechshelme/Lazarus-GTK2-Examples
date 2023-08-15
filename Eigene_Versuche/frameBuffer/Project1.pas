@@ -44,7 +44,7 @@ var
 
   procedure pixbuf_free(pixels: Pguchar; Data: gpointer); cdecl;
   begin
-    //     g_free(pixels);
+    g_free(pixels);
     WriteLn('pixbuf data freed');
   end;
 
@@ -61,7 +61,8 @@ var
   begin
     image := PGtkImage(Data);
     Stride_rgb := Width;
-    Getmem(buffer_rgb, Stride_rgb * Height * SizeOf(Trgb));
+
+    buffer_rgb := g_malloc(Stride_rgb * Height * SizeOf(Trgb));
 
     for x := 0 to Width - 1 do begin
       for y := 0 to Height - 1 do begin
@@ -89,14 +90,14 @@ var
     gray: byte;
     pixbuf_rgb: PGdkPixbuf;
   begin
-    Getmem(buffer_8, Stride_8 * Height);
+    buffer_8 := g_malloc(Stride_8 * Height);
     for x := 0 to Width - 1 do begin
       for y := 0 to Height - 1 do begin
         buffer_8[Stride_8 * y + x] := (x + y) and $FF;
       end;
     end;
 
-    Getmem(buffer_rgb, Stride_rgb * Height * SizeOf(Trgb));
+    buffer_rgb := g_malloc(Stride_rgb * Height * SizeOf(Trgb));
     for x := 0 to Width - 1 do begin
       for y := 0 to Height - 1 do begin
         gray := buffer_8[Stride_8 * y + x];
@@ -122,6 +123,7 @@ var
 
     g_timeout_add(100, @draw_call, image);
     GTK_Main;
+    g_free(buffer_8);
   end;
 
 begin
