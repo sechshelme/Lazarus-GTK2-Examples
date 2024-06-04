@@ -77,6 +77,8 @@ var
     pixbuf_rgb := gdk_pixbuf_new_from_data(Pguchar(buffer_rgb), GDK_COLORSPACE_RGB, False, 8, Width, Height, Stride_rgb * 3, @pixbuf_free, nil);
     gtk_image_set_from_pixbuf(image, pixbuf_rgb);
     g_object_unref(pixbuf_rgb);
+
+    Result:=gTRUE;
   end;
 
   procedure main;
