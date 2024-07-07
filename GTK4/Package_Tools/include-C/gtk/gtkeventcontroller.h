@@ -30,7 +30,7 @@ typedef struct _GtkEventControllerClass GtkEventControllerClass;
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_EVENT_CONTROLLER         (gtk_event_controller_get_type ())
 #define GTK_EVENT_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER, GtkEventController))
@@ -78,6 +78,6 @@ GdkDevice *         gtk_event_controller_get_current_event_device (GtkEventContr
 
 GdkModifierType     gtk_event_controller_get_current_event_state (GtkEventController *controller);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_EVENT_CONTROLLER_H__ */

@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /* Maximum size of text buffer, in bytes */
 #define GTK_ENTRY_BUFFER_MAX_SIZE        G_MAXUSHORT
@@ -139,6 +139,6 @@ void                      gtk_entry_buffer_emit_deleted_text      (GtkEntryBuffe
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkEntryBuffer, g_object_unref)
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_ENTRY_BUFFER_H__ */

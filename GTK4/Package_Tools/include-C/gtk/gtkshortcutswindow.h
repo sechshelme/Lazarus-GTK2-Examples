@@ -25,7 +25,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SHORTCUTS_WINDOW            (gtk_shortcuts_window_get_type ())
 #define GTK_SHORTCUTS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_WINDOW, GtkShortcutsWindow))
@@ -39,6 +39,6 @@ GType gtk_shortcuts_window_get_type (void) ;
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkShortcutsWindow, g_object_unref)
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* GTK_SHORTCUTS_WINDOW _H */

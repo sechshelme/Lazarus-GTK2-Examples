@@ -21,7 +21,7 @@
 #include <gio/gio.h>
 #include <gtk/css/gtkcss.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CSS_PROVIDER         (gtk_css_provider_get_type ())
 #define GTK_CSS_PROVIDER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_CSS_PROVIDER, GtkCssProvider))
@@ -66,6 +66,6 @@ void             gtk_css_provider_load_named     (GtkCssProvider  *provider,
                                                   const char      *name,
                                                   const char      *variant);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CSS_PROVIDER_H__ */

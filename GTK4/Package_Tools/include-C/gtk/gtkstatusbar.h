@@ -32,7 +32,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_STATUSBAR            (gtk_statusbar_get_type ())
 #define GTK_STATUSBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STATUSBAR, GtkStatusbar))
@@ -62,6 +62,6 @@ void       gtk_statusbar_remove        	(GtkStatusbar *statusbar,
 void       gtk_statusbar_remove_all    	(GtkStatusbar *statusbar,
 					 guint	       context_id);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STATUSBAR_H__ */

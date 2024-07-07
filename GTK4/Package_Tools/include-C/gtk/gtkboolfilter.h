@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtkfilter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_BOOL_FILTER             (gtk_bool_filter_get_type ())
 
@@ -48,6 +48,6 @@ void                    gtk_bool_filter_set_invert              (GtkBoolFilter  
                                                                  gboolean                invert);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_BOOL_FILTER_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkmediastream.h>
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_MEDIA_CONTROLS         (gtk_media_controls_get_type ())
 
@@ -44,6 +44,6 @@ void            gtk_media_controls_set_media_stream     (GtkMediaControls       
                                                          GtkMediaStream         *stream);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_MEDIA_CONTROLS_H__ */

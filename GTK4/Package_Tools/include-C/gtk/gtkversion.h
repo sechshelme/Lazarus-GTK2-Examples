@@ -31,7 +31,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GTK_MAJOR_VERSION:
@@ -111,6 +111,6 @@ const char * gtk_check_version (guint   required_major,
                                 guint   required_minor,
                                 guint   required_micro);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_VERSION_H__ */

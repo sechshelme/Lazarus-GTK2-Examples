@@ -28,7 +28,7 @@
 #include <gsk/gskglshader.h>
 #include <gtk/css/gtkcss.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GSK_TYPE_RENDER_NODE (gsk_render_node_get_type ())
 
@@ -256,7 +256,7 @@ GskRenderNode *         gsk_conic_gradient_node_new                 (const graph
 const graphene_point_t * gsk_conic_gradient_node_get_center         (const GskRenderNode      *node) G_GNUC_PURE;
 
 float                    gsk_conic_gradient_node_get_rotation       (const GskRenderNode      *node) G_GNUC_PURE;
-GDK_AVAILABLE_IN_4_2
+
 float                    gsk_conic_gradient_node_get_angle          (const GskRenderNode      *node) G_GNUC_PURE;
 
 gsize                    gsk_conic_gradient_node_get_n_color_stops  (const GskRenderNode      *node) G_GNUC_PURE;
@@ -494,7 +494,7 @@ GskRenderNode *         gsk_text_node_new                       (PangoFont      
                                                                  const graphene_point_t   *offset);
 
 PangoFont *             gsk_text_node_get_font                  (const GskRenderNode      *node) G_GNUC_PURE;
-GDK_AVAILABLE_IN_4_2
+
 gboolean                gsk_text_node_has_color_glyphs          (const GskRenderNode      *node) G_GNUC_PURE;
 
 guint                   gsk_text_node_get_num_glyphs            (const GskRenderNode      *node) G_GNUC_PURE;
@@ -554,6 +554,6 @@ GDK_AVAILABLE_IN_4_4
 GskRenderNode *         gsk_value_dup_render_node               (const GValue             *value);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GSK_RENDER_NODE_H__ */

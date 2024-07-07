@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_APP_CHOOSER_BUTTON            (gtk_app_chooser_button_get_type ())
 #define GTK_APP_CHOOSER_BUTTON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER_BUTTON, GtkAppChooserButton))
@@ -77,6 +77,6 @@ gboolean gtk_app_chooser_button_get_modal             (GtkAppChooserButton *self
 void     gtk_app_chooser_button_set_modal             (GtkAppChooserButton *self,
                                                        gboolean             modal);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_APP_CHOOSER_BUTTON_H__ */

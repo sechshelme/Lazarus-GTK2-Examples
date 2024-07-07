@@ -37,7 +37,7 @@
 
 #include <gtk/gtkbutton.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_COLOR_BUTTON             (gtk_color_button_get_type ())
@@ -64,6 +64,6 @@ gboolean     gtk_color_button_get_modal        (GtkColorButton *button);
 void         gtk_color_button_set_modal        (GtkColorButton *button,
                                                 gboolean        modal);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_COLOR_BUTTON_H__ */

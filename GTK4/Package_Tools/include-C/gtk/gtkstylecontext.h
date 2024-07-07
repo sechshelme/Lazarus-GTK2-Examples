@@ -28,7 +28,7 @@
 #include <gtk/gtkstyleprovider.h>
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_STYLE_CONTEXT         (gtk_style_context_get_type ())
 #define GTK_STYLE_CONTEXT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_STYLE_CONTEXT, GtkStyleContext))
@@ -141,6 +141,6 @@ typedef enum {
 char * gtk_style_context_to_string (GtkStyleContext           *context,
                                     GtkStyleContextPrintFlags  flags);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STYLE_CONTEXT_H__ */

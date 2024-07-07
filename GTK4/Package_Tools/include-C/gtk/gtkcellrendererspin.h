@@ -24,7 +24,7 @@
 
 #include <gtk/gtkcellrenderertext.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CELL_RENDERER_SPIN		(gtk_cell_renderer_spin_get_type ())
 #define GTK_CELL_RENDERER_SPIN(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_RENDERER_SPIN, GtkCellRendererSpin))
@@ -37,6 +37,6 @@ GType            gtk_cell_renderer_spin_get_type (void);
 
 GtkCellRenderer *gtk_cell_renderer_spin_new      (void);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_CELL_RENDERER_SPIN_H__ */

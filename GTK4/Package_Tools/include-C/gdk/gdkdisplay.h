@@ -32,7 +32,7 @@
 #include <gdk/gdkseat.h>
 #include <gdk/gdkmonitor.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_DISPLAY              (gdk_display_get_type ())
 #define GDK_DISPLAY(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DISPLAY, GdkDisplay))
@@ -138,6 +138,6 @@ gboolean     gdk_display_get_setting (GdkDisplay *display,
 
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GDK_DISPLAY_H__ */

@@ -44,7 +44,7 @@
  */
 #include <gdk/gdkconfig.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GDK_CURRENT_TIME:
@@ -159,6 +159,6 @@ struct _GdkKeymapKey
   int   level;
 };
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_TYPES_H__ */

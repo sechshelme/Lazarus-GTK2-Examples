@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SHORTCUT_ACTION (gtk_shortcut_action_get_type ())
 
@@ -162,6 +162,6 @@ GtkShortcutAction *     gtk_named_action_new                    (const char     
 
 const char *            gtk_named_action_get_action_name        (GtkNamedAction *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SHORTCUT_ACTION_H__ */

@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GdkFrameTimings GdkFrameTimings;
 
@@ -51,6 +51,6 @@ gint64           gdk_frame_timings_get_refresh_interval  (GdkFrameTimings *timin
 
 gint64           gdk_frame_timings_get_predicted_presentation_time (GdkFrameTimings *timings);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_FRAME_TIMINGS_H__ */

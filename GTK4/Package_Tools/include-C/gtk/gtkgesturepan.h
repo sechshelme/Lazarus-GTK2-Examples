@@ -26,7 +26,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtkgesturedrag.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_GESTURE_PAN         (gtk_gesture_pan_get_type ())
 #define GTK_GESTURE_PAN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_PAN, GtkGesturePan))
@@ -52,6 +52,6 @@ void              gtk_gesture_pan_set_orientation (GtkGesturePan  *gesture,
                                                    GtkOrientation  orientation);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_GESTURE_PAN_H__ */

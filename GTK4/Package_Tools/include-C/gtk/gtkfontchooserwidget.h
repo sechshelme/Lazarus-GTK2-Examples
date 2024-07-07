@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_FONT_CHOOSER_WIDGET              (gtk_font_chooser_widget_get_type ())
 #define GTK_FONT_CHOOSER_WIDGET(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FONT_CHOOSER_WIDGET, GtkFontChooserWidget))
@@ -38,6 +38,6 @@ GType        gtk_font_chooser_widget_get_type                 (void) ;
 
 GtkWidget*   gtk_font_chooser_widget_new                      (void);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_FONT_CHOOSER_WIDGET_H__ */

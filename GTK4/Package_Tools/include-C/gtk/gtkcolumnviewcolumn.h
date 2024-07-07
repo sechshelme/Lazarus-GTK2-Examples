@@ -27,7 +27,7 @@
 #include <gtk/gtkcolumnview.h>
 #include <gtk/gtksorter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_COLUMN_VIEW_COLUMN         (gtk_column_view_column_get_type ())
 #define GTK_COLUMN_VIEW_COLUMN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_COLUMN_VIEW_COLUMN, GtkColumnViewColumn))
@@ -97,6 +97,6 @@ void                    gtk_column_view_column_set_expand               (GtkColu
 
 gboolean                gtk_column_view_column_get_expand            (GtkColumnViewColumn    *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_COLUMN_VIEW_COLUMN_H__ */

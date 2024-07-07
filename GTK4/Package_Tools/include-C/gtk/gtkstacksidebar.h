@@ -28,7 +28,7 @@
 
 #include <gtk/gtkstack.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_STACK_SIDEBAR           (gtk_stack_sidebar_get_type ())
 #define GTK_STACK_SIDEBAR(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STACK_SIDEBAR, GtkStackSidebar))
@@ -46,6 +46,6 @@ void        gtk_stack_sidebar_set_stack (GtkStackSidebar *self,
 
 GtkStack *  gtk_stack_sidebar_get_stack (GtkStackSidebar *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STACK_SIDEBAR_H__ */

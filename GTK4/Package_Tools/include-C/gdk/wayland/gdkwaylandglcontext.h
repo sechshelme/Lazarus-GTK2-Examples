@@ -28,7 +28,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_WAYLAND_GL_CONTEXT		(gdk_wayland_gl_context_get_type ())
 #define GDK_WAYLAND_GL_CONTEXT(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_WAYLAND_GL_CONTEXT, GdkWaylandGLContext))
@@ -40,6 +40,6 @@ typedef struct _GdkWaylandGLContextClass	GdkWaylandGLContextClass;
 
 GType gdk_wayland_gl_context_get_type (void) ;
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_WAYLAND_GL_CONTEXT_H__ */

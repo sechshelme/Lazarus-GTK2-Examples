@@ -37,7 +37,7 @@
 #include <glib.h>
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 void gtk_hsv_to_rgb (float  h, float  s, float  v,
@@ -46,6 +46,6 @@ void gtk_hsv_to_rgb (float  h, float  s, float  v,
 void gtk_rgb_to_hsv (float  r, float  g, float  b,
                      float *h, float *s, float *v);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_COLOR_UTILS_H__ */

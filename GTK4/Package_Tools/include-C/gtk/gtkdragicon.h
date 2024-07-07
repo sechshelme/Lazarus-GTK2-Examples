@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_DRAG_ICON (gtk_drag_icon_get_type ())
 
@@ -54,7 +54,7 @@ void            gtk_drag_icon_set_from_paintable (GdkDrag      *drag,
 
 GtkWidget *     gtk_drag_icon_create_widget_for_value           (const GValue           *value);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_DRAG_ICON_H__ */

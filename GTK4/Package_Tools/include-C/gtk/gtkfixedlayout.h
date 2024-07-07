@@ -22,7 +22,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_FIXED_LAYOUT (gtk_fixed_layout_get_type ())
 #define GTK_TYPE_FIXED_LAYOUT_CHILD (gtk_fixed_layout_child_get_type ())
@@ -46,4 +46,4 @@ void            gtk_fixed_layout_child_set_transform    (GtkFixedLayoutChild *ch
 
 GskTransform *  gtk_fixed_layout_child_get_transform    (GtkFixedLayoutChild *child);
 
-// // G_END_DECLS
+// // // G_END_DECLS

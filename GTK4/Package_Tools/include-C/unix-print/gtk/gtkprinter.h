@@ -25,7 +25,7 @@
 #include <cairo.h>
 #include <gtk/gtk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PRINT_CAPABILITIES (gtk_print_capabilities_get_type ())
 
@@ -161,6 +161,6 @@ void                     gtk_enumerate_printers        (GtkPrinterFunc   func,
 							GDestroyNotify   destroy,
 							gboolean         wait);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PRINTER_H__ */

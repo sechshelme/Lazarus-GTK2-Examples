@@ -29,7 +29,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkDrop, g_object_unref)
 
@@ -85,6 +85,6 @@ const GValue *          gdk_drop_read_value_finish      (GdkDrop                
                                                          GAsyncResult           *result,
                                                          GError                **error);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_DROP_H__ */

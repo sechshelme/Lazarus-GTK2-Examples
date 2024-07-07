@@ -31,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PANED                  (gtk_paned_get_type ())
 #define GTK_PANED(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PANED, GtkPaned))
@@ -91,6 +91,6 @@ void        gtk_paned_set_wide_handle (GtkPaned    *paned,
 gboolean    gtk_paned_get_wide_handle (GtkPaned    *paned);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PANED_H__ */

@@ -27,7 +27,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_BITSET (gtk_bitset_get_type ())
 
@@ -176,6 +176,6 @@ guint                   gtk_bitset_iter_get_value               (const GtkBitset
 
 gboolean                gtk_bitset_iter_is_valid                (const GtkBitsetIter    *iter);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_BITSET_H__ */

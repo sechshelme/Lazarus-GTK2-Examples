@@ -28,7 +28,7 @@
 #include <gtk/gtkcellarea.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_TREE_VIEW_COLUMN	     (gtk_tree_view_column_get_type ())
@@ -247,7 +247,7 @@ GtkWidget              *gtk_tree_view_column_get_tree_view       (GtkTreeViewCol
 GtkWidget              *gtk_tree_view_column_get_button          (GtkTreeViewColumn       *tree_column);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_TREE_VIEW_COLUMN_H__ */

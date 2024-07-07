@@ -28,7 +28,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_DRAW_CONTEXT             (gdk_draw_context_get_type ())
 #define GDK_DRAW_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_DRAW_CONTEXT, GdkDrawContext))
@@ -52,6 +52,6 @@ gboolean                gdk_draw_context_is_in_frame            (GdkDrawContext 
 
 const cairo_region_t *  gdk_draw_context_get_frame_region       (GdkDrawContext         *context);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_DRAW_CONTEXT__ */

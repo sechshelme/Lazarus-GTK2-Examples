@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_ICON_PAINTABLE    (gtk_icon_paintable_get_type ())
 #define GTK_ICON_PAINTABLE(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ICON_PAINTABLE, GtkIconPaintable))
@@ -116,7 +116,7 @@ char *           gtk_icon_theme_get_theme_name       (GtkIconTheme              
 
 gboolean         gtk_icon_theme_has_icon             (GtkIconTheme                *self,
                                                       const char                  *icon_name);
-GDK_AVAILABLE_IN_4_2
+
 gboolean         gtk_icon_theme_has_gicon            (GtkIconTheme                *self,
                                                       GIcon                       *gicon);
 
@@ -154,6 +154,6 @@ const char *         gtk_icon_paintable_get_icon_name     (GtkIconPaintable  *se
 
 gboolean              gtk_icon_paintable_is_symbolic       (GtkIconPaintable  *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_ICON_THEME_H__ */

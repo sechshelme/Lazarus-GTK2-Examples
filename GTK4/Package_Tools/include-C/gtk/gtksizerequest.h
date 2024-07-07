@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkRequestedSize         GtkRequestedSize;
 
@@ -53,6 +53,6 @@ int                 gtk_distribute_natural_allocation               (int        
                                                                      GtkRequestedSize *sizes);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SIZE_REQUEST_H__ */

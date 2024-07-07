@@ -25,7 +25,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_GESTURE_STYLUS         (gtk_gesture_stylus_get_type ())
 #define GTK_GESTURE_STYLUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_STYLUS, GtkGestureStylus))
@@ -58,6 +58,6 @@ gboolean          gtk_gesture_stylus_get_backlog (GtkGestureStylus  *gesture,
 
 GdkDeviceTool *   gtk_gesture_stylus_get_device_tool (GtkGestureStylus *gesture);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_GESTURE_STYLUS_H__ */

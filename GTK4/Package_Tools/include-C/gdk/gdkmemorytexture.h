@@ -27,7 +27,7 @@
 #include <gdk/gdkenums.h>
 #include <gdk/gdktexture.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GDK_MEMORY_DEFAULT:
@@ -70,6 +70,6 @@ GdkTexture *            gdk_memory_texture_new              (int                
                                                              gsize              stride);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_MEMORY_TEXTURE_H__ */

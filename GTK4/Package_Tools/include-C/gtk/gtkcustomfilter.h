@@ -26,7 +26,7 @@
 
 #include <gtk/gtkfilter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkCustomFilterFunc:
@@ -56,6 +56,6 @@ void                    gtk_custom_filter_set_filter_func       (GtkCustomFilter
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CUSTOM_FILTER_H__ */

@@ -7,7 +7,7 @@
 
 #include <glib.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GDK_WINDOWING_X11
@@ -18,6 +18,6 @@
 
 #undef GDK_RENDERING_VULKAN
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GDKCONFIG_H__ */

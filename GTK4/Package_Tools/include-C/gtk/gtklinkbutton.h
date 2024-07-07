@@ -30,7 +30,7 @@
 
 #include <gtk/gtkbutton.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_LINK_BUTTON		(gtk_link_button_get_type ())
 #define GTK_LINK_BUTTON(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LINK_BUTTON, GtkLinkButton))
@@ -60,6 +60,6 @@ void                  gtk_link_button_set_visited       (GtkLinkButton *link_but
                                                          gboolean       visited);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_LINK_BUTTON_H__ */

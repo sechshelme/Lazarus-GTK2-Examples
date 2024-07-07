@@ -31,7 +31,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkAdjustment          GtkAdjustment;
 typedef struct _GtkBitset              GtkBitset;
@@ -71,6 +71,6 @@ typedef struct _GtkWindow              GtkWindow;
  */
 #define GTK_INVALID_LIST_POSITION ((guint) 0xffffffff)
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TYPES_H__ */

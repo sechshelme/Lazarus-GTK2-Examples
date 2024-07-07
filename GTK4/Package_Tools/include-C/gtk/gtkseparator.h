@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SEPARATOR                  (gtk_separator_get_type ())
 #define GTK_SEPARATOR(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEPARATOR, GtkSeparator))
@@ -47,6 +47,6 @@ GType       gtk_separator_get_type (void) ;
 GtkWidget * gtk_separator_new      (GtkOrientation orientation);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SEPARATOR_H__ */

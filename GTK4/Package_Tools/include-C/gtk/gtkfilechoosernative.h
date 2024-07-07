@@ -26,7 +26,7 @@
 #include <gtk/gtkfilechooser.h>
 #include <gtk/gtknativedialog.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_FILE_CHOOSER_NATIVE             (gtk_file_chooser_native_get_type ())
 
@@ -51,6 +51,6 @@ const char *gtk_file_chooser_native_get_cancel_label (GtkFileChooserNative *self
 void        gtk_file_chooser_native_set_cancel_label (GtkFileChooserNative *self,
                                                       const char           *cancel_label);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_FILE_CHOOSER_NATIVE_H__ */

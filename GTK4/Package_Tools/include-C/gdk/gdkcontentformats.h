@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_CONTENT_FORMATS    (gdk_content_formats_get_type ())
 
@@ -123,6 +123,6 @@ typedef struct _GdkFileList GdkFileList;
 GDK_AVAILABLE_IN_4_6
 GSList *        gdk_file_list_get_files (GdkFileList *file_list);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CONTENT_FORMATS_H__ */

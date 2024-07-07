@@ -37,7 +37,7 @@
 #include <gtk/gtkshortcutaction.h>
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /* Macro for casting a pointer to a GtkWidget or GtkWidgetClass pointer.
  * Macros for testing whether widget or klass are of type GTK_TYPE_WIDGET.
@@ -977,6 +977,6 @@ GtkAccessibleRole       gtk_widget_class_get_accessible_role    (GtkWidgetClass 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWidget, g_object_unref)
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkRequisition, gtk_requisition_free)
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_WIDGET_H__ */

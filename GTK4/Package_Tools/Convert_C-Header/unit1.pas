@@ -46,9 +46,9 @@ begin
     for j := 0 to slHeader.Count - 1 do begin
       slHeader[j] := StringReplace(slHeader[j], 'G_BEGIN_DECLS', '// G_BEGIN_DECLS', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_END_DECLS', '// G_END_DECLS', [rfReplaceAll]);
-      //      slHeader[j] := StringReplace(slHeader[j], 'DECLSPEC', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_CONST', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_2', '', [rfReplaceAll]);
 
 
     end;

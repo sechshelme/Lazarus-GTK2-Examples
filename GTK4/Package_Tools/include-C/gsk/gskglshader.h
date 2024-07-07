@@ -28,7 +28,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GSK_TYPE_SHADER_ARGS_BUILDER    (gsk_shader_args_builder_get_type ())
 
@@ -162,6 +162,6 @@ void    gsk_shader_args_builder_set_vec4  (GskShaderArgsBuilder *builder,
                                            const graphene_vec4_t *value);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GSK_GL_SHADER_H__ */

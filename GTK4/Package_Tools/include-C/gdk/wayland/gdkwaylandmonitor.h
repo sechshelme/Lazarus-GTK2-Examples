@@ -28,7 +28,7 @@
 
 #include <gdk/gdkmonitor.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_WAYLAND_MONITOR           (gdk_wayland_monitor_get_type ())
 #define GDK_WAYLAND_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_MONITOR, GdkWaylandMonitor))
@@ -43,6 +43,6 @@ GType             gdk_wayland_monitor_get_type            (void) ;
 
 struct wl_output *gdk_wayland_monitor_get_wl_output       (GdkMonitor *monitor);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GDK_WAYLAND_MONITOR_H__ */

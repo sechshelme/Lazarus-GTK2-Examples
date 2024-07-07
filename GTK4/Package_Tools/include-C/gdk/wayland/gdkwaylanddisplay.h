@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDisplay GdkWaylandDisplay;
@@ -66,6 +66,6 @@ gboolean                gdk_wayland_display_query_registry      (GdkDisplay  *di
 GDK_AVAILABLE_IN_4_4
 gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *display);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_WAYLAND_DISPLAY_H__ */

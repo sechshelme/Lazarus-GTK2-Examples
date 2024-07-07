@@ -20,7 +20,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_GRID_LAYOUT (gtk_grid_layout_get_type ())
 #define GTK_TYPE_GRID_LAYOUT_CHILD (gtk_grid_layout_child_get_type ())
@@ -88,4 +88,4 @@ void                    gtk_grid_layout_child_set_row_span              (GtkGrid
 
 int                     gtk_grid_layout_child_get_row_span              (GtkGridLayoutChild  *child);
 
-// // G_END_DECLS
+// // // G_END_DECLS

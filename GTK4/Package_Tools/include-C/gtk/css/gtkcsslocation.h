@@ -24,7 +24,7 @@
 
 #include <glib.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkCssLocation GtkCssLocation;
 
@@ -38,6 +38,6 @@ struct _GtkCssLocation
 };
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CSS_LOCATION_H__ */

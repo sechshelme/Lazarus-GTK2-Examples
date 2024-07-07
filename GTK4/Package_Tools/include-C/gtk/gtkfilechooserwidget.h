@@ -26,7 +26,7 @@
 #include <gtk/gtkfilechooser.h>
 #include <gtk/gtkbox.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_FILE_CHOOSER_WIDGET             (gtk_file_chooser_widget_get_type ())
 #define GTK_FILE_CHOOSER_WIDGET(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_CHOOSER_WIDGET, GtkFileChooserWidget))
@@ -39,6 +39,6 @@ GType      gtk_file_chooser_widget_get_type         (void) ;
 
 GtkWidget *gtk_file_chooser_widget_new              (GtkFileChooserAction  action);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_FILE_CHOOSER_WIDGET_H__ */

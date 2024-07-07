@@ -28,7 +28,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_EVENT_CONTROLLER_FOCUS         (gtk_event_controller_focus_get_type ())
 #define GTK_EVENT_CONTROLLER_FOCUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_FOCUS, GtkEventControllerFocus))
@@ -52,6 +52,6 @@ gboolean            gtk_event_controller_focus_contains_focus     (GtkEventContr
 gboolean            gtk_event_controller_focus_is_focus           (GtkEventControllerFocus  *self);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_EVENT_CONTROLLER_FOCUS_H__ */

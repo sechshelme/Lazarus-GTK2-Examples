@@ -32,7 +32,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 const char *gdk_keyval_name      (guint        keyval) ;
@@ -58,6 +58,6 @@ guint32  gdk_keyval_to_unicode   (guint        keyval) ;
 guint    gdk_unicode_to_keyval   (guint32      wc) ;
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_KEYS_H__ */

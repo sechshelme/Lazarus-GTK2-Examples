@@ -31,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_FLOW_BOX                  (gtk_flow_box_get_type ())
@@ -224,7 +224,7 @@ void                  gtk_flow_box_set_sort_func                (GtkFlowBox     
 
 void                  gtk_flow_box_invalidate_sort              (GtkFlowBox         *box);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_FLOW_BOX_H__ */

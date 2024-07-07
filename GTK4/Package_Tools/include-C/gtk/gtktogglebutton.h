@@ -33,7 +33,7 @@
 #include <gtk/gtkbutton.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_TOGGLE_BUTTON                  (gtk_toggle_button_get_type ())
 #define GTK_TOGGLE_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOGGLE_BUTTON, GtkToggleButton))
@@ -84,6 +84,6 @@ void       gtk_toggle_button_set_group         (GtkToggleButton *toggle_button,
                                                 GtkToggleButton *group);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TOGGLE_BUTTON_H__ */

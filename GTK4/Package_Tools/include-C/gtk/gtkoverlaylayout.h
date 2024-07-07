@@ -22,7 +22,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_OVERLAY_LAYOUT (gtk_overlay_layout_get_type ())
 #define GTK_TYPE_OVERLAY_LAYOUT_CHILD (gtk_overlay_layout_child_get_type ())
@@ -54,4 +54,4 @@ void            gtk_overlay_layout_child_set_clip_overlay (GtkOverlayLayoutChild
 
 gboolean        gtk_overlay_layout_child_get_clip_overlay (GtkOverlayLayoutChild *child);
 
-// // G_END_DECLS
+// // // G_END_DECLS

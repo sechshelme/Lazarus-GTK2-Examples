@@ -22,7 +22,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SHORTCUT         (gtk_shortcut_get_type ())
 
@@ -57,6 +57,6 @@ GVariant *      gtk_shortcut_get_arguments                      (GtkShortcut    
 void            gtk_shortcut_set_arguments                      (GtkShortcut            *self,
                                                                  GVariant               *args);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_SHORTCUT_H__ */

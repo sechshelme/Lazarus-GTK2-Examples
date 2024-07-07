@@ -1,7 +1,9 @@
 program project1;
 
 uses
+  glib2,
   common_GTK,
+  gtkwindow,
   gtkbutton,
 
   Math;
@@ -15,19 +17,19 @@ type
 //  TGTKButton = Pointer;
 //  PGTKButton = ^TGTKButton;
 
-  TGTKWindow = Pointer;
-  PGTKWindow = ^TGTKWindow;
+//  TGTKWindow = Pointer;
+//  PGTKWindow = ^TGTKWindow;
 
   TGtkApplication = Pointer;
   PGtkApplication = ^TGtkApplication;
 
   function gtk_application_new(application_id: PChar; flags: int64): PGtkApplication; cdecl; external gtklib;
   function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
-  procedure gtk_window_present(window: PGtkWindow); cdecl; external gtklib;
-  function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
-  procedure gtk_window_set_child(window: PGtkWindow; child: PGtkWidget); cdecl; external gtklib;
-  procedure gtk_window_set_default_size(window: PGtkWindow; Width: longint; Height: longint); cdecl; external gtklib;
-  procedure gtk_window_set_title(window: PGtkWindow; title: PChar); cdecl; external gtklib;
+//  procedure gtk_window_present(window: PGtkWindow); cdecl; external gtklib;
+//  function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
+//  procedure gtk_window_set_child(window: PGtkWindow; child: PGtkWidget); cdecl; external gtklib;
+//  procedure gtk_window_set_default_size(window: PGtkWindow; Width: longint; Height: longint); cdecl; external gtklib;
+//  procedure gtk_window_set_title(window: PGtkWindow; title: PChar); cdecl; external gtklib;
 //  function gtk_button_get_label(button: PGtkButton): PChar; cdecl; external gtklib;
   //  procedure gtk_widget_set_size_request(widget: PGtkWidget; Width: longint; Height: longint); cdecl; external gtklib;
 
@@ -37,14 +39,14 @@ type
 
 // ------ glib
 
-type
-  TGCallBackProcedure = procedure;
-  TGCallback = procedure(para1: TGCallBackProcedure); cdecl;
+//type
+  //TGCallBackProcedure = procedure;
+  //TGCallback = procedure(para1: TGCallBackProcedure); cdecl;
+  //
+  //TGClosureNotify = procedure(Data: Pointer; closure: Pointer); cdecl;
 
-  TGClosureNotify = procedure(Data: Pointer; closure: Pointer); cdecl;
 
-
-  function g_signal_connect_data(instance: Pointer; detailed_signal: PChar; c_handler: TGCallback; Data: Pointer; destroy_data: TGClosureNotify; connect_flags: longint): longint; cdecl; external gobjectlib;
+//function g_signal_connect_data(instance: Pointer; detailed_signal: PChar; c_handler: TGCallback; Data: Pointer; destroy_data: TGClosureNotify; connect_flags: longint): longint; cdecl; external gobjectlib;
 
   function g_signal_connect(instance: Pointer; detailed_signal: PChar; c_handler: TGCallback; Data: Pointer): longint;
   begin
@@ -71,16 +73,16 @@ type
   begin
     window := gtk_application_window_new(app);
 
-    gtk_window_set_default_size(window, 640, 480);
-    gtk_window_set_title(window, 'Hello GTK-4');
+    gtk_window_set_default_size(GTK_WINDOW( window), 640, 480);
+    gtk_window_set_title(GTK_WINDOW( window), 'Hello GTK-4');
 
     button := gtk_button_new_with_label('Button 1');
     //    gtk_widget_set_size_request(button, 75, 25);
 
     g_signal_connect(button, 'clicked', G_CALLBACK(@btn_Click), nil);
-    gtk_window_set_child(window, button);
+    gtk_window_set_child(GTK_WINDOW( window), button);
 
-    gtk_window_present(window);
+    gtk_window_present(GTK_WINDOW( window));
   end;
 
   procedure main;

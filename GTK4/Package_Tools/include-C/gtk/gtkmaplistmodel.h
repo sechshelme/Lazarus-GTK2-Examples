@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_MAP_LIST_MODEL (gtk_map_list_model_get_type ())
 
@@ -70,6 +70,6 @@ GListModel *            gtk_map_list_model_get_model            (GtkMapListModel
 
 gboolean                gtk_map_list_model_has_map              (GtkMapListModel        *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MAP_LIST_MODEL_H__ */

@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 
@@ -42,6 +42,6 @@ GdkContentProvider *    gdk_content_provider_new_for_bytes              (const c
                                                                          GBytes                 *bytes);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_CONTENT_PROVIDER_IMPL_H__ */

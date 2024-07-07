@@ -25,7 +25,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_COLOR_CHOOSER                  (gtk_color_chooser_get_type ())
 #define GTK_COLOR_CHOOSER(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COLOR_CHOOSER, GtkColorChooser))
@@ -83,6 +83,6 @@ void     gtk_color_chooser_add_palette    (GtkColorChooser *chooser,
                                            int              n_colors,
                                            GdkRGBA         *colors);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_COLOR_CHOOSER_H__ */

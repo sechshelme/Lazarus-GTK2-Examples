@@ -36,7 +36,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_INFO_BAR              (gtk_info_bar_get_type())
 #define GTK_INFO_BAR(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), GTK_TYPE_INFO_BAR, GtkInfoBar))
@@ -105,6 +105,6 @@ void           gtk_info_bar_set_revealed           (GtkInfoBar     *info_bar,
 
 gboolean       gtk_info_bar_get_revealed           (GtkInfoBar     *info_bar);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_INFO_BAR_H__  */

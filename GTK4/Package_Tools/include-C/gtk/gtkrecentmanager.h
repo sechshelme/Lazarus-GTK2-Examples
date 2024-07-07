@@ -28,7 +28,7 @@
 #include <gdk/gdk.h>
 #include <time.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_RECENT_INFO			(gtk_recent_info_get_type ())
 
@@ -251,6 +251,6 @@ gboolean              gtk_recent_info_match                (GtkRecentInfo  *info
 /* private */
 void _gtk_recent_manager_sync (void);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_RECENT_MANAGER_H__ */

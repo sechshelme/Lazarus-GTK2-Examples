@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CUSTOM_SORTER             (gtk_custom_sorter_get_type ())
 
@@ -44,6 +44,6 @@ void                    gtk_custom_sorter_set_sort_func         (GtkCustomSorter
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CUSTOM_SORTER_H__ */

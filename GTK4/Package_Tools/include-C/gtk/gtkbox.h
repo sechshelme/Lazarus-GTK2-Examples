@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_BOX            (gtk_box_get_type ())
@@ -108,6 +108,6 @@ void        gtk_box_reorder_child_after (GtkBox         *box,
                                          GtkWidget      *sibling);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_BOX_H__ */

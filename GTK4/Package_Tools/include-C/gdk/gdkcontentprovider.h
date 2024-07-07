@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_CONTENT_PROVIDER            (gdk_content_provider_get_type ())
 #define GDK_CONTENT_PROVIDER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CONTENT_PROVIDER, GdkContentProvider))
@@ -111,6 +111,6 @@ gboolean                gdk_content_provider_write_mime_type_finish     (GdkCont
 gboolean                gdk_content_provider_get_value                  (GdkContentProvider     *provider,
                                                                          GValue                 *value,
                                                                          GError                **error);
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_CONTENT_PROVIDER_H__ */

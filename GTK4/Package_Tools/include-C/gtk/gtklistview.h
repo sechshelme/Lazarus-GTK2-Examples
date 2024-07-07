@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistbase.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_LIST_VIEW         (gtk_list_view_get_type ())
 #define GTK_LIST_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_VIEW, GtkListView))
@@ -78,6 +78,6 @@ gboolean        gtk_list_view_get_enable_rubberband             (GtkListView    
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListView, g_object_unref)
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_LIST_VIEW_H__ */

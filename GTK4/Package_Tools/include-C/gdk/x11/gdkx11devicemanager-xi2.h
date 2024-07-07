@@ -20,7 +20,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_X11_DEVICE_MANAGER_XI2         (gdk_x11_device_manager_xi2_get_type ())
 #define GDK_X11_DEVICE_MANAGER_XI2(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_X11_DEVICE_MANAGER_XI2, GdkX11DeviceManagerXI2))
@@ -37,6 +37,6 @@ typedef struct _GdkX11DeviceManagerXI2Class GdkX11DeviceManagerXI2Class;
 GType gdk_x11_device_manager_xi2_get_type (void) ;
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_X11_DEVICE_MANAGER_XI2_H__ */

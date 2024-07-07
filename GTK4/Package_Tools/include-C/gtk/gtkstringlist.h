@@ -30,7 +30,7 @@
 #include <gdk/gdk.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_STRING_OBJECT (gtk_string_object_get_type ())
 
@@ -71,6 +71,6 @@ void            gtk_string_list_splice          (GtkStringList         *self,
 const char *    gtk_string_list_get_string      (GtkStringList         *self,
                                                  guint                  position);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STRING_LIST_H__ */

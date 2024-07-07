@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SCROLLBAR            (gtk_scrollbar_get_type ())
 #define GTK_SCROLLBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCROLLBAR, GtkScrollbar))
@@ -54,6 +54,6 @@ void           gtk_scrollbar_set_adjustment (GtkScrollbar  *self,
 
 GtkAdjustment *gtk_scrollbar_get_adjustment (GtkScrollbar  *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SCROLLBAR_H__ */

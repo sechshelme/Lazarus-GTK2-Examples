@@ -25,7 +25,7 @@
 #include <gtk/gtkimcontext.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /*
  * No longer used by GTK, just left here on the off chance that some
@@ -73,7 +73,7 @@ void          gtk_im_context_simple_add_compose_file (GtkIMContextSimple *contex
                                                       const char         *compose_file);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_IM_CONTEXT_SIMPLE_H__ */

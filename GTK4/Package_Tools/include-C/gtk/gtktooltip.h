@@ -26,7 +26,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_TOOLTIP                 (gtk_tooltip_get_type ())
 #define GTK_TOOLTIP(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOOLTIP, GtkTooltip))
@@ -58,6 +58,6 @@ void gtk_tooltip_set_custom	         (GtkTooltip         *tooltip,
 void gtk_tooltip_set_tip_area            (GtkTooltip         *tooltip,
                                           const GdkRectangle *rect);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TOOLTIP_H__ */

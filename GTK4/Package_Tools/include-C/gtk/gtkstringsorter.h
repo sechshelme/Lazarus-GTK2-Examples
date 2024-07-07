@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_STRING_SORTER             (gtk_string_sorter_get_type ())
 
@@ -47,6 +47,6 @@ gboolean                gtk_string_sorter_get_ignore_case       (GtkStringSorter
 void                    gtk_string_sorter_set_ignore_case       (GtkStringSorter        *self,
                                                                  gboolean                ignore_case);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STRING_SORTER_H__ */

@@ -26,7 +26,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_MEDIA_STREAM             (gtk_media_stream_get_type ())
 
@@ -161,6 +161,6 @@ void                    gtk_media_stream_error_valist           (GtkMediaStream 
                                                                  const char     *format,
                                                                  va_list         args) G_GNUC_PRINTF (4, 0);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MEDIA_STREAM_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_MULTI_SORTER             (gtk_multi_sorter_get_type ())
 
@@ -44,6 +44,6 @@ void                    gtk_multi_sorter_append                 (GtkMultiSorter 
 void                    gtk_multi_sorter_remove                 (GtkMultiSorter         *self,
                                                                  guint                   position);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MULTI_SORTER_H__ */

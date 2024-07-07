@@ -30,7 +30,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtktreemodel.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CELL_AREA                (gtk_cell_area_get_type ())
 #define GTK_CELL_AREA(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_AREA, GtkCellArea))
@@ -518,6 +518,6 @@ void                 _gtk_cell_area_set_cell_data_func_with_proxy  (GtkCellArea 
 								    GDestroyNotify         destroy,
 								    gpointer               proxy);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CELL_AREA_H__ */

@@ -30,7 +30,7 @@
 #include <gdk/gdkrectangle.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_MONITOR           (gdk_monitor_get_type ())
 #define GDK_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_MONITOR, GdkMonitor))
@@ -87,6 +87,6 @@ GdkSubpixelLayout gdk_monitor_get_subpixel_layout (GdkMonitor   *monitor);
 
 gboolean          gdk_monitor_is_valid            (GdkMonitor   *monitor);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GDK_MONITOR_H__ */

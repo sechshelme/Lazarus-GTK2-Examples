@@ -11,7 +11,7 @@
 #include <glib-object.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /* enumerations from "gdkdevice.h" */
  GType gdk_input_source_get_type (void) ;
@@ -98,7 +98,7 @@
 #define GDK_TYPE_TOPLEVEL_STATE (gdk_toplevel_state_get_type ())
  GType gdk_titlebar_gesture_get_type (void) ;
 #define GDK_TYPE_TITLEBAR_GESTURE (gdk_titlebar_gesture_get_type ())
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_ENUM_TYPES_H__ */
 

@@ -34,7 +34,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkSnapshotClass       GtkSnapshotClass;
 
@@ -262,6 +262,6 @@ void            gtk_snapshot_render_insertion_cursor    (GtkSnapshot            
                                                          PangoDirection          direction);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SNAPSHOT_H__ */

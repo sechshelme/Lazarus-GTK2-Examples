@@ -32,7 +32,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_BUTTON                 (gtk_button_get_type ())
 #define GTK_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUTTON, GtkButton))
@@ -113,6 +113,6 @@ void                  gtk_button_set_child          (GtkButton      *button,
 
 GtkWidget *           gtk_button_get_child          (GtkButton      *button);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_BUTTON_H__ */

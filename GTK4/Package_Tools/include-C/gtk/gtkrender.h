@@ -29,7 +29,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 void        gtk_render_check       (GtkStyleContext     *context,
@@ -114,6 +114,6 @@ void        gtk_render_icon        (GtkStyleContext     *context,
                                     GdkTexture          *texture,
                                     double               x,
                                     double               y);
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_RENDER_H__ */

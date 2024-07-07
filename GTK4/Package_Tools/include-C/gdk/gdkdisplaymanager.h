@@ -32,7 +32,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkdisplay.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GDK_TYPE_DISPLAY_MANAGER              (gdk_display_manager_get_type ())
@@ -59,6 +59,6 @@ GdkDisplay *       gdk_display_manager_open_display        (GdkDisplayManager *m
 void               gdk_set_allowed_backends                (const char        *backends);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_DISPLAY_MANAGER_H__ */

@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_TEXTURE (gdk_texture_get_type ())
 
@@ -100,6 +100,6 @@ gboolean                gdk_texture_save_to_tiff               (GdkTexture      
 GDK_AVAILABLE_IN_4_6
 GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_TEXTURE_H__ */

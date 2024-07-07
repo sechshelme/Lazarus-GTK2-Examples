@@ -26,7 +26,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GdkToplevelSize GdkToplevelSize;
 
@@ -56,6 +56,6 @@ void                    gdk_toplevel_size_set_shadow_width (GdkToplevelSize    *
                                                             int                 top,
                                                             int                 bottom);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_TOPLEVEL_SIZE_H__ */

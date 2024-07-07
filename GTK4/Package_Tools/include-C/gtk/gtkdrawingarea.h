@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_DRAWING_AREA            (gtk_drawing_area_get_type ())
 #define GTK_DRAWING_AREA(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_DRAWING_AREA, GtkDrawingArea))
@@ -106,6 +106,6 @@ void            gtk_drawing_area_set_draw_func          (GtkDrawingArea         
                                                          gpointer                user_data,
                                                          GDestroyNotify          destroy);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_DRAWING_AREA_H__ */

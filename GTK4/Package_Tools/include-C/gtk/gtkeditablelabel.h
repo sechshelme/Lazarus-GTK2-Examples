@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_EDITABLE_LABEL (gtk_editable_label_get_type ())
 
@@ -44,6 +44,6 @@ void                  gtk_editable_label_start_editing  (GtkEditableLabel *self)
 void                  gtk_editable_label_stop_editing   (GtkEditableLabel *self,
                                                          gboolean          commit);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_EDITABLE_LABEL_H__ */

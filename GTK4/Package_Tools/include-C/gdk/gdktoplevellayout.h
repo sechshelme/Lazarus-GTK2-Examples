@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GdkToplevelLayout GdkToplevelLayout;
 
@@ -78,6 +78,6 @@ void                    gdk_toplevel_layout_set_resizable (GdkToplevelLayout *la
 
 gboolean                gdk_toplevel_layout_get_resizable (GdkToplevelLayout *layout);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_TOPLEVEL_LAYOUT_H__ */

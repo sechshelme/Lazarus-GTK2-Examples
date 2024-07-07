@@ -25,7 +25,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_CELL_RENDERER_TOGGLE			(gtk_cell_renderer_toggle_get_type ())
@@ -59,6 +59,6 @@ void            gtk_cell_renderer_toggle_set_activatable (GtkCellRendererToggle 
                                                           gboolean               setting);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CELL_RENDERER_TOGGLE_H__ */

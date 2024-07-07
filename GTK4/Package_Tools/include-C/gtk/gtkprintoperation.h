@@ -33,7 +33,7 @@
 #include <gtk/gtkprintoperationpreview.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PRINT_OPERATION                (gtk_print_operation_get_type ())
 #define GTK_PRINT_OPERATION(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_OPERATION, GtkPrintOperation))
@@ -331,6 +331,6 @@ void                    gtk_print_run_page_setup_dialog_async      (GtkWindow   
                                                                     GtkPageSetupDoneFunc  done_cb,
                                                                     gpointer              data);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PRINT_OPERATION_H__ */

@@ -37,7 +37,7 @@
 #include <gtk/gtkwindow.h>
 #endif
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GTK_PRIORITY_RESIZE: (value 110)
@@ -89,6 +89,6 @@ PangoLanguage *   gtk_get_default_language (void) ;
 GtkTextDirection  gtk_get_locale_direction (void);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MAIN_H__ */

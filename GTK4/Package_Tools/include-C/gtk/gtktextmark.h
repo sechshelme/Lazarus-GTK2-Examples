@@ -54,7 +54,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkTextMark      GtkTextMark;
 typedef struct _GtkTextMarkClass GtkTextMarkClass;
@@ -104,6 +104,6 @@ GtkTextBuffer*        gtk_text_mark_get_buffer       (GtkTextMark *mark);
 
 gboolean              gtk_text_mark_get_left_gravity (GtkTextMark *mark);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_TEXT_MARK_H__ */

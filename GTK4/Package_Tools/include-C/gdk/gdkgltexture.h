@@ -26,7 +26,7 @@
 #include <gdk/gdkglcontext.h>
 #include <gdk/gdktexture.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_GL_TEXTURE (gdk_gl_texture_get_type ())
 
@@ -53,6 +53,6 @@ GdkTexture *            gdk_gl_texture_new                     (GdkGLContext    
 void                    gdk_gl_texture_release                 (GdkGLTexture    *self);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_GL_TEXTURE_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_GESTURE_SWIPE         (gtk_gesture_swipe_get_type ())
 #define GTK_GESTURE_SWIPE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_SWIPE, GtkGestureSwipe))
@@ -50,6 +50,6 @@ gboolean        gtk_gesture_swipe_get_velocity  (GtkGestureSwipe *gesture,
                                                  double          *velocity_x,
                                                  double          *velocity_y);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_GESTURE_SWIPE_H__ */

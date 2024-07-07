@@ -26,7 +26,7 @@
 #include <gtk/gtkprinter.h>
 #include <gtk/gtkprintjob.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PRINT_UNIX_DIALOG                  (gtk_print_unix_dialog_get_type ())
 #define GTK_PRINT_UNIX_DIALOG(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_UNIX_DIALOG, GtkPrintUnixDialog))
@@ -86,6 +86,6 @@ gboolean             gtk_print_unix_dialog_get_embed_page_setup    (GtkPrintUnix
 
 gboolean             gtk_print_unix_dialog_get_page_setup_set      (GtkPrintUnixDialog *dialog);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PRINT_UNIX_DIALOG_H__ */

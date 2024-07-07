@@ -36,7 +36,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CALENDAR                  (gtk_calendar_get_type ())
 #define GTK_CALENDAR(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CALENDAR, GtkCalendar))
@@ -86,6 +86,6 @@ GDateTime *   gtk_calendar_get_date                    (GtkCalendar *self);
 gboolean   gtk_calendar_get_day_is_marked      (GtkCalendar    *calendar,
                                                 guint           day);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CALENDAR_H__ */

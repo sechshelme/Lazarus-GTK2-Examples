@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_PAINTABLE               (gdk_paintable_get_type ())
 
@@ -144,6 +144,6 @@ GdkPaintable *  gdk_paintable_new_empty                 (int                    
                                                          int                     intrinsic_height);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_PAINTABLE_H__ */

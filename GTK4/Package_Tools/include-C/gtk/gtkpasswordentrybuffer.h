@@ -22,7 +22,7 @@
 
 #include <gtk/gtkentrybuffer.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PASSWORD_ENTRY_BUFFER (gtk_password_entry_buffer_get_type())
 
@@ -32,4 +32,4 @@ G_DECLARE_FINAL_TYPE (GtkPasswordEntryBuffer, gtk_password_entry_buffer, GTK, PA
 GDK_AVAILABLE_IN_4_4
 GtkEntryBuffer *        gtk_password_entry_buffer_new   (void);
 
-// // G_END_DECLS
+// // // G_END_DECLS

@@ -29,7 +29,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_MOUNT_OPERATION         (gtk_mount_operation_get_type ())
 #define GTK_MOUNT_OPERATION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_MOUNT_OPERATION, GtkMountOperation))
@@ -84,6 +84,6 @@ void             gtk_mount_operation_set_display(GtkMountOperation *op,
 
 GdkDisplay *     gtk_mount_operation_get_display(GtkMountOperation *op);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MOUNT_OPERATION_H__ */

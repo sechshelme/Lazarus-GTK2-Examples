@@ -30,7 +30,7 @@
 #include <gdk/gdk.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_DIRECTORY_LIST (gtk_directory_list_get_type ())
 
@@ -68,6 +68,6 @@ void                    gtk_directory_list_set_monitored        (GtkDirectoryLis
 
 gboolean                gtk_directory_list_get_monitored        (GtkDirectoryList       *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_DIRECTORY_LIST_H__ */

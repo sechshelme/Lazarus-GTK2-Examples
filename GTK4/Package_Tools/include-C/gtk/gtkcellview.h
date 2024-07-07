@@ -28,7 +28,7 @@
 #include <gtk/gtkcellareacontext.h>
 #include <gtk/gtktreemodel.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CELL_VIEW                (gtk_cell_view_get_type ())
 #define GTK_CELL_VIEW(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_VIEW, GtkCellView))
@@ -70,6 +70,6 @@ gboolean          gtk_cell_view_get_fit_model           (GtkCellView     *cell_v
 void              gtk_cell_view_set_fit_model           (GtkCellView     *cell_view,
                                                          gboolean         fit_model);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CELL_VIEW_H__ */

@@ -31,7 +31,7 @@
 
 #include <gtk/gtktexttag.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkTextTagTableForeach:
@@ -68,6 +68,6 @@ void             gtk_text_tag_table_foreach  (GtkTextTagTable        *table,
 
 int              gtk_text_tag_table_get_size (GtkTextTagTable        *table);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif

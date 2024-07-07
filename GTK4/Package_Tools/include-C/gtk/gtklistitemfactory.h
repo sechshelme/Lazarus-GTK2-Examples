@@ -29,7 +29,7 @@ typedef struct _GtkListItemFactoryClass GtkListItemFactoryClass;
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_LIST_ITEM_FACTORY         (gtk_list_item_factory_get_type ())
 #define GTK_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_ITEM_FACTORY, GtkListItemFactory))
@@ -43,6 +43,6 @@ typedef struct _GtkListItemFactoryClass GtkListItemFactoryClass;
 GType        gtk_list_item_factory_get_type       (void) ;
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_LIST_ITEM_FACTORY_H__ */

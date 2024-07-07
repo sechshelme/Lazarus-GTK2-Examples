@@ -23,7 +23,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_ACTIONABLE                                 (gtk_actionable_get_type ())
 #define GTK_ACTIONABLE(inst)                                (G_TYPE_CHECK_INSTANCE_CAST ((inst),                     \
@@ -75,6 +75,6 @@ void                    gtk_actionable_set_action_target                (GtkActi
 void                    gtk_actionable_set_detailed_action_name         (GtkActionable *actionable,
                                                                          const char    *detailed_action_name);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_ACTIONABLE_H__ */

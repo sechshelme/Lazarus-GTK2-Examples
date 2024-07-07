@@ -27,7 +27,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkborder.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SCROLLABLE            (gtk_scrollable_get_type ())
 #define GTK_SCROLLABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),     GTK_TYPE_SCROLLABLE, GtkScrollable))
@@ -73,6 +73,6 @@ void                 gtk_scrollable_set_vscroll_policy     (GtkScrollable       
 gboolean             gtk_scrollable_get_border             (GtkScrollable       *scrollable,
                                                             GtkBorder           *border);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SCROLLABLE_H__ */

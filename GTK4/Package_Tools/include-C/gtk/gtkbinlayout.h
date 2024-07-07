@@ -18,7 +18,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_BIN_LAYOUT (gtk_bin_layout_get_type ())
 
@@ -28,4 +28,4 @@ G_DECLARE_FINAL_TYPE (GtkBinLayout, gtk_bin_layout, GTK, BIN_LAYOUT, GtkLayoutMa
 
 GtkLayoutManager *      gtk_bin_layout_new      (void);
 
-// // G_END_DECLS
+// // // G_END_DECLS

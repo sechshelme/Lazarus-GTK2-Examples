@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_CONTENT_SERIALIZER         (gdk_content_serializer_get_type ())
 #define GDK_CONTENT_SERIALIZER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_CONTENT_SERIALIZER, GdkContentSerializer))
@@ -100,6 +100,6 @@ gboolean                gdk_content_serialize_finish                    (GAsyncR
                                                                          GError                **error);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_CONTENT_SERIALIZER_H__ */

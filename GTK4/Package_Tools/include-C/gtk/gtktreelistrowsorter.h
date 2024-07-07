@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_TREE_LIST_ROW_SORTER             (gtk_tree_list_row_sorter_get_type ())
 
@@ -42,6 +42,6 @@ GtkSorter *             gtk_tree_list_row_sorter_get_sorter            (GtkTreeL
 void                    gtk_tree_list_row_sorter_set_sorter            (GtkTreeListRowSorter *self,
                                                                         GtkSorter            *sorter);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TREE_LIST_ROW_SORTER_H__ */

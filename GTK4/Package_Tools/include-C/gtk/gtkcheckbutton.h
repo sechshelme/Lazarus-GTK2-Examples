@@ -33,7 +33,7 @@
 #include <gtk/gtktogglebutton.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CHECK_BUTTON                  (gtk_check_button_get_type ())
 #define GTK_CHECK_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CHECK_BUTTON, GtkCheckButton))
@@ -96,6 +96,6 @@ gboolean        gtk_check_button_get_use_underline  (GtkCheckButton *self);
 void            gtk_check_button_set_use_underline  (GtkCheckButton *self,
                                                      gboolean        setting);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CHECK_BUTTON_H__ */

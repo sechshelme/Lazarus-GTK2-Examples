@@ -26,7 +26,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkFilterMatch:
@@ -111,6 +111,6 @@ void                    gtk_filter_changed                      (GtkFilter      
                                                                  GtkFilterChange         change);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_FILTER_H__ */

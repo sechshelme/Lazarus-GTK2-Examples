@@ -21,7 +21,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SHORTCUT_LABEL (gtk_shortcut_label_get_type())
 #define GTK_SHORTCUT_LABEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUT_LABEL, GtkShortcutLabel))
@@ -51,6 +51,6 @@ const char *gtk_shortcut_label_get_disabled_text (GtkShortcutLabel *self);
 void         gtk_shortcut_label_set_disabled_text (GtkShortcutLabel *self,
                                                    const char       *disabled_text);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SHORTCUT_LABEL_H__ */

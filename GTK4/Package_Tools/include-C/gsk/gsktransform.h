@@ -28,7 +28,7 @@
 #include <gsk/gskenums.h>
 #include <gsk/gsktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GSK_TYPE_TRANSFORM (gsk_transform_get_type ())
 
@@ -135,6 +135,6 @@ void                    gsk_transform_transform_point           (GskTransform   
                                                                  graphene_point_t                *out_point);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GSK_TRANSFORM_H__ */

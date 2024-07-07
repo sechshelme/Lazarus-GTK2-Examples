@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkSorterOrder:
@@ -116,7 +116,7 @@ void                    gtk_sorter_changed                      (GtkSorter      
                                                                  GtkSorterChange         change);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SORTER_H__ */
 

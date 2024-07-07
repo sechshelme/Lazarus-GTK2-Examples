@@ -24,7 +24,7 @@
 
 #include <gtk/gtktreemodel.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GTK_TYPE_TREE_ROW_DATA:
@@ -160,6 +160,6 @@ gboolean gtk_tree_get_row_drag_data            (const GValue      *value,
 						GtkTreeModel     **tree_model,
 						GtkTreePath      **path);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TREE_DND_H__ */

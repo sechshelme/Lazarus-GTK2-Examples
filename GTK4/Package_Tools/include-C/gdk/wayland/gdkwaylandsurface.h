@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandSurface GdkWaylandSurface;
@@ -83,6 +83,6 @@ gboolean                 gdk_wayland_toplevel_set_transient_for_exported (GdkTop
 void                     gdk_wayland_toplevel_set_application_id (GdkToplevel *toplevel,
                                                                   const char  *application_id);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_WAYLAND_SURFACE_H__ */

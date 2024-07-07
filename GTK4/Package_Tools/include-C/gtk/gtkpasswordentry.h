@@ -27,7 +27,7 @@
 
 #include <gtk/gtkentry.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_PASSWORD_ENTRY                 (gtk_password_entry_get_type ())
 #define GTK_PASSWORD_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PASSWORD_ENTRY, GtkPasswordEntry))
@@ -54,6 +54,6 @@ void            gtk_password_entry_set_extra_menu     (GtkPasswordEntry *entry,
 
 GMenuModel *    gtk_password_entry_get_extra_menu     (GtkPasswordEntry *entry);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PASSWORD_ENTRY_H__ */

@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_X11_SURFACE              (gdk_x11_surface_get_type ())
 #define GDK_X11_SURFACE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_SURFACE, GdkX11Surface))
@@ -122,6 +122,6 @@ void          gdk_x11_surface_set_group    (GdkSurface *surface,
 GdkSurface *  gdk_x11_surface_get_group    (GdkSurface *surface);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_X11_SURFACE_H__ */

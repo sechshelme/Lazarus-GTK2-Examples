@@ -25,7 +25,7 @@
 
 #include <gtk/gtkpapersize.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkPrintSettings GtkPrintSettings;
 
@@ -349,6 +349,6 @@ GVariant             *gtk_print_settings_to_gvariant           (GtkPrintSettings
 GtkPrintSettings     *gtk_print_settings_new_from_gvariant     (GVariant           *variant);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PRINT_SETTINGS_H__ */

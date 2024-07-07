@@ -26,7 +26,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtktreesortable.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_TREE_MODEL_SORT			(gtk_tree_model_sort_get_type ())
 #define GTK_TREE_MODEL_SORT(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_MODEL_SORT, GtkTreeModelSort))
@@ -86,6 +86,6 @@ gboolean      gtk_tree_model_sort_iter_is_valid              (GtkTreeModelSort *
                                                               GtkTreeIter      *iter);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TREE_MODEL_SORT_H__ */

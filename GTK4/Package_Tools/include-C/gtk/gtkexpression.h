@@ -23,7 +23,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_EXPRESSION (gtk_expression_get_type ())
 #define GTK_TYPE_EXPRESSION_WATCH (gtk_expression_watch_get_type())
@@ -72,7 +72,7 @@ GtkExpressionWatch *    gtk_expression_bind                     (GtkExpression  
                                                                  const char *                    property,
                                                                  gpointer                        this_);
 
-GDK_AVAILABLE_IN_4_2
+
 GType                   gtk_expression_watch_get_type           (void) ;
 
 GtkExpressionWatch *    gtk_expression_watch_ref                (GtkExpressionWatch             *watch);
@@ -200,6 +200,6 @@ GParamSpec *    gtk_param_spec_expression       (const char    *name,
                                                  const char    *blurb,
                                                  GParamFlags    flags);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_EXPRESSION_H__ */

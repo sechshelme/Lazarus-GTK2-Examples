@@ -26,7 +26,7 @@
 #include <gtk/gtkpopover.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define	GTK_TYPE_POPOVER_MENU_BAR               (gtk_popover_menu_bar_get_type ())
@@ -55,7 +55,7 @@ gboolean     gtk_popover_menu_bar_add_child      (GtkPopoverMenuBar *bar,
 
 gboolean     gtk_popover_menu_bar_remove_child   (GtkPopoverMenuBar *bar,
                                                   GtkWidget         *child);
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_POPOVER_MENU_BAR_H__ */

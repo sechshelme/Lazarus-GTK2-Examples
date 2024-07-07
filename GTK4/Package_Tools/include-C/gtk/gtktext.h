@@ -38,7 +38,7 @@
 #include <gtk/gtkentrybuffer.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_TEXT                  (gtk_text_get_type ())
 #define GTK_TEXT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT, GtkText))
@@ -166,6 +166,6 @@ void            gtk_text_compute_cursor_extents         (GtkText         *self,
                                                          graphene_rect_t *weak);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_TEXT_H__ */

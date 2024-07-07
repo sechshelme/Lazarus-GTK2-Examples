@@ -34,7 +34,7 @@
 
 #include <gtk/gtkscalebutton.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_VOLUME_BUTTON                 (gtk_volume_button_get_type ())
 #define GTK_VOLUME_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_VOLUME_BUTTON, GtkVolumeButton))
@@ -52,6 +52,6 @@ GType		gtk_volume_button_get_type	(void) ;
 
 GtkWidget*	gtk_volume_button_new		(void);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_VOLUME_BUTTON_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtkfilter.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkStringFilterMatchMode:
@@ -76,6 +76,6 @@ void                     gtk_string_filter_set_match_mode       (GtkStringFilter
 
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_STRING_FILTER_H__ */

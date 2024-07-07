@@ -207,9 +207,9 @@
 
 
 #if GDK_VERSION_MAX_ALLOWED < GDK_VERSION_4_2
-# define GDK_AVAILABLE_IN_4_2                   GDK_UNAVAILABLE(4, 2)
+# define                    GDK_UNAVAILABLE(4, 2)
 #else
-# define GDK_AVAILABLE_IN_4_2                   _GDK_EXTERN
+# define                    _GDK_EXTERN
 #endif
 
 #if GDK_VERSION_MIN_REQUIRED >= GDK_VERSION_4_2

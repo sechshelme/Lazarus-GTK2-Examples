@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_GL_AREA                (gtk_gl_area_get_type ())
 #define GTK_GL_AREA(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_GL_AREA, GtkGLArea))
@@ -122,6 +122,6 @@ void            gtk_gl_area_set_error                   (GtkGLArea    *area,
 
 GError *        gtk_gl_area_get_error                   (GtkGLArea    *area);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_GL_AREA_H__ */

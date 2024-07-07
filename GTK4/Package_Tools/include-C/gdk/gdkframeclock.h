@@ -31,7 +31,7 @@
 
 #include <gdk/gdkframetimings.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_FRAME_CLOCK            (gdk_frame_clock_get_type ())
 #define GDK_FRAME_CLOCK(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_FRAME_CLOCK, GdkFrameClock))
@@ -106,6 +106,6 @@ void gdk_frame_clock_get_refresh_info (GdkFrameClock *frame_clock,
 
 double gdk_frame_clock_get_fps (GdkFrameClock *frame_clock);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_FRAME_CLOCK_H__ */

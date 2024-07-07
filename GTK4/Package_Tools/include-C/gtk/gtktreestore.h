@@ -28,7 +28,7 @@
 #include <stdarg.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_TREE_STORE			(gtk_tree_store_get_type ())
@@ -162,7 +162,7 @@ void          gtk_tree_store_move_after       (GtkTreeStore *tree_store,
                                                GtkTreeIter  *position);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_TREE_STORE_H__ */

@@ -22,7 +22,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_WIDGET_PAINTABLE (gtk_widget_paintable_get_type ())
 
@@ -38,6 +38,6 @@ GtkWidget *     gtk_widget_paintable_get_widget         (GtkWidgetPaintable     
 void            gtk_widget_paintable_set_widget         (GtkWidgetPaintable     *self,
                                                          GtkWidget              *widget);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_WIDGET_PAINTABLE_H__ */

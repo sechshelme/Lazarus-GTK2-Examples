@@ -26,7 +26,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_FILE_FILTER              (gtk_file_filter_get_type ())
 #define GTK_FILE_FILTER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_FILTER, GtkFileFilter))
@@ -68,6 +68,6 @@ GVariant      * gtk_file_filter_to_gvariant        (GtkFileFilter *filter);
 
 GtkFileFilter * gtk_file_filter_new_from_gvariant  (GVariant      *variant);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_FILE_FILTER_H__ */

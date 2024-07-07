@@ -26,7 +26,7 @@
 
 #include <gtk/gtkmediastream.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_MEDIA_FILE_EXTENSION_POINT_NAME "gtk-media-file"
 
@@ -81,6 +81,6 @@ void                    gtk_media_file_set_input_stream         (GtkMediaFile   
 GInputStream *          gtk_media_file_get_input_stream         (GtkMediaFile   *self);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MEDIA_FILE_H__ */

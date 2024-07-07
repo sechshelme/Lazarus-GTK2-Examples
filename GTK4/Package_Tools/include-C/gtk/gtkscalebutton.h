@@ -40,7 +40,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SCALE_BUTTON                 (gtk_scale_button_get_type ())
 #define GTK_SCALE_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCALE_BUTTON, GtkScaleButton))
@@ -97,6 +97,6 @@ GtkWidget *      gtk_scale_button_get_minus_button (GtkScaleButton  *button);
 
 GtkWidget *      gtk_scale_button_get_popup        (GtkScaleButton  *button);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SCALE_BUTTON_H__ */

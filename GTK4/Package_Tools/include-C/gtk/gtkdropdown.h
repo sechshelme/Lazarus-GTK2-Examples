@@ -23,7 +23,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkexpression.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_DROP_DOWN         (gtk_drop_down_get_type ())
 
@@ -83,6 +83,6 @@ void            gtk_drop_down_set_show_arrow                    (GtkDropDown    
 GDK_AVAILABLE_IN_4_6
 gboolean        gtk_drop_down_get_show_arrow                    (GtkDropDown            *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif  /* __GTK_DROP_DOWN_H__ */

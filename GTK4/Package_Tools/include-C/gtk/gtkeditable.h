@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_EDITABLE             (gtk_editable_get_type ())
 #define GTK_EDITABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EDITABLE, GtkEditable))
@@ -196,6 +196,6 @@ gboolean     gtk_editable_delegate_get_property (GObject      *object,
                                                  GParamSpec   *pspec);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_EDITABLE_H__ */

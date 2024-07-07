@@ -30,7 +30,7 @@
 #include <gio/gio.h>
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_APP_CHOOSER    (gtk_app_chooser_get_type ())
 #define GTK_APP_CHOOSER(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APP_CHOOSER, GtkAppChooser))
@@ -48,7 +48,7 @@ char *    gtk_app_chooser_get_content_type (GtkAppChooser *self);
 
 void       gtk_app_chooser_refresh          (GtkAppChooser *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_APP_CHOOSER_H__ */
 

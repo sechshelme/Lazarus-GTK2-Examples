@@ -28,7 +28,7 @@
 #include <gtk/gtkenums.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkPaperSize GtkPaperSize;
 
@@ -169,6 +169,6 @@ GtkPaperSize *gtk_paper_size_new_from_gvariant (GVariant     *variant);
 
 GVariant     *gtk_paper_size_to_gvariant       (GtkPaperSize *paper_size);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PAPER_SIZE_H__ */

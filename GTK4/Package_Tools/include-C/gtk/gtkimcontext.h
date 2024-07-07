@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_IM_CONTEXT              (gtk_im_context_get_type ())
 #define GTK_IM_CONTEXT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IM_CONTEXT, GtkIMContext))
@@ -150,14 +150,14 @@ GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_get_surrounding_with_selection)
 gboolean gtk_im_context_get_surrounding     (GtkIMContext       *context,
                                              char              **text,
                                              int                *cursor_index);
-GDK_AVAILABLE_IN_4_2
+
 void     gtk_im_context_set_surrounding_with_selection
                                             (GtkIMContext       *context,
                                              const char         *text,
                                              int                 len,
                                              int                 cursor_index,
                                              int                 anchor_index);
-GDK_AVAILABLE_IN_4_2
+
 gboolean gtk_im_context_get_surrounding_with_selection
                                             (GtkIMContext       *context,
                                              char              **text,
@@ -168,6 +168,6 @@ gboolean gtk_im_context_delete_surrounding  (GtkIMContext       *context,
 					     int                 offset,
 					     int                 n_chars);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_IM_CONTEXT_H__ */

@@ -26,7 +26,7 @@
 
 #include <gdk/gdksurface.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_DRAG_SURFACE (gdk_drag_surface_get_type ())
 
@@ -38,6 +38,6 @@ gboolean gdk_drag_surface_present (GdkDragSurface *drag_surface,
                                    int             width,
                                    int             height);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_DRAG_SURFACE_H__ */

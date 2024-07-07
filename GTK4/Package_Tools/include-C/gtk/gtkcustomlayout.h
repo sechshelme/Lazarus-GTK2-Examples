@@ -18,7 +18,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_CUSTOM_LAYOUT (gtk_custom_layout_get_type ())
 
@@ -74,4 +74,4 @@ GtkLayoutManager *      gtk_custom_layout_new   (GtkCustomRequestModeFunc reques
                                                  GtkCustomMeasureFunc     measure,
                                                  GtkCustomAllocateFunc    allocate);
 
-// // G_END_DECLS
+// // // G_END_DECLS

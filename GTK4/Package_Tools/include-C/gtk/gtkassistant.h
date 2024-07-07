@@ -30,7 +30,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_ASSISTANT         (gtk_assistant_get_type ())
 #define GTK_ASSISTANT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_ASSISTANT, GtkAssistant))
@@ -180,6 +180,6 @@ GtkWidget *           gtk_assistant_page_get_child (GtkAssistantPage *page);
 
 GListModel *          gtk_assistant_get_pages (GtkAssistant *assistant);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_ASSISTANT_H__ */

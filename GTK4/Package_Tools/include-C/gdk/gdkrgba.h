@@ -32,7 +32,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 struct _GdkRGBA
 {
@@ -70,6 +70,6 @@ gboolean  gdk_rgba_parse     (GdkRGBA       *rgba,
 char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_RGBA_H__ */

@@ -26,7 +26,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_CELL_RENDERER_TEXT		(gtk_cell_renderer_text_get_type ())
@@ -67,6 +67,6 @@ void             gtk_cell_renderer_text_set_fixed_height_from_font (GtkCellRende
 								    int                  number_of_rows);
 
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_CELL_RENDERER_TEXT_H__ */

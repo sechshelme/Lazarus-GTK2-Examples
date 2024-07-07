@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_OVERLAY             (gtk_overlay_get_type ())
 #define GTK_OVERLAY(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_OVERLAY, GtkOverlay))
@@ -67,6 +67,6 @@ void       gtk_overlay_set_clip_overlay    (GtkOverlay *overlay,
                                             GtkWidget  *widget,
                                             gboolean    clip_overlay);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_OVERLAY_H__ */

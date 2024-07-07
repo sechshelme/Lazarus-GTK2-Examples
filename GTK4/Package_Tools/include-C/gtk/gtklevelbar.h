@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_LEVEL_BAR            (gtk_level_bar_get_type ())
 #define GTK_LEVEL_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LEVEL_BAR, GtkLevelBar))
@@ -110,6 +110,6 @@ gboolean   gtk_level_bar_get_offset_value   (GtkLevelBar *self,
                                              const char *name,
                                              double      *value);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_LEVEL_BAR_H__ */

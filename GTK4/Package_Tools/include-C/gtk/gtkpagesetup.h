@@ -27,7 +27,7 @@
 #include <gtk/gtkpapersize.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 typedef struct _GtkPageSetup GtkPageSetup;
 
@@ -132,6 +132,6 @@ GVariant          *gtk_page_setup_to_gvariant       (GtkPageSetup        *setup)
 
 GtkPageSetup      *gtk_page_setup_new_from_gvariant (GVariant            *variant);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_PAGE_SETUP_H__ */

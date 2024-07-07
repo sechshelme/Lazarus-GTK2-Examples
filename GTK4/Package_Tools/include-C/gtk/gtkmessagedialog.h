@@ -32,7 +32,7 @@
 #include <gtk/gtkdialog.h>
 #include <gtk/gtkenums.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 #define GTK_TYPE_MESSAGE_DIALOG                  (gtk_message_dialog_get_type ())
@@ -111,6 +111,6 @@ void       gtk_message_dialog_format_secondary_markup (GtkMessageDialog *message
 
 GtkWidget *gtk_message_dialog_get_message_area (GtkMessageDialog *message_dialog);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_MESSAGE_DIALOG_H__ */

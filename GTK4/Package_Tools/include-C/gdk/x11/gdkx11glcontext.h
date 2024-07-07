@@ -27,7 +27,7 @@
 
 #include <gdk/gdk.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GDK_TYPE_X11_GL_CONTEXT		(gdk_x11_gl_context_get_type ())
 #define GDK_X11_GL_CONTEXT(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_X11_GL_CONTEXT, GdkX11GLContext))
@@ -51,6 +51,6 @@ gboolean        gdk_x11_display_get_egl_version (GdkDisplay *display,
 GDK_AVAILABLE_IN_4_4
 gpointer        gdk_x11_display_get_egl_display (GdkDisplay *display);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_X11_GL_CONTEXT_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtktreeviewcolumn.h>
 #include <gtk/gtkentry.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 /**
  * GtkTreeViewDropPosition:
@@ -540,7 +540,7 @@ void          gtk_tree_view_set_tooltip_column (GtkTreeView       *tree_view,
 
 int           gtk_tree_view_get_tooltip_column (GtkTreeView       *tree_view);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 
 #endif /* __GTK_TREE_VIEW_H__ */

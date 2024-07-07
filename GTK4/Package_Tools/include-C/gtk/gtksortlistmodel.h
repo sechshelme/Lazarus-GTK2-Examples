@@ -30,7 +30,7 @@
 #include <gtk/gtksorter.h>
 
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_SORT_LIST_MODEL (gtk_sort_list_model_get_type ())
 
@@ -61,6 +61,6 @@ gboolean                gtk_sort_list_model_get_incremental     (GtkSortListMode
 
 guint                   gtk_sort_list_model_get_pending         (GtkSortListModel       *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_SORT_LIST_MODEL_H__ */

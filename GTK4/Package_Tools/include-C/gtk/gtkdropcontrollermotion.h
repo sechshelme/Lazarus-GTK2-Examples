@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #define GTK_TYPE_DROP_CONTROLLER_MOTION         (gtk_drop_controller_motion_get_type ())
 #define GTK_DROP_CONTROLLER_MOTION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_DROP_CONTROLLER_MOTION, GtkDropControllerMotion))
@@ -52,6 +52,6 @@ GdkDrop *               gtk_drop_controller_motion_get_drop             (GtkDrop
 
 gboolean                gtk_drop_controller_motion_is_pointer           (GtkDropControllerMotion        *self);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GTK_DROP_CONTROLLER_MOTION_H__ */

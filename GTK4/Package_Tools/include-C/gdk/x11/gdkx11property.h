@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 
 Atom                  gdk_x11_get_xatom_by_name_for_display (GdkDisplay  *display,
@@ -43,6 +43,6 @@ Atom                  gdk_x11_get_xatom_by_name_for_display (GdkDisplay  *displa
 const char *         gdk_x11_get_xatom_name_for_display (GdkDisplay  *display,
                                                           Atom         xatom);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_X11_PROPERTY_H__ */

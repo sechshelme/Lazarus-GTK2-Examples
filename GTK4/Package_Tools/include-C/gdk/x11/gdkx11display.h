@@ -35,7 +35,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // G_BEGIN_DECLS
+// // // G_BEGIN_DECLS
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkX11Display GdkX11Display;
@@ -131,6 +131,6 @@ void        gdk_x11_set_sm_client_id (const char *sm_client_id);
 
 GdkSurface * gdk_x11_display_get_default_group (GdkDisplay *display);
 
-// // G_END_DECLS
+// // // G_END_DECLS
 
 #endif /* __GDK_X11_DISPLAY_H__ */
