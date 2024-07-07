@@ -73,6 +73,7 @@ uses
     BtnLabel: PGtkLabel;
   begin
     GTK_Init(@argc, @argv);
+//    GTK_BUTTON();
 
     Window := gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(Window), 'align');
