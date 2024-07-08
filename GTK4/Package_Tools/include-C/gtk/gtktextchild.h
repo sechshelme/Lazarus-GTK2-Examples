@@ -33,7 +33,7 @@
 #include <glib-object.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 /**
@@ -88,6 +88,6 @@ GtkWidget **gtk_text_child_anchor_get_widgets (GtkTextChildAnchor *anchor,
 
 gboolean gtk_text_child_anchor_get_deleted (GtkTextChildAnchor *anchor);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif

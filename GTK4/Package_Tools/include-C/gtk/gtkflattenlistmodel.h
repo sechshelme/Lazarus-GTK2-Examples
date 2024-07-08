@@ -28,7 +28,7 @@
 #include <gdk/gdk.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_FLATTEN_LIST_MODEL (gtk_flatten_list_model_get_type ())
 
@@ -48,6 +48,6 @@ GListModel *            gtk_flatten_list_model_get_model        (GtkFlattenListM
 GListModel *            gtk_flatten_list_model_get_model_for_item (GtkFlattenListModel    *self,
                                                                    guint                   position);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_FLATTEN_LIST_MODEL_H__ */

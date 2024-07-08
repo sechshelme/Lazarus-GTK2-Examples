@@ -11,7 +11,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /* enumerations from "gtkaboutdialog.h" */
  GType gtk_license_get_type (void) ;
@@ -308,7 +308,7 @@
 /* enumerations from "gtktreeviewcolumn.h" */
  GType gtk_tree_view_column_sizing_get_type (void) ;
 #define GTK_TYPE_TREE_VIEW_COLUMN_SIZING (gtk_tree_view_column_sizing_get_type ())
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TYPE_BUILTINS_H__ */
 

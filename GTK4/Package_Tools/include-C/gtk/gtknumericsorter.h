@@ -27,7 +27,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_NUMERIC_SORTER             (gtk_numeric_sorter_get_type ())
 
@@ -48,6 +48,6 @@ GtkSortType             gtk_numeric_sorter_get_sort_order        (GtkNumericSort
 void                    gtk_numeric_sorter_set_sort_order        (GtkNumericSorter       *self,
                                                                   GtkSortType             sort_order);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_NUMERIC_SORTER_H__ */

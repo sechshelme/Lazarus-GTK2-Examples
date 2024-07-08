@@ -25,7 +25,7 @@
 #include <gtk/gtkcellrenderer.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_CELL_RENDERER_PIXBUF			(gtk_cell_renderer_pixbuf_get_type ())
@@ -40,7 +40,7 @@ GType            gtk_cell_renderer_pixbuf_get_type (void) ;
 GtkCellRenderer *gtk_cell_renderer_pixbuf_new      (void);
 
 
-// // // G_END_DECLS
+// // // // 
 
 
 #endif /* __GTK_CELL_RENDERER_PIXBUF_H__ */

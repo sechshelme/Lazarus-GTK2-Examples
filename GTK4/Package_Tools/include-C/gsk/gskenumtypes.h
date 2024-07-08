@@ -6,7 +6,7 @@
 
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /* enumerations from "gskenums.h" */
  GType gsk_render_node_type_get_type (void) ;
@@ -23,7 +23,7 @@
 #define GSK_TYPE_TRANSFORM_CATEGORY (gsk_transform_category_get_type ())
  GType gsk_gl_uniform_type_get_type (void) ;
 #define GSK_TYPE_GL_UNIFORM_TYPE (gsk_gl_uniform_type_get_type ())
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GSK_ENUM_TYPES_H__ */
 

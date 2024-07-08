@@ -20,10 +20,10 @@
 
 #include <gtk/gtk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_IM_MODULE_EXTENSION_POINT_NAME "gtk-im-module"
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_IM_MODULE_H__ */

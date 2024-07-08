@@ -24,7 +24,7 @@
 
 #include <gtk/gtkcelleditable.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 /**
@@ -306,6 +306,6 @@ GtkStateFlags   gtk_cell_renderer_get_state       (GtkCellRenderer      *cell,
                                                    GtkWidget            *widget,
                                                    GtkCellRendererState  cell_state);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CELL_RENDERER_H__ */

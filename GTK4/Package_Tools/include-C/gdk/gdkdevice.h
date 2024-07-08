@@ -28,7 +28,7 @@
 #include <gdk/gdkenums.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_DEVICE         (gdk_device_get_type ())
 #define GDK_DEVICE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE, GdkDevice))
@@ -121,6 +121,6 @@ GdkSurface *        gdk_device_get_surface_at_position  (GdkDevice *device,
 
 
 guint32             gdk_device_get_timestamp            (GdkDevice *device);
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_DEVICE_H__ */

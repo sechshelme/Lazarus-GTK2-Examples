@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 /* -- type macros --- */
@@ -45,6 +45,6 @@ GtkSettings*    gtk_settings_get_for_display         (GdkDisplay *display);
 void     gtk_settings_reset_property       (GtkSettings            *settings,
                                             const char             *name);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SETTINGS_H__ */

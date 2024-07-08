@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_LIST_ITEM         (gtk_list_item_get_type ())
 #define GTK_LIST_ITEM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_ITEM, GtkListItem))
@@ -65,6 +65,6 @@ void            gtk_list_item_set_child                         (GtkListItem    
 GtkWidget *     gtk_list_item_get_child                         (GtkListItem            *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_LIST_ITEM_H__ */

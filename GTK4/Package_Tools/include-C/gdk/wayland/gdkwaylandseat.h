@@ -26,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <wayland-client.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandSeat GdkWaylandSeat;
@@ -46,4 +46,4 @@ GType gdk_wayland_seat_get_type (void) ;
 
 struct wl_seat *        gdk_wayland_seat_get_wl_seat    (GdkSeat *seat);
 
-// // // G_END_DECLS
+// // // // 

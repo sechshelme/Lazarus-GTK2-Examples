@@ -28,7 +28,7 @@
 
 #include <gtk/gtkcellarea.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CELL_AREA_CONTEXT            (gtk_cell_area_context_get_type ())
 #define GTK_CELL_AREA_CONTEXT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_AREA_CONTEXT, GtkCellAreaContext))
@@ -134,6 +134,6 @@ void         gtk_cell_area_context_push_preferred_height (GtkCellAreaContext *co
                                                           int                 minimum_height,
                                                           int                 natural_height);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CELL_AREA_CONTEXT_H__ */

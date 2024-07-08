@@ -26,7 +26,7 @@
 #include <gtk/gtkfilefilter.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_FILE_CHOOSER             (gtk_file_chooser_get_type ())
 #define GTK_FILE_CHOOSER(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_CHOOSER, GtkFileChooser))
@@ -183,6 +183,6 @@ void                 gtk_file_chooser_set_choice           (GtkFileChooser      
 const char *         gtk_file_chooser_get_choice           (GtkFileChooser      *chooser,
                                                             const char          *id);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_FILE_CHOOSER_H__ */

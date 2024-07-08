@@ -32,7 +32,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ADJUSTMENT                  (gtk_adjustment_get_type ())
 #define GTK_ADJUSTMENT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ADJUSTMENT, GtkAdjustment))
@@ -121,6 +121,6 @@ void       gtk_adjustment_configure             (GtkAdjustment   *adjustment,
 
 double     gtk_adjustment_get_minimum_increment (GtkAdjustment   *adjustment);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ADJUSTMENT_H__ */

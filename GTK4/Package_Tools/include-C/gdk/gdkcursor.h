@@ -32,7 +32,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_CURSOR              (gdk_cursor_get_type ())
 #define GDK_CURSOR(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_CURSOR, GdkCursor))
@@ -65,6 +65,6 @@ int         gdk_cursor_get_hotspot_x     (GdkCursor       *cursor);
 int         gdk_cursor_get_hotspot_y     (GdkCursor       *cursor);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_CURSOR_H__ */

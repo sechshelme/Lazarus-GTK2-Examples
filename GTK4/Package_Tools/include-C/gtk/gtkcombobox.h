@@ -26,7 +26,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtktreeview.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_COMBO_BOX             (gtk_combo_box_get_type ())
 #define GTK_COMBO_BOX(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COMBO_BOX, GtkComboBox))
@@ -155,6 +155,6 @@ void          gtk_combo_box_set_child            (GtkComboBox *combo_box,
 GtkWidget *   gtk_combo_box_get_child            (GtkComboBox *combo_box);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_COMBO_BOX_H__ */

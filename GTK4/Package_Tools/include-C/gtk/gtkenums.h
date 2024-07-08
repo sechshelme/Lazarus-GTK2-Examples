@@ -32,7 +32,7 @@
 #include <glib-object.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GtkAlign:
@@ -823,7 +823,7 @@ typedef enum {
   GTK_LEVEL_BAR_MODE_DISCRETE
 } GtkLevelBarMode;
 
-// // // G_END_DECLS
+// // // // 
 
 /**
  * GtkInputPurpose:

@@ -28,7 +28,7 @@
 
 #include "gtkwidget.h"
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CENTER_BOX                 (gtk_center_box_get_type ())
 #define GTK_CENTER_BOX(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CENTER_BOX, GtkCenterBox))
@@ -68,6 +68,6 @@ void                gtk_center_box_set_baseline_position (GtkCenterBox        *s
 
 GtkBaselinePosition gtk_center_box_get_baseline_position (GtkCenterBox        *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif

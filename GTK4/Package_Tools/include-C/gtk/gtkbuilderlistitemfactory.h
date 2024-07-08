@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistitemfactory.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BUILDER_LIST_ITEM_FACTORY         (gtk_builder_list_item_factory_get_type ())
 #define GTK_BUILDER_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_BUILDER_LIST_ITEM_FACTORY, GtkBuilderListItemFactory))
@@ -55,6 +55,6 @@ const char *            gtk_builder_list_item_factory_get_resource      (GtkBuil
 
 GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuilderListItemFactory      *self) G_GNUC_PURE;
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_BUILDER_LIST_ITEM_FACTORY_H__ */

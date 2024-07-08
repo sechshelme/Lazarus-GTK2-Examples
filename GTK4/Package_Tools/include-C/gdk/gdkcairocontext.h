@@ -30,7 +30,7 @@
 
 #include <cairo.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_CAIRO_CONTEXT             (gdk_cairo_context_get_type ())
 #define GDK_CAIRO_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CAIRO_CONTEXT, GdkCairoContext))
@@ -44,6 +44,6 @@ GType                   gdk_cairo_context_get_type                      (void) ;
 
 cairo_t *               gdk_cairo_context_cairo_create                  (GdkCairoContext        *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_CAIRO_CONTEXT__ */

@@ -28,7 +28,7 @@
 #include <gio/gio.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SELECTION_FILTER_MODEL (gtk_selection_filter_model_get_type ())
 
@@ -44,6 +44,6 @@ void                      gtk_selection_filter_model_set_model    (GtkSelectionF
 
 GtkSelectionModel *       gtk_selection_filter_model_get_model    (GtkSelectionFilterModel     *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SELECTION_FILTER_MODEL_H__ */

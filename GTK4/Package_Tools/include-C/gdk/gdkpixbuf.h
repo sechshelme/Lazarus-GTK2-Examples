@@ -36,7 +36,7 @@
 #include <gdk/gdktexture.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 GdkPixbuf *gdk_pixbuf_get_from_surface (cairo_surface_t *surface,
@@ -47,6 +47,6 @@ GdkPixbuf *gdk_pixbuf_get_from_surface (cairo_surface_t *surface,
 
 GdkPixbuf *gdk_pixbuf_get_from_texture (GdkTexture      *texture);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_PIXBUF_H__ */

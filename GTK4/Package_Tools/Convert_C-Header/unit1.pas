@@ -17,7 +17,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-
+    function DeleteLines(const s, delStr: String): String;
   public
 
   end;
@@ -31,6 +31,10 @@ implementation
 
 { TForm1 }
 
+function TForm1.DeleteLines(const s, delStr: String): String;
+begin
+if Pos(delStr,s)=1 then Result:='' else Result:=s;
+end;
 procedure TForm1.Button1Click(Sender: TObject);
 var
   slFile, slHeader: TStringList;
@@ -44,13 +48,13 @@ begin
     slHeader := TStringList.Create;
     slHeader.LoadFromFile(slFile[i]);
     for j := 0 to slHeader.Count - 1 do begin
-      slHeader[j] := StringReplace(slHeader[j], 'G_BEGIN_DECLS', '// G_BEGIN_DECLS', [rfReplaceAll]);
-      slHeader[j] := StringReplace(slHeader[j], 'G_END_DECLS', '// G_END_DECLS', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'G_BEGIN_DECLS', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'G_END_DECLS', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_CONST', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_2', '', [rfReplaceAll]);
 
-
+      slHeader[j] := DeleteLines(slHeader[j], 'G_DEFINE_AUTOPTR_CLEANUP_FUNC(');
     end;
     slHeader.SaveToFile(slFile[i]);
     slHeader.Free;
@@ -64,5 +68,6 @@ begin
   Height := 1000;
   Width := 1000;
 end;
+
 
 end.

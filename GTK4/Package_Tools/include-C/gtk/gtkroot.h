@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ROOT               (gtk_root_get_type ())
 
@@ -43,6 +43,6 @@ void        gtk_root_set_focus (GtkRoot   *self,
 
 GtkWidget * gtk_root_get_focus (GtkRoot   *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ROOT_H__ */

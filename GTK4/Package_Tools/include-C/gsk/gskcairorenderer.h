@@ -24,7 +24,7 @@
 #include <cairo.h>
 #include <gsk/gskrenderer.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GSK_TYPE_CAIRO_RENDERER (gsk_cairo_renderer_get_type ())
 
@@ -51,6 +51,6 @@ GType                   gsk_cairo_renderer_get_type             (void) ;
 
 GskRenderer *           gsk_cairo_renderer_new                  (void);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GSK_CAIRO_RENDERER_H__ */

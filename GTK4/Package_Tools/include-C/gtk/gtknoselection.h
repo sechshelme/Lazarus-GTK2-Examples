@@ -22,7 +22,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_NO_SELECTION (gtk_no_selection_get_type ())
 
@@ -38,6 +38,6 @@ GListModel *            gtk_no_selection_get_model              (GtkNoSelection 
 void                    gtk_no_selection_set_model              (GtkNoSelection         *self,
                                                                  GListModel             *model);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_NO_SELECTION_H__ */

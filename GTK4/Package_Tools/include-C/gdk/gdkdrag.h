@@ -34,7 +34,7 @@
 #include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_DRAG              (gdk_drag_get_type ())
 #define GDK_DRAG(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DRAG, GdkDrag))
@@ -99,6 +99,6 @@ GdkContentProvider *
 
 GdkSurface *    gdk_drag_get_surface (GdkDrag *drag);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_DND_H__ */

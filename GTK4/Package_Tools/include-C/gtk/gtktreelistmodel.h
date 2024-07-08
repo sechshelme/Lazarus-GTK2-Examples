@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_TREE_LIST_MODEL (gtk_tree_list_model_get_type ())
 #define GTK_TYPE_TREE_LIST_ROW (gtk_tree_list_row_get_type ())
@@ -104,6 +104,6 @@ GtkTreeListRow *        gtk_tree_list_row_get_child_row         (GtkTreeListRow 
                                                                  guint                   position);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TREE_LIST_MODEL_H__ */

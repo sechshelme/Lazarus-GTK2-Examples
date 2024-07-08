@@ -23,7 +23,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_EXPRESSION (gtk_expression_get_type ())
 #define GTK_TYPE_EXPRESSION_WATCH (gtk_expression_watch_get_type())
@@ -50,7 +50,7 @@ GType                   gtk_expression_get_type                 (void) ;
 GtkExpression *         gtk_expression_ref                      (GtkExpression                  *self);
 
 void                    gtk_expression_unref                    (GtkExpression                  *self);
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkExpression, gtk_expression_unref)
+
 
 
 GType                   gtk_expression_get_value_type           (GtkExpression                  *self);
@@ -200,6 +200,6 @@ GParamSpec *    gtk_param_spec_expression       (const char    *name,
                                                  const char    *blurb,
                                                  GParamFlags    flags);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_EXPRESSION_H__ */

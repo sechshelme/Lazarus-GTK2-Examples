@@ -25,7 +25,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SIZE_GROUP            (gtk_size_group_get_type ())
 #define GTK_SIZE_GROUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SIZE_GROUP, GtkSizeGroup))
@@ -57,6 +57,6 @@ void             gtk_size_group_remove_widget (GtkSizeGroup     *size_group,
 
 GSList *         gtk_size_group_get_widgets   (GtkSizeGroup     *size_group);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SIZE_GROUP_H__ */

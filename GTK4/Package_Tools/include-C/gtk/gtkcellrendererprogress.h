@@ -32,7 +32,7 @@
 
 #include <gtk/gtkcellrenderer.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CELL_RENDERER_PROGRESS (gtk_cell_renderer_progress_get_type ())
 #define GTK_CELL_RENDERER_PROGRESS(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_RENDERER_PROGRESS, GtkCellRendererProgress))
@@ -45,6 +45,6 @@ GType		 gtk_cell_renderer_progress_get_type (void) ;
 
 GtkCellRenderer* gtk_cell_renderer_progress_new      (void);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_CELL_RENDERER_PROGRESS_H__ */

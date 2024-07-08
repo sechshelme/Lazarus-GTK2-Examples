@@ -28,7 +28,7 @@
 #include <gtk/gtktogglebutton.h>
 #include <gtk/gtkpopover.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_MENU_BUTTON            (gtk_menu_button_get_type ())
 #define GTK_MENU_BUTTON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_MENU_BUTTON, GtkMenuButton))
@@ -127,6 +127,6 @@ void          gtk_menu_button_set_child   (GtkMenuButton *menu_button,
 GDK_AVAILABLE_IN_4_6
 GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_MENU_BUTTON_H__ */

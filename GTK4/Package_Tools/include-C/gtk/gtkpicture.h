@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_PICTURE (gtk_picture_get_type ())
 
@@ -87,6 +87,6 @@ void            gtk_picture_set_alternative_text        (GtkPicture             
 const char *    gtk_picture_get_alternative_text        (GtkPicture             *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_PICTURE_H__ */

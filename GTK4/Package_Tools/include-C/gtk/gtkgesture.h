@@ -27,7 +27,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkenums.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_GESTURE         (gtk_gesture_get_type ())
 #define GTK_GESTURE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE, GtkGesture))
@@ -102,6 +102,6 @@ GList *     gtk_gesture_get_group            (GtkGesture       *gesture);
 gboolean    gtk_gesture_is_grouped_with      (GtkGesture       *gesture,
                                               GtkGesture       *other);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_GESTURE_H__ */

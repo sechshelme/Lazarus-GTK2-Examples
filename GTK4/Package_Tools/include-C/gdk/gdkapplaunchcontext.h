@@ -28,7 +28,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_APP_LAUNCH_CONTEXT         (gdk_app_launch_context_get_type ())
 #define GDK_APP_LAUNCH_CONTEXT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_APP_LAUNCH_CONTEXT, GdkAppLaunchContext))
@@ -55,6 +55,6 @@ void                 gdk_app_launch_context_set_icon_name (GdkAppLaunchContext *
                                                            const char          *icon_name);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_APP_LAUNCH_CONTEXT_H__ */

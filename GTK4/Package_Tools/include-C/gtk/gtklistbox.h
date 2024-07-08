@@ -28,7 +28,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_LIST_BOX (gtk_list_box_get_type ())
@@ -272,9 +272,9 @@ void           gtk_list_box_set_show_separators          (GtkListBox            
 
 gboolean       gtk_list_box_get_show_separators          (GtkListBox                   *box);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBox, g_object_unref)
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkListBoxRow, g_object_unref)
 
-// // // G_END_DECLS
+
+
+// // // // 
 
 #endif

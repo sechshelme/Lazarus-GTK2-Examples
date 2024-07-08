@@ -34,7 +34,7 @@
 #include <gtk/gtkaccelgroup.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_WINDOW			(gtk_window_get_type ())
 #define GTK_WINDOW(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_WINDOW, GtkWindow))
@@ -260,6 +260,6 @@ gboolean gtk_window_get_handle_menubar_accel (GtkWindow *window);
 //G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindow, g_object_unref)
 //G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkWindowGroup, g_object_unref)
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_WINDOW_H__ */

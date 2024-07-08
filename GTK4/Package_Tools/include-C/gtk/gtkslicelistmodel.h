@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SLICE_LIST_MODEL (gtk_slice_list_model_get_type ())
 
@@ -57,6 +57,6 @@ void                    gtk_slice_list_model_set_size           (GtkSliceListMod
 
 guint                   gtk_slice_list_model_get_size           (GtkSliceListModel      *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SLICE_LIST_MODEL_H__ */

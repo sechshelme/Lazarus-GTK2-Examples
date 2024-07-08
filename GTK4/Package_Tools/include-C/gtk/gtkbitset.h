@@ -27,7 +27,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BITSET (gtk_bitset_get_type ())
 
@@ -38,7 +38,7 @@ GType                   gtk_bitset_get_type                     (void) ;
 GtkBitset *             gtk_bitset_ref                          (GtkBitset              *self);
 
 void                    gtk_bitset_unref                        (GtkBitset              *self);
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBitset, gtk_bitset_unref)
+
 
 
 gboolean                gtk_bitset_contains                     (const GtkBitset        *self,
@@ -176,6 +176,6 @@ guint                   gtk_bitset_iter_get_value               (const GtkBitset
 
 gboolean                gtk_bitset_iter_is_valid                (const GtkBitsetIter    *iter);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_BITSET_H__ */

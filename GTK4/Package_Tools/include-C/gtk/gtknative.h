@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_NATIVE               (gtk_native_get_type ())
 
@@ -54,6 +54,6 @@ void         gtk_native_get_surface_transform (GtkNative *self,
                                                double    *x,
                                                double    *y);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_NATIVE_H__ */

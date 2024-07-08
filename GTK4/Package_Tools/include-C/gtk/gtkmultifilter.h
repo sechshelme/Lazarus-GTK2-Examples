@@ -27,7 +27,7 @@
 #include <gtk/gtkfilter.h>
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_MULTI_FILTER             (gtk_multi_filter_get_type ())
 
@@ -53,6 +53,6 @@ GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, 
 GtkEveryFilter *        gtk_every_filter_new                    (void);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_MULTI_FILTER_H__ */

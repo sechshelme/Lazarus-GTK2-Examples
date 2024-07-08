@@ -27,14 +27,14 @@
 #include <gdk/gdktypes.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_TEXTURE (gdk_texture_get_type ())
 
 #define GDK_TEXTURE(obj)               (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_TEXTURE, GdkTexture))
 #define GDK_IS_TEXTURE(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_TEXTURE))
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkTexture, g_object_unref)
+
 
 typedef struct _GdkTextureClass        GdkTextureClass;
 
@@ -100,6 +100,6 @@ gboolean                gdk_texture_save_to_tiff               (GdkTexture      
 GDK_AVAILABLE_IN_4_6
 GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_TEXTURE_H__ */

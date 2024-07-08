@@ -28,7 +28,7 @@
 
 #include <gtk/gtkcellarea.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CELL_AREA_BOX            (gtk_cell_area_box_get_type ())
 #define GTK_CELL_AREA_BOX(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_AREA_BOX, GtkCellAreaBox))
@@ -63,6 +63,6 @@ void         gtk_cell_area_box_set_spacing (GtkCellAreaBox  *box,
 gboolean    _gtk_cell_area_box_group_visible (GtkCellAreaBox  *box,
                                               int              group_idx);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CELL_AREA_BOX_H__ */

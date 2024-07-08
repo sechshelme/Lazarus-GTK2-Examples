@@ -26,7 +26,7 @@
 
 #include <gtk/gtklistbase.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_GRID_VIEW         (gtk_grid_view_get_type ())
 #define GTK_GRID_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GRID_VIEW, GtkGridView))
@@ -80,6 +80,6 @@ void            gtk_grid_view_set_single_click_activate         (GtkGridView    
 gboolean        gtk_grid_view_get_single_click_activate         (GtkGridView            *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_GRID_VIEW_H__ */

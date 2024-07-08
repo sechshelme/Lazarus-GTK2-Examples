@@ -25,7 +25,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /* Get a clip region to draw only part of a layout or
  * line. index_ranges contains alternating range starts/stops. The
@@ -46,6 +46,6 @@ cairo_region_t    *gdk_pango_layout_get_clip_region      (PangoLayout     *layou
                                                      const int       *index_ranges,
                                                      int              n_ranges);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_PANGO_H__ */

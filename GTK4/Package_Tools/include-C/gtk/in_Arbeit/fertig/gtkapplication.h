@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_APPLICATION            (gtk_application_get_type ())
 #define GTK_APPLICATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APPLICATION, GtkApplication))
@@ -135,8 +135,8 @@ void             gtk_application_set_accels_for_action           (GtkApplication
 GMenu *          gtk_application_get_menu_by_id                  (GtkApplication       *application,
                                                                   const char           *id);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkApplication, g_object_unref)
 
-// // // G_END_DECLS
+
+// // // // 
 
 #endif /* __GTK_APPLICATION_H__ */

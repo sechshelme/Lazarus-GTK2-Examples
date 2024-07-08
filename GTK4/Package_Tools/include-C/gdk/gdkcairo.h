@@ -27,7 +27,7 @@
 #include <gdk/gdkpixbuf.h>
 #include <pango/pangocairo.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 void       gdk_cairo_set_source_rgba    (cairo_t              *cr,
@@ -61,6 +61,6 @@ void       gdk_cairo_draw_from_gl (cairo_t              *cr,
                                    int                   width,
                                    int                   height);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_CAIRO_H__ */

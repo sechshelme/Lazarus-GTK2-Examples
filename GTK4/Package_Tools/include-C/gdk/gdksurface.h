@@ -36,7 +36,7 @@
 #include <gdk/gdkmonitor.h>
 #include <gdk/gdkpopuplayout.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GdkSurfaceClass GdkSurfaceClass;
 
@@ -140,6 +140,6 @@ GdkVulkanContext *
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_SURFACE_H__ */

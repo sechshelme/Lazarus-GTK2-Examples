@@ -34,7 +34,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkSnapshotClass       GtkSnapshotClass;
 
@@ -43,7 +43,7 @@ typedef struct _GtkSnapshotClass       GtkSnapshotClass;
 #define GTK_SNAPSHOT(obj)               (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SNAPSHOT, GtkSnapshot))
 #define GTK_IS_SNAPSHOT(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_SNAPSHOT))
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkSnapshot, g_object_unref)
+
 
 
 
@@ -262,6 +262,6 @@ void            gtk_snapshot_render_insertion_cursor    (GtkSnapshot            
                                                          PangoDirection          direction);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SNAPSHOT_H__ */

@@ -24,7 +24,7 @@
 
 #include <gtk/gtkdialog.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_COLOR_CHOOSER_DIALOG              (gtk_color_chooser_dialog_get_type ())
 #define GTK_COLOR_CHOOSER_DIALOG(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COLOR_CHOOSER_DIALOG, GtkColorChooserDialog))
@@ -39,6 +39,6 @@ GType       gtk_color_chooser_dialog_get_type (void) ;
 GtkWidget * gtk_color_chooser_dialog_new      (const char *title,
                                                GtkWindow   *parent);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_COLOR_CHOOSER_DIALOG_H__ */

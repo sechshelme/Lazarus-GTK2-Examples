@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_POPOVER                 (gtk_popover_get_type ())
 #define GTK_POPOVER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_POPOVER, GtkPopover))
@@ -125,6 +125,6 @@ void gtk_popover_set_default_widget (GtkPopover *popover,
 void gtk_popover_present (GtkPopover *popover);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_POPOVER_H__ */

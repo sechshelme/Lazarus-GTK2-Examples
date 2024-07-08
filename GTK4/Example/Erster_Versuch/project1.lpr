@@ -3,6 +3,7 @@ program project1;
 uses
   glib2,
   common_GTK,
+  gtkapplication,
   gtkwindow,
   gtkbutton,
 
@@ -10,7 +11,7 @@ uses
 
 // ---- libgtk-4
 
-type
+//type
 //  TGTKWidget = Pointer;
 //  PGTKWidget = ^TGTKWidget;
 
@@ -20,10 +21,10 @@ type
 //  TGTKWindow = Pointer;
 //  PGTKWindow = ^TGTKWindow;
 
-  TGtkApplication = Pointer;
-  PGtkApplication = ^TGtkApplication;
+//  TGtkApplication = Pointer;
+//  PGtkApplication = ^TGtkApplication;
 
-  function gtk_application_new(application_id: PChar; flags: int64): PGtkApplication; cdecl; external gtklib;
+//  function gtk_application_new(application_id: PChar; flags: int64): PGtkApplication; cdecl; external gtklib;
   function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
 //  procedure gtk_window_present(window: PGtkWindow); cdecl; external gtklib;
 //  function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
@@ -83,6 +84,9 @@ type
     gtk_window_set_child(GTK_WINDOW( window), button);
 
     gtk_window_present(GTK_WINDOW( window));
+
+    WriteLn(GTK_IS_WINDOW(window));
+    WriteLn(GTK_IS_WINDOW(button));
   end;
 
   procedure main;

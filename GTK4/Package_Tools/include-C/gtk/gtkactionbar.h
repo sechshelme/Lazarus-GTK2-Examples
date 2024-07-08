@@ -26,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ACTION_BAR            (gtk_action_bar_get_type ())
 #define GTK_ACTION_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ACTION_BAR, GtkActionBar))
@@ -62,6 +62,6 @@ void        gtk_action_bar_set_revealed       (GtkActionBar *action_bar,
 gboolean    gtk_action_bar_get_revealed       (GtkActionBar *action_bar);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ACTION_BAR_H__ */

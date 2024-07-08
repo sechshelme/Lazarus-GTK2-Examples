@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkDropTargetAsync GtkDropTargetAsync;
 typedef struct _GtkDropTargetAsyncClass GtkDropTargetAsyncClass;
@@ -72,6 +72,6 @@ void                    gtk_drop_target_async_reject_drop       (GtkDropTargetAs
                                                                  GdkDrop                *drop);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_DROP_TARGET_ASYNC_H__ */

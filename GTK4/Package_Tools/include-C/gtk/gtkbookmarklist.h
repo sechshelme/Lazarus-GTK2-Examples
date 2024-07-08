@@ -30,7 +30,7 @@
 #include <gdk/gdk.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BOOKMARK_LIST (gtk_bookmark_list_get_type ())
 
@@ -59,6 +59,6 @@ int                  gtk_bookmark_list_get_io_priority      (GtkBookmarkList *se
 
 gboolean             gtk_bookmark_list_is_loading           (GtkBookmarkList *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_BOOKMARK_LIST_H__ */

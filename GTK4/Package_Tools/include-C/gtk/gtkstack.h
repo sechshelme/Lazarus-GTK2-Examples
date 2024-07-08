@@ -29,7 +29,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_STACK (gtk_stack_get_type ())
@@ -179,6 +179,6 @@ gboolean               gtk_stack_get_interpolate_size    (GtkStack *stack);
 
 GtkSelectionModel *    gtk_stack_get_pages               (GtkStack *stack);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif

@@ -27,7 +27,7 @@
 #include <gdk/gdkversionmacros.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_DEVICE_TOOL    (gdk_device_tool_get_type ())
 #define GDK_DEVICE_TOOL(o)      (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE_TOOL, GdkDeviceTool))
@@ -75,6 +75,6 @@ GdkDeviceToolType   gdk_device_tool_get_tool_type   (GdkDeviceTool *tool);
 
 GdkAxisFlags        gdk_device_tool_get_axes        (GdkDeviceTool *tool);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_DEVICE_TOOL_H__ */

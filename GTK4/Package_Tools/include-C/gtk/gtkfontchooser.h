@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GtkFontFilterFunc:
@@ -161,6 +161,6 @@ char *           gtk_font_chooser_get_language             (GtkFontChooser   *fo
 void             gtk_font_chooser_set_language             (GtkFontChooser   *fontchooser,
                                                             const char       *language);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_FONT_CHOOSER_H__ */

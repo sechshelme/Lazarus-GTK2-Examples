@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_TREE_MODEL            (gtk_tree_model_get_type ())
 #define GTK_TREE_MODEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_MODEL, GtkTreeModel))
@@ -403,6 +403,6 @@ void gtk_tree_model_rows_reordered_with_length (GtkTreeModel *tree_model,
 						int          *new_order,
 						int           length);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TREE_MODEL_H__ */

@@ -32,7 +32,7 @@
 #include <glib.h>
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GtkDebugFlags:
@@ -104,6 +104,6 @@ GtkDebugFlags gtk_get_debug_flags (void);
 
 void          gtk_set_debug_flags (GtkDebugFlags flags);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_DEBUG_H__ */

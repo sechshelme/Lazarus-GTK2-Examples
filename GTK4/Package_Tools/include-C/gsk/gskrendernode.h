@@ -28,7 +28,7 @@
 #include <gsk/gskglshader.h>
 #include <gtk/css/gtkcss.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GSK_TYPE_RENDER_NODE (gsk_render_node_get_type ())
 
@@ -554,6 +554,6 @@ GDK_AVAILABLE_IN_4_4
 GskRenderNode *         gsk_value_dup_render_node               (const GValue             *value);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GSK_RENDER_NODE_H__ */

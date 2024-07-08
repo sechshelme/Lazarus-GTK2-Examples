@@ -28,7 +28,7 @@
 #include <gtk/gtktypes.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkDropTarget GtkDropTarget;
 
@@ -84,6 +84,6 @@ const GValue *          gtk_drop_target_get_value        (GtkDropTarget         
 void                    gtk_drop_target_reject           (GtkDropTarget         *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_DROP_TARGET_H__ */

@@ -24,7 +24,7 @@
 
 #include <gtk/gtktreeview.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_TREE_SELECTION			(gtk_tree_selection_get_type ())
@@ -138,6 +138,6 @@ void             gtk_tree_selection_unselect_range      (GtkTreeSelection       
 							 GtkTreePath                 *end_path);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TREE_SELECTION_H__ */

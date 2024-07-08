@@ -27,7 +27,7 @@
 #include <gtk/gtktreelistmodel.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_TREE_EXPANDER         (gtk_tree_expander_get_type ())
 
@@ -56,6 +56,6 @@ GDK_AVAILABLE_IN_4_6
 void                    gtk_tree_expander_set_indent_for_icon (GtkTreeExpander        *self,
                                                                gboolean               indent_for_icon);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_TREE_EXPANDER_H__ */

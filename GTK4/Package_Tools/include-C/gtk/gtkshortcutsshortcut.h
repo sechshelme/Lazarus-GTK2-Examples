@@ -25,7 +25,7 @@
 
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SHORTCUTS_SHORTCUT (gtk_shortcuts_shortcut_get_type())
 #define GTK_SHORTCUTS_SHORTCUT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_SHORTCUT, GtkShortcutsShortcut))
@@ -80,6 +80,6 @@ typedef enum {
 
 GType        gtk_shortcuts_shortcut_get_type (void) ;
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* GTK_SHORTCUTS_SHORTCUT_H */

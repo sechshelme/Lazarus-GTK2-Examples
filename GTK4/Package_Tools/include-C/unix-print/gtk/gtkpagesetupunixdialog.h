@@ -24,7 +24,7 @@
 
 #include <gtk/gtk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_PAGE_SETUP_UNIX_DIALOG                  (gtk_page_setup_unix_dialog_get_type ())
 #define GTK_PAGE_SETUP_UNIX_DIALOG(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PAGE_SETUP_UNIX_DIALOG, GtkPageSetupUnixDialog))
@@ -50,6 +50,6 @@ void              gtk_page_setup_unix_dialog_set_print_settings (GtkPageSetupUni
 
 GtkPrintSettings *gtk_page_setup_unix_dialog_get_print_settings (GtkPageSetupUnixDialog *dialog);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_PAGE_SETUP_UNIX_DIALOG_H__ */

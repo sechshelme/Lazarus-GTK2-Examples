@@ -22,7 +22,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkConstraintTarget GtkConstraintTarget;
 
@@ -85,4 +85,4 @@ gboolean                gtk_constraint_is_attached              (GtkConstraint  
 
 gboolean                gtk_constraint_is_constant              (GtkConstraint          *constraint);
 
-// // // G_END_DECLS
+// // // // 

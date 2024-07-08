@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkspinbutton.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /* --- Gtk+ Test Utility API --- */
 
@@ -40,6 +40,6 @@ const GType*    gtk_test_list_all_types         (guint          *n_types);
 
 void            gtk_test_widget_wait_for_draw   (GtkWidget      *widget);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TEST_UTILS_H__ */

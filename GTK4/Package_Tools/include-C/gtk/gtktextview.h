@@ -33,7 +33,7 @@
 #include <gtk/gtkimcontext.h>
 #include <gtk/gtktextbuffer.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_TEXT_VIEW             (gtk_text_view_get_type ())
 #define GTK_TEXT_VIEW(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT_VIEW, GtkTextView))
@@ -432,6 +432,6 @@ PangoContext    *gtk_text_view_get_rtl_context        (GtkTextView      *text_vi
 
 PangoContext    *gtk_text_view_get_ltr_context        (GtkTextView      *text_view);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_TEXT_VIEW_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtkbuildable.h>
 #include <gtk/gtkbuilder.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CELL_LAYOUT            (gtk_cell_layout_get_type ())
 #define GTK_CELL_LAYOUT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_LAYOUT, GtkCellLayout))
@@ -163,6 +163,6 @@ void     _gtk_cell_layout_buildable_add_child        (GtkBuildable       *builda
                                                       GObject            *child,
                                                       const char         *type);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CELL_LAYOUT_H__ */

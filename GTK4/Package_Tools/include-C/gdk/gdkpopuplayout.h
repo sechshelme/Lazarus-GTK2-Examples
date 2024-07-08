@@ -27,7 +27,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GdkAnchorHints:
@@ -147,6 +147,6 @@ void                    gdk_popup_layout_get_shadow_width       (GdkPopupLayout 
                                                                  int                *bottom);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_POPUP_LAYOUT_H__ */

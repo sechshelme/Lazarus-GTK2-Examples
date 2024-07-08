@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_RANGE            (gtk_range_get_type ())
@@ -148,7 +148,7 @@ void               gtk_range_set_round_digits              (GtkRange      *range
 int                 gtk_range_get_round_digits              (GtkRange      *range);
 
 
-// // // G_END_DECLS
+// // // // 
 
 
 #endif /* __GTK_RANGE_H__ */

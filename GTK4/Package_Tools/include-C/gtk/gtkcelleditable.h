@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CELL_EDITABLE            (gtk_cell_editable_get_type ())
 #define GTK_CELL_EDITABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_EDITABLE, GtkCellEditable))
@@ -71,6 +71,6 @@ void  gtk_cell_editable_editing_done  (GtkCellEditable *cell_editable);
 void  gtk_cell_editable_remove_widget (GtkCellEditable *cell_editable);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CELL_EDITABLE_H__ */

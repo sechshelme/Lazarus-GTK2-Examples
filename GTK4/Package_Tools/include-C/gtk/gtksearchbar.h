@@ -35,7 +35,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkeditable.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SEARCH_BAR                 (gtk_search_bar_get_type ())
 #define GTK_SEARCH_BAR(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEARCH_BAR, GtkSearchBar))
@@ -78,6 +78,6 @@ void        gtk_search_bar_set_child          (GtkSearchBar *bar,
 GtkWidget * gtk_search_bar_get_child          (GtkSearchBar *bar);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SEARCH_BAR_H__ */

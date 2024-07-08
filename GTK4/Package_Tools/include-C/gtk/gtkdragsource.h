@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_DRAG_SOURCE         (gtk_drag_source_get_type ())
 #define GTK_DRAG_SOURCE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_DRAG_SOURCE, GtkDragSource))
@@ -83,6 +83,6 @@ gboolean           gtk_drag_check_threshold    (GtkWidget         *widget,
                                                 int                current_y);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_DRAG_SOURCE_H__ */

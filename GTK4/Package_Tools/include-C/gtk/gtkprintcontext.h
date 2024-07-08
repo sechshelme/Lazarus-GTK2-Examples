@@ -28,7 +28,7 @@
 #include <gtk/gtkpagesetup.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkPrintContext GtkPrintContext;
 
@@ -76,6 +76,6 @@ void         gtk_print_context_set_cairo_context     (GtkPrintContext *context,
 						      double           dpi_x,
 						      double           dpi_y);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_PRINT_CONTEXT_H__ */

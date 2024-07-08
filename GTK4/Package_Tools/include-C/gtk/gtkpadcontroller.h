@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_PAD_CONTROLLER         (gtk_pad_controller_get_type ())
 #define GTK_PAD_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_PAD_CONTROLLER, GtkPadController))
@@ -93,6 +93,6 @@ void  gtk_pad_controller_set_action         (GtkPadController *controller,
                                              const char       *label,
                                              const char       *action_name);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_PAD_CONTROLLER_H__ */

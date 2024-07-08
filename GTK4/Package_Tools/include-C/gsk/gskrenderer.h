@@ -26,7 +26,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskrendernode.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GSK_TYPE_RENDERER (gsk_renderer_get_type ())
 
@@ -63,6 +63,6 @@ void                    gsk_renderer_render                     (GskRenderer    
                                                                  GskRenderNode           *root,
                                                                  const cairo_region_t    *region);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GSK_RENDERER_H__ */

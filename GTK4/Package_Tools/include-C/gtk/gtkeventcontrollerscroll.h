@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_EVENT_CONTROLLER_SCROLL         (gtk_event_controller_scroll_get_type ())
 #define GTK_EVENT_CONTROLLER_SCROLL(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_SCROLL, GtkEventControllerScroll))
@@ -71,6 +71,6 @@ void                gtk_event_controller_scroll_set_flags (GtkEventControllerScr
 GtkEventControllerScrollFlags
                     gtk_event_controller_scroll_get_flags (GtkEventControllerScroll      *scroll);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_EVENT_CONTROLLER_SCROLL_H__ */

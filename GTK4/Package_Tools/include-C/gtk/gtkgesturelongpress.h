@@ -26,7 +26,7 @@
 
 #include <gtk/gtkgesturesingle.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_GESTURE_LONG_PRESS         (gtk_gesture_long_press_get_type ())
 #define GTK_GESTURE_LONG_PRESS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_LONG_PRESS, GtkGestureLongPress))
@@ -53,6 +53,6 @@ double       gtk_gesture_long_press_get_delay_factor (GtkGestureLongPress *gestu
 
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_GESTURE_LONG_PRESS_H__ */

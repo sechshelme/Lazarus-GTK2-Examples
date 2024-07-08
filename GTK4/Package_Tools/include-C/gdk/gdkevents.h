@@ -36,7 +36,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GDK_TYPE_EVENT          (gdk_event_get_type ())
@@ -518,6 +518,6 @@ gboolean               gdk_key_event_get_match (GdkEvent        *event,
                                                 guint           *keyval,
                                                 GdkModifierType *modifiers);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_EVENTS_H__ */

@@ -34,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_IMAGE                  (gtk_image_get_type ())
 #define GTK_IMAGE(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IMAGE, GtkImage))
@@ -126,6 +126,6 @@ int        gtk_image_get_pixel_size (GtkImage             *image);
 
 GtkIconSize gtk_image_get_icon_size (GtkImage             *image);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_IMAGE_H__ */

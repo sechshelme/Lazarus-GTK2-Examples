@@ -32,7 +32,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkBorder GtkBorder;
 
@@ -66,8 +66,8 @@ GtkBorder *gtk_border_copy     (const GtkBorder *border_);
 
 void       gtk_border_free     (GtkBorder       *border_);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkBorder, gtk_border_free)
 
-// // // G_END_DECLS
+
+// // // // 
 
 #endif /* __GTK_BORDER_H__ */

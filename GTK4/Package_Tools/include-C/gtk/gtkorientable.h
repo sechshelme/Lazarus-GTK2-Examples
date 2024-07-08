@@ -28,7 +28,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ORIENTABLE             (gtk_orientable_get_type ())
 #define GTK_ORIENTABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ORIENTABLE, GtkOrientable))
@@ -53,6 +53,6 @@ void           gtk_orientable_set_orientation (GtkOrientable  *orientable,
 
 GtkOrientation gtk_orientable_get_orientation (GtkOrientable  *orientable);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ORIENTABLE_H__ */

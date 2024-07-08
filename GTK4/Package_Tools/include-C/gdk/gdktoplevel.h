@@ -28,7 +28,7 @@
 #include <gdk/gdksurface.h>
 #include <gdk/gdktoplevellayout.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GdkSurfaceEdge:
@@ -215,6 +215,6 @@ GDK_AVAILABLE_IN_4_4
 gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplevel,
                                                       GdkTitlebarGesture  gesture);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_TOPLEVEL_H__ */

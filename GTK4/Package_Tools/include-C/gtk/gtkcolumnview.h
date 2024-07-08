@@ -29,7 +29,7 @@
 #include <gtk/gtkselectionmodel.h>
 #include <gtk/gtksorter.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_COLUMN_VIEW         (gtk_column_view_get_type ())
 #define GTK_COLUMN_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_COLUMN_VIEW, GtkColumnView))
@@ -109,6 +109,6 @@ void            gtk_column_view_set_enable_rubberband           (GtkColumnView  
 
 gboolean        gtk_column_view_get_enable_rubberband           (GtkColumnView          *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_COLUMN_VIEW_H__ */

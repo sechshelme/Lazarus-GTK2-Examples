@@ -22,7 +22,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SINGLE_SELECTION (gtk_single_selection_get_type ())
 
@@ -55,6 +55,6 @@ gboolean                gtk_single_selection_get_can_unselect   (GtkSingleSelect
 void                    gtk_single_selection_set_can_unselect   (GtkSingleSelection     *self,
                                                                  gboolean                can_unselect);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SINGLE_SELECTION_H__ */

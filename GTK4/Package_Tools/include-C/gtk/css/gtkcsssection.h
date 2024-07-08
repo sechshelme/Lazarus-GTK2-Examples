@@ -26,7 +26,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gtk/css/gtkcsslocation.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CSS_SECTION         (gtk_css_section_get_type ())
 
@@ -69,6 +69,6 @@ const GtkCssLocation *
 const GtkCssLocation *
                    gtk_css_section_get_end_location    (const GtkCssSection  *section);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_CSS_SECTION_H__ */

@@ -29,9 +29,9 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkDrop, g_object_unref)
+
 
 #define GDK_TYPE_DROP              (gdk_drop_get_type ())
 #define GDK_DROP(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DROP, GdkDrop))
@@ -85,6 +85,6 @@ const GValue *          gdk_drop_read_value_finish      (GdkDrop                
                                                          GAsyncResult           *result,
                                                          GError                **error);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_DROP_H__ */

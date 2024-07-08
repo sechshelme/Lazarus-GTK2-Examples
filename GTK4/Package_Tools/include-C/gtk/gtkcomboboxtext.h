@@ -25,7 +25,7 @@
 
 #include <gtk/gtkcombobox.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_COMBO_BOX_TEXT                 (gtk_combo_box_text_get_type ())
 #define GTK_COMBO_BOX_TEXT(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_COMBO_BOX_TEXT, GtkComboBoxText))
@@ -71,6 +71,6 @@ void          gtk_combo_box_text_prepend         (GtkComboBoxText     *combo_box
                                                   const char          *id,
                                                   const char          *text);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_COMBO_BOX_TEXT_H__ */

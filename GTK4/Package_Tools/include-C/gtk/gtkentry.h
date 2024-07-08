@@ -41,7 +41,7 @@
 #include <gtk/gtkimage.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ENTRY                  (gtk_entry_get_type ())
 #define GTK_ENTRY(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ENTRY, GtkEntry))
@@ -291,6 +291,6 @@ void           gtk_entry_set_extra_menu                      (GtkEntry          
 
 GMenuModel *   gtk_entry_get_extra_menu                      (GtkEntry             *entry);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ENTRY_H__ */

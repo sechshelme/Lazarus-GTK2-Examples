@@ -33,7 +33,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 /* --- Accelerators--- */
@@ -70,6 +70,6 @@ char *   gtk_accelerator_get_label_with_keycode (GdkDisplay      *display,
 GdkModifierType gtk_accelerator_get_default_mod_mask (void) ;
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ACCEL_GROUP_H__ */

@@ -29,7 +29,7 @@
 #include <gtk/gtktreeviewcolumn.h>
 #include <gtk/gtktreemodelfilter.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ENTRY_COMPLETION            (gtk_entry_completion_get_type ())
 #define GTK_ENTRY_COMPLETION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ENTRY_COMPLETION, GtkEntryCompletion))
@@ -130,6 +130,6 @@ void                gtk_entry_completion_set_text_column        (GtkEntryComplet
 
 int                 gtk_entry_completion_get_text_column        (GtkEntryCompletion          *completion);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ENTRY_COMPLETION_H__ */

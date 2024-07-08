@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_GESTURE_CLICK         (gtk_gesture_click_get_type ())
 #define GTK_GESTURE_CLICK(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_CLICK, GtkGestureClick))
@@ -44,6 +44,6 @@ GType        gtk_gesture_click_get_type (void) ;
 
 GtkGesture * gtk_gesture_click_new      (void);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_GESTURE_CLICK_H__ */

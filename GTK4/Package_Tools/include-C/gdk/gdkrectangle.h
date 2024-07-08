@@ -32,7 +32,7 @@
 #include <gdk/gdktypes.h>
 #include <gdk/gdkversionmacros.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /* Rectangle utilities
  */
@@ -59,6 +59,6 @@ GType gdk_rectangle_get_type (void) ;
 
 #define GDK_TYPE_RECTANGLE (gdk_rectangle_get_type ())
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK__RECTANGLE_H__ */

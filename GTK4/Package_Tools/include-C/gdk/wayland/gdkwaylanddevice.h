@@ -26,7 +26,7 @@
 
 #include <wayland-client.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDevice GdkWaylandDevice;
@@ -58,6 +58,6 @@ struct xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
 
 const char          *gdk_wayland_device_get_node_path       (GdkDevice *device);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_WAYLAND_DEVICE_H__ */

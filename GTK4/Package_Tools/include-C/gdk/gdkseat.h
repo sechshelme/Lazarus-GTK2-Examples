@@ -29,7 +29,7 @@
 #include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_SEAT  (gdk_seat_get_type ())
 #define GDK_SEAT(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_SEAT, GdkSeat))
@@ -86,6 +86,6 @@ GdkDevice *    gdk_seat_get_pointer             (GdkSeat             *seat);
 
 GdkDevice *    gdk_seat_get_keyboard            (GdkSeat             *seat);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_SEAT_H__ */

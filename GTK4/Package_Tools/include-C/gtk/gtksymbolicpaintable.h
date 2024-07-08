@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SYMBOLIC_PAINTABLE       (gtk_symbolic_paintable_get_type ())
 
@@ -65,6 +65,6 @@ void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymb
                                                                          const GdkRGBA          *colors,
                                                                          gsize                   n_colors);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SYMBOLIC_PAINTABLE_H__ */

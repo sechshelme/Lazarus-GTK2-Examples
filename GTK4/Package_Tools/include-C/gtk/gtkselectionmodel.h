@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SELECTION_MODEL       (gtk_selection_model_get_type ())
 
@@ -142,6 +142,6 @@ void                    gtk_selection_model_selection_changed   (GtkSelectionMod
                                                                  guint                   position,
                                                                  guint                   n_items);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SELECTION_MODEL_H__ */

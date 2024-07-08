@@ -27,7 +27,7 @@
 
 #include <gtk/gtkeventcontroller.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SHORTCUT_CONTROLLER         (gtk_shortcut_controller_get_type ())
 #define GTK_SHORTCUT_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_SHORTCUT_CONTROLLER, GtkShortcutController))
@@ -65,6 +65,6 @@ void                    gtk_shortcut_controller_add_shortcut            (GtkShor
 void                    gtk_shortcut_controller_remove_shortcut         (GtkShortcutController  *self,
                                                                          GtkShortcut            *shortcut);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SHORTCUT_CONTROLLER_H__ */

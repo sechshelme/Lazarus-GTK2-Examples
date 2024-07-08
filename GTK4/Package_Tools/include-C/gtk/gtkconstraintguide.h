@@ -23,7 +23,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypebuiltins.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_CONSTRAINT_GUIDE (gtk_constraint_guide_get_type ())
 
@@ -70,4 +70,4 @@ void                    gtk_constraint_guide_set_name           (GtkConstraintGu
 
 const char *            gtk_constraint_guide_get_name           (GtkConstraintGuide *guide);
 
-// // // G_END_DECLS
+// // // // 

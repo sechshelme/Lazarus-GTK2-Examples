@@ -28,7 +28,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_EVENT_CONTROLLER_KEY         (gtk_event_controller_key_get_type ())
 #define GTK_EVENT_CONTROLLER_KEY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_KEY, GtkEventControllerKey))
@@ -59,6 +59,6 @@ gboolean            gtk_event_controller_key_forward        (GtkEventControllerK
 guint               gtk_event_controller_key_get_group      (GtkEventControllerKey *controller);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_EVENT_CONTROLLER_KEY_H__ */

@@ -32,7 +32,7 @@
 #include <gtk/gtktextchild.h>
 #include <gtk/gtktexttag.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GtkTextSearchFlags:
@@ -414,6 +414,6 @@ gboolean gtk_text_iter_in_range        (const GtkTextIter *iter,
 void     gtk_text_iter_order           (GtkTextIter *first,
                                         GtkTextIter *second);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif

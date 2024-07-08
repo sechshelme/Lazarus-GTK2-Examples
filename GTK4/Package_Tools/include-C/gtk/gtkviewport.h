@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_VIEWPORT            (gtk_viewport_get_type ())
@@ -62,7 +62,7 @@ void           gtk_viewport_set_child           (GtkViewport *viewport,
 
 GtkWidget *    gtk_viewport_get_child           (GtkViewport *viewport);
 
-// // // G_END_DECLS
+// // // // 
 
 
 #endif /* __GTK_VIEWPORT_H__ */

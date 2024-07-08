@@ -28,7 +28,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ACCESSIBLE (gtk_accessible_get_type())
 
@@ -86,4 +86,4 @@ void                    gtk_accessible_property_init_value      (GtkAccessiblePr
 void                    gtk_accessible_relation_init_value      (GtkAccessibleRelation  relation,
                                                                  GValue                *value);
 
-// // // G_END_DECLS
+// // // // 

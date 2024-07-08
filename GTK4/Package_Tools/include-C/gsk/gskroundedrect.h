@@ -25,7 +25,7 @@
 
 #include <gsk/gsktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GSK_ROUNDED_RECT_INIT:
@@ -95,6 +95,6 @@ gboolean                gsk_rounded_rect_contains_rect          (const GskRounde
 gboolean                gsk_rounded_rect_intersects_rect        (const GskRoundedRect     *self,
                                                                  const graphene_rect_t    *rect) G_GNUC_PURE;
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GSK_ROUNDED_RECT_H__ */

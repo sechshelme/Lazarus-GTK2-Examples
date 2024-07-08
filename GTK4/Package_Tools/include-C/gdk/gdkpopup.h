@@ -27,7 +27,7 @@
 #include <gdk/gdkpopuplayout.h>
 #include <gdk/gdksurface.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_POPUP (gdk_popup_get_type ())
 
@@ -58,6 +58,6 @@ int             gdk_popup_get_position_y        (GdkPopup       *popup);
 
 gboolean        gdk_popup_get_autohide          (GdkPopup       *popup);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_POPUP_H__ */

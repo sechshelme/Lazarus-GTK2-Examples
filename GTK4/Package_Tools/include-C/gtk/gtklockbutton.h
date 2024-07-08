@@ -22,7 +22,7 @@
 #include <gtk/gtkbutton.h>
 #include <gio/gio.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_LOCK_BUTTON         (gtk_lock_button_get_type ())
 #define GTK_LOCK_BUTTON(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LOCK_BUTTON, GtkLockButton))
@@ -41,6 +41,6 @@ void         gtk_lock_button_set_permission (GtkLockButton *button,
                                              GPermission   *permission);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_LOCK_BUTTON_H__ */

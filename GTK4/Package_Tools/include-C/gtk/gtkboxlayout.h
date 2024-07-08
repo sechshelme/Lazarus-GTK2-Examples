@@ -25,7 +25,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtklayoutmanager.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BOX_LAYOUT (gtk_box_layout_get_type())
 
@@ -51,4 +51,4 @@ void                    gtk_box_layout_set_baseline_position    (GtkBoxLayout   
 
 GtkBaselinePosition     gtk_box_layout_get_baseline_position    (GtkBoxLayout        *box_layout);
 
-// // // G_END_DECLS
+// // // // 

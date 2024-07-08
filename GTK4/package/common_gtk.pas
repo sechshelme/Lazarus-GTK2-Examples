@@ -17,6 +17,8 @@ type
   TGType = GType;
   Tgboolean = gboolean;
 
+  Tguint=guint;
+
   Tguint32=guint32;
 
   TGTKWidget = Pointer;   // rec
@@ -24,6 +26,18 @@ type
 
   TGtkWidgetClass = Pointer;    // rec
   PGtkWidgetClass = ^TGtkWidgetClass;
+
+  TGApplication=Pointer;        // rec  gapplication.h
+  PGApplication=^TGApplication;
+
+  TGApplicationClass=Pointer; // rec  gobject.h
+  PGApplicationClass=^TGApplicationClass;
+
+  TGApplicationFlags=Integer; // gioenums.h
+  TGMenuModel=Pointer;      // rec gmenumodel.h
+  PGMenuModel=^TGMenuModel;
+  TGMenu=Pointer;   // _GMenu  gmenu.h
+  PGMenu=^TGMenu;
 
   TGdkDisplay=Pointer;       // _GdkDisplay
   PGdkDisplay=^TGdkDisplay;
@@ -39,6 +53,26 @@ type
 
   TGtkApplication=Pointer;         // rec
   PGtkApplication=^TGtkApplication;
+
+  // ==========
+
+  PGTypeClass = ^TGTypeClass;
+  TGTypeClass = record
+    g_type : GType;
+  end;
+
+  PGTypeInstance = ^TGTypeInstance;
+  TGTypeInstance = record
+    g_class : PGTypeClass;
+  end;
+  function g_type_check_instance_cast(wid:PGTypeInstance; iface_type:TGType):PGTypeInstance ;cdecl;external gtklib;
+  function g_type_check_instance_is_a(instance:PGTypeInstance; iface_type:GType):gboolean; cdecl; external gobjectlib;
+
+  function g_type_check_class_cast(g_class:PGTypeClass; is_a_type:TGType):PGTypeClass ;cdecl;external gtklib;
+  function g_type_check_class_is_a(instance:PGTypeClass; is_a_type:GType):gboolean; cdecl; external gobjectlib;
+
+
+//  GTypeInstance*   g_type_check_instance_cast     (GTypeInstance      *instance,   GType   iface_type);
 
 
 implementation

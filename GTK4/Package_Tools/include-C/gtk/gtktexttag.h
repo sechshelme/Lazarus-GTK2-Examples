@@ -59,7 +59,7 @@
 #include <gtk/gtkenums.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 typedef struct _GtkTextIter GtkTextIter;
 typedef struct _GtkTextTagTable GtkTextTagTable;
@@ -104,7 +104,7 @@ void         gtk_text_tag_set_priority (GtkTextTag        *tag,
 void         gtk_text_tag_changed      (GtkTextTag        *tag,
                                         gboolean           size_changed);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif
 

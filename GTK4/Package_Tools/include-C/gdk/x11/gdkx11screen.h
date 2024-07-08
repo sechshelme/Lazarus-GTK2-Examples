@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_X11_SCREEN              (gdk_x11_screen_get_type ())
 #define GDK_X11_SCREEN(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_SCREEN, GdkX11Screen))
@@ -70,6 +70,6 @@ guint32  gdk_x11_screen_get_number_of_desktops (GdkX11Screen *screen);
 
 guint32  gdk_x11_screen_get_current_desktop    (GdkX11Screen *screen);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_X11_SCREEN_H__ */

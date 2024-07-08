@@ -29,7 +29,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SPINNER           (gtk_spinner_get_type ())
 #define GTK_SPINNER(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SPINNER, GtkSpinner))
@@ -52,6 +52,6 @@ void       gtk_spinner_set_spinning (GtkSpinner *spinner,
 
 gboolean   gtk_spinner_get_spinning (GtkSpinner *spinner);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SPINNER_H__ */

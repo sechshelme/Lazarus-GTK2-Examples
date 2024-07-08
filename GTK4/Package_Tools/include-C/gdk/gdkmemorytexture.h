@@ -27,7 +27,7 @@
 #include <gdk/gdkenums.h>
 #include <gdk/gdktexture.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GDK_MEMORY_DEFAULT:
@@ -56,7 +56,7 @@
 typedef struct _GdkMemoryTexture        GdkMemoryTexture;
 typedef struct _GdkMemoryTextureClass   GdkMemoryTextureClass;
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkMemoryTexture, g_object_unref)
+
 
 
 
@@ -70,6 +70,6 @@ GdkTexture *            gdk_memory_texture_new              (int                
                                                              gsize              stride);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_MEMORY_TEXTURE_H__ */

@@ -27,7 +27,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 void gtk_show_uri_full (GtkWindow           *parent,
@@ -47,6 +47,6 @@ void gtk_show_uri (GtkWindow  *parent,
                    const char *uri,
                    guint32     timestamp);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SHOW_H__ */

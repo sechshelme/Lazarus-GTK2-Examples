@@ -27,7 +27,7 @@
 #include <gtk/gtkmediastream.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_VIDEO         (gtk_video_get_type ())
 
@@ -73,6 +73,6 @@ void            gtk_video_set_loop                      (GtkVideo               
                                                          gboolean                loop);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GTK_VIDEO_H__ */

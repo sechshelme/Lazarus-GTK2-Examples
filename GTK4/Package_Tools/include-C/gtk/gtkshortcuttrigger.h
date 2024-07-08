@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_SHORTCUT_TRIGGER (gtk_shortcut_trigger_get_type ())
 
@@ -137,6 +137,6 @@ GtkShortcutTrigger *    gtk_alternative_trigger_get_first       (GtkAlternativeT
 
 GtkShortcutTrigger *    gtk_alternative_trigger_get_second      (GtkAlternativeTrigger *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_SHORTCUT_TRIGGER_H__ */

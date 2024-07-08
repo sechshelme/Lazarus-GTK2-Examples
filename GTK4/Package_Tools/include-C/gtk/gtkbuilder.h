@@ -26,7 +26,7 @@
 #include <gtk/gtkbuilderscope.h>
 #include <gtk/gtkwidget.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BUILDER                 (gtk_builder_get_type ())
 #define GTK_BUILDER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUILDER, GtkBuilder))
@@ -203,6 +203,6 @@ gboolean  gtk_builder_extend_with_template  (GtkBuilder    *builder,
                                              gssize         length,
                                              GError       **error);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_BUILDER_H__ */

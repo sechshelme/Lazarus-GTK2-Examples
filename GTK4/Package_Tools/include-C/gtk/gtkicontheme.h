@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ICON_PAINTABLE    (gtk_icon_paintable_get_type ())
 #define GTK_ICON_PAINTABLE(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ICON_PAINTABLE, GtkIconPaintable))
@@ -154,6 +154,6 @@ const char *         gtk_icon_paintable_get_icon_name     (GtkIconPaintable  *se
 
 gboolean              gtk_icon_paintable_is_symbolic       (GtkIconPaintable  *self);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_ICON_THEME_H__ */

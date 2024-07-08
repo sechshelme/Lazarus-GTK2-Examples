@@ -27,7 +27,7 @@
 #include <gtk/gtktreesortable.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_LIST_STORE	       (gtk_list_store_get_type ())
@@ -147,7 +147,7 @@ void          gtk_list_store_move_before      (GtkListStore *store,
                                                GtkTreeIter  *position);
 
 
-// // // G_END_DECLS
+// // // // 
 
 
 #endif /* __GTK_LIST_STORE_H__ */

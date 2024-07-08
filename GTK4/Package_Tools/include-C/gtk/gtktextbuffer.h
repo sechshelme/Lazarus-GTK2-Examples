@@ -35,7 +35,7 @@
 #include <gtk/gtktextmark.h>
 #include <gtk/gtktextchild.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_TEXT_BUFFER            (gtk_text_buffer_get_type ())
 #define GTK_TEXT_BUFFER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT_BUFFER, GtkTextBuffer))
@@ -462,6 +462,6 @@ void            gtk_text_buffer_begin_user_action         (GtkTextBuffer *buffer
 void            gtk_text_buffer_end_user_action           (GtkTextBuffer *buffer);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif

@@ -33,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 #define GTK_TYPE_FRAME                  (gtk_frame_get_type ())
@@ -100,7 +100,7 @@ void       gtk_frame_set_child        (GtkFrame      *frame,
 GtkWidget *gtk_frame_get_child        (GtkFrame      *frame);
 
 
-// // // G_END_DECLS
+// // // // 
 
 
 #endif /* __GTK_FRAME_H__ */

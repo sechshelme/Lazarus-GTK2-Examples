@@ -27,7 +27,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_GRID                   (gtk_grid_get_type ())
 #define GTK_GRID(obj)                   (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_GRID, GtkGrid))
@@ -142,6 +142,6 @@ void       gtk_grid_query_child            (GtkGrid         *grid,
                                             int             *width,
                                             int             *height);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_GRID_H__ */

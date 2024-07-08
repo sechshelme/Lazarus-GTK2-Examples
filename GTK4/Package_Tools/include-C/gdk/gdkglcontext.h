@@ -28,7 +28,7 @@
 #include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 /**
  * GdkGLAPI:
@@ -114,6 +114,6 @@ GdkGLContext *          gdk_gl_context_get_current              (void);
 
 void                    gdk_gl_context_clear_current            (void);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_GL_CONTEXT_H__ */

@@ -34,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 
 int      gdk_x11_display_text_property_to_text_list (GdkDisplay   *display,
@@ -62,6 +62,6 @@ gboolean gdk_x11_display_utf8_to_compound_text      (GdkDisplay   *display,
 
 void     gdk_x11_free_compound_text                 (guchar       *ctext);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_X11_SELECTION_H__ */

@@ -27,7 +27,7 @@
 #include <gtk/gtk.h>
 #include <gtk/gtkprinter.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_PRINT_JOB                  (gtk_print_job_get_type ())
 #define GTK_PRINT_JOB(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINT_JOB, GtkPrintJob))
@@ -141,6 +141,6 @@ gboolean          gtk_print_job_get_reverse     (GtkPrintJob       *job);
 void              gtk_print_job_set_reverse     (GtkPrintJob       *job,
                                                  gboolean           reverse);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_PRINT_JOB_H__ */

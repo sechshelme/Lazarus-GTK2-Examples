@@ -26,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_BUILDER_SCOPE               (gtk_builder_scope_get_type ())
 
@@ -120,6 +120,6 @@ GCallback               gtk_builder_cscope_lookup_callback_symbol(GtkBuilderCSco
 						                  const char            *callback_name);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_BUILDER_SCOPE_H__ */

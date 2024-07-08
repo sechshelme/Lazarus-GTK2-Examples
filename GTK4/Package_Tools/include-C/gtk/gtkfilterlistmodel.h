@@ -29,7 +29,7 @@
 #include <gtk/gtkfilter.h>
 
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_FILTER_LIST_MODEL (gtk_filter_list_model_get_type ())
 
@@ -59,6 +59,6 @@ gboolean                gtk_filter_list_model_get_incremental   (GtkFilterListMo
 guint                   gtk_filter_list_model_get_pending       (GtkFilterListModel     *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_FILTER_LIST_MODEL_H__ */

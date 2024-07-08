@@ -26,7 +26,7 @@
 #include <gdk/gdkglcontext.h>
 #include <gdk/gdktexture.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_GL_TEXTURE (gdk_gl_texture_get_type ())
 
@@ -36,7 +36,7 @@
 typedef struct _GdkGLTexture            GdkGLTexture;
 typedef struct _GdkGLTextureClass       GdkGLTextureClass;
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GdkGLTexture, g_object_unref)
+
 
 
 GType                   gdk_gl_texture_get_type                (void) ;
@@ -53,6 +53,6 @@ GdkTexture *            gdk_gl_texture_new                     (GdkGLContext    
 void                    gdk_gl_texture_release                 (GdkGLTexture    *self);
 
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_GL_TEXTURE_H__ */

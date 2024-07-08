@@ -28,7 +28,7 @@
 
 #include <gdk/gdkmonitor.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_X11_MONITOR           (gdk_x11_monitor_get_type ())
 #define GDK_X11_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_MONITOR, GdkX11Monitor))
@@ -47,6 +47,6 @@ XID               gdk_x11_monitor_get_output          (GdkMonitor *monitor);
 void              gdk_x11_monitor_get_workarea        (GdkMonitor   *monitor,
                                                        GdkRectangle *workarea);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif  /* __GDK_X11_MONITOR_H__ */

@@ -32,7 +32,7 @@
 #include <vulkan/vulkan.h>
 #endif
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GDK_TYPE_VULKAN_CONTEXT             (gdk_vulkan_context_get_type ())
 #define GDK_VULKAN_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_VULKAN_CONTEXT, GdkVulkanContext))
@@ -77,6 +77,6 @@ VkSemaphore             gdk_vulkan_context_get_draw_semaphore       (GdkVulkanCo
 #endif /* GDK_RENDERING_VULKAN */
 #endif /* __GI_SCANNER__ */
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GDK_VULKAN_CONTEXT__ */

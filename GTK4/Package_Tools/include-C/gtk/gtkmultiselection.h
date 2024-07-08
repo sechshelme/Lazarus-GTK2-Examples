@@ -23,7 +23,7 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_MULTI_SELECTION (gtk_multi_selection_get_type ())
 
@@ -39,6 +39,6 @@ GListModel *        gtk_multi_selection_get_model          (GtkMultiSelection   
 void                gtk_multi_selection_set_model          (GtkMultiSelection    *self,
                                                             GListModel           *model);
 
-// // // G_END_DECLS
+// // // // 
 
 #endif /* __GTK_MULTI_SELECTION_H__ */

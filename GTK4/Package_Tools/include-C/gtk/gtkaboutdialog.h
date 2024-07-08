@@ -29,7 +29,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // // G_BEGIN_DECLS
+// // // // 
 
 #define GTK_TYPE_ABOUT_DIALOG            (gtk_about_dialog_get_type ())
 #define GTK_ABOUT_DIALOG(object)         (G_TYPE_CHECK_INSTANCE_CAST ((object), GTK_TYPE_ABOUT_DIALOG, GtkAboutDialog))
@@ -187,9 +187,9 @@ void                  gtk_about_dialog_add_credit_section      (GtkAboutDialog  
                                                                 const char      *section_name,
                                                                 const char     **people);
 
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(GtkAboutDialog, g_object_unref)
 
-// // // G_END_DECLS
+
+// // // // 
 
 #endif /* __GTK_ABOUT_DIALOG_H__ */
 
