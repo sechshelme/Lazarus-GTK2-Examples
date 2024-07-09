@@ -25,6 +25,26 @@ static void activate (GtkApplication *app, gpointer user_data)
   gtk_window_set_child (GTK_WINDOW (window), button);
 
   gtk_window_present (GTK_WINDOW (window));
+
+  GtkWindowClass *window_class = GTK_BUTTON_GET_CLASS(GTK_WINDOW(button));
+  g_print("Window class name: %s\n", G_OBJECT_CLASS_NAME(window_class));
+
+  gboolean is_win = GTK_IS_WINDOW_CLASS(window_class);
+  if (is_win) printf("true"); else  printf("false");
+
+
+
+
+  printf("win : %i\n",    window);
+  printf("win CLASS: %i\n",    GTK_WINDOW_CLASS(window));
+ printf("win GET_CLASS: %i\n", GTK_WINDOW_GET_CLASS(window));
+ printf("\n\n");
+
+
+
+printf("btn : %i\n",    button);
+  printf("btn CLASS: %i\n",    GTK_WINDOW_CLASS(button));
+ printf("btn GET_CLASS: %i\n", GTK_WINDOW_GET_CLASS(button));
 }
 
 int main (int argc, char **argv)
@@ -41,3 +61,4 @@ int main (int argc, char **argv)
 
   return status;
 }
+

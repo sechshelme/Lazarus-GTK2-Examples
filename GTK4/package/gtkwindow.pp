@@ -49,11 +49,8 @@ type
 
 function gtk_window_get_type: TGType; cdecl; external gtklib;
 function gtk_window_new: PGtkWidget; cdecl; external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_title(window: PGtkWindow; title: PChar); cdecl; external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_title(window: PGtkWindow): PChar; cdecl; external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_startup_id(window: PGtkWindow; startup_id: PChar); cdecl; external gtklib;
 procedure gtk_window_set_focus(window: PGtkWindow; focus: PGtkWidget); cdecl; external gtklib;
 function gtk_window_get_focus(window: PGtkWindow): PGtkWidget; cdecl; external gtklib;
@@ -77,16 +74,11 @@ procedure gtk_window_set_decorated(window: PGtkWindow; setting: Tgboolean); cdec
 function gtk_window_get_decorated(window: PGtkWindow): Tgboolean; cdecl; external gtklib;
 procedure gtk_window_set_deletable(window: PGtkWindow; setting: Tgboolean); cdecl; external gtklib;
 function gtk_window_get_deletable(window: PGtkWindow): Tgboolean; cdecl; external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_icon_name(window: PGtkWindow; Name: PChar); cdecl; external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_icon_name(window: PGtkWindow): PChar; cdecl; external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_default_icon_name(Name: PChar); cdecl; external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_default_icon_name: PChar; cdecl; external gtklib;
 procedure gtk_window_set_auto_startup_notification(setting: Tgboolean); cdecl; external gtklib;
-{ If window is set modal, input will be grabbed when show and released when hide  }
 procedure gtk_window_set_modal(window: PGtkWindow; modal: Tgboolean); cdecl; external gtklib;
 function gtk_window_get_modal(window: PGtkWindow): Tgboolean; cdecl; external gtklib;
 function gtk_window_get_toplevels: PGListModel; cdecl; external gtklib;
@@ -101,9 +93,6 @@ procedure gtk_window_fullscreen(window: PGtkWindow); cdecl; external gtklib;
 procedure gtk_window_unfullscreen(window: PGtkWindow); cdecl; external gtklib;
 procedure gtk_window_fullscreen_on_monitor(window: PGtkWindow; monitor: PGdkMonitor); cdecl; external gtklib;
 procedure gtk_window_close(window: PGtkWindow); cdecl; external gtklib;
-{ Set initial default size of the window (does not constrain user
- * resize operations)
-  }
 procedure gtk_window_set_default_size(window: PGtkWindow; Width: longint; Height: longint); cdecl; external gtklib;
 procedure gtk_window_get_default_size(window: PGtkWindow; Width: Plongint; Height: Plongint); cdecl; external gtklib;
 function gtk_window_get_group(window: PGtkWindow): PGtkWindowGroup; cdecl; external gtklib;
