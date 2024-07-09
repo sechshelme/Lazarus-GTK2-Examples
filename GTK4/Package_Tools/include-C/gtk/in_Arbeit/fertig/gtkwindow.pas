@@ -165,24 +165,24 @@ begin
   Result := PGtkWindow(g_type_check_instance_cast(obj, GTK_TYPE_WINDOW));
 end;
 
-function GTK_WINDOW_CLASS(klass : Pointer) : Tgboolean;
+function GTK_WINDOW_CLASS(klass : Pointer) : PGtkWindowClass;
 begin
   Result := PGtkWindowClass(g_type_check_class_cast(klass, GTK_TYPE_WINDOW));
 end;
 
 function GTK_IS_WINDOW(obj : Pointer) : Tgboolean;
 begin
-  Result := g_type_check_instance_is_a(obj,  GTK_TYPE_WINDOW));
+  Result := g_type_check_instance_is_a(obj,  GTK_TYPE_WINDOW);
 end;
 
 function GTK_IS_WINDOW_CLASS(klass : Pointer) : Tgboolean;
 begin
-  Result := g_type_check_class_is_a(klass,  GTK_TYPE_WINDOW));
+  Result := g_type_check_class_is_a(klass,  GTK_TYPE_WINDOW);
 end;
 
 function GTK_WINDOW_GET_CLASS(obj : Pointer) : PGtkWindowClass;
 begin
-  Result := PGtkWindowClass(g_type_check_class_cast(obj, GTK_TYPE_WINDOW));
+  Result := PGtkWindowClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

@@ -146,7 +146,8 @@ end;
 
 function GTK_WINDOW_GET_CLASS(obj: Pointer): PGtkWindowClass;
 begin
-  Result := PGtkWindowClass(g_type_check_class_cast(obj, GTK_TYPE_WINDOW));
+//  Result := PGtkWindowClass(g_type_check_class_cast(obj, GTK_TYPE_WINDOW));
+  Result := PGtkWindowClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

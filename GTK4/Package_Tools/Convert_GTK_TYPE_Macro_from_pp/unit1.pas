@@ -139,12 +139,12 @@ begin
 
   // GTK_WINDOW_CLASS
   Inc(p, 3);
+  gtkWidgetClass := FindGTKWidget(sl[p+2]);
+  WriteLn('gtkWidgetClass: ', gtkWidgetClass);
   sl[p] := StringReplace(sl[p], 'klass : longint', 'klass : Pointer', []);
-  sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
+  sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
 
   Inc(p, 2);
-  gtkWidgetClass := FindGTKWidget(sl[p]);
-  WriteLn('gtkWidgetClass: ', gtkWidgetClass);
   sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(klass, ' + GTK_TYPE_XXX + '));';
 
   // GTK_IS_WINDOW
@@ -153,7 +153,7 @@ begin
   sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
 
   Inc(p, 2);
-  sl[p] := '  Result := g_type_check_instance_is_a(obj,  ' + GTK_TYPE_XXX + '));';
+  sl[p] := '  Result := g_type_check_instance_is_a(obj,  ' + GTK_TYPE_XXX + ');';
 
   // GTK_IS_WINDOW_CLASS
   Inc(p, 3);
@@ -161,7 +161,7 @@ begin
   sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
 
   Inc(p, 2);
-  sl[p] := '  Result := g_type_check_class_is_a(klass,  ' + GTK_TYPE_XXX + '));';
+  sl[p] := '  Result := g_type_check_class_is_a(klass,  ' + GTK_TYPE_XXX + ');';
 
   // GTK_WINDOW_GET_CLASS
   Inc(p, 3);
@@ -169,7 +169,8 @@ begin
   sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
 
   Inc(p, 2);
-  sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(obj, ' + GTK_TYPE_XXX + '));';
+//  sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(obj, ' + GTK_TYPE_XXX + '));';
+  sl[p] := '  Result := ' + gtkWidgetClass + '(PGTypeInstance(obj)^.g_class);';
 
   WriteLn();
   WriteLn();
