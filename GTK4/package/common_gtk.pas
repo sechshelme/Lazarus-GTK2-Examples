@@ -62,6 +62,10 @@ type
     parent_instance: TGApplication;
   end;
 
+  // ????????'
+// function gtk_ordering_from_cmpfunc(cmpfunc_result:longint):TGtkOrdering;cdecl;external;
+
+
 
   // ==========
 

@@ -595,11 +595,11 @@ GtkOrdering     gtk_ordering_from_cmpfunc       (int cmpfunc_result);
  *
  * Returns: the corresponding `GtkOrdering`
  **/
-static inline GtkOrdering
-gtk_ordering_from_cmpfunc (int cmpfunc_result)
-{
-  return (GtkOrdering) ((cmpfunc_result > 0) - (cmpfunc_result < 0));
-}
+//static inline GtkOrdering
+//gtk_ordering_from_cmpfunc (int cmpfunc_result)
+//{
+//  return (GtkOrdering) ((cmpfunc_result > 0) - (cmpfunc_result < 0));
+//}
 #endif
 
 /**
