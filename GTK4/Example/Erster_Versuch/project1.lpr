@@ -4,7 +4,9 @@ uses
   glib2,
   common_GTK,
   gtkapplication,
+  gtkapplicationwindow,
   gtkwindow,
+  gtkbox,
   gtkbutton,
 
   Math;
@@ -25,7 +27,10 @@ uses
 //  PGtkApplication = ^TGtkApplication;
 
 //  function gtk_application_new(application_id: PChar; flags: int64): PGtkApplication; cdecl; external gtklib;
+//  function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
+
   function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
+
 //  procedure gtk_window_present(window: PGtkWindow); cdecl; external gtklib;
 //  function gtk_button_new_with_label(_label: PChar): PGtkWidget; cdecl; external gtklib;
 //  procedure gtk_window_set_child(window: PGtkWindow; child: PGtkWidget); cdecl; external gtklib;
@@ -63,12 +68,12 @@ uses
 
 // ------- Eigenes
 
-  procedure btn_Click(button: PGTKWidget; user_data: Pointer);
+  procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
   begin
     WriteLn(gtk_button_get_label(GTK_BUTTON( button)));
   end;
 
-  procedure activate(app: PGtkApplication; user_data: Pointer);
+  procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, button: PGTKWidget;
     window_class: PGtkWindowClass;
@@ -76,7 +81,7 @@ uses
     window := gtk_application_window_new(app);
 
     gtk_window_set_default_size(GTK_WINDOW( window), 640, 480);
-    gtk_window_set_title(GTK_WINDOW( window), 'Hello GTK-4');
+   // gtk_window_set_title(GTK_WINDOW( window), 'Hello GTK-4');
 
     button := gtk_button_new_with_label('Button 1');
     //    gtk_widget_set_size_request(button, 75, 25);

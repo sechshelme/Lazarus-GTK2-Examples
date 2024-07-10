@@ -15,14 +15,29 @@ static void activate (GtkApplication *app, gpointer user_data)
 {
   GtkWidget *window;
   GtkWidget *button;
+  GtkWidget *box;
 
   window = gtk_application_window_new (app);
   gtk_window_set_title (GTK_WINDOW (window), "Window");
   gtk_window_set_default_size (GTK_WINDOW (window), 200, 200);
 
+  box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+  gtk_window_set_child(GTK_WINDOW(window), box);
+
+    GtkWidget *button1 = gtk_button_new_with_label("Button 1");
+    gtk_box_append(GTK_BOX(box), button1);
+
+    GtkWidget *button2 = gtk_button_new_with_label("Button 2");
+    gtk_box_append(GTK_BOX(box), button2);
+
+    GtkWidget *button3 = gtk_button_new_with_label("Button 3");
+    gtk_box_append(GTK_BOX(box), button3);
+
+
+
   button = gtk_button_new_with_label ("Button");
   g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-  gtk_window_set_child (GTK_WINDOW (window), button);
+//  gtk_window_set_child (GTK_WINDOW (window), button);
 
   gtk_window_present (GTK_WINDOW (window));
 

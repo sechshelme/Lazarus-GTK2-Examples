@@ -30,11 +30,8 @@ type
 
 function gtk_window_get_type:TGType;cdecl;external gtklib;
 function gtk_window_new:PGtkWidget;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_title(window:PGtkWindow; title:Pchar);cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_title(window:PGtkWindow):Pchar;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_startup_id(window:PGtkWindow; startup_id:Pchar);cdecl;external gtklib;
 procedure gtk_window_set_focus(window:PGtkWindow; focus:PGtkWidget);cdecl;external gtklib;
 function gtk_window_get_focus(window:PGtkWindow):PGtkWidget;cdecl;external gtklib;
@@ -58,13 +55,9 @@ procedure gtk_window_set_decorated(window:PGtkWindow; setting:Tgboolean);cdecl;e
 function gtk_window_get_decorated(window:PGtkWindow):Tgboolean;cdecl;external gtklib;
 procedure gtk_window_set_deletable(window:PGtkWindow; setting:Tgboolean);cdecl;external gtklib;
 function gtk_window_get_deletable(window:PGtkWindow):Tgboolean;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_icon_name(window:PGtkWindow; name:Pchar);cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_icon_name(window:PGtkWindow):Pchar;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_window_set_default_icon_name(name:Pchar);cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_window_get_default_icon_name:Pchar;cdecl;external gtklib;
 procedure gtk_window_set_auto_startup_notification(setting:Tgboolean);cdecl;external gtklib;
 { If window is set modal, input will be grabbed when show and released when hide  }

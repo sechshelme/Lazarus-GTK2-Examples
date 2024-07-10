@@ -28,23 +28,16 @@ type
 
 function gtk_button_get_type:TGType;cdecl;external gtklib;
 function gtk_button_new:PGtkWidget;cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_button_new_with_label(_label:Pchar):PGtkWidget;cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_button_new_from_icon_name(icon_name:Pchar):PGtkWidget;cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_button_new_with_mnemonic(_label:Pchar):PGtkWidget;cdecl;external gtklib;
 procedure gtk_button_set_has_frame(button:PGtkButton; has_frame:Tgboolean);cdecl;external gtklib;
 function gtk_button_get_has_frame(button:PGtkButton):Tgboolean;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_button_set_label(button:PGtkButton; _label:Pchar);cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_button_get_label(button:PGtkButton):Pchar;cdecl;external gtklib;
 procedure gtk_button_set_use_underline(button:PGtkButton; use_underline:Tgboolean);cdecl;external gtklib;
 function gtk_button_get_use_underline(button:PGtkButton):Tgboolean;cdecl;external gtklib;
-(* Const before type ignored *)
 procedure gtk_button_set_icon_name(button:PGtkButton; icon_name:Pchar);cdecl;external gtklib;
-(* Const before type ignored *)
 function gtk_button_get_icon_name(button:PGtkButton):Pchar;cdecl;external gtklib;
 procedure gtk_button_set_child(button:PGtkButton; child:PGtkWidget);cdecl;external gtklib;
 function gtk_button_get_child(button:PGtkButton):PGtkWidget;cdecl;external gtklib;

@@ -48,11 +48,20 @@ type
   TGtkWindowGroup=Pointer;   // rec
   PGtkWindowGroup=^TGtkWindowGroup;
 
+  TGtkShortcutsWindow=Pointer;  //  == _GtkShortcutsWindow
+  PGtkShortcutsWindow=^TGtkShortcutsWindow;
+
   TGListModel=Pointer;         // ???
   PGListModel=^TGListModel;
 
-  TGtkApplication=Pointer;         // rec
-  PGtkApplication=^TGtkApplication;
+
+  // === Zwingend ausgelagertes
+
+    PGtkApplication = ^TGtkApplication;
+  TGtkApplication = record
+    parent_instance: TGApplication;
+  end;
+
 
   // ==========
 
@@ -70,9 +79,6 @@ type
 
   function g_type_check_class_cast(g_class:PGTypeClass; is_a_type:TGType):PGTypeClass ;cdecl;external gtklib;
   function g_type_check_class_is_a(instance:PGTypeClass; is_a_type:GType):gboolean; cdecl; external gobjectlib;
-
-
-//  GTypeInstance*   g_type_check_instance_cast     (GTypeInstance      *instance,   GType   iface_type);
 
 
 implementation
