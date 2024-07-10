@@ -71,6 +71,7 @@ uses
   procedure activate(app: PGtkApplication; user_data: Pointer);
   var
     window, button: PGTKWidget;
+    window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
 
@@ -80,13 +81,23 @@ uses
     button := gtk_button_new_with_label('Button 1');
     //    gtk_widget_set_size_request(button, 75, 25);
 
+    window_class:=GTK_WINDOW_GET_CLASS(window);
+    WriteLn('win class: ',G_OBJECT_CLASS_NAME(window_class));
+    WriteLn('win is_class: ',GTK_IS_WINDOW_CLASS(window_class));
+
+    window_class:=GTK_WINDOW_GET_CLASS(button);
+    WriteLn('btn class: ',G_OBJECT_CLASS_NAME(window_class));
+    WriteLn('btn is_class: ',GTK_IS_WINDOW_CLASS(window_class));
+
     g_signal_connect(button, 'clicked', G_CALLBACK(@btn_Click), nil);
     gtk_window_set_child(GTK_WINDOW( window), button);
 
     gtk_window_present(GTK_WINDOW( window));
 
-    WriteLn(GTK_IS_WINDOW(window));
-    WriteLn(GTK_IS_WINDOW(button));
+    WriteLn('is win: ', GTK_IS_WINDOW(window));
+    WriteLn('is win: ', GTK_IS_WINDOW(button));
+    WriteLn('is btn: ', GTK_IS_BUTTON(button));
+    WriteLn('is btn: ', GTK_IS_BUTTON(window));
   end;
 
   procedure main;
