@@ -483,16 +483,16 @@ void                  gtk_widget_get_allocation         (GtkWidget     *widget,
 
 gboolean                gtk_widget_compute_transform            (GtkWidget              *widget,
                                                                  GtkWidget              *target,
-                                                                 graphene_matrix_t      *out_transform) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 graphene_matrix_t      *out_transform) ;
 
 gboolean                gtk_widget_compute_bounds               (GtkWidget              *widget,
                                                                  GtkWidget              *target,
-                                                                 graphene_rect_t        *out_bounds) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 graphene_rect_t        *out_bounds) ;
 
 gboolean                gtk_widget_compute_point                (GtkWidget              *widget,
                                                                  GtkWidget              *target,
                                                                  const graphene_point_t *point,
-                                                                 graphene_point_t       *out_point) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 graphene_point_t       *out_point) ;
 
 
 int                   gtk_widget_get_width              (GtkWidget     *widget);
@@ -697,7 +697,7 @@ gboolean        gtk_widget_get_has_tooltip              (GtkWidget   *widget);
 
 GType           gtk_requisition_get_type (void) ;
 
-GtkRequisition *gtk_requisition_new      (void) G_GNUC_MALLOC;
+GtkRequisition *gtk_requisition_new      (void) ;
 
 GtkRequisition *gtk_requisition_copy     (const GtkRequisition *requisition);
 
@@ -737,10 +737,10 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
  * supported after gtk_widget_class_set_template_scope() has been used
  * on @widget_class.
  */
-#define gtk_widget_class_bind_template_callback(widget_class, callback) \
-  gtk_widget_class_bind_template_callback_full (GTK_WIDGET_CLASS (widget_class), \
-                                                #callback, \
-                                                G_CALLBACK (callback))
+//#define gtk_widget_class_bind_template_callback(widget_class, callback) \
+//  gtk_widget_class_bind_template_callback_full (GTK_WIDGET_CLASS (widget_class), \
+//                                                #callback, \
+//                                                G_CALLBACK (callback))
 
 /**
  * gtk_widget_class_bind_template_child:
@@ -756,11 +756,11 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
  * This macro will use the offset of the @member_name inside the @TypeName
  * instance structure.
  */
-#define gtk_widget_class_bind_template_child(widget_class, TypeName, member_name) \
-  gtk_widget_class_bind_template_child_full (widget_class, \
-                                             #member_name, \
-                                             FALSE, \
-                                             G_STRUCT_OFFSET (TypeName, member_name))
+//#define gtk_widget_class_bind_template_child(widget_class, TypeName, member_name) \
+//  gtk_widget_class_bind_template_child_full (widget_class, \
+//                                             #member_name, \
+//                                             FALSE, \
+//                                             G_STRUCT_OFFSET (TypeName, member_name))
 
 /**
  * gtk_widget_class_bind_template_child_internal:
@@ -778,11 +778,11 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
  * This macro will use the offset of the @member_name inside the @TypeName
  * instance structure.
  */
-#define gtk_widget_class_bind_template_child_internal(widget_class, TypeName, member_name) \
-  gtk_widget_class_bind_template_child_full (widget_class, \
-                                             #member_name, \
-                                             TRUE, \
-                                             G_STRUCT_OFFSET (TypeName, member_name))
+//#define gtk_widget_class_bind_template_child_internal(widget_class, TypeName, member_name) \
+//  gtk_widget_class_bind_template_child_full (widget_class, \
+//                                             #member_name, \
+//                                             TRUE, \
+//                                             G_STRUCT_OFFSET (TypeName, member_name))
 
 /**
  * gtk_widget_class_bind_template_child_private:
@@ -799,11 +799,11 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
  * private data structure (it uses G_PRIVATE_OFFSET(), so the private struct
  * must be added with G_ADD_PRIVATE()).
  */
-#define gtk_widget_class_bind_template_child_private(widget_class, TypeName, member_name) \
-  gtk_widget_class_bind_template_child_full (widget_class, \
-                                             #member_name, \
-                                             FALSE, \
-                                             G_PRIVATE_OFFSET (TypeName, member_name))
+//#define gtk_widget_class_bind_template_child_private(widget_class, TypeName, member_name) \
+//  gtk_widget_class_bind_template_child_full (widget_class, \
+//                                             #member_name, \
+//                                             FALSE, \
+//                                             G_PRIVATE_OFFSET (TypeName, member_name))
 
 /**
  * gtk_widget_class_bind_template_child_internal_private:
@@ -821,11 +821,11 @@ void gtk_widget_remove_tick_callback (GtkWidget       *widget,
  * This macro will use the offset of the @member_name inside the @TypeName
  * private data structure.
  */
-#define gtk_widget_class_bind_template_child_internal_private(widget_class, TypeName, member_name) \
-  gtk_widget_class_bind_template_child_full (widget_class, \
-                                             #member_name, \
-                                             TRUE, \
-                                             G_PRIVATE_OFFSET (TypeName, member_name))
+//#define gtk_widget_class_bind_template_child_internal_private(widget_class, TypeName, member_name) \
+//  gtk_widget_class_bind_template_child_full (widget_class, \
+//                                             #member_name, \
+//                                             TRUE, \
+//                                             G_PRIVATE_OFFSET (TypeName, member_name))
 
 
 void    gtk_widget_init_template                        (GtkWidget             *widget);
@@ -909,7 +909,7 @@ void                    gtk_widget_snapshot_child       (GtkWidget   *widget,
 
 gboolean                gtk_widget_should_layout        (GtkWidget   *widget);
 
-const char *            gtk_widget_get_css_name         (GtkWidget   *self) G_GNUC_PURE;
+const char *            gtk_widget_get_css_name         (GtkWidget   *self) ;
 
 void                    gtk_widget_add_css_class        (GtkWidget   *widget,
                                                          const char  *css_class);

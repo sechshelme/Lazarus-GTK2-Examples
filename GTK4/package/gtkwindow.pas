@@ -3,7 +3,7 @@ unit gtkwindow;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK,gtkwidget;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

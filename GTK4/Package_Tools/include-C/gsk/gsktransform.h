@@ -80,50 +80,50 @@ void                    gsk_transform_to_translate              (GskTransform   
                                                                  float                          *out_dy);
 
 
-GskTransformCategory    gsk_transform_get_category              (GskTransform                   *self) G_GNUC_PURE;
+GskTransformCategory    gsk_transform_get_category              (GskTransform                   *self) ;
 
 gboolean                gsk_transform_equal                     (GskTransform                   *first,
-                                                                 GskTransform                   *second) G_GNUC_PURE;
+                                                                 GskTransform                   *second) ;
 
 
 GskTransform *          gsk_transform_new                       (void);
 
 GskTransform *          gsk_transform_transform                 (GskTransform                   *next,
-                                                                 GskTransform                   *other) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 GskTransform                   *other) ;
 
-GskTransform *          gsk_transform_invert                    (GskTransform                   *self) G_GNUC_WARN_UNUSED_RESULT;
+GskTransform *          gsk_transform_invert                    (GskTransform                   *self) ;
 
 GskTransform *          gsk_transform_matrix                    (GskTransform                   *next,
-                                                                 const graphene_matrix_t        *matrix) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 const graphene_matrix_t        *matrix) ;
 
 GskTransform *          gsk_transform_translate                 (GskTransform                   *next,
-                                                                 const graphene_point_t         *point) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 const graphene_point_t         *point) ;
 
 GskTransform *          gsk_transform_translate_3d              (GskTransform                   *next,
-                                                                 const graphene_point3d_t       *point) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 const graphene_point3d_t       *point) ;
 GDK_AVAILABLE_IN_4_6
 GskTransform *          gsk_transform_skew                      (GskTransform                   *next,
                                                                  float                           skew_x,
-                                                                 float                           skew_y) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 float                           skew_y) ;
 
 GskTransform *          gsk_transform_rotate                    (GskTransform                   *next,
-                                                                 float                           angle) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 float                           angle) ;
 
 GskTransform *          gsk_transform_rotate_3d                 (GskTransform                   *next,
                                                                  float                           angle,
-                                                                 const graphene_vec3_t          *axis) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 const graphene_vec3_t          *axis) ;
 
 GskTransform *          gsk_transform_scale                     (GskTransform                   *next,
                                                                  float                           factor_x,
-                                                                 float                           factor_y) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 float                           factor_y) ;
 
 GskTransform *          gsk_transform_scale_3d                  (GskTransform                   *next,
                                                                  float                           factor_x,
                                                                  float                           factor_y,
-                                                                 float                           factor_z) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 float                           factor_z) ;
 
 GskTransform *          gsk_transform_perspective               (GskTransform                   *next,
-                                                                 float                           depth) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 float                           depth) ;
 
 
 void                    gsk_transform_transform_bounds          (GskTransform                   *self,

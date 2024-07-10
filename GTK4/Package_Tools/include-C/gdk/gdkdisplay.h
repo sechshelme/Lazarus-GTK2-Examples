@@ -99,7 +99,7 @@ GdkSeat * gdk_display_get_default_seat (GdkDisplay *display);
 GList   * gdk_display_list_seats       (GdkDisplay *display);
 
 
-GListModel * gdk_display_get_monitors          (GdkDisplay *self) G_GNUC_PURE;
+GListModel * gdk_display_get_monitors          (GdkDisplay *self) ;
 
 GdkMonitor * gdk_display_get_monitor_at_surface (GdkDisplay *display,
                                                 GdkSurface  *surface);

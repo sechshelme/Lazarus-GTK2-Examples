@@ -62,7 +62,7 @@ const char * const *    gdk_content_formats_get_mime_types      (const GdkConten
 
 
 GdkContentFormats *     gdk_content_formats_union               (GdkContentFormats              *first,
-                                                                 const GdkContentFormats        *second) G_GNUC_WARN_UNUSED_RESULT;
+                                                                 const GdkContentFormats        *second) ;
 
 gboolean                gdk_content_formats_match               (const GdkContentFormats        *first,
                                                                  const GdkContentFormats        *second);
@@ -93,9 +93,9 @@ GdkContentFormatsBuilder *gdk_content_formats_builder_ref       (GdkContentForma
 
 void                    gdk_content_formats_builder_unref       (GdkContentFormatsBuilder       *builder);
 
-GdkContentFormats *     gdk_content_formats_builder_free_to_formats (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
+GdkContentFormats *     gdk_content_formats_builder_free_to_formats (GdkContentFormatsBuilder  *builder) ;
 
-GdkContentFormats *     gdk_content_formats_builder_to_formats  (GdkContentFormatsBuilder  *builder) G_GNUC_WARN_UNUSED_RESULT;
+GdkContentFormats *     gdk_content_formats_builder_to_formats  (GdkContentFormatsBuilder  *builder) ;
 
 void                    gdk_content_formats_builder_add_formats (GdkContentFormatsBuilder       *builder,
                                                                  const GdkContentFormats        *formats);

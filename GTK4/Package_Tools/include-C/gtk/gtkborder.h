@@ -60,7 +60,7 @@ struct _GtkBorder
 
 GType      gtk_border_get_type (void) ;
 
-GtkBorder *gtk_border_new      (void) G_GNUC_MALLOC;
+GtkBorder *gtk_border_new      (void) ;
 
 GtkBorder *gtk_border_copy     (const GtkBorder *border_);
 

@@ -4,6 +4,7 @@ uses
   glib2,
   common_GTK,
   gtkenums,
+  gtkwidget     ,
   gtkapplication,
   gtkapplicationwindow,
   gtkwindow,
@@ -41,7 +42,7 @@ uses
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, box, button1, button2, button3: PGTKWidget;
+    window, hbox, button1, button2, button3, button4: PGTKWidget;
     window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
@@ -49,22 +50,27 @@ uses
     gtk_window_set_default_size(GTK_WINDOW(window), 320, 200);
     gtk_window_set_title(GTK_WINDOW(window), 'Hello GTK-4');
 
-    box := gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
-    gtk_window_set_child(GTK_WINDOW(window), box);
+    hbox := gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
+    gtk_window_set_child(GTK_WINDOW(window), hbox);
 
     button1 := gtk_button_new_with_label('Button 1');
-    gtk_box_append(GTK_BOX(box), button1);
+    gtk_box_append(GTK_BOX(hbox), button1);
     g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), nil);
     //    gtk_widget_set_size_request(button, 75, 25);
 
     button2 := gtk_button_new_with_label('Button 2');
-    gtk_box_append(GTK_BOX(box), button2);
+    gtk_box_append(GTK_BOX(hbox), button2);
     g_signal_connect(button2, 'clicked', G_CALLBACK(@btn_Click), nil);
     //    gtk_widget_set_size_request(button, 75, 25);
 
     button3 := gtk_button_new_with_label('Button 3');
-    gtk_box_append(GTK_BOX(box), button3);
+    gtk_box_append(GTK_BOX(hbox), button3);
     g_signal_connect(button3, 'clicked', G_CALLBACK(@btn_Click), nil);
+    //    gtk_widget_set_size_request(button, 75, 25);
+
+    button4 := gtk_button_new_with_label('Button 4');
+    gtk_box_append(GTK_BOX(hbox), button4);
+    g_signal_connect(button4, 'clicked', G_CALLBACK(@btn_Click), nil);
     //    gtk_widget_set_size_request(button, 75, 25);
 
     gtk_window_present(GTK_WINDOW(window));

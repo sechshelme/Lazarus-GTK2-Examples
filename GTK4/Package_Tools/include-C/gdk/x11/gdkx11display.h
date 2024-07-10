@@ -121,7 +121,7 @@ void        gdk_x11_display_set_surface_scale (GdkDisplay *display,
 void                           gdk_x11_display_error_trap_push        (GdkDisplay *display);
 /* warn unused because you could use pop_ignored otherwise */
 
-G_GNUC_WARN_UNUSED_RESULT int  gdk_x11_display_error_trap_pop         (GdkDisplay *display);
+ int  gdk_x11_display_error_trap_pop         (GdkDisplay *display);
 
 void                           gdk_x11_display_error_trap_pop_ignored (GdkDisplay *display);
 

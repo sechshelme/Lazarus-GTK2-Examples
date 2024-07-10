@@ -220,24 +220,24 @@ GAppInfo *            gtk_recent_info_create_app_info      (GtkRecentInfo  *info
                                                             GError        **error);
 
 char **              gtk_recent_info_get_applications     (GtkRecentInfo  *info,
-							    gsize          *length) G_GNUC_MALLOC;
+							    gsize          *length) ;
 
-char *               gtk_recent_info_last_application     (GtkRecentInfo  *info) G_GNUC_MALLOC;
+char *               gtk_recent_info_last_application     (GtkRecentInfo  *info) ;
 
 gboolean              gtk_recent_info_has_application      (GtkRecentInfo  *info,
 							    const char     *app_name);
 
 char **              gtk_recent_info_get_groups           (GtkRecentInfo  *info,
-							    gsize          *length) G_GNUC_MALLOC;
+							    gsize          *length) ;
 
 gboolean              gtk_recent_info_has_group            (GtkRecentInfo  *info,
 							    const char     *group_name);
 
 GIcon *               gtk_recent_info_get_gicon            (GtkRecentInfo  *info);
 
-char *               gtk_recent_info_get_short_name       (GtkRecentInfo  *info) G_GNUC_MALLOC;
+char *               gtk_recent_info_get_short_name       (GtkRecentInfo  *info) ;
 
-char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info) G_GNUC_MALLOC;
+char *               gtk_recent_info_get_uri_display      (GtkRecentInfo  *info) ;
 
 int                   gtk_recent_info_get_age              (GtkRecentInfo  *info);
 

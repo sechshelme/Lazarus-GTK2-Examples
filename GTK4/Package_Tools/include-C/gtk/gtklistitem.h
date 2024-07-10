@@ -44,16 +44,16 @@ GType           gtk_list_item_get_type                          (void) ;
 
 gpointer        gtk_list_item_get_item                          (GtkListItem            *self);
 
-guint           gtk_list_item_get_position                      (GtkListItem            *self) G_GNUC_PURE;
+guint           gtk_list_item_get_position                      (GtkListItem            *self) ;
 
-gboolean        gtk_list_item_get_selected                      (GtkListItem            *self) G_GNUC_PURE;
+gboolean        gtk_list_item_get_selected                      (GtkListItem            *self) ;
 
-gboolean        gtk_list_item_get_selectable                    (GtkListItem            *self) G_GNUC_PURE;
+gboolean        gtk_list_item_get_selectable                    (GtkListItem            *self) ;
 
 void            gtk_list_item_set_selectable                    (GtkListItem            *self,
                                                                  gboolean                selectable);
 
-gboolean        gtk_list_item_get_activatable                   (GtkListItem            *self) G_GNUC_PURE;
+gboolean        gtk_list_item_get_activatable                   (GtkListItem            *self) ;
 
 void            gtk_list_item_set_activatable                   (GtkListItem            *self,
                                                                  gboolean                activatable);

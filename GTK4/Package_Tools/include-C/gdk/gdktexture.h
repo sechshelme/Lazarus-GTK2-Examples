@@ -81,9 +81,9 @@ GdkTexture *            gdk_texture_new_from_bytes             (GBytes          
                                                                 GError         **error);
 
 
-int                     gdk_texture_get_width                  (GdkTexture      *texture) G_GNUC_PURE;
+int                     gdk_texture_get_width                  (GdkTexture      *texture) ;
 
-int                     gdk_texture_get_height                 (GdkTexture      *texture) G_GNUC_PURE;
+int                     gdk_texture_get_height                 (GdkTexture      *texture) ;
 
 
 void                    gdk_texture_download                   (GdkTexture      *texture,

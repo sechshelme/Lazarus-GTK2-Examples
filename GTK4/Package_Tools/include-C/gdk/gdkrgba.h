@@ -53,21 +53,21 @@ GdkRGBA * gdk_rgba_copy      (const GdkRGBA *rgba);
 void      gdk_rgba_free      (GdkRGBA       *rgba);
 
 
-gboolean  gdk_rgba_is_clear  (const GdkRGBA *rgba) G_GNUC_PURE;
+gboolean  gdk_rgba_is_clear  (const GdkRGBA *rgba) ;
 
-gboolean  gdk_rgba_is_opaque (const GdkRGBA *rgba) G_GNUC_PURE;
+gboolean  gdk_rgba_is_opaque (const GdkRGBA *rgba) ;
 
 
-guint     gdk_rgba_hash      (gconstpointer  p) G_GNUC_PURE;
+guint     gdk_rgba_hash      (gconstpointer  p) ;
 
 gboolean  gdk_rgba_equal     (gconstpointer  p1,
-                              gconstpointer  p2) G_GNUC_PURE;
+                              gconstpointer  p2) ;
 
 
 gboolean  gdk_rgba_parse     (GdkRGBA       *rgba,
                               const char    *spec);
 
-char *   gdk_rgba_to_string (const GdkRGBA *rgba) G_GNUC_MALLOC;
+char *   gdk_rgba_to_string (const GdkRGBA *rgba) ;
 
 
 // // // // 
