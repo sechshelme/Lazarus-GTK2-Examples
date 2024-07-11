@@ -18,8 +18,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_GL_AREA_H__
-#define __GTK_GL_AREA_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GL_AREA                (gtk_gl_area_get_type ())
 #define GTK_GL_AREA(obj)                (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_GL_AREA, GtkGLArea))
@@ -77,10 +76,19 @@ GType gtk_gl_area_get_type (void) ;
 GtkWidget *     gtk_gl_area_new                         (void);
 
 
+void            gtk_gl_area_set_allowed_apis            (GtkGLArea    *area,
+                                                         GdkGLAPI      apis);
+
+GdkGLAPI        gtk_gl_area_get_allowed_apis            (GtkGLArea    *area);
+
+GdkGLAPI        gtk_gl_area_get_api                     (GtkGLArea    *area);
+
+GDK_DEPRECATED_IN_4_12_FOR(gtk_gl_area_set_allowed_apis)
 void            gtk_gl_area_set_use_es                  (GtkGLArea    *area,
                                                          gboolean      use_es);
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_gl_area_get_api)
 gboolean        gtk_gl_area_get_use_es                  (GtkGLArea    *area);
+
 
 void            gtk_gl_area_set_required_version        (GtkGLArea    *area,
                                                          int           major,
@@ -122,6 +130,7 @@ void            gtk_gl_area_set_error                   (GtkGLArea    *area,
 
 GError *        gtk_gl_area_get_error                   (GtkGLArea    *area);
 
-// // // // 
 
-#endif /* __GTK_GL_AREA_H__ */
+
+
+

@@ -17,13 +17,12 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_MULTI_SELECTION_H__
-#define __GTK_MULTI_SELECTION_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // // 
+
 
 #define GTK_TYPE_MULTI_SELECTION (gtk_multi_selection_get_type ())
 
@@ -39,6 +38,5 @@ GListModel *        gtk_multi_selection_get_model          (GtkMultiSelection   
 void                gtk_multi_selection_set_model          (GtkMultiSelection    *self,
                                                             GListModel           *model);
 
-// // // // 
 
-#endif /* __GTK_MULTI_SELECTION_H__ */
+

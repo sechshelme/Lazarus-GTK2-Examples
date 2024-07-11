@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_WAYLAND_DISPLAY_H__
-#define __GDK_WAYLAND_DISPLAY_H__
+#pragma once
 
 #if !defined (__GDKWAYLAND_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/wayland/gdkwayland.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <wayland-client.h>
 
-// // // // 
+
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDisplay GdkWaylandDisplay;
@@ -53,9 +52,9 @@ struct wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *dis
 void                    gdk_wayland_display_set_cursor_theme    (GdkDisplay  *display,
                                                                  const char *name,
                                                                  int          size);
-
+GDK_DEPRECATED_IN_4_10
 const char *           gdk_wayland_display_get_startup_notification_id (GdkDisplay *display);
-
+GDK_DEPRECATED_IN_4_10_FOR(gdk_toplevel_set_startup_id)
 void                    gdk_wayland_display_set_startup_notification_id (GdkDisplay *display,
                                                                          const char *startup_id);
 
@@ -66,6 +65,5 @@ gboolean                gdk_wayland_display_query_registry      (GdkDisplay  *di
 GDK_AVAILABLE_IN_4_4
 gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *display);
 
-// // // // 
 
-#endif /* __GDK_WAYLAND_DISPLAY_H__ */
+

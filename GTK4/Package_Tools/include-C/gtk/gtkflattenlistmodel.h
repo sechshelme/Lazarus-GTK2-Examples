@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_FLATTEN_LIST_MODEL_H__
-#define __GTK_FLATTEN_LIST_MODEL_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -28,7 +27,7 @@
 #include <gdk/gdk.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_FLATTEN_LIST_MODEL (gtk_flatten_list_model_get_type ())
 
@@ -48,6 +47,5 @@ GListModel *            gtk_flatten_list_model_get_model        (GtkFlattenListM
 GListModel *            gtk_flatten_list_model_get_model_for_item (GtkFlattenListModel    *self,
                                                                    guint                   position);
 
-// // // // 
 
-#endif /* __GTK_FLATTEN_LIST_MODEL_H__ */
+

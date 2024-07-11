@@ -18,8 +18,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_MENU_BUTTON_H__
-#define __GTK_MENU_BUTTON_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gtk/gtktogglebutton.h>
 #include <gtk/gtkpopover.h>
 
-// // // // 
+
 
 #define GTK_TYPE_MENU_BUTTON            (gtk_menu_button_get_type ())
 #define GTK_MENU_BUTTON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_MENU_BUTTON, GtkMenuButton))
@@ -127,6 +126,20 @@ void          gtk_menu_button_set_child   (GtkMenuButton *menu_button,
 GDK_AVAILABLE_IN_4_6
 GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
 
-// // // // 
+GDK_AVAILABLE_IN_4_10
+void          gtk_menu_button_set_active (GtkMenuButton *menu_button,
+                                       gboolean       active);
+GDK_AVAILABLE_IN_4_10
+gboolean      gtk_menu_button_get_active (GtkMenuButton *menu_button);
 
-#endif /* __GTK_MENU_BUTTON_H__ */
+
+void          gtk_menu_button_set_can_shrink  (GtkMenuButton *menu_button,
+                                               gboolean       can_shrink);
+
+gboolean      gtk_menu_button_get_can_shrink  (GtkMenuButton *menu_button);
+
+
+
+
+
+

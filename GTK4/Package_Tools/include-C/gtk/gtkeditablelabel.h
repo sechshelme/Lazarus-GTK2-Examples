@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_EDITABLE_LABEL_H__
-#define __GTK_EDITABLE_LABEL_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -24,7 +23,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EDITABLE_LABEL (gtk_editable_label_get_type ())
 
@@ -44,6 +43,5 @@ void                  gtk_editable_label_start_editing  (GtkEditableLabel *self)
 void                  gtk_editable_label_stop_editing   (GtkEditableLabel *self,
                                                          gboolean          commit);
 
-// // // // 
 
-#endif /* __GTK_EDITABLE_LABEL_H__ */
+

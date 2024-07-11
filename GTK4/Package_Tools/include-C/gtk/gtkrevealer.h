@@ -19,12 +19,11 @@
  *
  */
 
-#ifndef __GTK_REVEALER_H__
-#define __GTK_REVEALER_H__
+#pragma once
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 
 #define GTK_TYPE_REVEALER (gtk_revealer_get_type ())
@@ -74,6 +73,7 @@ void                       gtk_revealer_set_child               (GtkRevealer    
 
 GtkWidget *                gtk_revealer_get_child               (GtkRevealer               *revealer);
 
-// // // // 
 
-#endif  /* __GTK_REVEALER_H__ */
+
+
+

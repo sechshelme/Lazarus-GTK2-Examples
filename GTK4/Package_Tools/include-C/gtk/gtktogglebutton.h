@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TOGGLE_BUTTON_H__
-#define __GTK_TOGGLE_BUTTON_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkbutton.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_TOGGLE_BUTTON                  (gtk_toggle_button_get_type ())
 #define GTK_TOGGLE_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOGGLE_BUTTON, GtkToggleButton))
@@ -77,13 +76,13 @@ void       gtk_toggle_button_set_active        (GtkToggleButton *toggle_button,
                                                 gboolean         is_active);
 
 gboolean   gtk_toggle_button_get_active        (GtkToggleButton *toggle_button);
-
+GDK_DEPRECATED_IN_4_10
 void       gtk_toggle_button_toggled           (GtkToggleButton *toggle_button);
 
 void       gtk_toggle_button_set_group         (GtkToggleButton *toggle_button,
                                                 GtkToggleButton *group);
 
 
-// // // // 
 
-#endif /* __GTK_TOGGLE_BUTTON_H__ */
+
+

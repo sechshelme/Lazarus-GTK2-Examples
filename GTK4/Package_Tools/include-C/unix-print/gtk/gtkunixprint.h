@@ -14,18 +14,14 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_UNIX_PRINT_H__
-#define __GTK_UNIX_PRINT_H__
+#pragma once
 
 #define __GTK_UNIX_PRINT_H_INSIDE__
 
-#include <gtk/gtkpagesetupunixdialog.h>
-#include <gtk/gtkprinter.h>
-#include <gtk/gtkprintjob.h>
-#include <gtk/gtkprintunixdialog.h>
-
-#include <gtk/gtkunixprint-autocleanups.h>
+#include <gtk/print/gtkpagesetupunixdialog.h>
+#include <gtk/print/gtkprinter.h>
+#include <gtk/print/gtkprintjob.h>
+#include <gtk/print/gtkprintunixdialog.h>
 
 #undef __GTK_UNIX_PRINT_H_INSIDE__
 
-#endif /* __GTK_UNIX_PRINT_H__ */

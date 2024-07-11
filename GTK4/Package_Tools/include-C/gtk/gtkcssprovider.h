@@ -15,13 +15,12 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_CSS_PROVIDER_H__
-#define __GTK_CSS_PROVIDER_H__
+#pragma once
 
 #include <gio/gio.h>
 #include <gtk/css/gtkcss.h>
 
-// // // // 
+
 
 #define GTK_TYPE_CSS_PROVIDER         (gtk_css_provider_get_type ())
 #define GTK_CSS_PROVIDER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_CSS_PROVIDER, GtkCssProvider))
@@ -46,10 +45,18 @@ GtkCssProvider * gtk_css_provider_new (void);
 
 char *           gtk_css_provider_to_string      (GtkCssProvider  *provider);
 
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_css_provider_load_from_string)
 void             gtk_css_provider_load_from_data (GtkCssProvider  *css_provider,
                                                   const char      *data,
                                                   gssize           length);
+
+void             gtk_css_provider_load_from_string (GtkCssProvider *css_provider,
+                                                    const char     *string);
+
+
+void             gtk_css_provider_load_from_bytes  (GtkCssProvider *css_provider,
+                                                    GBytes         *data);
+
 
 void             gtk_css_provider_load_from_file (GtkCssProvider  *css_provider,
                                                   GFile           *file);
@@ -66,6 +73,7 @@ void             gtk_css_provider_load_named     (GtkCssProvider  *provider,
                                                   const char      *name,
                                                   const char      *variant);
 
-// // // // 
 
-#endif /* __GTK_CSS_PROVIDER_H__ */
+
+
+

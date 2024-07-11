@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#ifndef __GDK_X11_DISPLAY_H__
-#define __GDK_X11_DISPLAY_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -35,7 +34,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // // 
+
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkX11Display GdkX11Display;
@@ -80,9 +79,9 @@ Cursor        gdk_x11_display_get_xcursor      (GdkDisplay  *display,
 
 guint32       gdk_x11_display_get_user_time (GdkDisplay *display);
 
-
+GDK_DEPRECATED_IN_4_10
 const char * gdk_x11_display_get_startup_notification_id         (GdkDisplay *display);
-
+GDK_DEPRECATED_IN_4_10
 void          gdk_x11_display_set_startup_notification_id         (GdkDisplay  *display,
                                                                    const char *startup_id);
 
@@ -131,6 +130,5 @@ void        gdk_x11_set_sm_client_id (const char *sm_client_id);
 
 GdkSurface * gdk_x11_display_get_default_group (GdkDisplay *display);
 
-// // // // 
 
-#endif /* __GDK_X11_DISPLAY_H__ */
+

@@ -17,12 +17,11 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SHORTCUT_H__
-#define __GTK_SHORTCUT_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUT         (gtk_shortcut_get_type ())
 
@@ -57,6 +56,5 @@ GVariant *      gtk_shortcut_get_arguments                      (GtkShortcut    
 void            gtk_shortcut_set_arguments                      (GtkShortcut            *self,
                                                                  GVariant               *args);
 
-// // // // 
 
-#endif  /* __GTK_SHORTCUT_H__ */
+

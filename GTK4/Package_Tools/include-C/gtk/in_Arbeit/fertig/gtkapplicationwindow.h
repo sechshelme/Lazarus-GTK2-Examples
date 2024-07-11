@@ -17,8 +17,7 @@
  * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __GTK_APPLICATION_WINDOW_H__
-#define __GTK_APPLICATION_WINDOW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkwindow.h>
 #include <gtk/gtkshortcutswindow.h>
 
-// // // // 
+
 
 #define GTK_TYPE_APPLICATION_WINDOW            (gtk_application_window_get_type ())
 #define GTK_APPLICATION_WINDOW(inst)           (G_TYPE_CHECK_INSTANCE_CAST ((inst), \
@@ -82,6 +81,7 @@ void        gtk_application_window_set_help_overlay (GtkApplicationWindow *windo
 GtkShortcutsWindow *
             gtk_application_window_get_help_overlay (GtkApplicationWindow *window);
 
-// // // // 
 
-#endif /* __GTK_APPLICATION_WINDOW_H__ */
+
+
+

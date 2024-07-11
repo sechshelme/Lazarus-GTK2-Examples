@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_NATIVE_DIALOG_H__
-#define __GTK_NATIVE_DIALOG_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // // // 
+
 
 #define GTK_TYPE_NATIVE_DIALOG             (gtk_native_dialog_get_type ())
 
@@ -81,6 +80,5 @@ void                  gtk_native_dialog_set_transient_for (GtkNativeDialog *self
 
 GtkWindow *           gtk_native_dialog_get_transient_for (GtkNativeDialog *self);
 
-// // // // 
 
-#endif /* __GTK_NATIVE_DIALOG_H__ */
+

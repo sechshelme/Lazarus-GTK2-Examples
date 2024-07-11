@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_BUILDER_LIST_ITEM_FACTORY_H__
-#define __GTK_BUILDER_LIST_ITEM_FACTORY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtklistitemfactory.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BUILDER_LIST_ITEM_FACTORY         (gtk_builder_list_item_factory_get_type ())
 #define GTK_BUILDER_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_BUILDER_LIST_ITEM_FACTORY, GtkBuilderListItemFactory))
@@ -55,6 +54,5 @@ const char *            gtk_builder_list_item_factory_get_resource      (GtkBuil
 
 GtkBuilderScope *       gtk_builder_list_item_factory_get_scope         (GtkBuilderListItemFactory      *self) ;
 
-// // // // 
 
-#endif /* __GTK_BUILDER_LIST_ITEM_FACTORY_H__ */
+

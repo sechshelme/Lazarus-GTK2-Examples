@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_COLUMN_VIEW_H__
-#define __GTK_COLUMN_VIEW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -29,7 +28,7 @@
 #include <gtk/gtkselectionmodel.h>
 #include <gtk/gtksorter.h>
 
-// // // // 
+
 
 #define GTK_TYPE_COLUMN_VIEW         (gtk_column_view_get_type ())
 #define GTK_COLUMN_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_COLUMN_VIEW, GtkColumnView))
@@ -109,6 +108,33 @@ void            gtk_column_view_set_enable_rubberband           (GtkColumnView  
 
 gboolean        gtk_column_view_get_enable_rubberband           (GtkColumnView          *self);
 
-// // // // 
 
-#endif  /* __GTK_COLUMN_VIEW_H__ */
+void            gtk_column_view_set_tab_behavior                (GtkColumnView          *self,
+                                                                 GtkListTabBehavior      tab_behavior);
+
+GtkListTabBehavior
+                gtk_column_view_get_tab_behavior                (GtkColumnView          *self);
+
+
+void            gtk_column_view_set_row_factory                 (GtkColumnView          *self,
+                                                                 GtkListItemFactory     *factory);
+
+GtkListItemFactory *
+                gtk_column_view_get_row_factory                 (GtkColumnView          *self);
+
+
+void            gtk_column_view_set_header_factory              (GtkColumnView          *self,
+                                                                 GtkListItemFactory     *factory);
+
+GtkListItemFactory *
+                gtk_column_view_get_header_factory              (GtkColumnView          *self);
+
+
+void            gtk_column_view_scroll_to                       (GtkColumnView          *self,
+                                                                 guint                   pos,
+                                                                 GtkColumnViewColumn    *column,
+                                                                 GtkListScrollFlags      flags,
+                                                                 GtkScrollInfo          *scroll);
+
+
+

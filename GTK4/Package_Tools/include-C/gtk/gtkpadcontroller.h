@@ -17,8 +17,7 @@
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GTK_PAD_CONTROLLER_H__
-#define __GTK_PAD_CONTROLLER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // // 
+
 
 #define GTK_TYPE_PAD_CONTROLLER         (gtk_pad_controller_get_type ())
 #define GTK_PAD_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_PAD_CONTROLLER, GtkPadController))
@@ -93,6 +92,5 @@ void  gtk_pad_controller_set_action         (GtkPadController *controller,
                                              const char       *label,
                                              const char       *action_name);
 
-// // // // 
 
-#endif /* __GTK_PAD_CONTROLLER_H__ */
+

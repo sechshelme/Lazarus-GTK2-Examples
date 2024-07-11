@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_POPOVER_MENU_BAR_H__
-#define __GTK_POPOVER_MENU_BAR_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -26,7 +25,7 @@
 #include <gtk/gtkpopover.h>
 
 
-// // // // 
+
 
 
 #define	GTK_TYPE_POPOVER_MENU_BAR               (gtk_popover_menu_bar_get_type ())
@@ -55,7 +54,9 @@ gboolean     gtk_popover_menu_bar_add_child      (GtkPopoverMenuBar *bar,
 
 gboolean     gtk_popover_menu_bar_remove_child   (GtkPopoverMenuBar *bar,
                                                   GtkWidget         *child);
-// // // // 
 
 
-#endif /* __GTK_POPOVER_MENU_BAR_H__ */
+
+
+
+

@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_STRING_LIST_H__
-#define __GTK_STRING_LIST_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -30,7 +29,7 @@
 #include <gdk/gdk.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_STRING_OBJECT (gtk_string_object_get_type ())
 
@@ -71,6 +70,5 @@ void            gtk_string_list_splice          (GtkStringList         *self,
 const char *    gtk_string_list_get_string      (GtkStringList         *self,
                                                  guint                  position);
 
-// // // // 
 
-#endif /* __GTK_STRING_LIST_H__ */
+

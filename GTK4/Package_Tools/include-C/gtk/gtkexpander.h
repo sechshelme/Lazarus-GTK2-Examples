@@ -19,8 +19,7 @@
  *      Mark McLoughlin <mark@skynet.ie>
  */
 
-#ifndef __GTK_EXPANDER_H__
-#define __GTK_EXPANDER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EXPANDER            (gtk_expander_get_type ())
 #define GTK_EXPANDER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EXPANDER, GtkExpander))
@@ -86,6 +85,6 @@ void                  gtk_expander_set_child           (GtkExpander *expander,
 GtkWidget *           gtk_expander_get_child           (GtkExpander *expander);
 
 
-// // // // 
 
-#endif /* __GTK_EXPANDER_H__ */
+
+

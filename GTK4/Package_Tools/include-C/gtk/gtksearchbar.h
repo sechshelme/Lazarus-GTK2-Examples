@@ -25,8 +25,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SEARCH_BAR_H__
-#define __GTK_SEARCH_BAR_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -35,7 +34,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkeditable.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SEARCH_BAR                 (gtk_search_bar_get_type ())
 #define GTK_SEARCH_BAR(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEARCH_BAR, GtkSearchBar))
@@ -78,6 +77,6 @@ void        gtk_search_bar_set_child          (GtkSearchBar *bar,
 GtkWidget * gtk_search_bar_get_child          (GtkSearchBar *bar);
 
 
-// // // // 
 
-#endif /* __GTK_SEARCH_BAR_H__ */
+
+

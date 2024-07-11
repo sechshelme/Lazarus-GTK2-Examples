@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_WINDOW_GROUP_H__
-#define __GTK_WINDOW_GROUP_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -32,7 +31,7 @@
 
 #include "gtkwindow.h"
 
-// // // // 
+
 
 #define GTK_TYPE_WINDOW_GROUP             (gtk_window_group_get_type ())
 #define GTK_WINDOW_GROUP(object)          (G_TYPE_CHECK_INSTANCE_CAST ((object), GTK_TYPE_WINDOW_GROUP, GtkWindowGroup))
@@ -77,7 +76,6 @@ void             gtk_window_group_remove_window (GtkWindowGroup     *window_grou
 GList *          gtk_window_group_list_windows  (GtkWindowGroup     *window_group);
 
 
-// // // // 
 
-#endif /* __GTK_WINDOW_GROUP_H__ */
+
 

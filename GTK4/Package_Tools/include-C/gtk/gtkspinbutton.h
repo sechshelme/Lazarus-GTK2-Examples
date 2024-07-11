@@ -25,8 +25,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SPIN_BUTTON_H__
-#define __GTK_SPIN_BUTTON_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -36,7 +35,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_SPIN_BUTTON                  (gtk_spin_button_get_type ())
 #define GTK_SPIN_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SPIN_BUTTON, GtkSpinButton))
@@ -118,6 +117,13 @@ GtkWidget*      gtk_spin_button_new_with_range     (double   min,
                                                     double   step);
 
 
+void            gtk_spin_button_set_activates_default (GtkSpinButton *spin_button,
+                                                       gboolean       activates_default);
+
+
+gboolean        gtk_spin_button_get_activates_default (GtkSpinButton *spin_button);
+
+
 void            gtk_spin_button_set_adjustment     (GtkSpinButton  *spin_button,
                                                     GtkAdjustment  *adjustment);
 
@@ -197,6 +203,6 @@ double          gtk_spin_button_get_climb_rate     (GtkSpinButton  *spin_button)
 void            gtk_spin_button_update             (GtkSpinButton  *spin_button);
 
 
-// // // // 
 
-#endif /* __GTK_SPIN_BUTTON_H__ */
+
+

@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_CUSTOM_SORTER_H__
-#define __GTK_CUSTOM_SORTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // // // 
+
 
 #define GTK_TYPE_CUSTOM_SORTER             (gtk_custom_sorter_get_type ())
 
@@ -44,6 +43,5 @@ void                    gtk_custom_sorter_set_sort_func         (GtkCustomSorter
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-// // // // 
 
-#endif /* __GTK_CUSTOM_SORTER_H__ */
+

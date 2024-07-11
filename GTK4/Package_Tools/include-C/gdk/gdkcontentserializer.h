@@ -15,18 +15,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_CONTENT_SERIALIZER_H__
-#define __GTK_CONTENT_SERIALIZER_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_CONTENT_SERIALIZER         (gdk_content_serializer_get_type ())
 #define GDK_CONTENT_SERIALIZER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_CONTENT_SERIALIZER, GdkContentSerializer))
@@ -100,6 +97,5 @@ gboolean                gdk_content_serialize_finish                    (GAsyncR
                                                                          GError                **error);
 
 
-// // // // 
 
-#endif /* __GDK_CONTENT_SERIALIZER_H__ */
+

@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_ICON_THEME_H__
-#define __GTK_ICON_THEME_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // // // 
+
 
 #define GTK_TYPE_ICON_PAINTABLE    (gtk_icon_paintable_get_type ())
 #define GTK_ICON_PAINTABLE(obj)    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ICON_PAINTABLE, GtkIconPaintable))
@@ -154,6 +153,8 @@ const char *         gtk_icon_paintable_get_icon_name     (GtkIconPaintable  *se
 
 gboolean              gtk_icon_paintable_is_symbolic       (GtkIconPaintable  *self);
 
-// // // // 
 
-#endif /* __GTK_ICON_THEME_H__ */
+
+
+
+

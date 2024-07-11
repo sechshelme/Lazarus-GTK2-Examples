@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SYMBOLIC_PAINTABLE_H__
-#define __GTK_SYMBOLIC_PAINTABLE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SYMBOLIC_PAINTABLE       (gtk_symbolic_paintable_get_type ())
 
@@ -65,6 +64,5 @@ void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymb
                                                                          const GdkRGBA          *colors,
                                                                          gsize                   n_colors);
 
-// // // // 
 
-#endif /* __GTK_SYMBOLIC_PAINTABLE_H__ */
+

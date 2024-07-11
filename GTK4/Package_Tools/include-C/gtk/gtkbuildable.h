@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_BUILDABLE_H__
-#define __GTK_BUILDABLE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 
 #include <gtk/gtkbuilder.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BUILDABLE            (gtk_buildable_get_type ())
 #define GTK_BUILDABLE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUILDABLE, GtkBuildable))
@@ -105,18 +104,18 @@ struct _GtkBuildableParser
  * @set_buildable_property: Sets a property of a buildable object.
  *  It is normally not necessary to implement this, g_object_set_property()
  *  is used by default. `GtkWindow` implements this to delay showing itself
- *  (i.e. setting the [property@GtkWidget:visible] property) until the whole
+ *  (i.e. setting the [property@Gtk.Widget:visible] property) until the whole
  *  interface is created.
  * @construct_child: Constructs a child of a buildable that has been
  *  specified as “constructor” in the UI definition. This can be used to
- *  reference a widget created in a <ui> tag which is outside
+ *  reference a widget created in a `<ui>` tag which is outside
  *  of the normal GtkBuilder UI definition hierarchy.  A reference to the
  *  constructed object is returned and becomes owned by the caller.
  * @custom_tag_start: Implement this if the buildable needs to parse
- *  content below <child>. To handle an element, the implementation
+ *  content below `<child>`. To handle an element, the implementation
  *  must fill in the @parser and @user_data and return %TRUE.
  *  `GtkWidget` implements this to parse accessible attributes specified
- *  in <accessibility> elements.
+ *  in `<accessibility>` elements.
  *  Note that @user_data must be freed in @custom_tag_end or @custom_finished.
  * @custom_tag_end: Called for the end tag of each custom element that is
  *  handled by the buildable (see @custom_tag_start).
@@ -260,6 +259,7 @@ void          gtk_buildable_parse_context_get_position      (GtkBuildableParseCo
                                                              int                      *line_number,
                                                              int                      *char_number);
 
-// // // // 
 
-#endif /* __GTK_BUILDABLE_H__ */
+
+
+

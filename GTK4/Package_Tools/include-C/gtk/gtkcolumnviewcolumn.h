@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_COLUMN_VIEW_COLUMN_H__
-#define __GTK_COLUMN_VIEW_COLUMN_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkcolumnview.h>
 #include <gtk/gtksorter.h>
 
-// // // // 
+
 
 #define GTK_TYPE_COLUMN_VIEW_COLUMN         (gtk_column_view_column_get_type ())
 #define GTK_COLUMN_VIEW_COLUMN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_COLUMN_VIEW_COLUMN, GtkColumnViewColumn))
@@ -95,8 +94,13 @@ gboolean                gtk_column_view_column_get_resizable            (GtkColu
 void                    gtk_column_view_column_set_expand               (GtkColumnViewColumn    *self,
                                                                          gboolean                expand);
 
-gboolean                gtk_column_view_column_get_expand            (GtkColumnViewColumn    *self);
+gboolean                gtk_column_view_column_get_expand               (GtkColumnViewColumn    *self);
 
-// // // // 
+GDK_AVAILABLE_IN_4_10
+void                    gtk_column_view_column_set_id                   (GtkColumnViewColumn    *self,
+                                                                         const char             *id);
+GDK_AVAILABLE_IN_4_10
+const char *            gtk_column_view_column_get_id                   (GtkColumnViewColumn    *self);
 
-#endif  /* __GTK_COLUMN_VIEW_COLUMN_H__ */
+
+

@@ -16,8 +16,7 @@
  *  License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GTK_SHORTCUTS_SHORTCUT_H
-#define GTK_SHORTCUTS_SHORTCUT_H
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUTS_SHORTCUT (gtk_shortcuts_shortcut_get_type())
 #define GTK_SHORTCUTS_SHORTCUT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_SHORTCUT, GtkShortcutsShortcut))
@@ -80,6 +79,5 @@ typedef enum {
 
 GType        gtk_shortcuts_shortcut_get_type (void) ;
 
-// // // // 
 
-#endif /* GTK_SHORTCUTS_SHORTCUT_H */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_ROOT_H__
-#define __GTK_ROOT_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_ROOT               (gtk_root_get_type ())
 
@@ -43,6 +42,5 @@ void        gtk_root_set_focus (GtkRoot   *self,
 
 GtkWidget * gtk_root_get_focus (GtkRoot   *self);
 
-// // // // 
 
-#endif /* __GTK_ROOT_H__ */
+

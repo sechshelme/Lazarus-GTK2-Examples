@@ -22,18 +22,17 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_EDITABLE_H__
-#define __GTK_EDITABLE_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
+#include <gtk/gtkaccessible.h>
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
 
 #define GTK_TYPE_EDITABLE             (gtk_editable_get_type ())
 #define GTK_EDITABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EDITABLE, GtkEditable))
@@ -194,8 +193,11 @@ gboolean     gtk_editable_delegate_get_property (GObject      *object,
                                                  guint         prop_id,
                                                  GValue       *value,
                                                  GParamSpec   *pspec);
+GDK_AVAILABLE_IN_4_10
+gboolean gtk_editable_delegate_get_accessible_platform_state (GtkEditable                *editable,
+                                                              GtkAccessiblePlatformState  state);
 
 
-// // // // 
 
-#endif /* __GTK_EDITABLE_H__ */
+
+

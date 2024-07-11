@@ -18,19 +18,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_CAIRO_CONTEXT__
-#define __GDK_CAIRO_CONTEXT__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-#include <cairo.h>
 
-// // // // 
 
 #define GDK_TYPE_CAIRO_CONTEXT             (gdk_cairo_context_get_type ())
 #define GDK_CAIRO_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CAIRO_CONTEXT, GdkCairoContext))
@@ -44,6 +40,5 @@ GType                   gdk_cairo_context_get_type                      (void) ;
 
 cairo_t *               gdk_cairo_context_cairo_create                  (GdkCairoContext        *self);
 
-// // // // 
 
-#endif /* __GDK_CAIRO_CONTEXT__ */
+

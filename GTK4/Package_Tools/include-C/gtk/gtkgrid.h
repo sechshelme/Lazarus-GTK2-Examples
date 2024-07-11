@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_GRID_H__
-#define __GTK_GRID_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -27,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_GRID                   (gtk_grid_get_type ())
 #define GTK_GRID(obj)                   (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_GRID, GtkGrid))
@@ -142,6 +141,7 @@ void       gtk_grid_query_child            (GtkGrid         *grid,
                                             int             *width,
                                             int             *height);
 
-// // // // 
 
-#endif /* __GTK_GRID_H__ */
+
+
+

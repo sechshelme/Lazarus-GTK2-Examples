@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_WAYLAND_SURFACE_H__
-#define __GDK_WAYLAND_SURFACE_H__
+#pragma once
 
 #if !defined (__GDKWAYLAND_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/wayland/gdkwayland.h> can be included directly."
@@ -26,63 +25,23 @@
 
 #include <wayland-client.h>
 
-// // // // 
+
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandSurface GdkWaylandSurface;
-typedef struct _GdkWaylandToplevel GdkWaylandToplevel;
-typedef struct _GdkWaylandPopup GdkWaylandPopup;
 #else
 typedef GdkSurface GdkWaylandSurface;
-typedef GdkToplevel GdkWaylandToplevel;
-typedef GdkPopup GdkWaylandPopup;
 #endif
 
 #define GDK_TYPE_WAYLAND_SURFACE              (gdk_wayland_surface_get_type())
 #define GDK_WAYLAND_SURFACE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_SURFACE, GdkWaylandSurface))
 #define GDK_IS_WAYLAND_SURFACE(object)        (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_WAYLAND_SURFACE))
 
-#define GDK_TYPE_WAYLAND_TOPLEVEL             (gdk_wayland_toplevel_get_type())
-#define GDK_WAYLAND_TOPLEVEL(object)          (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_TOPLEVEL, GdkWaylandToplevel))
-#define GDK_IS_WAYLAND_TOPLEVEL(object)       (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_WAYLAND_TOPLEVEL))
-
-#define GDK_TYPE_WAYLAND_POPUP                (gdk_wayland_popup_get_type())
-#define GDK_WAYLAND_POPUP(object)             (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_POPUP, GdkWaylandPopup))
-#define GDK_IS_WAYLAND_POPUP(object)          (G_TYPE_CHECK_INSTANCE_TYPE ((object), GDK_TYPE_WAYLAND_POPUP))
-
 
 GType                    gdk_wayland_surface_get_type             (void);
 
 
-GType                    gdk_wayland_toplevel_get_type            (void);
-
-
-GType                    gdk_wayland_popup_get_type               (void);
-
-
 struct wl_surface       *gdk_wayland_surface_get_wl_surface       (GdkSurface *surface);
 
-typedef void (*GdkWaylandToplevelExported) (GdkToplevel *toplevel,
-                                            const char  *handle,
-                                            gpointer     user_data);
 
 
-gboolean                 gdk_wayland_toplevel_export_handle (GdkToplevel              *toplevel,
-                                                             GdkWaylandToplevelExported callback,
-                                                             gpointer                 user_data,
-                                                             GDestroyNotify           destroy_func);
-
-
-void                     gdk_wayland_toplevel_unexport_handle (GdkToplevel *toplevel);
-
-
-gboolean                 gdk_wayland_toplevel_set_transient_for_exported (GdkToplevel *toplevel,
-                                                                         const char   *parent_handle_str);
-
-
-void                     gdk_wayland_toplevel_set_application_id (GdkToplevel *toplevel,
-                                                                  const char  *application_id);
-
-// // // // 
-
-#endif /* __GDK_WAYLAND_SURFACE_H__ */

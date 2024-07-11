@@ -17,8 +17,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_TOOLTIP_H__
-#define __GTK_TOOLTIP_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // // // 
+
 
 #define GTK_TYPE_TOOLTIP                 (gtk_tooltip_get_type ())
 #define GTK_TOOLTIP(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TOOLTIP, GtkTooltip))
@@ -58,6 +57,7 @@ void gtk_tooltip_set_custom	         (GtkTooltip         *tooltip,
 void gtk_tooltip_set_tip_area            (GtkTooltip         *tooltip,
                                           const GdkRectangle *rect);
 
-// // // // 
 
-#endif /* __GTK_TOOLTIP_H__ */
+
+
+

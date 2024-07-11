@@ -17,8 +17,7 @@
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GTK_EVENT_CONTROLLER_SCROLL_H__
-#define __GTK_EVENT_CONTROLLER_SCROLL_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER_SCROLL         (gtk_event_controller_scroll_get_type ())
 #define GTK_EVENT_CONTROLLER_SCROLL(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_SCROLL, GtkEventControllerScroll))
@@ -71,6 +70,8 @@ void                gtk_event_controller_scroll_set_flags (GtkEventControllerScr
 GtkEventControllerScrollFlags
                     gtk_event_controller_scroll_get_flags (GtkEventControllerScroll      *scroll);
 
-// // // // 
+GDK_AVAILABLE_IN_4_8
+GdkScrollUnit       gtk_event_controller_scroll_get_unit (GtkEventControllerScroll       *scroll);
 
-#endif /* __GTK_EVENT_CONTROLLER_SCROLL_H__ */
+
+

@@ -15,19 +15,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_DEVICE_TOOL_H__
-#define __GDK_DEVICE_TOOL_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkenums.h>
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
 
-// // // // 
 
 #define GDK_TYPE_DEVICE_TOOL    (gdk_device_tool_get_type ())
 #define GDK_DEVICE_TOOL(o)      (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE_TOOL, GdkDeviceTool))
@@ -75,6 +71,5 @@ GdkDeviceToolType   gdk_device_tool_get_tool_type   (GdkDeviceTool *tool);
 
 GdkAxisFlags        gdk_device_tool_get_axes        (GdkDeviceTool *tool);
 
-// // // // 
 
-#endif /* __GDK_DEVICE_TOOL_H__ */
+

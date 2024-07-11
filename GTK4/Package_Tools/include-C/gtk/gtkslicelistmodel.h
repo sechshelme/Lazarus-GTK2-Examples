@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SLICE_LIST_MODEL_H__
-#define __GTK_SLICE_LIST_MODEL_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -29,7 +28,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_SLICE_LIST_MODEL (gtk_slice_list_model_get_type ())
 
@@ -57,6 +56,5 @@ void                    gtk_slice_list_model_set_size           (GtkSliceListMod
 
 guint                   gtk_slice_list_model_get_size           (GtkSliceListModel      *self);
 
-// // // // 
 
-#endif /* __GTK_SLICE_LIST_MODEL_H__ */
+

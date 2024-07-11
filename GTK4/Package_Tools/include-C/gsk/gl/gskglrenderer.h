@@ -18,12 +18,17 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef __GSK_GL_RENDERER_H__
-#define __GSK_GL_RENDERER_H__
+#pragma once
 
-#include <gsk/gskrenderer.h>
+#if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
+#include <gsk/gsk.h>
+#define GSK_INCLUDE_WARNING(x) GDK_DEPRECATED_IN_4_14_FOR("#include <gsk/gsk.h> instead of <gsk/gl/gskglrenderer.h> to avoid this warning")
+#else
+#include <gsk/gsktypes.h>
+#define GSK_INCLUDE_WARNING(x) x
+#endif
 
-// // // // 
+
 
 #define GSK_TYPE_GL_RENDERER (gsk_gl_renderer_get_type())
 
@@ -36,15 +41,14 @@
 typedef struct _GskGLRenderer      GskGLRenderer;
 typedef struct _GskGLRendererClass GskGLRendererClass;
 
-
+GSK_INCLUDE_WARNING()
 GType        gsk_gl_renderer_get_type (void) ;
-
+GSK_INCLUDE_WARNING()
 GskRenderer *gsk_gl_renderer_new      (void);
 
-GDK_DEPRECATED_IN_4_4_FOR (gsk_gl_renderer_get_type)
+GSK_INCLUDE_WARNING()
 GType        gsk_ngl_renderer_get_type (void) ;
-GDK_DEPRECATED_IN_4_4_FOR (gsk_gl_renderer_new)
+GSK_INCLUDE_WARNING()
 GskRenderer *gsk_ngl_renderer_new      (void);
-// // // // 
 
-#endif /* __GSK_GL_RENDERER__ */
+

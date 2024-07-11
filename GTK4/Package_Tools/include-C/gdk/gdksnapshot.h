@@ -17,17 +17,14 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GDK_SNAPSHOT_H__
-#define __GDK_SNAPSHOT_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
-// // // // 
 
 
 typedef struct _GdkSnapshotClass        GdkSnapshotClass;
@@ -38,11 +35,9 @@ typedef struct _GdkSnapshotClass        GdkSnapshotClass;
 #define GDK_IS_SNAPSHOT(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_SNAPSHOT))
 
 
-
-
 GType           gdk_snapshot_get_type   (void) ;
 
 
-// // // // 
 
-#endif /* __GDK_SNAPSHOT_H__ */
+
+

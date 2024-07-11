@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_IMAGE_H__
-#define __GTK_IMAGE_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -34,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_IMAGE                  (gtk_image_get_type ())
 #define GTK_IMAGE(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IMAGE, GtkImage))
@@ -75,7 +74,7 @@ GtkWidget* gtk_image_new                (void);
 GtkWidget* gtk_image_new_from_file      (const char      *filename);
 
 GtkWidget* gtk_image_new_from_resource  (const char      *resource_path);
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_image_new_from_paintable)
 GtkWidget* gtk_image_new_from_pixbuf    (GdkPixbuf       *pixbuf);
 
 GtkWidget* gtk_image_new_from_paintable (GdkPaintable    *paintable);
@@ -92,7 +91,7 @@ void gtk_image_set_from_file      (GtkImage        *image,
 
 void gtk_image_set_from_resource  (GtkImage        *image,
                                    const char      *resource_path);
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_image_set_from_paintable)
 void gtk_image_set_from_pixbuf    (GtkImage        *image,
                                    GdkPixbuf       *pixbuf);
 
@@ -126,6 +125,7 @@ int        gtk_image_get_pixel_size (GtkImage             *image);
 
 GtkIconSize gtk_image_get_icon_size (GtkImage             *image);
 
-// // // // 
 
-#endif /* __GTK_IMAGE_H__ */
+
+
+

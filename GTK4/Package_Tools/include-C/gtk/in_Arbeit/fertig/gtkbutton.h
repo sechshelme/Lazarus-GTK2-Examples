@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_BUTTON_H__
-#define __GTK_BUTTON_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -32,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BUTTON                 (gtk_button_get_type ())
 #define GTK_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUTTON, GtkButton))
@@ -94,7 +93,7 @@ gboolean              gtk_button_get_has_frame      (GtkButton      *button);
 void                  gtk_button_set_label          (GtkButton      *button,
 						     const char     *label);
 
-const char *         gtk_button_get_label          (GtkButton      *button);
+const char *          gtk_button_get_label          (GtkButton      *button);
 
 void                  gtk_button_set_use_underline  (GtkButton      *button,
 						     gboolean        use_underline);
@@ -113,6 +112,13 @@ void                  gtk_button_set_child          (GtkButton      *button,
 
 GtkWidget *           gtk_button_get_child          (GtkButton      *button);
 
-// // // // 
 
-#endif /* __GTK_BUTTON_H__ */
+void                  gtk_button_set_can_shrink     (GtkButton      *button,
+                                                     gboolean        can_shrink);
+
+gboolean              gtk_button_get_can_shrink     (GtkButton      *button);
+
+
+
+
+

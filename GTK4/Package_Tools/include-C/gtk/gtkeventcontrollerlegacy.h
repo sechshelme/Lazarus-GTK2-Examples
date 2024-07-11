@@ -17,8 +17,7 @@
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GTK_EVENT_CONTROLLER_LEGACY_H__
-#define __GTK_EVENT_CONTROLLER_LEGACY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkeventcontroller.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER_LEGACY         (gtk_event_controller_legacy_get_type ())
 #define GTK_EVENT_CONTROLLER_LEGACY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_LEGACY, GtkEventControllerLegacy))
@@ -44,6 +43,5 @@ GType               gtk_event_controller_legacy_get_type   (void) ;
 
 GtkEventController *gtk_event_controller_legacy_new        (void);
 
-// // // // 
 
-#endif /* __GTK_EVENT_CONTROLLER_LEGACY_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_FILTER_LIST_MODEL_H__
-#define __GTK_FILTER_LIST_MODEL_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -29,7 +28,7 @@
 #include <gtk/gtkfilter.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_FILTER_LIST_MODEL (gtk_filter_list_model_get_type ())
 
@@ -59,6 +58,5 @@ gboolean                gtk_filter_list_model_get_incremental   (GtkFilterListMo
 guint                   gtk_filter_list_model_get_pending       (GtkFilterListModel     *self);
 
 
-// // // // 
 
-#endif /* __GTK_FILTER_LIST_MODEL_H__ */
+

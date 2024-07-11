@@ -22,18 +22,18 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_RANGE_H__
-#define __GTK_RANGE_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
+#include <gtk/gtkborder.h>
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 
 #define GTK_TYPE_RANGE            (gtk_range_get_type ())
@@ -148,7 +148,7 @@ void               gtk_range_set_round_digits              (GtkRange      *range
 int                 gtk_range_get_round_digits              (GtkRange      *range);
 
 
-// // // // 
 
 
-#endif /* __GTK_RANGE_H__ */
+
+

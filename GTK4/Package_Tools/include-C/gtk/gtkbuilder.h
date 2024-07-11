@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_BUILDER_H__
-#define __GTK_BUILDER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gtk/gtkbuilderscope.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BUILDER                 (gtk_builder_get_type ())
 #define GTK_BUILDER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_BUILDER, GtkBuilder))
@@ -203,6 +202,7 @@ gboolean  gtk_builder_extend_with_template  (GtkBuilder    *builder,
                                              gssize         length,
                                              GError       **error);
 
-// // // // 
 
-#endif /* __GTK_BUILDER_H__ */
+
+
+

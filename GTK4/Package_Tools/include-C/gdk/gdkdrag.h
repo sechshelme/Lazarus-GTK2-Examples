@@ -22,19 +22,17 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_DND_H__
-#define __GDK_DND_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkdevice.h>
-#include <gdk/gdkenums.h>
-#include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
+#include <gdk/gdkdevice.h>
+#include <gdk/gdkevents.h>
 
-// // // // 
+
 
 #define GDK_TYPE_DRAG              (gdk_drag_get_type ())
 #define GDK_DRAG(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DRAG, GdkDrag))
@@ -99,6 +97,7 @@ GdkContentProvider *
 
 GdkSurface *    gdk_drag_get_surface (GdkDrag *drag);
 
-// // // // 
 
-#endif /* __GDK_DND_H__ */
+
+
+

@@ -17,13 +17,13 @@
  * Authors: Matthias Clasen
  */
 
-#ifndef __GTK_DROP_DOWN_H__
-#define __GTK_DROP_DOWN_H__
+#pragma once
 
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkexpression.h>
+#include "gtk/gtkstringfilter.h"
 
-// // // // 
+
 
 #define GTK_TYPE_DROP_DOWN         (gtk_drop_down_get_type ())
 
@@ -67,6 +67,13 @@ GtkListItemFactory *
                 gtk_drop_down_get_list_factory                  (GtkDropDown            *self);
 
 
+void            gtk_drop_down_set_header_factory                (GtkDropDown            *self,
+                                                                 GtkListItemFactory     *factory);
+
+GtkListItemFactory *
+                gtk_drop_down_get_header_factory                (GtkDropDown            *self);
+
+
 void            gtk_drop_down_set_expression                    (GtkDropDown            *self,
                                                                  GtkExpression          *expression);
 
@@ -77,12 +84,19 @@ void            gtk_drop_down_set_enable_search                 (GtkDropDown    
                                                                  gboolean                enable_search);
 
 gboolean        gtk_drop_down_get_enable_search                 (GtkDropDown            *self);
+
 GDK_AVAILABLE_IN_4_6
 void            gtk_drop_down_set_show_arrow                    (GtkDropDown            *self,
                                                                  gboolean                show_arrow);
 GDK_AVAILABLE_IN_4_6
 gboolean        gtk_drop_down_get_show_arrow                    (GtkDropDown            *self);
 
-// // // // 
 
-#endif  /* __GTK_DROP_DOWN_H__ */
+void            gtk_drop_down_set_search_match_mode             (GtkDropDown            *self,
+                                                                 GtkStringFilterMatchMode search_match_mode);
+
+GtkStringFilterMatchMode
+                gtk_drop_down_get_search_match_mode             (GtkDropDown            *self);
+
+
+

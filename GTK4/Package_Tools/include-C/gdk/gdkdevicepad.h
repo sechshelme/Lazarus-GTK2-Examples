@@ -17,17 +17,15 @@
  * Author: Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GDK_DEVICE_PAD_H__
-#define __GDK_DEVICE_PAD_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_DEVICE_PAD         (gdk_device_pad_get_type ())
 #define GDK_DEVICE_PAD(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE_PAD, GdkDevicePad))
@@ -69,6 +67,5 @@ int   gdk_device_pad_get_feature_group (GdkDevicePad        *pad,
                                         GdkDevicePadFeature  feature,
                                         int                  feature_idx);
 
-// // // // 
 
-#endif /* __GDK_DEVICE_PAD_H__ */
+

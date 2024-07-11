@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_CSS_LOCATION_H__
-#define __GTK_CSS_LOCATION_H__
+#pragma once
 
 #if !defined (__GTK_CSS_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/css/gtkcss.h> can be included directly."
@@ -24,7 +23,7 @@
 
 #include <glib.h>
 
-// // // // 
+
 
 typedef struct _GtkCssLocation GtkCssLocation;
 
@@ -38,6 +37,5 @@ struct _GtkCssLocation
 };
 
 
-// // // // 
 
-#endif /* __GTK_CSS_LOCATION_H__ */
+

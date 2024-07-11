@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SNAPSHOT_H__
-#define __GTK_SNAPSHOT_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -34,7 +33,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 typedef struct _GtkSnapshotClass       GtkSnapshotClass;
 
@@ -89,12 +88,24 @@ void            gtk_snapshot_push_clip                  (GtkSnapshot            
 void            gtk_snapshot_push_rounded_clip          (GtkSnapshot            *snapshot,
                                                          const GskRoundedRect   *bounds);
 
+void            gtk_snapshot_push_fill                  (GtkSnapshot            *snapshot,
+                                                         GskPath                *path,
+                                                         GskFillRule             fill_rule);
+
+void            gtk_snapshot_push_stroke                (GtkSnapshot            *snapshot,
+                                                         GskPath                *path,
+                                                         const GskStroke        *stroke);
+
 void            gtk_snapshot_push_shadow                (GtkSnapshot            *snapshot,
                                                          const GskShadow        *shadow,
                                                          gsize                   n_shadows);
 
 void            gtk_snapshot_push_blend                 (GtkSnapshot            *snapshot,
                                                          GskBlendMode            blend_mode);
+GDK_AVAILABLE_IN_4_10
+void            gtk_snapshot_push_mask                  (GtkSnapshot            *snapshot,
+                                                         GskMaskMode             mask_mode);
+
 
 void            gtk_snapshot_push_cross_fade            (GtkSnapshot            *snapshot,
                                                          double                  progress);
@@ -151,6 +162,11 @@ cairo_t *       gtk_snapshot_append_cairo               (GtkSnapshot            
 
 void            gtk_snapshot_append_texture             (GtkSnapshot            *snapshot,
                                                          GdkTexture             *texture,
+                                                         const graphene_rect_t  *bounds);
+GDK_AVAILABLE_IN_4_10
+void            gtk_snapshot_append_scaled_texture      (GtkSnapshot            *snapshot,
+                                                         GdkTexture             *texture,
+                                                         GskScalingFilter        filter,
                                                          const graphene_rect_t  *bounds);
 
 void            gtk_snapshot_append_color               (GtkSnapshot            *snapshot,
@@ -225,43 +241,15 @@ void            gtk_snapshot_append_layout              (GtkSnapshot            
                                                          const GdkRGBA          *color);
 
 
+void            gtk_snapshot_append_fill                (GtkSnapshot            *snapshot,
+                                                         GskPath                *path,
+                                                         GskFillRule             fill_rule,
+                                                         const GdkRGBA          *color);
 
-void            gtk_snapshot_render_background          (GtkSnapshot            *snapshot,
-                                                         GtkStyleContext        *context,
-                                                         double                  x,
-                                                         double                  y,
-                                                         double                  width,
-                                                         double                  height);
-
-void            gtk_snapshot_render_frame               (GtkSnapshot            *snapshot,
-                                                         GtkStyleContext        *context,
-                                                         double                  x,
-                                                         double                  y,
-                                                         double                  width,
-                                                         double                  height);
-
-void            gtk_snapshot_render_focus               (GtkSnapshot            *snapshot,
-                                                         GtkStyleContext        *context,
-                                                         double                  x,
-                                                         double                  y,
-                                                         double                  width,
-                                                         double                  height);
-
-void            gtk_snapshot_render_layout              (GtkSnapshot            *snapshot,
-                                                         GtkStyleContext        *context,
-                                                         double                  x,
-                                                         double                  y,
-                                                         PangoLayout            *layout);
- /* in gtkstylecontext.c */
-void            gtk_snapshot_render_insertion_cursor    (GtkSnapshot            *snapshot,
-                                                         GtkStyleContext        *context,
-                                                         double                  x,
-                                                         double                  y,
-                                                         PangoLayout            *layout,
-                                                         int                     index,
-                                                         PangoDirection          direction);
+void            gtk_snapshot_append_stroke              (GtkSnapshot            *snapshot,
+                                                         GskPath                *path,
+                                                         const GskStroke        *stroke,
+                                                         const GdkRGBA          *color);
 
 
-// // // // 
 
-#endif /* __GTK_SNAPSHOT_H__ */

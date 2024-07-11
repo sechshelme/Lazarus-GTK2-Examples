@@ -7,17 +7,19 @@
 
 #include <glib.h>
 
-// // // // 
+
 
 
 #define GDK_WINDOWING_X11
-#undef GDK_WINDOWING_BROADWAY
+#define GDK_WINDOWING_BROADWAY
 #undef GDK_WINDOWING_MACOS
 #define GDK_WINDOWING_WAYLAND
 #undef GDK_WINDOWING_WIN32
 
-#undef GDK_RENDERING_VULKAN
+#define GDK_RENDERING_CAIRO
+#define GDK_RENDERING_GL
+#define GDK_RENDERING_VULKAN
 
-// // // // 
+
 
 #endif  /* __GDKCONFIG_H__ */

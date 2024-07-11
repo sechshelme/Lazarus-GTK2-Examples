@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_ADJUSTMENT_H__
-#define __GTK_ADJUSTMENT_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -32,7 +31,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_ADJUSTMENT                  (gtk_adjustment_get_type ())
 #define GTK_ADJUSTMENT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ADJUSTMENT, GtkAdjustment))
@@ -121,6 +120,7 @@ void       gtk_adjustment_configure             (GtkAdjustment   *adjustment,
 
 double     gtk_adjustment_get_minimum_increment (GtkAdjustment   *adjustment);
 
-// // // // 
 
-#endif /* __GTK_ADJUSTMENT_H__ */
+
+
+

@@ -18,18 +18,13 @@
  */
 
 
-#ifndef __GDK_DROP_H__
-#define __GDK_DROP_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkenums.h>
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
-
-// // // // 
 
 
 
@@ -85,6 +80,7 @@ const GValue *          gdk_drop_read_value_finish      (GdkDrop                
                                                          GAsyncResult           *result,
                                                          GError                **error);
 
-// // // // 
 
-#endif /* __GDK_DROP_H__ */
+
+
+

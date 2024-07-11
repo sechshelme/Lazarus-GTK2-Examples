@@ -22,15 +22,14 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_CSS_ENUMS_H__
-#define __GTK_CSS_ENUMS_H__
+#pragma once
 
 #if !defined (__GTK_CSS_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/css/gtkcss.h> can be included directly."
 #endif
 
 #include <glib.h>
-#include <gdk/gdkversionmacros.h>
+#include <gdk/version/gdkversionmacros.h>
 
 /**
  * GtkCssParserError:
@@ -74,4 +73,3 @@ typedef enum
   GTK_CSS_PARSER_WARNING_UNIMPLEMENTED
 } GtkCssParserWarning;
 
-#endif /* __GTK_CSS_ENUMS_H__ */

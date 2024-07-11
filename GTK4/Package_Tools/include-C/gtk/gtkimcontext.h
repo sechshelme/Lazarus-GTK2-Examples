@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_IM_CONTEXT_H__
-#define __GTK_IM_CONTEXT_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -26,7 +25,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_IM_CONTEXT              (gtk_im_context_get_type ())
 #define GTK_IM_CONTEXT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IM_CONTEXT, GtkIMContext))
@@ -96,12 +95,14 @@ struct _GtkIMContextClass
                                    int            *anchor_index);
 
   /*< private >*/
+  void (* activate_osk) (GtkIMContext *context);
+  gboolean (* activate_osk_with_event) (GtkIMContext *context,
+                                        GdkEvent     *event);
+
   /* Padding for future expansion */
-  void (*_gtk_reserved1) (void);
   void (*_gtk_reserved2) (void);
   void (*_gtk_reserved3) (void);
   void (*_gtk_reserved4) (void);
-  void (*_gtk_reserved5) (void);
 };
 
 
@@ -168,6 +169,11 @@ gboolean gtk_im_context_delete_surrounding  (GtkIMContext       *context,
 					     int                 offset,
 					     int                 n_chars);
 
-// // // // 
 
-#endif /* __GTK_IM_CONTEXT_H__ */
+gboolean gtk_im_context_activate_osk (GtkIMContext *context,
+                                      GdkEvent     *event);
+
+
+
+
+

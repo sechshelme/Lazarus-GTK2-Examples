@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_WINDOW_CONTROLS (gtk_window_controls_get_type ())
 
@@ -51,4 +51,4 @@ void         gtk_window_controls_set_decoration_layout (GtkWindowControls *self,
 
 gboolean     gtk_window_controls_get_empty             (GtkWindowControls *self);
 
-// // // // 
+

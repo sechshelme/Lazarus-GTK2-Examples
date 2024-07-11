@@ -22,14 +22,13 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_MOUNT_OPERATION_H__
-#define __GTK_MOUNT_OPERATION_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // // // 
+
 
 #define GTK_TYPE_MOUNT_OPERATION         (gtk_mount_operation_get_type ())
 #define GTK_MOUNT_OPERATION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_MOUNT_OPERATION, GtkMountOperation))
@@ -84,6 +83,7 @@ void             gtk_mount_operation_set_display(GtkMountOperation *op,
 
 GdkDisplay *     gtk_mount_operation_get_display(GtkMountOperation *op);
 
-// // // // 
 
-#endif /* __GTK_MOUNT_OPERATION_H__ */
+
+
+

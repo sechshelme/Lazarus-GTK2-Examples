@@ -26,8 +26,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TEXT_H__
-#define __GTK_TEXT_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -38,7 +37,7 @@
 #include <gtk/gtkentrybuffer.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_TEXT                  (gtk_text_get_type ())
 #define GTK_TEXT(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT, GtkText))
@@ -166,6 +165,5 @@ void            gtk_text_compute_cursor_extents         (GtkText         *self,
                                                          graphene_rect_t *weak);
 
 
-// // // // 
 
-#endif /* __GTK_TEXT_H__ */
+

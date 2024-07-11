@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_LIST_BASE_H__
-#define __GTK_LIST_BASE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LIST_BASE         (gtk_list_base_get_type ())
 #define GTK_LIST_BASE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_BASE, GtkListBase))
@@ -47,6 +46,5 @@ typedef struct _GtkListBaseClass GtkListBaseClass;
 
 GType                   gtk_list_base_get_type                  (void) ;
 
-// // // // 
 
-#endif  /* __GTK_LIST_BASE_H__ */
+

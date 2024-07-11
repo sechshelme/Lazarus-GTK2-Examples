@@ -17,8 +17,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_EVENT_CONTROLLER_H__
-#define __GTK_EVENT_CONTROLLER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -30,7 +29,7 @@ typedef struct _GtkEventControllerClass GtkEventControllerClass;
 #include <gtk/gtktypes.h>
 #include <gtk/gtkenums.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER         (gtk_event_controller_get_type ())
 #define GTK_EVENT_CONTROLLER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER, GtkEventController))
@@ -68,6 +67,9 @@ const char *        gtk_event_controller_get_name              (GtkEventControll
 
 void                gtk_event_controller_set_name              (GtkEventController *controller,
                                                                 const char         *name);
+GDK_AVAILABLE_IN_4_8
+void                gtk_event_controller_set_static_name       (GtkEventController *controller,
+                                                                const char         *name);
 
 
 GdkEvent *          gtk_event_controller_get_current_event    (GtkEventController *controller);
@@ -78,6 +80,7 @@ GdkDevice *         gtk_event_controller_get_current_event_device (GtkEventContr
 
 GdkModifierType     gtk_event_controller_get_current_event_state (GtkEventController *controller);
 
-// // // // 
 
-#endif /* __GTK_EVENT_CONTROLLER_H__ */
+
+
+

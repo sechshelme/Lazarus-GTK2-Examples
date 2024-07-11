@@ -17,8 +17,7 @@
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GTK_EVENT_CONTROLLER_KEY_H__
-#define __GTK_EVENT_CONTROLLER_KEY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER_KEY         (gtk_event_controller_key_get_type ())
 #define GTK_EVENT_CONTROLLER_KEY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_KEY, GtkEventControllerKey))
@@ -59,6 +58,5 @@ gboolean            gtk_event_controller_key_forward        (GtkEventControllerK
 guint               gtk_event_controller_key_get_group      (GtkEventControllerKey *controller);
 
 
-// // // // 
 
-#endif /* __GTK_EVENT_CONTROLLER_KEY_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_DROP_TARGET_H__
-#define __GTK_DROP_TARGET_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -28,7 +27,7 @@
 #include <gtk/gtktypes.h>
 
 
-// // // // 
+
 
 typedef struct _GtkDropTarget GtkDropTarget;
 
@@ -84,6 +83,5 @@ const GValue *          gtk_drop_target_get_value        (GtkDropTarget         
 void                    gtk_drop_target_reject           (GtkDropTarget         *self);
 
 
-// // // // 
 
-#endif /* __GTK_DROP_TARGET_H__ */
+

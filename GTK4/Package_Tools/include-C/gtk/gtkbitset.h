@@ -18,8 +18,7 @@
  */
 
 
-#ifndef __GTK_BITSET_H__
-#define __GTK_BITSET_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BITSET (gtk_bitset_get_type ())
 
@@ -176,6 +175,5 @@ guint                   gtk_bitset_iter_get_value               (const GtkBitset
 
 gboolean                gtk_bitset_iter_is_valid                (const GtkBitsetIter    *iter);
 
-// // // // 
 
-#endif /* __GTK_BITSET_H__ */
+

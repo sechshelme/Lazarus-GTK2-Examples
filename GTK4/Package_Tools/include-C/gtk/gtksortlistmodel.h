@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SORT_LIST_MODEL_H__
-#define __GTK_SORT_LIST_MODEL_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -30,7 +29,7 @@
 #include <gtk/gtksorter.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_SORT_LIST_MODEL (gtk_sort_list_model_get_type ())
 
@@ -47,6 +46,12 @@ void                    gtk_sort_list_model_set_sorter          (GtkSortListMode
 GtkSorter *             gtk_sort_list_model_get_sorter          (GtkSortListModel       *self);
 
 
+void                    gtk_sort_list_model_set_section_sorter  (GtkSortListModel       *self,
+                                                                 GtkSorter              *sorter);
+
+GtkSorter *             gtk_sort_list_model_get_section_sorter  (GtkSortListModel       *self);
+
+
 void                    gtk_sort_list_model_set_model           (GtkSortListModel       *self,
                                                                  GListModel             *model);
 
@@ -61,6 +66,5 @@ gboolean                gtk_sort_list_model_get_incremental     (GtkSortListMode
 
 guint                   gtk_sort_list_model_get_pending         (GtkSortListModel       *self);
 
-// // // // 
 
-#endif /* __GTK_SORT_LIST_MODEL_H__ */
+

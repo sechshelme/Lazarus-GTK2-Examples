@@ -17,8 +17,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_ROTATE_H__
-#define __GTK_GESTURE_ROTATE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesture.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_ROTATE         (gtk_gesture_rotate_get_type ())
 #define GTK_GESTURE_ROTATE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_ROTATE, GtkGestureRotate))
@@ -48,6 +47,7 @@ GtkGesture * gtk_gesture_rotate_new             (void);
 
 double       gtk_gesture_rotate_get_angle_delta (GtkGestureRotate *gesture);
 
-// // // // 
 
-#endif /* __GTK_GESTURE_ROTATE_H__ */
+
+
+

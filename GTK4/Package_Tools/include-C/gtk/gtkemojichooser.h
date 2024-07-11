@@ -23,7 +23,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EMOJI_CHOOSER                 (gtk_emoji_chooser_get_type ())
 #define GTK_EMOJI_CHOOSER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_EMOJI_CHOOSER, GtkEmojiChooser))
@@ -40,4 +40,4 @@ GType      gtk_emoji_chooser_get_type (void) ;
 
 GtkWidget *gtk_emoji_chooser_new      (void);
 
-// // // // 
+

@@ -21,8 +21,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_LINK_BUTTON_H__
-#define __GTK_LINK_BUTTON_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -30,7 +29,7 @@
 
 #include <gtk/gtkbutton.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LINK_BUTTON		(gtk_link_button_get_type ())
 #define GTK_LINK_BUTTON(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LINK_BUTTON, GtkLinkButton))
@@ -60,6 +59,6 @@ void                  gtk_link_button_set_visited       (GtkLinkButton *link_but
                                                          gboolean       visited);
 
 
-// // // // 
 
-#endif /* __GTK_LINK_BUTTON_H__ */
+
+

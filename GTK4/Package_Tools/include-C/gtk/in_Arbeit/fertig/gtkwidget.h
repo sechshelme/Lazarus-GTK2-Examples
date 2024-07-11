@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_WIDGET_H__
-#define __GTK_WIDGET_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,13 +30,12 @@
 
 #include <gdk/gdk.h>
 #include <gsk/gsk.h>
-#include <gtk/gtkaccelgroup.h>
-#include <gtk/gtkborder.h>
+#include <gtk/gtkenums.h>
 #include <gtk/gtkshortcut.h>
 #include <gtk/gtkshortcutaction.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 /* Macro for casting a pointer to a GtkWidget or GtkWidgetClass pointer.
  * Macros for testing whether widget or klass are of type GTK_TYPE_WIDGET.
@@ -269,9 +267,9 @@ struct _GtkWidgetClass
 GType      gtk_widget_get_type            (void) ;
 
 void       gtk_widget_unparent            (GtkWidget           *widget);
-
+//GDK_DEPRECATED_IN_4_10_FOR(gtk_widget_set_visible or gtk_window_present)
 void       gtk_widget_show                (GtkWidget           *widget);
-
+//GDK_DEPRECATED_IN_4_10_FOR(gtk_widget_set_visible)
 void       gtk_widget_hide                (GtkWidget           *widget);
 
 void       gtk_widget_map                 (GtkWidget           *widget);
@@ -470,14 +468,14 @@ void                  gtk_widget_set_child_visible      (GtkWidget    *widget,
 
 gboolean              gtk_widget_get_child_visible      (GtkWidget    *widget);
 
-
+//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_width)
 int                   gtk_widget_get_allocated_width    (GtkWidget     *widget);
-
+//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_height)
 int                   gtk_widget_get_allocated_height   (GtkWidget     *widget);
-
+//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_baseline)
 int                   gtk_widget_get_allocated_baseline (GtkWidget     *widget);
 
-
+//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_bounds)
 void                  gtk_widget_get_allocation         (GtkWidget     *widget,
                                                          GtkAllocation *allocation);
 
@@ -498,6 +496,8 @@ gboolean                gtk_widget_compute_point                (GtkWidget      
 int                   gtk_widget_get_width              (GtkWidget     *widget);
 
 int                   gtk_widget_get_height             (GtkWidget     *widget);
+
+int                   gtk_widget_get_baseline           (GtkWidget     *widget);
 
 int                   gtk_widget_get_size               (GtkWidget     *widget,
                                                          GtkOrientation orientation);
@@ -607,7 +607,7 @@ void     gtk_widget_set_margin_bottom (GtkWidget *widget,
 gboolean     gtk_widget_is_ancestor     (GtkWidget      *widget,
                                          GtkWidget      *ancestor);
 
-
+//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_point)
 gboolean     gtk_widget_translate_coordinates (GtkWidget  *src_widget,
                                                GtkWidget  *dest_widget,
                                                double      src_x,
@@ -706,7 +706,7 @@ void            gtk_requisition_free     (GtkRequisition       *requisition);
 
 gboolean     gtk_widget_in_destruction (GtkWidget *widget);
 
-
+//GDK_DEPRECATED_IN_4_10
 GtkStyleContext * gtk_widget_get_style_context (GtkWidget *widget);
 
 
@@ -833,6 +833,9 @@ void    gtk_widget_init_template                        (GtkWidget             *
 GObject *gtk_widget_get_template_child                  (GtkWidget             *widget,
                                                          GType                  widget_type,
                                                          const char            *name);
+//GDK_AVAILABLE_IN_4_8
+void    gtk_widget_dispose_template                     (GtkWidget             *widget,
+                                                         GType                  widget_type);
 
 void    gtk_widget_class_set_template                   (GtkWidgetClass        *widget_class,
                                                          GBytes                *template_bytes);
@@ -925,14 +928,16 @@ char **                 gtk_widget_get_css_classes      (GtkWidget   *widget);
 void                    gtk_widget_set_css_classes      (GtkWidget   *widget,
                                                          const char **classes);
 
-
+//GDK_AVAILABLE_IN_4_10
+void                    gtk_widget_get_color            (GtkWidget   *widget,
+                                                         GdkRGBA     *color);
 
 
 /**
  * GtkWidgetActionActivateFunc:
  * @widget: the widget to which the action belongs
  * @action_name: the action name
- * @parameter: parameter for activation
+ * @parameter: (nullable): parameter for activation
  *
  * The type of the callback functions used for activating
  * actions installed with gtk_widget_class_install_action().
@@ -977,6 +982,5 @@ GtkAccessibleRole       gtk_widget_class_get_accessible_role    (GtkWidgetClass 
 
 
 
-// // // // 
 
-#endif /* __GTK_WIDGET_H__ */
+

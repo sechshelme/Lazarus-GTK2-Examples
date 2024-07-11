@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_PICTURE_H__
-#define __GTK_PICTURE_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -29,7 +28,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_PICTURE (gtk_picture_get_type ())
 
@@ -40,7 +39,7 @@ G_DECLARE_FINAL_TYPE (GtkPicture, gtk_picture, GTK, PICTURE, GtkWidget)
 GtkWidget*      gtk_picture_new                         (void);
 
 GtkWidget*      gtk_picture_new_for_paintable           (GdkPaintable           *paintable);
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_pixbuf_new_for_paintable)
 GtkWidget*      gtk_picture_new_for_pixbuf              (GdkPixbuf              *pixbuf);
 
 GtkWidget*      gtk_picture_new_for_file                (GFile                  *file);
@@ -65,20 +64,26 @@ void            gtk_picture_set_filename                (GtkPicture             
 
 void            gtk_picture_set_resource                (GtkPicture             *self,
                                                          const char             *resource_path);
-
+GDK_DEPRECATED_IN_4_12_FOR(gtk_picture_set_paintable)
 void            gtk_picture_set_pixbuf                  (GtkPicture             *self,
                                                          GdkPixbuf              *pixbuf);
 
-
+GDK_DEPRECATED_IN_4_8_FOR(gtk_picture_set_content_fit)
 void            gtk_picture_set_keep_aspect_ratio       (GtkPicture             *self,
                                                          gboolean                keep_aspect_ratio);
-
+GDK_DEPRECATED_IN_4_8_FOR(gtk_picture_get_content_fit)
 gboolean        gtk_picture_get_keep_aspect_ratio       (GtkPicture             *self);
 
 void            gtk_picture_set_can_shrink              (GtkPicture             *self,
                                                          gboolean                can_shrink);
 
 gboolean        gtk_picture_get_can_shrink              (GtkPicture             *self);
+
+GDK_AVAILABLE_IN_4_8
+void            gtk_picture_set_content_fit             (GtkPicture             *self,
+                                                         GtkContentFit           content_fit);
+GDK_AVAILABLE_IN_4_8
+GtkContentFit   gtk_picture_get_content_fit             (GtkPicture             *self);
 
 
 void            gtk_picture_set_alternative_text        (GtkPicture             *self,
@@ -87,6 +92,5 @@ void            gtk_picture_set_alternative_text        (GtkPicture             
 const char *    gtk_picture_get_alternative_text        (GtkPicture             *self);
 
 
-// // // // 
 
-#endif /* __GTK_PICTURE_H__ */
+

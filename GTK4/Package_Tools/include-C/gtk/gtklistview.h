@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_LIST_VIEW_H__
-#define __GTK_LIST_VIEW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtklistbase.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LIST_VIEW         (gtk_list_view_get_type ())
 #define GTK_LIST_VIEW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_VIEW, GtkListView))
@@ -59,6 +58,13 @@ GtkListItemFactory *
                 gtk_list_view_get_factory                       (GtkListView            *self);
 
 
+void            gtk_list_view_set_header_factory                (GtkListView            *self,
+                                                                 GtkListItemFactory     *factory);
+
+GtkListItemFactory *
+                gtk_list_view_get_header_factory                (GtkListView            *self);
+
+
 void            gtk_list_view_set_show_separators               (GtkListView            *self,
                                                                  gboolean                show_separators);
 
@@ -77,7 +83,19 @@ void            gtk_list_view_set_enable_rubberband             (GtkListView    
 gboolean        gtk_list_view_get_enable_rubberband             (GtkListView            *self);
 
 
+void            gtk_list_view_set_tab_behavior                  (GtkListView            *self,
+                                                                 GtkListTabBehavior      tab_behavior);
 
-// // // // 
+GtkListTabBehavior
+                gtk_list_view_get_tab_behavior                  (GtkListView            *self);
 
-#endif  /* __GTK_LIST_VIEW_H__ */
+
+void            gtk_list_view_scroll_to                         (GtkListView            *self,
+                                                                 guint                   pos,
+                                                                 GtkListScrollFlags      flags,
+                                                                 GtkScrollInfo          *scroll);
+
+
+
+
+

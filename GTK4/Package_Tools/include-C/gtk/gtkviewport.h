@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_VIEWPORT_H__
-#define __GTK_VIEWPORT_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 
 #define GTK_TYPE_VIEWPORT            (gtk_viewport_get_type ())
@@ -62,7 +61,13 @@ void           gtk_viewport_set_child           (GtkViewport *viewport,
 
 GtkWidget *    gtk_viewport_get_child           (GtkViewport *viewport);
 
-// // // // 
+
+void           gtk_viewport_scroll_to           (GtkViewport   *viewport,
+                                                 GtkWidget     *descendant,
+                                                 GtkScrollInfo *scroll);
 
 
-#endif /* __GTK_VIEWPORT_H__ */
+
+
+
+

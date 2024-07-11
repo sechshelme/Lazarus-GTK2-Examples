@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_FILE_FILTER_H__
-#define __GTK_FILE_FILTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GTK_TYPE_FILE_FILTER              (gtk_file_filter_get_type ())
 #define GTK_FILE_FILTER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FILE_FILTER, GtkFileFilter))
@@ -68,6 +67,7 @@ GVariant      * gtk_file_filter_to_gvariant        (GtkFileFilter *filter);
 
 GtkFileFilter * gtk_file_filter_new_from_gvariant  (GVariant      *variant);
 
-// // // // 
 
-#endif /* __GTK_FILE_FILTER_H__ */
+
+
+

@@ -18,8 +18,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_X11_GL_CONTEXT_H__
-#define __GDK_X11_GL_CONTEXT_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GDK_TYPE_X11_GL_CONTEXT		(gdk_x11_gl_context_get_type ())
 #define GDK_X11_GL_CONTEXT(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_X11_GL_CONTEXT, GdkX11GLContext))
@@ -51,6 +50,5 @@ gboolean        gdk_x11_display_get_egl_version (GdkDisplay *display,
 GDK_AVAILABLE_IN_4_4
 gpointer        gdk_x11_display_get_egl_display (GdkDisplay *display);
 
-// // // // 
 
-#endif /* __GDK_X11_GL_CONTEXT_H__ */
+

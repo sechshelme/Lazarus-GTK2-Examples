@@ -16,18 +16,16 @@
  *
  */
 
-#ifndef __GDK_TOPLEVEL_LAYOUT_H__
-#define __GDK_TOPLEVEL_LAYOUT_H__
+#pragma once
 
 #if !defined(__GDK_H_INSIDE__) && !defined(GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkmonitor.h>
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
+#include <gdk/gdkmonitor.h>
 
-// // // // 
+
 
 typedef struct _GdkToplevelLayout GdkToplevelLayout;
 
@@ -78,6 +76,7 @@ void                    gdk_toplevel_layout_set_resizable (GdkToplevelLayout *la
 
 gboolean                gdk_toplevel_layout_get_resizable (GdkToplevelLayout *layout);
 
-// // // // 
 
-#endif /* __GDK_TOPLEVEL_LAYOUT_H__ */
+
+
+

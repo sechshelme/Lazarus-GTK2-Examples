@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef __GTK_HEADER_BAR_H__
-#define __GTK_HEADER_BAR_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_HEADER_BAR            (gtk_header_bar_get_type ())
 #define GTK_HEADER_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_HEADER_BAR, GtkHeaderBar))
@@ -67,6 +66,7 @@ void         gtk_header_bar_set_decoration_layout (GtkHeaderBar *bar,
 
 const char *gtk_header_bar_get_decoration_layout (GtkHeaderBar *bar);
 
-// // // // 
 
-#endif /* __GTK_HEADER_BAR_H__ */
+
+
+

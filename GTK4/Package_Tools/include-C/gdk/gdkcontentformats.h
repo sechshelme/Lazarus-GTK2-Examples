@@ -15,18 +15,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_CONTENT_FORMATS_H__
-#define __GTK_CONTENT_FORMATS_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_CONTENT_FORMATS    (gdk_content_formats_get_type ())
 
@@ -106,6 +103,8 @@ void                    gdk_content_formats_builder_add_mime_type(GdkContentForm
 void                    gdk_content_formats_builder_add_gtype   (GdkContentFormatsBuilder       *builder,
                                                                  GType                           type);
 
+
+
 /* dunno where else to put this */
 #define GDK_TYPE_FILE_LIST (gdk_file_list_get_type ())
 
@@ -122,7 +121,11 @@ typedef struct _GdkFileList GdkFileList;
 
 GDK_AVAILABLE_IN_4_6
 GSList *        gdk_file_list_get_files (GdkFileList *file_list);
+GDK_AVAILABLE_IN_4_8
+GdkFileList *   gdk_file_list_new_from_list (GSList *files);
+GDK_AVAILABLE_IN_4_8
+GdkFileList *   gdk_file_list_new_from_array (GFile **files,
+                                              gsize   n_files);
 
-// // // // 
 
-#endif /* __GTK_CONTENT_FORMATS_H__ */
+

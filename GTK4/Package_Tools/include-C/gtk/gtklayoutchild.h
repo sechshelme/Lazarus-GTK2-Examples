@@ -6,7 +6,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LAYOUT_CHILD (gtk_layout_child_get_type())
 
@@ -24,4 +24,4 @@ GtkLayoutManager *      gtk_layout_child_get_layout_manager     (GtkLayoutChild 
 
 GtkWidget *             gtk_layout_child_get_child_widget       (GtkLayoutChild *layout_child);
 
-// // // // 
+

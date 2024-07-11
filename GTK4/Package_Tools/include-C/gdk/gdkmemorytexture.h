@@ -17,17 +17,16 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GDK_MEMORY_TEXTURE__H__
-#define __GDK_MEMORY_TEXTURE__H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkenums.h>
+#include <gdk/gdktypes.h>
 #include <gdk/gdktexture.h>
 
-// // // // 
+
 
 /**
  * GDK_MEMORY_DEFAULT:
@@ -70,6 +69,5 @@ GdkTexture *            gdk_memory_texture_new              (int                
                                                              gsize              stride);
 
 
-// // // // 
 
-#endif /* __GDK_MEMORY_TEXTURE_H__ */
+

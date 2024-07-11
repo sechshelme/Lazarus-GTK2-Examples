@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SIGNAL_LIST_ITEM_FACTORY_H__
-#define __GTK_SIGNAL_LIST_ITEM_FACTORY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtklistitemfactory.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY         (gtk_signal_list_item_factory_get_type ())
 #define GTK_SIGNAL_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_SIGNAL_LIST_ITEM_FACTORY, GtkSignalListItemFactory))
@@ -46,6 +45,5 @@ GType                   gtk_signal_list_item_factory_get_type   (void) ;
 GtkListItemFactory *    gtk_signal_list_item_factory_new        (void);
 
 
-// // // // 
 
-#endif /* __GTK_SIGNAL_LIST_ITEM_FACTORY_H__ */
+

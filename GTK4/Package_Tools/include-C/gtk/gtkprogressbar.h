@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_PROGRESS_BAR_H__
-#define __GTK_PROGRESS_BAR_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_PROGRESS_BAR            (gtk_progress_bar_get_type ())
 #define GTK_PROGRESS_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PROGRESS_BAR, GtkProgressBar))
@@ -83,6 +82,7 @@ void               gtk_progress_bar_set_show_text (GtkProgressBar     *pbar,
 
 gboolean           gtk_progress_bar_get_show_text (GtkProgressBar     *pbar);
 
-// // // // 
 
-#endif /* __GTK_PROGRESS_BAR_H__ */
+
+
+

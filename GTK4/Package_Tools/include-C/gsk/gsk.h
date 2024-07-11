@@ -15,25 +15,28 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GSK_H__
-#define __GSK_H__
+#pragma once
 
 #define __GSK_H_INSIDE__
 
 #include <gsk/gskenums.h>
+#include <gsk/gskpath.h>
+#include <gsk/gskpathbuilder.h>
+#include <gsk/gskpathmeasure.h>
+#include <gsk/gskpathpoint.h>
 #include <gsk/gskrenderer.h>
 #include <gsk/gskrendernode.h>
 #include <gsk/gskroundedrect.h>
+#include <gsk/gskstroke.h>
 #include <gsk/gsktransform.h>
 #include <gsk/gskglshader.h>
 
 #include <gsk/gskcairorenderer.h>
+#include <gsk/gl/gskglrenderer.h>
+#include <gsk/gpu/gskvulkanrenderer.h>
 
 #include <gsk/gsktypes.h>
 #include <gsk/gskenumtypes.h>
 
-#include <gsk/gsk-autocleanup.h>
-
 #undef __GSK_H_INSIDE__
 
-#endif /* __GSK_H__ */

@@ -47,8 +47,7 @@
  *
  */
 
-#ifndef __GTK_TEXT_TAG_H__
-#define __GTK_TEXT_TAG_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -59,7 +58,7 @@
 #include <gtk/gtkenums.h>
 
 
-// // // // 
+
 
 typedef struct _GtkTextIter GtkTextIter;
 typedef struct _GtkTextTagTable GtkTextTagTable;
@@ -104,7 +103,8 @@ void         gtk_text_tag_set_priority (GtkTextTag        *tag,
 void         gtk_text_tag_changed      (GtkTextTag        *tag,
                                         gboolean           size_changed);
 
-// // // // 
 
-#endif
+
+
+
 

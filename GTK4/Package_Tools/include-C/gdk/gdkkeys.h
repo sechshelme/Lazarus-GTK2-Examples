@@ -22,17 +22,15 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_KEYS_H__
-#define __GDK_KEYS_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 
 const char *gdk_keyval_name      (guint        keyval) ;
@@ -58,6 +56,5 @@ guint32  gdk_keyval_to_unicode   (guint        keyval) ;
 guint    gdk_unicode_to_keyval   (guint32      wc) ;
 
 
-// // // // 
 
-#endif /* __GDK_KEYS_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen
  */
 
-#ifndef __GTK_SELECTION_FILTER_MODEL_H__
-#define __GTK_SELECTION_FILTER_MODEL_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -28,7 +27,7 @@
 #include <gio/gio.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SELECTION_FILTER_MODEL (gtk_selection_filter_model_get_type ())
 
@@ -44,6 +43,5 @@ void                      gtk_selection_filter_model_set_model    (GtkSelectionF
 
 GtkSelectionModel *       gtk_selection_filter_model_get_model    (GtkSelectionFilterModel     *self);
 
-// // // // 
 
-#endif /* __GTK_SELECTION_FILTER_MODEL_H__ */
+

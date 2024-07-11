@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SCALE_H__
-#define __GTK_SCALE_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkrange.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_SCALE            (gtk_scale_get_type ())
 #define GTK_SCALE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCALE, GtkScale))
@@ -131,6 +130,7 @@ void              gtk_scale_set_format_value_func (GtkScale                *scal
                                                    gpointer                 user_data,
                                                    GDestroyNotify           destroy_notify);
 
-// // // // 
 
-#endif /* __GTK_SCALE_H__ */
+
+
+

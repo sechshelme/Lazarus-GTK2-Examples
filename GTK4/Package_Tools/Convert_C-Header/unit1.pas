@@ -53,6 +53,12 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_CONST', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_2', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_12', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_14', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_ENUMERATOR_IN_4_10', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_ENUMERATOR_IN_4_12', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_ENUMERATOR_IN_4_14', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_ENUMERATOR_IN_4_14', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_WARN_UNUSED_RESULT', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_MALLOC', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_PURE', '', [rfReplaceAll]);

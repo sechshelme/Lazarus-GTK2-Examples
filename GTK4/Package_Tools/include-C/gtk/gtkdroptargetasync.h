@@ -23,8 +23,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_DROP_TARGET_ASYNC_H__
-#define __GTK_DROP_TARGET_ASYNC_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -34,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 typedef struct _GtkDropTargetAsync GtkDropTargetAsync;
 typedef struct _GtkDropTargetAsyncClass GtkDropTargetAsyncClass;
@@ -72,6 +71,5 @@ void                    gtk_drop_target_async_reject_drop       (GtkDropTargetAs
                                                                  GdkDrop                *drop);
 
 
-// // // // 
 
-#endif /* __GTK_DROP_TARGET_ASYNC_H__ */
+

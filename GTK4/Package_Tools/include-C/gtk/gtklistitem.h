@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_LIST_ITEM_H__
-#define __GTK_LIST_ITEM_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,20 +25,11 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
-
-#define GTK_TYPE_LIST_ITEM         (gtk_list_item_get_type ())
-#define GTK_LIST_ITEM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_ITEM, GtkListItem))
-#define GTK_LIST_ITEM_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST ((k), GTK_TYPE_LIST_ITEM, GtkListItemClass))
-#define GTK_IS_LIST_ITEM(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GTK_TYPE_LIST_ITEM))
-#define GTK_IS_LIST_ITEM_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GTK_TYPE_LIST_ITEM))
-#define GTK_LIST_ITEM_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GTK_TYPE_LIST_ITEM, GtkListItemClass))
-
-typedef struct _GtkListItem GtkListItem;
-typedef struct _GtkListItemClass GtkListItemClass;
 
 
-GType           gtk_list_item_get_type                          (void) ;
+#define GTK_TYPE_LIST_ITEM (gtk_list_item_get_type ())
+
+GDK_DECLARE_INTERNAL_TYPE (GtkListItem, gtk_list_item, GTK, LIST_ITEM, GObject)
 
 
 gpointer        gtk_list_item_get_item                          (GtkListItem            *self);
@@ -58,6 +48,11 @@ gboolean        gtk_list_item_get_activatable                   (GtkListItem    
 void            gtk_list_item_set_activatable                   (GtkListItem            *self,
                                                                  gboolean                activatable);
 
+gboolean        gtk_list_item_get_focusable                     (GtkListItem            *self) ;
+
+void            gtk_list_item_set_focusable                     (GtkListItem            *self,
+                                                                 gboolean                focusable);
+
 
 void            gtk_list_item_set_child                         (GtkListItem            *self,
                                                                  GtkWidget              *child);
@@ -65,6 +60,16 @@ void            gtk_list_item_set_child                         (GtkListItem    
 GtkWidget *     gtk_list_item_get_child                         (GtkListItem            *self);
 
 
-// // // // 
+void            gtk_list_item_set_accessible_description        (GtkListItem            *self,
+                                                                 const char             *description);
 
-#endif  /* __GTK_LIST_ITEM_H__ */
+const char *    gtk_list_item_get_accessible_description        (GtkListItem            *self);
+
+
+void            gtk_list_item_set_accessible_label              (GtkListItem            *self,
+                                                                 const char             *label);
+
+const char *    gtk_list_item_get_accessible_label              (GtkListItem            *self);
+
+
+

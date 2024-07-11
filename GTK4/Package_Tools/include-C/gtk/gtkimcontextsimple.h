@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_IM_CONTEXT_SIMPLE_H__
-#define __GTK_IM_CONTEXT_SIMPLE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 #include <gtk/gtkimcontext.h>
 
 
-// // // // 
+
 
 /*
  * No longer used by GTK, just left here on the off chance that some
@@ -73,7 +72,7 @@ void          gtk_im_context_simple_add_compose_file (GtkIMContextSimple *contex
                                                       const char         *compose_file);
 
 
-// // // // 
 
 
-#endif /* __GTK_IM_CONTEXT_SIMPLE_H__ */
+
+

@@ -16,8 +16,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_CLICK_H__
-#define __GTK_GESTURE_CLICK_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkgesturesingle.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_CLICK         (gtk_gesture_click_get_type ())
 #define GTK_GESTURE_CLICK(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_CLICK, GtkGestureClick))
@@ -44,6 +43,7 @@ GType        gtk_gesture_click_get_type (void) ;
 
 GtkGesture * gtk_gesture_click_new      (void);
 
-// // // // 
 
-#endif /* __GTK_GESTURE_CLICK_H__ */
+
+
+

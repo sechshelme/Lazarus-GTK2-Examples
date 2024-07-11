@@ -18,8 +18,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_POPOVER_H__
-#define __GTK_POPOVER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_POPOVER                 (gtk_popover_get_type ())
 #define GTK_POPOVER(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_POPOVER, GtkPopover))
@@ -125,6 +124,6 @@ void gtk_popover_set_default_widget (GtkPopover *popover,
 void gtk_popover_present (GtkPopover *popover);
 
 
-// // // // 
 
-#endif /* __GTK_POPOVER_H__ */
+
+

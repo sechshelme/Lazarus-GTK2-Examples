@@ -24,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_WINDOW_HANDLE (gtk_window_handle_get_type ())
 
@@ -41,4 +41,4 @@ GtkWidget * gtk_window_handle_get_child (GtkWindowHandle *self);
 void        gtk_window_handle_set_child (GtkWindowHandle *self,
                                          GtkWidget       *child);
 
-// // // // 
+

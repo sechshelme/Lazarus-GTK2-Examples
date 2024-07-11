@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SHORTCUT_MANAGER_H__
-#define __GTK_SHORTCUT_MANAGER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkshortcutcontroller.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUT_MANAGER               (gtk_shortcut_manager_get_type ())
 
@@ -59,6 +58,5 @@ struct _GtkShortcutManagerInterface
 };
 
 
-// // // // 
 
-#endif /* __GTK_SHORTCUT_MANAGER_H__ */
+

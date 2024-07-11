@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SHORTCUT_TRIGGER_H__
-#define __GTK_SHORTCUT_TRIGGER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUT_TRIGGER (gtk_shortcut_trigger_get_type ())
 
@@ -137,6 +136,5 @@ GtkShortcutTrigger *    gtk_alternative_trigger_get_first       (GtkAlternativeT
 
 GtkShortcutTrigger *    gtk_alternative_trigger_get_second      (GtkAlternativeTrigger *self);
 
-// // // // 
 
-#endif /* __GTK_SHORTCUT_TRIGGER_H__ */
+

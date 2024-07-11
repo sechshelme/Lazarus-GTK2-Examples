@@ -19,8 +19,7 @@
  *
  */
 
-#ifndef __GTK_LIST_BOX_H__
-#define __GTK_LIST_BOX_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 
 #define GTK_TYPE_LIST_BOX (gtk_list_box_get_type ())
@@ -182,6 +181,9 @@ void           gtk_list_box_insert                       (GtkListBox            
 void           gtk_list_box_remove                       (GtkListBox                    *box,
                                                           GtkWidget                     *child);
 
+void           gtk_list_box_remove_all                   (GtkListBox                    *box);
+
+
 GtkListBoxRow* gtk_list_box_get_selected_row             (GtkListBox                    *box);
 
 GtkListBoxRow* gtk_list_box_get_row_at_index             (GtkListBox                    *box,
@@ -275,6 +277,5 @@ gboolean       gtk_list_box_get_show_separators          (GtkListBox            
 
 
 
-// // // // 
 
-#endif
+

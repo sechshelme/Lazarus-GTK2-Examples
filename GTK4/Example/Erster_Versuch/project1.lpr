@@ -1,16 +1,20 @@
 program project1;
 
+// https://www.docs4dev.com/docs/gtk/4.0.0/ch01s05.html#google_vignette
+
 uses
   glib2,
   common_GTK,
   gtkenums,                   // io. ohne
-  gtkwidget,             // -> ctypes,pango,Cairo, glib2, common_GTK, gtkenums
+  gtkwidget,                  // -> ctypes, pango,Cairo, glib2, common_GTK, gtkenums
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
   gtkapplicationwindow,       // -> glib2, common_GTK, gtkwidget, gtkwindow    ( PGtkApplication ausgelagert )
   gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
   gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
+  gtkborder,                  // io. -> common_GTK
+  gtkcalendar,                // io. -> common_GTK, gtkwidget;
 
   Math;
 
@@ -36,13 +40,20 @@ uses
 
   // ------- Eigenes
 
-  function CreateButton(caption:Pgchar):PGtkWidget;
+  function CreateButton(Caption: Pgchar): PGtkWidget;
+  var
+    border: PGtkBorder;
   begin
-    Result := gtk_button_new_with_label(caption);
-    gtk_widget_set_margin_start(Result,10);
-    gtk_widget_set_margin_top(Result,10);
-    gtk_widget_set_margin_bottom(Result,10);
-    gtk_widget_set_margin_end(Result,10);
+    border := gtk_border_new;
+
+    gtk_border_free(border);
+    WriteLn(border^.left, 'x', border^.top, 'x', border^.right, 'x', border^.bottom);
+
+    Result := gtk_button_new_with_label(Caption);
+    gtk_widget_set_margin_start(Result, 10);
+    gtk_widget_set_margin_top(Result, 10);
+    gtk_widget_set_margin_bottom(Result, 10);
+    gtk_widget_set_margin_end(Result, 10);
   end;
 
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
@@ -55,7 +66,10 @@ uses
     button1: PGtkWidget;
   begin
     Result := gtk_action_bar_new;
-
+         button1 := gtk_button_new_with_label('ABButton 1');
+    gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
+    button1 := gtk_button_new_with_label('ABButton 2');
+    gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
     button1 := gtk_button_new_with_label('ABButton 1');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
     button1 := gtk_button_new_with_label('ABButton 2');
@@ -96,9 +110,16 @@ uses
 
   end;
 
+    function Create_Calender: PGtkWidget;
+  begin
+    Result := gtk_calendar_new;
+  end;
+
+
+
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, box, actionBar: PGTKWidget;
+    window, box, actionBar, calendar: PGTKWidget;
     window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
@@ -114,6 +135,9 @@ uses
     gtk_box_append(GTK_BOX(box), actionBar);
     actionBar := Create_ActionBar;
     gtk_box_append(GTK_BOX(box), actionBar);
+
+    calendar:=Create_Calender;
+    gtk_box_append(GTK_BOX(box), calendar);
 
 
     gtk_window_present(GTK_WINDOW(window));

@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_ACCEL_GROUP_H__
-#define __GTK_ACCEL_GROUP_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkenums.h>
 
-// // // // 
+
 
 
 /* --- Accelerators--- */
@@ -70,6 +69,5 @@ char *   gtk_accelerator_get_label_with_keycode (GdkDisplay      *display,
 GdkModifierType gtk_accelerator_get_default_mod_mask (void) ;
 
 
-// // // // 
 
-#endif /* __GTK_ACCEL_GROUP_H__ */
+

@@ -22,21 +22,17 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_EVENTS_H__
-#define __GDK_EVENTS_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
+#include <gdk/gdktypes.h>
 #include <gdk/gdkdevice.h>
 #include <gdk/gdkdevicetool.h>
 #include <gdk/gdkdrag.h>
-#include <gdk/gdkenums.h>
-#include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
-// // // // 
 
 
 #define GDK_TYPE_EVENT          (gdk_event_get_type ())
@@ -169,12 +165,18 @@ typedef struct _GdkTouchpadEvent        GdkTouchpadEvent;
  * @GDK_PAD_RING: A tablet pad axis event from a "ring".
  * @GDK_PAD_STRIP: A tablet pad axis event from a "strip".
  * @GDK_PAD_GROUP_MODE: A tablet pad group mode change.
- * @GDK_TOUCHPAD_HOLD: A touchpad hold gesture event, the current state
- *   is determined by its phase field. Since: 4.6
  * @GDK_EVENT_LAST: marks the end of the GdkEventType enumeration.
  *
  * Specifies the type of the event.
  */
+/**
+  * GDK_TOUCHPAD_HOLD:
+  *
+  * A touchpad hold gesture event, the current state is determined by its phase
+  * field.
+  *
+  * Since: 4.6
+  */
 typedef enum
 {
   GDK_DELETE,
@@ -264,6 +266,37 @@ typedef enum
   GDK_SCROLL_RIGHT,
   GDK_SCROLL_SMOOTH
 } GdkScrollDirection;
+
+/**
+ * GdkScrollUnit:
+ * @GDK_SCROLL_UNIT_WHEEL: The delta is in number of wheel clicks.
+ * @GDK_SCROLL_UNIT_SURFACE: The delta is in surface pixels to scroll directly
+ *   on screen.
+ *
+ * Specifies the unit of scroll deltas.
+ *
+ * When you get %GDK_SCROLL_UNIT_WHEEL, a delta of 1.0 means 1 wheel detent
+ * click in the south direction, 2.0 means 2 wheel detent clicks in the south
+ * direction... This is the same logic for negative values but in the north
+ * direction.
+ *
+ * If you get %GDK_SCROLL_UNIT_SURFACE, are managing a scrollable view and get a
+ * value of 123, you have to scroll 123 surface logical pixels right if it's
+ * @delta_x or down if it's @delta_y. This is the same logic for negative values
+ * but you have to scroll left instead of right if it's @delta_x and up instead
+ * of down if it's @delta_y.
+ *
+ * 1 surface logical pixel is equal to 1 real screen pixel multiplied by the
+ * final scale factor of your graphical interface (the product of the desktop
+ * scale factor and eventually a custom scale factor in your app).
+ *
+ * Since: 4.8
+ */
+typedef enum
+{
+  GDK_SCROLL_UNIT_WHEEL,
+  GDK_SCROLL_UNIT_SURFACE
+} GdkScrollUnit;
 
 /**
  * GdkNotifyType:
@@ -395,6 +428,8 @@ GdkScrollDirection      gdk_scroll_event_get_direction  (GdkEvent *event);
 void                    gdk_scroll_event_get_deltas     (GdkEvent *event,
                                                          double   *delta_x,
                                                          double   *delta_y);
+GDK_AVAILABLE_IN_4_8
+GdkScrollUnit           gdk_scroll_event_get_unit       (GdkEvent *event);
 
 
 gboolean                gdk_scroll_event_is_stop        (GdkEvent *event);
@@ -518,6 +553,8 @@ gboolean               gdk_key_event_get_match (GdkEvent        *event,
                                                 guint           *keyval,
                                                 GdkModifierType *modifiers);
 
-// // // // 
 
-#endif /* __GDK_EVENTS_H__ */
+
+
+
+

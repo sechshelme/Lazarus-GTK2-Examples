@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GDK_POPUP_H__
-#define __GDK_POPUP_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdkpopuplayout.h>
 #include <gdk/gdksurface.h>
 
-// // // // 
+
 
 #define GDK_TYPE_POPUP (gdk_popup_get_type ())
 
@@ -58,6 +57,5 @@ int             gdk_popup_get_position_y        (GdkPopup       *popup);
 
 gboolean        gdk_popup_get_autohide          (GdkPopup       *popup);
 
-// // // // 
 
-#endif /* __GDK_POPUP_H__ */
+

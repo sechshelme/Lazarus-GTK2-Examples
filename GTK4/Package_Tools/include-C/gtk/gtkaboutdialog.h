@@ -20,8 +20,7 @@
    Author: Anders Carlsson <andersca@codefactory.se>
 */
 
-#ifndef __GTK_ABOUT_DIALOG_H__
-#define __GTK_ABOUT_DIALOG_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -29,7 +28,7 @@
 
 #include <gtk/gtkwindow.h>
 
-// // // // 
+
 
 #define GTK_TYPE_ABOUT_DIALOG            (gtk_about_dialog_get_type ())
 #define GTK_ABOUT_DIALOG(object)         (G_TYPE_CHECK_INSTANCE_CAST ((object), GTK_TYPE_ABOUT_DIALOG, GtkAboutDialog))
@@ -58,6 +57,7 @@ typedef struct _GtkAboutDialog        GtkAboutDialog;
  * @GTK_LICENSE_BSD_3: The 3-clause BSD licence
  * @GTK_LICENSE_APACHE_2_0: The Apache License, version 2.0
  * @GTK_LICENSE_MPL_2_0: The Mozilla Public License, version 2.0
+ * @GTK_LICENSE_0BSD: Zero-Clause BSD license
  *
  * The type of license for an application.
  *
@@ -88,7 +88,8 @@ typedef enum {
 
   GTK_LICENSE_BSD_3,
   GTK_LICENSE_APACHE_2_0,
-  GTK_LICENSE_MPL_2_0
+  GTK_LICENSE_MPL_2_0,
+  GTK_LICENSE_0BSD
 } GtkLicense;
 
 
@@ -189,8 +190,7 @@ void                  gtk_about_dialog_add_credit_section      (GtkAboutDialog  
 
 
 
-// // // // 
 
-#endif /* __GTK_ABOUT_DIALOG_H__ */
+
 
 

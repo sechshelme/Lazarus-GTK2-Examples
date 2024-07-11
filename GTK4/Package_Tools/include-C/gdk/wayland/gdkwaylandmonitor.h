@@ -19,8 +19,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_WAYLAND_MONITOR_H__
-#define __GDK_WAYLAND_MONITOR_H__
+#pragma once
 
 #if !defined (__GDKWAYLAND_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/wayland/gdkwayland.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gdk/gdkmonitor.h>
 
-// // // // 
+
 
 #define GDK_TYPE_WAYLAND_MONITOR           (gdk_wayland_monitor_get_type ())
 #define GDK_WAYLAND_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_WAYLAND_MONITOR, GdkWaylandMonitor))
@@ -43,6 +42,5 @@ GType             gdk_wayland_monitor_get_type            (void) ;
 
 struct wl_output *gdk_wayland_monitor_get_wl_output       (GdkMonitor *monitor);
 
-// // // // 
 
-#endif  /* __GDK_WAYLAND_MONITOR_H__ */
+

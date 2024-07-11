@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_SIZE_GROUP_H__
-#define __GTK_SIZE_GROUP_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SIZE_GROUP            (gtk_size_group_get_type ())
 #define GTK_SIZE_GROUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SIZE_GROUP, GtkSizeGroup))
@@ -57,6 +56,7 @@ void             gtk_size_group_remove_widget (GtkSizeGroup     *size_group,
 
 GSList *         gtk_size_group_get_widgets   (GtkSizeGroup     *size_group);
 
-// // // // 
 
-#endif /* __GTK_SIZE_GROUP_H__ */
+
+
+

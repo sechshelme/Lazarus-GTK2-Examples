@@ -18,17 +18,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_DRAW_CONTEXT__
-#define __GDK_DRAW_CONTEXT__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_DRAW_CONTEXT             (gdk_draw_context_get_type ())
 #define GDK_DRAW_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_DRAW_CONTEXT, GdkDrawContext))
@@ -48,10 +46,12 @@ void                    gdk_draw_context_begin_frame            (GdkDrawContext 
 
 void                    gdk_draw_context_end_frame              (GdkDrawContext         *context);
 
+
 gboolean                gdk_draw_context_is_in_frame            (GdkDrawContext         *context);
 
 const cairo_region_t *  gdk_draw_context_get_frame_region       (GdkDrawContext         *context);
 
-// // // // 
 
-#endif /* __GDK_DRAW_CONTEXT__ */
+
+
+

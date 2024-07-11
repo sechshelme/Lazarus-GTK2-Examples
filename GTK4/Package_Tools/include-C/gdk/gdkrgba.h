@@ -22,17 +22,15 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_RGBA_H__
-#define __GDK_RGBA_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
-// // // // 
+
 
 struct _GdkRGBA
 {
@@ -70,6 +68,6 @@ gboolean  gdk_rgba_parse     (GdkRGBA       *rgba,
 char *   gdk_rgba_to_string (const GdkRGBA *rgba) ;
 
 
-// // // // 
 
-#endif /* __GDK_RGBA_H__ */
+
+

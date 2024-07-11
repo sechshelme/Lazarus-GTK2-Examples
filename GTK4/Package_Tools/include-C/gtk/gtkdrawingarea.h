@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_DRAWING_AREA_H__
-#define __GTK_DRAWING_AREA_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_DRAWING_AREA            (gtk_drawing_area_get_type ())
 #define GTK_DRAWING_AREA(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_DRAWING_AREA, GtkDrawingArea))
@@ -106,6 +105,7 @@ void            gtk_drawing_area_set_draw_func          (GtkDrawingArea         
                                                          gpointer                user_data,
                                                          GDestroyNotify          destroy);
 
-// // // // 
 
-#endif /* __GTK_DRAWING_AREA_H__ */
+
+
+

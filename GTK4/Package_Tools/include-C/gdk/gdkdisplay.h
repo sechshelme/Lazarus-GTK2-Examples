@@ -19,20 +19,18 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_DISPLAY_H__
-#define __GDK_DISPLAY_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 #include <gdk/gdkevents.h>
 #include <gdk/gdkseat.h>
 #include <gdk/gdkmonitor.h>
 
-// // // // 
+
 
 #define GDK_TYPE_DISPLAY              (gdk_display_get_type ())
 #define GDK_DISPLAY(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_DISPLAY, GdkDisplay))
@@ -66,6 +64,8 @@ gboolean    gdk_display_is_composited      (GdkDisplay  *display);
 
 gboolean    gdk_display_is_rgba            (GdkDisplay  *display);
 
+gboolean    gdk_display_supports_shadow_width (GdkDisplay *display);
+
 gboolean    gdk_display_supports_input_shapes (GdkDisplay    *display);
 
 GDK_AVAILABLE_IN_4_4
@@ -83,10 +83,10 @@ GdkClipboard *          gdk_display_get_clipboard               (GdkDisplay     
 
 GdkClipboard *          gdk_display_get_primary_clipboard       (GdkDisplay     *display);
 
-
+GDK_DEPRECATED_IN_4_10_FOR(gdk_toplevel_set_startup_id)
 void     gdk_display_notify_startup_complete   (GdkDisplay    *display,
                                                 const char    *startup_id);
-
+GDK_DEPRECATED_IN_4_10
 const char * gdk_display_get_startup_notification_id (GdkDisplay *display);
 
 
@@ -104,7 +104,7 @@ GListModel * gdk_display_get_monitors          (GdkDisplay *self) ;
 GdkMonitor * gdk_display_get_monitor_at_surface (GdkDisplay *display,
                                                 GdkSurface  *surface);
 
-
+GDK_DEPRECATED_IN_4_10
 void      gdk_display_put_event  (GdkDisplay     *display,
                                   GdkEvent       *event);
 
@@ -137,7 +137,10 @@ gboolean     gdk_display_get_setting (GdkDisplay *display,
                                       GValue     *value);
 
 
+GdkDmabufFormats *
+             gdk_display_get_dmabuf_formats (GdkDisplay *display);
 
-// // // // 
 
-#endif  /* __GDK_DISPLAY_H__ */
+
+
+

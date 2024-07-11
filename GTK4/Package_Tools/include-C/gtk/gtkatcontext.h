@@ -28,7 +28,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtkaccessible.h>
 
-// // // // 
+
 
 #define GTK_TYPE_AT_CONTEXT (gtk_at_context_get_type())
 
@@ -45,4 +45,4 @@ GtkATContext *          gtk_at_context_create                   (GtkAccessibleRo
                                                                  GtkAccessible     *accessible,
                                                                  GdkDisplay        *display);
 
-// // // // 
+

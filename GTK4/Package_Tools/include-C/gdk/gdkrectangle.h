@@ -22,17 +22,15 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_RECTANGLE_H__
-#define __GDK_RECTANGLE_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
-// // // // 
+
 
 /* Rectangle utilities
  */
@@ -47,18 +45,17 @@ void     gdk_rectangle_union     (const GdkRectangle *src1,
 
 
 gboolean gdk_rectangle_equal     (const GdkRectangle *rect1,
-                                  const GdkRectangle *rect2);
+                                  const GdkRectangle *rect2) ;
 
 
 gboolean gdk_rectangle_contains_point (const GdkRectangle *rect,
                                        int                 x,
-                                       int                 y);
+                                       int                 y) ;
 
 
 GType gdk_rectangle_get_type (void) ;
 
 #define GDK_TYPE_RECTANGLE (gdk_rectangle_get_type ())
 
-// // // // 
 
-#endif /* __GDK__RECTANGLE_H__ */
+

@@ -18,8 +18,7 @@
  */
 
 
-#ifndef __GSK_TRANSFORM_H__
-#define __GSK_TRANSFORM_H__
+#pragma once
 
 #if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gsk/gsk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gsk/gskenums.h>
 #include <gsk/gsktypes.h>
 
-// // // // 
+
 
 #define GSK_TYPE_TRANSFORM (gsk_transform_get_type ())
 
@@ -135,6 +134,6 @@ void                    gsk_transform_transform_point           (GskTransform   
                                                                  graphene_point_t                *out_point);
 
 
-// // // // 
 
-#endif /* __GSK_TRANSFORM_H__ */
+
+

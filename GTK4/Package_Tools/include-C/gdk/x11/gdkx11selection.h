@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#ifndef __GDK_X11_SELECTION_H__
-#define __GDK_X11_SELECTION_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -34,7 +33,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // // 
+
 
 
 int      gdk_x11_display_text_property_to_text_list (GdkDisplay   *display,
@@ -62,6 +61,5 @@ gboolean gdk_x11_display_utf8_to_compound_text      (GdkDisplay   *display,
 
 void     gdk_x11_free_compound_text                 (guchar       *ctext);
 
-// // // // 
 
-#endif /* __GDK_X11_SELECTION_H__ */
+

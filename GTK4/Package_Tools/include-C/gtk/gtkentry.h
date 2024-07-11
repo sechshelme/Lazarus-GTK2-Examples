@@ -26,8 +26,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_ENTRY_H__
-#define __GTK_ENTRY_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -37,11 +36,11 @@
 #include <gtk/gtkeditable.h>
 #include <gtk/gtkimcontext.h>
 #include <gtk/gtkentrybuffer.h>
-#include <gtk/gtkentrycompletion.h>
+#include <gtk/deprecated/gtkentrycompletion.h>
 #include <gtk/gtkimage.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_ENTRY                  (gtk_entry_get_type ())
 #define GTK_ENTRY(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ENTRY, GtkEntry))
@@ -157,10 +156,10 @@ void       gtk_entry_set_alignment              (GtkEntry      *entry,
 
 float      gtk_entry_get_alignment              (GtkEntry      *entry);
 
-
+GDK_DEPRECATED_IN_4_10
 void                gtk_entry_set_completion (GtkEntry           *entry,
                                               GtkEntryCompletion *completion);
-
+GDK_DEPRECATED_IN_4_10
 GtkEntryCompletion *gtk_entry_get_completion (GtkEntry           *entry);
 
 /* Progress API
@@ -291,6 +290,7 @@ void           gtk_entry_set_extra_menu                      (GtkEntry          
 
 GMenuModel *   gtk_entry_get_extra_menu                      (GtkEntry             *entry);
 
-// // // // 
 
-#endif /* __GTK_ENTRY_H__ */
+
+
+

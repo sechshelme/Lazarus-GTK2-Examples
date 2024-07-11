@@ -15,20 +15,17 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_DEVICE_H__
-#define __GDK_DEVICE_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 #include <gdk/gdkdevicetool.h>
 #include <gdk/gdkenums.h>
 
 
-// // // // 
 
 #define GDK_TYPE_DEVICE         (gdk_device_get_type ())
 #define GDK_DEVICE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_DEVICE, GdkDevice))
@@ -66,10 +63,15 @@ typedef enum
 /**
  * GdkTimeCoord:
  * @time: The timestamp for this event
- * @flags: Flags indicating what axes are present
- * @axes: (array fixed-size=12): axis values
+ * @flags: Flags indicating what axes are present, see [flags@Gdk.AxisFlags]
+ * @axes: (array fixed-size=12): axis values, indexed by [enum@Gdk.AxisUse]
  *
  * A `GdkTimeCoord` stores a single event in a motion history.
+ *
+ * To check whether an axis is present, check whether the corresponding
+ * flag from the [flags@Gdk.AxisFlags] enumeration is set in the @flags
+ * To access individual axis values, use the values of the values of
+ * the [enum@Gdk.AxisUse] enumerations as indices.
  */
 struct _GdkTimeCoord
 {
@@ -121,6 +123,8 @@ GdkSurface *        gdk_device_get_surface_at_position  (GdkDevice *device,
 
 
 guint32             gdk_device_get_timestamp            (GdkDevice *device);
-// // // // 
 
-#endif /* __GDK_DEVICE_H__ */
+
+
+
+

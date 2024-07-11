@@ -17,8 +17,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_ZOOM_H__
-#define __GTK_GESTURE_ZOOM_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkgesture.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_ZOOM         (gtk_gesture_zoom_get_type ())
 #define GTK_GESTURE_ZOOM(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_ZOOM, GtkGestureZoom))
@@ -48,6 +47,7 @@ GtkGesture * gtk_gesture_zoom_new             (void);
 
 double       gtk_gesture_zoom_get_scale_delta (GtkGestureZoom *gesture);
 
-// // // // 
 
-#endif /* __GTK_GESTURE_ZOOM_H__ */
+
+
+

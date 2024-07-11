@@ -22,21 +22,19 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_SURFACE_H__
-#define __GDK_SURFACE_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 #include <gdk/gdkevents.h>
 #include <gdk/gdkframeclock.h>
 #include <gdk/gdkmonitor.h>
 #include <gdk/gdkpopuplayout.h>
 
-// // // // 
+
 
 typedef struct _GdkSurfaceClass GdkSurfaceClass;
 
@@ -99,13 +97,16 @@ gboolean gdk_surface_translate_coordinates (GdkSurface *from,
 int           gdk_surface_get_scale_factor  (GdkSurface     *surface);
 
 
+double        gdk_surface_get_scale         (GdkSurface     *surface);
+
+
 gboolean      gdk_surface_get_device_position (GdkSurface      *surface,
                                                GdkDevice       *device,
                                                double          *x,
                                                double          *y,
                                                GdkModifierType *mask);
 
-
+GDK_DEPRECATED_IN_4_12
 cairo_surface_t *
               gdk_surface_create_similar_surface (GdkSurface *surface,
                                                   cairo_content_t  content,
@@ -133,13 +134,12 @@ GdkCairoContext *gdk_surface_create_cairo_context(GdkSurface    *surface);
 
 GdkGLContext * gdk_surface_create_gl_context    (GdkSurface     *surface,
                                                  GError        **error);
-
+GDK_DEPRECATED_IN_4_14
 GdkVulkanContext *
                gdk_surface_create_vulkan_context(GdkSurface     *surface,
                                                  GError        **error);
 
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (GdkSurface, g_object_unref)
 
-// // // // 
 
-#endif /* __GDK_SURFACE_H__ */
+

@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_WAYLAND_DEVICE_H__
-#define __GDK_WAYLAND_DEVICE_H__
+#pragma once
 
 #if !defined (__GDKWAYLAND_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/wayland/gdkwayland.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <wayland-client.h>
 
-// // // // 
+
 
 #ifdef GTK_COMPILATION
 typedef struct _GdkWaylandDevice GdkWaylandDevice;
@@ -58,6 +57,5 @@ struct xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
 
 const char          *gdk_wayland_device_get_node_path       (GdkDevice *device);
 
-// // // // 
 
-#endif /* __GDK_WAYLAND_DEVICE_H__ */
+

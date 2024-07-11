@@ -6,7 +6,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 /* enumerations from "gskenums.h" */
  GType gsk_render_node_type_get_type (void) ;
@@ -17,13 +17,29 @@
 #define GSK_TYPE_BLEND_MODE (gsk_blend_mode_get_type ())
  GType gsk_corner_get_type (void) ;
 #define GSK_TYPE_CORNER (gsk_corner_get_type ())
+ GType gsk_fill_rule_get_type (void) ;
+#define GSK_TYPE_FILL_RULE (gsk_fill_rule_get_type ())
+ GType gsk_line_cap_get_type (void) ;
+#define GSK_TYPE_LINE_CAP (gsk_line_cap_get_type ())
+ GType gsk_line_join_get_type (void) ;
+#define GSK_TYPE_LINE_JOIN (gsk_line_join_get_type ())
+ GType gsk_path_operation_get_type (void) ;
+#define GSK_TYPE_PATH_OPERATION (gsk_path_operation_get_type ())
+ GType gsk_path_direction_get_type (void) ;
+#define GSK_TYPE_PATH_DIRECTION (gsk_path_direction_get_type ())
  GType gsk_serialization_error_get_type (void) ;
 #define GSK_TYPE_SERIALIZATION_ERROR (gsk_serialization_error_get_type ())
  GType gsk_transform_category_get_type (void) ;
 #define GSK_TYPE_TRANSFORM_CATEGORY (gsk_transform_category_get_type ())
  GType gsk_gl_uniform_type_get_type (void) ;
 #define GSK_TYPE_GL_UNIFORM_TYPE (gsk_gl_uniform_type_get_type ())
-// // // // 
+ GType gsk_mask_mode_get_type (void) ;
+#define GSK_TYPE_MASK_MODE (gsk_mask_mode_get_type ())
+
+/* enumerations from "gskpath.h" */
+ GType gsk_path_foreach_flags_get_type (void) ;
+#define GSK_TYPE_PATH_FOREACH_FLAGS (gsk_path_foreach_flags_get_type ())
+
 
 #endif /* __GSK_ENUM_TYPES_H__ */
 

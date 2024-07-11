@@ -19,8 +19,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_WAYLAND_GL_CONTEXT_H__
-#define __GDK_WAYLAND_GL_CONTEXT_H__
+#pragma once
 
 #if !defined (__GDKWAYLAND_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/wayland/gdkwayland.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GDK_TYPE_WAYLAND_GL_CONTEXT		(gdk_wayland_gl_context_get_type ())
 #define GDK_WAYLAND_GL_CONTEXT(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_WAYLAND_GL_CONTEXT, GdkWaylandGLContext))
@@ -40,6 +39,5 @@ typedef struct _GdkWaylandGLContextClass	GdkWaylandGLContextClass;
 
 GType gdk_wayland_gl_context_get_type (void) ;
 
-// // // // 
 
-#endif /* __GDK_WAYLAND_GL_CONTEXT_H__ */
+

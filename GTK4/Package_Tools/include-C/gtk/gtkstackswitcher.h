@@ -17,8 +17,7 @@
  *
  */
 
-#ifndef __GTK_STACK_SWITCHER_H__
-#define __GTK_STACK_SWITCHER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkstack.h>
 
-// // // // 
+
 
 #define GTK_TYPE_STACK_SWITCHER            (gtk_stack_switcher_get_type ())
 #define GTK_STACK_SWITCHER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STACK_SWITCHER, GtkStackSwitcher))
@@ -45,6 +44,7 @@ void         gtk_stack_switcher_set_stack         (GtkStackSwitcher *switcher,
 
 GtkStack *   gtk_stack_switcher_get_stack         (GtkStackSwitcher *switcher);
 
-// // // // 
 
-#endif /* __GTK_STACK_SWITCHER_H__ */
+
+
+

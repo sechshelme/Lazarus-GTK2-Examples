@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#ifndef __GDK_X11_SURFACE_H__
-#define __GDK_X11_SURFACE_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -34,7 +33,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // // 
+
 
 #define GDK_TYPE_X11_SURFACE              (gdk_x11_surface_get_type ())
 #define GDK_X11_SURFACE(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_SURFACE, GdkX11Surface))
@@ -122,6 +121,5 @@ void          gdk_x11_surface_set_group    (GdkSurface *surface,
 GdkSurface *  gdk_x11_surface_get_group    (GdkSurface *surface);
 
 
-// // // // 
 
-#endif /* __GDK_X11_SURFACE_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_BUILDER_SCOPE_H__
-#define __GTK_BUILDER_SCOPE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_BUILDER_SCOPE               (gtk_builder_scope_get_type ())
 
@@ -57,7 +56,7 @@ typedef enum { /*< prefix=GTK_BUILDER_CLOSURE >*/
  *   correct function name for registering the type and then use dlsym() to load it.
  *   The default implementation just tries g_type_from_name() and otherwise fails.
  * @get_type_from_function: Try to lookup a `GType` via the given function name, specified
- *   explicitly in a GtkBuilder file, like via the "type-func" attribute in the "<object>" tag.
+ *   explicitly in a GtkBuilder file, like via the "type-func" attribute in the `<object>` tag.
  *   This function is very rarely used.
  *   The C implementation will use dlsym() and call the resulting function as a `GTypeFunc`.
  *   The default implementation will fail and just return %G_TYPE_INVALID.
@@ -114,12 +113,15 @@ void                    gtk_builder_cscope_add_callback_symbol  (GtkBuilderCScop
 void                    gtk_builder_cscope_add_callback_symbols (GtkBuilderCScope       *self,
                                                                  const char             *first_callback_name,
                                                                  GCallback               first_callback_symbol,
-						                 ...) G_GNUC_NULL_TERMINATED;
+                                                                 ...) G_GNUC_NULL_TERMINATED;
+
+#define gtk_builder_cscope_add_callback(scope, callback) \
+  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
+
 
 GCallback               gtk_builder_cscope_lookup_callback_symbol(GtkBuilderCScope      *self,
-						                  const char            *callback_name);
+                                                                  const char            *callback_name);
 
 
-// // // // 
 
-#endif /* __GTK_BUILDER_SCOPE_H__ */
+

@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_SETTINGS_H__
-#define __GTK_SETTINGS_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 
 /* -- type macros --- */
@@ -45,6 +44,7 @@ GtkSettings*    gtk_settings_get_for_display         (GdkDisplay *display);
 void     gtk_settings_reset_property       (GtkSettings            *settings,
                                             const char             *name);
 
-// // // // 
 
-#endif /* __GTK_SETTINGS_H__ */
+
+
+

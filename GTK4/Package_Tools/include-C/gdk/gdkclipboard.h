@@ -16,19 +16,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_CLIPBOARD_H__
-#define __GDK_CLIPBOARD_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
-#include <gio/gio.h>
 
 
-// // // // 
 
 #define GDK_TYPE_CLIPBOARD            (gdk_clipboard_get_type ())
 #define GDK_CLIPBOARD(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CLIPBOARD, GdkClipboard))
@@ -120,6 +116,7 @@ void                    gdk_clipboard_set_text          (GdkClipboard          *
 void                    gdk_clipboard_set_texture       (GdkClipboard          *clipboard,
                                                          GdkTexture            *texture);
 
-// // // // 
 
-#endif /* __GDK_CLIPBOARD_H__ */
+
+
+

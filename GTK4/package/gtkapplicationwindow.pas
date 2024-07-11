@@ -21,6 +21,7 @@ type
   end;
   PGtkApplicationWindowClass = ^TGtkApplicationWindowClass;
 
+
 function gtk_application_window_get_type: TGType; cdecl; external gtklib;
 function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;
 procedure gtk_application_window_set_show_menubar(window: PGtkApplicationWindow; show_menubar: Tgboolean); cdecl; external gtklib;
@@ -29,7 +30,7 @@ function gtk_application_window_get_id(window: PGtkApplicationWindow): Tguint; c
 procedure gtk_application_window_set_help_overlay(window: PGtkApplicationWindow; help_overlay: PGtkShortcutsWindow); cdecl; external gtklib;
 function gtk_application_window_get_help_overlay(window: PGtkApplicationWindow): PGtkShortcutsWindow; cdecl; external gtklib;
 
-// === Konventiert am: 10-7-24 15:20:30 ===
+// === Konventiert am: 11-7-24 22:33:20 ===
 
 function GTK_TYPE_APPLICATION_WINDOW: TGType;
 function GTK_APPLICATION_WINDOW(inst: Pointer): PGtkApplicationWindow;

@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_TEST_UTILS_H__
-#define __GTK_TEST_UTILS_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkspinbutton.h>
 
-// // // // 
+
 
 /* --- Gtk+ Test Utility API --- */
 
@@ -40,6 +39,5 @@ const GType*    gtk_test_list_all_types         (guint          *n_types);
 
 void            gtk_test_widget_wait_for_draw   (GtkWidget      *widget);
 
-// // // // 
 
-#endif /* __GTK_TEST_UTILS_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_MEDIA_FILE_H__
-#define __GTK_MEDIA_FILE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkmediastream.h>
 
-// // // // 
+
 
 #define GTK_MEDIA_FILE_EXTENSION_POINT_NAME "gtk-media-file"
 
@@ -81,6 +80,5 @@ void                    gtk_media_file_set_input_stream         (GtkMediaFile   
 GInputStream *          gtk_media_file_get_input_stream         (GtkMediaFile   *self);
 
 
-// // // // 
 
-#endif /* __GTK_MEDIA_FILE_H__ */
+

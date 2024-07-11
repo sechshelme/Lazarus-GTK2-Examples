@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_LIST_ITEM_FACTORY_H__
-#define __GTK_LIST_ITEM_FACTORY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -29,7 +28,7 @@ typedef struct _GtkListItemFactoryClass GtkListItemFactoryClass;
 #include <gdk/gdk.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LIST_ITEM_FACTORY         (gtk_list_item_factory_get_type ())
 #define GTK_LIST_ITEM_FACTORY(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_LIST_ITEM_FACTORY, GtkListItemFactory))
@@ -43,6 +42,6 @@ typedef struct _GtkListItemFactoryClass GtkListItemFactoryClass;
 GType        gtk_list_item_factory_get_type       (void) ;
 
 
-// // // // 
 
-#endif /* __GTK_LIST_ITEM_FACTORY_H__ */
+
+

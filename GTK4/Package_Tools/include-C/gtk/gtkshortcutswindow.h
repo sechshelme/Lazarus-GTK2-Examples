@@ -16,21 +16,20 @@
  *  License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_SHORTCUTS_WINDOW_H__
-#define __GTK_SHORTCUTS_WINDOW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
 #include <gtk/gtkwindow.h>
+#include <gtk/gtkshortcutssection.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUTS_WINDOW            (gtk_shortcuts_window_get_type ())
 #define GTK_SHORTCUTS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_WINDOW, GtkShortcutsWindow))
 #define GTK_IS_SHORTCUTS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_SHORTCUTS_WINDOW))
-
 
 typedef struct _GtkShortcutsWindow GtkShortcutsWindow;
 
@@ -38,7 +37,10 @@ typedef struct _GtkShortcutsWindow GtkShortcutsWindow;
 GType gtk_shortcuts_window_get_type (void) ;
 
 
+void gtk_shortcuts_window_add_section (GtkShortcutsWindow  *self,
+                                       GtkShortcutsSection *section);
 
-// // // // 
 
-#endif /* GTK_SHORTCUTS_WINDOW _H */
+
+
+

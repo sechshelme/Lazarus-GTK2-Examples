@@ -15,12 +15,11 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_X11_DEVICE_XI2_H__
-#define __GDK_X11_DEVICE_XI2_H__
+#pragma once
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GDK_TYPE_X11_DEVICE_XI2         (gdk_x11_device_xi2_get_type ())
 #define GDK_X11_DEVICE_XI2(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_X11_DEVICE_XI2, GdkX11DeviceXI2))
@@ -41,6 +40,5 @@ typedef enum {
 
 GType gdk_x11_device_xi2_get_type (void) ;
 
-// // // // 
 
-#endif /* __GDK_X11_DEVICE_XI2_H__ */
+

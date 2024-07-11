@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_LABEL_H__
-#define __GTK_LABEL_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LABEL		  (gtk_label_get_type ())
 #define GTK_LABEL(obj)		  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LABEL, GtkLabel))
@@ -177,9 +176,16 @@ void         gtk_label_set_extra_menu (GtkLabel   *self,
 
 GMenuModel * gtk_label_get_extra_menu (GtkLabel   *self);
 
+GDK_AVAILABLE_IN_4_8
+void             gtk_label_set_tabs (GtkLabel      *self,
+                                     PangoTabArray *tabs);
+
+GDK_AVAILABLE_IN_4_8
+PangoTabArray * gtk_label_get_tabs  (GtkLabel      *self);
 
 
 
-// // // // 
 
-#endif /* __GTK_LABEL_H__ */
+
+
+

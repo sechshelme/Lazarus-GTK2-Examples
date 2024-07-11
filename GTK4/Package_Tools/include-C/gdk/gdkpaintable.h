@@ -17,17 +17,15 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GDK_PAINTABLE_H__
-#define __GDK_PAINTABLE_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
 #include <gdk/gdktypes.h>
-#include <gdk/gdkversionmacros.h>
 
-// // // // 
+
 
 #define GDK_TYPE_PAINTABLE               (gdk_paintable_get_type ())
 
@@ -37,10 +35,10 @@ G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)
 /**
  * GdkPaintableFlags:
  * @GDK_PAINTABLE_STATIC_SIZE: The size is immutable.
- *   The [signal@GdkPaintable::invalidate-size] signal will never be
+ *   The [signal@Gdk.Paintable::invalidate-size] signal will never be
  *   emitted.
  * @GDK_PAINTABLE_STATIC_CONTENTS: The content is immutable.
- *   The [signal@GdkPaintable::invalidate-contents] signal will never be
+ *   The [signal@Gdk.Paintable::invalidate-contents] signal will never be
  *   emitted.
  *
  * Flags about a paintable object.
@@ -61,7 +59,7 @@ typedef enum {
  * @get_current_image: return a `GdkPaintable` that does not change over
  *   time. This means the `GDK_PAINTABLE_STATIC_SIZE` and
  *   `GDK_PAINTABLE_STATIC_CONTENTS` flag are set.
- * @get_flags: Get the flags for this instance. See [enum@Gdk.PaintableFlags]
+ * @get_flags: Get the flags for this instance. See [flags@Gdk.PaintableFlags]
  *   for details.
  * @get_intrinsic_width: The preferred width for this object to be
  *   snapshot at or 0 if none. This is purely a hint. The object must still
@@ -97,7 +95,7 @@ struct _GdkPaintableInterface
                                                          double                  height);
   /* get the current contents in an immutable form (optional) */
   GdkPaintable *        (* get_current_image)           (GdkPaintable           *paintable);
-   
+
   /* get flags for potential optimizations (optional) */
   GdkPaintableFlags     (* get_flags)                   (GdkPaintable           *paintable);
   /* preferred width of paintable or 0 if it has no width (optional) */
@@ -144,6 +142,5 @@ GdkPaintable *  gdk_paintable_new_empty                 (int                    
                                                          int                     intrinsic_height);
 
 
-// // // // 
 
-#endif /* __GDK_PAINTABLE_H__ */
+

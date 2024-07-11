@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_PANED_H__
-#define __GTK_PANED_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_PANED                  (gtk_paned_get_type ())
 #define GTK_PANED(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PANED, GtkPaned))
@@ -91,6 +90,6 @@ void        gtk_paned_set_wide_handle (GtkPaned    *paned,
 gboolean    gtk_paned_get_wide_handle (GtkPaned    *paned);
 
 
-// // // // 
 
-#endif /* __GTK_PANED_H__ */
+
+

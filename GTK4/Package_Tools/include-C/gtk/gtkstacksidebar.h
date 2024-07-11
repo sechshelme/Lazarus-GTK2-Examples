@@ -19,8 +19,7 @@
  *      Ikey Doherty <michael.i.doherty@intel.com>
  */
 
-#ifndef __GTK_STACK_SIDEBAR_H__
-#define __GTK_STACK_SIDEBAR_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gtk/gtkstack.h>
 
-// // // // 
+
 
 #define GTK_TYPE_STACK_SIDEBAR           (gtk_stack_sidebar_get_type ())
 #define GTK_STACK_SIDEBAR(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_STACK_SIDEBAR, GtkStackSidebar))
@@ -46,6 +45,7 @@ void        gtk_stack_sidebar_set_stack (GtkStackSidebar *self,
 
 GtkStack *  gtk_stack_sidebar_get_stack (GtkStackSidebar *self);
 
-// // // // 
 
-#endif /* __GTK_STACK_SIDEBAR_H__ */
+
+
+

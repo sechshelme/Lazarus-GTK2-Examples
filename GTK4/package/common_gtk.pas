@@ -17,11 +17,19 @@ type
   TGType = GType;
   Tgboolean = gboolean;
 
-  Tgchar=gchar;
+  Tgchar = gchar;
 
+  Tgint = gint;
   Tguint = guint;
 
+  Tgint8 = gint8;
+  Tguint8 = guint8;
+  Tgint16 = gint16;
+  Tugint16 = guint16;
+  Tgint32 = gint32;
   Tguint32 = guint32;
+  Tgint64 = gint64;
+  Tguint64 = guint64;
 
   Tdouble = double;
 
@@ -157,6 +165,9 @@ type
 
 
   // ==========
+
+  TGDateTime=Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
+  PGDateTime=^TGDateTime;
 
   PGTypeClass = ^TGTypeClass;
 

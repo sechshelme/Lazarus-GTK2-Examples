@@ -31,8 +31,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SCALE_BUTTON_H__
-#define __GTK_SCALE_BUTTON_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -40,7 +39,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SCALE_BUTTON                 (gtk_scale_button_get_type ())
 #define GTK_SCALE_BUTTON(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SCALE_BUTTON, GtkScaleButton))
@@ -96,7 +95,15 @@ GtkWidget *      gtk_scale_button_get_plus_button  (GtkScaleButton  *button);
 GtkWidget *      gtk_scale_button_get_minus_button (GtkScaleButton  *button);
 
 GtkWidget *      gtk_scale_button_get_popup        (GtkScaleButton  *button);
+GDK_AVAILABLE_IN_4_10
+gboolean         gtk_scale_button_get_active       (GtkScaleButton  *button);
 
-// // // // 
+gboolean         gtk_scale_button_get_has_frame    (GtkScaleButton  *button);
 
-#endif /* __GTK_SCALE_BUTTON_H__ */
+void             gtk_scale_button_set_has_frame    (GtkScaleButton  *button,
+                                                    gboolean         has_frame);
+
+
+
+
+

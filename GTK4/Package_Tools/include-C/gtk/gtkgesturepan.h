@@ -16,8 +16,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_PAN_H__
-#define __GTK_GESTURE_PAN_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtkgesturedrag.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_PAN         (gtk_gesture_pan_get_type ())
 #define GTK_GESTURE_PAN(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_PAN, GtkGesturePan))
@@ -52,6 +51,6 @@ void              gtk_gesture_pan_set_orientation (GtkGesturePan  *gesture,
                                                    GtkOrientation  orientation);
 
 
-// // // // 
 
-#endif /* __GTK_GESTURE_PAN_H__ */
+
+

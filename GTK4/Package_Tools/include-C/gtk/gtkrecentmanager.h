@@ -17,8 +17,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_RECENT_MANAGER_H__
-#define __GTK_RECENT_MANAGER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <time.h>
 
-// // // // 
+
 
 #define GTK_TYPE_RECENT_INFO			(gtk_recent_info_get_type ())
 
@@ -251,6 +250,8 @@ gboolean              gtk_recent_info_match                (GtkRecentInfo  *info
 /* private */
 void _gtk_recent_manager_sync (void);
 
-// // // // 
 
-#endif /* __GTK_RECENT_MANAGER_H__ */
+
+
+
+

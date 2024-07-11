@@ -26,7 +26,7 @@
 
 #include <gtk/gtkatcontext.h>
 
-// // // // 
+
 
 /**
  * gtk_test_accessible_assert_role:
@@ -150,4 +150,4 @@ void    gtk_test_accessible_assertion_message_role      (const char        *doma
                                                          GtkAccessibleRole  expected_role,
                                                          GtkAccessibleRole  actual_role);
 
-// // // // 
+

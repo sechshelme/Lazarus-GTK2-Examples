@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GSK_GL_SHADER_H__
-#define __GSK_GL_SHADER_H__
+#pragma once
 
 #if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gsk/gsk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskenums.h>
 
-// // // // 
+
 
 #define GSK_TYPE_SHADER_ARGS_BUILDER    (gsk_shader_args_builder_get_type ())
 
@@ -162,6 +161,5 @@ void    gsk_shader_args_builder_set_vec4  (GskShaderArgsBuilder *builder,
                                            const graphene_vec4_t *value);
 
 
-// // // // 
 
-#endif /* __GSK_GL_SHADER_H__ */
+

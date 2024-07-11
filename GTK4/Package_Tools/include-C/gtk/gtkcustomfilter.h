@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_CUSTOM_FILTER_H__
-#define __GTK_CUSTOM_FILTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkfilter.h>
 
-// // // // 
+
 
 /**
  * GtkCustomFilterFunc:
@@ -56,6 +55,5 @@ void                    gtk_custom_filter_set_filter_func       (GtkCustomFilter
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
-// // // // 
 
-#endif /* __GTK_CUSTOM_FILTER_H__ */
+

@@ -15,17 +15,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_FRAME_TIMINGS_H__
-#define __GDK_FRAME_TIMINGS_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <glib-object.h>
-#include <gdk/gdkversionmacros.h>
+#include <gdk/gdktypes.h>
 
-// // // // 
+
 
 typedef struct _GdkFrameTimings GdkFrameTimings;
 
@@ -51,6 +49,7 @@ gint64           gdk_frame_timings_get_refresh_interval  (GdkFrameTimings *timin
 
 gint64           gdk_frame_timings_get_predicted_presentation_time (GdkFrameTimings *timings);
 
-// // // // 
 
-#endif /* __GDK_FRAME_TIMINGS_H__ */
+
+
+

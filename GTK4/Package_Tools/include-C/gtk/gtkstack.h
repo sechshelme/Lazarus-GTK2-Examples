@@ -19,8 +19,7 @@
  *
  */
 
-#ifndef __GTK_STACK_H__
-#define __GTK_STACK_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -29,7 +28,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtkselectionmodel.h>
 
-// // // // 
+
 
 
 #define GTK_TYPE_STACK (gtk_stack_get_type ())
@@ -179,6 +178,8 @@ gboolean               gtk_stack_get_interpolate_size    (GtkStack *stack);
 
 GtkSelectionModel *    gtk_stack_get_pages               (GtkStack *stack);
 
-// // // // 
 
-#endif
+
+
+
+

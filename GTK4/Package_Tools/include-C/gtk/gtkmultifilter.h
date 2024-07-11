@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_MULTI_FILTER_H__
-#define __GTK_MULTI_FILTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkfilter.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_MULTI_FILTER             (gtk_multi_filter_get_type ())
 
@@ -53,6 +52,5 @@ GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, 
 GtkEveryFilter *        gtk_every_filter_new                    (void);
 
 
-// // // // 
 
-#endif /* __GTK_MULTI_FILTER_H__ */
+

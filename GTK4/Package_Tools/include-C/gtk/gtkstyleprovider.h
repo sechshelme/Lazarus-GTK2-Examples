@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_STYLE_PROVIDER_H__
-#define __GTK_STYLE_PROVIDER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gtk/gtkenums.h>
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_STYLE_PROVIDER          (gtk_style_provider_get_type ())
 #define GTK_STYLE_PROVIDER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_STYLE_PROVIDER, GtkStyleProvider))
@@ -88,6 +87,16 @@ typedef struct _GtkStyleProvider GtkStyleProvider; /* dummy typedef */
 
 GType gtk_style_provider_get_type (void) ;
 
-// // // // 
 
-#endif /* __GTK_STYLE_PROVIDER_H__ */
+
+
+void gtk_style_context_add_provider_for_display    (GdkDisplay       *display,
+                                                    GtkStyleProvider *provider,
+                                                    guint             priority);
+
+void gtk_style_context_remove_provider_for_display (GdkDisplay       *display,
+                                                    GtkStyleProvider *provider);
+
+
+
+

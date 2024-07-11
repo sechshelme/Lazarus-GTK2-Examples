@@ -17,8 +17,7 @@
  * Author(s): Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_EVENT_CONTROLLER_FOCUS_H__
-#define __GTK_EVENT_CONTROLLER_FOCUS_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkimcontext.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER_FOCUS         (gtk_event_controller_focus_get_type ())
 #define GTK_EVENT_CONTROLLER_FOCUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_FOCUS, GtkEventControllerFocus))
@@ -52,6 +51,5 @@ gboolean            gtk_event_controller_focus_contains_focus     (GtkEventContr
 gboolean            gtk_event_controller_focus_is_focus           (GtkEventControllerFocus  *self);
 
 
-// // // // 
 
-#endif /* __GTK_EVENT_CONTROLLER_FOCUS_H__ */
+

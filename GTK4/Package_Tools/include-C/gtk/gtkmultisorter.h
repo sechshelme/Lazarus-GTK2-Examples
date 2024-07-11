@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_MULTI_SORTER_H__
-#define __GTK_MULTI_SORTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // // // 
+
 
 #define GTK_TYPE_MULTI_SORTER             (gtk_multi_sorter_get_type ())
 
@@ -44,6 +43,5 @@ void                    gtk_multi_sorter_append                 (GtkMultiSorter 
 void                    gtk_multi_sorter_remove                 (GtkMultiSorter         *self,
                                                                  guint                   position);
 
-// // // // 
 
-#endif /* __GTK_MULTI_SORTER_H__ */
+

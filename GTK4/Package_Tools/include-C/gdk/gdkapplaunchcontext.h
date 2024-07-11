@@ -18,17 +18,15 @@
  * Author: Alexander Larsson <alexl@redhat.com>
  */
 
-#ifndef __GDK_APP_LAUNCH_CONTEXT_H__
-#define __GDK_APP_LAUNCH_CONTEXT_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_APP_LAUNCH_CONTEXT         (gdk_app_launch_context_get_type ())
 #define GDK_APP_LAUNCH_CONTEXT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_APP_LAUNCH_CONTEXT, GdkAppLaunchContext))
@@ -55,6 +53,6 @@ void                 gdk_app_launch_context_set_icon_name (GdkAppLaunchContext *
                                                            const char          *icon_name);
 
 
-// // // // 
 
-#endif /* __GDK_APP_LAUNCH_CONTEXT_H__ */
+
+

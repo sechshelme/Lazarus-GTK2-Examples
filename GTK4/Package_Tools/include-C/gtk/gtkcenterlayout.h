@@ -19,7 +19,7 @@
 
 #include <gtk/gtklayoutmanager.h>
 
-// // // // 
+
 
 #define GTK_TYPE_CENTER_LAYOUT (gtk_center_layout_get_type ())
 
@@ -55,4 +55,9 @@ void                    gtk_center_layout_set_end_widget        (GtkCenterLayout
 GtkWidget *             gtk_center_layout_get_end_widget        (GtkCenterLayout     *self);
 
 
-// // // // 
+void                    gtk_center_layout_set_shrink_center_last (GtkCenterLayout    *self,
+                                                                  gboolean            shrink_center_last);
+
+gboolean                gtk_center_layout_get_shrink_center_last (GtkCenterLayout    *self);
+
+

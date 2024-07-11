@@ -47,14 +47,13 @@
  *
  */
 
-#ifndef __GTK_TEXT_MARK_H__
-#define __GTK_TEXT_MARK_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // // // 
+
 
 typedef struct _GtkTextMark      GtkTextMark;
 typedef struct _GtkTextMarkClass GtkTextMarkClass;
@@ -104,6 +103,7 @@ GtkTextBuffer*        gtk_text_mark_get_buffer       (GtkTextMark *mark);
 
 gboolean              gtk_text_mark_get_left_gravity (GtkTextMark *mark);
 
-// // // // 
 
-#endif  /* __GTK_TEXT_MARK_H__ */
+
+
+

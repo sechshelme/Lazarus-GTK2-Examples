@@ -17,8 +17,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_LONG_PRESS_H__
-#define __GTK_GESTURE_LONG_PRESS_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtkgesturesingle.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_LONG_PRESS         (gtk_gesture_long_press_get_type ())
 #define GTK_GESTURE_LONG_PRESS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_LONG_PRESS, GtkGestureLongPress))
@@ -53,6 +52,5 @@ double       gtk_gesture_long_press_get_delay_factor (GtkGestureLongPress *gestu
 
 
 
-// // // // 
 
-#endif /* __GTK_GESTURE_LONG_PRESS_H__ */
+

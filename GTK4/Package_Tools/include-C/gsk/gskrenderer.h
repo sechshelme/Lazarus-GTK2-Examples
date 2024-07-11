@@ -16,8 +16,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GSK_RENDERER_H__
-#define __GSK_RENDERER_H__
+#pragma once
 
 #if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gsk/gsk.h> can be included directly."
@@ -26,7 +25,7 @@
 #include <gsk/gsktypes.h>
 #include <gsk/gskrendernode.h>
 
-// // // // 
+
 
 #define GSK_TYPE_RENDERER (gsk_renderer_get_type ())
 
@@ -49,6 +48,10 @@ gboolean                gsk_renderer_realize                    (GskRenderer    
                                                                  GdkSurface              *surface,
                                                                  GError                 **error);
 
+gboolean                gsk_renderer_realize_for_display        (GskRenderer             *renderer,
+                                                                 GdkDisplay              *display,
+                                                                 GError                 **error);
+
 void                    gsk_renderer_unrealize                  (GskRenderer             *renderer);
 
 gboolean                gsk_renderer_is_realized                (GskRenderer             *renderer);
@@ -63,6 +66,7 @@ void                    gsk_renderer_render                     (GskRenderer    
                                                                  GskRenderNode           *root,
                                                                  const cairo_region_t    *region);
 
-// // // // 
 
-#endif /* __GSK_RENDERER_H__ */
+
+
+

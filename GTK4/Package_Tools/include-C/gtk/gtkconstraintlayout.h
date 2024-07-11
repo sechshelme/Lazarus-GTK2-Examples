@@ -22,7 +22,7 @@
 #include <gtk/gtkconstraint.h>
 #include <gtk/gtkconstraintguide.h>
 
-// // // // 
+
 
 #define GTK_TYPE_CONSTRAINT_LAYOUT (gtk_constraint_layout_get_type ())
 #define GTK_TYPE_CONSTRAINT_LAYOUT_CHILD (gtk_constraint_layout_child_get_type ())
@@ -79,4 +79,4 @@ GListModel *          gtk_constraint_layout_observe_constraints (GtkConstraintLa
 
 GListModel *          gtk_constraint_layout_observe_guides (GtkConstraintLayout *layout);
 
-// // // // 
+

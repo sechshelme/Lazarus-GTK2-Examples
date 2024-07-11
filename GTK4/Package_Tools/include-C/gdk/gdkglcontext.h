@@ -1,7 +1,7 @@
 /* GDK - The GIMP Drawing Kit
  *
  * gdkglcontext.h: GL context abstraction
- * 
+ *
  * Copyright © 2014  Emmanuele Bassi
  *
  * This library is free software; you can redistribute it and/or
@@ -18,31 +18,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_GL_CONTEXT_H__
-#define __GDK_GL_CONTEXT_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
 
-/**
- * GdkGLAPI:
- * @GDK_GL_API_GL: The OpenGL API
- * @GDK_GL_API_GLES: The OpenGL ES API
- *
- * The list of the different APIs that GdkGLContext can potentially support.
- *
- * Since: 4.6
- */
-typedef enum { /*< underscore_name=GDK_GL_API >*/
-  GDK_GL_API_GL   = 1 << 0,
-  GDK_GL_API_GLES = 1 << 1
-} GdkGLAPI;
 
 #define GDK_TYPE_GL_CONTEXT             (gdk_gl_context_get_type ())
 #define GDK_GL_CONTEXT(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_GL_CONTEXT, GdkGLContext))
@@ -114,6 +98,7 @@ GdkGLContext *          gdk_gl_context_get_current              (void);
 
 void                    gdk_gl_context_clear_current            (void);
 
-// // // // 
 
-#endif /* __GDK_GL_CONTEXT_H__ */
+
+
+

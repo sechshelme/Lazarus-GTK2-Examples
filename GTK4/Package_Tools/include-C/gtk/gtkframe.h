@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_FRAME_H__
-#define __GTK_FRAME_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 
 #define GTK_TYPE_FRAME                  (gtk_frame_get_type ())
@@ -100,7 +99,7 @@ void       gtk_frame_set_child        (GtkFrame      *frame,
 GtkWidget *gtk_frame_get_child        (GtkFrame      *frame);
 
 
-// // // // 
 
 
-#endif /* __GTK_FRAME_H__ */
+
+

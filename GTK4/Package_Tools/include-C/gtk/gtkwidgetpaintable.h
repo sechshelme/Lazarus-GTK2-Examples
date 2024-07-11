@@ -17,12 +17,11 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_WIDGET_PAINTABLE_H__
-#define __GTK_WIDGET_PAINTABLE_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_WIDGET_PAINTABLE (gtk_widget_paintable_get_type ())
 
@@ -38,6 +37,5 @@ GtkWidget *     gtk_widget_paintable_get_widget         (GtkWidgetPaintable     
 void            gtk_widget_paintable_set_widget         (GtkWidgetPaintable     *self,
                                                          GtkWidget              *widget);
 
-// // // // 
 
-#endif /* __GTK_WIDGET_PAINTABLE_H__ */
+

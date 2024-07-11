@@ -22,8 +22,7 @@
  *      William Jon McCann <jmccann@redhat.com>
  */
 
-#ifndef __GTK_FLOW_BOX_H__
-#define __GTK_FLOW_BOX_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 
 #define GTK_TYPE_FLOW_BOX                  (gtk_flow_box_get_type ())
@@ -161,6 +160,9 @@ void                  gtk_flow_box_insert                       (GtkFlowBox     
 void                  gtk_flow_box_remove                       (GtkFlowBox        *box,
                                                                  GtkWidget         *widget);
 
+void                  gtk_flow_box_remove_all                   (GtkFlowBox        *box);
+
+
 GtkFlowBoxChild      *gtk_flow_box_get_child_at_index           (GtkFlowBox        *box,
                                                                  int                idx);
 
@@ -224,7 +226,9 @@ void                  gtk_flow_box_set_sort_func                (GtkFlowBox     
 
 void                  gtk_flow_box_invalidate_sort              (GtkFlowBox         *box);
 
-// // // // 
 
 
-#endif /* __GTK_FLOW_BOX_H__ */
+
+
+
+

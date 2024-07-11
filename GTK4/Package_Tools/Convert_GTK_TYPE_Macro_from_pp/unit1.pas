@@ -59,6 +59,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  top:=10;
+  Left:=10;
   Width := 1200;
   Height := 800;
   AllowDropFiles := True;
@@ -108,7 +110,6 @@ begin
 
     sl[p] := StringReplace(sl[p], 'longint; { return type might be wrong }', 'TGType;', []);
     Inc(p, 5);
-    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
   end;
 
   // GTK_WINDOW
@@ -116,6 +117,7 @@ begin
     gtkWidget := FindGTKWidget(sl[p + 2]);
     WriteLn('gtkWidget: ', gtkWidget);
 
+    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
     sl[p] := StringReplace(sl[p], 'longint', gtkWidget, []);
     Inc(p, 2);
     sl[p] := '  Result := ' + gtkWidget + '(g_type_check_instance_cast(obj, ' + GTK_TYPE_XXX + '));';
@@ -205,8 +207,12 @@ begin
     Inc(p);
   until pos('{ was #define dname def_expr }', sl[p]) = 1;
 
-  macCount := 2;
-  DeleteLines(p, 8);
+  macCount := 1;
+  DeleteLines(p, 3);
+  if CheckBox2.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
+  end;
   if CheckBox3.Checked then begin
     Inc(macCount);
     DeleteLines(p, 5);
@@ -242,7 +248,10 @@ begin
 
   Dec(p, 2);
 
-  DeleteLines(p, 14);
+  DeleteLines(p, 6);
+  if CheckBox2.Checked then begin
+    DeleteLines(p, 8);
+  end;
   if CheckBox3.Checked then begin
     DeleteLines(p, 8);
   end;

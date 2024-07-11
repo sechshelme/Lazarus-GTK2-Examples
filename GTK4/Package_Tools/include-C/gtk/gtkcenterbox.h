@@ -19,8 +19,7 @@
  *
  */
 
-#ifndef __GTK_CENTER_BOX_H__
-#define __GTK_CENTER_BOX_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include "gtkwidget.h"
 
-// // // // 
+
 
 #define GTK_TYPE_CENTER_BOX                 (gtk_center_box_get_type ())
 #define GTK_CENTER_BOX(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CENTER_BOX, GtkCenterBox))
@@ -68,6 +67,11 @@ void                gtk_center_box_set_baseline_position (GtkCenterBox        *s
 
 GtkBaselinePosition gtk_center_box_get_baseline_position (GtkCenterBox        *self);
 
-// // // // 
 
-#endif
+void        gtk_center_box_set_shrink_center_last (GtkCenterBox *self,
+                                                   gboolean      shrink_center_last);
+
+gboolean    gtk_center_box_get_shrink_center_last (GtkCenterBox *self);
+
+
+

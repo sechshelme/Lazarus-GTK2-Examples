@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_ASPECT_FRAME_H__
-#define __GTK_ASPECT_FRAME_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_ASPECT_FRAME            (gtk_aspect_frame_get_type ())
 #define GTK_ASPECT_FRAME(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ASPECT_FRAME, GtkAspectFrame))
@@ -79,6 +78,7 @@ void       gtk_aspect_frame_set_child  (GtkAspectFrame *self,
 
 GtkWidget *gtk_aspect_frame_get_child  (GtkAspectFrame *self);
 
-// // // // 
 
-#endif /* __GTK_ASPECT_FRAME_H__ */
+
+
+

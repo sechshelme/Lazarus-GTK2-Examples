@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
  */
 
-#ifndef __GDK_X11_UTILS_H__
-#define __GDK_X11_UTILS_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -34,7 +33,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // // 
+
 
 /**
  * GDK_XID_TO_POINTER:
@@ -56,6 +55,5 @@
 #define GDK_POINTER_TO_XID(pointer) GPOINTER_TO_UINT(pointer)
 
 
-// // // // 
 
-#endif /* __GDK_X11_UTILS_H__ */
+

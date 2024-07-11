@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_STRING_FILTER_H__
-#define __GTK_STRING_FILTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtkfilter.h>
 
-// // // // 
+
 
 /**
  * GtkStringFilterMatchMode:
@@ -76,6 +75,5 @@ void                     gtk_string_filter_set_match_mode       (GtkStringFilter
 
 
 
-// // // // 
 
-#endif /* __GTK_STRING_FILTER_H__ */
+

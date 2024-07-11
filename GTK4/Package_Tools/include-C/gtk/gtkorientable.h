@@ -19,8 +19,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_ORIENTABLE_H__
-#define __GTK_ORIENTABLE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -28,7 +27,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_ORIENTABLE             (gtk_orientable_get_type ())
 #define GTK_ORIENTABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_ORIENTABLE, GtkOrientable))
@@ -53,6 +52,7 @@ void           gtk_orientable_set_orientation (GtkOrientable  *orientable,
 
 GtkOrientation gtk_orientable_get_orientation (GtkOrientable  *orientable);
 
-// // // // 
 
-#endif /* __GTK_ORIENTABLE_H__ */
+
+
+

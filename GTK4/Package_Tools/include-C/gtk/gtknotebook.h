@@ -23,8 +23,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_NOTEBOOK_H__
-#define __GTK_NOTEBOOK_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -34,7 +33,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_NOTEBOOK                  (gtk_notebook_get_type ())
 #define GTK_NOTEBOOK(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_NOTEBOOK, GtkNotebook))
@@ -243,6 +242,7 @@ GtkWidget *gtk_notebook_page_get_child (GtkNotebookPage *page);
 
 GListModel *gtk_notebook_get_pages (GtkNotebook *notebook);
 
-// // // // 
 
-#endif /* __GTK_NOTEBOOK_H__ */
+
+
+

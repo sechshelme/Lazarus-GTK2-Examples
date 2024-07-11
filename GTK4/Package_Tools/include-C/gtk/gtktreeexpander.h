@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_TREE_EXPANDER_H__
-#define __GTK_TREE_EXPANDER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtktreelistmodel.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_TREE_EXPANDER         (gtk_tree_expander_get_type ())
 
@@ -35,27 +34,36 @@
 G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
 
 
-GtkWidget *             gtk_tree_expander_new                 (void);
+GtkWidget *             gtk_tree_expander_new                  (void);
 
 
-GtkWidget *             gtk_tree_expander_get_child           (GtkTreeExpander        *self);
+GtkWidget *             gtk_tree_expander_get_child            (GtkTreeExpander        *self);
 
-void                    gtk_tree_expander_set_child           (GtkTreeExpander        *self,
-                                                               GtkWidget              *child);
+void                    gtk_tree_expander_set_child            (GtkTreeExpander        *self,
+                                                                GtkWidget              *child);
 
 
-gpointer                gtk_tree_expander_get_item            (GtkTreeExpander        *self);
+gpointer                gtk_tree_expander_get_item             (GtkTreeExpander        *self);
 
-GtkTreeListRow *        gtk_tree_expander_get_list_row        (GtkTreeExpander        *self);
+GtkTreeListRow *        gtk_tree_expander_get_list_row         (GtkTreeExpander        *self);
 
-void                    gtk_tree_expander_set_list_row        (GtkTreeExpander        *self,
-                                                               GtkTreeListRow         *list_row);
+void                    gtk_tree_expander_set_list_row         (GtkTreeExpander        *self,
+                                                                GtkTreeListRow         *list_row);
+GDK_AVAILABLE_IN_4_10
+gboolean                gtk_tree_expander_get_indent_for_depth (GtkTreeExpander        *self);
+GDK_AVAILABLE_IN_4_10
+void                    gtk_tree_expander_set_indent_for_depth (GtkTreeExpander        *self,
+                                                                gboolean                indent_for_depth);
 GDK_AVAILABLE_IN_4_6
-gboolean                gtk_tree_expander_get_indent_for_icon (GtkTreeExpander        *self);
+gboolean                gtk_tree_expander_get_indent_for_icon  (GtkTreeExpander        *self);
 GDK_AVAILABLE_IN_4_6
-void                    gtk_tree_expander_set_indent_for_icon (GtkTreeExpander        *self,
-                                                               gboolean               indent_for_icon);
+void                    gtk_tree_expander_set_indent_for_icon  (GtkTreeExpander        *self,
+                                                                gboolean               indent_for_icon);
+GDK_AVAILABLE_IN_4_10
+gboolean                gtk_tree_expander_get_hide_expander    (GtkTreeExpander        *self);
+GDK_AVAILABLE_IN_4_10
+void                    gtk_tree_expander_set_hide_expander    (GtkTreeExpander        *self,
+                                                                gboolean                hide_expander);
 
-// // // // 
 
-#endif  /* __GTK_TREE_EXPANDER_H__ */
+

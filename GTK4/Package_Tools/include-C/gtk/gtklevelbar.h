@@ -18,8 +18,7 @@
  *
  */
 
-#ifndef __GTK_LEVEL_BAR_H__
-#define __GTK_LEVEL_BAR_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LEVEL_BAR            (gtk_level_bar_get_type ())
 #define GTK_LEVEL_BAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_LEVEL_BAR, GtkLevelBar))
@@ -110,6 +109,7 @@ gboolean   gtk_level_bar_get_offset_value   (GtkLevelBar *self,
                                              const char *name,
                                              double      *value);
 
-// // // // 
 
-#endif /* __GTK_LEVEL_BAR_H__ */
+
+
+

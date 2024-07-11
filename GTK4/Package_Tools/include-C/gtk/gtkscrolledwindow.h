@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SCROLLED_WINDOW_H__
-#define __GTK_SCROLLED_WINDOW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 
 #define GTK_TYPE_SCROLLED_WINDOW            (gtk_scrolled_window_get_type ())
@@ -182,7 +181,8 @@ void           gtk_scrolled_window_set_child        (GtkScrolledWindow *scrolled
 
 GtkWidget     *gtk_scrolled_window_get_child        (GtkScrolledWindow *scrolled_window);
 
-// // // // 
 
 
-#endif /* __GTK_SCROLLED_WINDOW_H__ */
+
+
+

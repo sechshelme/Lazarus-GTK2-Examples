@@ -17,8 +17,7 @@
  * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __GTK_APPLICATION_H__
-#define __GTK_APPLICATION_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gio/gio.h>
 
-// // // // 
+
 
 #define GTK_TYPE_APPLICATION            (gtk_application_get_type ())
 #define GTK_APPLICATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_APPLICATION, GtkApplication))
@@ -137,6 +136,5 @@ GMenu *          gtk_application_get_menu_by_id                  (GtkApplication
 
 
 
-// // // // 
 
-#endif /* __GTK_APPLICATION_H__ */
+

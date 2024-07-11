@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_MAIN_H__
-#define __GTK_MAIN_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -37,7 +36,7 @@
 #include <gtk/gtkwindow.h>
 #endif
 
-// // // // 
+
 
 /**
  * GTK_PRIORITY_RESIZE: (value 110)
@@ -89,6 +88,5 @@ PangoLanguage *   gtk_get_default_language (void) ;
 GtkTextDirection  gtk_get_locale_direction (void);
 
 
-// // // // 
 
-#endif /* __GTK_MAIN_H__ */
+

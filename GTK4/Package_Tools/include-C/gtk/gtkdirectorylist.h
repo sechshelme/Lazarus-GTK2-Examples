@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_DIRECTORY_LIST_H__
-#define __GTK_DIRECTORY_LIST_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -30,7 +29,7 @@
 #include <gdk/gdk.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_DIRECTORY_LIST (gtk_directory_list_get_type ())
 
@@ -68,6 +67,5 @@ void                    gtk_directory_list_set_monitored        (GtkDirectoryLis
 
 gboolean                gtk_directory_list_get_monitored        (GtkDirectoryList       *self);
 
-// // // // 
 
-#endif /* __GTK_DIRECTORY_LIST_H__ */
+

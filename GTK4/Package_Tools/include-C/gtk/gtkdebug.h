@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_DEBUG_H__
-#define __GTK_DEBUG_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -32,7 +31,7 @@
 #include <glib.h>
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 /**
  * GtkDebugFlags:
@@ -47,14 +46,12 @@
  * @GTK_DEBUG_SIZE_REQUEST: Information about size requests
  * @GTK_DEBUG_NO_CSS_CACHE: Disable the style property cache
  * @GTK_DEBUG_INTERACTIVE: Open the GTK inspector
- * @GTK_DEBUG_TOUCHSCREEN: Pretend the pointer is a touchscreen
  * @GTK_DEBUG_ACTIONS: Information about actions and menu models
  * @GTK_DEBUG_LAYOUT: Information from layout managers
  * @GTK_DEBUG_SNAPSHOT: Include debug render nodes in the generated snapshots
  * @GTK_DEBUG_CONSTRAINTS: Information from the constraints solver
  * @GTK_DEBUG_BUILDER_OBJECTS: Log unused GtkBuilder objects
  * @GTK_DEBUG_A11Y: Information about accessibility state changes
- * @GTK_DEBUG_ICONFALLBACK: Information about icon fallback. Since: 4.2
  *
  * Flags to use with gtk_set_debug_flags().
  *
@@ -62,6 +59,23 @@
  * types of debugging information. Some of these flags are
  * only available when GTK has been configured with `-Ddebug=true`.
  */
+
+/**
+ * GTK_DEBUG_ICONFALLBACK:
+ *
+ * Information about icon fallback.
+ *
+ * Since: 4.2
+ */
+
+/**
+ * GTK_DEBUG_INVERT_TEXT_DIR:
+ *
+ * Inverts the default text-direction.
+ *
+ * Since: 4.8
+ */
+
 typedef enum {
   GTK_DEBUG_TEXT            = 1 <<  0,
   GTK_DEBUG_TREE            = 1 <<  1,
@@ -74,7 +88,6 @@ typedef enum {
   GTK_DEBUG_SIZE_REQUEST    = 1 <<  8,
   GTK_DEBUG_NO_CSS_CACHE    = 1 <<  9,
   GTK_DEBUG_INTERACTIVE     = 1 << 10,
-  GTK_DEBUG_TOUCHSCREEN     = 1 << 11,
   GTK_DEBUG_ACTIONS         = 1 << 12,
   GTK_DEBUG_LAYOUT          = 1 << 13,
   GTK_DEBUG_SNAPSHOT        = 1 << 14,
@@ -82,28 +95,15 @@ typedef enum {
   GTK_DEBUG_BUILDER_OBJECTS = 1 << 16,
   GTK_DEBUG_A11Y            = 1 << 17,
   GTK_DEBUG_ICONFALLBACK    = 1 << 18,
+  GTK_DEBUG_INVERT_TEXT_DIR = 1 << 19,
 } GtkDebugFlags;
 
-#ifdef G_ENABLE_DEBUG
-
 #define GTK_DEBUG_CHECK(type) G_UNLIKELY (gtk_get_debug_flags () & GTK_DEBUG_##type)
-
-#define GTK_NOTE(type,action)                G_STMT_START {     \
-    if (GTK_DEBUG_CHECK (type))		                        \
-       { action; };                          } G_STMT_END
-
-#else /* !G_ENABLE_DEBUG */
-
-#define GTK_DEBUG_CHECK(type) 0
-#define GTK_NOTE(type, action)
-
-#endif /* G_ENABLE_DEBUG */
 
 
 GtkDebugFlags gtk_get_debug_flags (void);
 
 void          gtk_set_debug_flags (GtkDebugFlags flags);
 
-// // // // 
 
-#endif /* __GTK_DEBUG_H__ */
+

@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SHORTCUT_ACTION_H__
-#define __GTK_SHORTCUT_ACTION_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,7 +25,7 @@
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUT_ACTION (gtk_shortcut_action_get_type ())
 
@@ -162,6 +161,5 @@ GtkShortcutAction *     gtk_named_action_new                    (const char     
 
 const char *            gtk_named_action_get_action_name        (GtkNamedAction *self);
 
-// // // // 
 
-#endif /* __GTK_SHORTCUT_ACTION_H__ */
+

@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_IM_MULTICONTEXT_H__
-#define __GTK_IM_MULTICONTEXT_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -24,7 +23,7 @@
 
 #include <gtk/gtkimcontext.h>
 
-// // // // 
+
 
 #define GTK_TYPE_IM_MULTICONTEXT              (gtk_im_multicontext_get_type ())
 #define GTK_IM_MULTICONTEXT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_IM_MULTICONTEXT, GtkIMMulticontext))
@@ -68,7 +67,8 @@ const char  * gtk_im_multicontext_get_context_id   (GtkIMMulticontext *context);
 
 void          gtk_im_multicontext_set_context_id   (GtkIMMulticontext *context,
                                                     const char        *context_id);
- 
-// // // // 
 
-#endif /* __GTK_IM_MULTICONTEXT_H__ */
+
+
+
+

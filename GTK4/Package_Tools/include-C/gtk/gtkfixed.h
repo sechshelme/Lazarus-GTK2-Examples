@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_FIXED_H__
-#define __GTK_FIXED_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_FIXED                  (gtk_fixed_get_type ())
 #define GTK_FIXED(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_FIXED, GtkFixed))
@@ -91,6 +90,7 @@ void            gtk_fixed_set_child_transform   (GtkFixed     *fixed,
 GskTransform *  gtk_fixed_get_child_transform   (GtkFixed     *fixed,
                                                  GtkWidget    *widget);
 
-// // // // 
 
-#endif /* __GTK_FIXED_H__ */
+
+
+

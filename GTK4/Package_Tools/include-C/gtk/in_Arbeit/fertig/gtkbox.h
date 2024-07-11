@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_BOX_H__
-#define __GTK_BOX_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 
 #define GTK_TYPE_BOX            (gtk_box_get_type ())
@@ -88,6 +87,12 @@ void        gtk_box_set_baseline_position (GtkBox             *box,
 GtkBaselinePosition gtk_box_get_baseline_position (GtkBox         *box);
 
 
+void        gtk_box_set_baseline_child (GtkBox         *box,
+                                        int             child);
+
+int         gtk_box_get_baseline_child (GtkBox         *box);
+
+
 void        gtk_box_append             (GtkBox         *box,
                                         GtkWidget      *child);
 
@@ -108,6 +113,6 @@ void        gtk_box_reorder_child_after (GtkBox         *box,
                                          GtkWidget      *sibling);
 
 
-// // // // 
 
-#endif /* __GTK_BOX_H__ */
+
+

@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TEXT_ITER_H__
-#define __GTK_TEXT_ITER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -32,7 +31,7 @@
 #include <gtk/gtktextchild.h>
 #include <gtk/gtktexttag.h>
 
-// // // // 
+
 
 /**
  * GtkTextSearchFlags:
@@ -414,6 +413,7 @@ gboolean gtk_text_iter_in_range        (const GtkTextIter *iter,
 void     gtk_text_iter_order           (GtkTextIter *first,
                                         GtkTextIter *second);
 
-// // // // 
 
-#endif
+
+
+

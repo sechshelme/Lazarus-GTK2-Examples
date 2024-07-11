@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_CHECK_BUTTON_H__
-#define __GTK_CHECK_BUTTON_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -33,7 +32,7 @@
 #include <gtk/gtktogglebutton.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_CHECK_BUTTON                  (gtk_check_button_get_type ())
 #define GTK_CHECK_BUTTON(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CHECK_BUTTON, GtkCheckButton))
@@ -95,7 +94,13 @@ gboolean        gtk_check_button_get_use_underline  (GtkCheckButton *self);
 
 void            gtk_check_button_set_use_underline  (GtkCheckButton *self,
                                                      gboolean        setting);
+GDK_AVAILABLE_IN_4_8
+GtkWidget *     gtk_check_button_get_child          (GtkCheckButton *button);
+GDK_AVAILABLE_IN_4_8
+void            gtk_check_button_set_child          (GtkCheckButton *button,
+                                                     GtkWidget *child);
 
-// // // // 
 
-#endif /* __GTK_CHECK_BUTTON_H__ */
+
+
+

@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TEXT_CHILD_H__
-#define __GTK_TEXT_CHILD_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -33,7 +32,7 @@
 #include <glib-object.h>
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 
 /**
@@ -88,6 +87,7 @@ GtkWidget **gtk_text_child_anchor_get_widgets (GtkTextChildAnchor *anchor,
 
 gboolean gtk_text_child_anchor_get_deleted (GtkTextChildAnchor *anchor);
 
-// // // // 
 
-#endif
+
+
+

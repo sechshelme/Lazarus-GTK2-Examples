@@ -18,8 +18,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_PASSWORD_ENTRY_H__
-#define __GTK_PASSWORD_ENTRY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 
 #include <gtk/gtkentry.h>
 
-// // // // 
+
 
 #define GTK_TYPE_PASSWORD_ENTRY                 (gtk_password_entry_get_type ())
 #define GTK_PASSWORD_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PASSWORD_ENTRY, GtkPasswordEntry))
@@ -54,6 +53,5 @@ void            gtk_password_entry_set_extra_menu     (GtkPasswordEntry *entry,
 
 GMenuModel *    gtk_password_entry_get_extra_menu     (GtkPasswordEntry *entry);
 
-// // // // 
 
-#endif /* __GTK_PASSWORD_ENTRY_H__ */
+

@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TEXT_TAG_TABLE_H__
-#define __GTK_TEXT_TAG_TABLE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,7 +30,7 @@
 
 #include <gtk/gtktexttag.h>
 
-// // // // 
+
 
 /**
  * GtkTextTagTableForeach:
@@ -68,6 +67,7 @@ void             gtk_text_tag_table_foreach  (GtkTextTagTable        *table,
 
 int              gtk_text_tag_table_get_size (GtkTextTagTable        *table);
 
-// // // // 
 
-#endif
+
+
+

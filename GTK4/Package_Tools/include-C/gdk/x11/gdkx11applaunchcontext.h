@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_X11_APP_LAUNCH_CONTEXT_H__
-#define __GDK_X11_APP_LAUNCH_CONTEXT_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -24,7 +23,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 #define GDK_TYPE_X11_APP_LAUNCH_CONTEXT              (gdk_x11_app_launch_context_get_type ())
 #define GDK_X11_APP_LAUNCH_CONTEXT(object)           (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_X11_APP_LAUNCH_CONTEXT, GdkX11AppLaunchContext))
@@ -43,6 +42,5 @@ typedef struct _GdkX11AppLaunchContextClass GdkX11AppLaunchContextClass;
 
 GType    gdk_x11_app_launch_context_get_type (void);
 
-// // // // 
 
-#endif /* __GDK_X11_APP_LAUNCH_CONTEXT_H__ */
+

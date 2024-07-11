@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_X11_DEVICE_MANAGER_H__
-#define __GDK_X11_DEVICE_MANAGER_H__
+#pragma once
 
 #if !defined (__GDKX_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/x11/gdkx.h> can be included directly."
@@ -28,12 +27,11 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-// // // // 
+
 
 
 GdkDevice * gdk_x11_device_manager_lookup (GdkX11DeviceManagerXI2 *device_manager,
                                            int                     device_id);
 
-// // // // 
 
-#endif /* __GDK_X11_DEVICE_MANAGER_H__ */
+

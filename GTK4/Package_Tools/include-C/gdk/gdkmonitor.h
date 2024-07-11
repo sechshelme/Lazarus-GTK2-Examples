@@ -19,18 +19,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_MONITOR_H__
-#define __GDK_MONITOR_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
-#include <gdk/gdkrectangle.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_MONITOR           (gdk_monitor_get_type ())
 #define GDK_MONITOR(object)        (G_TYPE_CHECK_INSTANCE_CAST ((object), GDK_TYPE_MONITOR, GdkMonitor))
@@ -81,12 +78,17 @@ const char *      gdk_monitor_get_connector       (GdkMonitor   *monitor);
 
 int               gdk_monitor_get_scale_factor    (GdkMonitor   *monitor);
 
+double            gdk_monitor_get_scale           (GdkMonitor   *monitor);
+
 int               gdk_monitor_get_refresh_rate    (GdkMonitor   *monitor);
 
 GdkSubpixelLayout gdk_monitor_get_subpixel_layout (GdkMonitor   *monitor);
 
 gboolean          gdk_monitor_is_valid            (GdkMonitor   *monitor);
+GDK_AVAILABLE_IN_4_10
+const char *      gdk_monitor_get_description     (GdkMonitor   *monitor);
 
-// // // // 
 
-#endif  /* __GDK_MONITOR_H__ */
+
+
+

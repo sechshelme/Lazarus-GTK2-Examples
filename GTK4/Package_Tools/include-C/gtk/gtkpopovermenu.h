@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_POPOVER_MENU_H__
-#define __GTK_POPOVER_MENU_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -24,7 +23,7 @@
 
 #include <gtk/gtkpopover.h>
 
-// // // // 
+
 
 #define GTK_TYPE_POPOVER_MENU           (gtk_popover_menu_get_type ())
 #define GTK_POPOVER_MENU(o)             (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_POPOVER_MENU, GtkPopoverMenu))
@@ -38,19 +37,6 @@ GType       gtk_popover_menu_get_type (void) ;
 
 GtkWidget * gtk_popover_menu_new_from_model (GMenuModel *model);
 
-/**
- * GtkPopoverMenuFlags:
- * @GTK_POPOVER_MENU_NESTED: Create submenus as nested
- *    popovers. Without this flag, submenus are created as
- *    sliding pages that replace the main menu.
- *
- * Flags that affect how popover menus are created from
- * a menu model.
- */
-typedef enum {
-  GTK_POPOVER_MENU_NESTED = 1 << 0
-} GtkPopoverMenuFlags;
-
 
 GtkWidget * gtk_popover_menu_new_from_model_full (GMenuModel          *model,
                                                   GtkPopoverMenuFlags  flags);
@@ -62,6 +48,12 @@ void        gtk_popover_menu_set_menu_model (GtkPopoverMenu *popover,
 GMenuModel *gtk_popover_menu_get_menu_model (GtkPopoverMenu *popover);
 
 
+void                gtk_popover_menu_set_flags (GtkPopoverMenu      *popover,
+                                                GtkPopoverMenuFlags  flags);
+
+GtkPopoverMenuFlags gtk_popover_menu_get_flags (GtkPopoverMenu *popover);
+
+
 gboolean    gtk_popover_menu_add_child (GtkPopoverMenu *popover,
                                         GtkWidget      *child,
                                         const char     *id);
@@ -70,6 +62,7 @@ gboolean    gtk_popover_menu_add_child (GtkPopoverMenu *popover,
 gboolean    gtk_popover_menu_remove_child (GtkPopoverMenu *popover,
                                            GtkWidget      *child);
 
-// // // // 
 
-#endif /* __GTK_POPOVER_MENU_H__ */
+
+
+

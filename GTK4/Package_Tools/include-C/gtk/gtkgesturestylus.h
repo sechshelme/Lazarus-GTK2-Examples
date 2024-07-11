@@ -16,8 +16,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_STYLUS_H__
-#define __GTK_GESTURE_STYLUS_H__
+#pragma once
 
 #include <gtk/gtkgesture.h>
 
@@ -25,7 +24,7 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE_STYLUS         (gtk_gesture_stylus_get_type ())
 #define GTK_GESTURE_STYLUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE_STYLUS, GtkGestureStylus))
@@ -43,6 +42,12 @@ GType             gtk_gesture_stylus_get_type (void) ;
 
 GtkGesture *      gtk_gesture_stylus_new      (void);
 
+GDK_AVAILABLE_IN_4_10
+gboolean          gtk_gesture_stylus_get_stylus_only (GtkGestureStylus *gesture);
+GDK_AVAILABLE_IN_4_10
+void              gtk_gesture_stylus_set_stylus_only (GtkGestureStylus *gesture,
+						      gboolean          stylus_only);
+
 
 gboolean          gtk_gesture_stylus_get_axis (GtkGestureStylus *gesture,
 					       GdkAxisUse        axis,
@@ -58,6 +63,5 @@ gboolean          gtk_gesture_stylus_get_backlog (GtkGestureStylus  *gesture,
 
 GdkDeviceTool *   gtk_gesture_stylus_get_device_tool (GtkGestureStylus *gesture);
 
-// // // // 
 
-#endif /* __GTK_GESTURE_STYLUS_H__ */
+

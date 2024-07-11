@@ -17,8 +17,7 @@
  *
  * Author(s): Carlos Garnacho <carlosg@gnome.org>
  */
-#ifndef __GTK_GESTURE_H__
-#define __GTK_GESTURE_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkeventcontroller.h>
 #include <gtk/gtkenums.h>
 
-// // // // 
+
 
 #define GTK_TYPE_GESTURE         (gtk_gesture_get_type ())
 #define GTK_GESTURE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_GESTURE, GtkGesture))
@@ -51,7 +50,7 @@ gboolean    gtk_gesture_set_state            (GtkGesture            *gesture,
 GtkEventSequenceState
             gtk_gesture_get_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence);
-
+GDK_DEPRECATED_IN_4_10
 gboolean    gtk_gesture_set_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence,
                                               GtkEventSequenceState  state);
@@ -102,6 +101,7 @@ GList *     gtk_gesture_get_group            (GtkGesture       *gesture);
 gboolean    gtk_gesture_is_grouped_with      (GtkGesture       *gesture,
                                               GtkGesture       *other);
 
-// // // // 
 
-#endif /* __GTK_GESTURE_H__ */
+
+
+

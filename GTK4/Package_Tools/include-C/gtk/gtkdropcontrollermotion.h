@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_DROP_CONTROLLER_MOTION_H__
-#define __GTK_DROP_CONTROLLER_MOTION_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // // 
+
 
 #define GTK_TYPE_DROP_CONTROLLER_MOTION         (gtk_drop_controller_motion_get_type ())
 #define GTK_DROP_CONTROLLER_MOTION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_DROP_CONTROLLER_MOTION, GtkDropControllerMotion))
@@ -52,6 +51,5 @@ GdkDrop *               gtk_drop_controller_motion_get_drop             (GtkDrop
 
 gboolean                gtk_drop_controller_motion_is_pointer           (GtkDropControllerMotion        *self);
 
-// // // // 
 
-#endif /* __GTK_DROP_CONTROLLER_MOTION_H__ */
+

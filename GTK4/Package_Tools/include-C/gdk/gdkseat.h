@@ -17,8 +17,7 @@
  * Author: Carlos Garnacho <carlosg@gnome.org>
  */
 
-#ifndef __GDK_SEAT_H__
-#define __GDK_SEAT_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
@@ -29,7 +28,7 @@
 #include <gdk/gdkevents.h>
 #include <gdk/gdktypes.h>
 
-// // // // 
+
 
 #define GDK_TYPE_SEAT  (gdk_seat_get_type ())
 #define GDK_SEAT(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), GDK_TYPE_SEAT, GdkSeat))
@@ -56,7 +55,7 @@ typedef enum {
   GDK_SEAT_CAPABILITY_KEYBOARD      = 1 << 3,
   GDK_SEAT_CAPABILITY_TABLET_PAD    = 1 << 4,
   GDK_SEAT_CAPABILITY_ALL_POINTING  = (GDK_SEAT_CAPABILITY_POINTER | GDK_SEAT_CAPABILITY_TOUCH | GDK_SEAT_CAPABILITY_TABLET_STYLUS),
-  GDK_SEAT_CAPABILITY_ALL           = (GDK_SEAT_CAPABILITY_ALL_POINTING | GDK_SEAT_CAPABILITY_KEYBOARD)
+  GDK_SEAT_CAPABILITY_ALL           = (GDK_SEAT_CAPABILITY_ALL_POINTING | GDK_SEAT_CAPABILITY_KEYBOARD | GDK_SEAT_CAPABILITY_TABLET_PAD)
 } GdkSeatCapabilities;
 
 struct _GdkSeat
@@ -86,6 +85,7 @@ GdkDevice *    gdk_seat_get_pointer             (GdkSeat             *seat);
 
 GdkDevice *    gdk_seat_get_keyboard            (GdkSeat             *seat);
 
-// // // // 
 
-#endif /* __GDK_SEAT_H__ */
+
+
+

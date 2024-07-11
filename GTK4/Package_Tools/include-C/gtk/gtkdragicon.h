@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_DRAG_ICON_H__
-#define __GTK_DRAG_ICON_H__
+#pragma once
 
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -29,7 +28,7 @@
 #include <gtk/gtkwidget.h>
 
 
-// // // // 
+
 
 #define GTK_TYPE_DRAG_ICON (gtk_drag_icon_get_type ())
 
@@ -54,7 +53,6 @@ void            gtk_drag_icon_set_from_paintable (GdkDrag      *drag,
 
 GtkWidget *     gtk_drag_icon_create_widget_for_value           (const GValue           *value);
 
-// // // // 
 
 
-#endif /* __GTK_DRAG_ICON_H__ */
+

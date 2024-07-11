@@ -23,7 +23,7 @@
 #include <gtk/gtkwidget.h>
 #include <gtk/gtklayoutchild.h>
 
-// // // // 
+
 
 #define GTK_TYPE_LAYOUT_MANAGER (gtk_layout_manager_get_type ())
 
@@ -126,4 +126,4 @@ void                    gtk_layout_manager_layout_changed       (GtkLayoutManage
 GtkLayoutChild *        gtk_layout_manager_get_layout_child     (GtkLayoutManager *manager,
                                                                  GtkWidget        *child);
 
-// // // // 
+

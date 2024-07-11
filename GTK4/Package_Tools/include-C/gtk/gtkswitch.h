@@ -23,8 +23,7 @@
  * Based on similar code from Mx.
  */
 
-#ifndef __GTK_SWITCH_H__
-#define __GTK_SWITCH_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -32,7 +31,7 @@
 
 #include <gtk/gtkwidget.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SWITCH                 (gtk_switch_get_type ())
 #define GTK_SWITCH(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SWITCH, GtkSwitch))
@@ -59,6 +58,7 @@ void            gtk_switch_set_state   (GtkSwitch *self,
 
 gboolean        gtk_switch_get_state   (GtkSwitch *self);
 
-// // // // 
 
-#endif /* __GTK_SWITCH_H__ */
+
+
+

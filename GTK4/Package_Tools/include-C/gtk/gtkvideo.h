@@ -17,8 +17,7 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_VIDEO_H__
-#define __GTK_VIDEO_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -26,8 +25,9 @@
 
 #include <gtk/gtkmediastream.h>
 #include <gtk/gtkwidget.h>
+#include <gtk/gtkgraphicsoffload.h>
 
-// // // // 
+
 
 #define GTK_TYPE_VIDEO         (gtk_video_get_type ())
 
@@ -73,6 +73,11 @@ void            gtk_video_set_loop                      (GtkVideo               
                                                          gboolean                loop);
 
 
-// // // // 
+GtkGraphicsOffloadEnabled
+                gtk_video_get_graphics_offload          (GtkVideo               *self);
 
-#endif  /* __GTK_VIDEO_H__ */
+void            gtk_video_set_graphics_offload          (GtkVideo               *self,
+                                                         GtkGraphicsOffloadEnabled enabled);
+
+
+

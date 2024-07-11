@@ -16,18 +16,15 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_CONTENT_PROVIDER_H__
-#define __GDK_CONTENT_PROVIDER_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 
 
-// // // // 
 
 #define GDK_TYPE_CONTENT_PROVIDER            (gdk_content_provider_get_type ())
 #define GDK_CONTENT_PROVIDER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_CONTENT_PROVIDER, GdkContentProvider))
@@ -111,6 +108,8 @@ gboolean                gdk_content_provider_write_mime_type_finish     (GdkCont
 gboolean                gdk_content_provider_get_value                  (GdkContentProvider     *provider,
                                                                          GValue                 *value,
                                                                          GError                **error);
-// // // // 
 
-#endif /* __GDK_CONTENT_PROVIDER_H__ */
+
+
+
+

@@ -17,8 +17,7 @@
  * Author(s): Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_EVENT_CONTROLLER_MOTION_H__
-#define __GTK_EVENT_CONTROLLER_MOTION_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkeventcontroller.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EVENT_CONTROLLER_MOTION         (gtk_event_controller_motion_get_type ())
 #define GTK_EVENT_CONTROLLER_MOTION(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTK_TYPE_EVENT_CONTROLLER_MOTION, GtkEventControllerMotion))
@@ -50,6 +49,5 @@ gboolean            gtk_event_controller_motion_contains_pointer   (GtkEventCont
 
 gboolean            gtk_event_controller_motion_is_pointer         (GtkEventControllerMotion *self);
 
-// // // // 
 
-#endif /* __GTK_EVENT_CONTROLLER_MOTION_H__ */
+

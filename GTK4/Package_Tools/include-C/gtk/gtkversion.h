@@ -31,7 +31,7 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 /**
  * GTK_MAJOR_VERSION:
@@ -49,7 +49,7 @@
  * application compile time, rather than from the library linked
  * against at application run time.
  */
-#define GTK_MINOR_VERSION (6)
+#define GTK_MINOR_VERSION (14)
 
 /**
  * GTK_MICRO_VERSION:
@@ -58,7 +58,7 @@
  * application compile time, rather than from the library linked
  * against at application run time.
  */
-#define GTK_MICRO_VERSION (9)
+#define GTK_MICRO_VERSION (2)
 
 /**
  * GTK_BINARY_AGE:
@@ -67,7 +67,7 @@
  * application compile time, rather than from the library linked
  * against at application run time.
  */
-#define GTK_BINARY_AGE    (609)
+#define GTK_BINARY_AGE    (1402)
 
 /**
  * GTK_INTERFACE_AGE:
@@ -76,7 +76,7 @@
  * application compile time, rather than from the library linked
  * against at application run time.
  */
-#define GTK_INTERFACE_AGE (9)
+#define GTK_INTERFACE_AGE (2)
 
 /**
  * GTK_CHECK_VERSION:
@@ -111,6 +111,6 @@ const char * gtk_check_version (guint   required_major,
                                 guint   required_minor,
                                 guint   required_micro);
 
-// // // // 
+
 
 #endif /* __GTK_VERSION_H__ */

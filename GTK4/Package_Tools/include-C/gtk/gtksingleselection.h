@@ -17,12 +17,11 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_SINGLE_SELECTION_H__
-#define __GTK_SINGLE_SELECTION_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SINGLE_SELECTION (gtk_single_selection_get_type ())
 
@@ -55,6 +54,5 @@ gboolean                gtk_single_selection_get_can_unselect   (GtkSingleSelect
 void                    gtk_single_selection_set_can_unselect   (GtkSingleSelection     *self,
                                                                  gboolean                can_unselect);
 
-// // // // 
 
-#endif /* __GTK_SINGLE_SELECTION_H__ */
+

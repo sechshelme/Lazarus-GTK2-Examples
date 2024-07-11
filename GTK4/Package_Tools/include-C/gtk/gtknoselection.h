@@ -17,12 +17,11 @@
  * Authors: Benjamin Otte <otte@gnome.org>
  */
 
-#ifndef __GTK_NO_SELECTION_H__
-#define __GTK_NO_SELECTION_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_NO_SELECTION (gtk_no_selection_get_type ())
 
@@ -38,6 +37,5 @@ GListModel *            gtk_no_selection_get_model              (GtkNoSelection 
 void                    gtk_no_selection_set_model              (GtkNoSelection         *self,
                                                                  GListModel             *model);
 
-// // // // 
 
-#endif /* __GTK_NO_SELECTION_H__ */
+

@@ -16,21 +16,20 @@
  *  License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_SHORTCUTS_GROUP_H__
-#define __GTK_SHORTCUTS_GROUP_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
 #include <gdk/gdk.h>
+#include <gtk/gtkshortcutsshortcut.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SHORTCUTS_GROUP            (gtk_shortcuts_group_get_type ())
 #define GTK_SHORTCUTS_GROUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SHORTCUTS_GROUP, GtkShortcutsGroup))
 #define GTK_IS_SHORTCUTS_GROUP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_SHORTCUTS_GROUP))
-
 
 typedef struct _GtkShortcutsGroup         GtkShortcutsGroup;
 typedef struct _GtkShortcutsGroupClass    GtkShortcutsGroupClass;
@@ -38,6 +37,9 @@ typedef struct _GtkShortcutsGroupClass    GtkShortcutsGroupClass;
 
 GType gtk_shortcuts_group_get_type (void) ;
 
-// // // // 
 
-#endif /* __GTK_SHORTCUTS_GROUP_H__ */
+void gtk_shortcuts_group_add_shortcut (GtkShortcutsGroup    *self,
+                                       GtkShortcutsShortcut *shortcut);
+
+
+

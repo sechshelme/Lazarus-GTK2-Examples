@@ -25,8 +25,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_SEARCH_ENTRY_H__
-#define __GTK_SEARCH_ENTRY_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -34,7 +33,7 @@
 
 #include <gtk/gtkentry.h>
 
-// // // // 
+
 
 #define GTK_TYPE_SEARCH_ENTRY                 (gtk_search_entry_get_type ())
 #define GTK_SEARCH_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_SEARCH_ENTRY, GtkSearchEntry))
@@ -54,7 +53,31 @@ void            gtk_search_entry_set_key_capture_widget (GtkSearchEntry *entry,
 
 GtkWidget*      gtk_search_entry_get_key_capture_widget (GtkSearchEntry *entry);
 
+GDK_AVAILABLE_IN_4_8
+void gtk_search_entry_set_search_delay (GtkSearchEntry *entry,
+                                        guint delay);
+GDK_AVAILABLE_IN_4_8
+guint gtk_search_entry_get_search_delay (GtkSearchEntry *entry);
 
-// // // // 
+GDK_AVAILABLE_IN_4_10
+void            gtk_search_entry_set_placeholder_text (GtkSearchEntry *entry,
+                                                       const char     *text);
+GDK_AVAILABLE_IN_4_10
+const char *    gtk_search_entry_get_placeholder_text (GtkSearchEntry *entry);
 
-#endif /* __GTK_SEARCH_ENTRY_H__ */
+
+void            gtk_search_entry_set_input_purpose (GtkSearchEntry  *entry,
+                                                    GtkInputPurpose  purpose);
+
+GtkInputPurpose gtk_search_entry_get_input_purpose (GtkSearchEntry *entry);
+
+
+void            gtk_search_entry_set_input_hints (GtkSearchEntry *entry,
+                                                  GtkInputHints   hints);
+
+GtkInputHints   gtk_search_entry_get_input_hints (GtkSearchEntry *entry);
+
+
+
+
+

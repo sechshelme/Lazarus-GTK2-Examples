@@ -18,12 +18,11 @@
  */
 
 
-#ifndef __GTK_EXPRESSION_H__
-#define __GTK_EXPRESSION_H__
+#pragma once
 
 #include <gtk/gtktypes.h>
 
-// // // // 
+
 
 #define GTK_TYPE_EXPRESSION (gtk_expression_get_type ())
 #define GTK_TYPE_EXPRESSION_WATCH (gtk_expression_watch_get_type())
@@ -200,6 +199,5 @@ GParamSpec *    gtk_param_spec_expression       (const char    *name,
                                                  const char    *blurb,
                                                  GParamFlags    flags);
 
-// // // // 
 
-#endif /* __GTK_EXPRESSION_H__ */
+

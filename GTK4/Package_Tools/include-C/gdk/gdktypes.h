@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GDK_TYPES_H__
-#define __GDK_TYPES_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
@@ -43,8 +42,10 @@
  * (or GTK). One such setting is what windowing API backend is in use.
  */
 #include <gdk/gdkconfig.h>
+#include <gdk/gdkenums.h>
+#include <gdk/version/gdkversionmacros.h>
 
-// // // // 
+
 
 /**
  * GDK_CURRENT_TIME:
@@ -77,6 +78,7 @@ typedef struct _GdkContentFormats     GdkContentFormats;
 typedef struct _GdkContentProvider    GdkContentProvider;
 typedef struct _GdkCursor             GdkCursor;
 typedef struct _GdkTexture            GdkTexture;
+typedef struct _GdkTextureDownloader  GdkTextureDownloader;
 typedef struct _GdkDevice             GdkDevice;
 typedef struct _GdkDrag               GdkDrag;
 typedef struct _GdkDrop               GdkDrop;
@@ -93,6 +95,9 @@ typedef struct _GdkDrawContext        GdkDrawContext;
 typedef struct _GdkCairoContext       GdkCairoContext;
 typedef struct _GdkGLContext          GdkGLContext;
 typedef struct _GdkVulkanContext      GdkVulkanContext;
+
+typedef struct _GdkDmabufFormats      GdkDmabufFormats;
+typedef struct _GdkDmabufTexture      GdkDmabufTexture;
 
 /*
  * GDK_DECLARE_INTERNAL_TYPE:
@@ -159,6 +164,5 @@ struct _GdkKeymapKey
   int   level;
 };
 
-// // // // 
 
-#endif /* __GDK_TYPES_H__ */
+

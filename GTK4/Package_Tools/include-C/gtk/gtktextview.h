@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TEXT_VIEW_H__
-#define __GTK_TEXT_VIEW_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -33,7 +32,7 @@
 #include <gtk/gtkimcontext.h>
 #include <gtk/gtktextbuffer.h>
 
-// // // // 
+
 
 #define GTK_TYPE_TEXT_VIEW             (gtk_text_view_get_type ())
 #define GTK_TEXT_VIEW(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TEXT_VIEW, GtkTextView))
@@ -432,6 +431,7 @@ PangoContext    *gtk_text_view_get_rtl_context        (GtkTextView      *text_vi
 
 PangoContext    *gtk_text_view_get_ltr_context        (GtkTextView      *text_view);
 
-// // // // 
 
-#endif /* __GTK_TEXT_VIEW_H__ */
+
+
+

@@ -17,8 +17,7 @@
  * Authors: Matthias Clasen <mclasen@redhat.com>
  */
 
-#ifndef __GTK_TREE_LIST_ROW_SORTER_H__
-#define __GTK_TREE_LIST_ROW_SORTER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -27,7 +26,7 @@
 #include <gtk/gtkexpression.h>
 #include <gtk/gtksorter.h>
 
-// // // // 
+
 
 #define GTK_TYPE_TREE_LIST_ROW_SORTER             (gtk_tree_list_row_sorter_get_type ())
 
@@ -42,6 +41,5 @@ GtkSorter *             gtk_tree_list_row_sorter_get_sorter            (GtkTreeL
 void                    gtk_tree_list_row_sorter_set_sorter            (GtkTreeListRowSorter *self,
                                                                         GtkSorter            *sorter);
 
-// // // // 
 
-#endif /* __GTK_TREE_LIST_ROW_SORTER_H__ */
+

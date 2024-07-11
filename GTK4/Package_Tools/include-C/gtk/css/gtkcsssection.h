@@ -15,18 +15,17 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_CSS_SECTION_H__
-#define __GTK_CSS_SECTION_H__
+#pragma once
 
 #if !defined (__GTK_CSS_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/css/gtkcss.h> can be included directly."
 #endif
 
 #include <gio/gio.h>
-#include <gdk/gdkversionmacros.h>
+#include <gdk/version/gdkversionmacros.h>
 #include <gtk/css/gtkcsslocation.h>
 
-// // // // 
+
 
 #define GTK_TYPE_CSS_SECTION         (gtk_css_section_get_type ())
 
@@ -69,6 +68,5 @@ const GtkCssLocation *
 const GtkCssLocation *
                    gtk_css_section_get_end_location    (const GtkCssSection  *section);
 
-// // // // 
 
-#endif /* __GTK_CSS_SECTION_H__ */
+

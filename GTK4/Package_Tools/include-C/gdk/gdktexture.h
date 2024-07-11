@@ -16,25 +16,21 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GDK_TEXTURE_H__
-#define __GDK_TEXTURE_H__
+#pragma once
 
 #if !defined (__GDK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gdk/gdk.h> can be included directly."
 #endif
 
-#include <gdk/gdkversionmacros.h>
 #include <gdk/gdktypes.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-// // // // 
+
 
 #define GDK_TYPE_TEXTURE (gdk_texture_get_type ())
 
 #define GDK_TEXTURE(obj)               (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_TEXTURE, GdkTexture))
 #define GDK_IS_TEXTURE(obj)            (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_TEXTURE))
-
-
 
 typedef struct _GdkTextureClass        GdkTextureClass;
 
@@ -84,6 +80,8 @@ GdkTexture *            gdk_texture_new_from_bytes             (GBytes          
 int                     gdk_texture_get_width                  (GdkTexture      *texture) ;
 
 int                     gdk_texture_get_height                 (GdkTexture      *texture) ;
+GDK_AVAILABLE_IN_4_10
+GdkMemoryFormat         gdk_texture_get_format                 (GdkTexture      *self) ;
 
 
 void                    gdk_texture_download                   (GdkTexture      *texture,
@@ -100,6 +98,7 @@ gboolean                gdk_texture_save_to_tiff               (GdkTexture      
 GDK_AVAILABLE_IN_4_6
 GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
 
-// // // // 
 
-#endif /* __GDK_TEXTURE_H__ */
+
+
+

@@ -15,8 +15,7 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __GTK_ENTRY_BUFFER_H__
-#define __GTK_ENTRY_BUFFER_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -25,7 +24,7 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 /* Maximum size of text buffer, in bytes */
 #define GTK_ENTRY_BUFFER_MAX_SIZE        G_MAXUSHORT
@@ -139,6 +138,5 @@ void                      gtk_entry_buffer_emit_deleted_text      (GtkEntryBuffe
 
 
 
-// // // // 
 
-#endif /* __GTK_ENTRY_BUFFER_H__ */
+

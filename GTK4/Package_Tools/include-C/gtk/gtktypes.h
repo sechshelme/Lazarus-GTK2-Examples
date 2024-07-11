@@ -22,8 +22,7 @@
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  */
 
-#ifndef __GTK_TYPES_H__
-#define __GTK_TYPES_H__
+#pragma once
 
 #if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #error "Only <gtk/gtk.h> can be included directly."
@@ -31,9 +30,10 @@
 
 #include <gdk/gdk.h>
 
-// // // // 
+
 
 typedef struct _GtkAdjustment          GtkAdjustment;
+typedef struct _GtkATContext           GtkATContext;
 typedef struct _GtkBitset              GtkBitset;
 typedef struct _GtkBuilder             GtkBuilder;
 typedef struct _GtkBuilderScope        GtkBuilderScope;
@@ -46,6 +46,7 @@ typedef struct _GtkListItemFactory     GtkListItemFactory;
 typedef struct _GtkNative              GtkNative;
 typedef struct _GtkRequisition	       GtkRequisition;
 typedef struct _GtkRoot  	       GtkRoot;
+typedef struct _GtkScrollInfo  	       GtkScrollInfo;
 typedef struct _GtkSettings            GtkSettings;
 typedef struct _GtkShortcut            GtkShortcut;
 typedef struct _GtkShortcutAction      GtkShortcutAction;
@@ -71,6 +72,5 @@ typedef struct _GtkWindow              GtkWindow;
  */
 #define GTK_INVALID_LIST_POSITION ((guint) 0xffffffff)
 
-// // // // 
 
-#endif /* __GTK_TYPES_H__ */
+
