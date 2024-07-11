@@ -17,6 +17,7 @@ type
   TGType = GType;
   Tgboolean = gboolean;
 
+  Tgchar=gchar;
 
   Tguint = guint;
 
