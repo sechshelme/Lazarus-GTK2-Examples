@@ -3,15 +3,13 @@ unit gtkbutton;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget;
+  common_GTK, gtkwidget;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
 
-
 type
-{< private > }
   PGtkButton = ^TGtkButton;
   TGtkButton = record
       parent_instance : TGtkWidget;

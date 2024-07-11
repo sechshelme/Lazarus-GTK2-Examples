@@ -3,26 +3,23 @@ unit gtkapplicationwindow;
 interface
 
 uses
-  glib2, common_GTK,gtkwidget, gtkwindow;
+  glib2, common_GTK, gtkwidget, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  PGtkApplicationWindow = ^TGtkApplicationWindow;
-
   TGtkApplicationWindow = record
     parent_instance: TGtkWindow;
   end;
-
-  PGtkApplicationWindowClass = ^TGtkApplicationWindowClass;
+  PGtkApplicationWindow = ^TGtkApplicationWindow;
 
   TGtkApplicationWindowClass = record
     parent_class: TGtkWindowClass;
     padding: array[0..7] of Tgpointer;
   end;
-
+  PGtkApplicationWindowClass = ^TGtkApplicationWindowClass;
 
 function gtk_application_window_get_type: TGType; cdecl; external gtklib;
 function gtk_application_window_new(application: PGtkApplication): PGtkWidget; cdecl; external gtklib;

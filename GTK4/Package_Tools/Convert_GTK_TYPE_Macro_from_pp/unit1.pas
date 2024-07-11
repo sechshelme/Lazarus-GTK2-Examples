@@ -5,13 +5,24 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
 
 type
+
+  { TForm1 }
+
   TForm1 = class(TForm)
-    Button1: TButton;
+    Convert: TButton;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
+    CheckGroup1: TCheckGroup;
     Label1: TLabel;
-    procedure Button1Click(Sender: TObject);
+    Memo1: TMemo;
+    procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     SourcePath, DestPath: string;
@@ -40,15 +51,25 @@ begin
     SourcePath := '';
   end else begin
     Label1.Caption := SourcePath;
-//    DestPath:=SourcePath;
-DestPath:=    ChangeFileExt(SourcePath,'.pas');
+    DestPath := ChangeFileExt(SourcePath, '.pas');
+    Memo1.Lines.LoadFromFile(SourcePath);
+    Memo1.SelStart := 20000;
   end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  Width := 1200;
+  Height := 800;
   AllowDropFiles := True;
   OnDropFiles := @Form1DropFiles;
+
+  CheckBox1.Caption := 'GTK_TYPE_WINDOW';
+  CheckBox2.Caption := 'GTK_WINDOW(obj)';
+  CheckBox3.Caption := 'GTK_WINDOW_CLASS(klass)';
+  CheckBox4.Caption := 'GTK_IS_WINDOW(obj)';
+  CheckBox5.Caption := 'GTK_IS_WINDOW_CLASS(klass)';
+  CheckBox6.Caption := 'GTK_WINDOW_GET_CLASS(obj)';
 end;
 
 function TForm1.FindGTK_TYPE(const s: string): string;
@@ -79,74 +100,93 @@ procedure TForm1.ConvertSLMacro(var sl: TStringList);
 var
   p: integer = 0;
   GTK_TYPE_XXX, gtkWidget, gtkWidgetClass: string;
-
 begin
   // GTK_TYPE_WINDOW
-  GTK_TYPE_XXX := FindGTK_TYPE(sl[p]);
-  WriteLn('GTK_TYPE: ', GTK_TYPE_XXX);
+  if CheckBox1.Checked then begin
+    GTK_TYPE_XXX := FindGTK_TYPE(sl[p]);
+    WriteLn('GTK_TYPE: ', GTK_TYPE_XXX);
 
-  sl[p] := StringReplace(sl[p], 'longint; { return type might be wrong }', 'TGType;', []);
-  Inc(p, 5);
-  sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint; { return type might be wrong }', 'TGType;', []);
+    Inc(p, 5);
+    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
+  end;
 
   // GTK_WINDOW
-  gtkWidget := FindGTKWidget(sl[p + 2]);
-  WriteLn('gtkWidget: ', gtkWidget);
+  if CheckBox2.Checked then begin
+    gtkWidget := FindGTKWidget(sl[p + 2]);
+    WriteLn('gtkWidget: ', gtkWidget);
 
-  sl[p] := StringReplace(sl[p], 'longint', gtkWidget, []);
-  Inc(p, 2);
-  sl[p] := '  Result := ' + gtkWidget + '(g_type_check_instance_cast(obj, ' + GTK_TYPE_XXX + '));';
+    sl[p] := StringReplace(sl[p], 'longint', gtkWidget, []);
+    Inc(p, 2);
+    sl[p] := '  Result := ' + gtkWidget + '(g_type_check_instance_cast(obj, ' + GTK_TYPE_XXX + '));';
+    Inc(p, 3);
+  end;
 
   // GTK_WINDOW_CLASS
-  Inc(p, 3);
-  gtkWidgetClass := FindGTKWidget(sl[p + 2]);
-  WriteLn('gtkWidgetClass: ', gtkWidgetClass);
-  sl[p] := StringReplace(sl[p], 'klass : longint', 'klass : Pointer', []);
-  sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
+  if CheckBox3.Checked then begin
+    gtkWidgetClass := FindGTKWidget(sl[p + 2]);
+    WriteLn('gtkWidgetClass: ', gtkWidgetClass);
+    sl[p] := StringReplace(sl[p], 'klass : longint', 'klass : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
 
-  Inc(p, 2);
-  sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(klass, ' + GTK_TYPE_XXX + '));';
+    Inc(p, 2);
+    sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(klass, ' + GTK_TYPE_XXX + '));';
+    Inc(p, 3);
+  end;
 
   // GTK_IS_WINDOW
-  Inc(p, 3);
-  sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
-  sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
+  if CheckBox4.Checked then begin
+    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
 
-  Inc(p, 2);
-  sl[p] := '  Result := g_type_check_instance_is_a(obj,  ' + GTK_TYPE_XXX + ');';
+    Inc(p, 2);
+    sl[p] := '  Result := g_type_check_instance_is_a(obj,  ' + GTK_TYPE_XXX + ');';
+    Inc(p, 3);
+  end;
 
   // GTK_IS_WINDOW_CLASS
-  Inc(p, 3);
-  sl[p] := StringReplace(sl[p], 'klass : longint', 'klass : Pointer', []);
-  sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
+  if CheckBox5.Checked then begin
+    sl[p] := StringReplace(sl[p], 'klass : longint', 'klass : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint', 'Tgboolean', []);
 
-  Inc(p, 2);
-  sl[p] := '  Result := g_type_check_class_is_a(klass,  ' + GTK_TYPE_XXX + ');';
+    Inc(p, 2);
+    sl[p] := '  Result := g_type_check_class_is_a(klass,  ' + GTK_TYPE_XXX + ');';
+    Inc(p, 3);
+  end;
 
   // GTK_WINDOW_GET_CLASS
-  Inc(p, 3);
-  sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
-  sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
+  if CheckBox6.Checked then begin
+    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint', gtkWidgetClass, []);
 
-  Inc(p, 2);
-  //  sl[p] := '  Result := ' + gtkWidgetClass + '(g_type_check_class_cast(obj, ' + GTK_TYPE_XXX + '));';
-  sl[p] := '  Result := ' + gtkWidgetClass + '(PGTypeInstance(obj)^.g_class);';
+    Inc(p, 2);
+    sl[p] := '  Result := ' + gtkWidgetClass + '(PGTypeInstance(obj)^.g_class);';
+  end;
 
   WriteLn();
   WriteLn();
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.ConvertClick(Sender: TObject);
 var
   sl, slMacro: TStringList;
-  p, i, j: integer;
+  p, i, j, macCount: integer;
+
+  procedure DeleteLines(p, Count: integer);
+  var
+    i: integer;
+  begin
+    for i := 0 to Count - 1 do begin
+      sl.Delete(p);
+    end;
+  end;
+
 begin
   if not FileExists(SourcePath) then begin
     WriteLn('Datei nicht gefunden !');
     Exit;
   end;
   sl := TStringList.Create;
-  //  sl.LoadFromFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/include-C/gtk/in_Arbeit/fertig/gtkwindow.pp');
   sl.LoadFromFile(SourcePath);
 
   sl.Text := StringReplace(sl.Text, 'external;', 'external gtklib;', [rfReplaceAll]);
@@ -165,8 +205,23 @@ begin
     Inc(p);
   until pos('{ was #define dname def_expr }', sl[p]) = 1;
 
-  for i := 0 to 27 do begin
-    sl.Delete(p);
+  macCount := 2;
+  DeleteLines(p, 8);
+  if CheckBox3.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
+  end;
+  if CheckBox4.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
+  end;
+  if CheckBox5.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
+  end;
+  if CheckBox6.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
   end;
 
   repeat
@@ -174,8 +229,9 @@ begin
   until pos('implementation', sl[p]) = 1;
   Inc(p, 3);
 
+
   slMacro := TStringList.Create;
-  for j := 0 to 5 do begin
+  for j := 0 to macCount - 1 do begin
     for i := 0 to 4 do begin
       slMacro.Add(sl[p + i + j * 8]);
     end;
@@ -184,8 +240,20 @@ begin
   ConvertSLMacro(slMacro);
   WriteLn(slMacro.Text);
 
-  for i := 0 to 46 do begin
-    sl.Delete(p - 1);
+  Dec(p, 2);
+
+  DeleteLines(p, 14);
+  if CheckBox3.Checked then begin
+    DeleteLines(p, 8);
+  end;
+  if CheckBox4.Checked then begin
+    DeleteLines(p, 8);
+  end;
+  if CheckBox5.Checked then begin
+    DeleteLines(p, 8);
+  end;
+  if CheckBox6.Checked then begin
+    DeleteLines(p, 8);
   end;
 
   p := 0;
@@ -199,11 +267,13 @@ begin
   sl.Insert(p - 1, '// === Konventiert am: ' + DateTimeToStr(now) + ' ===');
   sl.Insert(p - 1, '');
 
-  for i := 0 to 5 do begin
+  for i := 0 to macCount - 1 do begin
     sl.Insert(p + i + 2, slMacro[i * 5]);
   end;
 
-//  sl.SaveToFile('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/include-C/gtk/in_Arbeit/fertig/gtkwindow.pas');
+  Memo1.Lines := sl;
+  Memo1.SelStart := 20000;
+
   sl.SaveToFile(DestPath);
   sl.Free;
   slMacro.Free;

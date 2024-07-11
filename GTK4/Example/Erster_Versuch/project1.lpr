@@ -3,13 +3,14 @@ program project1;
 uses
   glib2,
   common_GTK,
-  gtkenums,
-  gtkwidget     ,
-  gtkapplication,
-  gtkapplicationwindow,
-  gtkwindow,
-  gtkbox,
-  gtkbutton,
+  gtkenums,                   // io. ohne
+  gtkwidget     ,             // -> ctypes,pango,Cairo, glib2, common_GTK, gtkenums
+  gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
+  gtkapplicationwindow,       // -> glib2, common_GTK, gtkwidget, gtkwindow    ( PGtkApplication ausgelagert )
+  gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
+  gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
+  gtkbutton,                  // io. -> common_GTK, gtkwidget;
+  gtkactionbar,               // io. -> common_GTK, gtkwidget;
 
   Math;
 
@@ -35,6 +36,19 @@ uses
 
   // ------- Eigenes
 
+  function Create_ActionBar(parent:PGtkWidget):PGtkWidget;
+  var
+    button1: PGtkWidget;
+  begin
+    Result:=    gtk_action_bar_new;
+    gtk_box_append(GTK_BOX(parent), Result);
+
+    button1 := gtk_button_new_with_label('Button 1');
+    gtk_action_bar_pack_start(GTK_ACTION_BAR( Result),button1);
+    button1 := gtk_button_new_with_label('Button 1');
+    gtk_action_bar_pack_start(GTK_ACTION_BAR( Result),button1);
+  end;
+
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
   begin
     WriteLn(gtk_button_get_label(GTK_BUTTON(button)));
@@ -42,7 +56,7 @@ uses
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, hbox, button1, button2, button3, button4: PGTKWidget;
+    window, hbox, button1, button2, button3, button4, actionBar: PGTKWidget;
     window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
@@ -72,6 +86,10 @@ uses
     gtk_box_append(GTK_BOX(hbox), button4);
     g_signal_connect(button4, 'clicked', G_CALLBACK(@btn_Click), nil);
     //    gtk_widget_set_size_request(button, 75, 25);
+
+    actionBar:=Create_ActionBar(hbox);
+    actionBar:=Create_ActionBar(hbox);
+
 
     gtk_window_present(GTK_WINDOW(window));
 

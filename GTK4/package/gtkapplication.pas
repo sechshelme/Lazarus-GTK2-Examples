@@ -10,14 +10,13 @@ uses
   {$ENDIF}
 
 type
-  PGtkApplicationClass = ^TGtkApplicationClass;
-
   TGtkApplicationClass = record
     parent_class: TGApplicationClass;
     window_added: procedure(application: PGtkApplication; window: PGtkWindow); cdecl;
     window_removed: procedure(application: PGtkApplication; window: PGtkWindow); cdecl;
     padding: array[0..7] of Tgpointer;
   end;
+  PGtkApplicationClass = ^TGtkApplicationClass;
 
 
 function gtk_application_get_type: TGType; cdecl; external gtklib;
