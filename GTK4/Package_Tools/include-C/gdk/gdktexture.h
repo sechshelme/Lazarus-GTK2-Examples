@@ -80,7 +80,7 @@ GdkTexture *            gdk_texture_new_from_bytes             (GBytes          
 int                     gdk_texture_get_width                  (GdkTexture      *texture) ;
 
 int                     gdk_texture_get_height                 (GdkTexture      *texture) ;
-GDK_AVAILABLE_IN_4_10
+
 GdkMemoryFormat         gdk_texture_get_format                 (GdkTexture      *self) ;
 
 

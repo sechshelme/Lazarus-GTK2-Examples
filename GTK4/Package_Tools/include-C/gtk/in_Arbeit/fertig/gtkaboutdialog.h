@@ -100,7 +100,7 @@ GtkWidget             *gtk_about_dialog_new                    (void);
 
 void                   gtk_show_about_dialog                   (GtkWindow       *parent,
                                                                 const char      *first_property_name,
-                                                                ...) G_GNUC_NULL_TERMINATED;
+                                                                ...) ;
 
 const char *          gtk_about_dialog_get_program_name       (GtkAboutDialog  *about);
 

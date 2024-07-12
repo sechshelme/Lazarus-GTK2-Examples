@@ -102,7 +102,7 @@ void            gtk_snapshot_push_shadow                (GtkSnapshot            
 
 void            gtk_snapshot_push_blend                 (GtkSnapshot            *snapshot,
                                                          GskBlendMode            blend_mode);
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_snapshot_push_mask                  (GtkSnapshot            *snapshot,
                                                          GskMaskMode             mask_mode);
 
@@ -163,7 +163,7 @@ cairo_t *       gtk_snapshot_append_cairo               (GtkSnapshot            
 void            gtk_snapshot_append_texture             (GtkSnapshot            *snapshot,
                                                          GdkTexture             *texture,
                                                          const graphene_rect_t  *bounds);
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_snapshot_append_scaled_texture      (GtkSnapshot            *snapshot,
                                                          GdkTexture             *texture,
                                                          GskScalingFilter        filter,

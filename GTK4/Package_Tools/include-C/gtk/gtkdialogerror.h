@@ -56,7 +56,7 @@ typedef enum
   GTK_DIALOG_ERROR_DISMISSED
 } GtkDialogError;
 
-GDK_AVAILABLE_IN_4_10
+
 GQuark gtk_dialog_error_quark (void);
 
 

@@ -124,7 +124,7 @@ void  gtk_cell_layout_clear              (GtkCellLayout         *cell_layout);
 GDK_DEPRECATED_IN_4_10
 void  gtk_cell_layout_set_attributes     (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
-                                          ...) G_GNUC_NULL_TERMINATED;
+                                          ...) ;
 GDK_DEPRECATED_IN_4_10
 void  gtk_cell_layout_add_attribute      (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,

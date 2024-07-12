@@ -7,6 +7,7 @@ uses
   common_GTK,
   gtkenums,                   // io. ohne
   gtkactionable,              // -> glib2, common_GTK;
+  gtkaccelgroup,              // -> glib2, common_GTK;
   gtkwidget,                  // -> ctypes, pango,Cairo, glib2, common_GTK, gtkenums
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
   gtkapplicationwindow,       // -> glib2, common_GTK, gtkwidget, gtkwindow    ( PGtkApplication ausgelagert )
@@ -16,7 +17,12 @@ uses
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
   gtkborder,                  // io. -> common_GTK
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
+  gtkaboutdialog,             // io. -> glib2, common_GTK, gtkwidget, gtkwindow;
 
+
+  gtkaccessible,              // Muss überarbeitet werden
+  gtkatcontext,               // Muss überarbeitet werden
+  gtkalertdialog,             // Muss überarbeitet werden
   Math;
 
 
@@ -41,6 +47,9 @@ uses
 
   // ------- Eigenes
 
+const
+  cmAbout = 1000;
+
   function CreateButton(Caption: Pgchar): PGtkWidget;
   var
     border: PGtkBorder;
@@ -58,7 +67,28 @@ uses
   end;
 
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
+  var
+    cmd: PtrUInt absolute user_data;
   begin
+    WriteLn(cmd);
+    if cmd = cmAbout then begin
+      gtk_show_about_dialog(nil,
+        'program-name', 'ExampleCode',
+        'website', 'https://www.lazarusforum.de/app.php/portal',
+        'website_label', 'Lazarus Forum',
+        'version', '1234',
+        'name', 'name',
+        'copyright', 'copyright',
+        'comments', 'comments',
+        //   'authors', 'authors',
+        // 'documenters', 'documenters',
+        'translator-credits', 'translator_credits',
+        'logo-icon-name', 'accessories-dictionary',
+        'license-type', 'GTK_LICENSE_GPL_2_0',
+        'screen', 'gtk_widget_get_screen (parent)',
+
+        nil);
+    end;
     WriteLn(gtk_button_get_label(GTK_BUTTON(button)));
   end;
 
@@ -67,12 +97,10 @@ uses
     button1: PGtkWidget;
   begin
     Result := gtk_action_bar_new;
-         button1 := gtk_button_new_with_label('ABButton 1');
-    gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
-    button1 := gtk_button_new_with_label('ABButton 2');
-    gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
     button1 := gtk_button_new_with_label('ABButton 1');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
+    g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), gpointer(cmAbout));
+
     button1 := gtk_button_new_with_label('ABButton 2');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
   end;
@@ -111,7 +139,7 @@ uses
 
   end;
 
-    function Create_Calender: PGtkWidget;
+  function Create_Calender: PGtkWidget;
   begin
     Result := gtk_calendar_new;
   end;
@@ -137,7 +165,7 @@ uses
     actionBar := Create_ActionBar;
     gtk_box_append(GTK_BOX(box), actionBar);
 
-    calendar:=Create_Calender;
+    calendar := Create_Calender;
     gtk_box_append(GTK_BOX(box), calendar);
 
 

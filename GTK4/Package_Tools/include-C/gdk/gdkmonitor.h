@@ -85,7 +85,7 @@ int               gdk_monitor_get_refresh_rate    (GdkMonitor   *monitor);
 GdkSubpixelLayout gdk_monitor_get_subpixel_layout (GdkMonitor   *monitor);
 
 gboolean          gdk_monitor_is_valid            (GdkMonitor   *monitor);
-GDK_AVAILABLE_IN_4_10
+
 const char *      gdk_monitor_get_description     (GdkMonitor   *monitor);
 
 

@@ -225,15 +225,15 @@ GskRenderNode *         gsk_texture_node_new                    (GdkTexture     
 
 GdkTexture *            gsk_texture_node_get_texture            (const GskRenderNode      *node) ;
 
-GDK_AVAILABLE_IN_4_10
+
 GType                   gsk_texture_scale_node_get_type         (void) ;
-GDK_AVAILABLE_IN_4_10
+
 GskRenderNode *         gsk_texture_scale_node_new              (GdkTexture               *texture,
                                                                  const graphene_rect_t    *bounds,
                                                                  GskScalingFilter          filter);
-GDK_AVAILABLE_IN_4_10
+
 GdkTexture *            gsk_texture_scale_node_get_texture      (const GskRenderNode      *node) ;
-GDK_AVAILABLE_IN_4_10
+
 GskScalingFilter        gsk_texture_scale_node_get_filter       (const GskRenderNode      *node) ;
 
 
@@ -561,17 +561,17 @@ GskRenderNode *         gsk_blur_node_get_child                 (const GskRender
 
 float                   gsk_blur_node_get_radius                (const GskRenderNode      *node) ;
 
-GDK_AVAILABLE_IN_4_10
+
 GType                  gsk_mask_node_get_type                   (void) ;
-GDK_AVAILABLE_IN_4_10
+
 GskRenderNode *        gsk_mask_node_new                        (GskRenderNode            *source,
                                                                  GskRenderNode            *mask,
                                                                  GskMaskMode               mask_mode);
-GDK_AVAILABLE_IN_4_10
+
 GskRenderNode *        gsk_mask_node_get_source                 (const GskRenderNode      *node);
-GDK_AVAILABLE_IN_4_10
+
 GskRenderNode *        gsk_mask_node_get_mask                   (const GskRenderNode      *node);
-GDK_AVAILABLE_IN_4_10
+
 GskMaskMode            gsk_mask_node_get_mask_mode              (const GskRenderNode      *node);
 
 

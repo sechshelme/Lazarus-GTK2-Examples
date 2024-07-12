@@ -29,34 +29,34 @@
 
 #define GTK_TYPE_COLOR_DIALOG (gtk_color_dialog_get_type ())
 
-GDK_AVAILABLE_IN_4_10
+
 G_DECLARE_FINAL_TYPE (GtkColorDialog, gtk_color_dialog, GTK, COLOR_DIALOG, GObject)
 
-GDK_AVAILABLE_IN_4_10
+
 GtkColorDialog *gtk_color_dialog_new                    (void);
 
-GDK_AVAILABLE_IN_4_10
+
 const char *    gtk_color_dialog_get_title              (GtkColorDialog       *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_color_dialog_set_title              (GtkColorDialog       *self,
                                                          const char           *title);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean        gtk_color_dialog_get_modal              (GtkColorDialog       *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_color_dialog_set_modal              (GtkColorDialog       *self,
                                                          gboolean              modal);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean        gtk_color_dialog_get_with_alpha         (GtkColorDialog       *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_color_dialog_set_with_alpha         (GtkColorDialog       *self,
                                                          gboolean              with_alpha);
 
-GDK_AVAILABLE_IN_4_10
+
 void            gtk_color_dialog_choose_rgba            (GtkColorDialog       *self,
                                                          GtkWindow            *parent,
                                                          const GdkRGBA        *initial_color,
@@ -64,7 +64,7 @@ void            gtk_color_dialog_choose_rgba            (GtkColorDialog       *s
                                                          GAsyncReadyCallback   callback,
                                                          gpointer              user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 GdkRGBA *       gtk_color_dialog_choose_rgba_finish     (GtkColorDialog        *self,
                                                          GAsyncResult          *result,
                                                          GError               **error);

@@ -10,18 +10,15 @@ uses
   {$ENDIF}
 
 type
-  PGtkBox = ^TGtkBox;
-
   TGtkBox = record
     parent_instance: TGtkWidget;
   end;
-
-  PGtkBoxClass = ^TGtkBoxClass;
-
+  PGtkBox = ^TGtkBox;
   TGtkBoxClass = record
     parent_class: TGtkWidgetClass;
     padding: array[0..7] of Tgpointer;
   end;
+  PGtkBoxClass = ^TGtkBoxClass;
 
 
 function gtk_box_get_type: TGType; cdecl; external gtklib;

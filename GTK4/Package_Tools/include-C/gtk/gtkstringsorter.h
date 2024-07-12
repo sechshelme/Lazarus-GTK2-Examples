@@ -67,11 +67,11 @@ typedef enum
   GTK_COLLATION_FILENAME
 } GtkCollation;
 
-GDK_AVAILABLE_IN_4_10
+
 void                    gtk_string_sorter_set_collation         (GtkStringSorter        *self,
                                                                  GtkCollation            collation);
 
-GDK_AVAILABLE_IN_4_10
+
 GtkCollation            gtk_string_sorter_get_collation         (GtkStringSorter        *self);
 
 

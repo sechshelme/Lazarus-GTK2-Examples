@@ -193,7 +193,7 @@ gboolean     gtk_editable_delegate_get_property (GObject      *object,
                                                  guint         prop_id,
                                                  GValue       *value,
                                                  GParamSpec   *pspec);
-GDK_AVAILABLE_IN_4_10
+
 gboolean gtk_editable_delegate_get_accessible_platform_state (GtkEditable                *editable,
                                                               GtkAccessiblePlatformState  state);
 

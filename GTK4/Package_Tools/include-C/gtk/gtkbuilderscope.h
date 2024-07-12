@@ -113,7 +113,7 @@ void                    gtk_builder_cscope_add_callback_symbol  (GtkBuilderCScop
 void                    gtk_builder_cscope_add_callback_symbols (GtkBuilderCScope       *self,
                                                                  const char             *first_callback_name,
                                                                  GCallback               first_callback_symbol,
-                                                                 ...) G_GNUC_NULL_TERMINATED;
+                                                                 ...) ;
 
 #define gtk_builder_cscope_add_callback(scope, callback) \
   gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))

@@ -64,7 +64,7 @@ GList *                 gtk_constraint_layout_add_constraints_from_description  
                                                                                  int                  vspacing,
                                                                                  GError             **error,
                                                                                  const char          *first_view,
-                                                                                 ...) G_GNUC_NULL_TERMINATED;
+                                                                                 ...) ;
 
 GList *                 gtk_constraint_layout_add_constraints_from_descriptionv (GtkConstraintLayout *layout,
                                                                                  const char * const   lines[],

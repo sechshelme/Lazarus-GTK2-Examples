@@ -237,7 +237,7 @@ int                    gtk_tree_view_insert_column_with_attributes (GtkTreeView 
 								    int                        position,
 								    const char                *title,
 								    GtkCellRenderer           *cell,
-								    ...) G_GNUC_NULL_TERMINATED;
+								    ...) ;
 GDK_DEPRECATED_IN_4_10_FOR(GtkListView)
 int                    gtk_tree_view_insert_column_with_data_func  (GtkTreeView               *tree_view,
 								    int                        position,

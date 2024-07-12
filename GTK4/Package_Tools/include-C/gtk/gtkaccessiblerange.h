@@ -15,7 +15,7 @@
 
 #define GTK_TYPE_ACCESSIBLE_RANGE (gtk_accessible_range_get_type())
 
-GDK_AVAILABLE_IN_4_10
+
 G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible)
 
 struct _GtkAccessibleRangeInterface

@@ -30,48 +30,48 @@
 
 #define GTK_TYPE_FONT_DIALOG (gtk_font_dialog_get_type ())
 
-GDK_AVAILABLE_IN_4_10
+
 G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject)
 
-GDK_AVAILABLE_IN_4_10
+
 GtkFontDialog *  gtk_font_dialog_new           (void);
 
-GDK_AVAILABLE_IN_4_10
+
 const char *     gtk_font_dialog_get_title     (GtkFontDialog        *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_set_title     (GtkFontDialog        *self,
                                                 const char           *title);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean         gtk_font_dialog_get_modal     (GtkFontDialog        *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_set_modal     (GtkFontDialog        *self,
                                                 gboolean              modal);
 
-GDK_AVAILABLE_IN_4_10
+
 PangoLanguage *  gtk_font_dialog_get_language  (GtkFontDialog        *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_set_language  (GtkFontDialog        *self,
                                                 PangoLanguage        *language);
 
-GDK_AVAILABLE_IN_4_10
+
 PangoFontMap *   gtk_font_dialog_get_font_map  (GtkFontDialog        *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_set_font_map  (GtkFontDialog        *self,
                                                 PangoFontMap         *fontmap);
 
-GDK_AVAILABLE_IN_4_10
+
 GtkFilter *      gtk_font_dialog_get_filter    (GtkFontDialog        *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_set_filter    (GtkFontDialog        *self,
                                                 GtkFilter            *filter);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_choose_family (GtkFontDialog        *self,
                                                 GtkWindow            *parent,
                                                 PangoFontFamily      *initial_value,
@@ -79,14 +79,14 @@ void             gtk_font_dialog_choose_family (GtkFontDialog        *self,
                                                 GAsyncReadyCallback   callback,
                                                 gpointer              user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 PangoFontFamily *
                  gtk_font_dialog_choose_family_finish
                                                (GtkFontDialog         *self,
                                                 GAsyncResult          *result,
                                                 GError               **error);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_choose_face   (GtkFontDialog        *self,
                                                 GtkWindow            *parent,
                                                 PangoFontFace        *initial_value,
@@ -94,13 +94,13 @@ void             gtk_font_dialog_choose_face   (GtkFontDialog        *self,
                                                 GAsyncReadyCallback   callback,
                                                 gpointer              user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 PangoFontFace *  gtk_font_dialog_choose_face_finish
                                                (GtkFontDialog         *self,
                                                 GAsyncResult          *result,
                                                 GError               **error);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_choose_font   (GtkFontDialog        *self,
                                                 GtkWindow            *parent,
                                                 PangoFontDescription *initial_value,
@@ -108,14 +108,14 @@ void             gtk_font_dialog_choose_font   (GtkFontDialog        *self,
                                                 GAsyncReadyCallback   callback,
                                                 gpointer              user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 PangoFontDescription *
                  gtk_font_dialog_choose_font_finish
                                                (GtkFontDialog         *self,
                                                 GAsyncResult          *result,
                                                 GError               **error);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_font_dialog_choose_font_and_features
                                                (GtkFontDialog        *self,
                                                 GtkWindow            *parent,
@@ -124,7 +124,7 @@ void             gtk_font_dialog_choose_font_and_features
                                                 GAsyncReadyCallback   callback,
                                                 gpointer              user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean        gtk_font_dialog_choose_font_and_features_finish
                                                (GtkFontDialog         *self,
                                                 GAsyncResult          *result,

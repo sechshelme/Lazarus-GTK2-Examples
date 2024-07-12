@@ -95,7 +95,7 @@ GtkWidget *      gtk_scale_button_get_plus_button  (GtkScaleButton  *button);
 GtkWidget *      gtk_scale_button_get_minus_button (GtkScaleButton  *button);
 
 GtkWidget *      gtk_scale_button_get_popup        (GtkScaleButton  *button);
-GDK_AVAILABLE_IN_4_10
+
 gboolean         gtk_scale_button_get_active       (GtkScaleButton  *button);
 
 gboolean         gtk_scale_button_get_has_frame    (GtkScaleButton  *button);

@@ -31,18 +31,21 @@ type
   Tgint64 = gint64;
   Tguint64 = guint64;
 
+  PPguint=^Pguint;
+
   Tdouble = double;
 
+  Tgsize=gsize;
   Tgssize = gssize;
   Pgssize = ^Tgssize;
 
-  PGObject = ^TGObject;
 
   TGObject = record
     g_type_instance: TGTypeInstance;
     ref_count: guint;
     qdata: PGData;
   end;
+  PGObject = ^TGObject;
 
   TGInitiallyUnowned = TGObject;
 
@@ -109,6 +112,11 @@ type
   TGtkBuilderScope = Pointer;// G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)        // /usr/include/gtk-4.0/gtk/gtkbuilderscope.h
   PGtkBuilderScope = ^TGtkBuilderScope;
 
+
+TGdkPaintable=Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
+PGdkPaintable=^TGdkPaintable;
+
+
   TGtkStyleContext = record      // /usr/include/gtk-4.0/gtk/gtkstylecontext.h
     parent_object: TGObject;
   end;
@@ -150,6 +158,22 @@ type
 
   TGListModel = Pointer;         // ???
   PGListModel = ^TGListModel;
+
+  TGAsyncResult=Pointer; // _GAsyncResult      // /usr/include/glib-2.0/gio/giotypes.h
+  PGAsyncResult=^TGAsyncResult;
+
+  TGCancellablePrivate=Pointer; // _GCancellablePrivate
+  PGCancellablePrivate=^TGCancellablePrivate;
+
+  TGCancellable=record      // giotypes.h &   /usr/include/glib-2.0/gio/gcancellable.h
+              parent_instance  :TGObject;
+              priv:PGCancellablePrivate;
+  end;
+  PGCancellable=^TGCancellable;
+
+  TGAsyncReadyCallback = procedure (source_object:PGObject; res:PGAsyncResult; user_data:Tgpointer);cdecl;   // /usr/include/glib-2.0/gio/giotypes.h
+
+
 
 
   // === Zwingend ausgelagertes

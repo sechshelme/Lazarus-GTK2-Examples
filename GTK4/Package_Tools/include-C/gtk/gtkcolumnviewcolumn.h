@@ -96,10 +96,10 @@ void                    gtk_column_view_column_set_expand               (GtkColu
 
 gboolean                gtk_column_view_column_get_expand               (GtkColumnViewColumn    *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void                    gtk_column_view_column_set_id                   (GtkColumnViewColumn    *self,
                                                                          const char             *id);
-GDK_AVAILABLE_IN_4_10
+
 const char *            gtk_column_view_column_get_id                   (GtkColumnViewColumn    *self);
 
 

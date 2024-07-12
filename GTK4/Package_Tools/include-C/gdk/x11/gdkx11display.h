@@ -96,7 +96,7 @@ void          gdk_x11_display_set_cursor_theme (GdkDisplay  *display,
 
 void gdk_x11_display_broadcast_startup_message (GdkDisplay *display,
                                                 const char *message_type,
-                                                ...) G_GNUC_NULL_TERMINATED;
+                                                ...) ;
 
 
 GdkDisplay   *gdk_x11_lookup_xdisplay (Display *xdisplay);

@@ -49,9 +49,9 @@ GtkTreeListRow *        gtk_tree_expander_get_list_row         (GtkTreeExpander 
 
 void                    gtk_tree_expander_set_list_row         (GtkTreeExpander        *self,
                                                                 GtkTreeListRow         *list_row);
-GDK_AVAILABLE_IN_4_10
+
 gboolean                gtk_tree_expander_get_indent_for_depth (GtkTreeExpander        *self);
-GDK_AVAILABLE_IN_4_10
+
 void                    gtk_tree_expander_set_indent_for_depth (GtkTreeExpander        *self,
                                                                 gboolean                indent_for_depth);
 GDK_AVAILABLE_IN_4_6
@@ -59,9 +59,9 @@ gboolean                gtk_tree_expander_get_indent_for_icon  (GtkTreeExpander 
 GDK_AVAILABLE_IN_4_6
 void                    gtk_tree_expander_set_indent_for_icon  (GtkTreeExpander        *self,
                                                                 gboolean               indent_for_icon);
-GDK_AVAILABLE_IN_4_10
+
 gboolean                gtk_tree_expander_get_hide_expander    (GtkTreeExpander        *self);
-GDK_AVAILABLE_IN_4_10
+
 void                    gtk_tree_expander_set_hide_expander    (GtkTreeExpander        *self,
                                                                 gboolean                hide_expander);
 

@@ -27,34 +27,34 @@
 
 #define GDK_TYPE_TEXTURE_DOWNLOADER    (gdk_texture_downloader_get_type ())
 
-GDK_AVAILABLE_IN_4_10
+
 GType                   gdk_texture_downloader_get_type         (void) ;
-GDK_AVAILABLE_IN_4_10
+
 GdkTextureDownloader *  gdk_texture_downloader_new              (GdkTexture             *texture);
 
-GDK_AVAILABLE_IN_4_10
+
 GdkTextureDownloader *  gdk_texture_downloader_copy             (const GdkTextureDownloader     *self);
-GDK_AVAILABLE_IN_4_10
+
 void                    gdk_texture_downloader_free             (GdkTextureDownloader           *self);
 
 
-GDK_AVAILABLE_IN_4_10
+
 void                    gdk_texture_downloader_set_texture      (GdkTextureDownloader           *self,
                                                                  GdkTexture                     *texture);
-GDK_AVAILABLE_IN_4_10
+
 GdkTexture *            gdk_texture_downloader_get_texture      (const GdkTextureDownloader     *self);
-GDK_AVAILABLE_IN_4_10
+
 void                    gdk_texture_downloader_set_format       (GdkTextureDownloader           *self,
                                                                  GdkMemoryFormat                 format);
-GDK_AVAILABLE_IN_4_10
+
 GdkMemoryFormat         gdk_texture_downloader_get_format       (const GdkTextureDownloader     *self);
 
 
-GDK_AVAILABLE_IN_4_10
+
 void                    gdk_texture_downloader_download_into    (const GdkTextureDownloader     *self,
                                                                  guchar                         *data,
                                                                  gsize                           stride);
-GDK_AVAILABLE_IN_4_10
+
 GBytes *                gdk_texture_downloader_download_bytes   (const GdkTextureDownloader     *self,
                                                                  gsize                          *out_stride);
 

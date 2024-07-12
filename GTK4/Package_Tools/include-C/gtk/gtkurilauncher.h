@@ -29,26 +29,26 @@
 
 #define GTK_TYPE_URI_LAUNCHER (gtk_uri_launcher_get_type ())
 
-GDK_AVAILABLE_IN_4_10
+
 G_DECLARE_FINAL_TYPE (GtkUriLauncher, gtk_uri_launcher, GTK, URI_LAUNCHER, GObject)
 
-GDK_AVAILABLE_IN_4_10
+
 GtkUriLauncher * gtk_uri_launcher_new                         (const char          *uri);
 
-GDK_AVAILABLE_IN_4_10
+
 const char     * gtk_uri_launcher_get_uri                     (GtkUriLauncher      *self);
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_uri_launcher_set_uri                     (GtkUriLauncher      *self,
                                                                const char          *uri);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_uri_launcher_launch                      (GtkUriLauncher      *self,
                                                                GtkWindow           *parent,
                                                                GCancellable        *cancellable,
                                                                GAsyncReadyCallback  callback,
                                                                gpointer             user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean         gtk_uri_launcher_launch_finish               (GtkUriLauncher     *self,
                                                                GAsyncResult        *result,
                                                                GError             **error);

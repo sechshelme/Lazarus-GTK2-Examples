@@ -33,7 +33,7 @@
 #define GTK_TYPE_AT_CONTEXT (gtk_at_context_get_type())
 
 
-GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject)
+//GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject)
 
 
 GtkAccessible *         gtk_at_context_get_accessible           (GtkATContext      *self);

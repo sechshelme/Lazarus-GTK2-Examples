@@ -134,7 +134,7 @@ GtkWidget* gtk_dialog_new_with_buttons (const char      *title,
                                         GtkWindow       *parent,
                                         GtkDialogFlags   flags,
                                         const char      *first_button_text,
-                                        ...) G_GNUC_NULL_TERMINATED;
+                                        ...) ;
 
 GDK_DEPRECATED_IN_4_10
 void       gtk_dialog_add_action_widget (GtkDialog   *dialog,
@@ -147,7 +147,7 @@ GtkWidget* gtk_dialog_add_button        (GtkDialog   *dialog,
 GDK_DEPRECATED_IN_4_10
 void       gtk_dialog_add_buttons       (GtkDialog   *dialog,
                                          const char *first_button_text,
-                                         ...) G_GNUC_NULL_TERMINATED;
+                                         ...) ;
 
 GDK_DEPRECATED_IN_4_10
 void gtk_dialog_set_response_sensitive (GtkDialog *dialog,

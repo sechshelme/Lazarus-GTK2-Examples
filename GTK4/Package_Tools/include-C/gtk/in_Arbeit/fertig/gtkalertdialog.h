@@ -25,7 +25,7 @@
 #include <gdk/gdk.h>
 #include <gtk/gtkwindow.h>
 
-
+G_BEGIN_DECLS
 
 #define GTK_TYPE_ALERT_DIALOG (gtk_alert_dialog_get_type ())
 
@@ -94,4 +94,4 @@ GDK_AVAILABLE_IN_4_10
 void            gtk_alert_dialog_show               (GtkAlertDialog      *self,
                                                      GtkWindow           *parent);
 
-
+G_END_DECLS

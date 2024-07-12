@@ -82,7 +82,7 @@ GBytes * gsk_gl_shader_format_args_va (GskGLShader     *shader,
                                        va_list          uniforms);
 
 GBytes * gsk_gl_shader_format_args    (GskGLShader     *shader,
-                                       ...) G_GNUC_NULL_TERMINATED;
+                                       ...) ;
 
 
 float    gsk_gl_shader_get_arg_float (GskGLShader     *shader,

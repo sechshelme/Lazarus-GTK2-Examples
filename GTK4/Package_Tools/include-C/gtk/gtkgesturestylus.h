@@ -42,9 +42,9 @@ GType             gtk_gesture_stylus_get_type (void) ;
 
 GtkGesture *      gtk_gesture_stylus_new      (void);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean          gtk_gesture_stylus_get_stylus_only (GtkGestureStylus *gesture);
-GDK_AVAILABLE_IN_4_10
+
 void              gtk_gesture_stylus_set_stylus_only (GtkGestureStylus *gesture,
 						      gboolean          stylus_only);
 

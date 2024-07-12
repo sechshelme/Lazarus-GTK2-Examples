@@ -928,7 +928,7 @@ char **                 gtk_widget_get_css_classes      (GtkWidget   *widget);
 void                    gtk_widget_set_css_classes      (GtkWidget   *widget,
                                                          const char **classes);
 
-//GDK_AVAILABLE_IN_4_10
+//
 void                    gtk_widget_get_color            (GtkWidget   *widget,
                                                          GdkRGBA     *color);
 

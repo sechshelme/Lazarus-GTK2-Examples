@@ -29,15 +29,15 @@
 
 #define GTK_TYPE_FILE_LAUNCHER (gtk_file_launcher_get_type ())
 
-GDK_AVAILABLE_IN_4_10
+
 G_DECLARE_FINAL_TYPE (GtkFileLauncher, gtk_file_launcher, GTK, FILE_LAUNCHER, GObject)
 
-GDK_AVAILABLE_IN_4_10
+
 GtkFileLauncher * gtk_file_launcher_new                          (GFile               *file);
 
-GDK_AVAILABLE_IN_4_10
+
 GFile           * gtk_file_launcher_get_file                     (GtkFileLauncher     *self);
-GDK_AVAILABLE_IN_4_10
+
 void              gtk_file_launcher_set_file                     (GtkFileLauncher     *self,
                                                                   GFile               *file);
 
@@ -51,26 +51,26 @@ gboolean          gtk_file_launcher_get_writable                 (GtkFileLaunche
 
 void              gtk_file_launcher_set_writable                 (GtkFileLauncher     *self,
                                                                   gboolean             writable);
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_file_launcher_launch                        (GtkFileLauncher     *self,
                                                                   GtkWindow           *parent,
                                                                   GCancellable        *cancellable,
                                                                   GAsyncReadyCallback  callback,
                                                                   gpointer             user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean         gtk_file_launcher_launch_finish                 (GtkFileLauncher     *self,
                                                                   GAsyncResult        *result,
                                                                   GError             **error);
 
-GDK_AVAILABLE_IN_4_10
+
 void             gtk_file_launcher_open_containing_folder        (GtkFileLauncher     *self,
                                                                   GtkWindow           *parent,
                                                                   GCancellable        *cancellable,
                                                                   GAsyncReadyCallback  callback,
                                                                   gpointer             user_data);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean         gtk_file_launcher_open_containing_folder_finish (GtkFileLauncher     *self,
                                                                   GAsyncResult        *result,
                                                                   GError             **error);

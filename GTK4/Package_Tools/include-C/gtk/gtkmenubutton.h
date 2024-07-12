@@ -126,10 +126,10 @@ void          gtk_menu_button_set_child   (GtkMenuButton *menu_button,
 GDK_AVAILABLE_IN_4_6
 GtkWidget *   gtk_menu_button_get_child   (GtkMenuButton *menu_button);
 
-GDK_AVAILABLE_IN_4_10
+
 void          gtk_menu_button_set_active (GtkMenuButton *menu_button,
                                        gboolean       active);
-GDK_AVAILABLE_IN_4_10
+
 gboolean      gtk_menu_button_get_active (GtkMenuButton *menu_button);
 
 

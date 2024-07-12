@@ -86,7 +86,7 @@ GtkTreeViewColumn      *gtk_tree_view_column_new_with_area       (GtkCellArea   
 GDK_DEPRECATED_IN_4_10_FOR(GtkColumnView and GtkColumnViewColumn)
 GtkTreeViewColumn      *gtk_tree_view_column_new_with_attributes (const char              *title,
 								  GtkCellRenderer         *cell,
-								  ...) G_GNUC_NULL_TERMINATED;
+								  ...) ;
 GDK_DEPRECATED_IN_4_10_FOR(GtkColumnView and GtkColumnViewColumn)
 void                    gtk_tree_view_column_pack_start          (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell,
@@ -105,7 +105,7 @@ void                    gtk_tree_view_column_add_attribute       (GtkTreeViewCol
 GDK_DEPRECATED_IN_4_10_FOR(GtkColumnView and GtkColumnViewColumn)
 void                    gtk_tree_view_column_set_attributes      (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer,
-								  ...) G_GNUC_NULL_TERMINATED;
+								  ...) ;
 GDK_DEPRECATED_IN_4_10_FOR(GtkColumnView and GtkColumnViewColumn)
 void                    gtk_tree_view_column_set_cell_data_func  (GtkTreeViewColumn       *tree_column,
 								  GtkCellRenderer         *cell_renderer,

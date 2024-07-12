@@ -397,17 +397,17 @@ GDK_DEPRECATED_IN_4_10
 void                  gtk_cell_area_add_with_properties            (GtkCellArea        *area,
                                                                     GtkCellRenderer    *renderer,
                                                                     const char      *first_prop_name,
-                                                                    ...) G_GNUC_NULL_TERMINATED;
+                                                                    ...) ;
 GDK_DEPRECATED_IN_4_10
 void                  gtk_cell_area_cell_set                       (GtkCellArea        *area,
                                                                     GtkCellRenderer    *renderer,
                                                                     const char         *first_prop_name,
-                                                                    ...) G_GNUC_NULL_TERMINATED;
+                                                                    ...) ;
 GDK_DEPRECATED_IN_4_10
 void                  gtk_cell_area_cell_get                       (GtkCellArea        *area,
                                                                     GtkCellRenderer    *renderer,
                                                                     const char         *first_prop_name,
-                                                                    ...) G_GNUC_NULL_TERMINATED;
+                                                                    ...) ;
 GDK_DEPRECATED_IN_4_10
 void                  gtk_cell_area_cell_set_valist                (GtkCellArea        *area,
                                                                     GtkCellRenderer    *renderer,

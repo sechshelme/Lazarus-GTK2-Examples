@@ -32,8 +32,8 @@
 
 #define GTK_TYPE_ACCESSIBLE (gtk_accessible_get_type())
 
-GDK_AVAILABLE_IN_4_10
-G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
+
+// G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
 
 /**
  * GtkAccessiblePlatformState:
@@ -46,7 +46,7 @@ G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
  *
  * Since: 4.10
  */
-typedef enum {
+typedef enum fgfdgg {
   GTK_ACCESSIBLE_PLATFORM_STATE_FOCUSABLE,
   GTK_ACCESSIBLE_PLATFORM_STATE_FOCUSED,
   GTK_ACCESSIBLE_PLATFORM_STATE_ACTIVE
@@ -166,29 +166,29 @@ typedef struct _GtkAccessibleList GtkAccessibleList;
 
 GtkATContext *  gtk_accessible_get_at_context   (GtkAccessible *self);
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean gtk_accessible_get_platform_state (GtkAccessible              *self,
                                             GtkAccessiblePlatformState  state);
 
-GDK_AVAILABLE_IN_4_10
+
 GtkAccessible * gtk_accessible_get_accessible_parent (GtkAccessible *self);
 
-GDK_AVAILABLE_IN_4_10
+
 void gtk_accessible_set_accessible_parent (GtkAccessible *self,
                                            GtkAccessible *parent,
                                            GtkAccessible *next_sibling);
 
-GDK_AVAILABLE_IN_4_10
+
 GtkAccessible * gtk_accessible_get_first_accessible_child (GtkAccessible *self);
 
-GDK_AVAILABLE_IN_4_10
+
 GtkAccessible * gtk_accessible_get_next_accessible_sibling (GtkAccessible *self);
-GDK_AVAILABLE_IN_4_10
+
 void gtk_accessible_update_next_accessible_sibling (GtkAccessible *self,
                                                     GtkAccessible *new_sibling);
 
 
-GDK_AVAILABLE_IN_4_10
+
 gboolean gtk_accessible_get_bounds (GtkAccessible *self,
                                     int           *x,
                                     int           *y,
