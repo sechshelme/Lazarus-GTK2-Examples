@@ -18,8 +18,15 @@ uses
   gtkborder,                  // io. -> common_GTK
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
   gtkaboutdialog,             // io. -> glib2, common_GTK, gtkwidget, gtkwindow;
+  gtkadjustment,              // io. -> common_GTK;
 
+  gtkscrollbar,
+  gtkrange,
+  gtkscale,
+  gtkscalebutton,
 
+  gtkaccessiblerange,         // Muss überarbeitet werden
+  gtkaccessibletext,          // Muss überarbeitet werden
   gtkaccessible,              // Muss überarbeitet werden
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             // Muss überarbeitet werden
@@ -144,6 +151,14 @@ const
     Result := gtk_calendar_new;
   end;
 
+  function Create_Spin:PGtkWidget;
+  // https://openbook.rheinwerk-verlag.de/linux_unix_programmierung/Kap15-008.htm
+  var
+    vadj: PGtkAdjustment;
+  begin
+    vadj:=GTK_ADJUSTMENT(gtk_adjustment_new(1,-100,100,0.1,10,0));
+//    g_object_new(GTK_TYPE_VSCALE);
+  end;
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;

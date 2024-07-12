@@ -16,9 +16,9 @@
 #define GTK_TYPE_ACCESSIBLE_RANGE (gtk_accessible_range_get_type())
 
 
-G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible)
+//G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible)
 
-struct _GtkAccessibleRangeInterface
+typedef struct _GtkAccessibleRangeInterface
 {
   GTypeInterface g_iface;
 
@@ -38,6 +38,6 @@ struct _GtkAccessibleRangeInterface
    */
   gboolean (* set_current_value) (GtkAccessibleRange *self,
                                   double              value);
-};
+}vvv;
 
 

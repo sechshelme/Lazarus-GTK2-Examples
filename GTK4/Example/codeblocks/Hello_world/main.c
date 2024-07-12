@@ -9,6 +9,12 @@ static void print_hello (GtkWidget *widget, gpointer data)
 {
   g_print ("Hello World\n");
   g_print ("Hello World  %s\n", gtk_button_get_label(GTK_BUTTON(widget)));
+
+  gtk_accessible_get_at_context
+  GTK_ACCESSIBLE_PLATFORM_STATE_FOCUSABLE
+  GtkATContext
+  GtkAccessibleList
+
 }
 
 static void activate (GtkApplication *app, gpointer user_data)

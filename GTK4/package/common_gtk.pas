@@ -173,6 +173,9 @@ PGdkPaintable=^TGdkPaintable;
 
   TGAsyncReadyCallback = procedure (source_object:PGObject; res:PGAsyncResult; user_data:Tgpointer);cdecl;   // /usr/include/glib-2.0/gio/giotypes.h
 
+  TGInitiallyUnownedClass=TGObjectClass;  // gobject.h
+  PGInitiallyUnownedClass=^TGInitiallyUnownedClass;
+
 
 
 

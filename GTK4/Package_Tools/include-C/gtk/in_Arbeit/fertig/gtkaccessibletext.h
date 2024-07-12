@@ -31,7 +31,7 @@
  * Since: 4.14
  */
 
-G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible)
+//G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible)
 
 /**
  * GtkAccessibleTextRange:
@@ -42,7 +42,7 @@ G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEX
  *
  * Since: 4.14
  */
-typedef struct {
+typedef struct vvvv {
   gsize start;
   gsize length;
 } GtkAccessibleTextRange;
