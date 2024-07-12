@@ -6,6 +6,7 @@ uses
   glib2,
   common_GTK,
   gtkenums,                   // io. ohne
+  gtkactionable,              // -> glib2, common_GTK;
   gtkwidget,                  // -> ctypes, pango,Cairo, glib2, common_GTK, gtkenums
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
   gtkapplicationwindow,       // -> glib2, common_GTK, gtkwidget, gtkwindow    ( PGtkApplication ausgelagert )

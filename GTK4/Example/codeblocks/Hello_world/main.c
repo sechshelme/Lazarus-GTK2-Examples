@@ -46,6 +46,8 @@ static void activate (GtkApplication *app, gpointer user_data)
   gboolean is_win = GTK_IS_WINDOW_CLASS(window_class);
   if (is_win) printf("true"); else  printf("false");
 
+  GTK_ACTIONABLE_GET_IFACE
+
 
 
 
