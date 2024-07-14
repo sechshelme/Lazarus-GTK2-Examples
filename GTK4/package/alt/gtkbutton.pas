@@ -3,7 +3,7 @@ unit gtkbutton;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  gtkwidget, common_GTK;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -39,8 +39,10 @@ procedure gtk_button_set_icon_name(button:PGtkButton; icon_name:Pchar);cdecl;ext
 function gtk_button_get_icon_name(button:PGtkButton):Pchar;cdecl;external gtklib;
 procedure gtk_button_set_child(button:PGtkButton; child:PGtkWidget);cdecl;external gtklib;
 function gtk_button_get_child(button:PGtkButton):PGtkWidget;cdecl;external gtklib;
+procedure gtk_button_set_can_shrink(button:PGtkButton; can_shrink:Tgboolean);cdecl;external gtklib;
+function gtk_button_get_can_shrink(button:PGtkButton):Tgboolean;cdecl;external gtklib;
 
-// === Konventiert am: 10-7-24 14:02:31 ===
+// === Konventiert am: 14-7-24 13:21:50 ===
 
 function GTK_TYPE_BUTTON : TGType;
 function GTK_BUTTON(obj : Pointer) : PGtkButton;
@@ -80,6 +82,7 @@ function GTK_BUTTON_GET_CLASS(obj : Pointer) : PGtkButtonClass;
 begin
   Result := PGtkButtonClass(PGTypeInstance(obj)^.g_class);
 end;
+
 
 
 end.

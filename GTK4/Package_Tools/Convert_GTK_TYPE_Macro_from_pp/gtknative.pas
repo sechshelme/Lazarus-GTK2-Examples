@@ -43,7 +43,7 @@ function gtk_native_get_surface(self:PGtkNative):PGdkSurface;cdecl;external gtkl
 function gtk_native_get_renderer(self:PGtkNative):PGskRenderer;cdecl;external gtklib;
 procedure gtk_native_get_surface_transform(self:PGtkNative; x:Pdouble; y:Pdouble);cdecl;external gtklib;
 
-// === Konventiert am: 14-7-24 14:00:59 ===
+// === Konventiert am: 14-7-24 14:54:00 ===
 
 function GTK_TYPE_NATIVE: TGType;
 function GTK_NATIVE(obj: Pointer): PGtkNative;

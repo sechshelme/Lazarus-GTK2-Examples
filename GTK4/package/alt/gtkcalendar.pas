@@ -9,9 +9,9 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-type
-  TGtkCalendar = Pointer;  // _GtkCalendar
-  PGtkCalendar = ^TGtkCalendar;
+  type
+    TGtkCalendar = Pointer;  // _GtkCalendar
+    PGtkCalendar = ^TGtkCalendar;
 
 function gtk_calendar_get_type: TGType; cdecl; external gtklib;
 function gtk_calendar_new: PGtkWidget; cdecl; external gtklib;
@@ -25,10 +25,16 @@ procedure gtk_calendar_set_show_heading(self: PGtkCalendar; Value: Tgboolean); c
 function gtk_calendar_get_show_heading(self: PGtkCalendar): Tgboolean; cdecl; external gtklib;
 procedure gtk_calendar_set_show_day_names(self: PGtkCalendar; Value: Tgboolean); cdecl; external gtklib;
 function gtk_calendar_get_show_day_names(self: PGtkCalendar): Tgboolean; cdecl; external gtklib;
+procedure gtk_calendar_set_day(self: PGtkCalendar; day: longint); cdecl; external gtklib;
+function gtk_calendar_get_day(self: PGtkCalendar): longint; cdecl; external gtklib;
+procedure gtk_calendar_set_month(self: PGtkCalendar; month: longint); cdecl; external gtklib;
+function gtk_calendar_get_month(self: PGtkCalendar): longint; cdecl; external gtklib;
+procedure gtk_calendar_set_year(self: PGtkCalendar; year: longint); cdecl; external gtklib;
+function gtk_calendar_get_year(self: PGtkCalendar): longint; cdecl; external gtklib;
 function gtk_calendar_get_date(self: PGtkCalendar): PGDateTime; cdecl; external gtklib;
 function gtk_calendar_get_day_is_marked(calendar: PGtkCalendar; day: Tguint): Tgboolean; cdecl; external gtklib;
 
-// === Konventiert am: 11-7-24 19:46:08 ===
+// === Konventiert am: 11-7-24 22:34:04 ===
 
 function GTK_TYPE_CALENDAR: TGType;
 function GTK_CALENDAR(obj: Pointer): PGtkCalendar;

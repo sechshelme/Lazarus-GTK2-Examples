@@ -9,21 +9,20 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
+  //{$include <gtk/gtkaccessible.h>}
+
 type
-  {G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible) }
-  TGtkAccessibleText = Pointer;
+  TGtkAccessibleText = Pointer;  //  G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible)
   PGtkAccessibleText = ^TGtkAccessibleText;
 
-  TGtkAccessibleTextClass = Pointer;
-  PGtkAccessibleTextClass = ^TGtkAccessibleTextClass;
 
-type
   TGtkAccessibleTextRange = record
     start: Tgsize;
     length: Tgsize;
   end;
   PGtkAccessibleTextRange = ^TGtkAccessibleTextRange;
   PPGtkAccessibleTextRange = ^PGtkAccessibleTextRange;
+
   PGtkAccessibleTextGranularity = ^TGtkAccessibleTextGranularity;
   TGtkAccessibleTextGranularity = longint;
 
@@ -43,8 +42,6 @@ const
   GTK_ACCESSIBLE_TEXT_CONTENT_CHANGE_REMOVE = 1;
 
 type
-  PGtkAccessibleTextInterface = ^TGtkAccessibleTextInterface;
-
   TGtkAccessibleTextInterface = record
     g_iface: TGTypeInterface;
     get_contents: function(self: PGtkAccessibleText; start: dword; end_: dword): PGBytes; cdecl;
@@ -55,8 +52,7 @@ type
       attribute_values: PPPchar): Tgboolean; cdecl;
     get_default_attributes: procedure(self: PGtkAccessibleText; attribute_names: PPPchar; attribute_values: PPPchar); cdecl;
   end;
-
-  function gtk_accessible_text_get_type:TGType;cdecl;external gtklib; // ?????????????
+  PGtkAccessibleTextInterface = ^TGtkAccessibleTextInterface;
 
 
 procedure gtk_accessible_text_update_caret_position(self: PGtkAccessibleText); cdecl; external gtklib;
@@ -90,7 +86,6 @@ const
   GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_CONDENSED = 'semi_condensed';
   GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_NORMAL = 'normal';
   GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_SEMI_EXPANDED = 'semi_expanded';
-  GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_EXPANDED = 'expanded';
   GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_EXTRA_EXPANDED = 'extra_expanded';
   GTK_ACCESSIBLE_ATTRIBUTE_STRETCH_ULTRA_EXPANDED = 'ultra_expanded';
   GTK_ACCESSIBLE_ATTRIBUTE_UNDERLINE_NONE = 'none';
@@ -100,46 +95,17 @@ const
   GTK_ACCESSIBLE_ATTRIBUTE_OVERLINE_NONE = 'none';
   GTK_ACCESSIBLE_ATTRIBUTE_OVERLINE_SINGLE = 'single';
 
-  // === Konventiert am: 14-7-24 16:12:06 ===
+  // === Konventiert am: 12-7-24 19:08:16 ===
 
 function GTK_TYPE_ACCESSIBLE_TEXT: TGType;
-function GTK_ACCESSIBLE_TEXT(obj: Pointer): PGtkAccessibleText;
-function GTK_ACCESSIBLE_TEXT_CLASS(klass: Pointer): PGtkAccessibleTextClass;
-function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
-function GTK_IS_ACCESSIBLE_TEXT_CLASS(klass: Pointer): Tgboolean;
-function GTK_ACCESSIBLE_TEXT_GET_CLASS(obj: Pointer): PGtkAccessibleTextClass;
 
 implementation
 
 function GTK_TYPE_ACCESSIBLE_TEXT: TGType;
 begin
-  // ab GTK 4.12
-//    Result := gtk_accessible_text_get_type;
-end;
+  //   nicht findbar
 
-function GTK_ACCESSIBLE_TEXT(obj: Pointer): PGtkAccessibleText;
-begin
-  Result := PGtkAccessibleText(g_type_check_instance_cast(obj, GTK_TYPE_ACCESSIBLE_TEXT));
-end;
-
-function GTK_ACCESSIBLE_TEXT_CLASS(klass: Pointer): PGtkAccessibleTextClass;
-begin
-  Result := PGtkAccessibleTextClass(g_type_check_class_cast(klass, GTK_TYPE_ACCESSIBLE_TEXT));
-end;
-
-function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
-begin
-  Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE_TEXT);
-end;
-
-function GTK_IS_ACCESSIBLE_TEXT_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_ACCESSIBLE_TEXT);
-end;
-
-function GTK_ACCESSIBLE_TEXT_GET_CLASS(obj: Pointer): PGtkAccessibleTextClass;
-begin
-  Result := PGtkAccessibleTextClass(PGTypeInstance(obj)^.g_class);
+  //    GTK_TYPE_ACCESSIBLE_TEXT:=gtk_accessible_text_get_type;
 end;
 
 

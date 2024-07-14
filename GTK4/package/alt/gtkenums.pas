@@ -15,7 +15,9 @@ const
   GTK_ALIGN_START = 1;
   GTK_ALIGN_END = 2;
   GTK_ALIGN_CENTER = 3;
-  GTK_ALIGN_BASELINE = 4;
+  GTK_ALIGN_BASELINE_FILL = 4;
+  GTK_ALIGN_BASELINE = 5;
+  GTK_ALIGN_BASELINE_CENTER = 6;
 
 type
   PGtkArrowType = ^TGtkArrowType;
@@ -36,6 +38,16 @@ const
   GTK_BASELINE_POSITION_TOP = 0;
   GTK_BASELINE_POSITION_CENTER = 1;
   GTK_BASELINE_POSITION_BOTTOM = 2;
+
+type
+  PGtkContentFit = ^TGtkContentFit;
+  TGtkContentFit = longint;
+
+const
+  GTK_CONTENT_FIT_FILL = 0;
+  GTK_CONTENT_FIT_CONTAIN = 1;
+  GTK_CONTENT_FIT_COVER = 2;
+  GTK_CONTENT_FIT_SCALE_DOWN = 3;
 
 type
   PGtkDeleteType = ^TGtkDeleteType;
@@ -99,6 +111,24 @@ const
   GTK_JUSTIFY_RIGHT = 1;
   GTK_JUSTIFY_CENTER = 2;
   GTK_JUSTIFY_FILL = 3;
+
+type
+  PGtkListTabBehavior = ^TGtkListTabBehavior;
+  TGtkListTabBehavior = longint;
+
+const
+  GTK_LIST_TAB_ALL = 0;
+  GTK_LIST_TAB_ITEM = 1;
+  GTK_LIST_TAB_CELL = 2;
+
+type
+  PGtkListScrollFlags = ^TGtkListScrollFlags;
+  TGtkListScrollFlags = longint;
+
+const
+  GTK_LIST_SCROLL_NONE = 0;
+  GTK_LIST_SCROLL_FOCUS = 1 shl 0;
+  GTK_LIST_SCROLL_SELECT = 1 shl 1;
 
 type
   PGtkMessageType = ^TGtkMessageType;
@@ -273,11 +303,12 @@ const
   GTK_ORDERING_SMALLER = -(1);
   GTK_ORDERING_EQUAL = 0;
   GTK_ORDERING_LARGER = 1;
+  {$ifdef __GI_SCANNER__}
 
 function gtk_ordering_from_cmpfunc(cmpfunc_result: longint): TGtkOrdering; cdecl; external;
-//{$else}
+{$else}
 {*
- * gtk_ordering_from_cmpfunc:
+ * gtk_ordering_from_cmpfunc: (skip)
  * @cmpfunc_result: Result of a comparison function
  *
  * Converts the result of a `GCompareFunc` like strcmp() to a
@@ -290,7 +321,7 @@ function gtk_ordering_from_cmpfunc(cmpfunc_result: longint): TGtkOrdering; cdecl
 { }
 {  return (GtkOrdering) ((cmpfunc_result > 0) - (cmpfunc_result < 0)); }
 { }
-//{$endif}
+{$endif}
 type
   PGtkPageOrientation = ^TGtkPageOrientation;
   TGtkPageOrientation = longint;
@@ -659,6 +690,13 @@ const
   GTK_ACCESSIBLE_ROLE_TREE_ITEM = 75;
   GTK_ACCESSIBLE_ROLE_WIDGET = 76;
   GTK_ACCESSIBLE_ROLE_WINDOW = 77;
+  GTK_ACCESSIBLE_ROLE_TOGGLE_BUTTON = 78;
+  GTK_ACCESSIBLE_ROLE_APPLICATION = 79;
+  GTK_ACCESSIBLE_ROLE_PARAGRAPH = 80;
+  GTK_ACCESSIBLE_ROLE_BLOCK_QUOTE = 81;
+  GTK_ACCESSIBLE_ROLE_ARTICLE = 82;
+  GTK_ACCESSIBLE_ROLE_COMMENT = 83;
+  GTK_ACCESSIBLE_ROLE_TERMINAL = 84;
 
 type
   PGtkAccessibleState = ^TGtkAccessibleState;
@@ -673,6 +711,7 @@ const
   GTK_ACCESSIBLE_STATE_INVALID = 5;
   GTK_ACCESSIBLE_STATE_PRESSED = 6;
   GTK_ACCESSIBLE_STATE_SELECTED = 7;
+  GTK_ACCESSIBLE_STATE_VISITED = 8;
   GTK_ACCESSIBLE_VALUE_UNDEFINED = -(1);
 
 type
@@ -763,6 +802,25 @@ const
   GTK_ACCESSIBLE_SORT_DESCENDING = 2;
   GTK_ACCESSIBLE_SORT_OTHER = 3;
 
+type
+  PGtkAccessibleAnnouncementPriority = ^TGtkAccessibleAnnouncementPriority;
+  TGtkAccessibleAnnouncementPriority = longint;
+
+const
+  GTK_ACCESSIBLE_ANNOUNCEMENT_PRIORITY_LOW = 0;
+  GTK_ACCESSIBLE_ANNOUNCEMENT_PRIORITY_MEDIUM = 1;
+  GTK_ACCESSIBLE_ANNOUNCEMENT_PRIORITY_HIGH = 2;
+
+type
+  PGtkPopoverMenuFlags = ^TGtkPopoverMenuFlags;
+  TGtkPopoverMenuFlags = longint;
+
+const
+  GTK_POPOVER_MENU_SLIDING = 0;
+  GTK_POPOVER_MENU_NESTED = 1 shl 0;
+
+
 implementation
+
 
 end.

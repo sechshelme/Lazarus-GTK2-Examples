@@ -24,7 +24,7 @@ function gtk_border_new: PGtkBorder; cdecl; external gtklib;
 function gtk_border_copy(border_: PGtkBorder): PGtkBorder; cdecl; external gtklib;
 procedure gtk_border_free(border_: PGtkBorder); cdecl; external gtklib;
 
-// === Konventiert am: 11-7-24 19:23:16 ===
+// === Konventiert am: 11-7-24 22:33:35 ===
 
 function GTK_TYPE_BORDER: TGType;
 

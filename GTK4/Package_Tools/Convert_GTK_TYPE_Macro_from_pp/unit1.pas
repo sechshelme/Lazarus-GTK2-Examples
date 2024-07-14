@@ -29,7 +29,7 @@ type
     SourcePath, DestPath: string;
     procedure ConvertSLMacro(var sl: TStringList);
     function Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
-    procedure ConvertSLMacro_from_G_DECLARE_INTERFACE(var sl: TStringList);
+    function ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
 
     procedure Form1DropFiles(Sender: TObject; const FileNames: array of string);
     procedure Delete_Const(sl: TStringList);
@@ -62,7 +62,8 @@ end;
 procedure TForm1.Delete_Const(sl: TStringList);
 var
   deleteString: TStringArray = (
-    ('(* Const before type ignored *)'));
+    ('(* Const before type ignored *)'),
+    ('(* Const before declarator ignored *)'));
   j, i: integer;
 begin
   for j := 0 to Length(deleteString) - 1 do begin
@@ -189,86 +190,94 @@ end;
 
 function TForm1.Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
 var
-  i: integer;
+  i, j: integer;
+  declare: TStringArray = (
+    ('G_DECLARE_INTERFACE'),
+    ('G_DECLARE_FINAL_TYPE'));
 begin
   Result := False;
-  Str_G_DECLARE_INTERFACE:='';;
-  for  i := 0 to sl.Count - 1 do begin
-    if pos('G_DECLARE_INTERFACE', sl[i]) > 0 then begin
-      Str_G_DECLARE_INTERFACE:=sl[i];
-      Result := True;
-      Break;
+  Str_G_DECLARE_INTERFACE := '';
+  ;
+  for j := 0 to Length(declare) - 1 do begin
+    for  i := 0 to sl.Count - 1 do begin
+      if pos(declare[j], sl[i]) > 0 then begin
+        Str_G_DECLARE_INTERFACE := sl[i];
+        Result := True;
+        Break;
+      end;
     end;
   end;
 end;
 
-procedure TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE(var sl: TStringList);
-//const    G_DECLARE_INTERFACE = '{G_DECLARE_INTERFACE (GtkButton, gtk_button, GTK, BUTTON, GtkWidget) }';
+function TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
+  // {G_DECLARE_INTERFACE (GtkButton, gtk_button, GTK, BUTTON, GtkWidget) };
+  // {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) };
 var
   sa: TAnsiStringArray;
-  i: Integer;
+  i: integer;
 begin
+  Result := TStringList.Create;
   sa := Str_G_DECLARE_INTERFACE.Split([' ', ',', '(', ')', '{', '}']);
   for i := 0 to Length(sa) - 1 do begin
     WriteLn(i: 2, '  ', sa[i]);
   end;
   WriteLn();
-  //sl.Add('type ');
-  //sl.Add('  T' + sa[3] + ' = record');
-  //sl.Add('    parent_instance: T' + sa[11] + ';');
-  //sl.Add('  end');
-  //sl.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
-  //sl.Add('');
+  //Result.Add('type ');
+  //Result.Add('  T' + sa[3] + ' = record');
+  //Result.Add('    parent_instance: T' + sa[11] + ';');
+  //Result.Add('  end');
+  //Result.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
+  //Result.Add('');
   //
-  //sl.Add('  T' + sa[3] + 'Class = record');
-  //sl.Add('    parent_class: T' + sa[11] + 'Class;');
-  //sl.Add('  end');
-  //sl.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
-  //sl.Add('');
-  //sl.Add('');
-  //sl.Add('');
+  //Result.Add('  T' + sa[3] + 'Class = record');
+  //Result.Add('    parent_class: T' + sa[11] + 'Class;');
+  //Result.Add('  end');
+  //Result.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
+  //Result.Add('');
+  //Result.Add('');
+  //Result.Add('');
   //
   //
   //
-  //sl.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
-  //sl.Add('function ' + sa[5] + '_new: P' + sa[11] + '; cdecl; external gtklib;');
-  //sl.Add('');
+  //Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
+  //Result.Add('function ' + sa[5] + '_new: P' + sa[11] + '; cdecl; external gtklib;');
+  //Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_TYPE_' + sa[9] + ': TGType;');
-  sl.Add('begin');
-  sl.Add('  Result := ' + sa[5] + '_get_type;');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_TYPE_' + sa[9] + ': TGType;');
+  Result.Add('begin');
+  Result.Add('  Result := ' + sa[5] + '_get_type;');
+  Result.Add('end;');
+  Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_' + sa[9] + '(obj: Pointer): P' + sa[3] + ';');
-  sl.Add('begin');
-  sl.Add('  Result := P' + sa[3] + '(g_type_check_instance_cast(obj, ' + sa[7] + '_TYPE_' + sa[9] + '));');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_' + sa[9] + '(obj: Pointer): P' + sa[3] + ';');
+  Result.Add('begin');
+  Result.Add('  Result := P' + sa[3] + '(g_type_check_instance_cast(obj, ' + sa[7] + '_TYPE_' + sa[9] + '));');
+  Result.Add('end;');
+  Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
-  sl.Add('begin');
-  sl.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
+  Result.Add('begin');
+  Result.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
+  Result.Add('end;');
+  Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_IS_' + sa[9] + '(obj: Pointer): Tgboolean;');
-  sl.Add('begin');
-  sl.Add('  Result := g_type_check_instance_is_a(obj, ' + sa[7] + '_TYPE_' + sa[9] + ');');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_IS_' + sa[9] + '(obj: Pointer): Tgboolean;');
+  Result.Add('begin');
+  Result.Add('  Result := g_type_check_instance_is_a(obj, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+  Result.Add('end;');
+  Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_IS_' + sa[9] + '_CLASS(klass: Pointer): Tgboolean;');
-  sl.Add('begin');
-  sl.Add('  Result := g_type_check_class_is_a(klass, ' + sa[7] + '_TYPE_' + sa[9] + ');');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_IS_' + sa[9] + '_CLASS(klass: Pointer): Tgboolean;');
+  Result.Add('begin');
+  Result.Add('  Result := g_type_check_class_is_a(klass, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+  Result.Add('end;');
+  Result.Add('');
 
-  sl.Add('function ' + sa[7] + '_' + sa[9] + '_GET_CLASS(obj: Pointer): P' + sa[3] + 'Class;');
-  sl.Add('begin');
-  sl.Add('  Result := P' + sa[3] + 'Class(PGTypeInstance(obj)^.g_class);');
-  sl.Add('end;');
-  sl.Add('');
+  Result.Add('function ' + sa[7] + '_' + sa[9] + '_GET_CLASS(obj: Pointer): P' + sa[3] + 'Class;');
+  Result.Add('begin');
+  Result.Add('  Result := P' + sa[3] + 'Class(PGTypeInstance(obj)^.g_class);');
+  Result.Add('end;');
+  Result.Add('');
 end;
 
 procedure TForm1.ConvertClick(Sender: TObject);
@@ -353,11 +362,10 @@ begin
   until pos('implementation', sl[p]) = 1;
   Inc(p, 3);
 
-
-  slMacro := TStringList.Create;
   if Is_G_DECLARE_INTERFACE then begin
-       ConvertSLMacro_from_G_DECLARE_INTERFACE(slMacro);
+    slMacro := ConvertSLMacro_from_G_DECLARE_INTERFACE;
   end else begin
+    slMacro := TStringList.Create;
     for j := 0 to macCount - 1 do begin
       for i := 0 to 4 do begin
         slMacro.Add(sl[p + i + j * 8]);
@@ -400,7 +408,9 @@ begin
   sl.Insert(p - 1, '// === Konventiert am: ' + DateTimeToStr(now) + ' ===');
   sl.Insert(p - 1, '');
 
-  if Is_G_DECLARE_INTERFACE then macCount:=6   ;
+  if Is_G_DECLARE_INTERFACE then begin
+    macCount := 6;
+  end;
   for i := 0 to macCount - 1 do begin
     sl.Insert(p + i + 2, slMacro[i * 5]);
   end;

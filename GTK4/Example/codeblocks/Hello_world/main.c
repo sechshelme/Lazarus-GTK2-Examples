@@ -10,6 +10,31 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
   g_print ("Hello World\n");
   g_print ("Hello World  %s\n", gtk_button_get_label(GTK_BUTTON(widget)));
 
+  GtkWindowControls *wk = gtk_window_controls_new(0);
+
+  GtkButton *btn = gtk_button_new();
+
+  gboolean is;
+  is = GTK_IS_WINDOW_CONTROLS(wk);
+  if (is) {
+    gtk_button_set_label(GTK_BUTTON(widget), "true");
+  } else {
+    gtk_button_set_label(GTK_BUTTON(widget), "false");
+  }
+
+  GtkNative *na = 0;
+  btn->parent_instance.priv=0;
+  wk->parent_class=0;
+  is = GTK_IS_NATIVE(wk);
+  if (is) {
+    gtk_button_set_label(GTK_NATIVE(widget), "true");
+  } else {
+    gtk_button_set_label(GTK_NATIVE(widget), "false");
+  }
+
+
+
+
   gtk_window_controls_get_side(0);
 
   }

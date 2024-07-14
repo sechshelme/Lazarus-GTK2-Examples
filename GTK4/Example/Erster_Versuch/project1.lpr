@@ -6,37 +6,38 @@ uses
   glib2,
   common_GTK,
   gtkenums,                   // io. ohne
+  gtkadjustment,              // io. -> common_GTK;
   gtkborder,                  // io. -> common_GTK
   gtkbitset,                  // io. -> glib2, common_GTK;
+  gtkaccelgroup,              // io. -> glib2, common_GTK;
 
   gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums
-  gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
-  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow           ( PGtkApplication ausgelagert )
-  gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
-  gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
+  gtkaspectframe,             // io. -> common_GTK, gtkwidget;
+  gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
   gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
-  gtkcolordialog,             // geht nur mit 4.12
+  gtkwindowcontrols,          // io. ->  glib2, common_GTK, gtkenums, gtkwidget;
 
-  gtkadjustment,              // io. -> common_GTK;
   gtkscrollbar,               // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment;
-  gtkrange,                   // io. -> common_GTK, gtkenums, gtkborder, gtkwidget, gtkadjustment;
+  gtkrange,                   // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment, gtkborder;
   gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
-  gtkaspectframe,             // io. ->  common_GTK, gtkwidget;
-  gtkwindowcontrols,
 
 
+  gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
+  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow           ( PGtkApplication ausgelagert )
+  gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
+
+  gtkcolordialog,             // geht nur mit 4.12      // Muss überarbeitet werden
   gtkactionable,              // -> glib2, common_GTK;
-  gtkaccelgroup,              // -> glib2, common_GTK;
-  gtkaccessiblerange,         // Muss überarbeitet werden
-  gtkaccessibletext,          // Muss überarbeitet werden
-  gtkaccessible,              // Muss überarbeitet werden
+  gtkaccessiblerange,         //  geht nur mit 4.12      Muss überarbeitet werden
+  gtkaccessibletext,          //  geht nur mit 4.12      Muss überarbeitet werden
+  gtkaccessible,              //  geht nur mit 4.12      Muss überarbeitet werden
   gtkatcontext,               // Muss überarbeitet werden
-  gtkalertdialog,             // Muss überarbeitet werden
+  gtkalertdialog,             //   geht nur mit 4.12     Muss überarbeitet werden
 
   Math,
   ScrollBox;

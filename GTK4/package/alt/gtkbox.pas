@@ -14,12 +14,12 @@ type
     parent_instance: TGtkWidget;
   end;
   PGtkBox = ^TGtkBox;
-
   TGtkBoxClass = record
     parent_class: TGtkWidgetClass;
     padding: array[0..7] of Tgpointer;
   end;
   PGtkBoxClass = ^TGtkBoxClass;
+
 
 function gtk_box_get_type: TGType; cdecl; external gtklib;
 function gtk_box_new(orientation: TGtkOrientation; spacing: longint): PGtkWidget; cdecl; external gtklib;
@@ -29,13 +29,15 @@ procedure gtk_box_set_spacing(box: PGtkBox; spacing: longint); cdecl; external g
 function gtk_box_get_spacing(box: PGtkBox): longint; cdecl; external gtklib;
 procedure gtk_box_set_baseline_position(box: PGtkBox; position: TGtkBaselinePosition); cdecl; external gtklib;
 function gtk_box_get_baseline_position(box: PGtkBox): TGtkBaselinePosition; cdecl; external gtklib;
+procedure gtk_box_set_baseline_child(box: PGtkBox; child: longint); cdecl; external gtklib;
+function gtk_box_get_baseline_child(box: PGtkBox): longint; cdecl; external gtklib;
 procedure gtk_box_append(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
 procedure gtk_box_prepend(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
 procedure gtk_box_remove(box: PGtkBox; child: PGtkWidget); cdecl; external gtklib;
 procedure gtk_box_insert_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external gtklib;
 procedure gtk_box_reorder_child_after(box: PGtkBox; child: PGtkWidget; sibling: PGtkWidget); cdecl; external gtklib;
 
-// === Konventiert am: 10-7-24 15:59:28 ===
+// === Konventiert am: 11-7-24 22:33:47 ===
 
 function GTK_TYPE_BOX: TGType;
 function GTK_BOX(obj: Pointer): PGtkBox;
@@ -75,6 +77,7 @@ function GTK_BOX_GET_CLASS(obj: Pointer): PGtkBoxClass;
 begin
   Result := PGtkBoxClass(PGTypeInstance(obj)^.g_class);
 end;
+
 
 
 end.

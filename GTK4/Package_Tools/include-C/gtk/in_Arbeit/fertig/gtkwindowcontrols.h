@@ -29,7 +29,7 @@
 #define GTK_TYPE_WINDOW_CONTROLS (gtk_window_controls_get_type ())
 
 
-// G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget)
 
 
 GtkWidget *  gtk_window_controls_new                   (GtkPackType        side);
