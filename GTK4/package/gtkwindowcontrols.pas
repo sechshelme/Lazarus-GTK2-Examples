@@ -9,12 +9,20 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
+
+ // typedef struct _GtkWindowControls GtkWindowControls;
+ // typedef struct {
+ //    GtkWidgetClass parent_class;
+ //} GtkWindowControlsClass;
+
 type
   {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) }
   TGtkWindowControls = Pointer;
   PGtkWindowControls = ^TGtkWindowControls;
 
-  TGtkWindowControlsClass = Pointer;
+  TGtkWindowControlsClass = record
+    parent_class : TGtkWidgetClass;
+  end;
   PGtkWindowControlsClass = ^TGtkWindowControlsClass;
 
 function gtk_window_controls_new(side: TGtkPackType): PGtkWidget; cdecl; external gtklib;

@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
+static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
+{
+  double val = gtk_adjustment_get_value(adj);
+  g_print("Value: %f\n", val);
+}
 
 
 static void print_hello (GtkWidget *widget, int value,  gpointer data)
@@ -10,9 +15,15 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
   g_print ("Hello World\n");
   g_print ("Hello World  %s\n", gtk_button_get_label(GTK_BUTTON(widget)));
 
+  GtkWidgetClass *wgc;
+
+  GtkWindowControlsClass *wkc;
+  wkc->parent_class.priv=wgc;
+
   GtkWindowControls *wk = gtk_window_controls_new(0);
 
   GtkButton *btn = gtk_button_new();
+
 
   gboolean is;
   is = GTK_IS_WINDOW_CONTROLS(wk);
@@ -24,7 +35,6 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
 
   GtkNative *na = 0;
   btn->parent_instance.priv=0;
-  wk->parent_class=0;
   is = GTK_IS_NATIVE(wk);
   if (is) {
     gtk_button_set_label(GTK_NATIVE(widget), "true");
@@ -52,7 +62,7 @@ static void activate (GtkApplication *app, gpointer user_data)
   GtkAdjustment *adj = gtk_adjustment_new(1, -100, 100, 0.1, 10, 0);
   GtkWidget *sb = gtk_scrollbar_new(GTK_ORIENTATION_VERTICAL, adj);
   gtk_box_append(GTK_BOX(box), sb);
-  g_signal_connect (adj, "changed", G_CALLBACK (print_hello), NULL);
+  g_signal_connect (adj, "value-changed", G_CALLBACK (scroll_Changed), NULL);
 
 
   GtkWidget *button1 = gtk_button_new_with_label("Button 1");
