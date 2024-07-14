@@ -208,13 +208,37 @@ PGdkPaintable=^TGdkPaintable;
     g_class: PGTypeClass;
   end;
 
+    TGdkRGBA=Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
+  PGdkRGBA=^TGdkRGBA;
+
+
+
 function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external gtklib;
 function g_type_check_instance_is_a(instance: PGTypeInstance; iface_type: GType): gboolean; cdecl; external gobjectlib;
 
 function g_type_check_class_cast(g_class: PGTypeClass; is_a_type: TGType): PGTypeClass; cdecl; external gtklib;
 function g_type_check_class_is_a(instance: PGTypeClass; is_a_type: GType): gboolean; cdecl; external gobjectlib;
 
+// ------ libgio
+function g_application_run(application: Pointer; argc: longint; argv: PPchar): longint; cdecl; external libgio;
+
+// ------ glib
+function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
+function G_CALLBACK(f: pointer): TGCallback;
+
+// -------------------
+
 
 implementation
+
+function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
+begin
+  g_signal_connect := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, 0);
+end;
+
+function G_CALLBACK(f: pointer): TGCallback;
+begin
+  G_CALLBACK := TGCallback(f);
+end;
 
 end.

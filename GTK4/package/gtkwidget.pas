@@ -37,9 +37,6 @@ type
   TGInitiallyUnownedClass = Pointer;   // /usr/include/glib-2.0/gobject/gobject.h
   PGInitiallyUnownedClass = ^TGInitiallyUnownedClass;
 
-  TGdkRGBA=Pointer;  // ?????????????????????
-  PGdkRGBA=^TGdkRGBA;
-
 
   TGtkWidgetClass = record
       parent_class : TGInitiallyUnownedClass;

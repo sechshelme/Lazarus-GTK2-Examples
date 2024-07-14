@@ -3,7 +3,7 @@ unit gtkrange;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkborder, gtkwidget, gtkadjustment, gtkscrollbar;
+  common_GTK, gtkenums, gtkborder, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

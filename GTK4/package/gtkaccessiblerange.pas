@@ -28,6 +28,7 @@ implementation
 
 function GTK_TYPE_ACCESSIBLE_RANGE: TGType;
 begin
+  Result:=0;
   //   nicht findbar
   //    GTK_TYPE_ACCESSIBLE_RANGE:=gtk_accessible_range_get_type;
 end;

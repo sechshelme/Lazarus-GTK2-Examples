@@ -5,17 +5,14 @@
 
 
 
-static void print_hello (GtkWidget *widget, gpointer data)
+static void print_hello (GtkWidget *widget, int value,  gpointer data)
 {
   g_print ("Hello World\n");
   g_print ("Hello World  %s\n", gtk_button_get_label(GTK_BUTTON(widget)));
 
-  gtk_accessible_get_at_context
-  GTK_ACCESSIBLE_PLATFORM_STATE_FOCUSABLE
-  GtkATContext
-  GtkAccessibleList
+  gtk_window_controls_get_side(0);
 
-}
+  }
 
 static void activate (GtkApplication *app, gpointer user_data)
 {
@@ -25,6 +22,13 @@ static void activate (GtkApplication *app, gpointer user_data)
 
   GtkWidget *box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 10);
   gtk_window_set_child(GTK_WINDOW(window), box);
+
+// https://discourse.gnome.org/t/gtk4-x-scrollbar-and-g-signal-connect/22136
+  GtkAdjustment *adj = gtk_adjustment_new(1, -100, 100, 0.1, 10, 0);
+  GtkWidget *sb = gtk_scrollbar_new(GTK_ORIENTATION_VERTICAL, adj);
+  gtk_box_append(GTK_BOX(box), sb);
+  g_signal_connect (adj, "changed", G_CALLBACK (print_hello), NULL);
+
 
   GtkWidget *button1 = gtk_button_new_with_label("Button 1");
   gtk_box_append(GTK_BOX(box), button1);

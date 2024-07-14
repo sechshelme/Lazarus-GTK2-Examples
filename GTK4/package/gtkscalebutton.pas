@@ -3,7 +3,7 @@ unit gtkscalebutton;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkadjustment;
+  common_GTK, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

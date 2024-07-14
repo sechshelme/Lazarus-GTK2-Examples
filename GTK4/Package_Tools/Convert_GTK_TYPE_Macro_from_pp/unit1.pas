@@ -25,12 +25,14 @@ type
     procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
+    Str_G_DECLARE_INTERFACE,
     SourcePath, DestPath: string;
     procedure ConvertSLMacro(var sl: TStringList);
-    function FindGTK_TYPE(const s: string): string;
-    function FindGTKWidget(const s: string): string;
-    function FindGTKWidgetClass(const s: string): string;
+    function Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
+    procedure ConvertSLMacro_from_G_DECLARE_INTERFACE(var sl: TStringList);
+
     procedure Form1DropFiles(Sender: TObject; const FileNames: array of string);
+    procedure Delete_Const(sl: TStringList);
   public
 
   end;
@@ -57,10 +59,25 @@ begin
   end;
 end;
 
+procedure TForm1.Delete_Const(sl: TStringList);
+var
+  deleteString: TStringArray = (
+    ('(* Const before type ignored *)'));
+  j, i: integer;
+begin
+  for j := 0 to Length(deleteString) - 1 do begin
+    for i := sl.Count - 1 downto 0 do begin
+      if sl[i] = deleteString[j] then begin
+        SL.Delete(i);
+      end;
+    end;
+  end;
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  top:=10;
-  Left:=10;
+  top := 10;
+  Left := 10;
   Width := 1200;
   Height := 800;
   AllowDropFiles := True;
@@ -74,31 +91,32 @@ begin
   CheckBox6.Caption := 'GTK_WINDOW_GET_CLASS(obj)';
 end;
 
-function TForm1.FindGTK_TYPE(const s: string): string;
-var
-  sa: TAnsiStringArray;
-begin
-  sa := s.Split([' ']);
-  Result := sa[1];
-end;
-
-function TForm1.FindGTKWidget(const s: string): string;
-var
-  sa: TAnsiStringArray;
-begin
-  sa := s.Split([',', ')']);
-  Result := 'P' + sa[2];
-end;
-
-function TForm1.FindGTKWidgetClass(const s: string): string;
-var
-  sa: TAnsiStringArray;
-begin
-  sa := s.Split([',', ')']);
-  Result := 'P' + sa[2];
-end;
-
 procedure TForm1.ConvertSLMacro(var sl: TStringList);
+
+  function FindGTK_TYPE(const s: string): string;
+  var
+    sa: TAnsiStringArray;
+  begin
+    sa := s.Split([' ']);
+    Result := sa[1];
+  end;
+
+  function FindGTKWidget(const s: string): string;
+  var
+    sa: TAnsiStringArray;
+  begin
+    sa := s.Split([',', ')']);
+    Result := 'P' + sa[2];
+  end;
+
+  function FindGTKWidgetClass(const s: string): string;
+  var
+    sa: TAnsiStringArray;
+  begin
+    sa := s.Split([',', ')']);
+    Result := 'P' + sa[2];
+  end;
+
 var
   p: integer = 0;
   GTK_TYPE_XXX, gtkWidget, gtkWidgetClass: string;
@@ -169,10 +187,95 @@ begin
   WriteLn();
 end;
 
+function TForm1.Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
+var
+  i: integer;
+begin
+  Result := False;
+  Str_G_DECLARE_INTERFACE:='';;
+  for  i := 0 to sl.Count - 1 do begin
+    if pos('G_DECLARE_INTERFACE', sl[i]) > 0 then begin
+      Str_G_DECLARE_INTERFACE:=sl[i];
+      Result := True;
+      Break;
+    end;
+  end;
+end;
+
+procedure TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE(var sl: TStringList);
+//const    G_DECLARE_INTERFACE = '{G_DECLARE_INTERFACE (GtkButton, gtk_button, GTK, BUTTON, GtkWidget) }';
+var
+  sa: TAnsiStringArray;
+  i: Integer;
+begin
+  sa := Str_G_DECLARE_INTERFACE.Split([' ', ',', '(', ')', '{', '}']);
+  for i := 0 to Length(sa) - 1 do begin
+    WriteLn(i: 2, '  ', sa[i]);
+  end;
+  WriteLn();
+  //sl.Add('type ');
+  //sl.Add('  T' + sa[3] + ' = record');
+  //sl.Add('    parent_instance: T' + sa[11] + ';');
+  //sl.Add('  end');
+  //sl.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
+  //sl.Add('');
+  //
+  //sl.Add('  T' + sa[3] + 'Class = record');
+  //sl.Add('    parent_class: T' + sa[11] + 'Class;');
+  //sl.Add('  end');
+  //sl.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
+  //sl.Add('');
+  //sl.Add('');
+  //sl.Add('');
+  //
+  //
+  //
+  //sl.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
+  //sl.Add('function ' + sa[5] + '_new: P' + sa[11] + '; cdecl; external gtklib;');
+  //sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_TYPE_' + sa[9] + ': TGType;');
+  sl.Add('begin');
+  sl.Add('  Result := ' + sa[5] + '_get_type;');
+  sl.Add('end;');
+  sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_' + sa[9] + '(obj: Pointer): P' + sa[3] + ';');
+  sl.Add('begin');
+  sl.Add('  Result := P' + sa[3] + '(g_type_check_instance_cast(obj, ' + sa[7] + '_TYPE_' + sa[9] + '));');
+  sl.Add('end;');
+  sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
+  sl.Add('begin');
+  sl.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
+  sl.Add('end;');
+  sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_IS_' + sa[9] + '(obj: Pointer): Tgboolean;');
+  sl.Add('begin');
+  sl.Add('  Result := g_type_check_instance_is_a(obj, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+  sl.Add('end;');
+  sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_IS_' + sa[9] + '_CLASS(klass: Pointer): Tgboolean;');
+  sl.Add('begin');
+  sl.Add('  Result := g_type_check_class_is_a(klass, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+  sl.Add('end;');
+  sl.Add('');
+
+  sl.Add('function ' + sa[7] + '_' + sa[9] + '_GET_CLASS(obj: Pointer): P' + sa[3] + 'Class;');
+  sl.Add('begin');
+  sl.Add('  Result := P' + sa[3] + 'Class(PGTypeInstance(obj)^.g_class);');
+  sl.Add('end;');
+  sl.Add('');
+end;
+
 procedure TForm1.ConvertClick(Sender: TObject);
 var
   sl, slMacro: TStringList;
   p, i, j, macCount: integer;
+  Is_G_DECLARE_INTERFACE: boolean;
 
   procedure DeleteLines(p, Count: integer);
   var
@@ -207,8 +310,23 @@ begin
     Inc(p);
   until pos('{ was #define dname def_expr }', sl[p]) = 1;
 
-  macCount := 1;
-  DeleteLines(p, 3);
+  Is_G_DECLARE_INTERFACE := Find_G_DECLARE_INTERFACE(sl);
+  if Is_G_DECLARE_INTERFACE then begin
+    CheckBox1.Checked := False;
+    CheckBox2.Checked := False;
+    CheckBox3.Checked := False;
+    CheckBox4.Checked := False;
+    CheckBox5.Checked := False;
+    CheckBox6.Checked := False;
+    DeleteLines(p, 3);
+  end;
+  WriteLn('G_DECLARE_INTERFACE: ', Is_G_DECLARE_INTERFACE);
+
+  macCount := 0;
+  if CheckBox1.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 3);
+  end;
   if CheckBox2.Checked then begin
     Inc(macCount);
     DeleteLines(p, 5);
@@ -237,18 +355,24 @@ begin
 
 
   slMacro := TStringList.Create;
-  for j := 0 to macCount - 1 do begin
-    for i := 0 to 4 do begin
-      slMacro.Add(sl[p + i + j * 8]);
+  if Is_G_DECLARE_INTERFACE then begin
+       ConvertSLMacro_from_G_DECLARE_INTERFACE(slMacro);
+  end else begin
+    for j := 0 to macCount - 1 do begin
+      for i := 0 to 4 do begin
+        slMacro.Add(sl[p + i + j * 8]);
+      end;
     end;
+    ConvertSLMacro(slMacro);
   end;
 
-  ConvertSLMacro(slMacro);
   WriteLn(slMacro.Text);
 
   Dec(p, 2);
 
-  DeleteLines(p, 6);
+  if (CheckBox1.Checked) or Is_G_DECLARE_INTERFACE then begin
+    DeleteLines(p, 6);
+  end;
   if CheckBox2.Checked then begin
     DeleteLines(p, 8);
   end;
@@ -276,10 +400,12 @@ begin
   sl.Insert(p - 1, '// === Konventiert am: ' + DateTimeToStr(now) + ' ===');
   sl.Insert(p - 1, '');
 
+  if Is_G_DECLARE_INTERFACE then macCount:=6   ;
   for i := 0 to macCount - 1 do begin
     sl.Insert(p + i + 2, slMacro[i * 5]);
   end;
 
+  Delete_Const(sl);
   Memo1.Lines := sl;
   Memo1.SelStart := 20000;
 

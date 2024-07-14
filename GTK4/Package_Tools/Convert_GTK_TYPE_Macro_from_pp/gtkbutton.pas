@@ -3,18 +3,58 @@ unit gtkbutton;
 interface
 
 uses
-  gtkwidget, common_GTK;
+  glib2, common_GTK;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}
 {$ENDIF}
 
+
+{ GTK - The GIMP Toolkit
+ * Copyright (C) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+  }
+{
+ * Modified by the GTK+ Team and others 1997-2001.  See the AUTHORS
+ * file for a list of people on the GTK+ Team.  See the ChangeLog
+ * files for a list of changes.  These files are distributed with
+ * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
+  }
+(** unsupported pragma#pragma once*)
+{$if !defined (__GTK_H_INSIDE__) && !defined (GTK_COMPILATION)}
+{$error "Only <gtk/gtk.h> can be included directly."}
+{$endif}
+{$include <gtk/gtkwidget.h>}
+
 type
+{< private > }
   PGtkButton = ^TGtkButton;
   TGtkButton = record
       parent_instance : TGtkWidget;
     end;
 
+{*
+ * GtkButtonClass:
+ * @parent_class: The parent class.
+ * @clicked: Signal emitted when the button has been activated (pressed and released).
+ * @activate: Signal that causes the button to animate press then
+ *    release. Applications should never connect to this signal, but use
+ *    the @clicked signal.
+  }
+{< public > }
+{< private > }
   PGtkButtonClass = ^TGtkButtonClass;
   TGtkButtonClass = record
       parent_class : TGtkWidgetClass;
@@ -42,7 +82,7 @@ function gtk_button_get_child(button:PGtkButton):PGtkWidget;cdecl;external gtkli
 procedure gtk_button_set_can_shrink(button:PGtkButton; can_shrink:Tgboolean);cdecl;external gtklib;
 function gtk_button_get_can_shrink(button:PGtkButton):Tgboolean;cdecl;external gtklib;
 
-// === Konventiert am: 14-7-24 13:21:50 ===
+// === Konventiert am: 14-7-24 14:00:52 ===
 
 function GTK_TYPE_BUTTON : TGType;
 function GTK_BUTTON(obj : Pointer) : PGtkButton;

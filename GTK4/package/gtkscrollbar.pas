@@ -3,7 +3,7 @@ unit gtkscrollbar;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkadjustment;
+  common_GTK, gtkenums, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

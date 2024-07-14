@@ -6,49 +6,41 @@ uses
   glib2,
   common_GTK,
   gtkenums,                   // io. ohne
-  gtkactionable,              // -> glib2, common_GTK;
-  gtkaccelgroup,              // -> glib2, common_GTK;
-  gtkwidget,                  // -> ctypes, pango,Cairo, glib2, common_GTK, gtkenums
+  gtkborder,                  // io. -> common_GTK
+  gtkbitset,                  // io. -> glib2, common_GTK;
+
+  gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
-  gtkapplicationwindow,       // -> glib2, common_GTK, gtkwidget, gtkwindow    ( PGtkApplication ausgelagert )
+  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow           ( PGtkApplication ausgelagert )
   gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
   gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
-  gtkborder,                  // io. -> common_GTK
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
-  gtkaboutdialog,             // io. -> glib2, common_GTK, gtkwidget, gtkwindow;
+  gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
+  gtkcolordialog,             // geht nur mit 4.12
+
   gtkadjustment,              // io. -> common_GTK;
+  gtkscrollbar,               // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment;
+  gtkrange,                   // io. -> common_GTK, gtkenums, gtkborder, gtkwidget, gtkadjustment;
+  gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
+  gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
-  gtkscrollbar,
-  gtkrange,
-  gtkscale,
-  gtkscalebutton,
+  gtkaspectframe,             // io. ->  common_GTK, gtkwidget;
+  gtkwindowcontrols,
 
+
+  gtkactionable,              // -> glib2, common_GTK;
+  gtkaccelgroup,              // -> glib2, common_GTK;
   gtkaccessiblerange,         // Muss überarbeitet werden
   gtkaccessibletext,          // Muss überarbeitet werden
   gtkaccessible,              // Muss überarbeitet werden
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             // Muss überarbeitet werden
-  Math;
 
+  Math,
+  ScrollBox;
 
-  // ------ libgio
-
-  function g_application_run(application: Pointer; argc: longint; argv: PPchar): longint; cdecl; external libgio;
-
-  // ------ glib
-
-
-  function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
-  begin
-    g_signal_connect := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, 0);
-  end;
-
-  function G_CALLBACK(f: pointer): TGCallback;
-  begin
-    G_CALLBACK := TGCallback(f);
-  end;
 
 
 
@@ -56,6 +48,7 @@ uses
 
 const
   cmAbout = 1000;
+  cmColorDlg = 1001;
 
   function CreateButton(Caption: Pgchar): PGtkWidget;
   var
@@ -76,25 +69,32 @@ const
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
   var
     cmd: PtrUInt absolute user_data;
+    colDlg: PGtkColorDialog;
   begin
     WriteLn(cmd);
-    if cmd = cmAbout then begin
-      gtk_show_about_dialog(nil,
-        'program-name', 'ExampleCode',
-        'website', 'https://www.lazarusforum.de/app.php/portal',
-        'website_label', 'Lazarus Forum',
-        'version', '1234',
-        'name', 'name',
-        'copyright', 'copyright',
-        'comments', 'comments',
-        //   'authors', 'authors',
-        // 'documenters', 'documenters',
-        'translator-credits', 'translator_credits',
-        'logo-icon-name', 'accessories-dictionary',
-        'license-type', 'GTK_LICENSE_GPL_2_0',
-        'screen', 'gtk_widget_get_screen (parent)',
+    case cmd of
+      cmAbout: begin
+        gtk_show_about_dialog(nil,
+          'program-name', 'ExampleCode',
+          'website', 'https://www.lazarusforum.de/app.php/portal',
+          'website_label', 'Lazarus Forum',
+          'version', '1234',
+          'name', 'name',
+          'copyright', 'copyright',
+          'comments', 'comments',
+          //   'authors', 'authors',
+          // 'documenters', 'documenters',
+          'translator-credits', 'translator_credits',
+          'logo-icon-name', 'accessories-dictionary',
+          'license-type', 'GTK_LICENSE_GPL_2_0',
+          'screen', 'gtk_widget_get_screen (parent)',
 
-        nil);
+          nil);
+      end;
+      cmColorDlg: begin
+//        colDlg:=gtk_color_dialog_new;
+//        gtk_color_dialog_get_modal(colDlg);
+      end;
     end;
     WriteLn(gtk_button_get_label(GTK_BUTTON(button)));
   end;
@@ -104,12 +104,13 @@ const
     button1: PGtkWidget;
   begin
     Result := gtk_action_bar_new;
-    button1 := gtk_button_new_with_label('ABButton 1');
+    button1 := gtk_button_new_with_label('About...');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
     g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), gpointer(cmAbout));
 
-    button1 := gtk_button_new_with_label('ABButton 2');
+    button1 := gtk_button_new_with_label('Color...');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
+    g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), gpointer(cmColorDlg));
   end;
 
   function Create_Button_Box: PGtkWidget;
@@ -146,24 +147,33 @@ const
 
   end;
 
-  function Create_Calender: PGtkWidget;
-  begin
-    Result := gtk_calendar_new;
-  end;
+function Create_Calender: PGtkWidget;
+begin
+  Result := gtk_calendar_new;
+end;
 
-  function Create_Spin:PGtkWidget;
-  // https://openbook.rheinwerk-verlag.de/linux_unix_programmierung/Kap15-008.htm
-  var
-    vadj: PGtkAdjustment;
-  begin
-    vadj:=GTK_ADJUSTMENT(gtk_adjustment_new(1,-100,100,0.1,10,0));
-//    g_object_new(GTK_TYPE_VSCALE);
-  end;
+function Create_Aspect_Frame: PGtkWidget;
+var
+  button4: PGtkWidget;
+begin
+  Result := gtk_aspect_frame_new(100,100,90,True);
+
+
+  button4 := CreateButton('Button 4');
+  gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
+end;
+
+function Create_Window_Controls: PGtkWidget;
+begin
+  Result := gtk_window_controls_new(GTK_PACK_START);
+end;
+
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, box, actionBar, calendar: PGTKWidget;
+    window, box, actionBar, calendar, scrollBar, scaleBtn,
+      aspectFram, winCtrl: PGTKWidget;
     window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
@@ -182,6 +192,18 @@ const
 
     calendar := Create_Calender;
     gtk_box_append(GTK_BOX(box), calendar);
+
+    scrollBar := Create_ScrollBox;
+    gtk_box_append(GTK_BOX(box), scrollBar);
+
+    scaleBtn := Create_ScaleButton;
+    gtk_box_append(GTK_BOX(box), scaleBtn);
+
+    aspectFram := Create_Aspect_Frame;
+    gtk_box_append(GTK_BOX(box), aspectFram);
+
+    winCtrl := Create_Window_Controls;
+    gtk_box_append(GTK_BOX(box), winCtrl);
 
 
     gtk_window_present(GTK_WINDOW(window));

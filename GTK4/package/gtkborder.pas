@@ -10,14 +10,13 @@ uses
   {$ENDIF}
 
 type
-  PGtkBorder = ^TGtkBorder;
-
   TGtkBorder = record
     left: Tgint16;
     right: Tgint16;
     top: Tgint16;
     bottom: Tgint16;
   end;
+  PGtkBorder = ^TGtkBorder;
 
 
 function gtk_border_get_type: TGType; cdecl; external gtklib;
