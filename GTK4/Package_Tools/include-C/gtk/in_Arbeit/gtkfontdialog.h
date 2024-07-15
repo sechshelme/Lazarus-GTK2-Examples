@@ -31,7 +31,7 @@
 #define GTK_TYPE_FONT_DIALOG (gtk_font_dialog_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject)
+//G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject)
 
 
 GtkFontDialog *  gtk_font_dialog_new           (void);

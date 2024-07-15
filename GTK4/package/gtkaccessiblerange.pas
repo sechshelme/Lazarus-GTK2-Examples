@@ -14,9 +14,6 @@ type
   TGtkAccessibleRange = Pointer;
   PGtkAccessibleRange = ^TGtkAccessibleRange;
 
-  TGtkAccessibleRangeClass = Pointer;
-  PGtkAccessibleRangeClass = ^TGtkAccessibleRangeClass;
-
 
 type
 
@@ -32,10 +29,7 @@ function gtk_accessible_range_get_type: TGType; cdecl; external gtklib;
 
 function GTK_TYPE_ACCESSIBLE_RANGE: TGType;
 function GTK_ACCESSIBLE_RANGE(obj: Pointer): PGtkAccessibleRange;
-function GTK_ACCESSIBLE_RANGE_CLASS(klass: Pointer): PGtkAccessibleRangeClass;
 function GTK_IS_ACCESSIBLE_RANGE(obj: Pointer): Tgboolean;
-function GTK_IS_ACCESSIBLE_RANGE_CLASS(klass: Pointer): Tgboolean;
-function GTK_ACCESSIBLE_RANGE_GET_CLASS(obj: Pointer): PGtkAccessibleRangeClass;
 
 implementation
 
@@ -50,24 +44,9 @@ begin
   Result := PGtkAccessibleRange(g_type_check_instance_cast(obj, GTK_TYPE_ACCESSIBLE_RANGE));
 end;
 
-function GTK_ACCESSIBLE_RANGE_CLASS(klass: Pointer): PGtkAccessibleRangeClass;
-begin
-  Result := PGtkAccessibleRangeClass(g_type_check_class_cast(klass, GTK_TYPE_ACCESSIBLE_RANGE));
-end;
-
 function GTK_IS_ACCESSIBLE_RANGE(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE_RANGE);
-end;
-
-function GTK_IS_ACCESSIBLE_RANGE_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_ACCESSIBLE_RANGE);
-end;
-
-function GTK_ACCESSIBLE_RANGE_GET_CLASS(obj: Pointer): PGtkAccessibleRangeClass;
-begin
-  Result := PGtkAccessibleRangeClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

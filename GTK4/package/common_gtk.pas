@@ -5,7 +5,7 @@ interface
 //  https://gitlab.com/freepascal.org/lazarus/lazarus/-/tree/main/tools/gir2pascal
 
 uses
-  ctypes, glib2;
+  ctypes, glib2,pango;
 
 const
   gtklib = 'libgtk-4.so';
@@ -31,13 +31,15 @@ type
   Tgint64 = gint64;
   Tguint64 = guint64;
 
-  PPguint=^Pguint;
+  PPguint = ^Pguint;
 
   Tdouble = double;
 
-  Tgsize=gsize;
+  Tgsize = gsize;
   Tgssize = gssize;
   Pgssize = ^Tgssize;
+
+  PPPangoFontDescription = ^PPangoFontDescription; // Pango Eerweiterung
 
 
   TGObject = record
@@ -66,6 +68,16 @@ type
 
   TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
   PGdkModifierType = ^TGdkModifierType;
+
+  TGdkSurface = record  // _GdkSurface     /usr/include/gtk-4.0/gdk/gdktypes.h
+  end;
+  PGdkSurface = ^TGdkSurface;
+
+  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
+  end;
+  PGskRenderer = ^TGskRenderer;
+
+
 
 
   TGtkShortcutFunc = Pointer; // typedef gboolean (* GtkShortcutFunc) (GtkWidget *widget, GVariant  *args, gpointer   user_data);
@@ -113,8 +125,8 @@ type
   PGtkBuilderScope = ^TGtkBuilderScope;
 
 
-TGdkPaintable=Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
-PGdkPaintable=^TGdkPaintable;
+  TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
+  PGdkPaintable = ^TGdkPaintable;
 
 
   TGtkStyleContext = record      // /usr/include/gtk-4.0/gtk/gtkstylecontext.h
@@ -159,22 +171,22 @@ PGdkPaintable=^TGdkPaintable;
   TGListModel = Pointer;         // ???
   PGListModel = ^TGListModel;
 
-  TGAsyncResult=Pointer; // _GAsyncResult      // /usr/include/glib-2.0/gio/giotypes.h
-  PGAsyncResult=^TGAsyncResult;
+  TGAsyncResult = Pointer; // _GAsyncResult      // /usr/include/glib-2.0/gio/giotypes.h
+  PGAsyncResult = ^TGAsyncResult;
 
-  TGCancellablePrivate=Pointer; // _GCancellablePrivate
-  PGCancellablePrivate=^TGCancellablePrivate;
+  TGCancellablePrivate = Pointer; // _GCancellablePrivate
+  PGCancellablePrivate = ^TGCancellablePrivate;
 
-  TGCancellable=record      // giotypes.h &   /usr/include/glib-2.0/gio/gcancellable.h
-              parent_instance  :TGObject;
-              priv:PGCancellablePrivate;
+  TGCancellable = record      // giotypes.h &   /usr/include/glib-2.0/gio/gcancellable.h
+    parent_instance: TGObject;
+    priv: PGCancellablePrivate;
   end;
-  PGCancellable=^TGCancellable;
+  PGCancellable = ^TGCancellable;
 
-  TGAsyncReadyCallback = procedure (source_object:PGObject; res:PGAsyncResult; user_data:Tgpointer);cdecl;   // /usr/include/glib-2.0/gio/giotypes.h
+  TGAsyncReadyCallback = procedure(source_object: PGObject; res: PGAsyncResult; user_data: Tgpointer); cdecl;   // /usr/include/glib-2.0/gio/giotypes.h
 
-  TGInitiallyUnownedClass=TGObjectClass;  // gobject.h
-  PGInitiallyUnownedClass=^TGInitiallyUnownedClass;
+  TGInitiallyUnownedClass = TGObjectClass;  // gobject.h
+  PGInitiallyUnownedClass = ^TGInitiallyUnownedClass;
 
 
 
@@ -193,8 +205,8 @@ PGdkPaintable=^TGdkPaintable;
 
   // ==========
 
-  TGDateTime=Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
-  PGDateTime=^TGDateTime;
+  TGDateTime = Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
+  PGDateTime = ^TGDateTime;
 
   PGTypeClass = ^TGTypeClass;
 
@@ -208,8 +220,8 @@ PGdkPaintable=^TGdkPaintable;
     g_class: PGTypeClass;
   end;
 
-    TGdkRGBA=Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
-  PGdkRGBA=^TGdkRGBA;
+  TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
+  PGdkRGBA = ^TGdkRGBA;
 
 
 

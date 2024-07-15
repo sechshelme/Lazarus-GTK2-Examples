@@ -75,7 +75,7 @@ typedef enum {
 #define GTK_TYPE_FILTER             (gtk_filter_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkFilter, gtk_filter, GTK, FILTER, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkFilter, gtk_filter, GTK, FILTER, GObject)
 
 struct _GtkFilterClass
 {

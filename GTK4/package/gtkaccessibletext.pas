@@ -15,11 +15,6 @@ type
   end;
   PGtkAccessibleText = ^TGtkAccessibleText;
 
-  TGtkAccessibleTextClass = record
-    parent_class : TGtkAccessibleClass;
-  end;
-  PGtkAccessibleTextClass = ^TGtkAccessibleTextClass;
-
 type
   TGtkAccessibleTextRange = record
     start: Tgsize;
@@ -107,10 +102,7 @@ const
 
 function GTK_TYPE_ACCESSIBLE_TEXT: TGType;
 function GTK_ACCESSIBLE_TEXT(obj: Pointer): PGtkAccessibleText;
-function GTK_ACCESSIBLE_TEXT_CLASS(klass: Pointer): PGtkAccessibleTextClass;
 function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
-function GTK_IS_ACCESSIBLE_TEXT_CLASS(klass: Pointer): Tgboolean;
-function GTK_ACCESSIBLE_TEXT_GET_CLASS(obj: Pointer): PGtkAccessibleTextClass;
 
 implementation
 
@@ -125,24 +117,9 @@ begin
   Result := PGtkAccessibleText(g_type_check_instance_cast(obj, GTK_TYPE_ACCESSIBLE_TEXT));
 end;
 
-function GTK_ACCESSIBLE_TEXT_CLASS(klass: Pointer): PGtkAccessibleTextClass;
-begin
-  Result := PGtkAccessibleTextClass(g_type_check_class_cast(klass, GTK_TYPE_ACCESSIBLE_TEXT));
-end;
-
 function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE_TEXT);
-end;
-
-function GTK_IS_ACCESSIBLE_TEXT_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_ACCESSIBLE_TEXT);
-end;
-
-function GTK_ACCESSIBLE_TEXT_GET_CLASS(obj: Pointer): PGtkAccessibleTextClass;
-begin
-  Result := PGtkAccessibleTextClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

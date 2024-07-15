@@ -31,7 +31,7 @@
 #define GTK_TYPE_NATIVE               (gtk_native_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
+//G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)
 
 
 void        gtk_native_realize         (GtkNative *self);

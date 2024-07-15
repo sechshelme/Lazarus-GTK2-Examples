@@ -25,6 +25,10 @@ uses
   gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
+  gtkcenterbox,
+  gtknative,
+//  gtkfontdialog,  // GTK4.12      gtkfilter
+
 
 
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
@@ -35,7 +39,7 @@ uses
   gtkactionable,              // -> glib2, common_GTK;
   gtkaccessiblerange,         //  geht nur mit 4.12      Muss überarbeitet werden
   gtkaccessibletext,          //  geht nur mit 4.12      Muss überarbeitet werden
-  gtkaccessible,              //  geht nur mit 4.12      Muss überarbeitet werden
+  gtkaccessible,              //  geht nur mit 4.12      Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             //   geht nur mit 4.12     Muss überarbeitet werden
 
@@ -159,9 +163,22 @@ var
 begin
   Result := gtk_aspect_frame_new(100,100,90,True);
 
-
   button4 := CreateButton('Button 4');
   gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
+end;
+
+function Create_CenterBox: PGtkWidget;
+var
+  btn: PGtkWidget;
+begin
+  Result := gtk_center_box_new;
+
+  btn := CreateButton('CB-Button 1');
+  gtk_center_box_set_end_widget(GTK_CENTER_BOX(Result), btn);
+  btn := CreateButton('CB-Button 2');
+  gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), btn);
+  btn := CreateButton('CB-Button 3');
+  gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
 end;
 
 function Create_Window_Controls: PGtkWidget;
@@ -174,7 +191,7 @@ end;
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-      aspectFram, winCtrl: PGTKWidget;
+      aspectFram, winCtrl, centerBox: PGTKWidget;
     window_class: PGtkWindowClass;
   begin
     window := gtk_application_window_new(app);
@@ -205,6 +222,9 @@ end;
 
     winCtrl := Create_Window_Controls;
     gtk_box_append(GTK_BOX(box), winCtrl);
+
+    centerBox := Create_CenterBox;
+    gtk_box_append(GTK_BOX(box), centerBox);
 
 
     gtk_window_present(GTK_WINDOW(window));

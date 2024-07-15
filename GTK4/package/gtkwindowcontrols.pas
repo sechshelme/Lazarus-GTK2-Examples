@@ -10,11 +10,6 @@ uses
   {$ENDIF}
 
 
- // typedef struct _GtkWindowControls GtkWindowControls;
- // typedef struct {
- //    GtkWidgetClass parent_class;
- // } GtkWindowControlsClass;
-
 type
   {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) }
   TGtkWindowControls = record

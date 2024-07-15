@@ -25,11 +25,16 @@ type
     procedure ConvertClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    Str_G_DECLARE_INTERFACE,
-    SourcePath, DestPath: string;
+    type
+      T_G_DECLARE = (is_G_DECLARE_none, is_G_DECLARE_INTERFACE, is_G_DECLARE_FINAL_TYPE);
+    var
+      G_DECLARE: T_G_DECLARE;
+      Str_G_DECLARE_INTERFACE,
+
+      SourcePath, DestPath: string;
     procedure ConvertSLMacro(var sl: TStringList);
-    function Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
-    function ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
+    function Find_G_DECLARE_INTERFACE(sl: TStringList): T_G_DECLARE;
+    function ConvertSLMacro_from_G_DECLARE: TStringList;
 
     procedure Form1DropFiles(Sender: TObject; const FileNames: array of string);
     procedure Delete_Const(sl: TStringList);
@@ -188,30 +193,36 @@ begin
   WriteLn();
 end;
 
-function TForm1.Find_G_DECLARE_INTERFACE(sl: TStringList): boolean;
+function TForm1.Find_G_DECLARE_INTERFACE(sl: TStringList): T_G_DECLARE;
 var
   i, j: integer;
   declare: TStringArray = (
     ('G_DECLARE_INTERFACE'),
     ('G_DECLARE_FINAL_TYPE'));
 begin
-  Result := False;
+  Result := is_G_DECLARE_none;
   Str_G_DECLARE_INTERFACE := '';
-  ;
   for j := 0 to Length(declare) - 1 do begin
     for  i := 0 to sl.Count - 1 do begin
       if pos(declare[j], sl[i]) > 0 then begin
         Str_G_DECLARE_INTERFACE := sl[i];
-        Result := True;
+        case j of
+          0: begin
+            Result := is_G_DECLARE_INTERFACE;
+          end;
+          1: begin
+            Result := is_G_DECLARE_FINAL_TYPE;
+          end;
+        end;
         Break;
       end;
     end;
   end;
 end;
 
-function TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
-  // {G_DECLARE_INTERFACE  (GtkNative,         gtk_native,          GTK, NATIVE,          GtkWidget)};     // mit class
-  // {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) };     // ohne class
+function TForm1.ConvertSLMacro_from_G_DECLARE: TStringList;
+  // {G_DECLARE_INTERFACE  (GtkNative,     gtk_native,      GTK, NATIVE,      GtkWidget)};     // ohne class
+  // {G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject)};     // mit class
 var
   sa: TAnsiStringArray;
   i: integer;
@@ -222,26 +233,6 @@ begin
     WriteLn(i: 2, '  ', sa[i]);
   end;
   WriteLn();
-  //Result.Add('type ');
-  //Result.Add('  T' + sa[3] + ' = record');
-//  //Result.Add('    parent_instance: T' + sa[11] + ';');
-  //Result.Add('  end');
-  //Result.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
-  //Result.Add('');
-  //
-  //Result.Add('  T' + sa[3] + 'Class = record');
-  //Result.Add('    parent_class: T' + sa[11] + 'Class;');
-  //Result.Add('  end');
-  //Result.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
-  //Result.Add('');
-  //Result.Add('');
-  //Result.Add('');
-  //
-  //
-  //
-  //Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
-  //Result.Add('');
-
   Result.Add('function ' + sa[7] + '_TYPE_' + sa[9] + ': TGType;');
   Result.Add('begin');
   Result.Add('  Result := ' + sa[5] + '_get_type;');
@@ -254,11 +245,13 @@ begin
   Result.Add('end;');
   Result.Add('');
 
-  Result.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
-  Result.Add('begin');
-  Result.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
-  Result.Add('end;');
-  Result.Add('');
+  if G_DECLARE = is_G_DECLARE_FINAL_TYPE then begin
+    Result.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
+    Result.Add('begin');
+    Result.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
+    Result.Add('end;');
+    Result.Add('');
+  end;
 
   Result.Add('function ' + sa[7] + '_IS_' + sa[9] + '(obj: Pointer): Tgboolean;');
   Result.Add('begin');
@@ -266,16 +259,34 @@ begin
   Result.Add('end;');
   Result.Add('');
 
-  Result.Add('function ' + sa[7] + '_IS_' + sa[9] + '_CLASS(klass: Pointer): Tgboolean;');
-  Result.Add('begin');
-  Result.Add('  Result := g_type_check_class_is_a(klass, ' + sa[7] + '_TYPE_' + sa[9] + ');');
-  Result.Add('end;');
+  if G_DECLARE = is_G_DECLARE_FINAL_TYPE then begin
+    Result.Add('function ' + sa[7] + '_IS_' + sa[9] + '_CLASS(klass: Pointer): Tgboolean;');
+    Result.Add('begin');
+    Result.Add('  Result := g_type_check_class_is_a(klass, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+    Result.Add('end;');
+    Result.Add('');
+
+    Result.Add('function ' + sa[7] + '_' + sa[9] + '_GET_CLASS(obj: Pointer): P' + sa[3] + 'Class;');
+    Result.Add('begin');
+    Result.Add('  Result := P' + sa[3] + 'Class(PGTypeInstance(obj)^.g_class);');
+    Result.Add('end;');
+    Result.Add('');
+  end;
+
+  Result.Add('type ');
+  Result.Add('  T' + sa[3] + ' = record');
+    //Result.Add('    parent_instance: T' + sa[11] + ';');
+  Result.Add('  end;');
+  Result.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
   Result.Add('');
 
-  Result.Add('function ' + sa[7] + '_' + sa[9] + '_GET_CLASS(obj: Pointer): P' + sa[3] + 'Class;');
-  Result.Add('begin');
-  Result.Add('  Result := P' + sa[3] + 'Class(PGTypeInstance(obj)^.g_class);');
-  Result.Add('end;');
+  Result.Add('  T' + sa[3] + 'Class = record');
+  Result.Add('    parent_class: T' + sa[11] + 'Class;');
+  Result.Add('  end;');
+  Result.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
+  Result.Add('');
+
+  Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
   Result.Add('');
 end;
 
@@ -283,7 +294,7 @@ procedure TForm1.ConvertClick(Sender: TObject);
 var
   sl, slMacro: TStringList;
   p, i, j, macCount: integer;
-  Is_G_DECLARE_INTERFACE: boolean;
+  //Is_G_DECLARE_INTERFACE: boolean;
 
   procedure DeleteLines(p, Count: integer);
   var
@@ -318,8 +329,8 @@ begin
     Inc(p);
   until pos('{ was #define dname def_expr }', sl[p]) = 1;
 
-  Is_G_DECLARE_INTERFACE := Find_G_DECLARE_INTERFACE(sl);
-  if Is_G_DECLARE_INTERFACE then begin
+  G_DECLARE := Find_G_DECLARE_INTERFACE(sl);
+  if G_DECLARE <> is_G_DECLARE_none then begin
     CheckBox1.Checked := False;
     CheckBox2.Checked := False;
     CheckBox3.Checked := False;
@@ -328,7 +339,7 @@ begin
     CheckBox6.Checked := False;
     DeleteLines(p, 3);
   end;
-  WriteLn('G_DECLARE_INTERFACE: ', Is_G_DECLARE_INTERFACE);
+  WriteLn('G_DECLARE: ', G_DECLARE);
 
   macCount := 0;
   if CheckBox1.Checked then begin
@@ -361,8 +372,8 @@ begin
   until pos('implementation', sl[p]) = 1;
   Inc(p, 3);
 
-  if Is_G_DECLARE_INTERFACE then begin
-    slMacro := ConvertSLMacro_from_G_DECLARE_INTERFACE;
+  if G_DECLARE <> is_G_DECLARE_none then begin
+    slMacro := ConvertSLMacro_from_G_DECLARE;
   end else begin
     slMacro := TStringList.Create;
     for j := 0 to macCount - 1 do begin
@@ -377,7 +388,7 @@ begin
 
   Dec(p, 2);
 
-  if (CheckBox1.Checked) or Is_G_DECLARE_INTERFACE then begin
+  if (CheckBox1.Checked) or (G_DECLARE <> is_G_DECLARE_none) then begin
     DeleteLines(p, 6);
   end;
   if CheckBox2.Checked then begin
@@ -407,7 +418,9 @@ begin
   sl.Insert(p - 1, '// === Konventiert am: ' + DateTimeToStr(now) + ' ===');
   sl.Insert(p - 1, '');
 
-  if Is_G_DECLARE_INTERFACE then begin
+  if G_DECLARE = is_G_DECLARE_INTERFACE then begin
+    macCount := 3;
+  end else if G_DECLARE = is_G_DECLARE_FINAL_TYPE then begin
     macCount := 6;
   end;
   for i := 0 to macCount - 1 do begin

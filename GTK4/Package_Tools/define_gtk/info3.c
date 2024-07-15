@@ -70637,17 +70637,15 @@ GType gtk_native_get_type (void);
 #pragma GCC diagnostic push
 # 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
 
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
- typedef struct _GtkNative GtkNative; typedef struct _GtkNativeInterface GtkNativeInterface; typedef GtkNative *GtkNative_autoptr; typedef GList *GtkNative_listautoptr; typedef GSList *GtkNative_slistautoptr; typedef GQueue *GtkNative_queueautoptr;
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
-#pragma GCC diagnostic push
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
+typedef struct _GtkNative GtkNative; 
 
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-# 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
+typedef struct _GtkNativeInterface GtkNativeInterface; 
+
+typedef GtkNative *GtkNative_autoptr; 
+typedef GList *GtkNative_listautoptr; 
+typedef GSList *GtkNative_slistautoptr; 
+typedef GQueue *GtkNative_queueautoptr;
+
  static __attribute__ ((__unused__)) inline void glib_autoptr_clear_GtkNative (GtkNative *_ptr) { if (_ptr) (glib_autoptr_clear_GtkWidget) ((GtkWidget *) _ptr); } static __attribute__ ((__unused__)) inline void glib_autoptr_cleanup_GtkNative (GtkNative **_ptr) { glib_autoptr_clear_GtkNative (*_ptr); } static __attribute__ ((__unused__)) inline void glib_listautoptr_cleanup_GtkNative (GList **_l) { g_list_free_full (*_l, (GDestroyNotify) (void(*)(void)) glib_autoptr_clear_GtkWidget); } static __attribute__ ((__unused__)) inline void glib_slistautoptr_cleanup_GtkNative (GSList **_l) { g_slist_free_full (*_l, (GDestroyNotify) (void(*)(void)) glib_autoptr_clear_GtkWidget); } static __attribute__ ((__unused__)) inline void glib_queueautoptr_cleanup_GtkNative (GQueue **_q) { if (*_q) g_queue_free_full (*_q, (GDestroyNotify) (void(*)(void)) glib_autoptr_clear_GtkWidget); }
 # 35 "/usr/include/gtk-4.0/gtk/gtknative.h"
 #pragma GCC diagnostic pop
