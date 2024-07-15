@@ -7,6 +7,8 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
 {
   double val = gtk_adjustment_get_value(adj);
   g_print("Value: %f\n", val);
+
+  GTK_IS_NATIVE()
 }
 
 

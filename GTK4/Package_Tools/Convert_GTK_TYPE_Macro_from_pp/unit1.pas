@@ -210,7 +210,7 @@ begin
 end;
 
 function TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
-  // {G_DECLARE_INTERFACE  (GtkButton,         gtk_button,          GTK, BUTTON,          GtkWidget) };     // mit class
+  // {G_DECLARE_INTERFACE  (GtkNative,         gtk_native,          GTK, NATIVE,          GtkWidget)};     // mit class
   // {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) };     // ohne class
 var
   sa: TAnsiStringArray;
@@ -224,7 +224,7 @@ begin
   WriteLn();
   //Result.Add('type ');
   //Result.Add('  T' + sa[3] + ' = record');
-  //Result.Add('    parent_instance: T' + sa[11] + ';');
+//  //Result.Add('    parent_instance: T' + sa[11] + ';');
   //Result.Add('  end');
   //Result.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
   //Result.Add('');
