@@ -14,12 +14,13 @@ type
   PGtkAllocation = ^TGtkAllocation;
 
   TGtkRequisition = record
-      width : cint;
-      height : cint;
-    end;
+    width : cint;
+    height : cint;
+  end;
   PGtkRequisition = ^TGtkRequisition;
 
-  TGtkWidgetPrivate = Pointer;    //  _GtkWidgetPrivate
+  TGtkWidgetPrivate = record    //  _GtkWidgetPrivate
+  end;
   PGtkWidgetPrivate = ^TGtkWidgetPrivate;
 
   TGtkWidget = record

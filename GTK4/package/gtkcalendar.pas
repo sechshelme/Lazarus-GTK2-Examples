@@ -10,7 +10,8 @@ uses
   {$ENDIF}
 
   type
-    TGtkCalendar = Pointer;  // _GtkCalendar
+    TGtkCalendar = record  // _GtkCalendar
+    end;
     PGtkCalendar = ^TGtkCalendar;
 
 function gtk_calendar_get_type: TGType; cdecl; external gtklib;

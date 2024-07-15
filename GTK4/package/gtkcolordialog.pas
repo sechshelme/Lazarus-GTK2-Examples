@@ -11,10 +11,13 @@ uses
 
 type
   {G_DECLARE_FINAL_TYPE (GtkColorDialog, gtk_color_dialog, GTK, COLOR_DIALOG, GObject) }
-  TGtkColorDialog = Pointer;
+  TGtkColorDialog = record
+  end;
   PGtkColorDialog = ^TGtkColorDialog;
 
-  TGtkColorDialogClass = Pointer;
+  TGtkColorDialogClass = record
+    parent_class : TGObjectClass;
+  end;
   PGtkColorDialogClass = ^TGtkColorDialogClass;
 
 function gtk_color_dialog_new: PGtkColorDialog; cdecl; external gtklib;

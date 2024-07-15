@@ -16,9 +16,9 @@ uses
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
   gtkaspectframe,             // io. -> common_GTK, gtkwidget;
-  gtkbox,                     // io. -> common_GTK, gtkwidget, gtkenums
+  gtkbox,                     // io. -> common_GTK, gtkenums, gtkwidget;
   gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
-  gtkwindowcontrols,          // io. ->  glib2, common_GTK, gtkenums, gtkwidget;
+  gtkwindowcontrols,          // io. -> common_GTK, gtkenums, gtkwidget;
 
   gtkscrollbar,               // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment;
   gtkrange,                   // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment, gtkborder;

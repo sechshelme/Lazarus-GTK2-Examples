@@ -10,7 +10,8 @@ uses
 {$ENDIF}
 
 type
-  TGtkActionBar = Pointer;  // _GtkActionBar
+  TGtkActionBar = record  // _GtkActionBar
+  end;
   PGtkActionBar = ^TGtkActionBar;
 
 function gtk_action_bar_get_type:TGType;cdecl;external gtklib;

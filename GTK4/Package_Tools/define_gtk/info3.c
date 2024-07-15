@@ -79547,10 +79547,12 @@ typedef GtkTreeRowReference *GtkTreeRowReference_autoptr; typedef GList *GtkTree
 
 
 int main() {
-  printf("Multi: %d\n", (3 * 4 + 10));
 
-  GtkWindowControls *wk = gtk_window_controls_new(0);
+  GtkNative *wk = gtk_window_controls_new(0);
+
+
+
 
   gboolean is;
-  is = GTK_IS_WINDOW_CONTROLS(wk);
+  is = GTK_IS_NATIVE(wk);
 }

@@ -10,7 +10,8 @@ uses
   {$ENDIF}
 
 type
-  TGtkAspectFrame = Pointer;  // _GtkAspectFrame
+  TGtkAspectFrame = record  // _GtkAspectFrame
+  end;
   PGtkAspectFrame = ^TGtkAspectFrame;
 
 function gtk_aspect_frame_get_type: TGType; cdecl; external gtklib;

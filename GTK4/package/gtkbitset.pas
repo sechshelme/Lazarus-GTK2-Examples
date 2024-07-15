@@ -10,7 +10,8 @@ uses
   {$ENDIF}
 
 type
-  TGtkBitset = Pointer; // _GtkBitset
+  TGtkBitset = record // _GtkBitset
+  end;
   PGtkBitset = ^TGtkBitset;
 
   TGtkBitsetIter = record

@@ -11,10 +11,13 @@ uses
 
 type
   {G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible) }
-  TGtkAccessibleText = Pointer;
+  TGtkAccessibleText = record
+  end;
   PGtkAccessibleText = ^TGtkAccessibleText;
 
-  TGtkAccessibleTextClass = Pointer;
+  TGtkAccessibleTextClass = record
+    parent_class : TGtkAccessibleClass;
+  end;
   PGtkAccessibleTextClass = ^TGtkAccessibleTextClass;
 
 type

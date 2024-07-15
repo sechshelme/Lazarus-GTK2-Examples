@@ -11,10 +11,13 @@ uses
 
 type
   {G_DECLARE_FINAL_TYPE (GtkAlertDialog, gtk_alert_dialog, GTK, ALERT_DIALOG, GObject) }
-  TGtkAlertDialog = Pointer;
+  TGtkAlertDialog = record
+  end; 
   PGtkAlertDialog = ^TGtkAlertDialog;
 
-  TGtkAlertDialogClass = Pointer;
+  TGtkAlertDialogClass = record
+    parent_class : TGObjectClass;
+  end;
   PGtkAlertDialogClass = ^TGtkAlertDialogClass;
 
 

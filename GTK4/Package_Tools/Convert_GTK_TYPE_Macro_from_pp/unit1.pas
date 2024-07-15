@@ -210,8 +210,8 @@ begin
 end;
 
 function TForm1.ConvertSLMacro_from_G_DECLARE_INTERFACE: TStringList;
-  // {G_DECLARE_INTERFACE (GtkButton, gtk_button, GTK, BUTTON, GtkWidget) };
-  // {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) };
+  // {G_DECLARE_INTERFACE  (GtkButton,         gtk_button,          GTK, BUTTON,          GtkWidget) };     // mit class
+  // {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) };     // ohne class
 var
   sa: TAnsiStringArray;
   i: integer;
@@ -240,7 +240,6 @@ begin
   //
   //
   //Result.Add('function ' + sa[5] + '_get_type: TGType; cdecl; external gtklib;');
-  //Result.Add('function ' + sa[5] + '_new: P' + sa[11] + '; cdecl; external gtklib;');
   //Result.Add('');
 
   Result.Add('function ' + sa[7] + '_TYPE_' + sa[9] + ': TGType;');

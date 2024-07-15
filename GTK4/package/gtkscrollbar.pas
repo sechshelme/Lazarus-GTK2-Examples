@@ -10,7 +10,8 @@ uses
   {$ENDIF}
 
 type
-  TGtkScrollbar = Pointer;  // _GtkScrollbar
+  TGtkScrollbar = record  // _GtkScrollbar
+  end;
   PGtkScrollbar = ^TGtkScrollbar;
 
 

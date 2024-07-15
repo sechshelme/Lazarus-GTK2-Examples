@@ -3,7 +3,7 @@ unit gtkwindowcontrols;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget;
+  common_GTK, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -13,11 +13,12 @@ uses
  // typedef struct _GtkWindowControls GtkWindowControls;
  // typedef struct {
  //    GtkWidgetClass parent_class;
- //} GtkWindowControlsClass;
+ // } GtkWindowControlsClass;
 
 type
   {G_DECLARE_FINAL_TYPE (GtkWindowControls, gtk_window_controls, GTK, WINDOW_CONTROLS, GtkWidget) }
-  TGtkWindowControls = Pointer;
+  TGtkWindowControls = record
+  end;
   PGtkWindowControls = ^TGtkWindowControls;
 
   TGtkWindowControlsClass = record

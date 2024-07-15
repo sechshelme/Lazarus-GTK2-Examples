@@ -21,8 +21,14 @@ type
 
   // ==== Von gtkatcontext.pas
 type
-  TGtkATContext = Pointer;    // {GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject) }
+  TGtkATContext = record   //{GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject) }
+  end;     
   PGtkATContext = ^TGtkATContext;
+
+  TGtkATContextClass = record 
+    parent_class : TGObjectClass;
+  end;     
+  PGtkATContextClass = ^TGtkATContextClass;
 
 function gtk_at_context_get_accessible(self: PGtkATContext): PGtkAccessible; cdecl; external gtklib;
 function gtk_at_context_get_accessible_role(self: PGtkATContext): TGtkAccessibleRole; cdecl; external gtklib;

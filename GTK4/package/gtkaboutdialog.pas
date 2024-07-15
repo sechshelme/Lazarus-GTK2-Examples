@@ -35,7 +35,8 @@ const
   GTK_LICENSE_0BSD = 18;
 
 type
-  TGtkAboutDialog = Pointer; // _GtkAboutDialog
+  TGtkAboutDialog = record
+  end; // _GtkAboutDialog
   PGtkAboutDialog = ^TGtkAboutDialog;
 
 

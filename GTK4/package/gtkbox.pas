@@ -14,6 +14,7 @@ type
     parent_instance: TGtkWidget;
   end;
   PGtkBox = ^TGtkBox;
+
   TGtkBoxClass = record
     parent_class: TGtkWidgetClass;
     padding: array[0..7] of Tgpointer;

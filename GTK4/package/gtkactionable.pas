@@ -11,7 +11,8 @@ uses
 
 
 type
-  TGtkActionable = Pointer; // _GtkActionable
+  TGtkActionable = record // _GtkActionable
+  end;
   PGtkActionable = ^TGtkActionable;
 
   TGtkActionableInterface = record
