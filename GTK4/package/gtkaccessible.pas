@@ -2,6 +2,8 @@ unit gtkaccessible;
 
 interface
 
+// alles falsch !!!!!!!!!!!
+
 uses
   glib2, common_GTK, gtkenums;
 
@@ -15,14 +17,16 @@ type
 
 
 type
-  TGtkAccessible = Pointer;   //  G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
+  TGtkAccessible = record   //  G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
+  end; 
   PGtkAccessible = ^TGtkAccessible;
   PPGtkAccessible = ^PGtkAccessible;
+
 
   // ==== Von gtkatcontext.pas
 type
   TGtkATContext = record   //{GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject) }
-  end;     
+  end;     // faasch !!!!!!!
   PGtkATContext = ^TGtkATContext;
 
   TGtkATContextClass = record 
@@ -30,6 +34,7 @@ type
   end;     
   PGtkATContextClass = ^TGtkATContextClass;
 
+function gtk_accessible_get_type: TGType; cdecl; external gtklib;
 function gtk_at_context_get_accessible(self: PGtkATContext): PGtkAccessible; cdecl; external gtklib;
 function gtk_at_context_get_accessible_role(self: PGtkATContext): TGtkAccessibleRole; cdecl; external gtklib;
 function gtk_at_context_create(accessible_role: TGtkAccessibleRole; accessible: PGtkAccessible; display: PGdkDisplay): PGtkATContext; cdecl; external gtklib;

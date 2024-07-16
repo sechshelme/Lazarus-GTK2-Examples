@@ -8,9 +8,6 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   double val = gtk_adjustment_get_value(adj);
   g_print("Value: %f\n", val);
 
-  GtkfontNative
-  GtkFilter
-
 }
 
 
@@ -39,12 +36,18 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
 
   GtkNative *na = 0;
   btn->parent_instance.priv=0;
-  is = GTK_IS_NATIVE(wk);
+  is = GTK_IS_BUTTON(wk);
   if (is) {
-    gtk_button_set_label(GTK_NATIVE(widget), "true");
+    gtk_button_set_label(GTK_BUTTON(widget), "true");
   } else {
-    gtk_button_set_label(GTK_NATIVE(widget), "false");
+    gtk_button_set_label(GTK_BUTTON(widget), "false");
   }
+
+  GtkWidget *w;
+  w =  G_TYPE_INSTANCE_GET_CLASS ((btn), GTK_TYPE_BUTTON, GtkButtonClass);
+  g_print("class:     %i\n", w);
+  w =  G_TYPE_INSTANCE_GET_INTERFACE ((btn), GTK_TYPE_BUTTON, GtkButtonClass);
+  g_print("interface: %i\n", w);
 
 
 

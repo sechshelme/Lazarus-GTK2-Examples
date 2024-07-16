@@ -39,8 +39,8 @@ type
   Tgssize = gssize;
   Pgssize = ^Tgssize;
 
-  PPPangoFontDescription = ^PPangoFontDescription; // Pango Eerweiterung
-
+  PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
+  PPPangoLanguage  =^PPangoLanguage;
 
   TGObject = record
     g_type_instance: TGTypeInstance;
@@ -89,8 +89,13 @@ type
   TGtkRoot = Pointer;// G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)  // gtkroot.h
   PGtkRoot = ^TGtkRoot;
 
-  TGtkNative = Pointer;                     //  G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)  // gtknative.h
+  TGtkNative = record // Mus wegen gtkwidget Knonflikt ausgelagert sein.
+  end;
   PGtkNative = ^TGtkNative;
+
+
+//  TGtkNative = Pointer;                     //  G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)  // gtknative.h
+//  PGtkNative = ^TGtkNative;
 
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
   Pgraphene_matrix_t = ^Tgraphene_matrix_t;

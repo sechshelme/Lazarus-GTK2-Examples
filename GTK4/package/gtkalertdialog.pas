@@ -45,10 +45,7 @@ function gtk_alert_dialog_get_type:TGType;cdecl;external gtklib;
 
 function GTK_TYPE_ALERT_DIALOG: TGType;
 function GTK_ALERT_DIALOG(obj: Pointer): PGtkAlertDialog;
-function GTK_ALERT_DIALOG_CLASS(klass: Pointer): PGtkAlertDialogClass;
 function GTK_IS_ALERT_DIALOG(obj: Pointer): Tgboolean;
-function GTK_IS_ALERT_DIALOG_CLASS(klass: Pointer): Tgboolean;
-function GTK_ALERT_DIALOG_GET_CLASS(obj: Pointer): PGtkAlertDialogClass;
 
 implementation
 
@@ -64,24 +61,9 @@ begin
   Result := PGtkAlertDialog(g_type_check_instance_cast(obj, GTK_TYPE_ALERT_DIALOG));
 end;
 
-function GTK_ALERT_DIALOG_CLASS(klass: Pointer): PGtkAlertDialogClass;
-begin
-  Result := PGtkAlertDialogClass(g_type_check_class_cast(klass, GTK_TYPE_ALERT_DIALOG));
-end;
-
 function GTK_IS_ALERT_DIALOG(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_ALERT_DIALOG);
-end;
-
-function GTK_IS_ALERT_DIALOG_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_ALERT_DIALOG);
-end;
-
-function GTK_ALERT_DIALOG_GET_CLASS(obj: Pointer): PGtkAlertDialogClass;
-begin
-  Result := PGtkAlertDialogClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

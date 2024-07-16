@@ -10,12 +10,10 @@ uses
   {$ENDIF}
 
 type
-  {G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible) }
-  TGtkAccessibleRange = Pointer;
+  
+  TGtkAccessibleRange = record  // {G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible) }
+  end;
   PGtkAccessibleRange = ^TGtkAccessibleRange;
-
-
-type
 
   TGtkAccessibleRangeInterface = record
     g_iface: TGTypeInterface;
@@ -30,6 +28,7 @@ function gtk_accessible_range_get_type: TGType; cdecl; external gtklib;
 function GTK_TYPE_ACCESSIBLE_RANGE: TGType;
 function GTK_ACCESSIBLE_RANGE(obj: Pointer): PGtkAccessibleRange;
 function GTK_IS_ACCESSIBLE_RANGE(obj: Pointer): Tgboolean;
+function GTK_ACCESSIBLE_RANGE_GET_IFACE(obj: Pointer): PGtkAccessibleRangeInterface;
 
 implementation
 
@@ -47,6 +46,11 @@ end;
 function GTK_IS_ACCESSIBLE_RANGE(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE_RANGE);
+end;
+
+function GTK_ACCESSIBLE_RANGE_GET_IFACE(obj: Pointer): PGtkAccessibleRangeInterface;
+begin
+  Result := PGtkAccessibleRangeInterface(PGTypeInstance(obj)^.g_class);
 end;
 
 

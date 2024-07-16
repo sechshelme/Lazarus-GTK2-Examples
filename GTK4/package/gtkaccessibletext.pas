@@ -9,9 +9,8 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-type
-  {G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible) }
-  TGtkAccessibleText = record
+type 
+  TGtkAccessibleText = record {G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible) }
   end;
   PGtkAccessibleText = ^TGtkAccessibleText;
 
@@ -54,9 +53,7 @@ type
     get_default_attributes: procedure(self: PGtkAccessibleText; attribute_names: PPPchar; attribute_values: PPPchar); cdecl;
   end;
 
-  function gtk_accessible_text_get_type:TGType;cdecl;external gtklib; // ?????????????
-
-
+function gtk_accessible_text_get_type: TGType; cdecl; external gtklib;
 procedure gtk_accessible_text_update_caret_position(self: PGtkAccessibleText); cdecl; external gtklib;
 procedure gtk_accessible_text_update_selection_bound(self: PGtkAccessibleText); cdecl; external gtklib;
 procedure gtk_accessible_text_update_contents(self: PGtkAccessibleText; change: TGtkAccessibleTextContentChange; start: dword; end_: dword); cdecl; external gtklib;
@@ -103,6 +100,7 @@ const
 function GTK_TYPE_ACCESSIBLE_TEXT: TGType;
 function GTK_ACCESSIBLE_TEXT(obj: Pointer): PGtkAccessibleText;
 function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
+function GTK_ACCESSIBLE_TEXT_GET_IFACE(obj: Pointer): PGtkAccessibleTextInterface;
 
 implementation
 
@@ -121,6 +119,12 @@ function GTK_IS_ACCESSIBLE_TEXT(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE_TEXT);
 end;
+
+function GTK_ACCESSIBLE_TEXT_GET_IFACE(obj: Pointer): PGtkAccessibleTextInterface;
+begin
+  Result := PGtkAccessibleTextInterface(PGTypeInstance(obj)^.g_class);
+end;
+
 
 
 

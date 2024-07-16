@@ -37,16 +37,13 @@ function gtk_color_dialog_get_type: TGType; cdecl; external gtklib;
 
 function GTK_TYPE_COLOR_DIALOG: TGType;
 function GTK_COLOR_DIALOG(obj: Pointer): PGtkColorDialog;
-function GTK_COLOR_DIALOG_CLASS(klass: Pointer): PGtkColorDialogClass;
 function GTK_IS_COLOR_DIALOG(obj: Pointer): Tgboolean;
-function GTK_IS_COLOR_DIALOG_CLASS(klass: Pointer): Tgboolean;
-function GTK_COLOR_DIALOG_GET_CLASS(obj: Pointer): PGtkColorDialogClass;
 
 implementation
 
 function GTK_TYPE_COLOR_DIALOG: TGType;
 begin
-//  Result := gtk_color_dialog_get_type;
+ // Result := gtk_color_dialog_get_type;
 end;
 
 function GTK_COLOR_DIALOG(obj: Pointer): PGtkColorDialog;
@@ -54,24 +51,9 @@ begin
   Result := PGtkColorDialog(g_type_check_instance_cast(obj, GTK_TYPE_COLOR_DIALOG));
 end;
 
-function GTK_COLOR_DIALOG_CLASS(klass: Pointer): PGtkColorDialogClass;
-begin
-  Result := PGtkColorDialogClass(g_type_check_class_cast(klass, GTK_TYPE_COLOR_DIALOG));
-end;
-
 function GTK_IS_COLOR_DIALOG(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_COLOR_DIALOG);
-end;
-
-function GTK_IS_COLOR_DIALOG_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_COLOR_DIALOG);
-end;
-
-function GTK_COLOR_DIALOG_GET_CLASS(obj: Pointer): PGtkColorDialogClass;
-begin
-  Result := PGtkColorDialogClass(PGTypeInstance(obj)^.g_class);
 end;
 
 

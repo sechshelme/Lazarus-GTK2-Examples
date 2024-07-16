@@ -10,24 +10,25 @@ uses
   gtkborder,                  // io. -> common_GTK
   gtkbitset,                  // io. -> glib2, common_GTK;
   gtkaccelgroup,              // io. -> glib2, common_GTK;
+  gtknative,                  // io. -> glib2, common_GTK;   ( TGtkNative ausgelagert )
+  gtkfilter,                  // io. -> glib2, common_GTK;
 
-  gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums
+  gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
   gtkaspectframe,             // io. -> common_GTK, gtkwidget;
   gtkbox,                     // io. -> common_GTK, gtkenums, gtkwidget;
-  gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
+  gtkcenterbox,               // io. -> common_GTK, gtkenums, gtkwidget;
   gtkwindowcontrols,          // io. -> common_GTK, gtkenums, gtkwidget;
+  gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
 
   gtkscrollbar,               // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment;
   gtkrange,                   // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment, gtkborder;
   gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
-  gtkcenterbox,
-  gtknative,
-//  gtkfontdialog,  // GTK4.12      gtkfilter
+  gtkfontdialog,               // GTK4.12
 
 
 

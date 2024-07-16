@@ -34,10 +34,7 @@ function gtk_window_controls_get_type: TGType; cdecl; external gtklib;
 
 function GTK_TYPE_WINDOW_CONTROLS: TGType;
 function GTK_WINDOW_CONTROLS(obj: Pointer): PGtkWindowControls;
-function GTK_WINDOW_CONTROLS_CLASS(klass: Pointer): PGtkWindowControlsClass;
 function GTK_IS_WINDOW_CONTROLS(obj: Pointer): Tgboolean;
-function GTK_IS_WINDOW_CONTROLS_CLASS(klass: Pointer): Tgboolean;
-function GTK_WINDOW_CONTROLS_GET_CLASS(obj: Pointer): PGtkWindowControlsClass;
 
 implementation
 
@@ -51,26 +48,10 @@ begin
   Result := PGtkWindowControls(g_type_check_instance_cast(obj, GTK_TYPE_WINDOW_CONTROLS));
 end;
 
-function GTK_WINDOW_CONTROLS_CLASS(klass: Pointer): PGtkWindowControlsClass;
-begin
-  Result := PGtkWindowControlsClass(g_type_check_class_cast(klass, GTK_TYPE_WINDOW_CONTROLS));
-end;
-
 function GTK_IS_WINDOW_CONTROLS(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_WINDOW_CONTROLS);
 end;
-
-function GTK_IS_WINDOW_CONTROLS_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_WINDOW_CONTROLS);
-end;
-
-function GTK_WINDOW_CONTROLS_GET_CLASS(obj: Pointer): PGtkWindowControlsClass;
-begin
-  Result := PGtkWindowControlsClass(PGTypeInstance(obj)^.g_class);
-end;
-
 
 
 end.

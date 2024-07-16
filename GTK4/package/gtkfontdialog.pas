@@ -3,7 +3,7 @@ unit gtkfontdialog;
 interface
 
 uses
-  glib2,pango, common_GTK,gtkwindow;
+  glib2,pango, common_GTK,gtkfilter, gtkwindow;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}
@@ -50,16 +50,14 @@ function gtk_font_dialog_choose_font_and_features_finish(self:PGtkFontDialog; re
 
 function GTK_TYPE_FONT_DIALOG: TGType;
 function GTK_FONT_DIALOG(obj: Pointer): PGtkFontDialog;
-function GTK_FONT_DIALOG_CLASS(klass: Pointer): PGtkFontDialogClass;
 function GTK_IS_FONT_DIALOG(obj: Pointer): Tgboolean;
-function GTK_IS_FONT_DIALOG_CLASS(klass: Pointer): Tgboolean;
-function GTK_FONT_DIALOG_GET_CLASS(obj: Pointer): PGtkFontDialogClass;
 
 implementation
 
 function GTK_TYPE_FONT_DIALOG: TGType;
 begin
-  Result := gtk_font_dialog_get_type;
+  // gtk 4.12
+//  Result := gtk_font_dialog_get_type;
 end;
 
 function GTK_FONT_DIALOG(obj: Pointer): PGtkFontDialog;
@@ -67,27 +65,10 @@ begin
   Result := PGtkFontDialog(g_type_check_instance_cast(obj, GTK_TYPE_FONT_DIALOG));
 end;
 
-function GTK_FONT_DIALOG_CLASS(klass: Pointer): PGtkFontDialogClass;
-begin
-  Result := PGtkFontDialogClass(g_type_check_class_cast(klass, GTK_TYPE_FONT_DIALOG));
-end;
-
 function GTK_IS_FONT_DIALOG(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_FONT_DIALOG);
 end;
-
-function GTK_IS_FONT_DIALOG_CLASS(klass: Pointer): Tgboolean;
-begin
-  Result := g_type_check_class_is_a(klass, GTK_TYPE_FONT_DIALOG);
-end;
-
-function GTK_FONT_DIALOG_GET_CLASS(obj: Pointer): PGtkFontDialogClass;
-begin
-  Result := PGtkFontDialogClass(PGTypeInstance(obj)^.g_class);
-end;
-
-
 
 
 end.
