@@ -42,12 +42,16 @@ type
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage  =^PPangoLanguage;
 
-  TGObject = record
-    g_type_instance: TGTypeInstance;
-    ref_count: guint;
-    qdata: PGData;
-  end;
-  PGObject = ^TGObject;
+  //TGObject = record
+  //  g_type_instance: TGTypeInstance;
+  //  ref_count: guint;
+  //  qdata: PGData;
+  //end;
+  //PGObject = ^TGObject;
+
+
+//  TGObject=PGObject;
+  Tgconstpointer = gconstpointer;
 
   TGInitiallyUnowned = TGObject;
 
@@ -79,6 +83,12 @@ type
 
 
 
+  TGdkEvent=record // _GdkEvent      /usr/include/gtk-4.0/gdk/gdkevents.h
+  end;
+  PGdkEvent=^TGdkEvent;
+
+  TGdkKeyMatch=LongInt;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
+  PGdkKeyMatch=^TGdkKeyMatch;
 
   TGtkShortcutFunc = Pointer; // typedef gboolean (* GtkShortcutFunc) (GtkWidget *widget, GVariant  *args, gpointer   user_data);
   TPGtkShortcutFunc = ^TGtkShortcutFunc;

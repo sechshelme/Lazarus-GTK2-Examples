@@ -28,9 +28,11 @@ uses
   gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
+  gtkshortcuttrigger,
+//  gtkshortcut,
+  gtkshortcutsshortcut,       // io. -> glib2, common_GTK;
+
   gtkfontdialog,               // GTK4.12
-
-
 
   gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
   gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow           ( PGtkApplication ausgelagert )

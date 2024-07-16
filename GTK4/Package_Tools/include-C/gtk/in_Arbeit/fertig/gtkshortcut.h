@@ -26,7 +26,7 @@
 #define GTK_TYPE_SHORTCUT         (gtk_shortcut_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
+//G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
 
 
 GtkShortcut *   gtk_shortcut_new                                (GtkShortcutTrigger     *trigger,

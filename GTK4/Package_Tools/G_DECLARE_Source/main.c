@@ -88,6 +88,37 @@ int main() {
   } 
 
 
+// ===========================
+#define GDK_DECLARE_INTERNAL_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) 
+
+  GType gtk_filter_get_type (void);                                                               
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS                                                                       
+  typedef struct _GtkFilter GtkFilter;                                                         
+  typedef struct _GtkFilterClass GtkFilterClass;                                           
+                                                                                                         
+                                                                                                         
+  G_GNUC_UNUSED static inline GtkFilter * GTK_FILTER (gpointer ptr) {                       
+    return G_TYPE_CHECK_INSTANCE_CAST (ptr, gtk_filter_get_type (), GtkFilter);
+  }             
+ 
+  G_GNUC_UNUSED static inline gboolean GTK_IS_FILTER (gpointer ptr) {                           
+    return G_TYPE_CHECK_INSTANCE_TYPE (ptr, gtk_filter_get_type ()); 
+  }                            
+
+// -----
+  G_GNUC_UNUSED static inline GtkFilterClass * GTK_FILTER_CLASS (gpointer ptr) {        
+    return G_TYPE_CHECK_CLASS_CAST (ptr, gtk_filter_get_type (), GtkFilterClass); 
+  }         
+
+  G_GNUC_UNUSED static inline gboolean GTK_IS_FILTER_CLASS (gpointer ptr) {                   
+    return G_TYPE_CHECK_CLASS_TYPE (ptr, gtk_filter_get_type ()); 
+  }                               
+
+  G_GNUC_UNUSED static inline GtkFilterClass * GTK_FILTER_GET_CLASS (gpointer ptr) {    
+    return G_TYPE_INSTANCE_GET_CLASS (ptr, gtk_filter_get_type (), GtkFilterClass); 
+  }       
+
+
 
 
 

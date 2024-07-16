@@ -26,7 +26,7 @@ type
     procedure FormCreate(Sender: TObject);
   private
     type
-      T_G_DECLARE = (is_G_DECLARE_none = -1, is_G_DECLARE_FINAL_TYPE, is_G_DECLARE_DERIVABLE_TYPE, is_G_DECLARE_INTERFACE);
+      T_G_DECLARE = (is_G_DECLARE_none = -1, is_G_DECLARE_FINAL_TYPE, is_G_DECLARE_DERIVABLE_TYPE, is_G_DECLARE_INTERFACE, is_GDK_DECLARE_INTERNAL_TYPE);
     var
       G_DECLARE: T_G_DECLARE;
       Str_G_DECLARE_INTERFACE,
@@ -199,7 +199,9 @@ var
   declare: TStringArray = (
     ('G_DECLARE_FINAL_TYPE'),
     ('G_DECLARE_DERIVABLE_TYPE'),
-    ('G_DECLARE_INTERFACE'));
+    ('G_DECLARE_INTERFACE'),
+    ('GDK_DECLARE_INTERNAL_TYPE'));
+
 begin
   Result := is_G_DECLARE_none;
   Str_G_DECLARE_INTERFACE := '';
@@ -208,14 +210,6 @@ begin
       if pos(declare[j], sl[i]) > 0 then begin
         Str_G_DECLARE_INTERFACE := sl[i];
         Result := T_G_DECLARE(j);
-        //case j of
-        //  0: begin
-        //    Result := is_G_DECLARE_INTERFACE;
-        //  end;
-        //  1: begin
-        //    Result := is_G_DECLARE_FINAL_TYPE;
-        //  end;
-        //end;
         Break;
       end;
     end;
@@ -223,9 +217,10 @@ begin
 end;
 
 function TForm1.ConvertSLMacro_from_G_DECLARE: TStringList;
-  // {G_DECLARE_FINAL_TYPE     (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject)};     // Einfach
-  // {G_DECLARE_DERIVABLE_TYPE (GtkFilter,     gtk_filter,      GTK, FILTER,      GObject) }     // Komplett
-  // {G_DECLARE_INTERFACE      (GtkNative,     gtk_native,      GTK, NATIVE,      GtkWidget)};   // Interface
+  // {G_DECLARE_FINAL_TYPE      (GtkFontDialog,      gtk_font_dialog,      GTK, FONT_DIALOG,      GObject)};     // Einfach
+  // {G_DECLARE_DERIVABLE_TYPE  (GtkFilter,          gtk_filter,           GTK, FILTER,           GObject) }     // Komplett
+  // {G_DECLARE_INTERFACE       (GtkNative,          gtk_native,           GTK, NATIVE,           GtkWidget)};   // Interface
+  // {GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger) }
 var
   sa: TAnsiStringArray;
   i: integer;
@@ -258,7 +253,7 @@ begin
 
   end;
 
-  if G_DECLARE = is_G_DECLARE_DERIVABLE_TYPE then begin
+  if G_DECLARE in [is_G_DECLARE_DERIVABLE_TYPE,is_GDK_DECLARE_INTERNAL_TYPE] then begin
     Result.Add('function ' + sa[7] + '_' + sa[9] + '_CLASS(klass: Pointer): P' + sa[3] + 'Class;');
     Result.Add('begin');
     Result.Add('  Result := P' + sa[3] + 'Class(g_type_check_class_cast(klass, ' + sa[7] + '_TYPE_' + sa[9] + '));');
@@ -320,6 +315,17 @@ begin
       Result.Add('  T' + sa[3] + 'Interface = record');
       Result.Add('  end;');
       Result.Add('  P' + sa[3] + 'Interface = ^T' + sa[3] + 'Interface;');
+      Result.Add('');
+  end;
+  if G_DECLARE = is_GDK_DECLARE_INTERNAL_TYPE then begin
+      Result.Add('  T' + sa[3] + ' = record');
+      Result.Add('  end;');
+      Result.Add('  P' + sa[3] + ' = ^T' + sa[3] + ';');
+      Result.Add('');
+
+      Result.Add('  T' + sa[3] + 'Class = record');
+      Result.Add('  end;');
+      Result.Add('  P' + sa[3] + 'Class = ^T' + sa[3] + 'Class;');
       Result.Add('');
   end;
 

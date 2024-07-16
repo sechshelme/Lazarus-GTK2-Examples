@@ -30,7 +30,7 @@
 #define GTK_TYPE_SHORTCUT_TRIGGER (gtk_shortcut_trigger_get_type ())
 
 
-GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTCUT_TRIGGER, GObject)
+//GDK_DECLARE_INTERNAL_TYPE (GtkShortcutTrigger, gtk_shortcut_trigger, GTK, SHORTCUT_TRIGGER, GObject)
 
 
 GtkShortcutTrigger *    gtk_shortcut_trigger_parse_string       (const char         *string);
@@ -63,19 +63,6 @@ GdkKeyMatch             gtk_shortcut_trigger_trigger            (GtkShortcutTrig
                                                                  gboolean            enable_mnemonics);
 
 
-#define GTK_TYPE_NEVER_TRIGGER (gtk_never_trigger_get_type())
-
-/**
- * GtkNeverTrigger:
- *
- * A `GtkShortcutTrigger` that never triggers.
- */
-
-GDK_DECLARE_INTERNAL_TYPE (GtkNeverTrigger, gtk_never_trigger, GTK, NEVER_TRIGGER, GtkShortcutTrigger)
-
-
-GtkShortcutTrigger *    gtk_never_trigger_get                   (void);
-
 #define GTK_TYPE_KEYVAL_TRIGGER (gtk_keyval_trigger_get_type())
 
 /**
@@ -85,7 +72,7 @@ GtkShortcutTrigger *    gtk_never_trigger_get                   (void);
  */
 
 
-GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRIGGER, GtkShortcutTrigger)
+//GDK_DECLARE_INTERNAL_TYPE (GtkKeyvalTrigger, gtk_keyval_trigger, GTK, KEYVAL_TRIGGER, GtkShortcutTrigger)
 
 
 GtkShortcutTrigger *    gtk_keyval_trigger_new                  (guint             keyval,
@@ -106,7 +93,7 @@ guint                   gtk_keyval_trigger_get_keyval           (GtkKeyvalTrigge
  * pressed together with the mnemonic key.
  */
 
-GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger)
+//GDK_DECLARE_INTERNAL_TYPE (GtkMnemonicTrigger, gtk_mnemonic_trigger, GTK, MNEMONIC_TRIGGER, GtkShortcutTrigger)
 
 
 GtkShortcutTrigger *    gtk_mnemonic_trigger_new                (guint               keyval);
@@ -126,7 +113,7 @@ guint                   gtk_mnemonic_trigger_get_keyval         (GtkMnemonicTrig
  */
 
 
-GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, ALTERNATIVE_TRIGGER, GtkShortcutTrigger)
+//GDK_DECLARE_INTERNAL_TYPE (GtkAlternativeTrigger, gtk_alternative_trigger, GTK, ALTERNATIVE_TRIGGER, GtkShortcutTrigger)
 
 
 GtkShortcutTrigger *    gtk_alternative_trigger_new             (GtkShortcutTrigger    *first,
