@@ -18,6 +18,9 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   GtkStateFlags
   GObject
   GtkShortcutTrigger
+  GtkLayoutManagerClass
+  GtkLayoutManager
+  GtkExpression
 }
 
 

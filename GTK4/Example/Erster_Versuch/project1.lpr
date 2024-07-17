@@ -13,6 +13,7 @@ uses
   gtkfilter,                  // io. -> glib2, common_GTK;
   gtkbuilder,                 // io. -> glib2, common_GTK;
   gtkbuilderscope,            // io. -> glib2, common_GTK, gtkbuilder;
+  gtkbookmarklist,            // io. -> glib2, common_GTK;
 
   gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
   gtkstyleprovider,           // io. -> common_GTK, gtkenums;
@@ -34,13 +35,15 @@ uses
 
   gtklayoutchild,             // io. -> glib2, common_GTK, gtkwidget;
   gtklayoutmanager,           // io. -> glib2, common_GTK, gtkenums, gtklayoutchild, gtkwidget;
+  gtkbinlayout,               // io. -> common_GTK, gtkwidget, gtklayoutmanager;
 
   gtkshortcutsshortcut,       // io. -> common_GTK;
   gtkshortcuttrigger,         // io. -> glib2, common_GTK;
   gtkshortcutaction,          // io. -> glib2, common_GTK, gtkwidget;
   gtkshortcut,                // io. -> glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
 
-
+  //  gtkboolfilter,
+//  gtkexpression,
 
 
   gtkfontdialog,               // GTK4.14
@@ -122,7 +125,7 @@ const
     end;
     WriteLn(gtk_button_get_label(GTK_BUTTON(button)));
 
-    GTK_BUILDER_WARN_INVALID_CHILD_TYPE(button,'dfdsfs');
+    GTK_BUILDER_WARN_INVALID_CHILD_TYPE(button, 'dfdsfs');
   end;
 
   function Create_ActionBar: PGtkWidget;
