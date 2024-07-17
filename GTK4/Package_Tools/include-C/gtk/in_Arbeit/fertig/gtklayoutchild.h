@@ -11,7 +11,7 @@
 #define GTK_TYPE_LAYOUT_CHILD (gtk_layout_child_get_type())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutChild, gtk_layout_child, GTK, LAYOUT_CHILD, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkLayoutChild, gtk_layout_child, GTK, LAYOUT_CHILD, GObject)
 
 struct _GtkLayoutChildClass
 {

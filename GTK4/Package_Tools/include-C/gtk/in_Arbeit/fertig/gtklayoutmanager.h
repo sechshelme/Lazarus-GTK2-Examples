@@ -28,7 +28,7 @@
 #define GTK_TYPE_LAYOUT_MANAGER (gtk_layout_manager_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
 
 /**
  * GtkLayoutManagerClass:

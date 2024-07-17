@@ -29,8 +29,10 @@ uses
   gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
 
   gtkshortcuttrigger,
-//  gtkshortcut,
+  //  gtkshortcut,
   gtkshortcutsshortcut,       // io. -> glib2, common_GTK;
+  gtklayoutchild,             // io. -> glib2, common_GTK, gtkwidget;
+  gtklayoutmanager,           // io. -> glib2, common_GTK, gtkenums, gtklayoutchild, gtkwidget;
 
   gtkfontdialog,               // GTK4.12
 
@@ -100,8 +102,8 @@ const
           nil);
       end;
       cmColorDlg: begin
-//        colDlg:=gtk_color_dialog_new;
-//        gtk_color_dialog_get_modal(colDlg);
+        //        colDlg:=gtk_color_dialog_new;
+        //        gtk_color_dialog_get_modal(colDlg);
       end;
     end;
     WriteLn(gtk_button_get_label(GTK_BUTTON(button)));
@@ -155,47 +157,51 @@ const
 
   end;
 
-function Create_Calender: PGtkWidget;
-begin
-  Result := gtk_calendar_new;
-end;
+  function Create_Calender: PGtkWidget;
+  begin
+    Result := gtk_calendar_new;
+  end;
 
-function Create_Aspect_Frame: PGtkWidget;
-var
-  button4: PGtkWidget;
-begin
-  Result := gtk_aspect_frame_new(100,100,90,True);
+  function Create_Aspect_Frame: PGtkWidget;
+  var
+    button4: PGtkWidget;
+  begin
+    Result := gtk_aspect_frame_new(100, 100, 90, True);
 
-  button4 := CreateButton('Button 4');
-  gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
-end;
+    button4 := CreateButton('Button 4');
+    gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
+  end;
 
-function Create_CenterBox: PGtkWidget;
-var
-  btn: PGtkWidget;
-begin
-  Result := gtk_center_box_new;
+  function Create_CenterBox: PGtkWidget;
+  var
+    btn: PGtkWidget;
+  begin
+    Result := gtk_center_box_new;
 
-  btn := CreateButton('CB-Button 1');
-  gtk_center_box_set_end_widget(GTK_CENTER_BOX(Result), btn);
-  btn := CreateButton('CB-Button 2');
-  gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), btn);
-  btn := CreateButton('CB-Button 3');
-  gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
-end;
+    btn := CreateButton('CB-Button 1');
+    gtk_center_box_set_end_widget(GTK_CENTER_BOX(Result), btn);
+    btn := CreateButton('CB-Button 2');
+    gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), btn);
+    btn := CreateButton('CB-Button 3');
+    gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
+  end;
 
-function Create_Window_Controls: PGtkWidget;
-begin
-  Result := gtk_window_controls_new(GTK_PACK_START);
-end;
+  function Create_Window_Controls: PGtkWidget;
+  begin
+    Result := gtk_window_controls_new(GTK_PACK_START);
+  end;
 
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-      aspectFram, winCtrl, centerBox: PGTKWidget;
-    window_class: PGtkWindowClass;
+    aspectFram, winCtrl, centerBox: PGTKWidget;
+    Winclass: PGtkWindowClass;
+    lm: PGtkLayoutManager;
+    LMclass: PGtkLayoutManagerClass;
+    na: PGtkNative;
+    nai: PGtkNativeInterface;
   begin
     window := gtk_application_window_new(app);
 
@@ -232,13 +238,26 @@ end;
 
     gtk_window_present(GTK_WINDOW(window));
 
-    window_class := GTK_WINDOW_GET_CLASS(window);
-    WriteLn('win class: ', G_OBJECT_CLASS_NAME(window_class));
-    WriteLn('win is_class: ', GTK_IS_WINDOW_CLASS(window_class));
+    Winclass := GTK_WINDOW_GET_CLASS(window);
+    WriteLn('win class: ', G_OBJECT_CLASS_NAME(Winclass));
+    WriteLn('win is_class: ', GTK_IS_WINDOW_CLASS(Winclass));
+    WriteLn();
+    Winclass := GTK_WINDOW_GET_CLASS(box);
+    WriteLn('box class: ', G_OBJECT_CLASS_NAME(Winclass));
+    WriteLn('box is_class: ', GTK_IS_BOX_CLASS(Winclass));
+    WriteLn();
 
-    window_class := GTK_WINDOW_GET_CLASS(box);
-    WriteLn('btn class: ', G_OBJECT_CLASS_NAME(window_class));
-    WriteLn('btn is_class: ', GTK_IS_WINDOW_CLASS(window_class));
+    lm := gtk_widget_get_layout_manager(box);
+    LMclass := GTK_LAYOUT_MANAGER_GET_CLASS(lm);
+    WriteLn('lm class: ', G_OBJECT_CLASS_NAME(LMclass));
+    WriteLn('lm is_class: ', GTK_IS_LAYOUT_MANAGER_CLASS(LMclass));
+    WriteLn();
+
+    na:=gtk_widget_get_native(box);
+    nai:=GTK_NATIVE_GET_IFACE(na);
+    WriteLn('na class: ', G_OBJECT_CLASS_NAME(LMclass));
+    WriteLn('na is_class: ', GTK_IS_NATIVE(nai));
+    WriteLn();
 
     WriteLn('is win: ', GTK_IS_WINDOW(window));
     WriteLn('is win: ', GTK_IS_WINDOW(box));

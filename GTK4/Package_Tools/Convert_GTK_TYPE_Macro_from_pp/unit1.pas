@@ -32,7 +32,7 @@ type
       Str_G_DECLARE_INTERFACE,
 
       SourcePath, DestPath: string;
-    procedure ConvertSLMacro(var sl: TStringList);
+    procedure ConvertSLMacro_from_Native(var sl: TStringList);
     function Find_G_DECLARE(sl: TStringList): T_G_DECLARE;
     function ConvertSLMacro_from_G_DECLARE: TStringList;
 
@@ -97,7 +97,7 @@ begin
   CheckBox6.Caption := 'GTK_WINDOW_GET_CLASS(obj)';
 end;
 
-procedure TForm1.ConvertSLMacro(var sl: TStringList);
+procedure TForm1.ConvertSLMacro_from_Native(var sl: TStringList);
 
   function FindGTK_TYPE(const s: string): string;
   var
@@ -423,7 +423,7 @@ begin
         slMacro.Add(sl[p + i + j * 8]);
       end;
     end;
-    ConvertSLMacro(slMacro);
+    ConvertSLMacro_from_Native(slMacro);
   end;
 
   WriteLn(slMacro.Text);

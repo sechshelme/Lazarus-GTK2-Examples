@@ -67,8 +67,6 @@ type
   TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
   PGskTransform = ^TGskTransform;
 
-  TGtkLayoutManager = Pointer;  // G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject)
-  PGtkLayoutManager = ^TGtkLayoutManager;
 
   TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
   PGdkModifierType = ^TGdkModifierType;
@@ -99,13 +97,22 @@ type
   TGtkRoot = Pointer;// G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)  // gtkroot.h
   PGtkRoot = ^TGtkRoot;
 
+  // ===  Zwingende Auslagerungen wegen Kreuzverbindungen
+
   TGtkNative = record // Mus wegen gtkwidget Knonflikt ausgelagert sein.
   end;
   PGtkNative = ^TGtkNative;
 
+  TGtkLayoutManager = record
+    parent_instance: TGObject
+  end;
+  PGtkLayoutManager = ^TGtkLayoutManager;
 
-//  TGtkNative = Pointer;                     //  G_DECLARE_INTERFACE (GtkNative, gtk_native, GTK, NATIVE, GtkWidget)  // gtknative.h
-//  PGtkNative = ^TGtkNative;
+  // =======================
+
+
+
+
 
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
   Pgraphene_matrix_t = ^Tgraphene_matrix_t;
