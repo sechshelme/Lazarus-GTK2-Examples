@@ -31,7 +31,7 @@
 #define GTK_TYPE_COLOR_DIALOG_BUTTON (gtk_color_dialog_button_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkColorDialogButton, gtk_color_dialog_button, GTK, COLOR_DIALOG_BUTTON, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkColorDialogButton, gtk_color_dialog_button, GTK, COLOR_DIALOG_BUTTON, GtkWidget)
 
 
 GtkWidget *     gtk_color_dialog_button_new             (GtkColorDialog       *dialog);

@@ -32,21 +32,21 @@
 
 G_DECLARE_FINAL_TYPE (GtkFileChooserNative, gtk_file_chooser_native, GTK, FILE_CHOOSER_NATIVE, GtkNativeDialog)
 
-GDK_DEPRECATED_IN_4_10
+
 GtkFileChooserNative *gtk_file_chooser_native_new (const char           *title,
                                                    GtkWindow            *parent,
                                                    GtkFileChooserAction  action,
                                                    const char           *accept_label,
                                                    const char           *cancel_label);
 
-GDK_DEPRECATED_IN_4_10
+
 const char *gtk_file_chooser_native_get_accept_label (GtkFileChooserNative *self);
-GDK_DEPRECATED_IN_4_10
+
 void        gtk_file_chooser_native_set_accept_label (GtkFileChooserNative *self,
                                                       const char           *accept_label);
-GDK_DEPRECATED_IN_4_10
+
 const char *gtk_file_chooser_native_get_cancel_label (GtkFileChooserNative *self);
-GDK_DEPRECATED_IN_4_10
+
 void        gtk_file_chooser_native_set_cancel_label (GtkFileChooserNative *self,
                                                       const char           *cancel_label);
 

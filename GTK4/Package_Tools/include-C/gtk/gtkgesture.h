@@ -50,7 +50,7 @@ gboolean    gtk_gesture_set_state            (GtkGesture            *gesture,
 GtkEventSequenceState
             gtk_gesture_get_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence);
-GDK_DEPRECATED_IN_4_10
+
 gboolean    gtk_gesture_set_sequence_state   (GtkGesture            *gesture,
                                               GdkEventSequence      *sequence,
                                               GtkEventSequenceState  state);

@@ -38,23 +38,23 @@ typedef struct _GtkCellAreaBox              GtkCellAreaBox;
 
 GType        gtk_cell_area_box_get_type    (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 GtkCellArea *gtk_cell_area_box_new         (void);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_cell_area_box_pack_start  (GtkCellAreaBox  *box,
                                             GtkCellRenderer *renderer,
                                             gboolean         expand,
                                             gboolean         align,
                                             gboolean         fixed);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_cell_area_box_pack_end    (GtkCellAreaBox  *box,
                                             GtkCellRenderer *renderer,
                                             gboolean         expand,
                                             gboolean         align,
                                             gboolean         fixed);
-GDK_DEPRECATED_IN_4_10
+
 int          gtk_cell_area_box_get_spacing (GtkCellAreaBox  *box);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_cell_area_box_set_spacing (GtkCellAreaBox  *box,
                                             int              spacing);
 

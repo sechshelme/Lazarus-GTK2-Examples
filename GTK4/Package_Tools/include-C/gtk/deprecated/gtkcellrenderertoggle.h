@@ -36,24 +36,24 @@ typedef struct _GtkCellRendererToggle              GtkCellRendererToggle;
 
 
 GType            gtk_cell_renderer_toggle_get_type       (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkCellRenderer *gtk_cell_renderer_toggle_new            (void);
 
-GDK_DEPRECATED_IN_4_10
+
 gboolean         gtk_cell_renderer_toggle_get_radio      (GtkCellRendererToggle *toggle);
-GDK_DEPRECATED_IN_4_10
+
 void             gtk_cell_renderer_toggle_set_radio      (GtkCellRendererToggle *toggle,
                                                           gboolean               radio);
 
-GDK_DEPRECATED_IN_4_10
+
 gboolean        gtk_cell_renderer_toggle_get_active      (GtkCellRendererToggle *toggle);
-GDK_DEPRECATED_IN_4_10
+
 void            gtk_cell_renderer_toggle_set_active      (GtkCellRendererToggle *toggle,
                                                           gboolean               setting);
 
-GDK_DEPRECATED_IN_4_10
+
 gboolean        gtk_cell_renderer_toggle_get_activatable (GtkCellRendererToggle *toggle);
-GDK_DEPRECATED_IN_4_10
+
 void            gtk_cell_renderer_toggle_set_activatable (GtkCellRendererToggle *toggle,
                                                           gboolean               setting);
 

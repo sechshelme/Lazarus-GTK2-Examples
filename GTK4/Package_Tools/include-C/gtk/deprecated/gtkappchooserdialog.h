@@ -42,21 +42,21 @@ typedef struct _GtkAppChooserDialog        GtkAppChooserDialog;
 
 GType         gtk_app_chooser_dialog_get_type             (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *   gtk_app_chooser_dialog_new                  (GtkWindow           *parent,
                                                            GtkDialogFlags       flags,
                                                            GFile               *file);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *   gtk_app_chooser_dialog_new_for_content_type (GtkWindow           *parent,
                                                            GtkDialogFlags       flags,
                                                            const char          *content_type);
 
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *   gtk_app_chooser_dialog_get_widget           (GtkAppChooserDialog *self);
-GDK_DEPRECATED_IN_4_10
+
 void          gtk_app_chooser_dialog_set_heading          (GtkAppChooserDialog *self,
                                                            const char          *heading);
-GDK_DEPRECATED_IN_4_10
+
 const char * gtk_app_chooser_dialog_get_heading          (GtkAppChooserDialog *self);
 
 

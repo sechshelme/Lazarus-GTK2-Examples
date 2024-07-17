@@ -62,20 +62,20 @@ struct _GtkColorChooserInterface
 
 GType    gtk_color_chooser_get_type        (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 void     gtk_color_chooser_get_rgba       (GtkColorChooser *chooser,
                                            GdkRGBA         *color);
-GDK_DEPRECATED_IN_4_10
+
 void     gtk_color_chooser_set_rgba       (GtkColorChooser *chooser,
                                            const GdkRGBA   *color);
-GDK_DEPRECATED_IN_4_10
+
 gboolean gtk_color_chooser_get_use_alpha  (GtkColorChooser *chooser);
 
-GDK_DEPRECATED_IN_4_10
+
 void     gtk_color_chooser_set_use_alpha  (GtkColorChooser *chooser,
                                            gboolean         use_alpha);
 
-GDK_DEPRECATED_IN_4_10
+
 void     gtk_color_chooser_add_palette    (GtkColorChooser *chooser,
                                            GtkOrientation   orientation,
                                            int              colors_per_line,

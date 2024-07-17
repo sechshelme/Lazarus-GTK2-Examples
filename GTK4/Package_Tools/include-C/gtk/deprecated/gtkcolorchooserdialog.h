@@ -34,7 +34,7 @@ typedef struct _GtkColorChooserDialog        GtkColorChooserDialog;
 
 GType       gtk_color_chooser_dialog_get_type (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget * gtk_color_chooser_dialog_new      (const char *title,
                                                GtkWindow   *parent);
 

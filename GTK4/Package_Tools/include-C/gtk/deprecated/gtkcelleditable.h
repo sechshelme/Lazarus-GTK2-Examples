@@ -61,12 +61,12 @@ struct _GtkCellEditableIface
 
 GType gtk_cell_editable_get_type      (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_editable_start_editing (GtkCellEditable *cell_editable,
 				       GdkEvent        *event);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_editable_editing_done  (GtkCellEditable *cell_editable);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_editable_remove_widget (GtkCellEditable *cell_editable);
 
 

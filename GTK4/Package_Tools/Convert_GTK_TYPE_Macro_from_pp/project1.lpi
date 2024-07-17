@@ -51,6 +51,16 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
       </Unit>
+      <Unit>
+        <Filename Value="g_declare_tools.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="G_DECLARE_Tools"/>
+      </Unit>
+      <Unit>
+        <Filename Value="native_tools.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Native_Tools"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

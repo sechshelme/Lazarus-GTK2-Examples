@@ -33,7 +33,7 @@ typedef struct _GtkFontChooserDialog              GtkFontChooserDialog;
 
 
 GType      gtk_font_chooser_dialog_get_type         (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget* gtk_font_chooser_dialog_new              (const char           *title,
                                                      GtkWindow            *parent);
 

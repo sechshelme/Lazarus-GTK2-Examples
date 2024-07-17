@@ -30,7 +30,7 @@
 #define GTK_TYPE_BUILDER_SCOPE               (gtk_builder_scope_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)
+//G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)
 
 /**
  * GtkBuilderClosureFlags:
@@ -101,7 +101,7 @@ struct _GtkBuilderCScopeClass
 #define GTK_TYPE_BUILDER_CSCOPE               (gtk_builder_cscope_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkBuilderCScope, gtk_builder_cscope, GTK, BUILDER_CSCOPE, GObject)
 
 
 GtkBuilderScope *       gtk_builder_cscope_new                  (void);
@@ -115,8 +115,8 @@ void                    gtk_builder_cscope_add_callback_symbols (GtkBuilderCScop
                                                                  GCallback               first_callback_symbol,
                                                                  ...) ;
 
-#define gtk_builder_cscope_add_callback(scope, callback) \
-  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
+//#define gtk_builder_cscope_add_callback(scope, callback) \
+//  gtk_builder_cscope_add_callback_symbol (GTK_BUILDER_CSCOPE (scope), #callback, G_CALLBACK (callback))
 
 
 GCallback               gtk_builder_cscope_lookup_callback_symbol(GtkBuilderCScope      *self,

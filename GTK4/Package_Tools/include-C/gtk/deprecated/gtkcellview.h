@@ -37,35 +37,35 @@ typedef struct _GtkCellView             GtkCellView;
 
 
 GType             gtk_cell_view_get_type                (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget        *gtk_cell_view_new                     (void);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget        *gtk_cell_view_new_with_context        (GtkCellArea        *area,
                                                          GtkCellAreaContext *context);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget        *gtk_cell_view_new_with_text           (const char      *text);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget        *gtk_cell_view_new_with_markup         (const char      *markup);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget        *gtk_cell_view_new_with_texture        (GdkTexture      *texture);
-GDK_DEPRECATED_IN_4_10
+
 void              gtk_cell_view_set_model               (GtkCellView     *cell_view,
                                                          GtkTreeModel    *model);
-GDK_DEPRECATED_IN_4_10
+
 GtkTreeModel     *gtk_cell_view_get_model               (GtkCellView     *cell_view);
-GDK_DEPRECATED_IN_4_10
+
 void              gtk_cell_view_set_displayed_row       (GtkCellView     *cell_view,
                                                          GtkTreePath     *path);
-GDK_DEPRECATED_IN_4_10
+
 GtkTreePath      *gtk_cell_view_get_displayed_row       (GtkCellView     *cell_view);
-GDK_DEPRECATED_IN_4_10
+
 gboolean          gtk_cell_view_get_draw_sensitive      (GtkCellView     *cell_view);
-GDK_DEPRECATED_IN_4_10
+
 void              gtk_cell_view_set_draw_sensitive      (GtkCellView     *cell_view,
                                                          gboolean         draw_sensitive);
-GDK_DEPRECATED_IN_4_10
+
 gboolean          gtk_cell_view_get_fit_model           (GtkCellView     *cell_view);
-GDK_DEPRECATED_IN_4_10
+
 void              gtk_cell_view_set_fit_model           (GtkCellView     *cell_view,
                                                          gboolean         fit_model);
 

@@ -42,15 +42,6 @@ type
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage  =^PPangoLanguage;
 
-  //TGObject = record
-  //  g_type_instance: TGTypeInstance;
-  //  ref_count: guint;
-  //  qdata: PGData;
-  //end;
-  //PGObject = ^TGObject;
-
-
-//  TGObject=PGObject;
   Tgconstpointer = gconstpointer;
 
   TGInitiallyUnowned = TGObject;
@@ -87,31 +78,6 @@ type
 
   TGdkKeyMatch=LongInt;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
   PGdkKeyMatch=^TGdkKeyMatch;
-
-  TGtkShortcutFunc = Pointer; // typedef gboolean (* GtkShortcutFunc) (GtkWidget *widget, GVariant  *args, gpointer   user_data);
-  TPGtkShortcutFunc = ^TGtkShortcutFunc;
-
-  TGtkShortcut = Pointer;// G_DECLARE_FINAL_TYPE (GtkShortcut, gtk_shortcut, GTK, SHORTCUT, GObject)
-  PGtkShortcut = ^TGtkShortcut;
-
-  TGtkRoot = Pointer;// G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)  // gtkroot.h
-  PGtkRoot = ^TGtkRoot;
-
-  // ===  Zwingende Auslagerungen wegen Kreuzverbindungen
-
-  TGtkNative = record // Mus wegen gtkwidget Knonflikt ausgelagert sein.
-  end;
-  PGtkNative = ^TGtkNative;
-
-  TGtkLayoutManager = record
-    parent_instance: TGObject
-  end;
-  PGtkLayoutManager = ^TGtkLayoutManager;
-
-  // =======================
-
-
-
 
 
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
@@ -150,11 +116,6 @@ type
   TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
   PGdkPaintable = ^TGdkPaintable;
 
-
-  TGtkStyleContext = record      // /usr/include/gtk-4.0/gtk/gtkstylecontext.h
-    parent_object: TGObject;
-  end;
-  PGtkStyleContext = ^TGtkStyleContext;
 
 
   //  typedef cairo_rectangle_int_t         GdkRectangle;    // /usr/include/gtk-4.0/gdk/gdktypes.h

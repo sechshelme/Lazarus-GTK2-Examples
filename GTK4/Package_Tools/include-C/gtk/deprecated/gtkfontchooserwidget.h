@@ -34,7 +34,7 @@ typedef struct _GtkFontChooserWidget              GtkFontChooserWidget;
 
 GType        gtk_font_chooser_widget_get_type                 (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget*   gtk_font_chooser_widget_new                      (void);
 
 

@@ -52,9 +52,9 @@ struct wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *dis
 void                    gdk_wayland_display_set_cursor_theme    (GdkDisplay  *display,
                                                                  const char *name,
                                                                  int          size);
-GDK_DEPRECATED_IN_4_10
+
 const char *           gdk_wayland_display_get_startup_notification_id (GdkDisplay *display);
-GDK_DEPRECATED_IN_4_10_FOR(gdk_toplevel_set_startup_id)
+_FOR(gdk_toplevel_set_startup_id)
 void                    gdk_wayland_display_set_startup_notification_id (GdkDisplay *display,
                                                                          const char *startup_id);
 

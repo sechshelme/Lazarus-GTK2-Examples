@@ -31,11 +31,11 @@ typedef struct _GtkLockButton        GtkLockButton;
 
 
 GType        gtk_lock_button_get_type       (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget   *gtk_lock_button_new            (GPermission   *permission);
-GDK_DEPRECATED_IN_4_10
+
 GPermission *gtk_lock_button_get_permission (GtkLockButton *button);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_lock_button_set_permission (GtkLockButton *button,
                                              GPermission   *permission);
 

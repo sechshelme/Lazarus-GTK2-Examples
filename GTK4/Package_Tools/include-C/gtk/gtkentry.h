@@ -156,10 +156,10 @@ void       gtk_entry_set_alignment              (GtkEntry      *entry,
 
 float      gtk_entry_get_alignment              (GtkEntry      *entry);
 
-GDK_DEPRECATED_IN_4_10
+
 void                gtk_entry_set_completion (GtkEntry           *entry,
                                               GtkEntryCompletion *completion);
-GDK_DEPRECATED_IN_4_10
+
 GtkEntryCompletion *gtk_entry_get_completion (GtkEntry           *entry);
 
 /* Progress API

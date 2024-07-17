@@ -35,7 +35,7 @@ typedef struct _GtkFileChooserDialog        GtkFileChooserDialog;
 
 
 GType      gtk_file_chooser_dialog_get_type         (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *gtk_file_chooser_dialog_new              (const char           *title,
 						     GtkWindow            *parent,
 						     GtkFileChooserAction  action,

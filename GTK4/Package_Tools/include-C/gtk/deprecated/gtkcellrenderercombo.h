@@ -34,7 +34,7 @@ typedef struct _GtkCellRendererCombo              GtkCellRendererCombo;
 
 
 GType            gtk_cell_renderer_combo_get_type (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkCellRenderer *gtk_cell_renderer_combo_new      (void);
 
 

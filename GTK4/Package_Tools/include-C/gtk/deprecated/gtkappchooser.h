@@ -40,11 +40,11 @@ typedef struct _GtkAppChooser GtkAppChooser;
 
 GType      gtk_app_chooser_get_type         (void) ;
 
-GDK_DEPRECATED_IN_4_10
+
 GAppInfo * gtk_app_chooser_get_app_info     (GtkAppChooser *self);
-GDK_DEPRECATED_IN_4_10
+
 char *    gtk_app_chooser_get_content_type (GtkAppChooser *self);
-GDK_DEPRECATED_IN_4_10
+
 void       gtk_app_chooser_refresh          (GtkAppChooser *self);
 
 

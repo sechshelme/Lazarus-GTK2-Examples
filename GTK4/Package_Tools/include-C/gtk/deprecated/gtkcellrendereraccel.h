@@ -47,7 +47,7 @@ typedef enum
 
 
 GType            gtk_cell_renderer_accel_get_type        (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkCellRenderer *gtk_cell_renderer_accel_new             (void);
 
 

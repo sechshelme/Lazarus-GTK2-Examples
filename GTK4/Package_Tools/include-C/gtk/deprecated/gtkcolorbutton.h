@@ -47,19 +47,19 @@ typedef struct _GtkColorButton GtkColorButton;
 
 
 GType        gtk_color_button_get_type      (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *  gtk_color_button_new           (void);
-GDK_DEPRECATED_IN_4_10
+
 GtkWidget *  gtk_color_button_new_with_rgba (const GdkRGBA  *rgba);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_color_button_set_title     (GtkColorButton *button,
                                              const char     *title);
-GDK_DEPRECATED_IN_4_10
+
 const char *gtk_color_button_get_title     (GtkColorButton *button);
 
-GDK_DEPRECATED_IN_4_10
+
 gboolean     gtk_color_button_get_modal        (GtkColorButton *button);
-GDK_DEPRECATED_IN_4_10
+
 void         gtk_color_button_set_modal        (GtkColorButton *button,
                                                 gboolean        modal);
 

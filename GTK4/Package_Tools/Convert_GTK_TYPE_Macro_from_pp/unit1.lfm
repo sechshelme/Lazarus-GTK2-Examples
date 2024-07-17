@@ -1,17 +1,17 @@
 object Form1: TForm1
   Left = 1038
-  Height = 336
+  Height = 352
   Top = 154
-  Width = 349
+  Width = 454
   Caption = 'Form1'
-  ClientHeight = 336
-  ClientWidth = 349
+  ClientHeight = 352
+  ClientWidth = 454
   LCLVersion = '3.99.0.0'
   OnCreate = FormCreate
   object Convert: TButton
-    Left = 261
+    Left = 366
     Height = 25
-    Top = 296
+    Top = 312
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Convert'
@@ -26,9 +26,9 @@ object Form1: TForm1
     Caption = 'Label1'
   end
   object CheckGroup1: TCheckGroup
-    Left = 88
+    Left = 193
     Height = 176
-    Top = 107
+    Top = 123
     Width = 248
     Anchors = [akRight, akBottom]
     AutoFill = True
@@ -107,9 +107,9 @@ object Form1: TForm1
   end
   object Memo1: TMemo
     Left = 8
-    Height = 281
+    Height = 297
     Top = 40
-    Width = 78
+    Width = 183
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -13
     Font.Name = 'Ubuntu Mono'
@@ -119,5 +119,23 @@ object Form1: TForm1
     ParentFont = False
     ScrollBars = ssAutoBoth
     TabOrder = 2
+  end
+  object Edit1: TEdit
+    Left = 195
+    Height = 28
+    Top = 40
+    Width = 246
+    Anchors = [akTop, akRight]
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 366
+    Height = 25
+    Top = 72
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Convert'
+    TabOrder = 4
+    OnClick = Button1Click
   end
 end

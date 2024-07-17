@@ -31,7 +31,7 @@
 #define GTK_TYPE_ROOT               (gtk_root_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
+//G_DECLARE_INTERFACE (GtkRoot, gtk_root, GTK, ROOT, GtkWidget)
 
 
 GdkDisplay * gtk_root_get_display (GtkRoot *self);

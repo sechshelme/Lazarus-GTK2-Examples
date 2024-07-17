@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Unit1,
   Interfaces, // this includes the LCL widgetset
-  Forms;
+  Forms, G_DECLARE_Tools, Native_Tools;
 
 {$R *.res}
 

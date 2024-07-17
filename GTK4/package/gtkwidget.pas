@@ -72,6 +72,35 @@ type
     end;
   PGtkWidgetClass = ^TGtkWidgetClass;
 
+  // ===  Zwingende Auslagerungen wegen Kreuzverbindungen mit gtkwidget
+
+  TGtkNative = record // Mus wegen gtkwidget Knonflikt ausgelagert sein.
+  end;
+  PGtkNative = ^TGtkNative;
+
+  TGtkLayoutManager = record
+    parent_instance: TGObject
+  end;
+  PGtkLayoutManager = ^TGtkLayoutManager;
+
+  TGtkRoot = record
+  end;
+  PGtkRoot = ^TGtkRoot;
+
+  TGtkShortcut = record
+  end;
+  PGtkShortcut = ^TGtkShortcut;
+  TGtkShortcutFunc = function(widget: PGtkWidget; args: PGVariant; user_data: Tgpointer): Tgboolean; cdecl;
+
+  TGtkStyleContext = record
+    parent_object: TGObject;
+  end;
+  PGtkStyleContext = ^TGtkStyleContext;
+
+
+  // =======================
+
+
 
 function gtk_widget_get_type:TGType;cdecl;external gtklib;
 procedure gtk_widget_unparent(widget:PGtkWidget);cdecl;external gtklib;

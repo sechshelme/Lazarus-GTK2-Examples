@@ -104,48 +104,48 @@ struct _GtkTreeModelFilterClass
 /* base */
 
 GType         gtk_tree_model_filter_get_type                   (void) ;
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 GtkTreeModel *gtk_tree_model_filter_new                        (GtkTreeModel                 *child_model,
                                                                 GtkTreePath                  *root);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_set_visible_func           (GtkTreeModelFilter           *filter,
                                                                 GtkTreeModelFilterVisibleFunc func,
                                                                 gpointer                      data,
                                                                 GDestroyNotify                destroy);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_set_modify_func            (GtkTreeModelFilter           *filter,
                                                                 int                           n_columns,
                                                                 GType                        *types,
                                                                 GtkTreeModelFilterModifyFunc  func,
                                                                 gpointer                      data,
                                                                 GDestroyNotify                destroy);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_set_visible_column         (GtkTreeModelFilter           *filter,
                                                                 int                           column);
 
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 GtkTreeModel *gtk_tree_model_filter_get_model                  (GtkTreeModelFilter           *filter);
 
 /* conversion */
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 gboolean      gtk_tree_model_filter_convert_child_iter_to_iter (GtkTreeModelFilter           *filter,
                                                                 GtkTreeIter                  *filter_iter,
                                                                 GtkTreeIter                  *child_iter);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_convert_iter_to_child_iter (GtkTreeModelFilter           *filter,
                                                                 GtkTreeIter                  *child_iter,
                                                                 GtkTreeIter                  *filter_iter);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 GtkTreePath  *gtk_tree_model_filter_convert_child_path_to_path (GtkTreeModelFilter           *filter,
                                                                 GtkTreePath                  *child_path);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 GtkTreePath  *gtk_tree_model_filter_convert_path_to_child_path (GtkTreeModelFilter           *filter,
                                                                 GtkTreePath                  *filter_path);
 
 /* extras */
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_refilter                   (GtkTreeModelFilter           *filter);
-GDK_DEPRECATED_IN_4_10_FOR(GtkFilterListModel)
+_FOR(GtkFilterListModel)
 void          gtk_tree_model_filter_clear_cache                (GtkTreeModelFilter           *filter);
 
 

@@ -58,10 +58,10 @@ struct _GtkCellRendererTextClass
 
 
 GType            gtk_cell_renderer_text_get_type (void) ;
-GDK_DEPRECATED_IN_4_10
+
 GtkCellRenderer *gtk_cell_renderer_text_new      (void);
 
-GDK_DEPRECATED_IN_4_10
+
 void             gtk_cell_renderer_text_set_fixed_height_from_font (GtkCellRendererText *renderer,
 								    int                  number_of_rows);
 

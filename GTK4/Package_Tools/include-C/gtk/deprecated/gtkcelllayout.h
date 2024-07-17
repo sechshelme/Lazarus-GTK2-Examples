@@ -109,41 +109,41 @@ struct _GtkCellLayoutIface
 
 
 GType gtk_cell_layout_get_type           (void) ;
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_pack_start         (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           gboolean               expand);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_pack_end           (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           gboolean               expand);
-GDK_DEPRECATED_IN_4_10
+
 GList *gtk_cell_layout_get_cells         (GtkCellLayout         *cell_layout);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_clear              (GtkCellLayout         *cell_layout);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_set_attributes     (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           ...) ;
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_add_attribute      (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           const char            *attribute,
                                           int                    column);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_set_cell_data_func (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           GtkCellLayoutDataFunc  func,
                                           gpointer               func_data,
                                           GDestroyNotify         destroy);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_clear_attributes   (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell);
-GDK_DEPRECATED_IN_4_10
+
 void  gtk_cell_layout_reorder            (GtkCellLayout         *cell_layout,
                                           GtkCellRenderer       *cell,
                                           int                    position);
-GDK_DEPRECATED_IN_4_10
+
 GtkCellArea *gtk_cell_layout_get_area    (GtkCellLayout         *cell_layout);
 
 gboolean _gtk_cell_layout_buildable_custom_tag_start (GtkBuildable       *buildable,
