@@ -94,9 +94,10 @@ end;
 
 function GTK_BUILDER_SCOPE_GET_IFACE(obj: Pointer): PGtkBuilderScopeInterface;
 begin
-  Result := PGtkBuilderScopeInterface(PGTypeInstance(obj)^.g_class);
+  Result := g_type_interface_peek(obj, GTK_TYPE_BUILDER_SCOPE);
 end;
 
+// ====
 
 function GTK_TYPE_BUILDER_CSCOPE: TGType;
 begin

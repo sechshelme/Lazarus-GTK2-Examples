@@ -3,7 +3,7 @@ unit gtknative;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget;
+  common_GTK, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -29,7 +29,7 @@ function gtk_native_get_surface(self: PGtkNative): PGdkSurface; cdecl; external 
 function gtk_native_get_renderer(self: PGtkNative): PGskRenderer; cdecl; external gtklib;
 procedure gtk_native_get_surface_transform(self: PGtkNative; x: Pdouble; y: Pdouble); cdecl; external gtklib;
 
-// === Konventiert am: 18-7-24 19:43:30 ===
+// === Konventiert am: 16-7-24 16:58:06 ===
 
 function GTK_TYPE_NATIVE: TGType;
 function GTK_NATIVE(obj: Pointer): PGtkNative;
@@ -55,7 +55,7 @@ end;
 
 function GTK_NATIVE_GET_IFACE(obj: Pointer): PGtkNativeInterface;
 begin
-  Result := g_type_interface_peek(obj, GTK_TYPE_NATIVE);
+  Result := PGtkNativeInterface(PGTypeInstance(obj)^.g_class);
 end;
 
 

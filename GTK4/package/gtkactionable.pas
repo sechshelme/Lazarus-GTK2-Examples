@@ -62,10 +62,7 @@ end;
 
 function GTK_ACTIONABLE_GET_IFACE(inst: Pointer): PGtkActionableInterface;
 begin
-  Result := g_type_interface_peek(PGTypeInstance(inst)^.g_class, GTK_TYPE_ACTIONABLE);
-  //  Result := PGtkActionableInterface(PGTypeInstance(inst)^.g_class);
-
-  //  GTK_ACTIONABLE_GET_IFACE:=G_TYPE_INSTANCE_GET_INTERFACE(inst,GTK_TYPE_ACTIONABLE,GtkActionableInterface);
+  Result := g_type_interface_peek(inst, GTK_TYPE_ACTIONABLE);
 end;
 
 

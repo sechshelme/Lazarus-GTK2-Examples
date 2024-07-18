@@ -103,7 +103,15 @@ begin
   if G_DECLARE = is_G_DECLARE_INTERFACE then begin
     Result.Add('function ' + sa[7] + '_' + sa[9] + '_GET_IFACE(obj: Pointer): P' + sa[3] + 'Interface;');
     Result.Add('begin');
-    Result.Add('  Result := P' + sa[3] + 'Interface(PGTypeInstance(obj)^.g_class);');
+
+    Result.Add('  Result := g_type_interface_peek(obj, ' + sa[7] + '_TYPE_' + sa[9] + ');');
+
+    //    Result.Add('  Result := P' + sa[3] + 'Interface(PGTypeInstance(obj)^.g_class);'); // alt falsch
+    //    Result := g_type_interface_peek(obj, GTK_TYPE_BUILDABLE);
+
+
+//    Result := g_type_interface_peek(obj, GTK_TYPE_BUILDABLE);
+
     Result.Add('end;');
     Result.Add('');
   end;

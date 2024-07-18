@@ -50,7 +50,7 @@ end;
 
 function GTK_ACCESSIBLE_RANGE_GET_IFACE(obj: Pointer): PGtkAccessibleRangeInterface;
 begin
-  Result := PGtkAccessibleRangeInterface(PGTypeInstance(obj)^.g_class);
+  Result := g_type_interface_peek(obj, GTK_TYPE_ACCESSIBLE_RANGE);
 end;
 
 

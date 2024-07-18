@@ -122,7 +122,7 @@ end;
 
 function GTK_ACCESSIBLE_TEXT_GET_IFACE(obj: Pointer): PGtkAccessibleTextInterface;
 begin
-  Result := PGtkAccessibleTextInterface(PGTypeInstance(obj)^.g_class);
+  Result := g_type_interface_peek(obj, GTK_TYPE_ACCESSIBLE_TEXT);
 end;
 
 

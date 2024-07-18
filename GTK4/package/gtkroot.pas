@@ -3,7 +3,7 @@ unit gtkroot;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  glib2, common_GTK, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -52,7 +52,7 @@ end;
 
 function GTK_ROOT_GET_IFACE(obj: Pointer): PGtkRootInterface;
 begin
-  Result := PGtkRootInterface(PGTypeInstance(obj)^.g_class);
+  Result := g_type_interface_peek(obj, GTK_TYPE_ROOT);
 end;
 
 

@@ -91,7 +91,7 @@ procedure gtk_accessible_state_init_value(state: TGtkAccessibleState; Value: PGV
 procedure gtk_accessible_property_init_value(_property: TGtkAccessibleProperty; Value: PGValue); cdecl; external gtklib;
 procedure gtk_accessible_relation_init_value(relation: TGtkAccessibleRelation; Value: PGValue); cdecl; external gtklib;
 
-// function gtk_accessible_list_get_type: TGType; cdecl; external gtklib;   // Geht erst ab GRK 4.14.2
+ function gtk_accessible_list_get_type: TGType; cdecl; external gtklib;
 function gtk_accessible_list_get_objects(accessible_list: PGtkAccessibleList): PGList; cdecl; external gtklib;
 function gtk_accessible_list_new_from_list(list: PGList): PGtkAccessibleList; cdecl; external gtklib;
 function gtk_accessible_list_new_from_array(accessibles: PPGtkAccessible; n_accessibles: Tgsize): PGtkAccessibleList; cdecl; external gtklib;
@@ -109,13 +109,14 @@ implementation
 function GTK_TYPE_ACCESSIBLE: TGType;
 begin
   // gtk_accessible_get_type;    nicht findbar
-//  GTK_TYPE_ACCESSIBLE := gtk_accessible_get_type;
+  GTK_TYPE_ACCESSIBLE := gtk_accessible_get_type;
 end;
 
 
 { was #define dname def_expr }
 function GTK_ACCESSIBLE_LIST: longint; { return type might be wrong }
 begin
+  // GTK4.12
 //  GTK_ACCESSIBLE_LIST := gtk_accessible_list_get_type;
 end;
 

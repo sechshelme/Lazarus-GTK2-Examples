@@ -9,18 +9,7 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   g_print("Value: %f\n", val);
 
 
-  GTK_BUILDER_ERROR
-  GtkStyleProvider
-  GtkColorButton *gb;
-  GdkKeyMatch
-  GdkEvent
-  GDK_DECLARE_INTERNAL_TYPE
-  GtkStateFlags
-  GObject
-  GtkShortcutTrigger
-  GtkLayoutManagerClass
-  GtkLayoutManager
-  GtkExpression
+GTK_BUILDABLE_GET_IFACE
 }
 
 
