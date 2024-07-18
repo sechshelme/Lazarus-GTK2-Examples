@@ -42,8 +42,8 @@ uses
   gtkshortcutaction,          // io. -> glib2, common_GTK, gtkwidget;
   gtkshortcut,                // io. -> glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
 
-  //  gtkboolfilter,
-//  gtkexpression,
+  gtkexpression,              // io. -> glib2, common_GTK, gtkfilter;
+  gtkboolfilter,              // io. -> glib2, common_GTK, gtkfilter, gtkexpression;
 
 
   gtkfontdialog,               // GTK4.14

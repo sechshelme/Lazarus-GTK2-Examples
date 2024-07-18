@@ -3,7 +3,7 @@ unit gtkboolfilter;
 interface
 
 uses
-  glib2, common_GTK, gtkfilter;
+  glib2, common_GTK, gtkfilter, gtkexpression;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -49,8 +49,5 @@ function GTK_IS_BOOL_FILTER(obj: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(obj, GTK_TYPE_BOOL_FILTER);
 end;
-
-
-
 
 end.
