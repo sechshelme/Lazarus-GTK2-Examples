@@ -27,6 +27,10 @@ type
     end;
   PGtkWindowClass = ^TGtkWindowClass;
 
+  TGtkWindowGroupPrivate=record // _GtkWindowGroupPrivate
+      end;
+  PGtkWindowGroupPrivate=^TGtkWindowGroupPrivate;
+
 
 function gtk_window_get_type:TGType;cdecl;external gtklib;
 function gtk_window_new:PGtkWidget;cdecl;external gtklib;

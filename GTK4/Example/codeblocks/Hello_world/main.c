@@ -9,7 +9,7 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   g_print("Value: %f\n", val);
 
 
-GTK_BUILDABLE_GET_IFACE
+
 }
 
 

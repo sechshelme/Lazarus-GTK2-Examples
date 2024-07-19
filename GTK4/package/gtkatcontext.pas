@@ -1,6 +1,6 @@
 unit gtkatcontext;
 
-// Init unit gtkaccessible;  ausgelagert
+// unit gtkaccessible;  ausgelagert
 
 interface
 

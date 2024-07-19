@@ -12,8 +12,6 @@ uses
 
   {G_DECLARE_DERIVABLE_TYPE (GtkLayoutManager, gtk_layout_manager, GTK, LAYOUT_MANAGER, GObject) }
 type
-  PGtkLayoutManagerClass = ^TGtkLayoutManagerClass;
-
   TGtkLayoutManagerClass = record
     parent_class: TGObjectClass;
     get_request_mode: function(manager: PGtkLayoutManager; widget: PGtkWidget): TGtkSizeRequestMode; cdecl;
@@ -26,6 +24,7 @@ type
     unroot: procedure(manager: PGtkLayoutManager); cdecl;
     _padding: array[0..15] of Tgpointer;
   end;
+  PGtkLayoutManagerClass = ^TGtkLayoutManagerClass;
 
 
   // === Muss wegen gtkwidget ausgelagert sein

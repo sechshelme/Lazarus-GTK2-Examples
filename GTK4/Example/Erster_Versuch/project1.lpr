@@ -14,6 +14,9 @@ uses
   gtkbuilder,                 // io. -> glib2, common_GTK;
   gtkbuilderscope,            // io. -> glib2, common_GTK, gtkbuilder;
   gtkbookmarklist,            // io. -> glib2, common_GTK;
+  gtkactionable,              // io. -> glib2, common_GTK;
+  gtkbuildable,               // io. -> glib2, common_GTK, gtkbuilder;
+
 
   gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
   gtkstyleprovider,           // io. -> common_GTK, gtkenums;
@@ -36,30 +39,32 @@ uses
   gtklayoutchild,             // io. -> glib2, common_GTK, gtkwidget;
   gtklayoutmanager,           // io. -> glib2, common_GTK, gtkenums, gtklayoutchild, gtkwidget;
   gtkbinlayout,               // io. -> common_GTK, gtkwidget, gtklayoutmanager;
+  gtkgrid,                    // io. -> common_GTK, gtkenums, gtkwidget;
+  gtkgridlayout,              // io. -> common_GTK, gtkenums, gtkwidget, gtklayoutmanager, gtklayoutchild;
 
   gtkshortcutsshortcut,       // io. -> common_GTK;
   gtkshortcuttrigger,         // io. -> glib2, common_GTK;
   gtkshortcutaction,          // io. -> glib2, common_GTK, gtkwidget;
   gtkshortcut,                // io. -> glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
 
-  gtkexpression,              // io. -> glib2, common_GTK, gtkfilter;
-  gtkboolfilter,              // io. -> glib2, common_GTK, gtkfilter, gtkexpression;
+  gtkexpression,              // io. -> glib2, common_GTK;
+  gtkboolfilter,              // io. -> common_GTK, gtkfilter, gtkexpression;
 
-  gtkbuildable,
+
 
 
   gtkfontdialog,               // GTK4.14
 
-  gtkapplication,             // -> glib2, common_GTK, gtkwindow               ( PGtkApplication ausgelagert )
-  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow           ( PGtkApplication ausgelagert )
-  gtkwindow,                  // -> glib2, common_GTK, gtkwidget               ( PGtkApplication ausgelagert )
+  gtkapplication,             // -> glib2, common_GTK, gtkwidget, gtkwindow
+  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow
+  gtkwindow,                  // -> glib2, common_GTK, gtkwidget
+  gtkwindowgroup,             // io. -> glib2, common_GTK, gtkwindow;
 
   gtkcolordialog,             // geht nur mit 4.14      // Muss überarbeitet werden
   gtkcolordialogbutton,         // GTK4.14
-  gtkactionable,              // -> glib2, common_GTK;
   gtkaccessiblerange,         //  geht nur mit 4.14      Muss überarbeitet werden
   gtkaccessibletext,          //  geht nur mit 4.14      Muss überarbeitet werden
-  gtkaccessible,              //   Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
+  gtkaccessible,              //  GTK 4.12  Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             //   geht nur mit 4.14     Muss überarbeitet werden
 
@@ -207,6 +212,26 @@ const
     gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
   end;
 
+  function Create_GridBox: PGtkWidget;
+  var
+    btn: PGtkWidget;
+  begin
+    Result := gtk_grid_new;
+
+    btn := CreateButton('Grid 1');
+    gtk_grid_attach(GTK_GRID(Result), btn, 0, 0, 1, 1);
+    btn := CreateButton('Grid 2');
+    gtk_grid_attach(GTK_GRID(Result), btn, 0, 1, 1, 1);
+    btn := CreateButton('Grid 3');
+    gtk_grid_attach(GTK_GRID(Result), btn, 1, 0, 1, 1);
+    btn := CreateButton('Grid 4');
+    gtk_grid_attach(GTK_GRID(Result), btn, 1, 1, 1, 1);
+    btn := CreateButton('Grid 5');
+    gtk_grid_attach(GTK_GRID(Result), btn, 0, 2, 2, 1);
+    btn := CreateButton('Grid 6');
+    gtk_grid_attach(GTK_GRID(Result), btn, 2, 0, 1, 3);
+  end;
+
   function Create_Window_Controls: PGtkWidget;
   begin
     Result := gtk_window_controls_new(GTK_PACK_START);
@@ -217,7 +242,7 @@ const
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-    aspectFram, winCtrl, centerBox: PGTKWidget;
+    aspectFram, winCtrl, centerBox, gridBox: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -255,6 +280,9 @@ const
 
     centerBox := Create_CenterBox;
     gtk_box_append(GTK_BOX(box), centerBox);
+
+    gridBox := Create_GridBox;
+    gtk_box_append(GTK_BOX(box), gridBox);
 
 
     gtk_window_present(GTK_WINDOW(window));

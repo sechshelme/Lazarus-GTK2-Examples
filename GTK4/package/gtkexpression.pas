@@ -3,7 +3,7 @@ unit gtkexpression;
 interface
 
 uses
-  glib2, common_GTK, gtkfilter;
+  glib2, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

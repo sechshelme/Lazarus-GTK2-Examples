@@ -34,13 +34,13 @@ procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_st
 procedure gtk_actionable_set_action_target(actionable: PGtkActionable; format_string: PChar); cdecl; external gtklib;
 procedure gtk_actionable_set_detailed_action_name(actionable: PGtkActionable; detailed_action_name: PChar); cdecl; external gtklib;
 
-function GTK_ACTIONABLE_GET_IFACE(inst: Pointer): PGtkActionableInterface;
 
 // === Konventiert am: 11-7-24 22:32:43 ===
 
 function GTK_TYPE_ACTIONABLE: TGType;
 function GTK_ACTIONABLE(inst: Pointer): PGtkActionable;
 function GTK_IS_ACTIONABLE(inst: Pointer): Tgboolean;
+function GTK_ACTIONABLE_GET_IFACE(inst: Pointer): PGtkActionableInterface;
 
 implementation
 
@@ -58,7 +58,6 @@ function GTK_IS_ACTIONABLE(inst: Pointer): Tgboolean;
 begin
   Result := g_type_check_instance_is_a(inst, GTK_TYPE_ACTIONABLE);
 end;
-
 
 function GTK_ACTIONABLE_GET_IFACE(inst: Pointer): PGtkActionableInterface;
 begin

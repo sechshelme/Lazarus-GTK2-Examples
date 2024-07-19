@@ -26,7 +26,7 @@
 #define GTK_TYPE_GRID_LAYOUT_CHILD (gtk_grid_layout_child_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkGridLayout, gtk_grid_layout, GTK, GRID_LAYOUT, GtkLayoutManager)
+//G_DECLARE_FINAL_TYPE (GtkGridLayout, gtk_grid_layout, GTK, GRID_LAYOUT, GtkLayoutManager)
 
 
 GtkLayoutManager *      gtk_grid_layout_new                             (void);
@@ -65,7 +65,7 @@ void                    gtk_grid_layout_set_baseline_row                (GtkGrid
 int                     gtk_grid_layout_get_baseline_row                (GtkGridLayout       *grid);
 
 
-G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOUT_CHILD, GtkLayoutChild)
+//G_DECLARE_FINAL_TYPE (GtkGridLayoutChild, gtk_grid_layout_child, GTK, GRID_LAYOUT_CHILD, GtkLayoutChild)
 
 
 void                    gtk_grid_layout_child_set_row                   (GtkGridLayoutChild  *child,

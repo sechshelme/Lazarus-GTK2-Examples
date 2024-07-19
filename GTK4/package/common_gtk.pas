@@ -174,19 +174,6 @@ type
 
 
 
-  // === Zwingend ausgelagertes
-  // gtkapplicationwindow.h /
-  TGtkApplication = record
-    parent_instance: TGApplication;
-  end;
-  PGtkApplication = ^TGtkApplication;
-
-  // ????????'
-  // function gtk_ordering_from_cmpfunc(cmpfunc_result:longint):TGtkOrdering;cdecl;external;
-
-
-
-  // ==========
 
   TGDateTime = Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
   PGDateTime = ^TGDateTime;

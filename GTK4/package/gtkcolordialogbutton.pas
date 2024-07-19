@@ -3,7 +3,7 @@ unit gtkcolordialogbutton;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkcolordialog;
+  common_GTK, gtkwidget, gtkcolordialog;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

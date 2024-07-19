@@ -74,7 +74,13 @@ type
 
   // ===  Zwingende Auslagerungen wegen Kreuzverbindungen mit gtkwidget
 
-  TGtkNative = record // Mus wegen gtkwidget Knonflikt ausgelagert sein.
+  TGtkApplication = record
+    parent_instance: TGApplication;
+  end;
+  PGtkApplication = ^TGtkApplication;
+
+
+  TGtkNative = record
   end;
   PGtkNative = ^TGtkNative;
 
