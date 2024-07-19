@@ -146,10 +146,10 @@ void                  gtk_flow_box_set_activate_on_single_click (GtkFlowBox     
 
 gboolean              gtk_flow_box_get_activate_on_single_click (GtkFlowBox        *box);
 
-GDK_AVAILABLE_IN_4_6
+
 void                  gtk_flow_box_prepend                      (GtkFlowBox        *self,
                                                                  GtkWidget         *child);
-GDK_AVAILABLE_IN_4_6
+
 void                  gtk_flow_box_append                       (GtkFlowBox        *self,
                                                                  GtkWidget         *child);
 

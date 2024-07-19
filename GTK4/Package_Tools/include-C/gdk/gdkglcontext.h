@@ -74,12 +74,12 @@ void                    gdk_gl_context_set_forward_compatible   (GdkGLContext  *
                                                                  gboolean       compatible);
 
 gboolean                gdk_gl_context_get_forward_compatible   (GdkGLContext  *context);
-GDK_AVAILABLE_IN_4_6
+
 void                    gdk_gl_context_set_allowed_apis         (GdkGLContext  *self,
                                                                  GdkGLAPI       apis);
-GDK_AVAILABLE_IN_4_6
+
 GdkGLAPI                gdk_gl_context_get_allowed_apis         (GdkGLContext  *self);
-GDK_AVAILABLE_IN_4_6
+
 GdkGLAPI                gdk_gl_context_get_api                  (GdkGLContext  *self);
 GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_context_set_allowed_apis)
 void                    gdk_gl_context_set_use_es               (GdkGLContext  *context,

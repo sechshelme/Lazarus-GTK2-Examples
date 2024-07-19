@@ -3,7 +3,7 @@ unit gtkstyleprovider;
 interface
 
 uses
-  common_GTK, gtkenums;
+  common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

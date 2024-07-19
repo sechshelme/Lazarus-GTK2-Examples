@@ -39,6 +39,8 @@ type
   Tgssize = gssize;
   Pgssize = ^Tgssize;
 
+  Tgunichar=gunichar;
+
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage  =^PPangoLanguage;
 
@@ -78,6 +80,11 @@ type
 
   TGdkKeyMatch=LongInt;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
   PGdkKeyMatch=^TGdkKeyMatch;
+
+  TGdkContentProvider=record   // /usr/include/gtk-4.0/gdk/gdkcontentprovider.h
+    parent:TGObject;
+  end;
+  PGdkContentProvider=^TGdkContentProvider;
 
 
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h

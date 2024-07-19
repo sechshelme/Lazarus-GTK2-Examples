@@ -28,6 +28,7 @@ type
       priv : PGtkWidgetPrivate;
     end;
   PGtkWidget = ^TGtkWidget;
+  PPGtkWidget = ^PGtkWidget;
 
   TGtkTickCallback = function (widget:PGtkWidget; frame_clock:PGdkFrameClock; user_data:Tgpointer):Tgboolean;cdecl;
 

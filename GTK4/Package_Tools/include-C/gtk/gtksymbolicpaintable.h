@@ -29,7 +29,7 @@
 
 #define GTK_TYPE_SYMBOLIC_PAINTABLE       (gtk_symbolic_paintable_get_type ())
 
-GDK_AVAILABLE_IN_4_6
+
 G_DECLARE_INTERFACE (GtkSymbolicPaintable, gtk_symbolic_paintable, GTK, SYMBOLIC_PAINTABLE, GdkPaintable)
 
 /**
@@ -56,7 +56,7 @@ struct _GtkSymbolicPaintableInterface
                                                                          gsize                   n_colors);
 };
 
-GDK_AVAILABLE_IN_4_6
+
 void                    gtk_symbolic_paintable_snapshot_symbolic        (GtkSymbolicPaintable   *paintable,
                                                                          GdkSnapshot            *snapshot,
                                                                          double                  width,

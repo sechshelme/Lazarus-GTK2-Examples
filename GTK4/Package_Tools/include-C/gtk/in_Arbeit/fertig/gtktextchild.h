@@ -78,7 +78,7 @@ GType gtk_text_child_anchor_get_type (void) ;
 
 GtkTextChildAnchor *gtk_text_child_anchor_new (void);
 
-GDK_AVAILABLE_IN_4_6
+
 GtkTextChildAnchor *gtk_text_child_anchor_new_with_replacement (const char *character);
 
 

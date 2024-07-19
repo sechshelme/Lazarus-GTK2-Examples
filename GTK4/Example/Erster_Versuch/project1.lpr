@@ -16,10 +16,10 @@ uses
   gtkbookmarklist,            // io. -> glib2, common_GTK;
   gtkactionable,              // io. -> glib2, common_GTK;
   gtkbuildable,               // io. -> glib2, common_GTK, gtkbuilder;
+  gtkstyleprovider,           // io. -> common_GTK
 
 
   gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
-  gtkstyleprovider,           // io. -> common_GTK, gtkenums;
   gtknative,                  // io. -> common_GTK, gtkwidget;  ( TGtkNative ausgelagert )
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
@@ -51,6 +51,12 @@ uses
   gtkboolfilter,              // io. -> common_GTK, gtkfilter, gtkexpression;
 
 
+  gtktexttag,                 // io. -> glib2, common_GTK;
+  gtktexttagtable,            // io. -> common_GTK, gtktexttag;
+  gtktextchild,               // io. -> glib2, common_GTK, gtkwidget;
+  gtktextiter,                // io. -> glib2, pango, common_GTK, gtktexttag, gtktextchild;
+  gtktextmark,                // io. -> glib2, common_GTK, gtktextiter;
+  gtktextbuffer,              // io. -> glib2, common_GTK, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
 
 
   gtkfontdialog,               // GTK4.14

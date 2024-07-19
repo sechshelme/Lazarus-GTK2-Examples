@@ -58,7 +58,7 @@ void                    gsk_transform_to_2d                     (GskTransform   
                                                                  float                          *out_yy,
                                                                  float                          *out_dx,
                                                                  float                          *out_dy);
-GDK_AVAILABLE_IN_4_6
+
 void                    gsk_transform_to_2d_components          (GskTransform                   *self,
                                                                  float                          *out_skew_x,
                                                                  float                          *out_skew_y,
@@ -100,7 +100,7 @@ GskTransform *          gsk_transform_translate                 (GskTransform   
 
 GskTransform *          gsk_transform_translate_3d              (GskTransform                   *next,
                                                                  const graphene_point3d_t       *point) ;
-GDK_AVAILABLE_IN_4_6
+
 GskTransform *          gsk_transform_skew                      (GskTransform                   *next,
                                                                  float                           skew_x,
                                                                  float                           skew_y) ;

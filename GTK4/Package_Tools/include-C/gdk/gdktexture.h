@@ -36,7 +36,7 @@ typedef struct _GdkTextureClass        GdkTextureClass;
 
 #define GDK_TEXTURE_ERROR       (gdk_texture_error_quark ())
 
-GDK_AVAILABLE_IN_4_6
+
 GQuark gdk_texture_error_quark (void);
 
 /**
@@ -69,10 +69,10 @@ GdkTexture *            gdk_texture_new_from_resource          (const char      
 
 GdkTexture *            gdk_texture_new_from_file              (GFile           *file,
                                                                 GError         **error);
-GDK_AVAILABLE_IN_4_6
+
 GdkTexture *            gdk_texture_new_from_filename          (const char      *path,
                                                                 GError         **error);
-GDK_AVAILABLE_IN_4_6
+
 GdkTexture *            gdk_texture_new_from_bytes             (GBytes          *bytes,
                                                                 GError         **error);
 
@@ -90,12 +90,12 @@ void                    gdk_texture_download                   (GdkTexture      
 
 gboolean                gdk_texture_save_to_png                (GdkTexture      *texture,
                                                                 const char      *filename);
-GDK_AVAILABLE_IN_4_6
+
 GBytes *                gdk_texture_save_to_png_bytes          (GdkTexture      *texture);
-GDK_AVAILABLE_IN_4_6
+
 gboolean                gdk_texture_save_to_tiff               (GdkTexture      *texture,
                                                                 const char      *filename);
-GDK_AVAILABLE_IN_4_6
+
 GBytes *                gdk_texture_save_to_tiff_bytes         (GdkTexture      *texture);
 
 

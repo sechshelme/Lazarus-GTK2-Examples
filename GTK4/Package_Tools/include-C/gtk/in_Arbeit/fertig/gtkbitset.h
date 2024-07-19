@@ -148,7 +148,7 @@ struct _GtkBitsetIter
   gpointer private_data[10];
 };
 
-//GDK_AVAILABLE_IN_4_6
+//
 GType                   gtk_bitset_iter_get_type                (void) ;
 
 

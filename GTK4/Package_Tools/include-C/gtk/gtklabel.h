@@ -121,10 +121,10 @@ void     gtk_label_set_wrap_mode                  (GtkLabel         *self,
                                                    PangoWrapMode     wrap_mode);
 
 PangoWrapMode gtk_label_get_wrap_mode             (GtkLabel         *self);
-GDK_AVAILABLE_IN_4_6
+
 void          gtk_label_set_natural_wrap_mode     (GtkLabel         *self,
                                                    GtkNaturalWrapMode wrap_mode);
-GDK_AVAILABLE_IN_4_6
+
 GtkNaturalWrapMode gtk_label_get_natural_wrap_mode(GtkLabel         *self);
 
 void     gtk_label_set_selectable                 (GtkLabel         *self,
