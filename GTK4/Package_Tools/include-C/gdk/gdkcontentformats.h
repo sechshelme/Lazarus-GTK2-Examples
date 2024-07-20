@@ -121,9 +121,9 @@ typedef struct _GdkFileList GdkFileList;
 
 
 GSList *        gdk_file_list_get_files (GdkFileList *file_list);
-GDK_AVAILABLE_IN_4_8
+
 GdkFileList *   gdk_file_list_new_from_list (GSList *files);
-GDK_AVAILABLE_IN_4_8
+
 GdkFileList *   gdk_file_list_new_from_array (GFile **files,
                                               gsize   n_files);
 

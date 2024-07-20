@@ -66,7 +66,7 @@ GdkPaintable *  gtk_snapshot_to_paintable               (GtkSnapshot            
 
 void            gtk_snapshot_push_debug                 (GtkSnapshot            *snapshot,
                                                          const char             *message,
-                                                         ...) G_GNUC_PRINTF (2, 3);
+                                                         ...);
 
 void            gtk_snapshot_push_opacity               (GtkSnapshot            *snapshot,
                                                          double                  opacity);

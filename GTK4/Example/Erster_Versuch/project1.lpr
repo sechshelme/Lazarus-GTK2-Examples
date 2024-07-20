@@ -22,6 +22,8 @@ uses
   gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
   gtknative,                  // io. -> common_GTK, gtkwidget;  ( TGtkNative ausgelagert )
   gtkbutton,                  // io. -> common_GTK, gtkwidget;
+  gtklabel,                   // io. -> glib2, pango, common_GTK, gtkenums, gtkwidget;
+
   gtkactionbar,               // io. -> common_GTK, gtkwidget;
   gtkcalendar,                // io. -> common_GTK, gtkwidget;
   gtkaspectframe,             // io. -> common_GTK, gtkwidget;
@@ -58,6 +60,10 @@ uses
   gtktextmark,                // io. -> glib2, common_GTK, gtktextiter;
   gtktextbuffer,              // io. -> glib2, common_GTK, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
   gtktextview,                // io. -> pango, common_GTK, gtkenums, gtkwidget, gtktextiter, gtktextmark, gtktextchild;
+
+  gtklistbox,                 // io. -> glib2, common_GTK, gtkenums, gtkwidget, gtkadjustment;
+
+//  gtksnapshot,  // gtk4.14
 
 //  gtktypebuiltins, // gtk4.14
 
@@ -103,11 +109,16 @@ const
     WriteLn(border^.left, 'x', border^.top, 'x', border^.right, 'x', border^.bottom);
 
     Result := gtk_button_new_with_label(Caption);
-    gtk_widget_set_margin_start(Result, 10);
-    gtk_widget_set_margin_top(Result, 10);
-    gtk_widget_set_margin_bottom(Result, 10);
-    gtk_widget_set_margin_end(Result, 10);
+    gtk_widget_set_margin_start(Result, 5);
+    gtk_widget_set_margin_top(Result, 5);
+    gtk_widget_set_margin_bottom(Result, 5);
+    gtk_widget_set_margin_end(Result, 5);
   end;
+
+function CreateLabel(Caption: Pgchar): PGtkWidget;
+begin
+  Result := gtk_label_new(Caption);
+end;
 
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
   var
@@ -269,17 +280,31 @@ end;
   end;
 
 
-  function Create_Window_Controls: PGtkWidget;
-  begin
-    Result := gtk_window_controls_new(GTK_PACK_START);
-  end;
+function Create_Window_Controls: PGtkWidget;
+begin
+  Result := gtk_window_controls_new(GTK_PACK_START);
+end;
+
+function Create_ListBox: PGtkWidget;
+begin
+  Result := gtk_list_box_new;
+
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo1'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo2'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo3'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
+//  row:=gtk_list_box_row_new;
+end;
 
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-    aspectFram, winCtrl, centerBox, gridBox: PGTKWidget;
+    aspectFram, winCtrl, centerBox, gridBox, listbox: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -320,6 +345,9 @@ end;
 
     gridBox := Create_GridBox;
     gtk_box_append(GTK_BOX(box), gridBox);
+
+    listbox := Create_ListBox;
+    gtk_box_append(GTK_BOX(box), listbox);
 
 
     gtk_window_present(GTK_WINDOW(window));

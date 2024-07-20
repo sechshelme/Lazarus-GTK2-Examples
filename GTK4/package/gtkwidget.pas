@@ -39,6 +39,46 @@ type
   TGInitiallyUnownedClass = Pointer;   // /usr/include/glib-2.0/gobject/gobject.h
   PGInitiallyUnownedClass = ^TGInitiallyUnownedClass;
 
+    // ===  Zwingende Auslagerungen wegen Kreuzverbindungen mit gtkwidget
+
+  TGtkApplication = record
+    parent_instance: TGApplication;
+  end;
+  PGtkApplication = ^TGtkApplication;
+
+
+  TGtkNative = record
+  end;
+  PGtkNative = ^TGtkNative;
+
+  TGtkLayoutManager = record
+    parent_instance: TGObject
+  end;
+  PGtkLayoutManager = ^TGtkLayoutManager;
+
+  TGtkRoot = record
+  end;
+  PGtkRoot = ^TGtkRoot;
+
+  TGtkShortcut = record
+  end;
+  PGtkShortcut = ^TGtkShortcut;
+  TGtkShortcutFunc = function(widget: PGtkWidget; args: PGVariant; user_data: Tgpointer): Tgboolean; cdecl;
+
+  TGtkStyleContext = record
+    parent_object: TGObject;
+  end;
+  PGtkStyleContext = ^TGtkStyleContext;
+
+  TGtkSnapshot = TGdkSnapshot;
+  PGtkSnapshot = ^TGtkSnapshot;
+
+
+
+  // =======================
+
+
+
 
   TGtkWidgetClass = record
       parent_class : TGInitiallyUnownedClass;
@@ -72,40 +112,6 @@ type
       padding : array[0..7] of Tgpointer;
     end;
   PGtkWidgetClass = ^TGtkWidgetClass;
-
-  // ===  Zwingende Auslagerungen wegen Kreuzverbindungen mit gtkwidget
-
-  TGtkApplication = record
-    parent_instance: TGApplication;
-  end;
-  PGtkApplication = ^TGtkApplication;
-
-
-  TGtkNative = record
-  end;
-  PGtkNative = ^TGtkNative;
-
-  TGtkLayoutManager = record
-    parent_instance: TGObject
-  end;
-  PGtkLayoutManager = ^TGtkLayoutManager;
-
-  TGtkRoot = record
-  end;
-  PGtkRoot = ^TGtkRoot;
-
-  TGtkShortcut = record
-  end;
-  PGtkShortcut = ^TGtkShortcut;
-  TGtkShortcutFunc = function(widget: PGtkWidget; args: PGVariant; user_data: Tgpointer): Tgboolean; cdecl;
-
-  TGtkStyleContext = record
-    parent_object: TGObject;
-  end;
-  PGtkStyleContext = ^TGtkStyleContext;
-
-
-  // =======================
 
 
 

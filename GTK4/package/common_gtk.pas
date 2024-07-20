@@ -54,8 +54,6 @@ type
   TGtkCssStyleChange = Pointer; // _GtkCssStyleChange
   PGtkCssStyleChange = ^TGtkCssStyleChange;
 
-  TGtkSnapshot = Pointer; //  typedef GdkSnapshot                    GtkSnapshot;
-  PGtkSnapshot = ^TGtkSnapshot;
 
   TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
   PGskTransform = ^TGskTransform;
@@ -72,6 +70,10 @@ type
   end;
   PGskRenderer = ^TGskRenderer;
 
+  TGskRenderNode=record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
+    end;
+   PGskRenderNode=^TGskRenderNode;
+
 
 
   TGdkEvent=record // _GdkEvent      /usr/include/gtk-4.0/gdk/gdkevents.h
@@ -86,6 +88,10 @@ type
   end;
   PGdkContentProvider=^TGdkContentProvider;
 
+  TGdkSnapshot=record // _GdkSnapshot     gdktypes.h
+    end;
+    PGdkSnapshot=^TGdkSnapshot;
+
   const
     G_PRIORITY_HIGH_IDLE    =    100;         // /usr/include/glib-2.0/glib/gmain.h
   GDK_PRIORITY_REDRAW    = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
@@ -98,6 +104,20 @@ type
   Pgraphene_rect_t = ^Tgraphene_rect_t;
   Tgraphene_point_t = Pointer;
   Pgraphene_point_t = ^Tgraphene_point_t;
+  Tgraphene_vec4_t=Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
+  Pgraphene_vec4_t=^Tgraphene_vec4_t;
+
+  Tgraphene_size_t=record
+    width,height:cfloat;
+  end;
+  Pgraphene_size_t=^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
+
+  TGskRoundedRect=record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
+    bounds: Tgraphene_rect_t;
+    corner:array[0..3]of Pgraphene_size_t  ;
+  end;
+  PGskRoundedRect=^TGskRoundedRect;
+
 
   TGtkSettings = Pointer;  // _GtkSettings
   PGtkSettings = ^TGtkSettings;
@@ -127,6 +147,7 @@ type
 
   TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
   PGdkPaintable = ^TGdkPaintable;
+
 
 
 

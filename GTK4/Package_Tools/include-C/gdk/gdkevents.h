@@ -428,7 +428,7 @@ GdkScrollDirection      gdk_scroll_event_get_direction  (GdkEvent *event);
 void                    gdk_scroll_event_get_deltas     (GdkEvent *event,
                                                          double   *delta_x,
                                                          double   *delta_y);
-GDK_AVAILABLE_IN_4_8
+
 GdkScrollUnit           gdk_scroll_event_get_unit       (GdkEvent *event);
 
 

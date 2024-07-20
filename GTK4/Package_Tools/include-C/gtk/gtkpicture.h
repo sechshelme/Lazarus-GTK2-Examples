@@ -79,10 +79,10 @@ void            gtk_picture_set_can_shrink              (GtkPicture             
 
 gboolean        gtk_picture_get_can_shrink              (GtkPicture             *self);
 
-GDK_AVAILABLE_IN_4_8
+
 void            gtk_picture_set_content_fit             (GtkPicture             *self,
                                                          GtkContentFit           content_fit);
-GDK_AVAILABLE_IN_4_8
+
 GtkContentFit   gtk_picture_get_content_fit             (GtkPicture             *self);
 
 

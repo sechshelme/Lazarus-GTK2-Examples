@@ -48,65 +48,65 @@ typedef enum {
   GTK_INSCRIPTION_OVERFLOW_ELLIPSIZE_END
 } GtkInscriptionOverflow;
 
-GDK_AVAILABLE_IN_4_8
+
 G_DECLARE_FINAL_TYPE (GtkInscription, gtk_inscription, GTK, INSCRIPTION, GtkWidget)
 
-GDK_AVAILABLE_IN_4_8
+
 GtkWidget *             gtk_inscription_new                     (const char             *text);
 
-GDK_AVAILABLE_IN_4_8
+
 const char *            gtk_inscription_get_text                (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_text                (GtkInscription         *self,
                                                                  const char             *text);
-GDK_AVAILABLE_IN_4_8
+
 PangoAttrList *         gtk_inscription_get_attributes          (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_attributes          (GtkInscription         *self,
                                                                  PangoAttrList          *attrs);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_markup              (GtkInscription         *self,
                                                                  const char             *markup);
-GDK_AVAILABLE_IN_4_8
+
 GtkInscriptionOverflow  gtk_inscription_get_text_overflow       (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_text_overflow       (GtkInscription         *self,
                                                                  GtkInscriptionOverflow  overflow);
-GDK_AVAILABLE_IN_4_8
+
 PangoWrapMode           gtk_inscription_get_wrap_mode           (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_wrap_mode           (GtkInscription         *self,
                                                                  PangoWrapMode           wrap_mode);
 
-GDK_AVAILABLE_IN_4_8
+
 guint                   gtk_inscription_get_min_chars           (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_min_chars           (GtkInscription         *self,
                                                                  guint                   min_chars);
-GDK_AVAILABLE_IN_4_8
+
 guint                   gtk_inscription_get_nat_chars           (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_nat_chars           (GtkInscription         *self,
                                                                  guint                   nat_chars);
-GDK_AVAILABLE_IN_4_8
+
 guint                   gtk_inscription_get_min_lines           (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_min_lines           (GtkInscription         *self,
                                                                  guint                   min_lines);
-GDK_AVAILABLE_IN_4_8
+
 guint                   gtk_inscription_get_nat_lines           (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_nat_lines           (GtkInscription         *self,
                                                                  guint                   nat_lines);
 
-GDK_AVAILABLE_IN_4_8
+
 float                   gtk_inscription_get_xalign              (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_xalign              (GtkInscription         *self,
                                                                  float                   xalign);
-GDK_AVAILABLE_IN_4_8
+
 float                   gtk_inscription_get_yalign              (GtkInscription         *self);
-GDK_AVAILABLE_IN_4_8
+
 void                    gtk_inscription_set_yalign              (GtkInscription         *self,
                                                                  float                   yalign);
 

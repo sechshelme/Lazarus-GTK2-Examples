@@ -70,7 +70,7 @@ void                gtk_event_controller_scroll_set_flags (GtkEventControllerScr
 GtkEventControllerScrollFlags
                     gtk_event_controller_scroll_get_flags (GtkEventControllerScroll      *scroll);
 
-GDK_AVAILABLE_IN_4_8
+
 GdkScrollUnit       gtk_event_controller_scroll_get_unit (GtkEventControllerScroll       *scroll);
 
 

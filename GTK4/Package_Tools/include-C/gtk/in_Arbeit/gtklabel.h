@@ -176,11 +176,11 @@ void         gtk_label_set_extra_menu (GtkLabel   *self,
 
 GMenuModel * gtk_label_get_extra_menu (GtkLabel   *self);
 
-GDK_AVAILABLE_IN_4_8
+
 void             gtk_label_set_tabs (GtkLabel      *self,
                                      PangoTabArray *tabs);
 
-GDK_AVAILABLE_IN_4_8
+
 PangoTabArray * gtk_label_get_tabs  (GtkLabel      *self);
 
 
