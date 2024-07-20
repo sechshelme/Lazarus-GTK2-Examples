@@ -3,7 +3,7 @@ unit gtktextiter;
 interface
 
 uses
-  glib2, pango, common_GTK, gtktexttag, gtktextchild;
+ ctypes, glib2, pango, common_GTK, gtktexttag, gtktextchild;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -35,17 +35,17 @@ type
   TGtkTextIter = record
     dummy1: Tgpointer;
     dummy2: Tgpointer;
-    dummy3: longint;
-    dummy4: longint;
-    dummy5: longint;
-    dummy6: longint;
-    dummy7: longint;
-    dummy8: longint;
+    dummy3: cint;
+    dummy4: cint;
+    dummy5: cint;
+    dummy6: cint;
+    dummy7: cint;
+    dummy8: cint;
     dummy9: Tgpointer;
     dummy10: Tgpointer;
-    dummy11: longint;
-    dummy12: longint;
-    dummy13: longint;
+    dummy11: cint;
+    dummy12: cint;
+    dummy13: cint;
     dummy14: Tgpointer;
   end;
   PGtkTextIter = ^TGtkTextIter;

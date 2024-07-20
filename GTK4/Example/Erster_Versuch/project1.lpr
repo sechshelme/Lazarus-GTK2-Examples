@@ -57,6 +57,9 @@ uses
   gtktextiter,                // io. -> glib2, pango, common_GTK, gtktexttag, gtktextchild;
   gtktextmark,                // io. -> glib2, common_GTK, gtktextiter;
   gtktextbuffer,              // io. -> glib2, common_GTK, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
+  gtktextview,                // io. -> pango, common_GTK, gtkenums, gtkwidget, gtktextiter, gtktextmark, gtktextchild;
+
+//  gtktypebuiltins, // gtk4.14
 
 
   gtkfontdialog,               // GTK4.14
@@ -70,7 +73,7 @@ uses
   gtkcolordialogbutton,         // GTK4.14
   gtkaccessiblerange,         //  geht nur mit 4.14      Muss überarbeitet werden
   gtkaccessibletext,          //  geht nur mit 4.14      Muss überarbeitet werden
-  gtkaccessible,              //  GTK 4.12  Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
+  gtkaccessible,              //  GTK 4.14  Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             //   geht nur mit 4.14     Muss überarbeitet werden
 
@@ -218,9 +221,30 @@ const
     gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
   end;
 
+procedure backspace(self: PGtkTextView; user_data: gpointer);
+var
+  buf: PGtkTextBuffer;
+  pc: PChar;
+  start, ende: TGtkTextIter;
+begin
+  g_print('backspace'#10);
+  buf := gtk_text_view_get_buffer(GTK_TEXT_VIEW(self));
+  gtk_text_buffer_get_bounds(buf,@start, @ende);
+
+  pc := gtk_text_buffer_get_text(buf, @start, @ende, True);
+  WriteLn(pc);
+  g_free(pc);
+end;
+
+procedure move_cursor(self: PGtkTextView; user_data: gpointer);
+begin
+  g_print('move'#10);
+end;
+
   function Create_GridBox: PGtkWidget;
   var
-    btn: PGtkWidget;
+    btn, tv: PGtkWidget;
+    buf: PGtkTextBuffer;
   begin
     Result := gtk_grid_new;
 
@@ -236,7 +260,14 @@ const
     gtk_grid_attach(GTK_GRID(Result), btn, 0, 2, 2, 1);
     btn := CreateButton('Grid 6');
     gtk_grid_attach(GTK_GRID(Result), btn, 2, 0, 1, 3);
+    tv := gtk_text_view_new;
+    gtk_grid_attach(GTK_GRID(Result), tv, 0, 3, 3, 1);
+    buf := gtk_text_view_get_buffer(GTK_TEXT_VIEW(tv));
+    gtk_text_buffer_set_text(buf, 'Hello World !'#10'Hallo Welt !', -1);
+    g_signal_connect(tv, 'backspace', G_CALLBACK(@backspace), nil);
+    g_signal_connect(tv, 'move-cursor', G_CALLBACK(@move_cursor), nil);
   end;
+
 
   function Create_Window_Controls: PGtkWidget;
   begin

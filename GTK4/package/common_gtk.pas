@@ -86,7 +86,12 @@ type
   end;
   PGdkContentProvider=^TGdkContentProvider;
 
+  const
+    G_PRIORITY_HIGH_IDLE    =    100;         // /usr/include/glib-2.0/glib/gmain.h
+  GDK_PRIORITY_REDRAW    = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
 
+
+  type
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
   Pgraphene_matrix_t = ^Tgraphene_matrix_t;
   Tgraphene_rect_t = Pointer;
