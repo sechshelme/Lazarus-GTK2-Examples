@@ -38,6 +38,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ScrollBox"/>
       </Unit>
+      <Unit>
+        <Filename Value="textedit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TextEdit"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ListBox"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

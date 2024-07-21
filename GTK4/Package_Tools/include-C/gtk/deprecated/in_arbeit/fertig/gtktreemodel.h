@@ -195,57 +195,57 @@ struct _GtkTreeModelIface
 
 
 /* GtkTreePath operations */
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_new              (void);
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_new_from_string  (const char        *path);
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_new_from_indices (int                first_index,
 					     ...);
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_new_from_indicesv (int              *indices,
 					      gsize             length);
-_FOR(GListModel)
+
 char        *gtk_tree_path_to_string        (GtkTreePath       *path);
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_new_first        (void);
-_FOR(GListModel)
+
 void         gtk_tree_path_append_index     (GtkTreePath       *path,
 					     int                index_);
-_FOR(GListModel)
+
 void         gtk_tree_path_prepend_index    (GtkTreePath       *path,
 					     int                index_);
-_FOR(GListModel)
+
 int          gtk_tree_path_get_depth        (GtkTreePath       *path);
-_FOR(GListModel)
+
 int         *gtk_tree_path_get_indices      (GtkTreePath       *path);
 
-_FOR(GListModel)
+
 int         *gtk_tree_path_get_indices_with_depth (GtkTreePath *path,
 						   int         *depth);
 
-_FOR(GListModel)
+
 void         gtk_tree_path_free             (GtkTreePath       *path);
-_FOR(GListModel)
+
 GtkTreePath *gtk_tree_path_copy             (const GtkTreePath *path);
 
 GType        gtk_tree_path_get_type         (void) ;
-_FOR(GListModel)
+
 int          gtk_tree_path_compare          (const GtkTreePath *a,
 					     const GtkTreePath *b);
-_FOR(GListModel)
+
 void         gtk_tree_path_next             (GtkTreePath       *path);
-_FOR(GListModel)
+
 gboolean     gtk_tree_path_prev             (GtkTreePath       *path);
-_FOR(GListModel)
+
 gboolean     gtk_tree_path_up               (GtkTreePath       *path);
-_FOR(GListModel)
+
 void         gtk_tree_path_down             (GtkTreePath       *path);
 
-_FOR(GListModel)
+
 gboolean     gtk_tree_path_is_ancestor      (GtkTreePath       *path,
                                              GtkTreePath       *descendant);
-_FOR(GListModel)
+
 gboolean     gtk_tree_path_is_descendant    (GtkTreePath       *path,
                                              GtkTreePath       *ancestor);
 
@@ -261,147 +261,147 @@ gboolean     gtk_tree_path_is_descendant    (GtkTreePath       *path,
 
 
 GType                gtk_tree_row_reference_get_type (void) ;
-_FOR(GListModel)
+
 GtkTreeRowReference *gtk_tree_row_reference_new       (GtkTreeModel        *model,
 						       GtkTreePath         *path);
-_FOR(GListModel)
+
 GtkTreeRowReference *gtk_tree_row_reference_new_proxy (GObject             *proxy,
 						       GtkTreeModel        *model,
 						       GtkTreePath         *path);
-_FOR(GListModel)
+
 GtkTreePath         *gtk_tree_row_reference_get_path  (GtkTreeRowReference *reference);
-_FOR(GListModel)
+
 GtkTreeModel        *gtk_tree_row_reference_get_model (GtkTreeRowReference *reference);
-_FOR(GListModel)
+
 gboolean             gtk_tree_row_reference_valid     (GtkTreeRowReference *reference);
-_FOR(GListModel)
+
 GtkTreeRowReference *gtk_tree_row_reference_copy      (GtkTreeRowReference *reference);
-_FOR(GListModel)
+
 void                 gtk_tree_row_reference_free      (GtkTreeRowReference *reference);
 /* These two functions are only needed if you created the row reference with a
  * proxy object */
-_FOR(GListModel)
+
 void                 gtk_tree_row_reference_inserted  (GObject     *proxy,
 						       GtkTreePath *path);
-_FOR(GListModel)
+
 void                 gtk_tree_row_reference_deleted   (GObject     *proxy,
 						       GtkTreePath *path);
-_FOR(GListModel)
+
 void                 gtk_tree_row_reference_reordered (GObject     *proxy,
 						       GtkTreePath *path,
 						       GtkTreeIter *iter,
 						       int         *new_order);
 
 /* GtkTreeIter operations */
-_FOR(GListModel)
+
 GtkTreeIter *     gtk_tree_iter_copy             (GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void              gtk_tree_iter_free             (GtkTreeIter  *iter);
 
 GType             gtk_tree_iter_get_type         (void) ;
 
 
 GType             gtk_tree_model_get_type        (void) ;
-_FOR(GListModel)
+
 GtkTreeModelFlags gtk_tree_model_get_flags       (GtkTreeModel *tree_model);
-_FOR(GListModel)
+
 int               gtk_tree_model_get_n_columns   (GtkTreeModel *tree_model);
-_FOR(GListModel)
+
 GType             gtk_tree_model_get_column_type (GtkTreeModel *tree_model,
 						  int           index_);
 
 
 /* Iterator movement */
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_get_iter        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreePath  *path);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_get_iter_from_string (GtkTreeModel *tree_model,
 						       GtkTreeIter  *iter,
 						       const char   *path_string);
-_FOR(GListModel)
+
 char *           gtk_tree_model_get_string_from_iter (GtkTreeModel *tree_model,
                                                        GtkTreeIter  *iter);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_get_iter_first  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 GtkTreePath *     gtk_tree_model_get_path        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void              gtk_tree_model_get_value       (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  int           column,
 						  GValue       *value);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_previous   (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_next       (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_children   (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_has_child  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 int               gtk_tree_model_iter_n_children (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_nth_child  (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent,
 						  int           n);
-_FOR(GListModel)
+
 gboolean          gtk_tree_model_iter_parent     (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *child);
-_FOR(GListModel)
+
 void              gtk_tree_model_ref_node        (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void              gtk_tree_model_unref_node      (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void              gtk_tree_model_get             (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  ...);
-_FOR(GListModel)
+
 void              gtk_tree_model_get_valist      (GtkTreeModel *tree_model,
 						  GtkTreeIter  *iter,
 						  va_list       var_args);
 
 
-_FOR(GListModel)
+
 void              gtk_tree_model_foreach         (GtkTreeModel            *model,
 						  GtkTreeModelForeachFunc  func,
 						  gpointer                 user_data);
 
 /* Signals */
-_FOR(GListModel)
+
 void gtk_tree_model_row_changed           (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void gtk_tree_model_row_inserted          (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void gtk_tree_model_row_has_child_toggled (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter);
-_FOR(GListModel)
+
 void gtk_tree_model_row_deleted           (GtkTreeModel *tree_model,
 					   GtkTreePath  *path);
-_FOR(GListModel)
+
 void gtk_tree_model_rows_reordered        (GtkTreeModel *tree_model,
 					   GtkTreePath  *path,
 					   GtkTreeIter  *iter,
 					   int          *new_order);
-_FOR(GListModel)
+
 void gtk_tree_model_rows_reordered_with_length (GtkTreeModel *tree_model,
 						GtkTreePath  *path,
 						GtkTreeIter  *iter,

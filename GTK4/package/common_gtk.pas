@@ -5,7 +5,7 @@ interface
 //  https://gitlab.com/freepascal.org/lazarus/lazarus/-/tree/main/tools/gir2pascal
 
 uses
-  ctypes, glib2,pango;
+  ctypes, glib2, pango;
 
 const
   gtklib = 'libgtk-4.so';
@@ -13,6 +13,25 @@ const
   gobjectlib = 'libgobject-2.0.so';
 
 type
+  // === Exotisches
+  Tva_list = Pointer; //  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
+
+  Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
+  Pgraphene_matrix_t = ^Tgraphene_matrix_t;
+  Tgraphene_rect_t = Pointer;
+  Pgraphene_rect_t = ^Tgraphene_rect_t;
+  Tgraphene_point_t = Pointer;
+  Pgraphene_point_t = ^Tgraphene_point_t;
+  Tgraphene_vec4_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
+  Pgraphene_vec4_t = ^Tgraphene_vec4_t;
+
+  Tgraphene_size_t = record
+    Width, Height: cfloat;
+  end;
+  Pgraphene_size_t = ^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
+
+
+  // === Standard Typen
   Tgpointer = gpointer;
   TGType = GType;
   Tgboolean = gboolean;
@@ -25,7 +44,7 @@ type
   Tgint8 = gint8;
   Tguint8 = guint8;
   Tgint16 = gint16;
-  Tugint16 = guint16;
+  Tguint16 = guint16;
   Tgint32 = gint32;
   Tguint32 = guint32;
   Tgint64 = gint64;
@@ -39,97 +58,15 @@ type
   Tgssize = gssize;
   Pgssize = ^Tgssize;
 
-  Tgunichar=gunichar;
+  Tgunichar = gunichar;
 
-  PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
-  PPPangoLanguage  =^PPangoLanguage;
+  // === glib2
+const
+  G_PRIORITY_HIGH_IDLE = 100;         // /usr/include/glib-2.0/glib/gmain.h
 
+type
   Tgconstpointer = gconstpointer;
-
   TGInitiallyUnowned = TGObject;
-
-  TGtkTooltip = Pointer; // _GtkTooltip
-  PGtkTooltip = ^TGtkTooltip;
-
-  TGtkCssStyleChange = Pointer; // _GtkCssStyleChange
-  PGtkCssStyleChange = ^TGtkCssStyleChange;
-
-
-  TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
-  PGskTransform = ^TGskTransform;
-
-
-  TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
-  PGdkModifierType = ^TGdkModifierType;
-
-  TGdkSurface = record  // _GdkSurface     /usr/include/gtk-4.0/gdk/gdktypes.h
-  end;
-  PGdkSurface = ^TGdkSurface;
-
-  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
-  end;
-  PGskRenderer = ^TGskRenderer;
-
-  TGskRenderNode=record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
-    end;
-   PGskRenderNode=^TGskRenderNode;
-
-
-
-  TGdkEvent=record // _GdkEvent      /usr/include/gtk-4.0/gdk/gdkevents.h
-  end;
-  PGdkEvent=^TGdkEvent;
-
-  TGdkKeyMatch=LongInt;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
-  PGdkKeyMatch=^TGdkKeyMatch;
-
-  TGdkContentProvider=record   // /usr/include/gtk-4.0/gdk/gdkcontentprovider.h
-    parent:TGObject;
-  end;
-  PGdkContentProvider=^TGdkContentProvider;
-
-  TGdkSnapshot=record // _GdkSnapshot     gdktypes.h
-    end;
-    PGdkSnapshot=^TGdkSnapshot;
-
-  const
-    G_PRIORITY_HIGH_IDLE    =    100;         // /usr/include/glib-2.0/glib/gmain.h
-  GDK_PRIORITY_REDRAW    = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
-
-
-  type
-  Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
-  Pgraphene_matrix_t = ^Tgraphene_matrix_t;
-  Tgraphene_rect_t = Pointer;
-  Pgraphene_rect_t = ^Tgraphene_rect_t;
-  Tgraphene_point_t = Pointer;
-  Pgraphene_point_t = ^Tgraphene_point_t;
-  Tgraphene_vec4_t=Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
-  Pgraphene_vec4_t=^Tgraphene_vec4_t;
-
-  Tgraphene_size_t=record
-    width,height:cfloat;
-  end;
-  Pgraphene_size_t=^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
-
-  TGskRoundedRect=record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
-    bounds: Tgraphene_rect_t;
-    corner:array[0..3]of Pgraphene_size_t  ;
-  end;
-  PGskRoundedRect=^TGskRoundedRect;
-
-
-  TGtkSettings = Pointer;  // _GtkSettings
-  PGtkSettings = ^TGtkSettings;
-  TGdkClipboard = Pointer;  // _GdkClipboard
-  PGdkClipboard = ^TGdkClipboard;
-  TGtkEventController = Pointer; // _GtkEventController
-  PGtkEventController = ^TGtkEventController;
-  TGdkCursor = Pointer;  // _GdkCursor
-  PGdkCursor = ^TGdkCursor;
-
-  TGActionGroup = Pointer;       // _GActionGroup
-  PGActionGroup = ^TGActionGroup;
 
   TGVariant = Pointer;   // _GVariant
   PGVariant = ^TGVariant;
@@ -137,28 +74,17 @@ type
   PGVariantType = TGVariantType;
   PPGVariantType = ^PGVariantType;
 
-
   TGBytes = Pointer; // garray.h
   PGBytes = ^TGBytes;
 
-  TGtkBuilderScope = Pointer;// G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject)        // /usr/include/gtk-4.0/gtk/gtkbuilderscope.h
-  PGtkBuilderScope = ^TGtkBuilderScope;
+  PPGParamSpec = ^PGParamSpec;
 
+  TGActionGroup = Pointer;       // _GActionGroup
+  PGActionGroup = ^TGActionGroup;
 
-  TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
-  PGdkPaintable = ^TGdkPaintable;
-
-
-
-
-  //  typedef cairo_rectangle_int_t         GdkRectangle;    // /usr/include/gtk-4.0/gdk/gdktypes.h
-  TGdkRectangle = record
-    x, y, Width, Height: cint;
+  TGIcon = record // _GIcon     giotypes.h
   end;
-  PGdkRectangle = ^TGdkRectangle;
-
-  TGdkFrameClock = Pointer; //  typedef struct _GdkFrameClock              GdkFrameClock;     // /usr/include/gtk-4.0/gdk/gdkframeclock.h
-  PGdkFrameClock = ^TGdkFrameClock;
+  PGIcon = ^TGIcon;
 
   TGApplication = Pointer;        // rec  gapplication.h
   PGApplication = ^TGApplication;
@@ -172,20 +98,9 @@ type
   TGMenu = Pointer;   // _GMenu  gmenu.h
   PGMenu = ^TGMenu;
 
-  TGdkDisplay = Pointer;       // _GdkDisplay
-  PGdkDisplay = ^TGdkDisplay;
-
-  TGdkMonitor = Pointer;        // _GdkMonitor
-  PGdkMonitor = ^TGdkMonitor;
-
-  TGtkWindowGroup = Pointer;   // rec
-  PGtkWindowGroup = ^TGtkWindowGroup;
-
-  TGtkShortcutsWindow = Pointer;  //  == _GtkShortcutsWindow
-  PGtkShortcutsWindow = ^TGtkShortcutsWindow;
-
   TGListModel = Pointer;         // ???
   PGListModel = ^TGListModel;
+
 
   TGAsyncResult = Pointer; // _GAsyncResult      // /usr/include/glib-2.0/gio/giotypes.h
   PGAsyncResult = ^TGAsyncResult;
@@ -204,10 +119,6 @@ type
   TGInitiallyUnownedClass = TGObjectClass;  // gobject.h
   PGInitiallyUnownedClass = ^TGInitiallyUnownedClass;
 
-
-
-
-
   TGDateTime = Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
   PGDateTime = ^TGDateTime;
 
@@ -223,9 +134,94 @@ type
     g_class: PGTypeClass;
   end;
 
+  // ==== Pango
+  PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
+  PPPangoLanguage = ^PPangoLanguage;
+
+  // ==== GSK
+
+  TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
+  PGskTransform = ^TGskTransform;
+
+  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
+  end;
+  PGskRenderer = ^TGskRenderer;
+
+  TGskRenderNode = record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
+  end;
+  PGskRenderNode = ^TGskRenderNode;
+
+  TGskRoundedRect = record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
+    bounds: Tgraphene_rect_t;
+    corner: array[0..3] of Pgraphene_size_t;
+  end;
+  PGskRoundedRect = ^TGskRoundedRect;
+
+  // ==== GDK
+
+  TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
+  PGdkModifierType = ^TGdkModifierType;
+
+  TGdkSurface = record  // _GdkSurface     /usr/include/gtk-4.0/gdk/gdktypes.h
+  end;
+  PGdkSurface = ^TGdkSurface;
+
+  TGdkEvent = record // _GdkEvent      /usr/include/gtk-4.0/gdk/gdkevents.h
+  end;
+  PGdkEvent = ^TGdkEvent;
+
+  TGdkKeyMatch = longint;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
+  PGdkKeyMatch = ^TGdkKeyMatch;
+
+  TGdkContentProvider = record   // /usr/include/gtk-4.0/gdk/gdkcontentprovider.h
+    parent: TGObject;
+  end;
+  PGdkContentProvider = ^TGdkContentProvider;
+
+  TGdkSnapshot = record // _GdkSnapshot     gdktypes.h
+  end;
+  PGdkSnapshot = ^TGdkSnapshot;
+
+  TGdkClipboard = record  // _GdkClipboard
+  end;
+  PGdkClipboard = ^TGdkClipboard;
+
+  TGdkCursor = Pointer;  // _GdkCursor
+  PGdkCursor = ^TGdkCursor;
+
+  TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
+  PGdkPaintable = ^TGdkPaintable;
+
+  //  typedef cairo_rectangle_int_t         GdkRectangle;    // /usr/include/gtk-4.0/gdk/gdktypes.h
+  TGdkRectangle = record
+    x, y, Width, Height: cint;
+  end;
+  PGdkRectangle = ^TGdkRectangle;
+
+  TGdkPixbuf = record // _GdkPixbuf      /usr/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
+  end;
+  PGdkPixbuf = ^TGdkPixbuf;
+
+  TGdkDragAction = longint; // gdkenums.h
+  PGdkDragAction = ^TGdkDragAction;
+
+  TGdkFrameClock = Pointer; //  typedef struct _GdkFrameClock              GdkFrameClock;     // /usr/include/gtk-4.0/gdk/gdkframeclock.h
+  PGdkFrameClock = ^TGdkFrameClock;
+
+  TGdkDisplay = Pointer;       // _GdkDisplay
+  PGdkDisplay = ^TGdkDisplay;
+
+  TGdkMonitor = Pointer;        // _GdkMonitor
+  PGdkMonitor = ^TGdkMonitor;
+
   TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
   PGdkRGBA = ^TGdkRGBA;
 
+const
+  GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
+
+
+  // ======================================
 
 
 function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external gtklib;

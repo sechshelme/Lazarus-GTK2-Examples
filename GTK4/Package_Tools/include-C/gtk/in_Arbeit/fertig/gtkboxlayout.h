@@ -30,7 +30,7 @@
 #define GTK_TYPE_BOX_LAYOUT (gtk_box_layout_get_type())
 
 
-G_DECLARE_FINAL_TYPE (GtkBoxLayout, gtk_box_layout, GTK, BOX_LAYOUT, GtkLayoutManager)
+//G_DECLARE_FINAL_TYPE (GtkBoxLayout, gtk_box_layout, GTK, BOX_LAYOUT, GtkLayoutManager)
 
 
 GtkLayoutManager *      gtk_box_layout_new                      (GtkOrientation  orientation);

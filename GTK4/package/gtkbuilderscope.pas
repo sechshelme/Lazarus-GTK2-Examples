@@ -3,18 +3,19 @@ unit gtkbuilderscope;
 interface
 
 uses
-  glib2, common_GTK, gtkbuilder;
+  glib2, common_GTK, gtkwidget, gtkbuilder;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
   {G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject) }
-type
-  TGtkBuilderScope = record
-  end;
-  PGtkBuilderScope = ^TGtkBuilderScope;
-
+  // Wegen gtkwidget ausgelagert
+//type
+//  TGtkBuilderScope = record
+//  end;
+//  PGtkBuilderScope = ^TGtkBuilderScope;
+//
 
 type
   PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;

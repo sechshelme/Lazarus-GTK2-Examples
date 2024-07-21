@@ -6,47 +6,30 @@ uses
   glib2,
   common_GTK,
   gtkenums,                   // io.
+  gtknative,                  // io.    ( TGtkNative ausgelagert )
+  gtkwidget,                  // -> pango,Cairo, gtknative
+
   gtkadjustment,              // io.
   gtkborder,                  // io.
   gtkbitset,                  // io.
   gtkaccelgroup,              // io.
   gtkfilter,                  // io.
+  gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
   gtkbuilder,                 // io.
   gtkbookmarklist,            // io.
   gtkactionable,              // io.
-  gtkbuilderscope,            // io. -> gtkbuilder;
-  gtkbuildable,               // io. -> gtkbuilder;
   gtkstyleprovider,           // io.
   gtkexpression,              // io.
-
-
-  gtknative,                  // io.    ( TGtkNative ausgelagert )
-  gtkwidget,                  // -> pango,Cairo, gtknative
-  gtkbutton,                  // io.
-  gtklabel,                   // io. -> pango
-
-  gtkactionbar,               // io.
-  gtkcalendar,                // io.
-  gtkaspectframe,             // io.
-  gtkbox,                     // io.
-  gtkcenterbox,               // io.
-  gtkwindowcontrols,          // io.
-  gtkwindow,                  // io.
-  gtkapplication,             // io. -> gtkwindow
-  gtkapplicationwindow,       // io. -> gtkwindow
-  gtkwindowgroup,             // io. -> gtkwindow;
-  gtkaboutdialog,             // io. -> gtkwindow;
+  gtkbuilderscope,            // io. -> gtkbuilder;
+  gtkbuildable,               // io. -> gtkbuilder;
   gtkroot,                    // io.
+  gtkaspectframe,             // io.
 
-  gtkscrollbar,               // io. -> gtkadjustment;
-  gtkrange,                   // io. -> gtkadjustment, gtkborder;
-  gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
-  gtkscalebutton,             // io. -> gtkadjustment;
 
-  gtkgrid,                    // io.
   gtklayoutchild,             // io.
   gtklayoutmanager,           // io. -> gtklayoutchild;
   gtkbinlayout,               // io. -> gtklayoutmanager;
+  gtkboxlayout,               // io. -> gtklayoutmanager;
   gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild;
 
   gtkshortcutsshortcut,       // io.
@@ -60,8 +43,32 @@ uses
   gtkshortcutssection,        // io. -> gtkshortcutsgroup;
   gtkshortcutswindow,         // io. -> gtkshortcutssection;
 
-  gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
+  gtkwindow,                  // io.
+  gtkapplication,             // io. -> gtkwindow
+  gtkapplicationwindow,       // io. -> gtkwindow
+  gtkwindowgroup,             // io. -> gtkwindow;
 
+
+  gtkbox,                     // io.
+  gtkcenterbox,               // io.
+  gtkgrid,                    // io.
+  gtkactionbar,               // io.
+
+  gtkbutton,                  // io.
+  gtklabel,                   // io. -> pango
+  gtkcalendar,                // io.
+  gtkwindowcontrols,          // io.
+  gtkimage,                   // io.
+
+
+  gtkaboutdialog,             // io. -> gtkwindow;
+
+  gtkscrollbar,               // io. -> gtkadjustment;
+  gtkrange,                   // io. -> gtkadjustment, gtkborder;
+  gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
+  gtkscalebutton,             // io. -> gtkadjustment;
+
+  gtklistbox,                 // io. -> gtkadjustment;
 
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
@@ -71,10 +78,17 @@ uses
   gtktextbuffer,              // io. -> gtktexttag, gtktextiter, gtktextchild, gtktextmark;
   gtktextview,                // io. -> pango, gtktextiter, gtktextmark, gtktextchild;
 
-  gtklistbox,                 // io. -> gtkadjustment;
 
 
+  gtktreemodel,               // io.
+  gtkcellrenderer,            // io. -> gtkcelleditable;
+  gtkcellarea,                // io. -> gtkcellrenderer, gtktreemodel, gtkcelleditable;
+  gtkentrycompletion,         // io. -> gtktreemodel, gtkcellarea;
+  gtkentrybuffer,             // io.
+  gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
+  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;       $
 
+  gtktooltip,                 // io.
 
 
 
@@ -90,12 +104,11 @@ uses
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             //   geht nur mit 4.14     Muss überarbeitet werden
 
-  // =======  deprecated 4.10
-
-  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
 
   Math,
-  ScrollBox;
+  ScrollBox,
+  TextEdit,
+  ListBox;
 
 
 
@@ -121,11 +134,6 @@ const
     gtk_widget_set_margin_bottom(Result, 5);
     gtk_widget_set_margin_end(Result, 5);
   end;
-
-function CreateLabel(Caption: Pgchar): PGtkWidget;
-begin
-  Result := gtk_label_new(Caption);
-end;
 
   procedure btn_Click(button: PGTKWidget; user_data: Pointer); cdecl;
   var
@@ -239,30 +247,9 @@ end;
     gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), btn);
   end;
 
-procedure backspace(self: PGtkTextView; user_data: gpointer);
-var
-  buf: PGtkTextBuffer;
-  pc: PChar;
-  start, ende: TGtkTextIter;
-begin
-  g_print('backspace'#10);
-  buf := gtk_text_view_get_buffer(GTK_TEXT_VIEW(self));
-  gtk_text_buffer_get_bounds(buf,@start, @ende);
-
-  pc := gtk_text_buffer_get_text(buf, @start, @ende, True);
-  WriteLn(pc);
-  g_free(pc);
-end;
-
-procedure move_cursor(self: PGtkTextView; user_data: gpointer);
-begin
-  g_print('move'#10);
-end;
-
   function Create_GridBox: PGtkWidget;
   var
     btn, tv: PGtkWidget;
-    buf: PGtkTextBuffer;
   begin
     Result := gtk_grid_new;
 
@@ -278,34 +265,16 @@ end;
     gtk_grid_attach(GTK_GRID(Result), btn, 0, 2, 2, 1);
     btn := CreateButton('Grid 6');
     gtk_grid_attach(GTK_GRID(Result), btn, 2, 0, 1, 3);
-    tv := gtk_text_view_new;
+
+    tv := Create_TextView;
     gtk_grid_attach(GTK_GRID(Result), tv, 0, 3, 3, 1);
-    buf := gtk_text_view_get_buffer(GTK_TEXT_VIEW(tv));
-    gtk_text_buffer_set_text(buf, 'Hello World !'#10'Hallo Welt !', -1);
-    g_signal_connect(tv, 'backspace', G_CALLBACK(@backspace), nil);
-    g_signal_connect(tv, 'move-cursor', G_CALLBACK(@move_cursor), nil);
   end;
 
 
-function Create_Window_Controls: PGtkWidget;
-begin
-  Result := gtk_window_controls_new(GTK_PACK_START);
-end;
-
-function Create_ListBox: PGtkWidget;
-begin
-  Result := gtk_list_box_new;
-
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo1'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo2'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateButton('hallo3'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
-  gtk_list_box_insert(GTK_LIST_BOX(Result),CreateLabel('hallo3'),0);
-//  row:=gtk_list_box_row_new;
-end;
-
+  function Create_Window_Controls: PGtkWidget;
+  begin
+    Result := gtk_window_controls_new(GTK_PACK_START);
+  end;
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;

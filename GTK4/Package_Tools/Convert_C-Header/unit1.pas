@@ -67,6 +67,7 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_WARN_UNUSED_RESULT', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_MALLOC', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_PURE', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GListModel)', '', [rfReplaceAll]);
 
 
 

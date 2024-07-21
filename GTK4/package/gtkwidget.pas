@@ -64,6 +64,10 @@ type
   PGtkShortcut = ^TGtkShortcut;
   TGtkShortcutFunc = function(widget: PGtkWidget; args: PGVariant; user_data: Tgpointer): Tgboolean; cdecl;
 
+  TGtkCssStyleChange = record // _GtkCssStyleChange
+    end;
+  PGtkCssStyleChange = ^TGtkCssStyleChange;
+
   TGtkStyleContext = record
     parent_object: TGObject;
   end;
@@ -72,6 +76,22 @@ type
   TGtkSnapshot = TGdkSnapshot;
   PGtkSnapshot = ^TGtkSnapshot;
 
+  TGtkTooltip=record // _GtkTooltip
+    end;
+  PGtkTooltip=^TGtkTooltip;
+
+  TGtkSettings = record  // _GtkSettings
+    end;
+  PGtkSettings = ^TGtkSettings;
+
+  TGtkEventController = record // _GtkEventController
+    end;
+  PGtkEventController = ^TGtkEventController;
+
+  type
+  TGtkBuilderScope = record
+  end;
+  PGtkBuilderScope = ^TGtkBuilderScope;
 
 
   // =======================
