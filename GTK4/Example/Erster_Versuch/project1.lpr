@@ -5,82 +5,83 @@ program project1;
 uses
   glib2,
   common_GTK,
-  gtkenums,                   // io. ohne
-  gtkadjustment,              // io. -> common_GTK;
-  gtkborder,                  // io. -> common_GTK
-  gtkbitset,                  // io. -> glib2, common_GTK;
-  gtkaccelgroup,              // io. -> glib2, common_GTK;
-  gtkfilter,                  // io. -> glib2, common_GTK;
-  gtkbuilder,                 // io. -> glib2, common_GTK;
-  gtkbuilderscope,            // io. -> glib2, common_GTK, gtkbuilder;
-  gtkbookmarklist,            // io. -> glib2, common_GTK;
-  gtkactionable,              // io. -> glib2, common_GTK;
-  gtkbuildable,               // io. -> glib2, common_GTK, gtkbuilder;
-  gtkstyleprovider,           // io. -> common_GTK
+  gtkenums,                   // io.
+  gtkadjustment,              // io.
+  gtkborder,                  // io.
+  gtkbitset,                  // io.
+  gtkaccelgroup,              // io.
+  gtkfilter,                  // io.
+  gtkbuilder,                 // io.
+  gtkbookmarklist,            // io.
+  gtkactionable,              // io.
+  gtkbuilderscope,            // io. -> gtkbuilder;
+  gtkbuildable,               // io. -> gtkbuilder;
+  gtkstyleprovider,           // io.
+  gtkexpression,              // io.
 
 
-  gtkwidget,                  // -> glib2, common_GTK, pango,Cairo, gtkenums, gtknative
-  gtknative,                  // io. -> common_GTK, gtkwidget;  ( TGtkNative ausgelagert )
-  gtkbutton,                  // io. -> common_GTK, gtkwidget;
-  gtklabel,                   // io. -> glib2, pango, common_GTK, gtkenums, gtkwidget;
+  gtknative,                  // io.    ( TGtkNative ausgelagert )
+  gtkwidget,                  // -> pango,Cairo, gtknative
+  gtkbutton,                  // io.
+  gtklabel,                   // io. -> pango
 
-  gtkactionbar,               // io. -> common_GTK, gtkwidget;
-  gtkcalendar,                // io. -> common_GTK, gtkwidget;
-  gtkaspectframe,             // io. -> common_GTK, gtkwidget;
-  gtkbox,                     // io. -> common_GTK, gtkenums, gtkwidget;
-  gtkcenterbox,               // io. -> common_GTK, gtkenums, gtkwidget;
-  gtkwindowcontrols,          // io. -> common_GTK, gtkenums, gtkwidget;
-  gtkaboutdialog,             // io. -> common_GTK, gtkwidget, gtkwindow;
-  gtkroot,                    // io. -> glib2, common_GTK, gtkwidget;
+  gtkactionbar,               // io.
+  gtkcalendar,                // io.
+  gtkaspectframe,             // io.
+  gtkbox,                     // io.
+  gtkcenterbox,               // io.
+  gtkwindowcontrols,          // io.
+  gtkwindow,                  // io.
+  gtkapplication,             // io. -> gtkwindow
+  gtkapplicationwindow,       // io. -> gtkwindow
+  gtkwindowgroup,             // io. -> gtkwindow;
+  gtkaboutdialog,             // io. -> gtkwindow;
+  gtkroot,                    // io.
 
-  gtkscrollbar,               // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment;
-  gtkrange,                   // io. -> common_GTK, gtkenums, gtkwidget, gtkadjustment, gtkborder;
-  gtkscale,                   // io. -> pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
-  gtkscalebutton,             // io. -> glib2, common_GTK, gtkwidget, gtkadjustment;
+  gtkscrollbar,               // io. -> gtkadjustment;
+  gtkrange,                   // io. -> gtkadjustment, gtkborder;
+  gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
+  gtkscalebutton,             // io. -> gtkadjustment;
 
-  gtklayoutchild,             // io. -> glib2, common_GTK, gtkwidget;
-  gtklayoutmanager,           // io. -> glib2, common_GTK, gtkenums, gtklayoutchild, gtkwidget;
-  gtkbinlayout,               // io. -> common_GTK, gtkwidget, gtklayoutmanager;
-  gtkgrid,                    // io. -> common_GTK, gtkenums, gtkwidget;
-  gtkgridlayout,              // io. -> common_GTK, gtkenums, gtkwidget, gtklayoutmanager, gtklayoutchild;
+  gtkgrid,                    // io.
+  gtklayoutchild,             // io.
+  gtklayoutmanager,           // io. -> gtklayoutchild;
+  gtkbinlayout,               // io. -> gtklayoutmanager;
+  gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild;
 
-  gtkshortcutsshortcut,       // io. -> common_GTK;
-  gtkshortcuttrigger,         // io. -> glib2, common_GTK;
-  gtkshortcutaction,          // io. -> glib2, common_GTK, gtkwidget;
-  gtkshortcutlabel,           // io. -> glib2, common_GTK, gtkwidget;
-  gtkshortcut,                // io. -> glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
-  gtkshortcutcontroller,      // io. -> glib2, common_GTK, gtkenums, gtkwidget, gtkshortcut;
-  gtkshortcutmanager,         // io. -> glib2, common_GTK, gtkshortcutcontroller;
-  gtkshortcutsgroup,          // io. -> glib2, common_GTK, gtkshortcutsshortcut;
-  gtkshortcutssection,        // io. -> glib2, common_GTK, gtkshortcutsgroup;
-  gtkshortcutswindow,         // io. -> glib2, common_GTK, gtkshortcutssection;
+  gtkshortcutsshortcut,       // io.
+  gtkshortcuttrigger,         // io.
+  gtkshortcutaction,          // io.
+  gtkshortcutlabel,           // io.
+  gtkshortcut,                // io. -> gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
+  gtkshortcutcontroller,      // io. -> gtkshortcut;
+  gtkshortcutmanager,         // io. -> gtkshortcutcontroller;
+  gtkshortcutsgroup,          // io. -> gtkshortcutsshortcut;
+  gtkshortcutssection,        // io. -> gtkshortcutsgroup;
+  gtkshortcutswindow,         // io. -> gtkshortcutssection;
 
-  gtkexpression,              // io. -> glib2, common_GTK;
-  gtkboolfilter,              // io. -> common_GTK, gtkfilter, gtkexpression;
-
-
-  gtktexttag,                 // io. -> glib2, common_GTK;
-  gtktexttagtable,            // io. -> common_GTK, gtktexttag;
-  gtktextchild,               // io. -> glib2, common_GTK, gtkwidget;
-  gtktextiter,                // io. -> glib2, pango, common_GTK, gtktexttag, gtktextchild;
-  gtktextmark,                // io. -> glib2, common_GTK, gtktextiter;
-  gtktextbuffer,              // io. -> glib2, common_GTK, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
-  gtktextview,                // io. -> pango, common_GTK, gtkenums, gtkwidget, gtktextiter, gtktextmark, gtktextchild;
-
-  gtklistbox,                 // io. -> glib2, common_GTK, gtkenums, gtkwidget, gtkadjustment;
-
-//  gtksnapshot,  // gtk4.14
-
-//  gtktypebuiltins, // gtk4.14
+  gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
 
 
+  gtktexttag,                 // io.
+  gtktexttagtable,            // io. -> gtktexttag;
+  gtktextchild,               // io.
+  gtktextiter,                // io. -> pango, gtktexttag, gtktextchild;
+  gtktextmark,                // io. -> gtktextiter;
+  gtktextbuffer,              // io. -> gtktexttag, gtktextiter, gtktextchild, gtktextmark;
+  gtktextview,                // io. -> pango, gtktextiter, gtktextmark, gtktextchild;
+
+  gtklistbox,                 // io. -> gtkadjustment;
+
+
+
+
+
+
+
+  //  gtksnapshot,  // gtk4.14
+  //  gtktypebuiltins, // gtk4.14
   gtkfontdialog,               // GTK4.14
-
-  gtkapplication,             // -> glib2, common_GTK, gtkwidget, gtkwindow
-  gtkapplicationwindow,       // -> common_GTK, gtkwidget, gtkwindow
-  gtkwindow,                  // -> glib2, common_GTK, gtkwidget
-  gtkwindowgroup,             // io. -> glib2, common_GTK, gtkwindow;
-
   gtkcolordialog,             // geht nur mit 4.14      // Muss überarbeitet werden
   gtkcolordialogbutton,         // GTK4.14
   gtkaccessiblerange,         //  geht nur mit 4.14      Muss überarbeitet werden
@@ -91,7 +92,7 @@ uses
 
   // =======  deprecated 4.10
 
-  gtkstylecontext,            // io. -> glib2, common_GTK, gtkenums, gtkwidget, gtkborder, gtkstyleprovider;
+  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
 
   Math,
   ScrollBox;

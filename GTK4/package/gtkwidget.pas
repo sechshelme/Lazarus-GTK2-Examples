@@ -46,7 +46,6 @@ type
   end;
   PGtkApplication = ^TGtkApplication;
 
-
   TGtkNative = record
   end;
   PGtkNative = ^TGtkNative;

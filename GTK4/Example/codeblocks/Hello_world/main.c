@@ -51,9 +51,6 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
   g_print("interface: %i\n", w);
 
 
-GtkListBox
-GtkLabel
-
   gtk_window_controls_get_side(0);
 
   }
