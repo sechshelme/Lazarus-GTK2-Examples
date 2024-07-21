@@ -31,7 +31,7 @@
 #define GTK_TYPE_SHORTCUT_MANAGER               (gtk_shortcut_manager_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MANAGER, GtkWidget)
+//G_DECLARE_INTERFACE (GtkShortcutManager, gtk_shortcut_manager, GTK, SHORTCUT_MANAGER, GtkWidget)
 
 /**
  * GtkShortcutManagerInterface:

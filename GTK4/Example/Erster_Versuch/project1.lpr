@@ -47,7 +47,13 @@ uses
   gtkshortcutsshortcut,       // io. -> common_GTK;
   gtkshortcuttrigger,         // io. -> glib2, common_GTK;
   gtkshortcutaction,          // io. -> glib2, common_GTK, gtkwidget;
+  gtkshortcutlabel,           // io. -> glib2, common_GTK, gtkwidget;
   gtkshortcut,                // io. -> glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
+  gtkshortcutcontroller,      // io. -> glib2, common_GTK, gtkenums, gtkwidget, gtkshortcut;
+  gtkshortcutmanager,         // io. -> glib2, common_GTK, gtkshortcutcontroller;
+  gtkshortcutsgroup,          // io. -> glib2, common_GTK, gtkshortcutsshortcut;
+  gtkshortcutssection,        // io. -> glib2, common_GTK, gtkshortcutsgroup;
+  gtkshortcutswindow,         // io. -> glib2, common_GTK, gtkshortcutssection;
 
   gtkexpression,              // io. -> glib2, common_GTK;
   gtkboolfilter,              // io. -> common_GTK, gtkfilter, gtkexpression;

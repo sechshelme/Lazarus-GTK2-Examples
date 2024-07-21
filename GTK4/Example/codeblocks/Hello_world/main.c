@@ -8,7 +8,7 @@ static void scroll_Changed (GtkAdjustment *adj, gpointer user_data)
   double val = gtk_adjustment_get_value(adj);
   g_print("Value: %f\n", val);
 
-gtk_snapshot_new
+GskPath
 }
 
 
@@ -51,7 +51,8 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
   g_print("interface: %i\n", w);
 
 
-
+GtkListBox
+GtkLabel
 
   gtk_window_controls_get_side(0);
 
