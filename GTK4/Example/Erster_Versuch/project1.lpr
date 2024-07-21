@@ -3,6 +3,7 @@ program project1;
 // https://www.docs4dev.com/docs/gtk/4.0.0/ch01s05.html#google_vignette
 
 uses
+  Math,
   glib2,
   common_GTK,
   gtkenums,                   // io.
@@ -55,6 +56,7 @@ uses
   gtkactionbar,               // io.
 
   gtkbutton,                  // io.
+  gtktogglebutton,            // io. -> gtkbutton
   gtklabel,                   // io. -> pango
   gtkcalendar,                // io.
   gtkwindowcontrols,          // io.
@@ -67,8 +69,8 @@ uses
   gtkrange,                   // io. -> gtkadjustment, gtkborder;
   gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> gtkadjustment;
-
   gtklistbox,                 // io. -> gtkadjustment;
+  gtkflowbox,                 // io. -> gtkadjustment;
 
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
@@ -90,6 +92,8 @@ uses
 
   gtktooltip,                 // io.
 
+  gtkrecentmanager,           // io.
+
 
 
 
@@ -105,7 +109,7 @@ uses
   gtkalertdialog,             //   geht nur mit 4.14     Muss überarbeitet werden
 
 
-  Math,
+  // --- Eigenes
   ScrollBox,
   TextEdit,
   ListBox;
@@ -276,11 +280,28 @@ const
     Result := gtk_window_controls_new(GTK_PACK_START);
   end;
 
+  function Create_FlowBox: PGtkWidget;
+  var
+    i: integer;
+    tb: PGtkWidget;
+  begin
+    Result := gtk_flow_box_new;
+    gtk_flow_box_set_min_children_per_line(GTK_FLOW_BOX(Result), 2);
+    gtk_flow_box_set_max_children_per_line(GTK_FLOW_BOX(Result), 4);
+    for i := 0 to 15 do begin
+      tb := gtk_toggle_button_new_with_label('Flow 1');
+      if i mod 2 = 1 then  begin
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(tb), gTRUE);
+      end;
+      gtk_flow_box_append(GTK_FLOW_BOX(Result), tb);
+    end;
+  end;
+
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-    aspectFram, winCtrl, centerBox, gridBox, listbox: PGTKWidget;
+    aspectFram, winCtrl, centerBox, gridBox, listbox, flowbox: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -324,6 +345,9 @@ const
 
     listbox := Create_ListBox;
     gtk_box_append(GTK_BOX(box), listbox);
+
+    flowbox := Create_FlowBox;
+    gtk_box_append(GTK_BOX(box), flowbox);
 
 
     gtk_window_present(GTK_WINDOW(window));

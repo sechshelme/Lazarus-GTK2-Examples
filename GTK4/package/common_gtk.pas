@@ -121,18 +121,21 @@ type
 
   TGDateTime = Pointer; //  _GDateTime       /usr/include/glib-2.0/glib/gdatetime.h
   PGDateTime = ^TGDateTime;
+  PPGDateTime = ^PGDateTime;
 
-  PGTypeClass = ^TGTypeClass;
+  TGAppInfo   =record  // giotypes.h
+    end;
+  PGAppInfo=^TGAppInfo;
 
   TGTypeClass = record
     g_type: GType;
   end;
-
-  PGTypeInstance = ^TGTypeInstance;
+  PGTypeClass = ^TGTypeClass;
 
   TGTypeInstance = record
     g_class: PGTypeClass;
   end;
+  PGTypeInstance = ^TGTypeInstance;
 
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung

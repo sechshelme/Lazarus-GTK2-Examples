@@ -51,11 +51,6 @@ static void print_hello (GtkWidget *widget, int value,  gpointer data)
   g_print("interface: %i\n", w);
 
 
-GtkEntry
-GtkEntryCompletion
-GtkTreeIter
-
-  GtkTreeModel
 
   }
 
