@@ -30,7 +30,7 @@
 #define GTK_TYPE_SELECTION_MODEL       (gtk_selection_model_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODEL, GListModel)
+//G_DECLARE_INTERFACE (GtkSelectionModel, gtk_selection_model, GTK, SELECTION_MODEL, GListModel)
 
 /**
  * GtkSelectionModelInterface:

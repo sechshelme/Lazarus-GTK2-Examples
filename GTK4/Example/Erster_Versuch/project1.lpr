@@ -25,6 +25,7 @@ uses
   gtkbuildable,               // io. -> gtkbuilder;
   gtkroot,                    // io.
   gtkaspectframe,             // io.
+  gtkrecentmanager,           // io.
 
 
   gtklayoutchild,             // io.
@@ -54,6 +55,7 @@ uses
   gtkcenterbox,               // io.
   gtkgrid,                    // io.
   gtkactionbar,               // io.
+  gtknotebook,                // io.
 
   gtkbutton,                  // io.
   gtktogglebutton,            // io. -> gtkbutton
@@ -92,8 +94,8 @@ uses
 
   gtktooltip,                 // io.
 
-  gtkrecentmanager,           // io.
-  gtknotebook,                // io.
+  gtkselectionmodel,          // io. -> gtkbitset
+  gtkstack,                   // io. -> gtkselectionmodel
 
 
 
@@ -106,6 +108,7 @@ uses
   gtkaccessiblerange,         //  geht nur mit 4.14      Muss überarbeitet werden
   gtkaccessibletext,          //  geht nur mit 4.14      Muss überarbeitet werden
   gtkaccessible,              //  GTK 4.14  Muss überarbeitet werden    G_DECLARE_INTERFACE and G_DECLARE_FINAL_TYPE
+  gtkeditable,                // io. -> gtkaccessible
   gtkatcontext,               // Muss überarbeitet werden
   gtkalertdialog,             //   geht nur mit 4.14     Muss überarbeitet werden
 
@@ -233,8 +236,9 @@ const
     button4: PGtkWidget;
   begin
     Result := gtk_aspect_frame_new(100, 100, 90, True);
-
-    button4 := CreateButton('Button 4');
+    button4 := CreateButton('aspect 1');
+    gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
+    button4 := CreateButton('aspect 2');
     gtk_aspect_frame_set_child(GTK_ASPECT_FRAME(Result), button4);
   end;
 
@@ -298,29 +302,44 @@ const
     end;
   end;
 
-  function Create_Notebook: PGtkWidget;
-  var
-    bt, lb: PGtkWidget;
-    i: Integer;
-    s:String;
+  function Create_Label(l: PChar): PGtkWidget;
   begin
-    Result := gtk_notebook_new;
-    for i := 0 to 3 do begin
-      bt := gtk_button_new_with_label('note');
-      WriteStr(s, 'page ', i);
-      lb := gtk_label_new(PChar(s));
-      gtk_notebook_append_page(GTK_NOTEBOOK(Result), bt, lb);
-    end;
+    Result := gtk_label_new(l);
   end;
+
+
+function Create_Stack: PGtkWidget;
+begin
+  Result := gtk_stack_new;
+  gtk_stack_add_child(GTK_STACK(Result), Create_FlowBox);
+  gtk_stack_add_child(GTK_STACK(Result), Create_Calender);
+  gtk_stack_add_child(GTK_STACK(Result), Create_GridBox);
+end;
+
+
+function Create_Notebook: PGtkWidget;
+begin
+  Result := gtk_notebook_new;
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ListBox, Create_Label('ListBox'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_CenterBox, Create_Label('CenterBox'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ActionBar, Create_Label('ActionBar'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScrollBox, Create_Label('ScrollBox'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScaleButton, Create_Label('ScaleButton'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Button_Box, Create_Label('ButtonBox'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Window_Controls, Create_Label('WindowControl'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Aspect_Frame, Create_Label('AspectFrame'));
+  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Stack, Create_Label('Stack'));
+end;
 
 
 
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
-    window, box, actionBar, calendar, scrollBar, scaleBtn,
-    aspectFram, winCtrl, centerBox, gridBox, listbox, flowbox,
-    notebook: PGTKWidget;
+    window, box, notebook: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -332,41 +351,8 @@ const
     gtk_window_set_default_size(GTK_WINDOW(window), 320, 200);
     gtk_window_set_title(GTK_WINDOW(window), 'Hello GTK-4');
 
-
     box := Create_Button_Box;
     gtk_window_set_child(GTK_WINDOW(window), box);
-
-    actionBar := Create_ActionBar;
-    gtk_box_append(GTK_BOX(box), actionBar);
-    actionBar := Create_ActionBar;
-    gtk_box_append(GTK_BOX(box), actionBar);
-
-    calendar := Create_Calender;
-    gtk_box_append(GTK_BOX(box), calendar);
-
-    scrollBar := Create_ScrollBox;
-    gtk_box_append(GTK_BOX(box), scrollBar);
-
-    scaleBtn := Create_ScaleButton;
-    gtk_box_append(GTK_BOX(box), scaleBtn);
-
-    aspectFram := Create_Aspect_Frame;
-    gtk_box_append(GTK_BOX(box), aspectFram);
-
-    winCtrl := Create_Window_Controls;
-    gtk_box_append(GTK_BOX(box), winCtrl);
-
-    centerBox := Create_CenterBox;
-    gtk_box_append(GTK_BOX(box), centerBox);
-
-    gridBox := Create_GridBox;
-    gtk_box_append(GTK_BOX(box), gridBox);
-
-    listbox := Create_ListBox;
-    gtk_box_append(GTK_BOX(box), listbox);
-
-    flowbox := Create_FlowBox;
-    gtk_box_append(GTK_BOX(box), flowbox);
 
     notebook := Create_Notebook;
     gtk_box_append(GTK_BOX(box), notebook);
