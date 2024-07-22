@@ -93,6 +93,7 @@ uses
   gtktooltip,                 // io.
 
   gtkrecentmanager,           // io.
+  gtknotebook,                // io.
 
 
 
@@ -297,11 +298,29 @@ const
     end;
   end;
 
+  function Create_Notebook: PGtkWidget;
+  var
+    bt, lb: PGtkWidget;
+    i: Integer;
+    s:String;
+  begin
+    Result := gtk_notebook_new;
+    for i := 0 to 3 do begin
+      bt := gtk_button_new_with_label('note');
+      WriteStr(s, 'page ', i);
+      lb := gtk_label_new(PChar(s));
+      gtk_notebook_append_page(GTK_NOTEBOOK(Result), bt, lb);
+    end;
+  end;
+
+
+
 
   procedure activate(app: PGtkApplication; user_data: Pointer); cdecl;
   var
     window, box, actionBar, calendar, scrollBar, scaleBtn,
-    aspectFram, winCtrl, centerBox, gridBox, listbox, flowbox: PGTKWidget;
+    aspectFram, winCtrl, centerBox, gridBox, listbox, flowbox,
+    notebook: PGTKWidget;
     Winclass: PGtkWindowClass;
     lm: PGtkLayoutManager;
     LMclass: PGtkLayoutManagerClass;
@@ -348,6 +367,9 @@ const
 
     flowbox := Create_FlowBox;
     gtk_box_append(GTK_BOX(box), flowbox);
+
+    notebook := Create_Notebook;
+    gtk_box_append(GTK_BOX(box), notebook);
 
 
     gtk_window_present(GTK_WINDOW(window));
