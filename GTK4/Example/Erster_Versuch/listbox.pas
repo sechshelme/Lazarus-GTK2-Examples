@@ -5,7 +5,7 @@ unit ListBox;
 interface
 
 uses
-  glib2,gtkenums, gtkwidget,gtkbox,gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner;
+  glib2, gtkenums, gtkwidget, gtkbox, gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner, gtkcenterlayout;
 
 function Create_ListBox: PGtkWidget;
 
@@ -29,12 +29,24 @@ function Create_Spinner: PGtkWidget;
 var
   lb, spinner: PGtkWidget;
 begin
-  Result:=gtk_center_box_new;
-  lb:=  gtk_label_new('Bitte warten');
+  Result := gtk_center_box_new;
+  lb := gtk_label_new('Bitte warten');
   gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), lb);
-  spinner:=             gtk_spinner_new;
-  gtk_spinner_set_spinning(GTK_SPINNER( spinner),gTRUE);
+  spinner := gtk_spinner_new;
+  gtk_spinner_set_spinning(GTK_SPINNER(spinner), gTRUE);
   gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), spinner);
+end;
+
+function Create_Spinner2: PGtkWidget;
+var
+  lb, spinner: PGtkWidget;
+begin
+  Result := gtk_center_layout_new;
+  lb := gtk_label_new('Bitte warten');
+  gtk_center_layout_set_start_widget(GTK_CENTER_LAYOUT(Result), lb);
+  spinner := gtk_spinner_new;
+  gtk_spinner_set_spinning(GTK_SPINNER(spinner), gTRUE);
+  gtk_center_layout_set_center_widget(GTK_CENTER_LAYOUT(Result), spinner);
 end;
 
 function Create_ListBox: PGtkWidget;
@@ -51,6 +63,9 @@ begin
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
 end;
 
 

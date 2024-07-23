@@ -4,7 +4,7 @@ unit ScrollBox;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkbox, gtkbutton, gtkscrollbar, gtkscalebutton, gtkadjustment;
+  glib2, common_GTK, gtkenums, gtkwidget, gtkbox, gtkbutton, gtkscrollbar, gtkscalebutton, gtkspinbutton, gtkadjustment;
 
 function Create_ScrollBox: PGtkWidget;
 function Create_ScaleButton: PGtkWidget;
@@ -100,6 +100,16 @@ begin
   //g_signal_connect(Result, 'value-changed', G_CALLBACK(@btn_Click), nil);
 end;
 
+function Create_Spinnbutton: PGtkWidget;
+var
+  vadj: PGtkAdjustment;
+begin
+  vadj := GTK_ADJUSTMENT(gtk_adjustment_new(1, -100, 100, 0.1, 10, 0));
+  Result := gtk_spin_button_new(vadj, 23, 4);
+end;
+
+
+
 function Create_ScrollBar2: PGtkWidget;
 var
   vadj: PGtkAdjustment;
@@ -115,11 +125,15 @@ end;
 function Create_ScrollBox: PGtkWidget;
   // https://openbook.rheinwerk-verlag.de/linux_unix_programmierung/Kap15-008.htm
 var
-  button1: PGtkWidget;
+  button1, SpinnButton: PGtkWidget;
 begin
   Result := gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
   ScrollBar := Create_ScrollBar2;
   gtk_box_append(GTK_BOX(Result), ScrollBar);
+
+  SpinnButton:=Create_Spinnbutton;
+  gtk_box_append(GTK_BOX(Result), SpinnButton);
+
 
   button1 := gtk_button_new_with_label('Color...');
   gtk_box_append(GTK_BOX(Result), button1);

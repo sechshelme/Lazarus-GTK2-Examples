@@ -24,7 +24,7 @@
 #define GTK_TYPE_CENTER_LAYOUT (gtk_center_layout_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkCenterLayout, gtk_center_layout, GTK, CENTER_LAYOUT, GtkLayoutManager)
+//G_DECLARE_FINAL_TYPE (GtkCenterLayout, gtk_center_layout, GTK, CENTER_LAYOUT, GtkLayoutManager)
 
 
 GtkLayoutManager *      gtk_center_layout_new                   (void);

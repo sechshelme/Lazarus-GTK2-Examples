@@ -31,7 +31,7 @@
 #define GTK_TYPE_FILE_DIALOG (gtk_file_dialog_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFileDialog, gtk_file_dialog, GTK, FILE_DIALOG, GObject)
+//G_DECLARE_FINAL_TYPE (GtkFileDialog, gtk_file_dialog, GTK, FILE_DIALOG, GObject)
 
 
 GtkFileDialog * gtk_file_dialog_new                  (void);

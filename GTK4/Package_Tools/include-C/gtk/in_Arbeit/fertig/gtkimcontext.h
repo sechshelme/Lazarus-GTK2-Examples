@@ -142,12 +142,10 @@ void     gtk_im_context_set_cursor_location (GtkIMContext       *context,
 
 void     gtk_im_context_set_use_preedit     (GtkIMContext       *context,
 					     gboolean            use_preedit);
-GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_set_surrounding_with_selection)
 void     gtk_im_context_set_surrounding     (GtkIMContext       *context,
                                              const char         *text,
                                              int                 len,
                                              int                 cursor_index);
-GDK_DEPRECATED_IN_4_2_FOR(gtk_im_context_get_surrounding_with_selection)
 gboolean gtk_im_context_get_surrounding     (GtkIMContext       *context,
                                              char              **text,
                                              int                *cursor_index);

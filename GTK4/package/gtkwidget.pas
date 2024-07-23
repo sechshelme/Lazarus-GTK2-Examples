@@ -88,11 +88,13 @@ type
     end;
   PGtkEventController = ^TGtkEventController;
 
-  type
   TGtkBuilderScope = record
   end;
   PGtkBuilderScope = ^TGtkBuilderScope;
 
+  TGtkListItemFactory=record
+      end;
+  PGtkListItemFactory=^TGtkListItemFactory;
 
   // =======================
 

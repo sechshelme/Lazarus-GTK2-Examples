@@ -15,6 +15,7 @@ uses
   gtkbitset,                  // io.
   gtkaccelgroup,              // io.
   gtkfilter,                  // io.
+  gtkfilefilter,              // io.
   gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
   gtkbuilder,                 // io.
   gtkbookmarklist,            // io.
@@ -27,6 +28,8 @@ uses
   gtkaspectframe,             // io.
   gtkrecentmanager,           // io.
   gtkmediastream,             // io.
+  gtkimcontext,               // io.
+  gtkbuilderlistitemfactory,  // io.
 
 
   gtklayoutchild,             // io.
@@ -34,6 +37,8 @@ uses
   gtkbinlayout,               // io. -> gtklayoutmanager;
   gtkboxlayout,               // io. -> gtklayoutmanager;
   gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild;
+  gtkcenterlayout,            // io. -> gtklayoutmanager
+
 
   gtkshortcutsshortcut,       // io.
   gtkshortcuttrigger,         // io.
@@ -76,6 +81,7 @@ uses
   gtklistbox,                 // io. -> gtkadjustment;
   gtkflowbox,                 // io. -> gtkadjustment;
   gtkscrolledwindow,          // io. -> gtkadjustment
+  gtkspinbutton,              // io. -> gtkadjustment
 
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
@@ -104,6 +110,9 @@ uses
 
 
 
+
+
+  //  gtkfiledialog,               // gtk 4.14
   //  gtksnapshot,  // gtk4.14
   //  gtktypebuiltins, // gtk4.14
   gtkfontdialog,               // GTK4.14
@@ -130,6 +139,7 @@ uses
 const
   cmAbout = 1000;
   cmColorDlg = 1001;
+  cmFileDlg = 1002;
 
   function CreateButton(Caption: Pgchar): PGtkWidget;
   var
@@ -194,6 +204,10 @@ const
     button1 := gtk_button_new_with_label('Color...');
     gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
     g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), gpointer(cmColorDlg));
+
+    button1 := gtk_button_new_with_label('File...');
+    gtk_action_bar_pack_start(GTK_ACTION_BAR(Result), button1);
+    g_signal_connect(button1, 'clicked', G_CALLBACK(@btn_Click), gpointer(cmFileDlg));
   end;
 
   function Create_Button_Box: PGtkWidget;
@@ -345,6 +359,7 @@ const
   function Create_Notebook: PGtkWidget;
   begin
     Result := gtk_notebook_new;
+    gtk_notebook_set_scrollable(GTK_NOTEBOOK(Result), True);
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
@@ -358,7 +373,7 @@ const
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Aspect_Frame, Create_Label('AspectFrame'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Stack, Create_Label('Stack'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Spinner, Create_Label('Spinner'));
-    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Windows, Create_Label('Window'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Windows, Create_Label('ScrollWindow'));
   end;
 
 

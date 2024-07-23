@@ -137,9 +137,15 @@ type
   end;
   PGTypeInstance = ^TGTypeInstance;
 
+  TGFile=record // _GFile  // giotypes.h
+    end;
+  PGFile=^TGFile;
+
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage = ^PPangoLanguage;
+
+  PPPangoAttrList=^PPangoAttrList;
 
   // ==== GSK
 
@@ -219,6 +225,10 @@ type
 
   TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
   PGdkRGBA = ^TGdkRGBA;
+
+  TGdkDevice=record // _GdkDevice   gdktypes.h
+  end;
+  PGdkDevice=^TGdkDevice;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
