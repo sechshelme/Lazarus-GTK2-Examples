@@ -29,7 +29,7 @@
 
 #define GTK_TYPE_COLUMN_VIEW_ROW (gtk_column_view_row_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE(GtkColumnViewRow, gtk_column_view_row, GTK, COLUMN_VIEW_ROW, GObject)
+//GDK_DECLARE_INTERNAL_TYPE(GtkColumnViewRow, gtk_column_view_row, GTK, COLUMN_VIEW_ROW, GObject)
 
 
 gpointer        gtk_column_view_row_get_item                    (GtkColumnViewRow       *self);

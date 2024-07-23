@@ -32,7 +32,7 @@
 #define GTK_TYPE_COLUMN_VIEW_SORTER             (gtk_column_view_sorter_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkColumnViewSorter, gtk_column_view_sorter, GTK, COLUMN_VIEW_SORTER, GtkSorter)
+//G_DECLARE_FINAL_TYPE (GtkColumnViewSorter, gtk_column_view_sorter, GTK, COLUMN_VIEW_SORTER, GtkSorter)
 
 
 GtkColumnViewColumn *   gtk_column_view_sorter_get_primary_sort_column (GtkColumnViewSorter *self);

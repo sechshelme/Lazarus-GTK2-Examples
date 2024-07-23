@@ -70,7 +70,7 @@ typedef enum {
 #define GTK_TYPE_SORTER             (gtk_sorter_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkSorter, gtk_sorter, GTK, SORTER, GObject)
 
 /**
  * GtkSorterClass

@@ -5,7 +5,7 @@ unit ListBox;
 interface
 
 uses
-  glib2, gtkenums, gtkwidget, gtkbox, gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner, gtkcenterlayout;
+  glib2, gtkenums, gtkwidget, gtkbox, gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner, gtkcenterlayout,gtkcheckbutton;
 
 function Create_ListBox: PGtkWidget;
 
@@ -37,16 +37,28 @@ begin
   gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), spinner);
 end;
 
+function Create_CheckButton: PGtkWidget;
+var
+  lb , cb: PGtkWidget;
+begin
+  Result := gtk_center_box_new;
+  lb := gtk_label_new('CheckButton');
+  gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), lb);
+  cb := gtk_check_button_new;
+  gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), cb);
+end;
+
 function Create_Spinner2: PGtkWidget;
 var
   lb, spinner: PGtkWidget;
 begin
-  Result := gtk_center_layout_new;
-  lb := gtk_label_new('Bitte warten');
-  gtk_center_layout_set_start_widget(GTK_CENTER_LAYOUT(Result), lb);
-  spinner := gtk_spinner_new;
-  gtk_spinner_set_spinning(GTK_SPINNER(spinner), gTRUE);
-  gtk_center_layout_set_center_widget(GTK_CENTER_LAYOUT(Result), spinner);
+  //Result := gtk_center_layout_new;
+  //lb := gtk_label_new('Bitte warten');
+  //gtk_center_layout_set_start_widget(GTK_CENTER_LAYOUT(Result), lb);
+  //spinner := gtk_spinner_new;
+  //gtk_spinner_set_spinning(GTK_SPINNER(spinner), gTRUE);
+  //gtk_center_layout_set_center_widget(GTK_CENTER_LAYOUT(Result), spinner);
+  Result:=nil;;
 end;
 
 function Create_ListBox: PGtkWidget;
@@ -60,12 +72,18 @@ begin
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner2, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_CheckButton, 0);
 end;
 
 
