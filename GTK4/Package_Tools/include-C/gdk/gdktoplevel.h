@@ -212,7 +212,7 @@ void          gdk_toplevel_begin_move                (GdkToplevel    *toplevel,
                                                       double          y,
                                                       guint32         timestamp);
 
-GDK_AVAILABLE_IN_4_4
+
 gboolean      gdk_toplevel_titlebar_gesture          (GdkToplevel        *toplevel,
                                                       GdkTitlebarGesture  gesture);
 

@@ -37,7 +37,7 @@ GdkContentFormats *     gdk_content_formats_new                 (const char     
                                                                  guint                           n_mime_types);
 
 GdkContentFormats *     gdk_content_formats_new_for_gtype       (GType                           type);
-GDK_AVAILABLE_IN_4_4
+
 GdkContentFormats *     gdk_content_formats_parse               (const char                     *string);
 
 GdkContentFormats *     gdk_content_formats_ref                 (GdkContentFormats              *formats);

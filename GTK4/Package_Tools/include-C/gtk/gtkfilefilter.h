@@ -52,7 +52,7 @@ void            gtk_file_filter_add_mime_type      (GtkFileFilter *filter,
 void            gtk_file_filter_add_pattern        (GtkFileFilter *filter,
                                                     const char    *pattern);
 
-GDK_AVAILABLE_IN_4_4
+
 void            gtk_file_filter_add_suffix         (GtkFileFilter *filter,
                                                     const char    *suffix);
 

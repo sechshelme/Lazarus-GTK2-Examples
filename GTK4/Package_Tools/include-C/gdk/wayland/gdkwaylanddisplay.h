@@ -62,7 +62,7 @@ void                    gdk_wayland_display_set_startup_notification_id (GdkDisp
 gboolean                gdk_wayland_display_query_registry      (GdkDisplay  *display,
 								 const char *global);
 
-GDK_AVAILABLE_IN_4_4
+
 gpointer                gdk_wayland_display_get_egl_display     (GdkDisplay  *display);
 
 

@@ -610,15 +610,15 @@ gpointer                gsk_subsurface_node_get_subsurface      (const GskRender
  */
 #define GSK_VALUE_HOLDS_RENDER_NODE(value)       (G_VALUE_HOLDS ((value), GSK_TYPE_RENDER_NODE))
 
-GDK_AVAILABLE_IN_4_4
+
 void                    gsk_value_set_render_node               (GValue                   *value,
                                                                  GskRenderNode            *node);
-GDK_AVAILABLE_IN_4_4
+
 void                    gsk_value_take_render_node              (GValue                   *value,
                                                                  GskRenderNode            *node);
-GDK_AVAILABLE_IN_4_4
+
 GskRenderNode *         gsk_value_get_render_node               (const GValue             *value);
-GDK_AVAILABLE_IN_4_4
+
 GskRenderNode *         gsk_value_dup_render_node               (const GValue             *value);
 
 

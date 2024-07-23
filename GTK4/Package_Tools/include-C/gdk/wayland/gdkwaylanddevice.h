@@ -51,7 +51,7 @@ struct wl_seat      *gdk_wayland_device_get_wl_seat         (GdkDevice *device);
 struct wl_pointer   *gdk_wayland_device_get_wl_pointer      (GdkDevice *device);
 
 struct wl_keyboard  *gdk_wayland_device_get_wl_keyboard     (GdkDevice *device);
-GDK_AVAILABLE_IN_4_4
+
 struct xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
 
 

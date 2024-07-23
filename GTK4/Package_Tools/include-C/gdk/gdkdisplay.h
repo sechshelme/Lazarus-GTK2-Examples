@@ -68,7 +68,7 @@ gboolean    gdk_display_supports_shadow_width (GdkDisplay *display);
 
 gboolean    gdk_display_supports_input_shapes (GdkDisplay    *display);
 
-GDK_AVAILABLE_IN_4_4
+
 gboolean    gdk_display_prepare_gl         (GdkDisplay  *self,
                                             GError     **error);
 

@@ -30,7 +30,7 @@
 #define GTK_TYPE_MEDIA_STREAM             (gtk_media_stream_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkMediaStream, gtk_media_stream, GTK, MEDIA_STREAM, GObject)
+//G_DECLARE_DERIVABLE_TYPE (GtkMediaStream, gtk_media_stream, GTK, MEDIA_STREAM, GObject)
 
 struct _GtkMediaStreamClass
 {
@@ -115,30 +115,30 @@ void                    gtk_media_stream_unrealize              (GtkMediaStream 
                                                                  GdkSurface      *surface);
 
 /* for implementations only */
-GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_prepared)
+//GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_prepared)
 void                    gtk_media_stream_prepared               (GtkMediaStream *self,
                                                                  gboolean        has_audio,
                                                                  gboolean        has_video,
                                                                  gboolean        seekable,
                                                                  gint64          duration);
-GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_unprepared)
+//GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_unprepared)
 void                    gtk_media_stream_unprepared             (GtkMediaStream *self);
 
-GDK_AVAILABLE_IN_4_4
+
 void                    gtk_media_stream_stream_prepared        (GtkMediaStream *self,
                                                                  gboolean        has_audio,
                                                                  gboolean        has_video,
                                                                  gboolean        seekable,
                                                                  gint64          duration);
-GDK_AVAILABLE_IN_4_4
+
 void                    gtk_media_stream_stream_unprepared      (GtkMediaStream *self);
 
 
 void                    gtk_media_stream_update                 (GtkMediaStream *self,
                                                                  gint64          timestamp);
-GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_ended)
+//GDK_DEPRECATED_IN_4_4_FOR(gtk_media_stream_stream_ended)
 void                    gtk_media_stream_ended                  (GtkMediaStream *self);
-GDK_AVAILABLE_IN_4_4
+
 void                    gtk_media_stream_stream_ended           (GtkMediaStream *self);
 
 void                    gtk_media_stream_seek_success           (GtkMediaStream *self);
@@ -152,13 +152,13 @@ void                    gtk_media_stream_error                  (GtkMediaStream 
                                                                  GQuark          domain,
                                                                  int             code,
                                                                  const char     *format,
-                                                                 ...) G_GNUC_PRINTF (4, 5);
+                                                                 ...) ;
 
 void                    gtk_media_stream_error_valist           (GtkMediaStream *self,
                                                                  GQuark          domain,
                                                                  int             code,
                                                                  const char     *format,
-                                                                 va_list         args) G_GNUC_PRINTF (4, 0);
+                                                                 va_list         args);
 
 
 

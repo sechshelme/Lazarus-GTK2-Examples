@@ -5,7 +5,7 @@ unit ListBox;
 interface
 
 uses
-  glib2, gtkwidget, gtkbutton, gtklabel, gtklistbox;
+  glib2,gtkenums, gtkwidget,gtkbox,gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner;
 
 function Create_ListBox: PGtkWidget;
 
@@ -25,7 +25,17 @@ begin
   Result := gtk_label_new(Caption);
 end;
 
-
+function Create_Spinner: PGtkWidget;
+var
+  lb, spinner: PGtkWidget;
+begin
+  Result:=gtk_center_box_new;
+  lb:=  gtk_label_new('Bitte warten');
+  gtk_center_box_set_start_widget(GTK_CENTER_BOX(Result), lb);
+  spinner:=             gtk_spinner_new;
+  gtk_spinner_set_spinning(GTK_SPINNER( spinner),gTRUE);
+  gtk_center_box_set_center_widget(GTK_CENTER_BOX(Result), spinner);
+end;
 
 function Create_ListBox: PGtkWidget;
 begin
@@ -38,7 +48,9 @@ begin
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
   gtk_list_box_insert(GTK_LIST_BOX(Result), CreateLabel('hallo3'), 0);
-  //  row:=gtk_list_box_row_new;
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
+  gtk_list_box_insert(GTK_LIST_BOX(Result), Create_Spinner, 0);
 end;
 
 

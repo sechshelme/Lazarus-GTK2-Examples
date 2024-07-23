@@ -26,6 +26,7 @@ uses
   gtkroot,                    // io.
   gtkaspectframe,             // io.
   gtkrecentmanager,           // io.
+  gtkmediastream,             // io.
 
 
   gtklayoutchild,             // io.
@@ -63,6 +64,7 @@ uses
   gtkcalendar,                // io.
   gtkwindowcontrols,          // io.
   gtkimage,                   // io.
+  gtkspinner,                 // io.
 
 
   gtkaboutdialog,             // io. -> gtkwindow;
@@ -73,6 +75,7 @@ uses
   gtkscalebutton,             // io. -> gtkadjustment;
   gtklistbox,                 // io. -> gtkadjustment;
   gtkflowbox,                 // io. -> gtkadjustment;
+  gtkscrolledwindow,          // io. -> gtkadjustment
 
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
@@ -96,6 +99,7 @@ uses
 
   gtkselectionmodel,          // io. -> gtkbitset
   gtkstack,                   // io. -> gtkselectionmodel
+
 
 
 
@@ -308,31 +312,54 @@ const
   end;
 
 
-function Create_Stack: PGtkWidget;
-begin
-  Result := gtk_stack_new;
-  gtk_stack_add_child(GTK_STACK(Result), Create_FlowBox);
-  gtk_stack_add_child(GTK_STACK(Result), Create_Calender);
-  gtk_stack_add_child(GTK_STACK(Result), Create_GridBox);
-end;
+  function Create_Stack: PGtkWidget;
+  begin
+    Result := gtk_stack_new;
+    gtk_stack_add_child(GTK_STACK(Result), Create_FlowBox);
+    gtk_stack_add_child(GTK_STACK(Result), Create_Calender);
+    gtk_stack_add_child(GTK_STACK(Result), Create_GridBox);
+  end;
 
 
-function Create_Notebook: PGtkWidget;
-begin
-  Result := gtk_notebook_new;
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ListBox, Create_Label('ListBox'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_CenterBox, Create_Label('CenterBox'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ActionBar, Create_Label('ActionBar'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScrollBox, Create_Label('ScrollBox'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScaleButton, Create_Label('ScaleButton'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Button_Box, Create_Label('ButtonBox'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Window_Controls, Create_Label('WindowControl'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Aspect_Frame, Create_Label('AspectFrame'));
-  gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Stack, Create_Label('Stack'));
-end;
+  function Create_Spinner: PGtkWidget;
+  begin
+    Result := gtk_spinner_new;
+    gtk_spinner_set_spinning(GTK_SPINNER(Result), gTRUE);
+  end;
+
+  function Create_Windows: PGtkWidget;
+  var
+    i: integer;
+    box: PGtkWidget;
+  begin
+    Result := gtk_scrolled_window_new;
+    box := gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_scrolled_window_set_child(GTK_SCROLLED_WINDOW(Result), box);
+
+    for i := 0 to 15 do begin
+      gtk_box_append(GTK_BOX(box), CreateButton('button'));
+    end;
+  end;
+
+
+  function Create_Notebook: PGtkWidget;
+  begin
+    Result := gtk_notebook_new;
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ListBox, Create_Label('ListBox'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_CenterBox, Create_Label('CenterBox'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ActionBar, Create_Label('ActionBar'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScrollBox, Create_Label('ScrollBox'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScaleButton, Create_Label('ScaleButton'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Button_Box, Create_Label('ButtonBox'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Window_Controls, Create_Label('WindowControl'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Aspect_Frame, Create_Label('AspectFrame'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Stack, Create_Label('Stack'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Spinner, Create_Label('Spinner'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Windows, Create_Label('Window'));
+  end;
 
 
 

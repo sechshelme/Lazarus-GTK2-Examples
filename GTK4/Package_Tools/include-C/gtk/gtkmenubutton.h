@@ -79,10 +79,10 @@ void         gtk_menu_button_set_icon_name (GtkMenuButton *menu_button,
 
 const char * gtk_menu_button_get_icon_name (GtkMenuButton *menu_button);
 
-GDK_AVAILABLE_IN_4_4
+
 void         gtk_menu_button_set_always_show_arrow (GtkMenuButton *menu_button,
                                                     gboolean       always_show_arrow);
-GDK_AVAILABLE_IN_4_4
+
 gboolean     gtk_menu_button_get_always_show_arrow (GtkMenuButton *menu_button);
 
 
@@ -114,10 +114,10 @@ void          gtk_menu_button_set_create_popup_func (GtkMenuButton              
                                                      gpointer                      user_data,
                                                      GDestroyNotify                destroy_notify);
 
-GDK_AVAILABLE_IN_4_4
+
 void          gtk_menu_button_set_primary (GtkMenuButton *menu_button,
                                            gboolean       primary);
-GDK_AVAILABLE_IN_4_4
+
 gboolean      gtk_menu_button_get_primary (GtkMenuButton *menu_button);
 
 
