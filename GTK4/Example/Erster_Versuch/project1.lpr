@@ -14,6 +14,8 @@ uses
   gtkborder,                  // io.
   gtkcolorutils,              // io.
   gtkbitset,                  // io.
+  gtkselectionmodel,          // io. -> gtkbitset
+  gtkstack,                   // io. -> gtkselectionmodel
   gtkaccelgroup,              // io.
   gtkfilter,                  // io.
   gtkfilefilter,              // io.
@@ -32,6 +34,8 @@ uses
   gtkimcontext,               // io.
   gtkbuilderlistitemfactory,  // io.
   gtksorter,                  // io.
+  gtkicontheme,               // io.
+
 
 
   gtklayoutchild,             // io.
@@ -59,6 +63,7 @@ uses
   gtkwindowgroup,             // io. -> gtkwindow;
 
 
+  gtktooltip,                 // io.
   gtkbox,                     // io.
   gtkcenterbox,               // io.
   gtkgrid,                    // io.
@@ -101,15 +106,19 @@ uses
   gtkcellarea,                // io. -> gtkcellrenderer, gtktreemodel, gtkcelleditable;
   gtkentrycompletion,         // io. -> gtktreemodel, gtkcellarea;
   gtkentrybuffer,             // io.
+  gtktext,                    // io. -> gtkentrybuffer
   gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
   gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;       $
 
-  gtktooltip,                 // io.
+  gtkpapersize,
+  gtkpagesetup,               // io. -> gtkpapersize
+  gtkprintsettings,           // io. -> gtkpapersize
+//  gtkprintdialog,            //  gtk 4.14       // TGtkPrintSetup überprüfen
 
-  gtkselectionmodel,          // io. -> gtkbitset
-  gtkstack,                   // io. -> gtkselectionmodel
 
 
+
+  gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
 //  gtkcolumnviewsorter,  gtk 4.14
 //  gtkcolumnviewrow,    gtk 4.14
 //  gtkcolumnviewcolumn,  gtk 4.14         // fehlt noch was

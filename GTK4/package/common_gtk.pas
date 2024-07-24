@@ -141,6 +141,19 @@ type
     end;
   PGFile=^TGFile;
 
+TGKeyFile= record // _GKeyFile;
+  end;
+  PGKeyFile=^TGKeyFile;
+
+  TGOutputStreamPrivate=record // _GOutputStreamPrivate       /usr/include/glib-2.0/gio/goutputstream.h
+    end;
+  PGOutputStreamPrivate=^TGOutputStreamPrivate;
+TGOutputStream=  record // _GOutputStream
+  parent_instance:TGObject;
+  priv:PGOutputStreamPrivate;
+  end;
+PGOutputStream=^TGOutputStream;
+
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage = ^PPangoLanguage;

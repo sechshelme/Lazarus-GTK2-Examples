@@ -16,7 +16,6 @@ type
   PGtkSelectionModel = ^TGtkSelectionModel;
 
 type
-  PGtkSelectionModelInterface = ^TGtkSelectionModelInterface;
 
   TGtkSelectionModelInterface = record
     g_iface: TGTypeInterface;
@@ -30,6 +29,7 @@ type
     unselect_all: function(model: PGtkSelectionModel): Tgboolean; cdecl;
     set_selection: function(model: PGtkSelectionModel; selected: PGtkBitset; mask: PGtkBitset): Tgboolean; cdecl;
   end;
+  PGtkSelectionModelInterface = ^TGtkSelectionModelInterface;
 
 function gtk_selection_model_get_type: TGType; cdecl; external gtklib;
 function gtk_selection_model_is_selected(model: PGtkSelectionModel; position: Tguint): Tgboolean; cdecl; external gtklib;

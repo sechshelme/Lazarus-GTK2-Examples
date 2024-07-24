@@ -53,7 +53,7 @@ GtkPageSetup *  gtk_print_setup_get_page_setup          (GtkPrintSetup        *s
 #define GTK_TYPE_PRINT_DIALOG (gtk_print_dialog_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkPrintDialog, gtk_print_dialog, GTK, PRINT_DIALOG, GObject)
+//G_DECLARE_FINAL_TYPE (GtkPrintDialog, gtk_print_dialog, GTK, PRINT_DIALOG, GObject)
 
 
 GtkPrintDialog *gtk_print_dialog_new                    (void);

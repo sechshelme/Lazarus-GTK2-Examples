@@ -36,6 +36,7 @@
  * Checks whether a `GtkAccessible` implementation has the given @role,
  * and raises an assertion if the condition is failed.
  */
+/*
 #define gtk_test_accessible_assert_role(accessible,role) \
 G_STMT_START { \
   GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
@@ -47,6 +48,7 @@ G_STMT_START { \
                                                 __a, __r1, __r2); \
   } \
 } G_STMT_END
+*/
 
 /**
  * gtk_test_accessible_assert_property:
@@ -58,6 +60,7 @@ G_STMT_START { \
  * property set to the expected value, and raises an assertion if the
  * condition is not satisfied.
  */
+/*
 #define gtk_test_accessible_assert_property(accessible,property,...) \
 G_STMT_START { \
   GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
@@ -69,6 +72,7 @@ G_STMT_START { \
     g_free (msg__); \
   } \
 } G_STMT_END
+*/
 
 /**
  * gtk_test_accessible_assert_relation:
@@ -80,6 +84,7 @@ G_STMT_START { \
  * relation set to the expected value, and raises an assertion if the
  * condition is not satisfied.
  */
+/*
 #define gtk_test_accessible_assert_relation(accessible,relation,...) \
 G_STMT_START { \
   GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
@@ -91,6 +96,7 @@ G_STMT_START { \
     g_free (msg__); \
   } \
 } G_STMT_END
+*/
 
 /**
  * gtk_test_accessible_assert_state:
@@ -102,6 +108,7 @@ G_STMT_START { \
  * state set to the expected value, and raises an assertion if the
  * condition is not satisfied.
  */
+/*
 #define gtk_test_accessible_assert_state(accessible,state,...) \
 G_STMT_START { \
   GtkAccessible *__a = GTK_ACCESSIBLE (accessible); \
@@ -113,6 +120,7 @@ G_STMT_START { \
     g_free (msg__); \
   } \
 } G_STMT_END
+*/
 
 
 gboolean        gtk_test_accessible_has_role            (GtkAccessible         *accessible,
