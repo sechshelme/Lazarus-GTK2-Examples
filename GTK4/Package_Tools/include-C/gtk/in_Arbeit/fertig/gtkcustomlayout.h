@@ -67,7 +67,7 @@ typedef void (* GtkCustomAllocateFunc) (GtkWidget    *widget,
                                         int           baseline);
 
 
-G_DECLARE_FINAL_TYPE (GtkCustomLayout, gtk_custom_layout, GTK, CUSTOM_LAYOUT, GtkLayoutManager)
+//G_DECLARE_FINAL_TYPE (GtkCustomLayout, gtk_custom_layout, GTK, CUSTOM_LAYOUT, GtkLayoutManager)
 
 
 GtkLayoutManager *      gtk_custom_layout_new   (GtkCustomRequestModeFunc request_mode,

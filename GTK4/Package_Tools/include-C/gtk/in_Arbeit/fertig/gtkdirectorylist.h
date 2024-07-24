@@ -34,7 +34,7 @@
 #define GTK_TYPE_DIRECTORY_LIST (gtk_directory_list_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST, GObject)
+//G_DECLARE_FINAL_TYPE (GtkDirectoryList, gtk_directory_list, GTK, DIRECTORY_LIST, GObject)
 
 
 GtkDirectoryList *      gtk_directory_list_new                  (const char             *attributes,

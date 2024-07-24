@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 Matthias Clasen
+ * Copyright © 2019 Benjamin Otte
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  *
- * Authors: Matthias Clasen <mclasen@redhat.com>
+ * Authors: Benjamin Otte <otte@gnome.org>
  */
 
 #pragma once
@@ -23,23 +23,35 @@
 #error "Only <gtk/gtk.h> can be included directly."
 #endif
 
-#include <gtk/gtkexpression.h>
-#include <gtk/gtksorter.h>
+#include <gtk/gtkfilter.h>
 
 
 
-#define GTK_TYPE_CUSTOM_SORTER             (gtk_custom_sorter_get_type ())
+/**
+ * GtkCustomFilterFunc:
+ * @item: (type GObject): The item to be matched
+ * @user_data: user data
+ *
+ * User function that is called to determine if the @item should be matched.
+ *
+ * If the filter matches the item, this function must return %TRUE. If the
+ * item should be filtered out, %FALSE must be returned.
+ *
+ * Returns: %TRUE to keep the item around
+ */
+typedef gboolean (* GtkCustomFilterFunc) (gpointer item, gpointer user_data);
 
-G_DECLARE_FINAL_TYPE (GtkCustomSorter, gtk_custom_sorter, GTK, CUSTOM_SORTER, GtkSorter)
+#define GTK_TYPE_CUSTOM_FILTER             (gtk_custom_filter_get_type ())
 
+//G_DECLARE_FINAL_TYPE (GtkCustomFilter, gtk_custom_filter, GTK, CUSTOM_FILTER, GtkFilter)
 
-GtkCustomSorter *       gtk_custom_sorter_new                   (GCompareDataFunc        sort_func,
+GtkCustomFilter *       gtk_custom_filter_new                   (GtkCustomFilterFunc     match_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 
 
-void                    gtk_custom_sorter_set_sort_func         (GtkCustomSorter        *self,
-                                                                 GCompareDataFunc        sort_func,
+void                    gtk_custom_filter_set_filter_func       (GtkCustomFilter        *self,
+                                                                 GtkCustomFilterFunc     match_func,
                                                                  gpointer                user_data,
                                                                  GDestroyNotify          user_destroy);
 

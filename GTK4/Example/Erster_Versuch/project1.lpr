@@ -10,6 +10,7 @@ uses
   gtknative,                  // io.    ( TGtkNative ausgelagert )
   gtkwidget,                  // -> pango,Cairo, gtknative
   gtkmain,                    // io.
+  gtkdebug,                   //   Macro nicht aufgelöst
 
   gtkadjustment,              // io.
   gtkborder,                  // io.
@@ -19,6 +20,7 @@ uses
   gtkstack,                   // io. -> gtkselectionmodel
   gtkaccelgroup,              // io.
   gtkfilter,                  // io.
+  gtkcustomfilter,            // io. -> gtkfilter
   gtkfilefilter,              // io.
   gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
   gtkbuilder,                 // io.
@@ -35,7 +37,10 @@ uses
   gtkimcontext,               // io.
   gtkbuilderlistitemfactory,  // io.
   gtksorter,                  // io.
+  gtkcustomsorter,            // io. -> gtksorter
   gtkicontheme,               // io.
+  gtkcssprovider,             // io.
+  gtkdirectorylist,           // io.
 
 
 
@@ -45,7 +50,11 @@ uses
   gtkboxlayout,               // io. -> gtklayoutmanager;
   gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild;
   gtkcenterlayout,            // io. -> gtklayoutmanager
+  gtkcustomlayout,            // io. -> gtklayoutmanager
 
+  gtkconstraint,              // io.
+  gtkconstraintguide,         // io.
+  gtkconstraintlayout,        // io. -> gtkconstraint, gtklayoutmanager, gtklayoutchild, gtkconstraintguide;
 
   gtkshortcutsshortcut,       // io.
   gtkshortcuttrigger,         // io.
@@ -79,6 +88,7 @@ uses
   gtkimage,                   // io.
   gtkspinner,                 // io.
   gtkcheckbutton,             // io.
+  gtkeditablelabel,           // io.
 
 
   gtkaboutdialog,             // io. -> gtkwindow;
@@ -138,6 +148,7 @@ uses
   //  gtkfiledialog,               // gtk 4.14
   //  gtksnapshot,  // gtk4.14
   //  gtktypebuiltins, // gtk4.14
+  //  gtkdialogerror,  // gtk 4.14
   gtkfontdialog,               // GTK4.14
   gtkcolordialog,             // geht nur mit 4.14      // Muss überarbeitet werden
   gtkcolordialogbutton,         // GTK4.14
@@ -364,7 +375,7 @@ const
     gtk_spinner_set_spinning(GTK_SPINNER(Result), gTRUE);
   end;
 
-  function Create_Windows: PGtkWidget;
+  function Create_ScrollWindows: PGtkWidget;
   var
     i: integer;
     box: PGtkWidget;
@@ -376,6 +387,11 @@ const
     for i := 0 to 15 do begin
       gtk_box_append(GTK_BOX(box), CreateButton('button'));
     end;
+  end;
+
+  function Create_EditLabel: PGtkWidget;
+  begin
+    Result := gtk_editable_label_new('Edit Label');
   end;
 
 
@@ -396,7 +412,8 @@ const
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Aspect_Frame, Create_Label('AspectFrame'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Stack, Create_Label('Stack'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Spinner, Create_Label('Spinner'));
-    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Windows, Create_Label('ScrollWindow'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScrollWindows, Create_Label('ScrollWindow'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_EditLabel, Create_Label('EditLabel'));
   end;
 
 

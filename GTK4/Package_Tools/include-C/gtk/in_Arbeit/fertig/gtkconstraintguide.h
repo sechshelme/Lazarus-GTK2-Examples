@@ -28,7 +28,7 @@
 #define GTK_TYPE_CONSTRAINT_GUIDE (gtk_constraint_guide_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkConstraintGuide, gtk_constraint_guide, GTK, CONSTRAINT_GUIDE, GObject)
+//G_DECLARE_FINAL_TYPE (GtkConstraintGuide, gtk_constraint_guide, GTK, CONSTRAINT_GUIDE, GObject)
 
 
 GtkConstraintGuide *    gtk_constraint_guide_new                (void);

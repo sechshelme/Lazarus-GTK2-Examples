@@ -38,12 +38,12 @@ typedef struct _GtkConstraintTarget GtkConstraintTarget;
  */
 
 
-G_DECLARE_INTERFACE (GtkConstraintTarget, gtk_constraint_target, GTK, CONSTRAINT_TARGET, GObject)
+//G_DECLARE_INTERFACE (GtkConstraintTarget, gtk_constraint_target, GTK, CONSTRAINT_TARGET, GObject)
 
 #define GTK_TYPE_CONSTRAINT (gtk_constraint_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkConstraint, gtk_constraint, GTK, CONSTRAINT, GObject)
+//G_DECLARE_FINAL_TYPE (GtkConstraint, gtk_constraint, GTK, CONSTRAINT, GObject)
 
 
 GtkConstraint *         gtk_constraint_new                      (gpointer                target,
