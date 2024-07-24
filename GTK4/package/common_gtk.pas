@@ -14,6 +14,8 @@ const
 
 type
   // === Exotisches
+  Tsize_t = SizeUInt;
+
   Tva_list = Pointer; //  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
 
   Tgraphene_matrix_t = Pointer; //    /usr/include/graphene-1.0/graphene-matrix.h
@@ -57,6 +59,7 @@ type
   Tgsize = gsize;
   Tgssize = gssize;
   Pgssize = ^Tgssize;
+
 
   Tgunichar = gunichar;
 
@@ -123,9 +126,9 @@ type
   PGDateTime = ^TGDateTime;
   PPGDateTime = ^PGDateTime;
 
-  TGAppInfo   =record  // giotypes.h
-    end;
-  PGAppInfo=^TGAppInfo;
+  TGAppInfo = record  // giotypes.h
+  end;
+  PGAppInfo = ^TGAppInfo;
 
   TGTypeClass = record
     g_type: GType;
@@ -137,28 +140,29 @@ type
   end;
   PGTypeInstance = ^TGTypeInstance;
 
-  TGFile=record // _GFile  // giotypes.h
-    end;
-  PGFile=^TGFile;
-
-TGKeyFile= record // _GKeyFile;
+  TGFile = record // _GFile  // giotypes.h
   end;
-  PGKeyFile=^TGKeyFile;
+  PGFile = ^TGFile;
 
-  TGOutputStreamPrivate=record // _GOutputStreamPrivate       /usr/include/glib-2.0/gio/goutputstream.h
-    end;
-  PGOutputStreamPrivate=^TGOutputStreamPrivate;
-TGOutputStream=  record // _GOutputStream
-  parent_instance:TGObject;
-  priv:PGOutputStreamPrivate;
+  TGKeyFile = record // _GKeyFile;
   end;
-PGOutputStream=^TGOutputStream;
+  PGKeyFile = ^TGKeyFile;
+
+  TGOutputStreamPrivate = record // _GOutputStreamPrivate       /usr/include/glib-2.0/gio/goutputstream.h
+  end;
+  PGOutputStreamPrivate = ^TGOutputStreamPrivate;
+
+  TGOutputStream = record // _GOutputStream
+    parent_instance: TGObject;
+    priv: PGOutputStreamPrivate;
+  end;
+  PGOutputStream = ^TGOutputStream;
 
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage = ^PPangoLanguage;
 
-  PPPangoAttrList=^PPangoAttrList;
+  PPPangoAttrList = ^PPangoAttrList;
 
   // ==== GSK
 
@@ -239,9 +243,9 @@ PGOutputStream=^TGOutputStream;
   TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
   PGdkRGBA = ^TGdkRGBA;
 
-  TGdkDevice=record // _GdkDevice   gdktypes.h
+  TGdkDevice = record // _GdkDevice   gdktypes.h
   end;
-  PGdkDevice=^TGdkDevice;
+  PGdkDevice = ^TGdkDevice;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h

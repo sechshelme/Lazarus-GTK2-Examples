@@ -9,6 +9,7 @@ uses
   gtkenums,                   // io.
   gtknative,                  // io.    ( TGtkNative ausgelagert )
   gtkwidget,                  // -> pango,Cairo, gtknative
+  gtkmain,                    // io.
 
   gtkadjustment,              // io.
   gtkborder,                  // io.
@@ -91,6 +92,11 @@ uses
   gtkscrolledwindow,          // io. -> gtkadjustment
   gtkspinbutton,              // io. -> gtkadjustment
 
+  gtkpopover,                 // io.
+  gtkpopovermenu,             // io.
+  gtkpopovermenubar,          // io.
+  gtkmenubutton,              // io. -> gtkpopover
+
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
   gtktextchild,               // io.
@@ -108,22 +114,27 @@ uses
   gtkentrybuffer,             // io.
   gtktext,                    // io. -> gtkentrybuffer
   gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
-  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;       $
+  gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
+
+
+
+
 
   gtkpapersize,
   gtkpagesetup,               // io. -> gtkpapersize
   gtkprintsettings,           // io. -> gtkpapersize
-//  gtkprintdialog,            //  gtk 4.14       // TGtkPrintSetup überprüfen
-
-
+  gtkprintcontext,            // io. -> gtkpagesetup
+  gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
+  gtkprintoperation,          // io. -> gtkwindow, gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
+  //  gtkprintdialog,            //  gtk 4.14  -> gtkwindow, gtkprintsettings, gtkpagesetup
 
 
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
-//  gtkcolumnviewsorter,  gtk 4.14
-//  gtkcolumnviewrow,    gtk 4.14
-//  gtkcolumnviewcolumn,  gtk 4.14         // fehlt noch was
-//   gtkcolumnviewcell, gtk 4.14
-//      gtkcolumnview, // gtk4.14
+  //  gtkcolumnviewsorter,  gtk 4.14
+  //  gtkcolumnviewrow,    gtk 4.14
+  //  gtkcolumnviewcolumn,  gtk 4.14         // fehlt noch was
+  //   gtkcolumnviewcell, gtk 4.14
+  //      gtkcolumnview, // gtk4.14
   //  gtkfiledialog,               // gtk 4.14
   //  gtksnapshot,  // gtk4.14
   //  gtktypebuiltins, // gtk4.14
