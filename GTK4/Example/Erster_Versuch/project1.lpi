@@ -48,6 +48,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ListBox"/>
       </Unit>
+      <Unit>
+        <Filename Value="drawarena.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DrawArena"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

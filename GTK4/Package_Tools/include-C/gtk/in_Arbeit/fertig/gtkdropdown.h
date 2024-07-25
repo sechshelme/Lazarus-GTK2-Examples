@@ -28,7 +28,7 @@
 #define GTK_TYPE_DROP_DOWN         (gtk_drop_down_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkDropDown, gtk_drop_down, GTK, DROP_DOWN, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkDropDown, gtk_drop_down, GTK, DROP_DOWN, GtkWidget)
 
 
 GtkWidget *     gtk_drop_down_new                               (GListModel             *model,

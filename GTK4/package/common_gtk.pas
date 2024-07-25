@@ -247,6 +247,20 @@ type
   end;
   PGdkDevice = ^TGdkDevice;
 
+  TGdkDrag=record // _GdkDrag  gdktypes.h
+    end;
+  PGdkDrag=^TGdkDrag;
+
+  TGdkDrop=record // _GdkDrop  gdktypes.h
+    end;
+  PGdkDrop=^TGdkDrop;
+
+  TGdkContentFormats=record // _GdkContentFormats  gdktypes.h
+    end;
+    PGdkContentFormats=^tGdkContentFormats;
+
+    TGdkScrollUnit=LongInt; // gdkevent.h
+
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
 

@@ -47,7 +47,7 @@ typedef enum {
 
 #define GTK_TYPE_STRING_FILTER             (gtk_string_filter_get_type ())
 
-G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, GtkFilter)
+//G_DECLARE_FINAL_TYPE (GtkStringFilter, gtk_string_filter, GTK, STRING_FILTER, GtkFilter)
 
 
 GtkStringFilter *       gtk_string_filter_new                   (GtkExpression          *expression);

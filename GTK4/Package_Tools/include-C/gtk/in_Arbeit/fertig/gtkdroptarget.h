@@ -70,7 +70,7 @@ void                    gtk_drop_target_set_preload      (GtkDropTarget         
 
 gboolean                gtk_drop_target_get_preload      (GtkDropTarget         *self);
 
-GDK_DEPRECATED_IN_4_4_FOR(gtk_drop_target_get_current_drop)
+//GDK_DEPRECATED_IN_4_4_FOR(gtk_drop_target_get_current_drop)
 GdkDrop *               gtk_drop_target_get_drop         (GtkDropTarget         *self);
 
 

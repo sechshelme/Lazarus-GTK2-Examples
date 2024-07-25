@@ -19,15 +19,16 @@ uses
   gtkselectionmodel,          // io. -> gtkbitset
   gtkstack,                   // io. -> gtkselectionmodel
   gtkaccelgroup,              // io.
+  gtkexpression,              // io.
   gtkfilter,                  // io.
   gtkcustomfilter,            // io. -> gtkfilter
   gtkfilefilter,              // io.
   gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
+  gtkstringfilter,            // io. -> gtkfilter, gtkexpression
   gtkbuilder,                 // io.
   gtkbookmarklist,            // io.
   gtkactionable,              // io.
   gtkstyleprovider,           // io.
-  gtkexpression,              // io.
   gtkbuilderscope,            // io. -> gtkbuilder;
   gtkbuildable,               // io. -> gtkbuilder;
   gtkroot,                    // io.
@@ -41,7 +42,12 @@ uses
   gtkicontheme,               // io.
   gtkcssprovider,             // io.
   gtkdirectorylist,           // io.
-
+  gtkeventcontroller,         // io.
+  gtkeventcontrollerfocus,    // io.
+  gtkeventcontrollerlegacy,   // io.
+  gtkeventcontrollermotion,   // io.
+  gtkeventcontrollerscroll,   // io.
+  gtkeventcontrollerkey,      // io. -> gtkimcontext
 
 
   gtklayoutchild,             // io.
@@ -72,6 +78,8 @@ uses
   gtkapplicationwindow,       // io. -> gtkwindow
   gtkwindowgroup,             // io. -> gtkwindow;
 
+  gtkdragicon,                // io.
+  gtkdragsource,              // io.
 
   gtktooltip,                 // io.
   gtkbox,                     // io.
@@ -79,6 +87,7 @@ uses
   gtkgrid,                    // io.
   gtkactionbar,               // io.
   gtknotebook,                // io.
+  gtkexpander,                // io.
 
   gtkbutton,                  // io.
   gtktogglebutton,            // io. -> gtkbutton
@@ -89,6 +98,7 @@ uses
   gtkspinner,                 // io.
   gtkcheckbutton,             // io.
   gtkeditablelabel,           // io.
+  gtkdrawingarea,             // io.
 
 
   gtkaboutdialog,             // io. -> gtkwindow;
@@ -106,6 +116,8 @@ uses
   gtkpopovermenu,             // io.
   gtkpopovermenubar,          // io.
   gtkmenubutton,              // io. -> gtkpopover
+  gtkemojichooser,            // io.
+
 
   gtktexttag,                 // io.
   gtktexttagtable,            // io. -> gtktexttag;
@@ -126,11 +138,14 @@ uses
   gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
   gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
 
+  gtkdroptarget,              // io.
+  gtkdroptargetasync,         // io.
+  gtkdropcontrollermotion,    // io. -> gtkeventcontroller
+  gtkdropdown,                // io. -> gtkexpression, gtkstringfilter
 
 
 
-
-  gtkpapersize,
+  gtkpapersize,               // io.
   gtkpagesetup,               // io. -> gtkpapersize
   gtkprintsettings,           // io. -> gtkpapersize
   gtkprintcontext,            // io. -> gtkpagesetup
@@ -163,7 +178,8 @@ uses
   // --- Eigenes
   ScrollBox,
   TextEdit,
-  ListBox;
+  ListBox,
+  DrawArena;
 
 
 
@@ -394,11 +410,25 @@ const
     Result := gtk_editable_label_new('Edit Label');
   end;
 
+  function Create_Expander: PGtkWidget;
+  var
+    ex: PGtkWidget;
+  begin
+    Result := gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    ex := gtk_expander_new('Expander 1');
+    gtk_expander_set_child(GTK_EXPANDER(ex), CreateButton('Button'));
+    gtk_box_append(GTK_BOX(Result), ex);
+    ex := gtk_expander_new('Expander 2');
+    gtk_expander_set_child(GTK_EXPANDER(ex), CreateButton('Button'));
+    gtk_box_append(GTK_BOX(Result), ex);
+  end;
+
 
   function Create_Notebook: PGtkWidget;
   begin
     Result := gtk_notebook_new;
     gtk_notebook_set_scrollable(GTK_NOTEBOOK(Result), True);
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_DrawArena, Create_Label('DrawArena'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
@@ -414,6 +444,7 @@ const
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Spinner, Create_Label('Spinner'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_ScrollWindows, Create_Label('ScrollWindow'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_EditLabel, Create_Label('EditLabel'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Expander, Create_Label('Expander'));
   end;
 
 
