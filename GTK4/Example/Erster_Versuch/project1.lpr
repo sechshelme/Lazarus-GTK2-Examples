@@ -151,7 +151,7 @@ uses
   gtkprintcontext,            // io. -> gtkpagesetup
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
   gtkprintoperation,          // io. -> gtkwindow, gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
-  //  gtkprintdialog,            //  gtk 4.14  -> gtkwindow, gtkprintsettings, gtkpagesetup
+  gtkprintdialog,            //  gtk 4.14  -> gtkwindow, gtkprintsettings, gtkpagesetup
 
 
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros

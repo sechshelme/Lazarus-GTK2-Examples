@@ -43,7 +43,7 @@ implementation
 
 function GTK_TYPE_COLOR_DIALOG: TGType;
 begin
- // Result := gtk_color_dialog_get_type;
+ Result := gtk_color_dialog_get_type;
 end;
 
 function GTK_COLOR_DIALOG(obj: Pointer): PGtkColorDialog;
