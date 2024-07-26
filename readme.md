@@ -12,7 +12,7 @@ Unter Linux kann es zu folgendem Fehler kommen und einem den ganzen Fenstermange
 An unhandled exception occurred at $00007F07F96764DB:
 EInvalidOp: Invalid floating point operation
 ```
-Abhilfe schaft folgendes:
+Abhilfe schafft folgendes:
 ```pascal
 uses
   math, ...
