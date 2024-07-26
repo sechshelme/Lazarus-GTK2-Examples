@@ -8,6 +8,7 @@ apt install libgtk2.0-dev
 # Wichtig !!
 Unter Linux kann es zu folgendem Fehler kommen und einem den ganzen Fenstermanger runterreisen.
 
+
 ```
 An unhandled exception occurred at $00007F07F96764DB:
 EInvalidOp: Invalid floating point operation
