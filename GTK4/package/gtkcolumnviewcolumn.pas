@@ -3,14 +3,16 @@ unit gtkcolumnviewcolumn;
 interface
 
 uses
-  glib2, common_GTK, gtkcolumnview;
+  glib2, common_GTK, gtkcolumnview, gtklistitemfactory, gtksorter;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
-
 type
+  TGtkColumnViewColumnClass=record // _GtkColumnViewColumnClass
+    end;
+  PGtkColumnViewColumnClass=^TGtkColumnViewColumnClass;
 
 function gtk_column_view_column_get_type: TGType; cdecl; external gtklib;
 function gtk_column_view_column_new(title: PChar; factory: PGtkListItemFactory): PGtkColumnViewColumn; cdecl; external gtklib;

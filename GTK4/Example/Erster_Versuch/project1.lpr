@@ -154,16 +154,20 @@ uses
   gtkprintdialog,            //  gtk 4.14  -> gtkwindow, gtkprintsettings, gtkpagesetup
 
 
+  gtklistitemfactory,
+
+  gtkscrollinfo,
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
-  //  gtkcolumnviewsorter,  gtk 4.14
-  //  gtkcolumnviewrow,    gtk 4.14
-  //  gtkcolumnviewcolumn,  gtk 4.14         // fehlt noch was
-  //   gtkcolumnviewcell, gtk 4.14
-  //      gtkcolumnview, // gtk4.14
-  //  gtkfiledialog,               // gtk 4.14
-  //  gtksnapshot,  // gtk4.14
-  //  gtktypebuiltins, // gtk4.14
-  //  gtkdialogerror,  // gtk 4.14
+    gtkcolumnviewsorter,
+    gtkcolumnviewrow,
+    gtkcolumnviewcolumn,          // fehlt noch was
+     gtkcolumnviewcell,
+        gtkcolumnview, // gtk4.14
+    gtkfiledialog,               // gtk 4.14
+    gtksnapshot,  // gtk4.14
+
+    gtktypebuiltins, // gtk4.14
+    gtkdialogerror,  // gtk 4.14
   gtkfontdialog,               // GTK4.14
   gtkcolordialog,             // geht nur mit 4.14      // Muss überarbeitet werden
   gtkcolordialogbutton,         // GTK4.14

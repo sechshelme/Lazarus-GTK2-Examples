@@ -24,6 +24,8 @@ type
   Pgraphene_rect_t = ^Tgraphene_rect_t;
   Tgraphene_point_t = Pointer;
   Pgraphene_point_t = ^Tgraphene_point_t;
+  Tgraphene_vec3_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec3.h
+  Pgraphene_vec3_t = ^Tgraphene_vec3_t;
   Tgraphene_vec4_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
   Pgraphene_vec4_t = ^Tgraphene_vec4_t;
 
@@ -31,6 +33,11 @@ type
     Width, Height: cfloat;
   end;
   Pgraphene_size_t = ^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
+
+  Tgraphene_point3d_t  =record
+    x,y,z:cfloat;
+  end;
+  Pgraphene_point3d_t=^Tgraphene_point3d_t;
 
 
   // === Standard Typen
@@ -164,25 +171,6 @@ type
 
   PPPangoAttrList = ^PPangoAttrList;
 
-  // ==== GSK
-
-  TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
-  PGskTransform = ^TGskTransform;
-
-  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
-  end;
-  PGskRenderer = ^TGskRenderer;
-
-  TGskRenderNode = record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
-  end;
-  PGskRenderNode = ^TGskRenderNode;
-
-  TGskRoundedRect = record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
-    bounds: Tgraphene_rect_t;
-    corner: array[0..3] of Pgraphene_size_t;
-  end;
-  PGskRoundedRect = ^TGskRoundedRect;
-
   // ==== GDK
 
   TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
@@ -261,8 +249,70 @@ type
 
     TGdkScrollUnit=LongInt; // gdkevent.h
 
+    TGdkTexture=record // _GdkTexture   gdktypes.h
+      end;
+    PGdkTexture=^TGdkTexture;
+
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
+
+  // ==== GSK
+
+type
+  TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
+  PGskTransform = ^TGskTransform;
+
+  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
+  end;
+  PGskRenderer = ^TGskRenderer;
+
+  TGskRenderNode = record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
+  end;
+  PGskRenderNode = ^TGskRenderNode;
+
+  TGskRoundedRect = record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
+    bounds: Tgraphene_rect_t;
+    corner: array[0..3] of Pgraphene_size_t;
+  end;
+  PGskRoundedRect = ^TGskRoundedRect;
+
+  TGskPath=record    // gsktypes.h
+  end;
+  PGskPath=^TGskPath;
+
+  TGskStroke=record                 // gsktypes.h
+    end;
+  PGskStroke=^TGskStroke;
+
+  TGskFillRule=LongInt; // gskenums.h
+  PGskFillRule=^TGskFillRule;
+
+  TGskBlendMode=LongInt; // gskenums.h
+  PGskBlendMode=^TGskBlendMode;
+
+  TGskMaskMode=LongInt;               // gskenums.h
+  PGskMaskMode=^TGskMaskMode;
+
+  TGskScalingFilter=LongInt;                            // gskenums.h
+  PGskScalingFilter=^TGskScalingFilter;
+
+  TGskShadow=record  // gskrendermode.h                 G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
+    color:TGdkRGBA;
+    dx:cfloat;
+    dy:cfloat;
+    radius:cfloat;
+    end;
+  PGskShadow=^TGskShadow;
+
+  TGskGLShader=record    //  gskglshader.h
+  end;
+  PGskGLShader=^TGskGLShader;
+
+  TGskColorStop=record    // /usr/include/gtk-4.0/gsk/gskrendernode.h
+    offset:cfloat;
+    color:TGdkRGBA
+  end;
+  PGskColorStop=^TGskColorStop;
 
 
   // ======================================
