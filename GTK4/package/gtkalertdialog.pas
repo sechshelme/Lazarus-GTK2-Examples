@@ -12,11 +12,11 @@ uses
 type
   {G_DECLARE_FINAL_TYPE (GtkAlertDialog, gtk_alert_dialog, GTK, ALERT_DIALOG, GObject) }
   TGtkAlertDialog = record
-  end; 
+  end;
   PGtkAlertDialog = ^TGtkAlertDialog;
 
   TGtkAlertDialogClass = record
-    parent_class : TGObjectClass;
+    parent_class: TGObjectClass;
   end;
   PGtkAlertDialogClass = ^TGtkAlertDialogClass;
 
@@ -41,7 +41,7 @@ procedure gtk_alert_dialog_show(self: PGtkAlertDialog; parent: PGtkWindow); cdec
 
 // === Konventiert am: 14-7-24 16:12:11 ===
 
-function gtk_alert_dialog_get_type:TGType;cdecl;external gtklib;
+function gtk_alert_dialog_get_type: TGType; cdecl; external gtklib;
 
 function GTK_TYPE_ALERT_DIALOG: TGType;
 function GTK_ALERT_DIALOG(obj: Pointer): PGtkAlertDialog;
@@ -51,9 +51,7 @@ implementation
 
 function GTK_TYPE_ALERT_DIALOG: TGType;
 begin
-  // ab gtk 4.12
-
-//  Result := gtk_alert_dialog_get_type;
+  Result := gtk_alert_dialog_get_type;
 end;
 
 function GTK_ALERT_DIALOG(obj: Pointer): PGtkAlertDialog;

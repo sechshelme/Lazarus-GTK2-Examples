@@ -3,15 +3,14 @@ unit gtktypebuiltins;
 interface
 
 uses
-  glib2, common_GTK;
+  common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 
-  { enumerations from "gtkassistant.h"  }
-
+{ enumerations from "gtkassistant.h"  }
 function gtk_assistant_page_type_get_type: TGType; cdecl; external gtklib;
 function GTK_TYPE_ASSISTANT_PAGE_TYPE: TGType;
 

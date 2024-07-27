@@ -10,7 +10,7 @@ uses
   {$ENDIF}
 
 type
-  
+
   TGtkAccessibleRange = record  // {G_DECLARE_INTERFACE (GtkAccessibleRange, gtk_accessible_range, GTK, ACCESSIBLE_RANGE, GtkAccessible) }
   end;
   PGtkAccessibleRange = ^TGtkAccessibleRange;
@@ -34,8 +34,7 @@ implementation
 
 function GTK_TYPE_ACCESSIBLE_RANGE: TGType;
 begin
-  // Ab gtk 4.12
-//  Result := gtk_accessible_range_get_type;
+  Result := gtk_accessible_range_get_type;
 end;
 
 function GTK_ACCESSIBLE_RANGE(obj: Pointer): PGtkAccessibleRange;

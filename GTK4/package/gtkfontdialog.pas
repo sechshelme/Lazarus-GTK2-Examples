@@ -3,13 +3,13 @@ unit gtkfontdialog;
 interface
 
 uses
-  glib2,pango, common_GTK,gtkfilter, gtkwindow;
+  glib2, pango, common_GTK, gtkfilter, gtkwindow;
 
-{$IFDEF FPC}
-{$PACKRECORDS C}
-{$ENDIF}
+  {$IFDEF FPC}
+  {$PACKRECORDS C}
+  {$ENDIF}
 
-{G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject) }
+  {G_DECLARE_FINAL_TYPE (GtkFontDialog, gtk_font_dialog, GTK, FONT_DIALOG, GObject) }
 type
   TGtkFontDialog = record
   end;
@@ -21,30 +21,30 @@ type
   PGtkFontDialogClass = ^TGtkFontDialogClass;
 
 function gtk_font_dialog_get_type: TGType; cdecl; external gtklib;
-function gtk_font_dialog_new:PGtkFontDialog;cdecl;external gtklib;
-function gtk_font_dialog_get_title(self:PGtkFontDialog):Pchar;cdecl;external gtklib;
-procedure gtk_font_dialog_set_title(self:PGtkFontDialog; title:Pchar);cdecl;external gtklib;
-function gtk_font_dialog_get_modal(self:PGtkFontDialog):Tgboolean;cdecl;external gtklib;
-procedure gtk_font_dialog_set_modal(self:PGtkFontDialog; modal:Tgboolean);cdecl;external gtklib;
-function gtk_font_dialog_get_language(self:PGtkFontDialog):PPangoLanguage;cdecl;external gtklib;
-procedure gtk_font_dialog_set_language(self:PGtkFontDialog; language:PPangoLanguage);cdecl;external gtklib;
-function gtk_font_dialog_get_font_map(self:PGtkFontDialog):PPangoFontMap;cdecl;external gtklib;
-procedure gtk_font_dialog_set_font_map(self:PGtkFontDialog; fontmap:PPangoFontMap);cdecl;external gtklib;
-function gtk_font_dialog_get_filter(self:PGtkFontDialog):PGtkFilter;cdecl;external gtklib;
-procedure gtk_font_dialog_set_filter(self:PGtkFontDialog; filter:PGtkFilter);cdecl;external gtklib;
-procedure gtk_font_dialog_choose_family(self:PGtkFontDialog; parent:PGtkWindow; initial_value:PPangoFontFamily; cancellable:PGCancellable; callback:TGAsyncReadyCallback; 
-            user_data:Tgpointer);cdecl;external gtklib;
-function gtk_font_dialog_choose_family_finish(self:PGtkFontDialog; result:PGAsyncResult; error:PPGError):PPangoFontFamily;cdecl;external gtklib;
-procedure gtk_font_dialog_choose_face(self:PGtkFontDialog; parent:PGtkWindow; initial_value:PPangoFontFace; cancellable:PGCancellable; callback:TGAsyncReadyCallback; 
-            user_data:Tgpointer);cdecl;external gtklib;
-function gtk_font_dialog_choose_face_finish(self:PGtkFontDialog; result:PGAsyncResult; error:PPGError):PPangoFontFace;cdecl;external gtklib;
-procedure gtk_font_dialog_choose_font(self:PGtkFontDialog; parent:PGtkWindow; initial_value:PPangoFontDescription; cancellable:PGCancellable; callback:TGAsyncReadyCallback; 
-            user_data:Tgpointer);cdecl;external gtklib;
-function gtk_font_dialog_choose_font_finish(self:PGtkFontDialog; result:PGAsyncResult; error:PPGError):PPangoFontDescription;cdecl;external gtklib;
-procedure gtk_font_dialog_choose_font_and_features(self:PGtkFontDialog; parent:PGtkWindow; initial_value:PPangoFontDescription; cancellable:PGCancellable; callback:TGAsyncReadyCallback; 
-            user_data:Tgpointer);cdecl;external gtklib;
-function gtk_font_dialog_choose_font_and_features_finish(self:PGtkFontDialog; result:PGAsyncResult; font_desc:PPPangoFontDescription; font_features:PPchar; language:PPPangoLanguage; 
-           error:PPGError):Tgboolean;cdecl;external gtklib;
+function gtk_font_dialog_new: PGtkFontDialog; cdecl; external gtklib;
+function gtk_font_dialog_get_title(self: PGtkFontDialog): PChar; cdecl; external gtklib;
+procedure gtk_font_dialog_set_title(self: PGtkFontDialog; title: PChar); cdecl; external gtklib;
+function gtk_font_dialog_get_modal(self: PGtkFontDialog): Tgboolean; cdecl; external gtklib;
+procedure gtk_font_dialog_set_modal(self: PGtkFontDialog; modal: Tgboolean); cdecl; external gtklib;
+function gtk_font_dialog_get_language(self: PGtkFontDialog): PPangoLanguage; cdecl; external gtklib;
+procedure gtk_font_dialog_set_language(self: PGtkFontDialog; language: PPangoLanguage); cdecl; external gtklib;
+function gtk_font_dialog_get_font_map(self: PGtkFontDialog): PPangoFontMap; cdecl; external gtklib;
+procedure gtk_font_dialog_set_font_map(self: PGtkFontDialog; fontmap: PPangoFontMap); cdecl; external gtklib;
+function gtk_font_dialog_get_filter(self: PGtkFontDialog): PGtkFilter; cdecl; external gtklib;
+procedure gtk_font_dialog_set_filter(self: PGtkFontDialog; filter: PGtkFilter); cdecl; external gtklib;
+procedure gtk_font_dialog_choose_family(self: PGtkFontDialog; parent: PGtkWindow; initial_value: PPangoFontFamily; cancellable: PGCancellable; callback: TGAsyncReadyCallback;
+  user_data: Tgpointer); cdecl; external gtklib;
+function gtk_font_dialog_choose_family_finish(self: PGtkFontDialog; Result: PGAsyncResult; error: PPGError): PPangoFontFamily; cdecl; external gtklib;
+procedure gtk_font_dialog_choose_face(self: PGtkFontDialog; parent: PGtkWindow; initial_value: PPangoFontFace; cancellable: PGCancellable; callback: TGAsyncReadyCallback;
+  user_data: Tgpointer); cdecl; external gtklib;
+function gtk_font_dialog_choose_face_finish(self: PGtkFontDialog; Result: PGAsyncResult; error: PPGError): PPangoFontFace; cdecl; external gtklib;
+procedure gtk_font_dialog_choose_font(self: PGtkFontDialog; parent: PGtkWindow; initial_value: PPangoFontDescription; cancellable: PGCancellable; callback: TGAsyncReadyCallback;
+  user_data: Tgpointer); cdecl; external gtklib;
+function gtk_font_dialog_choose_font_finish(self: PGtkFontDialog; Result: PGAsyncResult; error: PPGError): PPangoFontDescription; cdecl; external gtklib;
+procedure gtk_font_dialog_choose_font_and_features(self: PGtkFontDialog; parent: PGtkWindow; initial_value: PPangoFontDescription; cancellable: PGCancellable; callback: TGAsyncReadyCallback;
+  user_data: Tgpointer); cdecl; external gtklib;
+function gtk_font_dialog_choose_font_and_features_finish(self: PGtkFontDialog; Result: PGAsyncResult; font_desc: PPPangoFontDescription; font_features: PPchar; language: PPPangoLanguage;
+  error: PPGError): Tgboolean; cdecl; external gtklib;
 
 // === Konventiert am: 15-7-24 19:23:48 ===
 
@@ -56,8 +56,7 @@ implementation
 
 function GTK_TYPE_FONT_DIALOG: TGType;
 begin
-  // gtk 4.12
-//  Result := gtk_font_dialog_get_type;
+  Result := gtk_font_dialog_get_type;
 end;
 
 function GTK_FONT_DIALOG(obj: Pointer): PGtkFontDialog;

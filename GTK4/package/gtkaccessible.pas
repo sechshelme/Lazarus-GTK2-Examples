@@ -2,46 +2,12 @@ unit gtkaccessible;
 
 interface
 
-// alles falsch !!!!!!!!!!!
-
 uses
-  glib2, common_GTK, gtkenums;
+  glib2, common_GTK, gtkenums, gtkwidget, gtkatcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
-
-type
-  TGtkAccessibleList = Pointer;  // Herkunft unbekannt
-  PGtkAccessibleList = ^TGtkAccessibleList;
-
-
-type
-  TGtkAccessible = record   //  G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject)
-  end; 
-  PGtkAccessible = ^TGtkAccessible;
-  PPGtkAccessible = ^PGtkAccessible;
-
-
-  // ==== Von gtkatcontext.pas
-type
-  TGtkATContext = record   //{GDK_DECLARE_INTERNAL_TYPE (GtkATContext, gtk_at_context, GTK, AT_CONTEXT, GObject) }
-  end;     // faasch !!!!!!!
-  PGtkATContext = ^TGtkATContext;
-
-  TGtkATContextClass = record 
-    parent_class : TGObjectClass;
-  end;     
-  PGtkATContextClass = ^TGtkATContextClass;
-
-function gtk_accessible_get_type: TGType; cdecl; external gtklib;
-function gtk_at_context_get_accessible(self: PGtkATContext): PGtkAccessible; cdecl; external gtklib;
-function gtk_at_context_get_accessible_role(self: PGtkATContext): TGtkAccessibleRole; cdecl; external gtklib;
-function gtk_at_context_create(accessible_role: TGtkAccessibleRole; accessible: PGtkAccessible; display: PGdkDisplay): PGtkATContext; cdecl; external gtklib;
-
-function GTK_TYPE_AT_CONTEXT: TGType;
-
-// ==== Ende - Von gtkatcontext.pas
 
 type
   TGtkAccessiblePlatformState = longint;
@@ -52,8 +18,16 @@ const
   GTK_ACCESSIBLE_PLATFORM_STATE_FOCUSED = 1;
   GTK_ACCESSIBLE_PLATFORM_STATE_ACTIVE = 2;
 
+  {G_DECLARE_INTERFACE (GtkAccessible, gtk_accessible, GTK, ACCESSIBLE, GObject) }
 type
-  PGtkAccessibleInterface = ^TGtkAccessibleInterface;
+  // ausgelagert wegen gtkatcontext.h
+  //TGtkAccessible = record
+  //end;
+  //PGtkAccessible = ^TGtkAccessible;
+
+  TGtkAccessibleList = record // _GtkAccessibleList
+  end;
+  PGtkAccessibleList = ^TGtkAccessibleList;
 
   TGtkAccessibleInterface = record
     g_iface: TGTypeInterface;
@@ -64,8 +38,9 @@ type
     get_next_accessible_sibling: function(self: PGtkAccessible): PGtkAccessible; cdecl;
     get_bounds: function(self: PGtkAccessible; x: Plongint; y: Plongint; Width: Plongint; Height: Plongint): Tgboolean; cdecl;
   end;
+  PGtkAccessibleInterface = ^TGtkAccessibleInterface;
 
-
+function gtk_accessible_get_type: TGType; cdecl; external gtklib;
 function gtk_accessible_get_at_context(self: PGtkAccessible): PGtkATContext; cdecl; external gtklib;
 function gtk_accessible_get_platform_state(self: PGtkAccessible; state: TGtkAccessiblePlatformState): Tgboolean; cdecl; external gtklib;
 function gtk_accessible_get_accessible_parent(self: PGtkAccessible): PGtkAccessible; cdecl; external gtklib;
@@ -91,39 +66,48 @@ procedure gtk_accessible_state_init_value(state: TGtkAccessibleState; Value: PGV
 procedure gtk_accessible_property_init_value(_property: TGtkAccessibleProperty; Value: PGValue); cdecl; external gtklib;
 procedure gtk_accessible_relation_init_value(relation: TGtkAccessibleRelation; Value: PGValue); cdecl; external gtklib;
 
- function gtk_accessible_list_get_type: TGType; cdecl; external gtklib;
+function gtk_accessible_list_get_type: TGType; cdecl; external gtklib;
 function gtk_accessible_list_get_objects(accessible_list: PGtkAccessibleList): PGList; cdecl; external gtklib;
 function gtk_accessible_list_new_from_list(list: PGList): PGtkAccessibleList; cdecl; external gtklib;
 function gtk_accessible_list_new_from_array(accessibles: PPGtkAccessible; n_accessibles: Tgsize): PGtkAccessibleList; cdecl; external gtklib;
 procedure gtk_accessible_announce(self: PGtkAccessible; message: PChar; priority: TGtkAccessibleAnnouncementPriority); cdecl; external gtklib;
 
-function GTK_ACCESSIBLE_LIST: longint; { return type might be wrong }
+function GTK_ACCESSIBLE_LIST: TGType;
 
-// === Konventiert am: 12-7-24 17:06:43 ===
+// === Konventiert am: 27-7-24 13:58:48 ===
 
 function GTK_TYPE_ACCESSIBLE: TGType;
-
+function GTK_ACCESSIBLE(obj: Pointer): PGtkAccessible;
+function GTK_IS_ACCESSIBLE(obj: Pointer): Tgboolean;
+function GTK_ACCESSIBLE_GET_IFACE(obj: Pointer): PGtkAccessibleInterface;
 
 implementation
 
 function GTK_TYPE_ACCESSIBLE: TGType;
 begin
-  // gtk_accessible_get_type;    nicht findbar
-  GTK_TYPE_ACCESSIBLE := gtk_accessible_get_type;
+  Result := gtk_accessible_get_type;
 end;
 
-
-{ was #define dname def_expr }
-function GTK_ACCESSIBLE_LIST: longint; { return type might be wrong }
+function GTK_ACCESSIBLE(obj: Pointer): PGtkAccessible;
 begin
-  // GTK4.12
-//  GTK_ACCESSIBLE_LIST := gtk_accessible_list_get_type;
+  Result := PGtkAccessible(g_type_check_instance_cast(obj, GTK_TYPE_ACCESSIBLE));
 end;
 
-// ==== Von gtkatcontext.pas
-function GTK_TYPE_AT_CONTEXT: TGType;
+function GTK_IS_ACCESSIBLE(obj: Pointer): Tgboolean;
 begin
-//  GTK_TYPE_AT_CONTEXT := gtk_at_context_get_type;
+  Result := g_type_check_instance_is_a(obj, GTK_TYPE_ACCESSIBLE);
+end;
+
+function GTK_ACCESSIBLE_GET_IFACE(obj: Pointer): PGtkAccessibleInterface;
+begin
+  Result := g_type_interface_peek(obj, GTK_TYPE_ACCESSIBLE);
+end;
+
+// ====
+
+function GTK_ACCESSIBLE_LIST: TGType;
+begin
+  GTK_ACCESSIBLE_LIST := gtk_accessible_list_get_type;
 end;
 
 

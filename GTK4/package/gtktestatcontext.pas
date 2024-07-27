@@ -3,8 +3,7 @@ unit gtktestatcontext;
 interface
 
 uses
-  common_GTK, gtkenums, gtkaccessible;
-
+  common_GTK, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

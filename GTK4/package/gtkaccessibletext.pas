@@ -9,7 +9,7 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-type 
+type
   TGtkAccessibleText = record {G_DECLARE_INTERFACE (GtkAccessibleText, gtk_accessible_text, GTK, ACCESSIBLE_TEXT, GtkAccessible) }
   end;
   PGtkAccessibleText = ^TGtkAccessibleText;
@@ -40,8 +40,6 @@ const
   GTK_ACCESSIBLE_TEXT_CONTENT_CHANGE_REMOVE = 1;
 
 type
-  PGtkAccessibleTextInterface = ^TGtkAccessibleTextInterface;
-
   TGtkAccessibleTextInterface = record
     g_iface: TGTypeInterface;
     get_contents: function(self: PGtkAccessibleText; start: dword; end_: dword): PGBytes; cdecl;
@@ -52,6 +50,7 @@ type
       attribute_values: PPPchar): Tgboolean; cdecl;
     get_default_attributes: procedure(self: PGtkAccessibleText; attribute_names: PPPchar; attribute_values: PPPchar); cdecl;
   end;
+  PGtkAccessibleTextInterface = ^TGtkAccessibleTextInterface;
 
 function gtk_accessible_text_get_type: TGType; cdecl; external gtklib;
 procedure gtk_accessible_text_update_caret_position(self: PGtkAccessibleText); cdecl; external gtklib;
@@ -106,8 +105,7 @@ implementation
 
 function GTK_TYPE_ACCESSIBLE_TEXT: TGType;
 begin
-  // ab GTK 4.12
-//    Result := gtk_accessible_text_get_type;
+  Result := gtk_accessible_text_get_type;
 end;
 
 function GTK_ACCESSIBLE_TEXT(obj: Pointer): PGtkAccessibleText;
