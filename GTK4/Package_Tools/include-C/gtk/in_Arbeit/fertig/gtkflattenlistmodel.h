@@ -32,7 +32,7 @@
 #define GTK_TYPE_FLATTEN_LIST_MODEL (gtk_flatten_list_model_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkFlattenListModel, gtk_flatten_list_model, GTK, FLATTEN_LIST_MODEL, GObject)
 
 
 GtkFlattenListModel *    gtk_flatten_list_model_new             (GListModel             *model);

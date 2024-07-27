@@ -114,6 +114,8 @@ begin
   sl.LoadFromFile(SourcePath);
 
   sl.Text := StringReplace(sl.Text, 'external;', 'external gtklib;', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(o : longint)', '(obj : longint)', [rfReplaceAll]);
+  sl.Text := StringReplace(sl.Text, '(k : longint)', '(klass : longint)', [rfReplaceAll]);
 
   sl.Delete(0);
   sl.Insert(1, '');
@@ -235,13 +237,6 @@ begin
     end;
   end;
 
-  //if G_DECLARE = is_G_DECLARE_FINAL_TYPE then begin
-  //  macCount := 3;
-  //end else if G_DECLARE = is_G_DECLARE_DERIVABLE_TYPE then begin
-  //  macCount := 6;
-  //end else if G_DECLARE = is_G_DECLARE_INTERFACE then begin
-  //  macCount := 4;
-  //end;
   for i := 0 to macCount - 1 do begin
     sl.Insert(p + i + 2, slMacro[i * 5]);
   end;

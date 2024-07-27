@@ -30,7 +30,7 @@
 #define GTK_TYPE_FILE_LAUNCHER (gtk_file_launcher_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFileLauncher, gtk_file_launcher, GTK, FILE_LAUNCHER, GObject)
+//G_DECLARE_FINAL_TYPE (GtkFileLauncher, gtk_file_launcher, GTK, FILE_LAUNCHER, GObject)
 
 
 GtkFileLauncher * gtk_file_launcher_new                          (GFile               *file);

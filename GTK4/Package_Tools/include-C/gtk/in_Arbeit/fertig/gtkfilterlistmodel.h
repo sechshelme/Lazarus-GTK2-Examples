@@ -33,7 +33,7 @@
 #define GTK_TYPE_FILTER_LIST_MODEL (gtk_filter_list_model_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkFilterListModel, gtk_filter_list_model, GTK, FILTER_LIST_MODEL, GObject)
 
 
 GtkFilterListModel *    gtk_filter_list_model_new               (GListModel             *model,

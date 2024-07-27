@@ -219,6 +219,19 @@ type
   TGdkDragAction = longint; // gdkenums.h
   PGdkDragAction = ^TGdkDragAction;
 
+  TGdkAxisUse=LongInt; // gdkenums.h
+  PGdkAxisUse=^TGdkAxisUse;
+
+  TGdkTimeCoord=record // _GdkTimeCoord  // gdkdevice.h
+    // xxx
+    end;
+  PGdkTimeCoord=^TGdkTimeCoord;
+  PPGdkTimeCoord=^PGdkTimeCoord;
+
+  TGdkDeviceTool=record // _GdkDeviceTool   gdkdevicetools.h
+    end;
+  PGdkDeviceTool=^TGdkDeviceTool;
+
   TGdkFrameClock = Pointer; //  typedef struct _GdkFrameClock              GdkFrameClock;     // /usr/include/gtk-4.0/gdk/gdkframeclock.h
   PGdkFrameClock = ^TGdkFrameClock;
 
@@ -252,6 +265,10 @@ type
     TGdkTexture=record // _GdkTexture   gdktypes.h
       end;
     PGdkTexture=^TGdkTexture;
+
+    TGdkEventSequence=record              // gdkevents.h
+    end;
+    PGdkEventSequence=^TGdkEventSequence;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h

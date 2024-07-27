@@ -31,7 +31,7 @@
 #define GTK_TYPE_FONT_DIALOG_BUTTON (gtk_font_dialog_button_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkFontDialogButton, gtk_font_dialog_button, GTK, FONT_DIALOG_BUTTON, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkFontDialogButton, gtk_font_dialog_button, GTK, FONT_DIALOG_BUTTON, GtkWidget)
 
 
 GtkWidget *      gtk_font_dialog_button_new              (GtkFontDialog       *dialog);

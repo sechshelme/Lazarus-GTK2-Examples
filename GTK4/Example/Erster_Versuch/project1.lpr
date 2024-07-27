@@ -9,6 +9,10 @@ uses
   gtkenums,                   // io.
   gtknative,                  // io.    ( TGtkNative ausgelagert )
   gtkwidget,                  // -> pango,Cairo, gtknative
+  gtkwindow,                  // io.
+  gtkapplication,             // io.
+  gtkapplicationwindow,       // io.
+  gtkwindowgroup,             // io.
   gtkmain,                    // io.
   gtkdebug,                   //   Macro nicht aufgelöst
 
@@ -21,6 +25,7 @@ uses
   gtkaccelgroup,              // io.
   gtkexpression,              // io.
   gtkfilter,                  // io.
+  gtkfilterlistmodel,         // io. -> gtkfilter
   gtkcustomfilter,            // io. -> gtkfilter
   gtkfilefilter,              // io.
   gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
@@ -53,6 +58,8 @@ uses
   gtkatcontext,               // io.
   gtksnapshot,                // io.
   gtktypebuiltins,            // io.
+  gtkfilelauncher,            // io.
+  gtkflattenlistmodel,        // io.
 
   gtkaccessiblerange,         // io.
   gtkaccessibletext,          // io.
@@ -64,9 +71,11 @@ uses
   gtklayoutmanager,           // io. -> gtklayoutchild;
   gtkbinlayout,               // io. -> gtklayoutmanager;
   gtkboxlayout,               // io. -> gtklayoutmanager;
-  gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild;
   gtkcenterlayout,            // io. -> gtklayoutmanager
   gtkcustomlayout,            // io. -> gtklayoutmanager
+  gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild
+  gtkfixedlayout,             // io. -> gtklayoutmanager, gtklayoutchild
+
 
   gtkcolumnviewrow,           // io.
   gtkcolumnviewsorter,        // io. -> gtksorter, gtkcolumnview
@@ -89,10 +98,6 @@ uses
   gtkshortcutssection,        // io. -> gtkshortcutsgroup;
   gtkshortcutswindow,         // io. -> gtkshortcutssection;
 
-  gtkwindow,                  // io.
-  gtkapplication,             // io. -> gtkwindow
-  gtkapplicationwindow,       // io. -> gtkwindow
-  gtkwindowgroup,             // io. -> gtkwindow;
 
   gtkdragicon,                // io.
   gtkdragsource,              // io.
@@ -104,6 +109,8 @@ uses
   gtkactionbar,               // io.
   gtknotebook,                // io.
   gtkexpander,                // io.
+  gtkfixed,                   // io.
+  gtkframe,                   // io.
 
   gtkbutton,                  // io.
   gtktogglebutton,            // io. -> gtkbutton
@@ -117,7 +124,6 @@ uses
   gtkdrawingarea,             // io.
 
 
-  gtkaboutdialog,             // io. -> gtkwindow;
 
   gtkscrollbar,               // io. -> gtkadjustment;
   gtkrange,                   // io. -> gtkadjustment, gtkborder;
@@ -160,22 +166,33 @@ uses
   gtkdropdown,                // io. -> gtkexpression, gtkstringfilter
 
   gtkdialogerror,             // io.
-  gtkfiledialog,              // io. -> gtkfilter, gtkfilefilter, gtkwindow
-  gtkfontdialog,              // io. -> gtkfilter, gtkwindow
-  gtkcolordialog,             // io. -> gtkwindow
+  gtkaboutdialog,             // io.
+  gtkfiledialog,              // io. -> gtkfilter, gtkfilefilter,
+  gtkfontdialog,              // io. -> gtkfilter,
+  gtkfontdialogbutton,        // io. -> gtkfontdialog
+  gtkcolordialog,             // io.
   gtkcolordialogbutton,       // io. -> gtkcolordialog
-  gtkalertdialog,             // io. -> gtkwindow
+  gtkalertdialog,             // io.
 
   gtkpapersize,               // io.
   gtkpagesetup,               // io. -> gtkpapersize
   gtkprintsettings,           // io. -> gtkpapersize
   gtkprintcontext,            // io. -> gtkpagesetup
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
-  gtkprintoperation,          // io. -> gtkwindow, gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
-  gtkprintdialog,             // io. -> gtkwindow, gtkprintsettings, gtkpagesetup
+  gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
+  gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
 
 
-
+  gtkgesture,
+  gtkgestureclick,
+  gtkgesturedrag,
+  gtkgesturelongpress,
+  gtkgesturepan,
+  gtkgesturerotate,
+  gtkgesturesingle,
+  gtkgesturestylus,
+  gtkgestureswipe,
+  gtkgesturezoom,
 
 
 

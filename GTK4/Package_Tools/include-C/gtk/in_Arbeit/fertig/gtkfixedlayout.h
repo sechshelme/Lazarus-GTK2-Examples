@@ -30,7 +30,7 @@
 /* GtkFixedLayout */
 
 
-G_DECLARE_FINAL_TYPE (GtkFixedLayout, gtk_fixed_layout, GTK, FIXED_LAYOUT, GtkLayoutManager)
+//G_DECLARE_FINAL_TYPE (GtkFixedLayout, gtk_fixed_layout, GTK, FIXED_LAYOUT, GtkLayoutManager)
 
 
 GtkLayoutManager *      gtk_fixed_layout_new    (void);
@@ -38,7 +38,7 @@ GtkLayoutManager *      gtk_fixed_layout_new    (void);
 /* GtkFixedLayoutChild */
 
 
-G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild)
+//G_DECLARE_FINAL_TYPE (GtkFixedLayoutChild, gtk_fixed_layout_child, GTK, FIXED_LAYOUT_CHILD, GtkLayoutChild)
 
 
 void            gtk_fixed_layout_child_set_transform    (GtkFixedLayoutChild *child,
