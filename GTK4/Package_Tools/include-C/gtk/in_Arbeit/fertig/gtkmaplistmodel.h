@@ -33,7 +33,7 @@
 #define GTK_TYPE_MAP_LIST_MODEL (gtk_map_list_model_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkMapListModel, gtk_map_list_model, GTK, MAP_LIST_MODEL, GObject)
 
 /**
  * GtkMapListModelMapFunc:

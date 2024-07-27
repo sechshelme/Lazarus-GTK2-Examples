@@ -49,7 +49,7 @@ typedef enum {
 } GtkInscriptionOverflow;
 
 
-G_DECLARE_FINAL_TYPE (GtkInscription, gtk_inscription, GTK, INSCRIPTION, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkInscription, gtk_inscription, GTK, INSCRIPTION, GtkWidget)
 
 
 GtkWidget *             gtk_inscription_new                     (const char             *text);

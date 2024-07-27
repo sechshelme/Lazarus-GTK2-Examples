@@ -32,7 +32,7 @@
 #define GTK_TYPE_GRAPHICS_OFFLOAD (gtk_graphics_offload_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkGraphicsOffload, gtk_graphics_offload, GTK, GRAPHICS_OFFLOAD, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkGraphicsOffload, gtk_graphics_offload, GTK, GRAPHICS_OFFLOAD, GtkWidget)
 
 
 GtkWidget *       gtk_graphics_offload_new          (GtkWidget                 *child);

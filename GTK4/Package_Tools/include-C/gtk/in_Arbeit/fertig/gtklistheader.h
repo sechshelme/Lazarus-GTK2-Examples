@@ -29,7 +29,7 @@
 
 #define GTK_TYPE_LIST_HEADER (gtk_list_header_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GtkListHeader, gtk_list_header, GTK, LIST_HEADER, GObject)
+//GDK_DECLARE_INTERNAL_TYPE (GtkListHeader, gtk_list_header, GTK, LIST_HEADER, GObject)
 
 
 gpointer        gtk_list_header_get_item                        (GtkListHeader          *self);

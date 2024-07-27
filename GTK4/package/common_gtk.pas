@@ -270,6 +270,13 @@ type
     end;
     PGdkEventSequence=^TGdkEventSequence;
 
+    TGdkGLContext=record // _GdkGLContext      // gdktypes.h
+      end;
+    PGdkGLContext=^TGdkGLContext;
+
+    TGdkGLAPI=LongInt; // gdkenum.h
+    PGdkGLAPI=^TGdkGLAPI;
+
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
 

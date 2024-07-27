@@ -62,7 +62,6 @@ GType         gtk_im_context_simple_get_type  (void) ;
 
 GtkIMContext *gtk_im_context_simple_new       (void);
 
-GDK_DEPRECATED_IN_4_4_FOR(gtk_im_context_simple_add_compose_file)
 void          gtk_im_context_simple_add_table (GtkIMContextSimple *context_simple,
                                                guint16            *data,
                                                int                 max_seq_len,

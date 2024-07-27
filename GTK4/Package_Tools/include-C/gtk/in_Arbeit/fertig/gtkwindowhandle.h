@@ -29,7 +29,7 @@
 #define GTK_TYPE_WINDOW_HANDLE (gtk_window_handle_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkWindowHandle, gtk_window_handle, GTK, WINDOW_HANDLE, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkWindowHandle, gtk_window_handle, GTK, WINDOW_HANDLE, GtkWidget)
 
 
 GtkWidget * gtk_window_handle_new       (void);

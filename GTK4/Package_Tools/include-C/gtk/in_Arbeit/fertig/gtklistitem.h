@@ -29,7 +29,7 @@
 
 #define GTK_TYPE_LIST_ITEM (gtk_list_item_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GtkListItem, gtk_list_item, GTK, LIST_ITEM, GObject)
+//GDK_DECLARE_INTERNAL_TYPE (GtkListItem, gtk_list_item, GTK, LIST_ITEM, GObject)
 
 
 gpointer        gtk_list_item_get_item                          (GtkListItem            *self);

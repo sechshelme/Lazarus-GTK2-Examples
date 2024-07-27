@@ -41,6 +41,10 @@ uses
   gtkrecentmanager,           // io.
   gtkmediastream,             // io.
   gtkimcontext,               // io.
+  gtkimmodule,                // io.
+  gtkinscription,             // io.
+  gtkimcontextsimple,         // io. -> gtkimcontext
+  gtkimmulticontext,          // io. -> gtkimcontext
   gtkbuilderlistitemfactory,  // io.
   gtksorter,                  // io.
   gtkcustomsorter,            // io. -> gtksorter
@@ -60,6 +64,11 @@ uses
   gtktypebuiltins,            // io.
   gtkfilelauncher,            // io.
   gtkflattenlistmodel,        // io.
+  gtkglarea,                  // io.
+  gtklistbase,                // io.
+  gtklistheader,              // io.
+  gtklistitem,                // io.
+
 
   gtkaccessiblerange,         // io.
   gtkaccessibletext,          // io.
@@ -113,8 +122,10 @@ uses
   gtkexpander,                // io.
   gtkfixed,                   // io.
   gtkframe,                   // io.
+  gtkpaned,                   // io.
 
   gtkbutton,                  // io.
+  gtklinkbutton,              // io.
   gtktogglebutton,            // io. -> gtkbutton
   gtklabel,                   // io. -> pango
   gtkcalendar,                // io.
@@ -124,6 +135,7 @@ uses
   gtkcheckbutton,             // io.
   gtkeditablelabel,           // io.
   gtkdrawingarea,             // io.
+  gtklevelbar,                // io.
 
 
 
@@ -131,10 +143,18 @@ uses
   gtkrange,                   // io. -> gtkadjustment, gtkborder;
   gtkscale,                   // io. -> pango, gtkrange, gtkadjustment;
   gtkscalebutton,             // io. -> gtkadjustment;
-  gtklistbox,                 // io. -> gtkadjustment;
   gtkflowbox,                 // io. -> gtkadjustment;
   gtkscrolledwindow,          // io. -> gtkadjustment
   gtkspinbutton,              // io. -> gtkadjustment
+  gtklistbox,                 // io. -> gtkadjustment;
+  gtklistview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
+  gtkgridview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
+  gtkwindowhandle,            // io.
+  gtkheaderbar,               // io.
+  gtkgraphicsoffload,         // io.
+  gtkmaplistmodel,            // io.
+
+
 
   gtkpopover,                 // io.
   gtkpopovermenu,             // io.
@@ -194,6 +214,7 @@ uses
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
   gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
   gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
+
 
 
 
@@ -437,9 +458,15 @@ const
 
   function Create_Expander: PGtkWidget;
   var
-    ex: PGtkWidget;
+    ex, wh: PGtkWidget;
   begin
     Result := gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    wh := gtk_window_handle_new;
+    gtk_window_handle_set_child(GTK_WINDOW_HANDLE(wh), CreateButton('wh'));
+
+    ex := gtk_expander_new('Expander wh');
+    gtk_expander_set_child(GTK_EXPANDER(ex), wh);
+    gtk_box_append(GTK_BOX(Result), ex);
     ex := gtk_expander_new('Expander 1');
     gtk_expander_set_child(GTK_EXPANDER(ex), CreateButton('Button'));
     gtk_box_append(GTK_BOX(Result), ex);
@@ -448,12 +475,19 @@ const
     gtk_box_append(GTK_BOX(Result), ex);
   end;
 
+  function Create_LevelBar: PGtkWidget;
+  begin
+    Result := gtk_level_bar_new_for_interval(10, 20);
+    gtk_level_bar_set_value(GTK_LEVEL_BAR(Result), 15);
+  end;
+
 
   function Create_Notebook: PGtkWidget;
   begin
     Result := gtk_notebook_new;
     gtk_notebook_set_scrollable(GTK_NOTEBOOK(Result), True);
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_DrawArena, Create_Label('DrawArena'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_LevelBar, Create_Label('LevelBar'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_GridBox, Create_Label('Grid'));
