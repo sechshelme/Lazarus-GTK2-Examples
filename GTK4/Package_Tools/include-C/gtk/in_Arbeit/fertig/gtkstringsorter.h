@@ -30,7 +30,7 @@
 
 #define GTK_TYPE_STRING_SORTER             (gtk_string_sorter_get_type ())
 
-G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, GtkSorter)
+//G_DECLARE_FINAL_TYPE (GtkStringSorter, gtk_string_sorter, GTK, STRING_SORTER, GtkSorter)
 
 
 GtkStringSorter *       gtk_string_sorter_new                   (GtkExpression          *expression);

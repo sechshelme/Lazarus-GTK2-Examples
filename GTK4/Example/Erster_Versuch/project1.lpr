@@ -76,6 +76,8 @@ uses
   gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild
   gtkfixedlayout,             // io. -> gtklayoutmanager, gtklayoutchild
 
+  gtkstringlist,              // io
+  gtkstringsorter,            // io. -> gtksorter, gtkexpression
 
   gtkcolumnviewrow,           // io.
   gtkcolumnviewsorter,        // io. -> gtksorter, gtkcolumnview
@@ -165,6 +167,17 @@ uses
   gtkdropcontrollermotion,    // io. -> gtkeventcontroller
   gtkdropdown,                // io. -> gtkexpression, gtkstringfilter
 
+  gtkgesture,                 // io.
+  gtkgesturesingle,           // io.
+  gtkgestureclick,            // io. -> gtkgesture
+  gtkgesturedrag,             // io. -> gtkgesture
+  gtkgesturelongpress,        // io. -> gtkgesture
+  gtkgesturepan,              // io. -> gtkgesture
+  gtkgesturerotate,           // io. -> gtkgesture
+  gtkgesturestylus,           // io. -> gtkgesture
+  gtkgestureswipe,            // io. -> gtkgesture
+  gtkgesturezoom,             // io. -> gtkgesture
+
   gtkdialogerror,             // io.
   gtkaboutdialog,             // io.
   gtkfiledialog,              // io. -> gtkfilter, gtkfilefilter,
@@ -181,18 +194,6 @@ uses
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
   gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
   gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
-
-
-  gtkgesture,
-  gtkgestureclick,
-  gtkgesturedrag,
-  gtkgesturelongpress,
-  gtkgesturepan,
-  gtkgesturerotate,
-  gtkgesturesingle,
-  gtkgesturestylus,
-  gtkgestureswipe,
-  gtkgesturezoom,
 
 
 

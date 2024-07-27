@@ -33,7 +33,7 @@
 
 #define GTK_TYPE_STRING_OBJECT (gtk_string_object_get_type ())
 
-G_DECLARE_FINAL_TYPE (GtkStringObject, gtk_string_object, GTK, STRING_OBJECT, GObject)
+//G_DECLARE_FINAL_TYPE (GtkStringObject, gtk_string_object, GTK, STRING_OBJECT, GObject)
 
 
 GtkStringObject *       gtk_string_object_new        (const char      *string);
@@ -43,7 +43,7 @@ const char *            gtk_string_object_get_string (GtkStringObject *self);
 #define GTK_TYPE_STRING_LIST (gtk_string_list_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
+//G_DECLARE_FINAL_TYPE (GtkStringList, gtk_string_list, GTK, STRING_LIST, GObject)
 
 
 GtkStringList * gtk_string_list_new             (const char * const    *strings);
