@@ -34,7 +34,7 @@
 #define GTK_TYPE_SORT_LIST_MODEL (gtk_sort_list_model_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkSortListModel, gtk_sort_list_model, GTK, SORT_LIST_MODEL, GObject)
 
 
 GtkSortListModel *      gtk_sort_list_model_new                 (GListModel            *model,

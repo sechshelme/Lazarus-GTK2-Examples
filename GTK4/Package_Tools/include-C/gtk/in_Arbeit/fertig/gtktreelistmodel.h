@@ -34,9 +34,9 @@
 #define GTK_TYPE_TREE_LIST_ROW (gtk_tree_list_row_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkTreeListModel, gtk_tree_list_model, GTK, TREE_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkTreeListModel, gtk_tree_list_model, GTK, TREE_LIST_MODEL, GObject)
 
-G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GObject)
+//G_DECLARE_FINAL_TYPE (GtkTreeListRow, gtk_tree_list_row, GTK, TREE_LIST_ROW, GObject)
 
 /**
  * GtkTreeListModelCreateModelFunc:

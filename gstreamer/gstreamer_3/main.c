@@ -12,7 +12,7 @@ tutorial_main (int argc, char *argv[])
 {
   GstElement *pipeline;
   GstBus *bus;
-  GstMessage *msg;
+  GstMessage *msg = 0;
 
   /* Initialize GStreamer */
   gst_init (&argc, &argv);
@@ -20,9 +20,9 @@ tutorial_main (int argc, char *argv[])
   /* Build the pipeline */
   pipeline =
       gst_parse_launch
-//     ("playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm",
+     ("playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm",
 //     ("playbin uri=file:///home/tux/Schreibtisch/gstreamer_3/sintel_trailer-480p.webm",
-      ("playbin uri=file:/home/tux/Schreibtisch/gstreamer_3/test.flac",
+//      ("playbin uri=file:/home/tux/Schreibtisch/gstreamer_3/test.flac",
       NULL);
 
   /* Start playing */
@@ -31,10 +31,10 @@ tutorial_main (int argc, char *argv[])
   /* Wait until error or EOS */
 printf("1111\n");
   bus = gst_element_get_bus (pipeline);
-printf("2222\n");
-  msg =
-      gst_bus_timed_pop_filtered (bus, GST_CLOCK_TIME_NONE,
-      GST_MESSAGE_ERROR | GST_MESSAGE_EOS);
+printf("2222 %i\n",GST_CLOCK_TIME_NONE);
+ msg =
+    gst_bus_timed_pop_filtered (bus, GST_CLOCK_TIME_NONE,
+     GST_MESSAGE_ERROR | GST_MESSAGE_EOS);
 printf("3333\n");
 
   /* See next tutorial for proper error message handling/parsing */

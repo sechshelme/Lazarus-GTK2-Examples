@@ -3,7 +3,7 @@ unit gtkdroptargetasync;
 interface
 
 uses
-  glib2, common_GTK;
+  gdkenums, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

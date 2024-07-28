@@ -30,7 +30,7 @@
 
 #define GTK_TYPE_TREE_LIST_ROW_SORTER             (gtk_tree_list_row_sorter_get_type ())
 
-G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_LIST_ROW_SORTER, GtkSorter)
+//G_DECLARE_FINAL_TYPE (GtkTreeListRowSorter, gtk_tree_list_row_sorter, GTK, TREE_LIST_ROW_SORTER, GtkSorter)
 
 
 GtkTreeListRowSorter *  gtk_tree_list_row_sorter_new                   (GtkSorter            *sorter);

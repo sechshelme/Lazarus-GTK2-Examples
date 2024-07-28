@@ -32,7 +32,7 @@
 #define GTK_TYPE_VIDEO         (gtk_video_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkVideo, gtk_video, GTK, VIDEO, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkVideo, gtk_video, GTK, VIDEO, GtkWidget)
 
 
 GtkWidget *     gtk_video_new                           (void);

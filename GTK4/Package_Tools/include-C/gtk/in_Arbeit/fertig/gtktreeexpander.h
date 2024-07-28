@@ -31,7 +31,7 @@
 #define GTK_TYPE_TREE_EXPANDER         (gtk_tree_expander_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkTreeExpander, gtk_tree_expander, GTK, TREE_EXPANDER, GtkWidget)
 
 
 GtkWidget *             gtk_tree_expander_new                  (void);

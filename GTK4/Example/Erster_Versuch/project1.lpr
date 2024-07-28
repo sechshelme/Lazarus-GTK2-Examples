@@ -16,6 +16,7 @@ uses
   gtkmain,                    // io.
   gtkdebug,                   //   Macro nicht aufgelöst
   gtksizerequest,             // io.
+  gtkgraphicsoffload,         // io.
 
   gtkadjustment,              // io.
   gtkborder,                  // io.
@@ -44,6 +45,7 @@ uses
   gtkmediastream,             // io.
   gtkmediacontrols,           // io. -> gtkmediastream
   gtkmediafile,               // io. -> gtkmediastream
+  gtkvideo,                   // io. -> gtkmediastream, gtkgraphicsoffload
   gtkimcontext,               // io.
   gtkimmodule,                // io.
   gtkinscription,             // io.
@@ -84,6 +86,13 @@ uses
   gtksettings,                // io.
   gtksignallistitemfactory,   // io. -> gtklistitemfactory
   gtksingleselection,         // io.
+  gtksortlistmodel,           // io.
+  gtkslicelistmodel,          // io. -> gtksorter
+  gtksymbolicpaintable,       // io.
+  gtktestutils,               // io.
+  gtktreelistrowsorter,       // io. -> gtksorter
+  gtkversion,                 // Unaufgelöstes Makro
+
 
 
 
@@ -143,6 +152,9 @@ uses
   gtkframe,                   // io.
   gtkpaned,                   // io.
   gtksizegroup,               // io.
+  gtktreelistmodel,           // io.
+  gtktreeexpander,            // io. -> gtktreelistmodel
+
 
   gtkbutton,                  // io.
   gtklinkbutton,              // io.
@@ -163,6 +175,9 @@ uses
   gtksearchbar,               // io. -> gtkeditable
   gtksearchentry,             // io.
   gtkseparator,               // io.
+  gtkswitch,                  // io.
+  gtkurilauncher,             // io.
+  gtkwidgetpaintable,         // io.
 
 
 
@@ -179,8 +194,11 @@ uses
   gtkgridview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
   gtkwindowhandle,            // io.
   gtkheaderbar,               // io.
-  gtkgraphicsoffload,         // io.
   gtkmaplistmodel,            // io.
+  gtkstacksidebar,            // io. -> gtkstack
+  gtkstackswitcher,           // io. -> gtkstack
+  gtkviewport,                // io. -> gtkscrollinfo, gtkadjustment
+
 
 
 
@@ -250,7 +268,14 @@ uses
 
 
 
+
+
+
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
+
+  // GDK
+
+  gdkenums,
 
 
   // --- Eigenes

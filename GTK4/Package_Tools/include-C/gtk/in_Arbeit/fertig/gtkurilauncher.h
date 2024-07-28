@@ -30,7 +30,7 @@
 #define GTK_TYPE_URI_LAUNCHER (gtk_uri_launcher_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkUriLauncher, gtk_uri_launcher, GTK, URI_LAUNCHER, GObject)
+//G_DECLARE_FINAL_TYPE (GtkUriLauncher, gtk_uri_launcher, GTK, URI_LAUNCHER, GObject)
 
 
 GtkUriLauncher * gtk_uri_launcher_new                         (const char          *uri);

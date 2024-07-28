@@ -188,8 +188,6 @@ type
 
   // ==== GDK
 
-  TGdkModifierType = longint;        // enum  //     /usr/include/gtk-4.0/gdk/gdkenums.h
-  PGdkModifierType = ^TGdkModifierType;
 
   TGdkSurface = record  // _GdkSurface     /usr/include/gtk-4.0/gdk/gdktypes.h
   end;
@@ -230,12 +228,6 @@ type
   TGdkPixbuf = record // _GdkPixbuf      /usr/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
   end;
   PGdkPixbuf = ^TGdkPixbuf;
-
-  TGdkDragAction = longint; // gdkenums.h
-  PGdkDragAction = ^TGdkDragAction;
-
-  TGdkAxisUse=LongInt; // gdkenums.h
-  PGdkAxisUse=^TGdkAxisUse;
 
   TGdkTimeCoord=record // _GdkTimeCoord  // gdkdevice.h
     // xxx
@@ -288,9 +280,6 @@ type
     TGdkGLContext=record // _GdkGLContext      // gdktypes.h
       end;
     PGdkGLContext=^TGdkGLContext;
-
-    TGdkGLAPI=LongInt; // gdkenum.h
-    PGdkGLAPI=^TGdkGLAPI;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h

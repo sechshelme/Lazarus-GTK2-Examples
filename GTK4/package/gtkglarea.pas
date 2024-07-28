@@ -3,20 +3,17 @@ unit gtkglarea;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget;
+  glib2, gdkenums, common_GTK, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  PGtkGLArea = ^TGtkGLArea;
-
   TGtkGLArea = record
     parent_instance: TGtkWidget;
   end;
-
-  PGtkGLAreaClass = ^TGtkGLAreaClass;
+  PGtkGLArea = ^TGtkGLArea;
 
   TGtkGLAreaClass = record
     parent_class: TGtkWidgetClass;
@@ -25,6 +22,7 @@ type
     create_context: function(area: PGtkGLArea): PGdkGLContext; cdecl;
     _padding: array[0..7] of Tgpointer;
   end;
+  PGtkGLAreaClass = ^TGtkGLAreaClass;
 
 
 function gtk_gl_area_get_type: TGType; cdecl; external gtklib;

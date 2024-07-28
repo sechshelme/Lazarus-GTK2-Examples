@@ -33,7 +33,7 @@
 #define GTK_TYPE_SLICE_LIST_MODEL (gtk_slice_list_model_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_MODEL, GObject)
+//G_DECLARE_FINAL_TYPE (GtkSliceListModel, gtk_slice_list_model, GTK, SLICE_LIST_MODEL, GObject)
 
 
 GtkSliceListModel *     gtk_slice_list_model_new                (GListModel             *model,

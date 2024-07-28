@@ -1,34 +1,27 @@
 object Form1: TForm1
   Left = 1038
-  Height = 352
+  Height = 408
   Top = 154
-  Width = 454
+  Width = 484
   Caption = 'Form1'
-  ClientHeight = 352
-  ClientWidth = 454
+  ClientHeight = 408
+  ClientWidth = 484
   LCLVersion = '3.99.0.0'
   OnCreate = FormCreate
   object Convert: TButton
-    Left = 366
+    Left = 396
     Height = 25
-    Top = 312
+    Top = 368
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Convert'
     TabOrder = 0
     OnClick = ConvertClick
   end
-  object Label1: TLabel
-    Left = 8
-    Height = 16
-    Top = 16
-    Width = 40
-    Caption = 'Label1'
-  end
   object CheckGroup1: TCheckGroup
-    Left = 193
+    Left = 224
     Height = 176
-    Top = 123
+    Top = 184
     Width = 248
     Anchors = [akRight, akBottom]
     AutoFill = True
@@ -107,9 +100,9 @@ object Form1: TForm1
   end
   object Memo1: TMemo
     Left = 8
-    Height = 297
+    Height = 353
     Top = 40
-    Width = 183
+    Width = 213
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -13
     Font.Name = 'Ubuntu Mono'
@@ -120,22 +113,40 @@ object Form1: TForm1
     ScrollBars = ssAutoBoth
     TabOrder = 2
   end
-  object Edit1: TEdit
-    Left = 195
-    Height = 28
-    Top = 40
-    Width = 246
+  object GroupBox1: TGroupBox
+    Left = 232
+    Height = 105
+    Top = 16
+    Width = 239
     Anchors = [akTop, akRight]
+    Caption = 'G_DECLARE Nativ'
+    ClientHeight = 88
+    ClientWidth = 237
     TabOrder = 3
+    object Button1: TButton
+      Left = 152
+      Height = 25
+      Top = 56
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'Convert'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Edit1: TEdit
+      Left = 8
+      Height = 28
+      Top = 16
+      Width = 219
+      Anchors = [akTop, akRight]
+      TabOrder = 1
+    end
   end
-  object Button1: TButton
-    Left = 366
-    Height = 25
-    Top = 72
-    Width = 75
-    Anchors = [akTop, akRight]
-    Caption = 'Convert'
-    TabOrder = 4
-    OnClick = Button1Click
+  object Label1: TLabel
+    Left = 8
+    Height = 16
+    Top = 8
+    Width = 40
+    Caption = 'Label1'
   end
 end

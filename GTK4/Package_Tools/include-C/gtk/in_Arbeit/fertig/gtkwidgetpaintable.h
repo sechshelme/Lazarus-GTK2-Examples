@@ -26,7 +26,7 @@
 #define GTK_TYPE_WIDGET_PAINTABLE (gtk_widget_paintable_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAINTABLE, GObject)
+//G_DECLARE_FINAL_TYPE (GtkWidgetPaintable, gtk_widget_paintable, GTK, WIDGET_PAINTABLE, GObject)
 
 
 GdkPaintable *  gtk_widget_paintable_new                (GtkWidget              *widget);

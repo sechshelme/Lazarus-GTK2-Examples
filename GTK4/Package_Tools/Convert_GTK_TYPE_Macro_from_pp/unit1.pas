@@ -23,6 +23,7 @@ type
     CheckBox6: TCheckBox;
     CheckGroup1: TCheckGroup;
     Edit1: TEdit;
+    GroupBox1: TGroupBox;
     Label1: TLabel;
     Memo1: TMemo;
     procedure Button1Click(Sender: TObject);

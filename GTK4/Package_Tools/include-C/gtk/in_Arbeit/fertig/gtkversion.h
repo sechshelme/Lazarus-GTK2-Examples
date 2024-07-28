@@ -89,11 +89,15 @@
  *
  * Returns: %TRUE if GTK headers are new enough
  */
+
+/*
 #define GTK_CHECK_VERSION(major,minor,micro)                          \
     (GTK_MAJOR_VERSION > (major) ||                                   \
      (GTK_MAJOR_VERSION == (major) && GTK_MINOR_VERSION > (minor)) || \
      (GTK_MAJOR_VERSION == (major) && GTK_MINOR_VERSION == (minor) && \
       GTK_MICRO_VERSION >= (micro)))
+
+*/
 
 
 guint gtk_get_major_version (void) ;

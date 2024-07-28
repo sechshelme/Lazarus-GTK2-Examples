@@ -30,7 +30,7 @@
 #define GTK_TYPE_SYMBOLIC_PAINTABLE       (gtk_symbolic_paintable_get_type ())
 
 
-G_DECLARE_INTERFACE (GtkSymbolicPaintable, gtk_symbolic_paintable, GTK, SYMBOLIC_PAINTABLE, GdkPaintable)
+//G_DECLARE_INTERFACE (GtkSymbolicPaintable, gtk_symbolic_paintable, GTK, SYMBOLIC_PAINTABLE, GdkPaintable)
 
 /**
  * GtkSymbolicPaintableInterface:
