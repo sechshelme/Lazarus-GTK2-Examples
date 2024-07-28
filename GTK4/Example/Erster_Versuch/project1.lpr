@@ -15,6 +15,7 @@ uses
   gtkwindowgroup,             // io.
   gtkmain,                    // io.
   gtkdebug,                   //   Macro nicht aufgelöst
+  gtksizerequest,             // io.
 
   gtkadjustment,              // io.
   gtkborder,                  // io.
@@ -52,6 +53,7 @@ uses
   gtksorter,                  // io.
   gtkcustomsorter,            // io. -> gtksorter
   gtkmultisorter,             // io. -> gtksorter
+  gtknumericsorter,           // io. -> gtksorter, gtkexpression
   gtkicontheme,               // io.
   gtkcssprovider,             // io.
   gtkdirectorylist,           // io.
@@ -74,6 +76,15 @@ uses
   gtklistitem,                // io.
   gtkmountoperation,          // io.
   gtkmultiselection,          // io.
+  gtknoselection,             // io.
+  gtkorientable,              // io.
+  gtkpadcontroller,           // io.
+  gtksectionmodel,            // io.
+  gtkselectionfiltermodel,    // io. -> gtkselectionmodel
+  gtksettings,                // io.
+  gtksignallistitemfactory,   // io. -> gtklistitemfactory
+  gtksingleselection,         // io.
+
 
 
   gtkaccessiblerange,         // io.
@@ -90,6 +101,8 @@ uses
   gtkcustomlayout,            // io. -> gtklayoutmanager
   gtkgridlayout,              // io. -> gtklayoutmanager, gtklayoutchild
   gtkfixedlayout,             // io. -> gtklayoutmanager, gtklayoutchild
+  gtkoverlaylayout,           // io. -> gtklayoutmanager, gtklayoutchild
+
 
   gtkstringlist,              // io
   gtkstringsorter,            // io. -> gtksorter, gtkexpression
@@ -129,6 +142,7 @@ uses
   gtkfixed,                   // io.
   gtkframe,                   // io.
   gtkpaned,                   // io.
+  gtksizegroup,               // io.
 
   gtkbutton,                  // io.
   gtklinkbutton,              // io.
@@ -142,6 +156,13 @@ uses
   gtkeditablelabel,           // io.
   gtkdrawingarea,             // io.
   gtklevelbar,                // io.
+  gtkoverlay,                 // io.
+  gtkpicture,                 // io.
+  gtkprogressbar,             // io.
+  gtkrevealer,                // io.
+  gtksearchbar,               // io. -> gtkeditable
+  gtksearchentry,             // io.
+  gtkseparator,               // io.
 
 
 
@@ -153,6 +174,7 @@ uses
   gtkscrolledwindow,          // io. -> gtkadjustment
   gtkspinbutton,              // io. -> gtkadjustment
   gtklistbox,                 // io. -> gtkadjustment;
+  gtkscrollable,              // io. -> gtkborder, gtkadjustment
   gtklistview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
   gtkgridview,                // io. -> gtkselectionmodel, gtklistitemfactory, gtkscrollinfo
   gtkwindowhandle,            // io.
@@ -187,6 +209,9 @@ uses
   gtktext,                    // io. -> gtkentrybuffer
   gtkentry,                   // io. -> pango, gtkentrybuffer, gtkentrycompletion, gtkimage;
   gtkstylecontext,            // io. -> gtkborder, gtkstyleprovider;
+  gtkpasswordentry,           // io.
+  gtkpasswordentrybuffer,     // io. -> gtkentrybuffer
+
 
   gtkdroptarget,              // io.
   gtkdroptargetasync,         // io.
@@ -212,6 +237,7 @@ uses
   gtkcolordialog,             // io.
   gtkcolordialogbutton,       // io. -> gtkcolordialog
   gtkalertdialog,             // io.
+  gtknativedialog,            // io.
 
   gtkpapersize,               // io.
   gtkpagesetup,               // io. -> gtkpapersize
@@ -220,7 +246,6 @@ uses
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
   gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
   gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
-
 
 
 
@@ -482,15 +507,16 @@ const
     gtk_box_append(GTK_BOX(Result), ex);
   end;
 
-function Create_LevelBar: PGtkWidget;
-begin
-  Result := gtk_level_bar_new_for_interval(10, 20);
-  gtk_level_bar_set_value(GTK_LEVEL_BAR(Result), 15);
-end;
+  function Create_LevelBar: PGtkWidget;
+  begin
+    Result := gtk_level_bar_new_for_interval(10, 20);
+    gtk_level_bar_set_value(GTK_LEVEL_BAR(Result), 15);
+  end;
 
-function Create_MediaControls: PGtkWidget;   begin
-  Result := gtk_media_controls_new(nil);
-end;
+  function Create_MediaControls: PGtkWidget;
+  begin
+    Result := gtk_media_controls_new(nil);
+  end;
 
 
   function Create_Notebook: PGtkWidget;

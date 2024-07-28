@@ -3,7 +3,7 @@ unit gtkmultisorter;
 interface
 
 uses
-  glib2, common_GTK, gtksorter;
+  common_GTK, gtksorter;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

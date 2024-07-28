@@ -3,7 +3,7 @@ unit gtkinscription;
 interface
 
 uses
-  glib2, pango, common_GTK, gtkwidget;
+  pango, common_GTK, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
