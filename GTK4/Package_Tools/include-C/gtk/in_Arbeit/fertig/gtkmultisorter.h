@@ -30,7 +30,7 @@
 
 #define GTK_TYPE_MULTI_SORTER             (gtk_multi_sorter_get_type ())
 
-G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSorter)
+//G_DECLARE_FINAL_TYPE (GtkMultiSorter, gtk_multi_sorter, GTK, MULTI_SORTER, GtkSorter)
 
 
 GtkMultiSorter *        gtk_multi_sorter_new                    (void);

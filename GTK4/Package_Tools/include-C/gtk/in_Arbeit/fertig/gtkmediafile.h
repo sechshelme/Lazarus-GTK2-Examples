@@ -32,7 +32,7 @@
 #define GTK_TYPE_MEDIA_FILE             (gtk_media_file_get_type ())
 
 
-G_DECLARE_DERIVABLE_TYPE (GtkMediaFile, gtk_media_file, GTK, MEDIA_FILE, GtkMediaStream)
+//G_DECLARE_DERIVABLE_TYPE (GtkMediaFile, gtk_media_file, GTK, MEDIA_FILE, GtkMediaStream)
 
 struct _GtkMediaFileClass
 {

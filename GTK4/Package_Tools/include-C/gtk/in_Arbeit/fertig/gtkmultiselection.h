@@ -27,7 +27,7 @@
 #define GTK_TYPE_MULTI_SELECTION (gtk_multi_selection_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTION, GObject)
+//G_DECLARE_FINAL_TYPE (GtkMultiSelection, gtk_multi_selection, GTK, MULTI_SELECTION, GObject)
 
 
 GtkMultiSelection * gtk_multi_selection_new                (GListModel           *model);

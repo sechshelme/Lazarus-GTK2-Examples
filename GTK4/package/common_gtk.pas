@@ -165,6 +165,21 @@ type
   end;
   PGOutputStream = ^TGOutputStream;
 
+  TGMountOperationClass=record   //     /usr/include/glib-2.0/gio/gmountoperation.h
+  end;
+  PGMountOperationClass=^TGMountOperationClass;
+
+  TGMountOperation=record   //     /usr/include/glib-2.0/gio/gmountoperation.h
+    parent_instance: TGObject;
+    // ......
+  end;
+  PGMountOperation=^TGMountOperation;
+
+  TGInputStream=record //     /usr/include/glib-2.0/gio/ginputstream.h
+    // ......
+    end;
+  PGInputStream=^TGInputStream;
+
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage = ^PPangoLanguage;

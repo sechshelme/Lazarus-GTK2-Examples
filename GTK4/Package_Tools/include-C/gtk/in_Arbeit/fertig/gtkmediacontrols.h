@@ -31,7 +31,7 @@
 #define GTK_TYPE_MEDIA_CONTROLS         (gtk_media_controls_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS, GtkWidget)
+//G_DECLARE_FINAL_TYPE (GtkMediaControls, gtk_media_controls, GTK, MEDIA_CONTROLS, GtkWidget)
 
 
 GtkWidget      *gtk_media_controls_new                  (GtkMediaStream         *stream);

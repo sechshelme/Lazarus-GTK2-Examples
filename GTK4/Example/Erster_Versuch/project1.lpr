@@ -25,9 +25,10 @@ uses
   gtkaccelgroup,              // io.
   gtkexpression,              // io.
   gtkfilter,                  // io.
+  gtkfilefilter,              // io.
   gtkfilterlistmodel,         // io. -> gtkfilter
   gtkcustomfilter,            // io. -> gtkfilter
-  gtkfilefilter,              // io.
+  gtkmultifilter,             // io. -> gtkfilter
   gtkboolfilter,              // io. -> gtkfilter, gtkexpression;
   gtkstringfilter,            // io. -> gtkfilter, gtkexpression
   gtkbuilder,                 // io.
@@ -40,6 +41,8 @@ uses
   gtkaspectframe,             // io.
   gtkrecentmanager,           // io.
   gtkmediastream,             // io.
+  gtkmediacontrols,           // io. -> gtkmediastream
+  gtkmediafile,               // io. -> gtkmediastream
   gtkimcontext,               // io.
   gtkimmodule,                // io.
   gtkinscription,             // io.
@@ -48,6 +51,7 @@ uses
   gtkbuilderlistitemfactory,  // io.
   gtksorter,                  // io.
   gtkcustomsorter,            // io. -> gtksorter
+  gtkmultisorter,             // io. -> gtksorter
   gtkicontheme,               // io.
   gtkcssprovider,             // io.
   gtkdirectorylist,           // io.
@@ -68,6 +72,8 @@ uses
   gtklistbase,                // io.
   gtklistheader,              // io.
   gtklistitem,                // io.
+  gtkmountoperation,          // io.
+  gtkmultiselection,          // io.
 
 
   gtkaccessiblerange,         // io.
@@ -214,6 +220,7 @@ uses
   gtkprintoperationpreview,   // io. -> gtkprintcontext, gtkpagesetup
   gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
   gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
+
 
 
 
@@ -475,11 +482,15 @@ const
     gtk_box_append(GTK_BOX(Result), ex);
   end;
 
-  function Create_LevelBar: PGtkWidget;
-  begin
-    Result := gtk_level_bar_new_for_interval(10, 20);
-    gtk_level_bar_set_value(GTK_LEVEL_BAR(Result), 15);
-  end;
+function Create_LevelBar: PGtkWidget;
+begin
+  Result := gtk_level_bar_new_for_interval(10, 20);
+  gtk_level_bar_set_value(GTK_LEVEL_BAR(Result), 15);
+end;
+
+function Create_MediaControls: PGtkWidget;   begin
+  Result := gtk_media_controls_new(nil);
+end;
 
 
   function Create_Notebook: PGtkWidget;
@@ -487,6 +498,7 @@ const
     Result := gtk_notebook_new;
     gtk_notebook_set_scrollable(GTK_NOTEBOOK(Result), True);
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_DrawArena, Create_Label('DrawArena'));
+    gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_MediaControls, Create_Label('MediaControls'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_LevelBar, Create_Label('LevelBar'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_FlowBox, Create_Label('FlowBox'));
     gtk_notebook_append_page(GTK_NOTEBOOK(Result), Create_Calender, Create_Label('Calendar'));

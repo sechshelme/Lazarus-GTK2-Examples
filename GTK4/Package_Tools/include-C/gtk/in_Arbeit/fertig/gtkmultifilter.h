@@ -30,7 +30,7 @@
 
 #define GTK_TYPE_MULTI_FILTER             (gtk_multi_filter_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GtkMultiFilter, gtk_multi_filter, GTK, MULTI_FILTER, GtkFilter)
+//GDK_DECLARE_INTERNAL_TYPE (GtkMultiFilter, gtk_multi_filter, GTK, MULTI_FILTER, GtkFilter)
 
 
 void                    gtk_multi_filter_append                 (GtkMultiFilter         *self,
@@ -41,13 +41,13 @@ void                    gtk_multi_filter_remove                 (GtkMultiFilter 
 
 #define GTK_TYPE_ANY_FILTER             (gtk_any_filter_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter)
+//GDK_DECLARE_INTERNAL_TYPE (GtkAnyFilter, gtk_any_filter, GTK, ANY_FILTER, GtkMultiFilter)
 
 GtkAnyFilter *          gtk_any_filter_new                      (void);
 
 #define GTK_TYPE_EVERY_FILTER             (gtk_every_filter_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter)
+//GDK_DECLARE_INTERNAL_TYPE (GtkEveryFilter, gtk_every_filter, GTK, EVERY_FILTER, GtkMultiFilter)
 
 GtkEveryFilter *        gtk_every_filter_new                    (void);
 
