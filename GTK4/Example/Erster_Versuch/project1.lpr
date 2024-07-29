@@ -277,6 +277,19 @@ uses
   gtkappchooserwidget,        // io.
   gtkassistant,               // io.
 
+  gtkcellrendereraccel,       // io. -> gtkcellrenderer
+  gtkcellrenderercombo,       // io. -> gtkcellrenderer
+  gtkcellrendererpixbuf,      // io. -> gtkcellrenderer
+  gtkcellrendererprogress,    // io. -> gtkcellrenderer
+  gtkcellrendererspin,        // io. -> gtkcellrenderer
+  gtkcellrendererspinner,     // io. -> gtkcellrenderer
+  gtkcellrenderertoggle,      // io. -> gtkcellrenderer
+  gtkcellareabox,             // io. -> gtkcellrenderer, gtkcellarea
+  gtkcellareacontext,         // io. -> gtkcellarea
+  gtkcellrenderertext,        // io. -> tkcellrenderer, gtkcellareacontext
+  gtkcelllayout,              // io. -> gtkbuilder, gtkbuildable, gtktreemodel, gtkcellrenderer, gtkcellarea
+  gtkcellview,                // io. -> gtktreemodel, gtkcellarea
+
 
 
 
