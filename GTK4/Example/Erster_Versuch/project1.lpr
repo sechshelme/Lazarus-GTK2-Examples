@@ -277,6 +277,10 @@ uses
   gtkappchooserwidget,        // io.
   gtkassistant,               // io.
 
+  gtkcolorbutton,             // io.
+  gtkcolorchooser,            // io.
+  gtkcolorchooserdialog,      // io.
+  gtkcolorchooserwidget,      // io.
   gtkcellrendereraccel,       // io. -> gtkcellrenderer
   gtkcellrenderercombo,       // io. -> gtkcellrenderer
   gtkcellrendererpixbuf,      // io. -> gtkcellrenderer
@@ -289,6 +293,14 @@ uses
   gtkcellrenderertext,        // io. -> tkcellrenderer, gtkcellareacontext
   gtkcelllayout,              // io. -> gtkbuilder, gtkbuildable, gtktreemodel, gtkcellrenderer, gtkcellarea
   gtkcellview,                // io. -> gtktreemodel, gtkcellarea
+  gtkfilechooser,             // io. -> gtkfilefilter
+  gtkfilechooserwidget,       // io. -> gtkfilechooser
+  gtkfilechooserdialog,       // io. -> gtkfilechooser
+  gtkfilechoosernative,       // io. -> gtknativedialog, gtkfilechooser
+  gtkfontbutton,              // io.
+  gtkfontchooser,             // io.
+  gtkfontchooserdialog,       // io.
+  gtkfontchooserwidget,       // io.
 
 
 
