@@ -26,29 +26,29 @@
 #include <gtk/gtktypes.h>
 #include <gtk/gtklistitem.h>
 
-G_BEGIN_DECLS
+
 
 #define GTK_TYPE_COLUMN_VIEW_CELL (gtk_column_view_cell_get_type ())
-GDK_AVAILABLE_IN_4_12
+
 GDK_DECLARE_INTERNAL_TYPE(GtkColumnViewCell, gtk_column_view_cell, GTK, COLUMN_VIEW_CELL, GtkListItem)
 
-GDK_AVAILABLE_IN_4_12
+
 gpointer        gtk_column_view_cell_get_item                   (GtkColumnViewCell      *self);
-GDK_AVAILABLE_IN_4_12
-guint           gtk_column_view_cell_get_position               (GtkColumnViewCell      *self) G_GNUC_PURE;
-GDK_AVAILABLE_IN_4_12
-gboolean        gtk_column_view_cell_get_selected               (GtkColumnViewCell      *self) G_GNUC_PURE;
-GDK_AVAILABLE_IN_4_12
-gboolean        gtk_column_view_cell_get_focusable              (GtkColumnViewCell      *self) G_GNUC_PURE;
-GDK_AVAILABLE_IN_4_12
+
+guint           gtk_column_view_cell_get_position               (GtkColumnViewCell      *self) ;
+
+gboolean        gtk_column_view_cell_get_selected               (GtkColumnViewCell      *self) ;
+
+gboolean        gtk_column_view_cell_get_focusable              (GtkColumnViewCell      *self) ;
+
 void            gtk_column_view_cell_set_focusable              (GtkColumnViewCell      *self,
                                                                  gboolean                focusable);
 
-GDK_AVAILABLE_IN_4_12
+
 void            gtk_column_view_cell_set_child                  (GtkColumnViewCell      *self,
                                                                  GtkWidget              *child);
-GDK_AVAILABLE_IN_4_12
+
 GtkWidget *     gtk_column_view_cell_get_child                  (GtkColumnViewCell      *self);
 
-G_END_DECLS
+
 

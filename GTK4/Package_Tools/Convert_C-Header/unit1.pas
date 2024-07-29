@@ -69,6 +69,11 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_MALLOC', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_PURE', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], '_FOR(GListModel)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkColumnView and GtkColumnViewColumn)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkListView)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDropDown)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDropDown and GtkStringList)', '', [rfReplaceAll]);
+
 
 
 

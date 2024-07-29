@@ -70,87 +70,87 @@ struct _GtkComboBoxClass
 /* construction */
 
 GType         gtk_combo_box_get_type                 (void) ;
-_FOR(GtkDropDown)
+
 GtkWidget    *gtk_combo_box_new                      (void);
-_FOR(GtkDropDown)
+
 GtkWidget    *gtk_combo_box_new_with_entry           (void);
-_FOR(GtkDropDown)
+
 GtkWidget    *gtk_combo_box_new_with_model           (GtkTreeModel *model);
-_FOR(GtkDropDown)
+
 GtkWidget    *gtk_combo_box_new_with_model_and_entry (GtkTreeModel *model);
 
 /* get/set active item */
-_FOR(GtkDropDown)
+
 int           gtk_combo_box_get_active       (GtkComboBox     *combo_box);
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_set_active       (GtkComboBox     *combo_box,
                                               int              index_);
-_FOR(GtkDropDown)
+
 gboolean      gtk_combo_box_get_active_iter  (GtkComboBox     *combo_box,
                                               GtkTreeIter     *iter);
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_set_active_iter  (GtkComboBox     *combo_box,
                                               GtkTreeIter     *iter);
 
 /* getters and setters */
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_set_model        (GtkComboBox     *combo_box,
                                               GtkTreeModel    *model);
-_FOR(GtkDropDown)
+
 GtkTreeModel *gtk_combo_box_get_model        (GtkComboBox     *combo_box);
 
-_FOR(GtkDropDown)
+
 GtkTreeViewRowSeparatorFunc gtk_combo_box_get_row_separator_func (GtkComboBox                *combo_box);
-_FOR(GtkDropDown)
+
 void                        gtk_combo_box_set_row_separator_func (GtkComboBox                *combo_box,
                                                                   GtkTreeViewRowSeparatorFunc func,
                                                                   gpointer                    data,
                                                                   GDestroyNotify              destroy);
 
-_FOR(GtkDropDown)
+
 void               gtk_combo_box_set_button_sensitivity (GtkComboBox        *combo_box,
                                                          GtkSensitivityType  sensitivity);
-_FOR(GtkDropDown)
+
 GtkSensitivityType gtk_combo_box_get_button_sensitivity (GtkComboBox        *combo_box);
 
-_FOR(GtkDropDown)
+
 gboolean           gtk_combo_box_get_has_entry          (GtkComboBox        *combo_box);
-_FOR(GtkDropDown)
+
 void               gtk_combo_box_set_entry_text_column  (GtkComboBox        *combo_box,
                                                          int                 text_column);
-_FOR(GtkDropDown)
+
 int                gtk_combo_box_get_entry_text_column  (GtkComboBox        *combo_box);
 
-_FOR(GtkDropDown)
+
 void               gtk_combo_box_set_popup_fixed_width  (GtkComboBox      *combo_box,
                                                          gboolean          fixed);
-_FOR(GtkDropDown)
+
 gboolean           gtk_combo_box_get_popup_fixed_width  (GtkComboBox      *combo_box);
 
 /* programmatic control */
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_popup            (GtkComboBox     *combo_box);
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_popup_for_device (GtkComboBox     *combo_box,
                                               GdkDevice       *device);
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_popdown          (GtkComboBox     *combo_box);
 
-_FOR(GtkDropDown)
+
 int           gtk_combo_box_get_id_column        (GtkComboBox *combo_box);
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_set_id_column        (GtkComboBox *combo_box,
                                                   int          id_column);
-_FOR(GtkDropDown)
+
 const char * gtk_combo_box_get_active_id        (GtkComboBox *combo_box);
-_FOR(GtkDropDown)
+
 gboolean      gtk_combo_box_set_active_id        (GtkComboBox *combo_box,
                                                   const char *active_id);
 
-_FOR(GtkDropDown)
+
 void          gtk_combo_box_set_child            (GtkComboBox *combo_box,
                                                   GtkWidget   *child);
-_FOR(GtkDropDown)
+
 GtkWidget *   gtk_combo_box_get_child            (GtkComboBox *combo_box);
 
 

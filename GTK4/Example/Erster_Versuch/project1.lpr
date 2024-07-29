@@ -7,6 +7,7 @@ uses
   glib2,
   common_GTK,
   gtkenums,                   // io.
+  gtktypes,                   // io.
   gtknative,                  // io.    ( TGtkNative ausgelagert )
   gtkwidget,                  // -> pango,Cairo, gtknative
   gtkwindow,                  // io.
@@ -265,8 +266,16 @@ uses
   gtkprintoperation,          // io. -> gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
   gtkprintdialog,             // io. -> gtkprintsettings, gtkpagesetup
 
-
-
+  gtktreeviewcolumn,          // io. -> gtkcellrenderer, gtktreemodel, gtkcellarea
+  gtktreeview,                // io. -> gtkeditable, gtkcellrenderer, gtktreemodel, gtktreeviewcolumn
+  gtkcombobox,                // io. -> gtktreemodel, gtktreeview
+  gtkcomboboxtext,            // io.
+  gtkdialog,                  // io.
+  gtkappchooserdialog,        // io. -> gtkdialog
+  gtkappchooser,              // io.
+  gtkappchooserbutton,        // io.
+  gtkappchooserwidget,        // io.
+  gtkassistant,               // io.
 
 
 

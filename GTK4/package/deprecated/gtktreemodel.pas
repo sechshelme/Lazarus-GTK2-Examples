@@ -20,18 +20,18 @@ const
 
 
 type
-  PGtkTreeIter = ^TGtkTreeIter;
-
   TGtkTreeIter = record
     stamp: longint;
     user_data: Tgpointer;
     user_data2: Tgpointer;
     user_data3: Tgpointer;
   end;
+  PGtkTreeIter = ^TGtkTreeIter;
 
   TGtkTreePath = record // _GtkTreePath
   end;
   PGtkTreePath = ^TGtkTreePath;
+  PPGtkTreePath = ^PGtkTreePath;
 
   TGtkTreeRowReference = record // _GtkTreeRowReference
   end;
@@ -40,6 +40,7 @@ type
   TGtkTreeModel = record // _GtkTreeModel
   end;
   PGtkTreeModel = ^TGtkTreeModel;
+  PPGtkTreeModel = ^PGtkTreeModel;
 
   TGtkTreeModelIface = record
     g_iface: TGTypeInterface;

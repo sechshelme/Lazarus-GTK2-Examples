@@ -3,7 +3,7 @@ unit gtksnapshot;
 interface
 
 uses
-  pango, Cairo, common_GTK, gtkwidget;
+  pango, Cairo, common_GTK, gtktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

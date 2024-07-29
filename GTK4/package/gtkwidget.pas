@@ -3,7 +3,7 @@ unit gtkwidget;
 interface
 
 uses
-  ctypes, gdkenums, pango, Cairo, glib2, common_GTK, gtkenums;
+  ctypes, gtktypes, gdkenums, pango, Cairo, glib2, common_GTK, gtkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -73,9 +73,6 @@ type
   end;
   PGtkStyleContext = ^TGtkStyleContext;
 
-  TGtkSnapshot = TGdkSnapshot;
-  PGtkSnapshot = ^TGtkSnapshot;
-
   TGtkTooltip = record // _GtkTooltip
   end;
   PGtkTooltip = ^TGtkTooltip;
@@ -100,6 +97,9 @@ type
   end;
   PGtkAccessible = ^TGtkAccessible;
   PPGtkAccessible = ^PGtkAccessible;
+
+  //  TGtkSnapshot = TGdkSnapshot;
+  //  PGtkSnapshot = ^TGtkSnapshot;
 
 
 

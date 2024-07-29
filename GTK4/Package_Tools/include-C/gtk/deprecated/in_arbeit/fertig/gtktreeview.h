@@ -189,56 +189,56 @@ struct _GtkTreeViewClass
 GType                  gtk_tree_view_get_type                      (void) ;
 
 /* Creators */
-_FOR(GtkListView)
+
 GtkWidget             *gtk_tree_view_new                           (void);
-_FOR(GtkListView)
+
 GtkWidget             *gtk_tree_view_new_with_model                (GtkTreeModel              *model);
 
 /* Accessors */
-_FOR(GtkListView)
+
 GtkTreeModel          *gtk_tree_view_get_model                     (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_model                     (GtkTreeView               *tree_view,
 								    GtkTreeModel              *model);
-_FOR(GtkListView)
+
 GtkTreeSelection      *gtk_tree_view_get_selection                 (GtkTreeView               *tree_view);
 
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_headers_visible           (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_headers_visible           (GtkTreeView               *tree_view,
 								    gboolean                   headers_visible);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_columns_autosize              (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_headers_clickable         (GtkTreeView *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_headers_clickable         (GtkTreeView               *tree_view,
 								    gboolean                   setting);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_activate_on_single_click  (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_activate_on_single_click  (GtkTreeView               *tree_view,
 								    gboolean                   single);
 
 /* Column functions */
-_FOR(GtkListView)
+
 int                    gtk_tree_view_append_column                 (GtkTreeView               *tree_view,
 								    GtkTreeViewColumn         *column);
-_FOR(GtkListView)
+
 int                    gtk_tree_view_remove_column                 (GtkTreeView               *tree_view,
 								    GtkTreeViewColumn         *column);
-_FOR(GtkListView)
+
 int                    gtk_tree_view_insert_column                 (GtkTreeView               *tree_view,
 								    GtkTreeViewColumn         *column,
 								    int                        position);
-_FOR(GtkListView)
+
 int                    gtk_tree_view_insert_column_with_attributes (GtkTreeView               *tree_view,
 								    int                        position,
 								    const char                *title,
 								    GtkCellRenderer           *cell,
 								    ...) ;
-_FOR(GtkListView)
+
 int                    gtk_tree_view_insert_column_with_data_func  (GtkTreeView               *tree_view,
 								    int                        position,
 								    const char                *title,
@@ -247,89 +247,89 @@ int                    gtk_tree_view_insert_column_with_data_func  (GtkTreeView 
                                                                     gpointer                   data,
                                                                     GDestroyNotify             dnotify);
 
-_FOR(GtkListView)
+
 guint                  gtk_tree_view_get_n_columns                 (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 GtkTreeViewColumn     *gtk_tree_view_get_column                    (GtkTreeView               *tree_view,
 								    int                        n);
-_FOR(GtkListView)
+
 GList                 *gtk_tree_view_get_columns                   (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_move_column_after             (GtkTreeView               *tree_view,
 								    GtkTreeViewColumn         *column,
 								    GtkTreeViewColumn         *base_column);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_expander_column           (GtkTreeView               *tree_view,
 								    GtkTreeViewColumn         *column);
-_FOR(GtkListView)
+
 GtkTreeViewColumn     *gtk_tree_view_get_expander_column           (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_column_drag_function      (GtkTreeView               *tree_view,
 								    GtkTreeViewColumnDropFunc  func,
 								    gpointer                   user_data,
 								    GDestroyNotify             destroy);
 
 /* Actions */
-_FOR(GtkListView)
+
 void                   gtk_tree_view_scroll_to_point               (GtkTreeView               *tree_view,
 								    int                        tree_x,
 								    int                        tree_y);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_scroll_to_cell                (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *column,
 								    gboolean                   use_align,
 								    float                      row_align,
 								    float                      col_align);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_row_activated                 (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *column);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_expand_all                    (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_collapse_all                  (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_expand_to_path                (GtkTreeView               *tree_view,
 								    GtkTreePath               *path);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_expand_row                    (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    gboolean                   open_all);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_collapse_row                  (GtkTreeView               *tree_view,
 								    GtkTreePath               *path);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_map_expanded_rows             (GtkTreeView               *tree_view,
 								    GtkTreeViewMappingFunc     func,
 								    gpointer                   data);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_row_expanded                  (GtkTreeView               *tree_view,
 								    GtkTreePath               *path);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_reorderable               (GtkTreeView               *tree_view,
 								    gboolean                   reorderable);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_reorderable               (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_cursor                    (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *focus_column,
 								    gboolean                   start_editing);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_cursor_on_cell            (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *focus_column,
 								    GtkCellRenderer           *focus_cell,
 								    gboolean                   start_editing);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_get_cursor                    (GtkTreeView               *tree_view,
 								    GtkTreePath              **path,
 								    GtkTreeViewColumn        **focus_column);
 
 
 /* Layout information */
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_path_at_pos               (GtkTreeView               *tree_view,
 								    int                        x,
 								    int                        y,
@@ -337,24 +337,24 @@ gboolean               gtk_tree_view_get_path_at_pos               (GtkTreeView 
 								    GtkTreeViewColumn        **column,
 								    int                       *cell_x,
 								    int                       *cell_y);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_get_cell_area                 (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *column,
 								    GdkRectangle              *rect);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_get_background_area           (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewColumn         *column,
 								    GdkRectangle              *rect);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_get_visible_rect              (GtkTreeView               *tree_view,
 								    GdkRectangle              *visible_rect);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_visible_range             (GtkTreeView               *tree_view,
 								    GtkTreePath              **start_path,
 								    GtkTreePath              **end_path);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_is_blank_at_pos               (GtkTreeView               *tree_view,
                                                                     int                        x,
                                                                     int                        y,
@@ -364,168 +364,168 @@ gboolean               gtk_tree_view_is_blank_at_pos               (GtkTreeView 
                                                                     int                       *cell_y);
 
 /* Drag-and-Drop support */
-_FOR(GtkListView)
+
 void                   gtk_tree_view_enable_model_drag_source      (GtkTreeView               *tree_view,
 								    GdkModifierType            start_button_mask,
 								    GdkContentFormats         *formats,
 								    GdkDragAction              actions);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_enable_model_drag_dest        (GtkTreeView               *tree_view,
 								    GdkContentFormats         *formats,
 								    GdkDragAction              actions);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_unset_rows_drag_source        (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_unset_rows_drag_dest          (GtkTreeView               *tree_view);
 
 
 /* These are useful to implement your own custom stuff. */
-_FOR(GtkListView)
+
 void                   gtk_tree_view_set_drag_dest_row             (GtkTreeView               *tree_view,
 								    GtkTreePath               *path,
 								    GtkTreeViewDropPosition    pos);
-_FOR(GtkListView)
+
 void                   gtk_tree_view_get_drag_dest_row             (GtkTreeView               *tree_view,
 								    GtkTreePath              **path,
 								    GtkTreeViewDropPosition   *pos);
-_FOR(GtkListView)
+
 gboolean               gtk_tree_view_get_dest_row_at_pos           (GtkTreeView               *tree_view,
 								    int                        drag_x,
 								    int                        drag_y,
 								    GtkTreePath              **path,
 								    GtkTreeViewDropPosition   *pos);
-_FOR(GtkListView)
+
 GdkPaintable          *gtk_tree_view_create_row_drag_icon          (GtkTreeView               *tree_view,
 								    GtkTreePath               *path);
 
 /* Interactive search */
-_FOR(GtkListView)
+
 void                       gtk_tree_view_set_enable_search     (GtkTreeView                *tree_view,
 								gboolean                    enable_search);
-_FOR(GtkListView)
+
 gboolean                   gtk_tree_view_get_enable_search     (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 int                        gtk_tree_view_get_search_column     (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 void                       gtk_tree_view_set_search_column     (GtkTreeView                *tree_view,
 								int                         column);
-_FOR(GtkListView)
+
 GtkTreeViewSearchEqualFunc gtk_tree_view_get_search_equal_func (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 void                       gtk_tree_view_set_search_equal_func (GtkTreeView                *tree_view,
 								GtkTreeViewSearchEqualFunc  search_equal_func,
 								gpointer                    search_user_data,
 								GDestroyNotify              search_destroy);
 
-_FOR(GtkListView)
+
 GtkEditable                  *gtk_tree_view_get_search_entry         (GtkTreeView                   *tree_view);
-_FOR(GtkListView)
+
 void                          gtk_tree_view_set_search_entry         (GtkTreeView                   *tree_view,
 								      GtkEditable                   *entry);
 
 /* Convert between the different coordinate systems */
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_widget_to_tree_coords       (GtkTreeView *tree_view,
 							int          wx,
 							int          wy,
 							int         *tx,
 							int         *ty);
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_tree_to_widget_coords       (GtkTreeView *tree_view,
 							int          tx,
 							int          ty,
 							int         *wx,
 							int         *wy);
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_widget_to_bin_window_coords (GtkTreeView *tree_view,
 							int          wx,
 							int          wy,
 							int         *bx,
 							int         *by);
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_bin_window_to_widget_coords (GtkTreeView *tree_view,
 							int          bx,
 							int          by,
 							int         *wx,
 							int         *wy);
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_tree_to_bin_window_coords   (GtkTreeView *tree_view,
 							int          tx,
 							int          ty,
 							int         *bx,
 							int         *by);
-_FOR(GtkListView)
+
 void gtk_tree_view_convert_bin_window_to_tree_coords   (GtkTreeView *tree_view,
 							int          bx,
 							int          by,
 							int         *tx,
 							int         *ty);
 
-_FOR(GtkListView)
+
 void     gtk_tree_view_set_fixed_height_mode (GtkTreeView          *tree_view,
 					      gboolean              enable);
-_FOR(GtkListView)
+
 gboolean gtk_tree_view_get_fixed_height_mode (GtkTreeView          *tree_view);
-_FOR(GtkListView)
+
 void     gtk_tree_view_set_hover_selection   (GtkTreeView          *tree_view,
 					      gboolean              hover);
-_FOR(GtkListView)
+
 gboolean gtk_tree_view_get_hover_selection   (GtkTreeView          *tree_view);
-_FOR(GtkListView)
+
 void     gtk_tree_view_set_hover_expand      (GtkTreeView          *tree_view,
 					      gboolean              expand);
-_FOR(GtkListView)
+
 gboolean gtk_tree_view_get_hover_expand      (GtkTreeView          *tree_view);
-_FOR(GtkListView)
+
 void     gtk_tree_view_set_rubber_banding    (GtkTreeView          *tree_view,
 					      gboolean              enable);
-_FOR(GtkListView)
+
 gboolean gtk_tree_view_get_rubber_banding    (GtkTreeView          *tree_view);
 
-_FOR(GtkListView)
+
 gboolean gtk_tree_view_is_rubber_banding_active (GtkTreeView       *tree_view);
 
-_FOR(GtkListView)
+
 GtkTreeViewRowSeparatorFunc gtk_tree_view_get_row_separator_func (GtkTreeView               *tree_view);
-_FOR(GtkListView)
+
 void                        gtk_tree_view_set_row_separator_func (GtkTreeView                *tree_view,
 								  GtkTreeViewRowSeparatorFunc func,
 								  gpointer                    data,
 								  GDestroyNotify              destroy);
 
-_FOR(GtkListView)
+
 GtkTreeViewGridLines        gtk_tree_view_get_grid_lines         (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 void                        gtk_tree_view_set_grid_lines         (GtkTreeView                *tree_view,
 								  GtkTreeViewGridLines        grid_lines);
-_FOR(GtkListView)
+
 gboolean                    gtk_tree_view_get_enable_tree_lines  (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 void                        gtk_tree_view_set_enable_tree_lines  (GtkTreeView                *tree_view,
 								  gboolean                    enabled);
-_FOR(GtkListView)
+
 void                        gtk_tree_view_set_show_expanders     (GtkTreeView                *tree_view,
 								  gboolean                    enabled);
-_FOR(GtkListView)
+
 gboolean                    gtk_tree_view_get_show_expanders     (GtkTreeView                *tree_view);
-_FOR(GtkListView)
+
 void                        gtk_tree_view_set_level_indentation  (GtkTreeView                *tree_view,
 								  int                         indentation);
-_FOR(GtkListView)
+
 int                         gtk_tree_view_get_level_indentation  (GtkTreeView                *tree_view);
 
 /* Convenience functions for setting tooltips */
-_FOR(GtkListView)
+
 void          gtk_tree_view_set_tooltip_row    (GtkTreeView       *tree_view,
 						GtkTooltip        *tooltip,
 						GtkTreePath       *path);
-_FOR(GtkListView)
+
 void          gtk_tree_view_set_tooltip_cell   (GtkTreeView       *tree_view,
 						GtkTooltip        *tooltip,
 						GtkTreePath       *path,
 						GtkTreeViewColumn *column,
 						GtkCellRenderer   *cell);
-_FOR(GtkListView)
+
 gboolean      gtk_tree_view_get_tooltip_context(GtkTreeView       *tree_view,
 						int                x,
 						int                y,
@@ -533,10 +533,10 @@ gboolean      gtk_tree_view_get_tooltip_context(GtkTreeView       *tree_view,
 						GtkTreeModel     **model,
 						GtkTreePath      **path,
 						GtkTreeIter       *iter);
-_FOR(GtkListView)
+
 void          gtk_tree_view_set_tooltip_column (GtkTreeView       *tree_view,
 					        int                column);
-_FOR(GtkListView)
+
 int           gtk_tree_view_get_tooltip_column (GtkTreeView       *tree_view);
 
 
