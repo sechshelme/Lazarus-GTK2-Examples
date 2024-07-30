@@ -9,10 +9,16 @@ uses
 
   // GDK
 
-  gdkenums,
-  gdkcairo,
+  gdkenums,                   // io.
+  gdkcairo,                   // io.
+  gdkseat,                    // io.
+  gdkkeysyms,                 // Gross und Kleinschreibung !
   gdkevents,                  // io. -> gdkseat
-  gdkseat,
+  gdkcontentprovider,         // io.
+  gdkcontentproviderimpl,     // io. -> gdkcontentprovider
+  gdktoplevellayout,          // io.
+  gdktoplevelsize,            // io.
+  gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
 
   // GTK
 
@@ -233,7 +239,7 @@ uses
 
   gtktreemodel,               // io.
   gtkcellrenderer,            // io. -> gtkcelleditable;
-  gtkcellarea,                // io. -> gtkcellrenderer, gtktreemodel, gtkcelleditable;
+  gtkcellarea,                // gtkcellrenderer, gtktreemodel, gtkcelleditable;  ( Makro )
   gtkentrycompletion,         // io. -> gtktreemodel, gtkcellarea;
   gtkentrybuffer,             // io.
   gtktext,                    // io. -> gtkentrybuffer

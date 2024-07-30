@@ -135,7 +135,7 @@ typedef enum
 #define GDK_TYPE_TOPLEVEL (gdk_toplevel_get_type ())
 
 
-G_DECLARE_INTERFACE (GdkToplevel, gdk_toplevel, GDK, TOPLEVEL, GObject)
+//G_DECLARE_INTERFACE (GdkToplevel, gdk_toplevel, GDK, TOPLEVEL, GObject)
 
 
 void            gdk_toplevel_present            (GdkToplevel       *toplevel,

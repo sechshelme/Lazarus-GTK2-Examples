@@ -3,7 +3,7 @@ unit gtkcellrenderer;
 interface
 
 uses
-  glib2, gtktypes, common_GTK, gtkenums, gtkwidget, gtkcelleditable;
+  glib2, gdkevents, gtktypes, common_GTK, gtkenums, gtkwidget, gtkcelleditable;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

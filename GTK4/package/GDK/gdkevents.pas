@@ -113,6 +113,10 @@ const
   GDK_CROSSING_TOUCH_END = 7;
   GDK_CROSSING_DEVICE_SWITCH = 8;
 
+type
+  TGdkEvent = record
+  end;
+  PGdkEvent = ^TGdkEvent;
 
 function gdk_event_get_type: TGType; cdecl; external gtklib;
 function gdk_event_sequence_get_type: TGType; cdecl; external gtklib;

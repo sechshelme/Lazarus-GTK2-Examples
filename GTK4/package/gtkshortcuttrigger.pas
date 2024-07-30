@@ -3,7 +3,7 @@ unit gtkshortcuttrigger;
 interface
 
 uses
-  glib2, gdkenums, common_GTK;
+  glib2, gdkenums, gdkevents, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

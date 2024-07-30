@@ -204,13 +204,6 @@ type
   end;
   PGdkSurface = ^TGdkSurface;
 
-  TGdkEvent = record // _GdkEvent      /usr/include/gtk-4.0/gdk/gdkevents.h
-  end;
-  PGdkEvent = ^TGdkEvent;
-
-  TGdkKeyMatch = longint;    // enum             /usr/include/gtk-4.0/gdk/gdkevents.h
-  PGdkKeyMatch = ^TGdkKeyMatch;
-
   TGdkContentProvider = record   // /usr/include/gtk-4.0/gdk/gdkcontentprovider.h
     parent: TGObject;
   end;
