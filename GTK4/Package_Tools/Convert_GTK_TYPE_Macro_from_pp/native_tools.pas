@@ -41,9 +41,17 @@ procedure ConvertSLMacro_from_Native(var sl: TStringList);
     Result := 'P' + sa[2];
   end;
 
+  function FindGTKWidgetInterface(const s: string): string;
+  var
+    sa: TAnsiStringArray;
+  begin
+    sa := s.Split([',', ')']);
+    Result := 'P' + sa[2];
+  end;
+
 var
   p: integer = 0;
-  GTK_TYPE_XXX, gtkWidget, gtkWidgetClass: string;
+  GTK_TYPE_XXX, gtkWidget, gtkWidgetClass, gtkWidgetInterface: string;
 begin
   // GTK_TYPE_WINDOW
   if Form1.CheckBox1.Checked then begin
@@ -105,6 +113,18 @@ begin
 
     Inc(p, 2);
     sl[p] := '  Result := ' + gtkWidgetClass + '(PGTypeInstance(obj)^.g_class);';
+  end;
+
+  // GTK_WINDOW_GET_CLASS
+  if Form1.CheckBox7.Checked then begin
+    gtkWidgetInterface := FindGTKWidgetInterface(sl[p + 2]);
+    WriteLn('gtkWidgetInterface: ', gtkWidgetInterface);
+
+    sl[p] := StringReplace(sl[p], 'obj : longint', 'obj : Pointer', []);
+    sl[p] := StringReplace(sl[p], 'longint', gtkWidgetInterface, []);
+
+    Inc(p, 2);
+    sl[p] := '  Result := g_type_interface_peek(obj, ' + GTK_TYPE_XXX + ');';
   end;
 
   WriteLn();

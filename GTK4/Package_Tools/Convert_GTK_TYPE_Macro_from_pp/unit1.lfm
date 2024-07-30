@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1038
+  Left = 1152
   Height = 408
-  Top = 154
+  Top = 149
   Width = 484
   Caption = 'Form1'
   ClientHeight = 408
@@ -20,8 +20,8 @@ object Form1: TForm1
   end
   object CheckGroup1: TCheckGroup
     Left = 224
-    Height = 176
-    Top = 184
+    Height = 200
+    Top = 160
     Width = 248
     Anchors = [akRight, akBottom]
     AutoFill = True
@@ -34,7 +34,7 @@ object Form1: TForm1
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 159
+    ClientHeight = 183
     ClientWidth = 246
     TabOrder = 1
     object CheckBox1: TCheckBox
@@ -96,6 +96,14 @@ object Form1: TForm1
       Checked = True
       State = cbChecked
       TabOrder = 5
+    end
+    object CheckBox7: TCheckBox
+      Left = 6
+      Height = 24
+      Top = 153
+      Width = 234
+      Caption = 'CheckBox7'
+      TabOrder = 6
     end
   end
   object Memo1: TMemo

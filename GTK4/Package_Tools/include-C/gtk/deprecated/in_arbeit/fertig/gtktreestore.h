@@ -59,63 +59,63 @@ struct _GtkTreeStoreClass
 
 
 GType         gtk_tree_store_get_type         (void) ;
-_FOR(GtkTreeListModel)
+
 GtkTreeStore *gtk_tree_store_new              (int           n_columns,
 					       ...);
-_FOR(GtkTreeListModel)
+
 GtkTreeStore *gtk_tree_store_newv             (int           n_columns,
 					       GType        *types);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_set_column_types (GtkTreeStore *tree_store,
 					       int           n_columns,
 					       GType        *types);
 
 /* NOTE: use gtk_tree_model_get to get values from a GtkTreeStore */
 
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_set_value        (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       int           column,
 					       GValue       *value);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_set              (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       ...);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_set_valuesv      (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       int          *columns,
 					       GValue       *values,
 					       int           n_values);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_set_valist       (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       va_list       var_args);
-_FOR(GtkTreeListModel)
+
 gboolean      gtk_tree_store_remove           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_insert           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       int           position);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_insert_before    (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       GtkTreeIter  *sibling);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_insert_after     (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent,
 					       GtkTreeIter  *sibling);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_insert_with_values (GtkTreeStore *tree_store,
 						 GtkTreeIter  *iter,
 						 GtkTreeIter  *parent,
 						 int           position,
 						 ...);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_insert_with_valuesv (GtkTreeStore *tree_store,
 						  GtkTreeIter  *iter,
 						  GtkTreeIter  *parent,
@@ -123,39 +123,39 @@ void          gtk_tree_store_insert_with_valuesv (GtkTreeStore *tree_store,
 						  int          *columns,
 						  GValue       *values,
 						  int           n_values);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_prepend          (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_append           (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *parent);
-_FOR(GtkTreeListModel)
+
 gboolean      gtk_tree_store_is_ancestor      (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *descendant);
-_FOR(GtkTreeListModel)
+
 int           gtk_tree_store_iter_depth       (GtkTreeStore *tree_store,
 					       GtkTreeIter  *iter);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_clear            (GtkTreeStore *tree_store);
-_FOR(GtkTreeListModel)
+
 gboolean      gtk_tree_store_iter_is_valid    (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_reorder          (GtkTreeStore *tree_store,
                                                GtkTreeIter  *parent,
                                                int          *new_order);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_swap             (GtkTreeStore *tree_store,
                                                GtkTreeIter  *a,
                                                GtkTreeIter  *b);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_move_before      (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
-_FOR(GtkTreeListModel)
+
 void          gtk_tree_store_move_after       (GtkTreeStore *tree_store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);

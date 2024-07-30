@@ -32,7 +32,6 @@
  * Data in this format will be provided by gtk_tree_create_row_drag_content()
  * and can be consumed via gtk_tree_get_row_drag_data().
  */
-#define GTK_TYPE_TREE_ROW_DATA (gtk_tree_row_data_get_type ())
 
 GType             gtk_tree_row_data_get_type (void) ;
 
@@ -41,6 +40,8 @@ GType             gtk_tree_row_data_get_type (void) ;
 #define GTK_TREE_DRAG_SOURCE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_TREE_DRAG_SOURCE, GtkTreeDragSource))
 #define GTK_IS_TREE_DRAG_SOURCE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_TREE_DRAG_SOURCE))
 #define GTK_TREE_DRAG_SOURCE_GET_IFACE(obj)  (G_TYPE_INSTANCE_GET_INTERFACE ((obj), GTK_TYPE_TREE_DRAG_SOURCE, GtkTreeDragSourceIface))
+
+#define GTK_TYPE_TREE_ROW_DATA (gtk_tree_row_data_get_type ())
 
 typedef struct _GtkTreeDragSource      GtkTreeDragSource; /* Dummy typedef */
 typedef struct _GtkTreeDragSourceIface GtkTreeDragSourceIface;
@@ -73,23 +74,23 @@ struct _GtkTreeDragSourceIface
                                          GtkTreePath       *path);
 };
 
-_FOR(GtkDragSource)
+
 GType           gtk_tree_drag_source_get_type   (void) ;
 
 /* Returns whether the given row can be dragged */
-_FOR(GtkDragSource)
+
 gboolean gtk_tree_drag_source_row_draggable    (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
 
 /* Deletes the given row, or returns FALSE if it can't */
-_FOR(GtkDragSource)
+
 gboolean gtk_tree_drag_source_drag_data_delete (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
 
 /* Fills in selection_data with type selection_data->target based on
  * the row denoted by path, returns TRUE if it does anything
  */
-_FOR(GtkDragSource)
+
 GdkContentProvider *
          gtk_tree_drag_source_drag_data_get    (GtkTreeDragSource *drag_source,
                                                 GtkTreePath       *path);
@@ -128,20 +129,20 @@ struct _GtkTreeDragDestIface
                                        const GValue      *value);
 };
 
-_FOR(GtkDropTarget)
+
 GType           gtk_tree_drag_dest_get_type   (void) ;
 
 /* Inserts a row before dest which contains data in selection_data,
  * or returns FALSE if it can't
  */
-_FOR(GtkDropTarget)
+
 gboolean gtk_tree_drag_dest_drag_data_received (GtkTreeDragDest   *drag_dest,
 						GtkTreePath       *dest,
 						const GValue      *value);
 
 
 /* Returns TRUE if we can drop before path; path may not exist. */
-_FOR(GtkDropTarget)
+
 gboolean gtk_tree_drag_dest_row_drop_possible  (GtkTreeDragDest   *drag_dest,
 						GtkTreePath       *dest_path,
 						const GValue      *value);
@@ -150,11 +151,11 @@ gboolean gtk_tree_drag_dest_row_drop_possible  (GtkTreeDragDest   *drag_dest,
 /* The selection data would normally have target type GTK_TREE_MODEL_ROW in this
  * case. If the target is wrong these functions return FALSE.
  */
-_FOR(GtkDragSource and GtkDropTarget)
+
 GdkContentProvider *
          gtk_tree_create_row_drag_content      (GtkTreeModel      *tree_model,
 						GtkTreePath       *path);
-_FOR(GtkDragSource and GtkDropTarget)
+
 gboolean gtk_tree_get_row_drag_data            (const GValue      *value,
 						GtkTreeModel     **tree_model,
 						GtkTreePath      **path);

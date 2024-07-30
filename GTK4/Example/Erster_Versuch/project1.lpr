@@ -302,8 +302,21 @@ uses
   gtkfontchooserdialog,       // io.
   gtkfontchooserwidget,       // io.
 
-
-
+  gtkinfobar,                 // io.
+  gtklockbutton,              // io.
+  gtkrender,                  // io.
+  gtkshow,                    // io.
+  gtkstatusbar,               // io.
+  gtktreednd,                 // io. -> gtktreemodel
+  gtktreemodelfilter,         // io. -> gtktreemodel
+  gtktreemodelsort,           // io. -> gtktreemodel
+  gtktreeselection,           // io. -> gtktreemodel, gtktreeview
+  gtktreesortable,            // io. -> gtktreemodel
+  gtktreestore,               // io. -> gtktreemodel
+  gtkliststore,               // io. -> gtktreemodel
+  gtkiconview,                // io. -> gtktreemodel, gtkcellarea, gtkcellrenderer
+  gtkmessagedialog,           // io. -> gtkdialog
+  gtkvolumebutton,            // io. -> gtkscalebutton
 
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
 

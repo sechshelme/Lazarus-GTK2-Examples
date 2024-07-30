@@ -28,7 +28,7 @@
 
 
 
-_FOR(gtk_uri_launcher_launch)
+
 void gtk_show_uri_full (GtkWindow           *parent,
                         const char          *uri,
                         guint32              timestamp,
@@ -36,12 +36,12 @@ void gtk_show_uri_full (GtkWindow           *parent,
                         GAsyncReadyCallback  callback,
                         gpointer             user_data);
 
-_FOR(gtk_uri_launcher_launch)
+
 gboolean gtk_show_uri_full_finish (GtkWindow     *parent,
                                    GAsyncResult  *result,
                                    GError       **error);
 
-_FOR(gtk_uri_launcher_launch)
+
 void gtk_show_uri (GtkWindow  *parent,
                    const char *uri,
                    guint32     timestamp);

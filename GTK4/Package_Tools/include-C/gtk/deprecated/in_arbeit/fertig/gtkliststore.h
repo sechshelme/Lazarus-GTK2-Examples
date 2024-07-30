@@ -59,88 +59,88 @@ struct _GtkListStoreClass
 
 
 GType         gtk_list_store_get_type         (void) ;
-_FOR(GListStore)
+
 GtkListStore *gtk_list_store_new              (int           n_columns,
 					       ...);
-_FOR(GListStore)
+
 GtkListStore *gtk_list_store_newv             (int           n_columns,
 					       GType        *types);
-_FOR(GListStore)
+
 void          gtk_list_store_set_column_types (GtkListStore *list_store,
 					       int           n_columns,
 					       GType        *types);
 
 /* NOTE: use gtk_tree_model_get to get values from a GtkListStore */
 
-_FOR(GListStore)
+
 void          gtk_list_store_set_value        (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int           column,
 					       GValue       *value);
-_FOR(GListStore)
+
 void          gtk_list_store_set              (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       ...);
-_FOR(GListStore)
+
 void          gtk_list_store_set_valuesv      (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int          *columns,
 					       GValue       *values,
 					       int           n_values);
-_FOR(GListStore)
+
 void          gtk_list_store_set_valist       (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       va_list       var_args);
-_FOR(GListStore)
+
 gboolean      gtk_list_store_remove           (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-_FOR(GListStore)
+
 void          gtk_list_store_insert           (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       int           position);
-_FOR(GListStore)
+
 void          gtk_list_store_insert_before    (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *sibling);
-_FOR(GListStore)
+
 void          gtk_list_store_insert_after     (GtkListStore *list_store,
 					       GtkTreeIter  *iter,
 					       GtkTreeIter  *sibling);
-_FOR(GListStore)
+
 void          gtk_list_store_insert_with_values  (GtkListStore *list_store,
 						  GtkTreeIter  *iter,
 						  int           position,
 						  ...);
-_FOR(GListStore)
+
 void          gtk_list_store_insert_with_valuesv (GtkListStore *list_store,
 						  GtkTreeIter  *iter,
 						  int           position,
 						  int          *columns,
 						  GValue       *values,
 						  int           n_values);
-_FOR(GListStore)
+
 void          gtk_list_store_prepend          (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-_FOR(GListStore)
+
 void          gtk_list_store_append           (GtkListStore *list_store,
 					       GtkTreeIter  *iter);
-_FOR(GListStore)
+
 void          gtk_list_store_clear            (GtkListStore *list_store);
-_FOR(GListStore)
+
 gboolean      gtk_list_store_iter_is_valid    (GtkListStore *list_store,
                                                GtkTreeIter  *iter);
-_FOR(GListStore)
+
 void          gtk_list_store_reorder          (GtkListStore *store,
                                                int          *new_order);
-_FOR(GListStore)
+
 void          gtk_list_store_swap             (GtkListStore *store,
                                                GtkTreeIter  *a,
                                                GtkTreeIter  *b);
-_FOR(GListStore)
+
 void          gtk_list_store_move_after       (GtkListStore *store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);
-_FOR(GListStore)
+
 void          gtk_list_store_move_before      (GtkListStore *store,
                                                GtkTreeIter  *iter,
                                                GtkTreeIter  *position);

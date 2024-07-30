@@ -73,6 +73,16 @@ begin
       slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkListView)', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDropDown)', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDropDown and GtkStringList)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDragSource)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDropTarget)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkDragSource and GtkDropTarget)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkFilterListModel)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkTreeListModel)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GtkGridView)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(GListStore)', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], '_FOR(gtk_uri_launcher_launch)', '', [rfReplaceAll]);
+
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)', '', [rfReplaceAll]);
 
 
 

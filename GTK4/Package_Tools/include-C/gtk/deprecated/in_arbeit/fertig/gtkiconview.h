@@ -73,138 +73,138 @@ typedef enum
 
 
 GType          gtk_icon_view_get_type          (void) ;
-_FOR(GtkGridView)
+
 GtkWidget *    gtk_icon_view_new               (void);
-_FOR(GtkGridView)
+
 GtkWidget *    gtk_icon_view_new_with_area     (GtkCellArea    *area);
-_FOR(GtkGridView)
+
 GtkWidget *    gtk_icon_view_new_with_model    (GtkTreeModel   *model);
 
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_model         (GtkIconView    *icon_view,
                                                 GtkTreeModel   *model);
-_FOR(GtkGridView)
+
 GtkTreeModel * gtk_icon_view_get_model         (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_text_column   (GtkIconView    *icon_view,
                                                 int             column);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_text_column   (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_markup_column (GtkIconView    *icon_view,
                                                 int             column);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_markup_column (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_pixbuf_column (GtkIconView    *icon_view,
                                                 int             column);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_pixbuf_column (GtkIconView    *icon_view);
 
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_item_orientation (GtkIconView    *icon_view,
                                                    GtkOrientation  orientation);
-_FOR(GtkGridView)
+
 GtkOrientation gtk_icon_view_get_item_orientation (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_columns       (GtkIconView    *icon_view,
                                                 int             columns);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_columns       (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_item_width    (GtkIconView    *icon_view,
                                                 int             item_width);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_item_width    (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_spacing       (GtkIconView    *icon_view,
                                                 int             spacing);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_spacing       (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_row_spacing   (GtkIconView    *icon_view,
                                                 int             row_spacing);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_row_spacing   (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_column_spacing (GtkIconView    *icon_view,
                                                 int             column_spacing);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_column_spacing (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_margin        (GtkIconView    *icon_view,
                                                 int             margin);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_margin        (GtkIconView    *icon_view);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_item_padding  (GtkIconView    *icon_view,
                                                 int             item_padding);
-_FOR(GtkGridView)
+
 int            gtk_icon_view_get_item_padding  (GtkIconView    *icon_view);
 
-_FOR(GtkGridView)
+
 GtkTreePath *  gtk_icon_view_get_path_at_pos   (GtkIconView     *icon_view,
                                                 int              x,
                                                 int              y);
-_FOR(GtkGridView)
+
 gboolean       gtk_icon_view_get_item_at_pos   (GtkIconView     *icon_view,
                                                 int               x,
                                                 int               y,
                                                 GtkTreePath     **path,
                                                 GtkCellRenderer **cell);
-_FOR(GtkGridView)
+
 gboolean       gtk_icon_view_get_visible_range (GtkIconView      *icon_view,
                                                 GtkTreePath     **start_path,
                                                 GtkTreePath     **end_path);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_activate_on_single_click (GtkIconView  *icon_view,
                                                            gboolean      single);
-_FOR(GtkGridView)
+
 gboolean       gtk_icon_view_get_activate_on_single_click (GtkIconView  *icon_view);
 
-_FOR(GtkGridView)
+
 void           gtk_icon_view_selected_foreach   (GtkIconView            *icon_view,
                                                  GtkIconViewForeachFunc  func,
                                                  gpointer                data);
-_FOR(GtkGridView)
+
 void           gtk_icon_view_set_selection_mode (GtkIconView            *icon_view,
                                                  GtkSelectionMode        mode);
-_FOR(GtkGridView)
+
 GtkSelectionMode gtk_icon_view_get_selection_mode (GtkIconView            *icon_view);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_select_path        (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_unselect_path      (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 gboolean         gtk_icon_view_path_is_selected   (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 int              gtk_icon_view_get_item_row       (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 int              gtk_icon_view_get_item_column    (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 GList           *gtk_icon_view_get_selected_items (GtkIconView            *icon_view);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_select_all         (GtkIconView            *icon_view);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_unselect_all       (GtkIconView            *icon_view);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_item_activated     (GtkIconView            *icon_view,
                                                    GtkTreePath            *path);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_set_cursor         (GtkIconView            *icon_view,
                                                    GtkTreePath            *path,
                                                    GtkCellRenderer        *cell,
                                                    gboolean                start_editing);
-_FOR(GtkGridView)
+
 gboolean         gtk_icon_view_get_cursor         (GtkIconView            *icon_view,
                                                    GtkTreePath           **path,
                                                    GtkCellRenderer       **cell);
-_FOR(GtkGridView)
+
 void             gtk_icon_view_scroll_to_path     (GtkIconView            *icon_view,
                                                    GtkTreePath            *path,
                                                    gboolean                use_align,
@@ -212,62 +212,62 @@ void             gtk_icon_view_scroll_to_path     (GtkIconView            *icon_
                                                    float                   col_align);
 
 /* Drag-and-Drop support */
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_enable_model_drag_source (GtkIconView              *icon_view,
                                                                GdkModifierType           start_button_mask,
                                                                GdkContentFormats        *formats,
                                                                GdkDragAction             actions);
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_enable_model_drag_dest   (GtkIconView              *icon_view,
                                                                GdkContentFormats        *formats,
                                                                GdkDragAction             actions);
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_unset_model_drag_source  (GtkIconView              *icon_view);
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_unset_model_drag_dest    (GtkIconView              *icon_view);
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_set_reorderable          (GtkIconView              *icon_view,
                                                                gboolean                  reorderable);
-_FOR(GtkGridView)
+
 gboolean               gtk_icon_view_get_reorderable          (GtkIconView              *icon_view);
 
 
 /* These are useful to implement your own custom stuff. */
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_set_drag_dest_item       (GtkIconView              *icon_view,
                                                                GtkTreePath              *path,
                                                                GtkIconViewDropPosition   pos);
-_FOR(GtkGridView)
+
 void                   gtk_icon_view_get_drag_dest_item       (GtkIconView              *icon_view,
                                                                GtkTreePath             **path,
                                                                GtkIconViewDropPosition  *pos);
-_FOR(GtkGridView)
+
 gboolean               gtk_icon_view_get_dest_item_at_pos     (GtkIconView              *icon_view,
                                                                int                       drag_x,
                                                                int                       drag_y,
                                                                GtkTreePath             **path,
                                                                GtkIconViewDropPosition  *pos);
-_FOR(GtkGridView)
+
 GdkPaintable          *gtk_icon_view_create_drag_icon         (GtkIconView              *icon_view,
                                                                GtkTreePath              *path);
 
-_FOR(GtkGridView)
+
 gboolean gtk_icon_view_get_cell_rect                          (GtkIconView     *icon_view,
                                                                GtkTreePath     *path,
                                                                GtkCellRenderer *cell,
                                                                GdkRectangle    *rect);
 
 
-_FOR(GtkGridView)
+
 void    gtk_icon_view_set_tooltip_item                        (GtkIconView     *icon_view,
                                                                GtkTooltip      *tooltip,
                                                                GtkTreePath     *path);
-_FOR(GtkGridView)
+
 void    gtk_icon_view_set_tooltip_cell                        (GtkIconView     *icon_view,
                                                                GtkTooltip      *tooltip,
                                                                GtkTreePath     *path,
                                                                GtkCellRenderer *cell);
-_FOR(GtkGridView)
+
 gboolean gtk_icon_view_get_tooltip_context                    (GtkIconView       *icon_view,
                                                                int                x,
                                                                int                y,
@@ -275,10 +275,10 @@ gboolean gtk_icon_view_get_tooltip_context                    (GtkIconView      
                                                                GtkTreeModel     **model,
                                                                GtkTreePath      **path,
                                                                GtkTreeIter       *iter);
-_FOR(GtkGridView)
+
 void     gtk_icon_view_set_tooltip_column                     (GtkIconView       *icon_view,
                                                                int                column);
-_FOR(GtkGridView)
+
 int      gtk_icon_view_get_tooltip_column                     (GtkIconView       *icon_view);
 
 

@@ -180,6 +180,17 @@ type
     end;
   PGInputStream=^TGInputStream;
 
+  TGPermission=record  // gpermission.h
+    // .....
+  end;
+  PGPermission=^TGPermission;
+
+  TGError=record  // gerror.h
+    // .....
+  end;
+  PGError=^TGError;
+  PPGError=^PGError;
+
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung
   PPPangoLanguage = ^PPangoLanguage;

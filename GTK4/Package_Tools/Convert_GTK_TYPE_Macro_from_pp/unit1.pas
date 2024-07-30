@@ -14,6 +14,7 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    CheckBox7: TCheckBox;
     Convert: TButton;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
@@ -90,6 +91,7 @@ begin
   CheckBox4.Caption := 'GTK_IS_WINDOW(obj)';
   CheckBox5.Caption := 'GTK_IS_WINDOW_CLASS(klass)';
   CheckBox6.Caption := 'GTK_WINDOW_GET_CLASS(obj)';
+  CheckBox7.Caption := 'GTK_WINDOW_GET_IFACE(obj)';
 end;
 
 procedure TForm1.ConvertClick(Sender: TObject);
@@ -142,6 +144,7 @@ begin
     CheckBox4.Checked := False;
     CheckBox5.Checked := False;
     CheckBox6.Checked := False;
+    CheckBox7.Checked := False;
     DeleteLines(p, 3);
   end;
   WriteLn('G_DECLARE: ', G_DECLARE);
@@ -168,6 +171,10 @@ begin
     DeleteLines(p, 5);
   end;
   if CheckBox6.Checked then begin
+    Inc(macCount);
+    DeleteLines(p, 5);
+  end;
+  if CheckBox7.Checked then begin
     Inc(macCount);
     DeleteLines(p, 5);
   end;
@@ -211,6 +218,9 @@ begin
   if CheckBox6.Checked then begin
     DeleteLines(p, 8);
   end;
+  if CheckBox7.Checked then begin
+    DeleteLines(p, 8);
+  end;
 
   p := 0;
   repeat
@@ -218,7 +228,6 @@ begin
   until pos('implementation', sl[p]) = 1;
 
   sl.Insert(p + 2, slMacro.Text);
-
   sl.Insert(p - 1, '');
   sl.Insert(p - 1, '// === Konventiert am: ' + DateTimeToStr(now) + ' ===');
   sl.Insert(p - 1, '');

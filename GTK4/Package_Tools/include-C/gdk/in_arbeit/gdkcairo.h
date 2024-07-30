@@ -48,7 +48,7 @@ cairo_region_t *
            gdk_cairo_region_create_from_surface
                                         (cairo_surface_t      *surface);
 
-GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_texture_new)
+
 void       gdk_cairo_draw_from_gl (cairo_t              *cr,
                                    GdkSurface            *surface,
                                    int                   source,

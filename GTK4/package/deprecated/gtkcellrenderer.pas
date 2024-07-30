@@ -36,12 +36,12 @@ type
   end;
   PGtkCellRendererPrivate = ^TGtkCellRendererPrivate;
 
-  PGtkCellRenderer = ^TGtkCellRenderer;
-
   TGtkCellRenderer = record
     parent_instance: TGInitiallyUnowned;
     priv: PGtkCellRendererPrivate;
   end;
+  PGtkCellRenderer = ^TGtkCellRenderer;
+  PPGtkCellRenderer = ^PGtkCellRenderer;
 
   TGtkCellRendererClassPrivate = record // _GtkCellRendererClassPrivate
   end;

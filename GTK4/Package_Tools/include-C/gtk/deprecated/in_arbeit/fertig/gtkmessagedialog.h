@@ -83,7 +83,7 @@ GtkWidget* gtk_message_dialog_new      (GtkWindow      *parent,
                                         GtkMessageType  type,
                                         GtkButtonsType  buttons,
                                         const char     *message_format,
-                                        ...) G_GNUC_PRINTF (5, 6);
+                                        ...) ;
 
 
 GtkWidget* gtk_message_dialog_new_with_markup   (GtkWindow      *parent,
@@ -91,7 +91,7 @@ GtkWidget* gtk_message_dialog_new_with_markup   (GtkWindow      *parent,
                                                  GtkMessageType  type,
                                                  GtkButtonsType  buttons,
                                                  const char     *message_format,
-                                                 ...) G_GNUC_PRINTF (5, 6);
+                                                 ...);
 
 
 void       gtk_message_dialog_set_markup  (GtkMessageDialog *message_dialog,
@@ -100,12 +100,12 @@ void       gtk_message_dialog_set_markup  (GtkMessageDialog *message_dialog,
 
 void       gtk_message_dialog_format_secondary_text (GtkMessageDialog *message_dialog,
                                                      const char       *message_format,
-                                                     ...) G_GNUC_PRINTF (2, 3);
+                                                     ...) ;
 
 
 void       gtk_message_dialog_format_secondary_markup (GtkMessageDialog *message_dialog,
                                                        const char       *message_format,
-                                                       ...) G_GNUC_PRINTF (2, 3);
+                                                       ...);
 
 
 GtkWidget *gtk_message_dialog_get_message_area (GtkMessageDialog *message_dialog);
