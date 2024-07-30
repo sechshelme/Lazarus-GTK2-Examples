@@ -6,6 +6,17 @@ uses
   Math,
   glib2,
   common_GTK,
+
+  // GDK
+
+  gdkenums,
+  gdkcairo,
+  gdkevents,                  // io. -> gdkseat
+  gdkseat,
+
+  // GTK
+
+
   gtkenums,                   // io.
   gtktypes,                   // io.
   gtknative,                  // io.    ( TGtkNative ausgelagert )
@@ -320,9 +331,6 @@ uses
 
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
 
-  // GDK
-
-  gdkenums,
 
 
   // --- Eigenes

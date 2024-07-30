@@ -36,10 +36,10 @@
 
 
 #define GDK_TYPE_EVENT          (gdk_event_get_type ())
-#define GDK_TYPE_EVENT_SEQUENCE (gdk_event_sequence_get_type ())
-
-#define GDK_IS_EVENT(obj)       (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_EVENT))
 #define GDK_EVENT(obj)          (G_TYPE_CHECK_INSTANCE_CAST ((obj), GDK_TYPE_EVENT, GdkEvent))
+#define GDK_IS_EVENT(obj)       (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GDK_TYPE_EVENT))
+
+#define GDK_TYPE_EVENT_SEQUENCE (gdk_event_sequence_get_type ())
 
 #define GDK_IS_EVENT_TYPE(event, type)  (gdk_event_get_event_type ((event)) == (type))
 

@@ -134,7 +134,17 @@ begin
   p := 0;
   repeat
     Inc(p);
-  until pos('{ was #define dname def_expr }', sl[p]) = 1;
+  until (pos('{ was #define dname def_expr }', sl[p]) = 1) or (p >= sl.Count - 1);
+  if p >= sl.Count - 1 then begin
+    p := 0;
+    CheckBox1.Checked := False;
+    CheckBox2.Checked := False;
+    CheckBox3.Checked := False;
+    CheckBox4.Checked := False;
+    CheckBox5.Checked := False;
+    CheckBox6.Checked := False;
+    CheckBox7.Checked := False;
+  end;
 
   G_DECLARE := Find_G_DECLARE(sl);
   if G_DECLARE <> is_G_DECLARE_none then begin
@@ -183,6 +193,7 @@ begin
     Inc(p);
   until pos('implementation', sl[p]) = 1;
   Inc(p, 3);
+
 
   if G_DECLARE <> is_G_DECLARE_none then begin
     slMacro := ConvertSLMacro_from_G_DECLARE;
@@ -268,12 +279,12 @@ var
 begin
   sl := TStringList.Create;
   sl.Add(Edit1.Text);
-  G_DECLARE:=Find_G_DECLARE(sl);
+  G_DECLARE := Find_G_DECLARE(sl);
   WriteLn(G_DECLARE);
   WriteLn();
 
-  slMacro:=ConvertSLMacro_from_G_DECLARE;
-  Memo1.Lines:=slMacro;
+  slMacro := ConvertSLMacro_from_G_DECLARE;
+  Memo1.Lines := slMacro;
 
   slMacro.Free;
   sl.Free;
