@@ -5,7 +5,7 @@ unit ListBox;
 interface
 
 uses
-  glib2, gtkenums, gtkwidget, gtkbox, gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner, gtkcenterlayout,gtkcheckbutton;
+  glib2, gtkwidget, gtkcenterbox, gtkbutton, gtklabel, gtklistbox, gtkspinner, gtkcheckbutton;
 
 function Create_ListBox: PGtkWidget;
 

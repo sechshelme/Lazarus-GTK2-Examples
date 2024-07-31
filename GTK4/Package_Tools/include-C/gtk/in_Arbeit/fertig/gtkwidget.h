@@ -468,14 +468,14 @@ void                  gtk_widget_set_child_visible      (GtkWidget    *widget,
 
 gboolean              gtk_widget_get_child_visible      (GtkWidget    *widget);
 
-//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_width)
+//_FOR(gtk_widget_get_width)
 int                   gtk_widget_get_allocated_width    (GtkWidget     *widget);
-//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_height)
+//_FOR(gtk_widget_get_height)
 int                   gtk_widget_get_allocated_height   (GtkWidget     *widget);
-//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_baseline)
+//_FOR(gtk_widget_get_baseline)
 int                   gtk_widget_get_allocated_baseline (GtkWidget     *widget);
 
-//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_bounds)
+//_FOR(gtk_widget_compute_bounds)
 void                  gtk_widget_get_allocation         (GtkWidget     *widget,
                                                          GtkAllocation *allocation);
 
@@ -607,7 +607,7 @@ void     gtk_widget_set_margin_bottom (GtkWidget *widget,
 gboolean     gtk_widget_is_ancestor     (GtkWidget      *widget,
                                          GtkWidget      *ancestor);
 
-//GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_point)
+//_FOR(gtk_widget_compute_point)
 gboolean     gtk_widget_translate_coordinates (GtkWidget  *src_widget,
                                                GtkWidget  *dest_widget,
                                                double      src_x,

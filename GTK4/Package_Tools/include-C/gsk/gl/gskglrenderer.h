@@ -22,7 +22,7 @@
 
 #if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
 #include <gsk/gsk.h>
-#define GSK_INCLUDE_WARNING(x) GDK_DEPRECATED_IN_4_14_FOR("#include <gsk/gsk.h> instead of <gsk/gl/gskglrenderer.h> to avoid this warning")
+#define GSK_INCLUDE_WARNING(x) _FOR("#include <gsk/gsk.h> instead of <gsk/gl/gskglrenderer.h> to avoid this warning")
 #else
 #include <gsk/gsktypes.h>
 #define GSK_INCLUDE_WARNING(x) x

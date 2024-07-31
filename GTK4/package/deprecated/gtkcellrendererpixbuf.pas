@@ -3,7 +3,7 @@ unit gtkcellrendererpixbuf;
 interface
 
 uses
-  glib2, common_GTK, gtkcellrenderer;
+  common_GTK, gtkcellrenderer;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

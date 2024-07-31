@@ -10,6 +10,7 @@ uses
   // GDK
 
   gdkenums,                   // io.
+  gdktypes,
   gdkcairo,                   // io.
   gdkseat,                    // io.
   gdkkeysyms,                 // Gross und Kleinschreibung !
@@ -19,6 +20,15 @@ uses
   gdktoplevellayout,          // io.
   gdktoplevelsize,            // io.
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
+  gdkclipboard,               // io.
+  gdkdmabuftexturebuilder,    // io.
+  gdkpaintable,               // io.
+  gdkpopuplayout,             // io.
+  gdkcontentformats,          // io.
+  gdksurface,                 // io.
+  gdkcontentdeserializer,     // io.
+  gdkcontentserializer,       // io.
+  gdkdisplay,
 
   // GTK
 
@@ -150,7 +160,7 @@ uses
   gtkshortcutlabel,           // io.
   gtkshortcut,                // io. -> gtkshortcuttrigger, gtkshortcutaction;  ( TGtkShortcut ausgelagert )
   gtkshortcutcontroller,      // io. -> gtkshortcut;
-  gtkshortcutmanager,         // io. -> gtkshortcutcontroller;
+  gtkshortcutmanager,         // io.
   gtkshortcutsgroup,          // io. -> gtkshortcutsshortcut;
   gtkshortcutssection,        // io. -> gtkshortcutsgroup;
   gtkshortcutswindow,         // io. -> gtkshortcutssection;
@@ -305,9 +315,9 @@ uses
   gtkcellrendererspin,        // io. -> gtkcellrenderer
   gtkcellrendererspinner,     // io. -> gtkcellrenderer
   gtkcellrenderertoggle,      // io. -> gtkcellrenderer
+  gtkcellrenderertext,        // io. -> gtkcellrenderer
   gtkcellareabox,             // io. -> gtkcellrenderer, gtkcellarea
   gtkcellareacontext,         // io. -> gtkcellarea
-  gtkcellrenderertext,        // io. -> tkcellrenderer, gtkcellareacontext
   gtkcelllayout,              // io. -> gtkbuilder, gtkbuildable, gtktreemodel, gtkcellrenderer, gtkcellarea
   gtkcellview,                // io. -> gtktreemodel, gtkcellarea
   gtkfilechooser,             // io. -> gtkfilefilter

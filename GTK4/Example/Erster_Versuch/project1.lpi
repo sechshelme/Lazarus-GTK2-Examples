@@ -62,7 +62,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../package;../../package/deprecated;../../package/print;../../package/GDK"/>
+      <OtherUnitFiles Value="../../package;../../package/deprecated;../../package/print;../../package/GDK;../../package/GTK"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

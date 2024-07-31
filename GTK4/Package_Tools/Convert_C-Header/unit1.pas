@@ -53,6 +53,8 @@ begin
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_ALL', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'G_GNUC_CONST', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_DEPRECATED_IN_4_10', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_DEPRECATED_IN_4_12', '', [rfReplaceAll]);
+      slHeader[j] := StringReplace(slHeader[j], 'GDK_DEPRECATED_IN_4_14', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_2', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_4', '', [rfReplaceAll]);
       slHeader[j] := StringReplace(slHeader[j], 'GDK_AVAILABLE_IN_4_6', '', [rfReplaceAll]);

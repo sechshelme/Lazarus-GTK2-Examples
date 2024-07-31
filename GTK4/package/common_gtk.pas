@@ -5,7 +5,7 @@ interface
 //  https://gitlab.com/freepascal.org/lazarus/lazarus/-/tree/main/tools/gir2pascal
 
 uses
-  ctypes, glib2, pango;
+  ctypes, Cairo, glib2, pango;
 
 const
   gtklib = 'libgtk-4.so';
@@ -38,6 +38,8 @@ type
     x,y,z:cfloat;
   end;
   Pgraphene_point3d_t=^Tgraphene_point3d_t;
+
+  Tcairo_content_t=cairo_content_t;
 
 
   // === Standard Typen
@@ -150,6 +152,7 @@ type
   TGFile = record // _GFile  // giotypes.h
   end;
   PGFile = ^TGFile;
+  PPGFile = ^PGFile;
 
   TGKeyFile = record // _GKeyFile;
   end;
@@ -284,6 +287,18 @@ type
     TGdkGLContext=record // _GdkGLContext      // gdktypes.h
       end;
     PGdkGLContext=^TGdkGLContext;
+
+    TGdkCairoContext=record            // gdktypes.h
+    end;
+    PGdkCairoContext=^TGdkCairoContext;
+
+    TGdkVulkanContext=record                          // gdktypes.h
+          end;
+    PGdkVulkanContext=^TGdkVulkanContext;
+
+    TGdkAppLaunchContext=record
+          end;
+    PGdkAppLaunchContext=^TGdkAppLaunchContext;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h

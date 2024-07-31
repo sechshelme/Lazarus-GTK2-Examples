@@ -2,8 +2,6 @@ unit gdkkeysyms;
 
 interface
 
-uses
-  glib2, common_GTK;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

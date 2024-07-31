@@ -3,7 +3,7 @@ unit gtkcellrenderertext;
 interface
 
 uses
-  glib2, common_GTK, gtkcellrenderer, gtkcellareacontext;
+  common_GTK, gtkcellrenderer;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
