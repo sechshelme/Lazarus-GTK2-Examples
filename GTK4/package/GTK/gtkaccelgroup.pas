@@ -3,7 +3,7 @@ unit gtkaccelgroup;
 interface
 
 uses
-  glib2, gdkenums, common_GTK;
+  glib2, gdkenums, common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

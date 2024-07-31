@@ -3,7 +3,7 @@ unit gdkclipboard;
 interface
 
 uses
-  glib2, common_GTK, gdktexture;
+  glib2, common_GTK, gdktypes, gdktexture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

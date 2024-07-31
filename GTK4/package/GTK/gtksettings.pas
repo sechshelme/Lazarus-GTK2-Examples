@@ -3,7 +3,7 @@ unit gtksettings;
 interface
 
 uses
-  common_GTK;
+  common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

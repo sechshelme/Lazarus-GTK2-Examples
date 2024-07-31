@@ -3,7 +3,7 @@ unit gdkdmabuftexturebuilder;
 interface
 
 uses
-  glib2, Cairo, common_GTK, gdktexture;
+  glib2, Cairo, common_GTK, gdktypes, gdktexture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

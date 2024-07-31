@@ -31,9 +31,9 @@ uses
   gdkdmabuftexturebuilder,    // io. -> gdktexture
   gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
   gdkseat,                    // io.
-  gdkdevice,                  // io. -> gdkseat, gdkglcontext
-  gdkevents,                  // io. -> gdkseat, gdkdevice
-  gdkdisplay,                 // io. -> gdkseat, gdkevents
+  gdkdevice,                  // io. -> gdkseat
+  gdkevents,                  // io. -> gdkdevice, gdkdrop, gdkenums, gdkseat
+  gdkdisplay,                 // io. -> gdkseat, gdkglcontext
   gdkcontentprovider,         // io.
   gdkcontentproviderimpl,     // io. -> gdkcontentprovider
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
@@ -42,7 +42,6 @@ uses
 
 
   // GTK
-
 
   gtkenums,                   // io.
   gtktypes,                   // io.

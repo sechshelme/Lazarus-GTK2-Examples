@@ -33,6 +33,14 @@ type
   end;
   PGdkDevice = ^TGdkDevice;
 
+  TGdkDisplay = record
+  end;
+  PGdkDisplay = ^TGdkDisplay;
+
+  TGdkEvent = record
+  end;
+  PGdkEvent = ^TGdkEvent;
+
 
   // ====
 

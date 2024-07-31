@@ -3,7 +3,7 @@ unit gtkroot;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget;
+  glib2, common_GTK, gdktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

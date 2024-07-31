@@ -3,7 +3,7 @@ unit gtkcelleditable;
 interface
 
 uses
-  glib2, common_GTK, gdkevents;
+  glib2, common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

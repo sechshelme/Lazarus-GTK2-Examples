@@ -3,7 +3,7 @@ unit gtkicontheme;
 interface
 
 uses
-  glib2, common_GTK, gtkenums;
+  glib2, common_GTK, gdktypes, gtkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

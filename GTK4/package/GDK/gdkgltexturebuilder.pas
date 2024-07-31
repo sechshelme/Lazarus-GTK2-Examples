@@ -3,7 +3,7 @@ unit gdkgltexturebuilder;
 interface
 
 uses
-  glib2, Cairo, common_GTK, gdktexture, gdkenums, gdkglcontext;
+  glib2, Cairo, common_GTK, gdkenums, gdktexture, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

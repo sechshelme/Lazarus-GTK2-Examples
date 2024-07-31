@@ -3,7 +3,7 @@ unit gdkglcontext;
 interface
 
 uses
-  glib2, common_GTK, gdkenums;
+  glib2, common_GTK, gdktypes, gdkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

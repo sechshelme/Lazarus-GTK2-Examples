@@ -3,17 +3,13 @@ unit gdkdisplay;
 interface
 
 uses
-  glib2, common_GTK, gdkenums, gdktypes, gdkseat, gdkevents, gdkglcontext;
+  glib2, common_GTK, gdkenums, gdktypes, gdkseat, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
-type
-  TGdkDisplay = record
-  end;
-  PGdkDisplay = ^TGdkDisplay;
-
+  // Ausgelagert wegen gdkdisplay.h
 function gdk_display_get_type: TGType; cdecl; external gtklib;
 function gdk_display_open(display_name: PChar): PGdkDisplay; cdecl; external gtklib;
 function gdk_display_get_name(display: PGdkDisplay): PChar; cdecl; external gtklib;

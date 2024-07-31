@@ -3,7 +3,7 @@ unit gtkstylecontext;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkborder, gtkstyleprovider;
+  glib2, common_GTK, gdktypes, gtkenums, gtkwidget, gtkborder, gtkstyleprovider;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

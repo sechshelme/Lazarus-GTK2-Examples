@@ -243,9 +243,6 @@ type
   TGdkFrameClock = Pointer; //  typedef struct _GdkFrameClock              GdkFrameClock;     // /usr/include/gtk-4.0/gdk/gdkframeclock.h
   PGdkFrameClock = ^TGdkFrameClock;
 
-  TGdkDisplay = Pointer;       // _GdkDisplay
-  PGdkDisplay = ^TGdkDisplay;
-
   TGdkMonitor = Pointer;        // _GdkMonitor
   PGdkMonitor = ^TGdkMonitor;
 

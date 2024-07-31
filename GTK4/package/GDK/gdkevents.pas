@@ -118,10 +118,6 @@ type
   end;
   PGdkEventSequence = ^TGdkEventSequence;
 
-  TGdkEvent = record
-  end;
-  PGdkEvent = ^TGdkEvent;
-
 function gdk_event_get_type: TGType; cdecl; external gtklib;
 function gdk_event_sequence_get_type: TGType; cdecl; external gtklib;
 function gdk_event_ref(event: PGdkEvent): PGdkEvent; cdecl; external gtklib;
