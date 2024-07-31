@@ -3,7 +3,7 @@ unit gdkseat;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gdktoplevel;
 interface
 
 uses
-  glib2, common_GTK, gdkevents, gdktoplevellayout;
+  glib2, common_GTK, gdktypes, gdkevents, gdktoplevellayout;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

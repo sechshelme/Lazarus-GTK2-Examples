@@ -3,7 +3,7 @@ unit gdksurface;
 interface
 
 uses
-  Cairo, common_GTK, gdkenums;
+  Cairo, common_GTK, gdktypes, gdkenums, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

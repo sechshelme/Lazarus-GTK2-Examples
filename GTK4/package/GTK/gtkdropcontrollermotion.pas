@@ -3,7 +3,7 @@ unit gtkdropcontrollermotion;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  common_GTK, gdkdrop, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

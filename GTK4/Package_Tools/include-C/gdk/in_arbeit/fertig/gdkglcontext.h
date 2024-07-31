@@ -44,7 +44,6 @@ GType gdk_gl_context_get_type (void) ;
 GdkDisplay *            gdk_gl_context_get_display              (GdkGLContext  *context);
 
 GdkSurface *            gdk_gl_context_get_surface               (GdkGLContext  *context);
-GDK_DEPRECATED_IN_4_4_FOR(gdk_gl_context_is_shared)
 GdkGLContext *          gdk_gl_context_get_shared_context       (GdkGLContext  *context);
 
 void                    gdk_gl_context_get_version              (GdkGLContext  *context,
@@ -81,7 +80,6 @@ void                    gdk_gl_context_set_allowed_apis         (GdkGLContext  *
 GdkGLAPI                gdk_gl_context_get_allowed_apis         (GdkGLContext  *self);
 
 GdkGLAPI                gdk_gl_context_get_api                  (GdkGLContext  *self);
-GDK_DEPRECATED_IN_4_6_FOR(gdk_gl_context_set_allowed_apis)
 void                    gdk_gl_context_set_use_es               (GdkGLContext  *context,
                                                                  int            use_es);
 

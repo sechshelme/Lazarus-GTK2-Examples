@@ -3,7 +3,7 @@ unit gtkdroptarget;
 interface
 
 uses
-  glib2, gdkenums, common_GTK;
+  glib2, gdkenums, common_GTK, gdkdrop;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

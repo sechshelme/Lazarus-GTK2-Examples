@@ -9,13 +9,32 @@ uses
   {$PACKRECORDS C}
   {$ENDIF}
 
-// ====  _ Typen
+  // ====  _ Typen
 type
   TGdkDmabufFormats = record
   end;
   PGdkDmabufFormats = ^TGdkDmabufFormats;
 
-// ====
+  TGdkCairoContext = record
+  end;
+  PGdkCairoContext = ^TGdkCairoContext;
+
+  TGdkAppLaunchContext = record
+  end;
+  PGdkAppLaunchContext = ^TGdkAppLaunchContext;
+
+  TGdkVulkanContext = record
+  end;
+  PGdkVulkanContext = ^TGdkVulkanContext;
+
+
+  // ==== ausgelagertes
+  TGdkDevice = record
+  end;
+  PGdkDevice = ^TGdkDevice;
+
+
+  // ====
 
 const
   GDK_CURRENT_TIME = 0;

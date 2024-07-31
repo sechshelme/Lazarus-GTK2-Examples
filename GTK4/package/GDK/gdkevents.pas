@@ -3,7 +3,7 @@ unit gdkevents;
 interface
 
 uses
-  glib2, common_GTK, gdkenums, gdkseat;
+  glib2, common_GTK, gdktypes, gdkdevice, gdkdrop, gdkenums, gdkseat;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -114,6 +114,10 @@ const
   GDK_CROSSING_DEVICE_SWITCH = 8;
 
 type
+  TGdkEventSequence = record
+  end;
+  PGdkEventSequence = ^TGdkEventSequence;
+
   TGdkEvent = record
   end;
   PGdkEvent = ^TGdkEvent;

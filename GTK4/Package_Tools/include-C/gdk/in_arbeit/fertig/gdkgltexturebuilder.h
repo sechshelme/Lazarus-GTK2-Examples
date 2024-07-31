@@ -29,7 +29,7 @@
 
 #define GDK_TYPE_GL_TEXTURE_BUILDER (gdk_gl_texture_builder_get_type ())
 
-GDK_DECLARE_INTERNAL_TYPE (GdkGLTextureBuilder, gdk_gl_texture_builder, GDK, GL_TEXTURE_BUILDER, GObject)
+//GDK_DECLARE_INTERNAL_TYPE (GdkGLTextureBuilder, gdk_gl_texture_builder, GDK, GL_TEXTURE_BUILDER, GObject)
 
 
 GdkGLTextureBuilder *   gdk_gl_texture_builder_new              (void);

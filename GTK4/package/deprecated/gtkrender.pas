@@ -3,7 +3,7 @@ unit gtkrender;
 interface
 
 uses
-  common_GTK, pango, Cairo, gtktypes, gtkwidget;
+  common_GTK, pango, Cairo, gdktexture, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

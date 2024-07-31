@@ -10,25 +10,36 @@ uses
   // GDK
 
   gdkenums,                   // io.
+  gdkenumtypes,               // io.
   gdktypes,
   gdkcairo,                   // io.
-  gdkseat,                    // io.
   gdkkeysyms,                 // Gross und Kleinschreibung !
-  gdkevents,                  // io. -> gdkseat
-  gdkcontentprovider,         // io.
-  gdkcontentproviderimpl,     // io. -> gdkcontentprovider
+
   gdktoplevellayout,          // io.
   gdktoplevelsize,            // io.
-  gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
-  gdkclipboard,               // io.
-  gdkdmabuftexturebuilder,    // io.
   gdkpaintable,               // io.
   gdkpopuplayout,             // io.
   gdkcontentformats,          // io.
-  gdksurface,                 // io.
   gdkcontentdeserializer,     // io.
   gdkcontentserializer,       // io.
-  gdkdisplay,
+  gdkdrag,                    // io.
+  gdkdrop,                    // io. -> gdkdrag
+  gdkglcontext,               // io.
+  gdksurface,                 // io. -> gdkglcontext
+  gdktexture,                 // io.
+  gdkclipboard,               // io. -> gdktexture
+  gdkdmabuftexturebuilder,    // io. -> gdktexture
+  gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
+  gdkseat,                    // io.
+  gdkdevice,                  // io. -> gdkseat, gdkglcontext
+  gdkevents,                  // io. -> gdkseat, gdkdevice
+  gdkdisplay,                 // io. -> gdkseat, gdkevents
+  gdkcontentprovider,         // io.
+  gdkcontentproviderimpl,     // io. -> gdkcontentprovider
+  gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
+  gdkframetimings,            // io.
+  gdkframeclock,              // io. -> gdkframetimings
+
 
   // GTK
 

@@ -236,12 +236,6 @@ type
   end;
   PGdkPixbuf = ^TGdkPixbuf;
 
-  TGdkTimeCoord=record // _GdkTimeCoord  // gdkdevice.h
-    // xxx
-    end;
-  PGdkTimeCoord=^TGdkTimeCoord;
-  PPGdkTimeCoord=^PGdkTimeCoord;
-
   TGdkDeviceTool=record // _GdkDeviceTool   gdkdevicetools.h
     end;
   PGdkDeviceTool=^TGdkDeviceTool;
@@ -258,47 +252,11 @@ type
   TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
   PGdkRGBA = ^TGdkRGBA;
 
-  TGdkDevice = record // _GdkDevice   gdktypes.h
-  end;
-  PGdkDevice = ^TGdkDevice;
-
-  TGdkDrag=record // _GdkDrag  gdktypes.h
-    end;
-  PGdkDrag=^TGdkDrag;
-
-  TGdkDrop=record // _GdkDrop  gdktypes.h
-    end;
-  PGdkDrop=^TGdkDrop;
-
   TGdkContentFormats=record // _GdkContentFormats  gdktypes.h
     end;
     PGdkContentFormats=^tGdkContentFormats;
 
-    TGdkScrollUnit=LongInt; // gdkevent.h
 
-    TGdkTexture=record // _GdkTexture   gdktypes.h
-      end;
-    PGdkTexture=^TGdkTexture;
-
-    TGdkEventSequence=record              // gdkevents.h
-    end;
-    PGdkEventSequence=^TGdkEventSequence;
-
-    TGdkGLContext=record // _GdkGLContext      // gdktypes.h
-      end;
-    PGdkGLContext=^TGdkGLContext;
-
-    TGdkCairoContext=record            // gdktypes.h
-    end;
-    PGdkCairoContext=^TGdkCairoContext;
-
-    TGdkVulkanContext=record                          // gdktypes.h
-          end;
-    PGdkVulkanContext=^TGdkVulkanContext;
-
-    TGdkAppLaunchContext=record
-          end;
-    PGdkAppLaunchContext=^TGdkAppLaunchContext;
 
 const
   GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
