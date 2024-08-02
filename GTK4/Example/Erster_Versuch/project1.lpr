@@ -22,6 +22,7 @@ uses
   gdkglcontext,               // io.
   gdkcursor,                  // io.
   gdkframetimings,            // io.
+  gdkapplaunchcontext,        // io.
   gdkframeclock,              // io. -> gdkframetimings
   gdksurface,                 // io. -> gdkcursor, gdkglcontext, gdkframeclock
   gdkcontentformats,          // io.
@@ -37,6 +38,7 @@ uses
   gdkmemorytexture,           // io. -> gdktexture
   gdkdmabuftexturebuilder,    // io. -> gdktexture
   gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
+  gdkgltexture,               // io. -> gdktexture, gdkglcontext
   gdkseat,                    // io.
   gdkdevicetool,
   gdkdevice,                  // io. -> gdkseat, gdkdevicetool
@@ -46,6 +48,7 @@ uses
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
   gdksnapshot,                // io.
   gdkpaintable,               // io. -> gdksnapshot
+  gdkdevicepad,
 
 
 
