@@ -3,7 +3,7 @@ unit gdktypes;
 interface
 
 uses
-  ctypes, common_GTK;
+  ctypes, glib2, Cairo, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -41,6 +41,15 @@ type
   end;
   PGdkEvent = ^TGdkEvent;
 
+  TGdkSurface = record
+  end;
+  PGdkSurface = ^TGdkSurface;
+
+  TGdkContentProvider = record
+    parent: TGObject;
+  end;
+  PGdkContentProvider = ^TGdkContentProvider;
+  PPGdkContentProvider = ^PGdkContentProvider;
 
   // ====
 
@@ -48,12 +57,14 @@ const
   GDK_CURRENT_TIME = 0;
 
 type
-  TGdkRectangle = record
-    x: cint;
-    y: cint;
-    Width: cint;
-    Height: cint;
-  end;
+  TGdkRectangle = cairo_rectangle_int_t;
+
+  //TGdkRectangle = record
+  //  x: cint;
+  //  y: cint;
+  //  Width: cint;
+  //  Height: cint;
+  //end;
   PGdkRectangle = ^TGdkRectangle;
 
 {

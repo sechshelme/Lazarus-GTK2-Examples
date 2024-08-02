@@ -3,7 +3,7 @@ unit gdkcontentproviderimpl;
 interface
 
 uses
-  glib2, common_GTK, gdkcontentprovider;
+  glib2, common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

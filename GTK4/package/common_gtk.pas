@@ -202,62 +202,6 @@ type
 
   // ==== GDK
 
-
-  TGdkSurface = record  // _GdkSurface     /usr/include/gtk-4.0/gdk/gdktypes.h
-  end;
-  PGdkSurface = ^TGdkSurface;
-
-  TGdkContentProvider = record   // /usr/include/gtk-4.0/gdk/gdkcontentprovider.h
-    parent: TGObject;
-  end;
-  PGdkContentProvider = ^TGdkContentProvider;
-
-  TGdkSnapshot = record // _GdkSnapshot     gdktypes.h
-  end;
-  PGdkSnapshot = ^TGdkSnapshot;
-
-  TGdkClipboard = record  // _GdkClipboard
-  end;
-  PGdkClipboard = ^TGdkClipboard;
-
-  TGdkCursor = Pointer;  // _GdkCursor
-  PGdkCursor = ^TGdkCursor;
-
-  TGdkPaintable = Pointer;  ///G_DECLARE_INTERFACE (GdkPaintable, gdk_paintable, GDK, PAINTABLE, GObject)  // /usr/include/gtk-4.0/gdk/gdkpaintable.h
-  PGdkPaintable = ^TGdkPaintable;
-
-  //  typedef cairo_rectangle_int_t         GdkRectangle;    // /usr/include/gtk-4.0/gdk/gdktypes.h
-  TGdkRectangle = record
-    x, y, Width, Height: cint;
-  end;
-  PGdkRectangle = ^TGdkRectangle;
-
-  TGdkPixbuf = record // _GdkPixbuf      /usr/include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
-  end;
-  PGdkPixbuf = ^TGdkPixbuf;
-
-  TGdkDeviceTool=record // _GdkDeviceTool   gdkdevicetools.h
-    end;
-  PGdkDeviceTool=^TGdkDeviceTool;
-
-  TGdkFrameClock = Pointer; //  typedef struct _GdkFrameClock              GdkFrameClock;     // /usr/include/gtk-4.0/gdk/gdkframeclock.h
-  PGdkFrameClock = ^TGdkFrameClock;
-
-  TGdkMonitor = Pointer;        // _GdkMonitor
-  PGdkMonitor = ^TGdkMonitor;
-
-  TGdkRGBA = Pointer;  // _GdkRGBA     /usr/include/gtk-4.0/gdk/gdkrgba.h
-  PGdkRGBA = ^TGdkRGBA;
-
-  TGdkContentFormats=record // _GdkContentFormats  gdktypes.h
-    end;
-    PGdkContentFormats=^tGdkContentFormats;
-
-
-
-const
-  GDK_PRIORITY_REDRAW = (G_PRIORITY_HIGH_IDLE + 20);    // /usr/include/gtk-4.0/gdk/gdkevents.h
-
   // ==== GSK
 
 type
@@ -299,10 +243,10 @@ type
   PGskScalingFilter=^TGskScalingFilter;
 
   TGskShadow=record  // gskrendermode.h                 G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
-    color:TGdkRGBA;
-    dx:cfloat;
-    dy:cfloat;
-    radius:cfloat;
+    //color:TGdkRGBA;
+    //dx:cfloat;
+    //dy:cfloat;
+    //radius:cfloat;
     end;
   PGskShadow=^TGskShadow;
 
@@ -311,8 +255,8 @@ type
   PGskGLShader=^TGskGLShader;
 
   TGskColorStop=record    // /usr/include/gtk-4.0/gsk/gskrendernode.h
-    offset:cfloat;
-    color:TGdkRGBA
+    //offset:cfloat;
+    //color:TGdkRGBA
   end;
   PGskColorStop=^TGskColorStop;
 

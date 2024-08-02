@@ -3,16 +3,17 @@ unit gdksurface;
 interface
 
 uses
-  Cairo, common_GTK, gdktypes, gdkenums, gdkglcontext;
+  Cairo, common_GTK, gdkcursor, gdkframeclock, gdktypes, gdkenums, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGdkSurface = record
-  end;
-  PGdkSurface = ^TGdkSurface;
+  // ausgelagert
+  //TGdkSurface = record
+  //end;
+  //PGdkSurface = ^TGdkSurface;
 
   TGdkSurfaceClass = record
   end;

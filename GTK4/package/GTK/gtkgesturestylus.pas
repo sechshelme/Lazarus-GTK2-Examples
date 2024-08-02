@@ -3,7 +3,7 @@ unit gtkgesturestylus;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdkdevice, gtkgesture;
+  glib2, gdkenums, common_GTK, gdkdevicetool, gdkdevice, gtkgesture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

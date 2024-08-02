@@ -3,7 +3,7 @@ unit gdkcontentdeserializer;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gdkcontentformats;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

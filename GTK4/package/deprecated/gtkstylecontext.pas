@@ -3,7 +3,7 @@ unit gtkstylecontext;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtkenums, gtkwidget, gtkborder, gtkstyleprovider;
+  glib2, common_GTK, gdkrgba, gdktypes, gtkenums, gtkwidget, gtkborder, gtkstyleprovider;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -42,7 +42,6 @@ function gtk_style_context_has_class(context: PGtkStyleContext; class_name: PCha
 procedure gtk_style_context_set_display(context: PGtkStyleContext; display: PGdkDisplay); cdecl; external gtklib;
 function gtk_style_context_get_display(context: PGtkStyleContext): PGdkDisplay; cdecl; external gtklib;
 function gtk_style_context_lookup_color(context: PGtkStyleContext; color_name: PChar; color: PGdkRGBA): Tgboolean; cdecl; external gtklib;
-{ Some helper functions to retrieve most common properties  }
 procedure gtk_style_context_get_color(context: PGtkStyleContext; color: PGdkRGBA); cdecl; external gtklib;
 procedure gtk_style_context_get_border(context: PGtkStyleContext; border: PGtkBorder); cdecl; external gtklib;
 procedure gtk_style_context_get_padding(context: PGtkStyleContext; padding: PGtkBorder); cdecl; external gtklib;

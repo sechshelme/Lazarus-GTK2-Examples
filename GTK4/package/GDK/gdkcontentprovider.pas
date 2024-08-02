@@ -3,7 +3,7 @@ unit gdkcontentprovider;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gdkclipboard, gdkcontentformats, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -11,11 +11,12 @@ uses
 
 
 type
-  TGdkContentProvider = record
-    parent: TGObject;
-  end;
-  PGdkContentProvider = ^TGdkContentProvider;
-  PPGdkContentProvider = ^PGdkContentProvider;
+  // Ausgelagert
+  //TGdkContentProvider = record
+  //  parent: TGObject;
+  //end;
+  //PGdkContentProvider = ^TGdkContentProvider;
+  //PPGdkContentProvider = ^PGdkContentProvider;
 
   TGdkContentProviderClass = record
     parent_class: TGObjectClass;

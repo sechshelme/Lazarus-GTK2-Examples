@@ -3,7 +3,7 @@ unit gdkevents;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gdkdevice, gdkdrop, gdkenums, gdkseat;
+  glib2, common_GTK, gdktypes, gdkdevice, gdkdrop, gdkenums, gdkdevicetool, gdkseat;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkcolordialog;
 interface
 
 uses
-  glib2, common_GTK, gtkwindow;
+  glib2, common_GTK, gdkrgba, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

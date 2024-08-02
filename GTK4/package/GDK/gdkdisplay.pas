@@ -3,7 +3,7 @@ unit gdkdisplay;
 interface
 
 uses
-  glib2, common_GTK, gdkenums, gdktypes, gdkseat, gdkglcontext;
+  glib2, common_GTK, gdkclipboard, gdkenums, gdktypes, gdkmonitor, gdkseat, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

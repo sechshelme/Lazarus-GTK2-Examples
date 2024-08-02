@@ -3,7 +3,7 @@ unit gtksymbolicpaintable;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gdkrgba, gdksnapshot;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

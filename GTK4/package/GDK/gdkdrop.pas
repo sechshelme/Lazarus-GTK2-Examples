@@ -3,7 +3,7 @@ unit gdkdrop;
 interface
 
 uses
-  glib2, common_GTK, gdkenums, gdktypes, gdkdrag;
+  glib2, common_GTK, gdkcontentformats, gdkenums, gdktypes, gdkdrag;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -12,33 +12,41 @@ uses
   gdkenums,                   // io.
   gdkenumtypes,               // io.
   gdktypes,
-  gdkcairo,                   // io.
+  gdkrgba,                    // io.
+  gdkcairo,                   // io. -> gdkrgba
   gdkkeysyms,                 // Gross und Kleinschreibung !
 
   gdktoplevellayout,          // io.
   gdktoplevelsize,            // io.
-  gdkpaintable,               // io.
   gdkpopuplayout,             // io.
-  gdkcontentformats,          // io.
-  gdkcontentdeserializer,     // io.
-  gdkcontentserializer,       // io.
-  gdkdrag,                    // io.
-  gdkdrop,                    // io. -> gdkdrag
   gdkglcontext,               // io.
-  gdksurface,                 // io. -> gdkglcontext
+  gdkcursor,                  // io.
+  gdkframetimings,            // io.
+  gdkframeclock,              // io. -> gdkframetimings
+  gdksurface,                 // io. -> gdkcursor, gdkglcontext, gdkframeclock
+  gdkcontentformats,          // io.
+  gdkcontentserializer,       // io. -> gdkcontentformats
+  gdkcontentdeserializer,     // io. -> gdkcontentserializer
+  gdkclipboard,               // io. -> gdktexture, gdkcontentformats
+  gdkcontentprovider,         // io. -> gdkclipboard, gdkcontentformats
+  gdkcontentproviderimpl,     // io.
+  gdkdrag,                    // io. -> gdksurface, gdkcontentformats
+  gdkdrop,                    // io. -> gdkdrag,  gdkcontentformats
   gdktexture,                 // io.
-  gdkclipboard,               // io. -> gdktexture
+  gdktexturedownloader,       // io. -> gdktexture
+  gdkmemorytexture,           // io. -> gdktexture
   gdkdmabuftexturebuilder,    // io. -> gdktexture
   gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
   gdkseat,                    // io.
-  gdkdevice,                  // io. -> gdkseat
-  gdkevents,                  // io. -> gdkdevice, gdkdrop, gdkenums, gdkseat
-  gdkdisplay,                 // io. -> gdkseat, gdkglcontext
-  gdkcontentprovider,         // io.
-  gdkcontentproviderimpl,     // io. -> gdkcontentprovider
+  gdkdevicetool,
+  gdkdevice,                  // io. -> gdkseat, gdkdevicetool
+  gdkevents,                  // io. -> gdkdevice, gdkdrop, gdkenums, gdkseat, gdkdevicetool
+  gdkmonitor,
+  gdkdisplay,                 // io. -> gdkclipboard,  gdkseat, gdkglcontext, gdkmonitor
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
-  gdkframetimings,            // io.
-  gdkframeclock,              // io. -> gdkframetimings
+  gdksnapshot,                // io.
+  gdkpaintable,               // io. -> gdksnapshot
+
 
 
   // GTK

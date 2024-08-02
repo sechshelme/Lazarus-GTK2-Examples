@@ -3,7 +3,7 @@ unit gtkdragsource;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdkdrag, gtkwidget;
+  gdkenums, common_GTK, gdktypes, gdkpaintable, gdkdrag, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

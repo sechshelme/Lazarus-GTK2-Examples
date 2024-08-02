@@ -3,7 +3,7 @@ unit gdktoplevellayout;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gdkmonitor;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gdkdevice;
 interface
 
 uses
-  pango, common_GTK, gdkenums, gdktypes, gdkseat;
+  pango, common_GTK, gdkenums, gdktypes, gdkseat, gdkdevicetool;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

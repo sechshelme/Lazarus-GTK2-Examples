@@ -3,14 +3,14 @@ unit gdkclipboard;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gdktexture;
+  glib2, common_GTK, gdktypes, gdkcontentformats, gdktexture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGdkClipboar = record
+  TGdkClipboard = record
   end;
   PGdkClipboard = ^TGdkClipboard;
 

@@ -3,7 +3,7 @@ unit gtksnapshot;
 interface
 
 uses
-  pango, Cairo, common_GTK, gdktexture, gtktypes;
+  pango, Cairo, common_GTK, gdkrgba, gdkpaintable, gdktexture, gtktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -13,7 +13,6 @@ type
   // Ausgelagert wegen gtkwidget
   //    TGtkSnapshot = TGdkSnapshot;
   //  PGtkSnapshot = ^TGtkSnapshot;
-
 
   TGtkSnapshotClass = record // _GtkSnapshotClass
   end;

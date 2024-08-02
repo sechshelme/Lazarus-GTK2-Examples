@@ -3,7 +3,7 @@ unit gtktooltip;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  common_GTK, gdktypes, gdkpaintable, gtkwidget;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}
