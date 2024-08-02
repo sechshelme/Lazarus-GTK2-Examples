@@ -32,7 +32,7 @@
 #define GTK_TYPE_AT_SPI_SOCKET (gtk_at_spi_socket_get_type())
 
 
-G_DECLARE_FINAL_TYPE (GtkAtSpiSocket, gtk_at_spi_socket, GTK, AT_SPI_SOCKET, GObject)
+//G_DECLARE_FINAL_TYPE (GtkAtSpiSocket, gtk_at_spi_socket, GTK, AT_SPI_SOCKET, GObject)
 
 
 GtkAccessible * gtk_at_spi_socket_new (const char  *bus_name,

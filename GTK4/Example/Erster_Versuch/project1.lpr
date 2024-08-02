@@ -380,9 +380,15 @@ uses
 
   gtktestatcontext,           // -> gtkaccessible    // komplexe Macros
 
+  gtkcssenums,                // io.
+  gtkcssenumtypes,            // io.
+  gtkcsserror,                // io.
+  gtkcsslocation,             // io.
+  gtkcsssection,              // io. -> gtkcsslocation
 
+  gtkatspisocket,
 
-  // --- Eigenes
+    // --- Eigenes
   ScrollBox,
   TextEdit,
   ListBox,
