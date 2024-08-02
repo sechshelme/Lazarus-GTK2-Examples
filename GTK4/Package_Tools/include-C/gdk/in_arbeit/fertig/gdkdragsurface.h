@@ -30,7 +30,7 @@
 #define GDK_TYPE_DRAG_SURFACE (gdk_drag_surface_get_type ())
 
 
-G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObject)
+//G_DECLARE_INTERFACE (GdkDragSurface, gdk_drag_surface, GDK, DRAG_SURFACE, GObject)
 
 
 gboolean gdk_drag_surface_present (GdkDragSurface *drag_surface,

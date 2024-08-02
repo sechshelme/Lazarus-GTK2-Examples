@@ -16,11 +16,22 @@ uses
   gdkcairo,                   // io. -> gdkrgba
   gdkkeysyms,                 // Gross und Kleinschreibung !
 
+  gdkdrawcontext,             // io.
+  gdkkeys,                    // io.
+  gdkpango,                   // io.
+  gdkrectangle,               // io.
+  gdkvulkancontext,           // io.
   gdktoplevellayout,          // io.
   gdktoplevelsize,            // io.
   gdkpopuplayout,             // io.
+  gdkpopup,                   // io. -> gdkpopuplayout
   gdkglcontext,               // io.
   gdkcursor,                  // io.
+  gdkdisplaymanager,          // io.
+  gdkdmabufformats,           // io.
+  gdkdmabuftexture,           // io.
+  gdkdragsurface,             // io.
+  gdkdragsurfacesize,         // io.
   gdkframetimings,            // io.
   gdkapplaunchcontext,        // io.
   gdkframeclock,              // io. -> gdkframetimings
@@ -34,6 +45,7 @@ uses
   gdkdrag,                    // io. -> gdksurface, gdkcontentformats
   gdkdrop,                    // io. -> gdkdrag,  gdkcontentformats
   gdktexture,                 // io.
+  gdkpixbuf,                  // io. -> gdktexture
   gdktexturedownloader,       // io. -> gdktexture
   gdkmemorytexture,           // io. -> gdktexture
   gdkdmabuftexturebuilder,    // io. -> gdktexture
@@ -48,8 +60,8 @@ uses
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
   gdksnapshot,                // io.
   gdkpaintable,               // io. -> gdksnapshot
-  gdkdevicepad,
-
+  gdkdevicepad,               // io.
+  gdkcairocontext,            // unaufindbare external funktion
 
 
   // GTK
