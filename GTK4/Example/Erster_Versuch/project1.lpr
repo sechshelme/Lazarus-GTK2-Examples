@@ -63,6 +63,30 @@ uses
   gdkdevicepad,               // io.
   gdkcairocontext,            // unaufindbare external funktion
 
+  // ==== GDK X11
+
+  gdkx11applaunchcontext,     // io.
+  gdkx11device,               // io.
+  gdkx11devicemanager,        // io.
+  gdkx11device_xi2,           // io.
+  gdkx11devicemanager_xi2,    // io.
+  gdkx11screen,               // io.
+  gdkx11display,              // io. -> GdkX11Screen
+  gdkx11surface,              // io. -> gdkx11display
+  gdkx11dnd,                  // io.
+  gdkx11glcontext,            // io.
+  gdkx11monitor,              // io.
+  gdkx11selection,            // io.
+  gdkx11utils,                // io.
+  gdkx11property,             // io.
+
+  // ==== GDK broadway
+
+  //gdkbroadwaycursor,
+  //gdkbroadwaydisplay,
+  //gdkbroadwaymonitor,
+  //gdkbroadwaysurface,
+
     // --- GSK
 
   gsktypes,                   // io.
@@ -413,6 +437,11 @@ uses
   gtkprintjob,                // io. -> gtkprinter, gtkprintsettings, gtkpagesetup, gtkprintoperation
 
   gtkatspisocket,
+
+
+
+
+
 
     // --- Eigenes
   ScrollBox,
