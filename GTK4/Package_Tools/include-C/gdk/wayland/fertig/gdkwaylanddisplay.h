@@ -45,16 +45,16 @@ typedef struct _GdkWaylandDisplayClass GdkWaylandDisplayClass;
 GType                   gdk_wayland_display_get_type            (void);
 
 
-struct wl_display      *gdk_wayland_display_get_wl_display      (GdkDisplay *display);
+wl_display      *gdk_wayland_display_get_wl_display      (GdkDisplay *display);
 
-struct wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *display);
+wl_compositor   *gdk_wayland_display_get_wl_compositor   (GdkDisplay *display);
 
 void                    gdk_wayland_display_set_cursor_theme    (GdkDisplay  *display,
                                                                  const char *name,
                                                                  int          size);
 
 const char *           gdk_wayland_display_get_startup_notification_id (GdkDisplay *display);
-_FOR(gdk_toplevel_set_startup_id)
+
 void                    gdk_wayland_display_set_startup_notification_id (GdkDisplay *display,
                                                                          const char *startup_id);
 

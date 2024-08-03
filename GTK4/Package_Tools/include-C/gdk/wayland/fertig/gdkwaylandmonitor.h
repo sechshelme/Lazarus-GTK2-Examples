@@ -40,7 +40,7 @@ typedef struct _GdkWaylandMonitorClass GdkWaylandMonitorClass;
 GType             gdk_wayland_monitor_get_type            (void) ;
 
 
-struct wl_output *gdk_wayland_monitor_get_wl_output       (GdkMonitor *monitor);
+wl_output *gdk_wayland_monitor_get_wl_output       (GdkMonitor *monitor);
 
 
 

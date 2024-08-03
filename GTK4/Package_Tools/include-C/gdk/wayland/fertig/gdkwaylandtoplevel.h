@@ -42,7 +42,7 @@ typedef GdkToplevel GdkWaylandToplevel;
 GType                    gdk_wayland_toplevel_get_type            (void);
 
 
-typedef void (*GdkWaylandToplevelExported) (GdkToplevel *toplevel,
+ void (*GdkWaylandToplevelExported) (GdkToplevel *toplevel,
                                             const char  *handle,
                                             gpointer     user_data);
 
@@ -52,7 +52,6 @@ gboolean                 gdk_wayland_toplevel_export_handle (GdkToplevel        
                                                              gpointer                 user_data,
                                                              GDestroyNotify           destroy_func);
 
-_FOR(gdk_wayland_toplevel_drop_exported_handle)
 void                     gdk_wayland_toplevel_unexport_handle (GdkToplevel *toplevel);
 
 

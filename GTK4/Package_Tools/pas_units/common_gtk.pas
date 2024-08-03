@@ -43,6 +43,34 @@ type
 
   Tcairo_content_t=cairo_content_t;
 
+  // Wayland;
+
+  Twl_surface=Pointer;
+  Pwl_surface=^Twl_surface;
+
+  Twl_seat=Pointer;
+  Pwl_seat=^Twl_seat;
+
+  Twl_output=Pointer;
+  Pwl_output=^Twl_output;
+
+  Twl_display=Pointer;
+  Pwl_display=^Twl_display;
+
+  Twl_compositor=Pointer;
+  Pwl_compositor=^Twl_compositor;
+
+  Twl_pointer=Pointer;
+  Pwl_pointer=^Twl_pointer;
+
+  Twl_keyboard=Pointer;
+  Pwl_keyboard=^Twl_keyboard;
+
+  Txkb_keymap=Pointer;
+  Pxkb_keymap=^Txkb_keymap;
+
+
+
 
   // === Standard Typen
   Tgpointer = gpointer;

@@ -87,7 +87,20 @@ uses
   //gdkbroadwaymonitor,
   //gdkbroadwaysurface,
 
-    // --- GSK
+  // ====  GDK Wayland
+
+  gdkwaylanddevice,           // io.
+  gdkwaylanddisplay,          // io.
+  gdkwaylandglcontext,        // io.
+  gdkwaylandmonitor,          // io.
+  gdkwaylandpopup,            // io.
+  gdkwaylandseat,             // io.
+  gdkwaylandsurface,          // io.
+  gdkwaylandtoplevel,         // io.
+
+
+
+  // --- GSK
 
   gsktypes,                   // io.
   gskenums,                   // io.
@@ -103,8 +116,6 @@ uses
   gskrendernode,              // io. -> gsktransform, gskroundedrect, gskpath, gskstroke, gskglshader
   gskrenderer,                // io. -> gskrendernode
   gskcairorenderer,           // io.
-
-
 
 
 
@@ -441,9 +452,7 @@ uses
 
 
 
-
-
-    // --- Eigenes
+  // --- Eigenes
   ScrollBox,
   TextEdit,
   ListBox,

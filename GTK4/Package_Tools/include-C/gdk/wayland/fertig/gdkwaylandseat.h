@@ -44,6 +44,6 @@ typedef struct _GdkWaylandSeatClass GdkWaylandSeatClass;
 GType gdk_wayland_seat_get_type (void) ;
 
 
-struct wl_seat *        gdk_wayland_seat_get_wl_seat    (GdkSeat *seat);
+wl_seat *        gdk_wayland_seat_get_wl_seat    (GdkSeat *seat);
 
 

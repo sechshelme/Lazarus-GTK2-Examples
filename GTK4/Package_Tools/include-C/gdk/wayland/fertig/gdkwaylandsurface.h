@@ -41,7 +41,7 @@ typedef GdkSurface GdkWaylandSurface;
 GType                    gdk_wayland_surface_get_type             (void);
 
 
-struct wl_surface       *gdk_wayland_surface_get_wl_surface       (GdkSurface *surface);
+wl_surface       *gdk_wayland_surface_get_wl_surface       (GdkSurface *surface);
 
 
 

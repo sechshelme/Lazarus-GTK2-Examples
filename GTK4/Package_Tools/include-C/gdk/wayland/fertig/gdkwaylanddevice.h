@@ -46,13 +46,13 @@ typedef struct _GdkWaylandDeviceClass GdkWaylandDeviceClass;
 GType                gdk_wayland_device_get_type            (void);
 
 
-struct wl_seat      *gdk_wayland_device_get_wl_seat         (GdkDevice *device);
+wl_seat      *gdk_wayland_device_get_wl_seat         (GdkDevice *device);
 
-struct wl_pointer   *gdk_wayland_device_get_wl_pointer      (GdkDevice *device);
+wl_pointer   *gdk_wayland_device_get_wl_pointer      (GdkDevice *device);
 
-struct wl_keyboard  *gdk_wayland_device_get_wl_keyboard     (GdkDevice *device);
+wl_keyboard  *gdk_wayland_device_get_wl_keyboard     (GdkDevice *device);
 
-struct xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
+xkb_keymap   *gdk_wayland_device_get_xkb_keymap      (GdkDevice *device);
 
 
 const char          *gdk_wayland_device_get_node_path       (GdkDevice *device);
