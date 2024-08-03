@@ -3,7 +3,7 @@ unit gtknumericsorter;
 interface
 
 uses
-  common_GTK, gtkenums, gtksorter, gtkexpression;
+  glib2, common_GTK, gtkenums, gtksorter, gtkexpression;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -63,6 +63,27 @@ uses
   gdkdevicepad,               // io.
   gdkcairocontext,            // unaufindbare external funktion
 
+    // --- GSK
+
+  gsktypes,                   // io.
+  gskenums,                   // io.
+  gskenumtypes,               // io.
+  gsktransform,               // io.
+  gskroundedrect,             // Macro nicht aufgelöst
+  gskstroke,                  // io.
+  gskpath,                    // io. -> gskpathpoint, gskstroke
+  gskpathpoint,               // io. -> gskpath
+  gskpathbuilder,             // io. -> gskpathpoint, gskroundedrect
+  gskpathmeasure,             // io. -> gskpathpoint
+  gskglshader,                // io.
+  gskrendernode,              // io. -> gsktransform, gskroundedrect, gskpath, gskstroke, gskglshader
+  gskrenderer,                // io. -> gskrendernode
+  gskcairorenderer,           // io.
+
+
+
+
+
 
   // ---- GTK
 
@@ -392,12 +413,6 @@ uses
   gtkprintjob,                // io. -> gtkprinter, gtkprintsettings, gtkpagesetup, gtkprintoperation
 
   gtkatspisocket,
-
-  // --- GSK
-
-  gskenums,                   // io.
-  gskenumtypes,               // io.
-  gskcairorenderer,           // io.
 
     // --- Eigenes
   ScrollBox,

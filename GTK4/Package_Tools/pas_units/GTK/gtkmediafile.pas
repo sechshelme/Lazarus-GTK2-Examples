@@ -3,7 +3,7 @@ unit gtkmediafile;
 interface
 
 uses
-  common_GTK, gtkmediastream;
+  glib2, common_GTK, gtkmediastream;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

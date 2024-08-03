@@ -3,7 +3,7 @@ unit gtkgesturepan;
 interface
 
 uses
-  common_GTK, gtkenums, gtkgesture;
+  glib2, common_GTK, gtkenums, gtkgesture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

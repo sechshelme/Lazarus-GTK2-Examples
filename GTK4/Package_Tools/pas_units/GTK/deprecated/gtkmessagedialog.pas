@@ -3,7 +3,7 @@ unit gtkmessagedialog;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget, gtkwindow, gtkdialog;
+  glib2, common_GTK, gtkenums, gtkwidget, gtkwindow, gtkdialog;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

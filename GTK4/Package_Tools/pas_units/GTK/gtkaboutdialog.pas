@@ -3,7 +3,7 @@ unit gtkaboutdialog;
 interface
 
 uses
-  common_GTK, gdkpaintable, gtkwidget, gtkwindow;
+  glib2, common_GTK, gdkpaintable, gtkwidget, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

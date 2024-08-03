@@ -3,7 +3,7 @@ unit gtktexttagtable;
 interface
 
 uses
-  common_GTK, gtktexttag;
+  glib2, common_GTK, gtktexttag;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

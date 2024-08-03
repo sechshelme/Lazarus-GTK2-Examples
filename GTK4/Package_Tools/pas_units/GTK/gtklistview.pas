@@ -3,7 +3,7 @@ unit gtklistview;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget, gtkselectionmodel, gtklistitemfactory, gtkscrollinfo;
+  glib2, common_GTK, gtkenums, gtkwidget, gtkselectionmodel, gtklistitemfactory, gtkscrollinfo;
 
 type
   TGtkListView = record // _GtkListView

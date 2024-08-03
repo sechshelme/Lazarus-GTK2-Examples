@@ -3,7 +3,7 @@ unit gtkboolfilter;
 interface
 
 uses
-  common_GTK, gtkfilter, gtkexpression;
+  glib2, common_GTK, gtkfilter, gtkexpression;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

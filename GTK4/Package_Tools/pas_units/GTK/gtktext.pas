@@ -3,7 +3,7 @@ unit gtktext;
 interface
 
 uses
-  pango, common_GTK, gtkenums, gtkwidget, gtkentrybuffer;
+  glib2, pango, common_GTK, gtkenums, gtkwidget, gtkentrybuffer;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

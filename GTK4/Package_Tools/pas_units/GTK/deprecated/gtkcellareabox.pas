@@ -3,7 +3,7 @@ unit gtkcellareabox;
 interface
 
 uses
-  common_GTK, gtkcellrenderer, gtkcellarea;
+  glib2, common_GTK, gtkcellrenderer, gtkcellarea;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

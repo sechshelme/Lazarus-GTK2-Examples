@@ -41,7 +41,7 @@ typedef struct _GskShaderArgsBuilder GskShaderArgsBuilder;
 #define GSK_TYPE_GL_SHADER (gsk_gl_shader_get_type ())
 
 
-G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
+//G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
 
 
 GskGLShader *    gsk_gl_shader_new_from_bytes          (GBytes           *sourcecode);

@@ -3,26 +3,23 @@ unit gtkfixed;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  glib2, common_GTK, gsktransform, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  PGtkFixed = ^TGtkFixed;
-
   TGtkFixed = record
     parent_instance: TGtkWidget;
   end;
-
-  PGtkFixedClass = ^TGtkFixedClass;
+  PGtkFixed = ^TGtkFixed;
 
   TGtkFixedClass = record
     parent_class: TGtkWidgetClass;
     padding: array[0..7] of Tgpointer;
   end;
-
+  PGtkFixedClass = ^TGtkFixedClass;
 
 function gtk_fixed_get_type: TGType; cdecl; external gtklib;
 function gtk_fixed_new: PGtkWidget; cdecl; external gtklib;

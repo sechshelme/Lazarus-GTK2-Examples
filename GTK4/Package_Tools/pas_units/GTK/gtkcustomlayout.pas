@@ -3,7 +3,7 @@ unit gtkcustomlayout;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget, gtklayoutmanager;
+  glib2, common_GTK, gtkenums, gtkwidget, gtklayoutmanager;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

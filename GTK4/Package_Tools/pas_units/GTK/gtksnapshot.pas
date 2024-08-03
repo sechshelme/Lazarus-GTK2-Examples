@@ -3,7 +3,7 @@ unit gtksnapshot;
 interface
 
 uses
-  pango, Cairo, common_GTK, gdkrgba, gdkpaintable, gdktexture, gtktypes;
+  glib2, pango, Cairo, common_GTK, gdkrgba, gdkpaintable, gdktexture, gsktransform, gsktypes, gskenums, gskstroke, gskrendernode, gskglshader, gskroundedrect, gtktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -32,7 +32,7 @@
 
 typedef struct _GskPathPoint GskPathPoint;
 
-G_GNUC_EXTENSION struct _GskPathPoint
+ struct _GskPathPoint
 {
   /*< private >*/
   union {
@@ -40,10 +40,10 @@ G_GNUC_EXTENSION struct _GskPathPoint
       gsize contour;
       gsize idx;
       float t;
-    };
+    }aaaaa;
     gpointer padding[8];
     graphene_vec4_t alignment;
-  };
+  }aaaaa;
 };
 
 

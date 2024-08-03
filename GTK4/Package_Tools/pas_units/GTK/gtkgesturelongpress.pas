@@ -3,7 +3,7 @@ unit gtkgesturelongpress;
 interface
 
 uses
-  common_GTK, gtkgesture;
+  glib2, common_GTK, gtkgesture;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

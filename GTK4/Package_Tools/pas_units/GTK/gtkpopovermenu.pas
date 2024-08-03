@@ -3,7 +3,7 @@ unit gtkpopovermenu;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget;
+  glib2, common_GTK, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkstackswitcher;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkstack;
+  glib2, common_GTK, gtkwidget, gtkstack;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

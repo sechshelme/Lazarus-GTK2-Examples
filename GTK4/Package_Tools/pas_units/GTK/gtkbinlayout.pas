@@ -3,7 +3,7 @@ unit gtkbinlayout;
 interface
 
 uses
-  common_GTK, gtkwidget, gtklayoutmanager;
+  glib2, common_GTK, gtkwidget, gtklayoutmanager;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

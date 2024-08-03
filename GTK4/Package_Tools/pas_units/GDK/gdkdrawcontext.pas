@@ -3,7 +3,7 @@ unit gdkdrawcontext;
 interface
 
 uses
-  Cairo, common_GTK, gdktypes;
+  glib2, Cairo, common_GTK, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

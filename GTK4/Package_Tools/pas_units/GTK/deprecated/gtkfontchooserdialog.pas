@@ -3,7 +3,7 @@ unit gtkfontchooserdialog;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkwindow;
+  glib2, common_GTK, gtkwidget, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

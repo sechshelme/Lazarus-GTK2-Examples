@@ -3,7 +3,7 @@ unit gtkadjustment;
 interface
 
 uses
-  common_GTK;
+  glib2, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

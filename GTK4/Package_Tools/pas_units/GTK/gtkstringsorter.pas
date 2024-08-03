@@ -3,7 +3,7 @@ unit gtkstringsorter;
 interface
 
 uses
-  common_GTK, gtksorter, gtkexpression;
+  glib2, common_GTK, gtksorter, gtkexpression;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

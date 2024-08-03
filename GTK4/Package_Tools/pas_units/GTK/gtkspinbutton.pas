@@ -3,7 +3,7 @@ unit gtkspinbutton;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkadjustment;
+  glib2, common_GTK, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

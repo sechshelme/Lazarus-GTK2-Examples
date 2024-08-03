@@ -3,7 +3,7 @@ unit gdkdrag;
 interface
 
 uses
-  common_GTK, gdkenums, gdkcontentformats, gdktypes;
+  glib2, common_GTK, gdkenums, gdkcontentformats, gdktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

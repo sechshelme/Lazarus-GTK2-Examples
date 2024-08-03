@@ -3,7 +3,7 @@ unit gtkcellview;
 interface
 
 uses
-  common_GTK, gdktexture, gtkwidget, gtktreemodel, gtkcellarea;
+  glib2, common_GTK, gdktexture, gtkwidget, gtktreemodel, gtkcellarea;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

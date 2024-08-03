@@ -3,7 +3,7 @@ unit gtkcolumnviewcolumn;
 interface
 
 uses
-  common_GTK, gtkcolumnview, gtklistitemfactory, gtksorter;
+  glib2, common_GTK, gtkcolumnview, gtklistitemfactory, gtksorter;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

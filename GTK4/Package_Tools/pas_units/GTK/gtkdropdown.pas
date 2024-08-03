@@ -3,7 +3,7 @@ unit gtkdropdown;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkexpression, gtkstringfilter;
+  glib2, common_GTK, gtkwidget, gtkexpression, gtkstringfilter;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

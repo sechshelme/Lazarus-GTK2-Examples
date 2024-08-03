@@ -3,7 +3,7 @@ unit gtkvolumebutton;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkscalebutton;
+  glib2, common_GTK, gtkwidget, gtkscalebutton;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

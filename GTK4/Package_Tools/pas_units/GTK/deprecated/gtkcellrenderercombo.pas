@@ -3,7 +3,7 @@ unit gtkcellrenderercombo;
 interface
 
 uses
-  common_GTK, gtkcellrenderer;
+  glib2, common_GTK, gtkcellrenderer;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

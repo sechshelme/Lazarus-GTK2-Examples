@@ -3,25 +3,23 @@ unit gtkgrid;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget;
+  glib2, common_GTK, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  PGtkGrid = ^TGtkGrid;
-
   TGtkGrid = record
     parent_instance: TGtkWidget;
   end;
-
-  PGtkGridClass = ^TGtkGridClass;
+  PGtkGrid = ^TGtkGrid;
 
   TGtkGridClass = record
     parent_class: TGtkWidgetClass;
     padding: array[0..7] of Tgpointer;
   end;
+  PGtkGridClass = ^TGtkGridClass;
 
 function gtk_grid_get_type: TGType; cdecl; external gtklib;
 function gtk_grid_new: PGtkWidget; cdecl; external gtklib;

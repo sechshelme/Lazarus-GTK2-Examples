@@ -3,22 +3,20 @@ unit gtkframe;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  glib2, common_GTK, gtkwidget;
 
 type
-  PGtkFrame = ^TGtkFrame;
-
   TGtkFrame = record
     parent_instance: TGtkWidget;
   end;
-
-  PGtkFrameClass = ^TGtkFrameClass;
+  PGtkFrame = ^TGtkFrame;
 
   TGtkFrameClass = record
     parent_class: TGtkWidgetClass;
     compute_child_allocation: procedure(frame: PGtkFrame; allocation: PGtkAllocation); cdecl;
     padding: array[0..7] of Tgpointer;
   end;
+  PGtkFrameClass = ^TGtkFrameClass;
 
 
 function gtk_frame_get_type: TGType; cdecl; external gtklib;

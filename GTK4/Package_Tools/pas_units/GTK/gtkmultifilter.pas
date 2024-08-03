@@ -3,7 +3,7 @@ unit gtkmultifilter;
 interface
 
 uses
-  common_GTK, gtkfilter;
+  glib2, common_GTK, gtkfilter;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

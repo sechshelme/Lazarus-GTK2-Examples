@@ -3,7 +3,7 @@ unit gtkstatusbar;
 interface
 
 uses
-  common_GTK, gtkwidget;
+  glib2, common_GTK, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

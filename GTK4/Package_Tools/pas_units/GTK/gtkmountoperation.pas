@@ -3,7 +3,7 @@ unit gtkmountoperation;
 interface
 
 uses
-  common_GTK, gdktypes, gtkwindow;
+  glib2, common_GTK, gdktypes, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

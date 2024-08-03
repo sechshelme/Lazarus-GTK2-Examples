@@ -3,7 +3,7 @@ unit gtkeventcontrollerscroll;
 interface
 
 uses
-  common_GTK, gdkevents, gtkwidget;
+  glib2, common_GTK, gdkevents, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

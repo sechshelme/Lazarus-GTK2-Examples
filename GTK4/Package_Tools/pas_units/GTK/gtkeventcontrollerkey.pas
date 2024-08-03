@@ -3,7 +3,7 @@ unit gtkeventcontrollerkey;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkimcontext;
+  glib2, common_GTK, gtkwidget, gtkimcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

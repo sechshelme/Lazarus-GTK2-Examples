@@ -24,6 +24,8 @@ type
   Pgraphene_rect_t = ^Tgraphene_rect_t;
   Tgraphene_point_t = Pointer;
   Pgraphene_point_t = ^Tgraphene_point_t;
+  Tgraphene_vec2_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec3.h
+  Pgraphene_vec2_t = ^Tgraphene_vec2_t;
   Tgraphene_vec3_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec3.h
   Pgraphene_vec3_t = ^Tgraphene_vec3_t;
   Tgraphene_vec4_t = Pointer;        // /usr/include/graphene-1.0/graphene-vec4.h
@@ -204,92 +206,36 @@ type
 
   // ==== GSK
 
-type
-  TGskTransform = Pointer;    // _GskTransform   // /usr/include/gtk-4.0/gsk/gsktypes.h
-  PGskTransform = ^TGskTransform;
-
-  TGskRenderer = record  // _GskRenderer       // /usr/include/gtk-4.0/gsk/gsktypes.h
-  end;
-  PGskRenderer = ^TGskRenderer;
-
-  TGskRenderNode = record // _GskRenderNode;    /usr/include/gtk-4.0/gsk/gskrendernode.h
-  end;
-  PGskRenderNode = ^TGskRenderNode;
-
-  TGskRoundedRect = record            // /usr/include/gtk-4.0/gsk/gskroundedrect.h
-    bounds: Tgraphene_rect_t;
-    corner: array[0..3] of Pgraphene_size_t;
-  end;
-  PGskRoundedRect = ^TGskRoundedRect;
-
-  TGskPath=record    // gsktypes.h
-  end;
-  PGskPath=^TGskPath;
-
-  TGskStroke=record                 // gsktypes.h
-    end;
-  PGskStroke=^TGskStroke;
-
-  TGskFillRule=LongInt; // gskenums.h
-  PGskFillRule=^TGskFillRule;
-
-  TGskBlendMode=LongInt; // gskenums.h
-  PGskBlendMode=^TGskBlendMode;
-
-  TGskMaskMode=LongInt;               // gskenums.h
-  PGskMaskMode=^TGskMaskMode;
-
-  TGskScalingFilter=LongInt;                            // gskenums.h
-  PGskScalingFilter=^TGskScalingFilter;
-
-  TGskShadow=record  // gskrendermode.h                 G_DECLARE_FINAL_TYPE (GskGLShader, gsk_gl_shader, GSK, GL_SHADER, GObject)
-    //color:TGdkRGBA;
-    //dx:cfloat;
-    //dy:cfloat;
-    //radius:cfloat;
-    end;
-  PGskShadow=^TGskShadow;
-
-  TGskGLShader=record    //  gskglshader.h
-  end;
-  PGskGLShader=^TGskGLShader;
-
-  TGskColorStop=record    // /usr/include/gtk-4.0/gsk/gskrendernode.h
-    //offset:cfloat;
-    //color:TGdkRGBA
-  end;
-  PGskColorStop=^TGskColorStop;
-
 
   // ======================================
 
 
-function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external gtklib;
+//function g_type_check_instance_cast(wid: PGTypeInstance; iface_type: TGType): PGTypeInstance; cdecl; external gtklib;
 function g_type_check_instance_is_a(instance: PGTypeInstance; iface_type: GType): gboolean; cdecl; external gobjectlib;
 
-function g_type_check_class_cast(g_class: PGTypeClass; is_a_type: TGType): PGTypeClass; cdecl; external gtklib;
+//function g_type_check_class_cast(g_class: PGTypeClass; is_a_type: TGType): PGTypeClass; cdecl; external gtklib;
 function g_type_check_class_is_a(instance: PGTypeClass; is_a_type: GType): gboolean; cdecl; external gobjectlib;
 
 // ------ libgio
 function g_application_run(application: Pointer; argc: longint; argv: PPchar): longint; cdecl; external libgio;
 
 // ------ glib
-function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
-function G_CALLBACK(f: pointer): TGCallback;
+//function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
+//function G_CALLBACK(f: pointer): TGCallback;
 
 // -------------------
 
 
 implementation
 
-function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
-begin
-  g_signal_connect := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, 0);
-end;
-
-function G_CALLBACK(f: pointer): TGCallback;
-begin
-  G_CALLBACK := TGCallback(f);
-end;
+//function g_signal_connect(instance: gpointer; detailed_signal: Pgchar; c_handler: TGCallback; Data: gpointer): gulong;
+//begin
+//  g_signal_connect := g_signal_connect_data(instance, detailed_signal, c_handler, Data, nil, 0);
+//end;
+//
+//function G_CALLBACK(f: pointer): TGCallback;
+//begin
+//  G_CALLBACK := TGCallback(f);
+//end;
 
 end.

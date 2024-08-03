@@ -3,7 +3,7 @@ unit gtkgridview;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget, gtkselectionmodel, gtklistitemfactory, gtkscrollinfo;
+  glib2, common_GTK, gtkenums, gtkwidget, gtkselectionmodel, gtklistitemfactory, gtkscrollinfo;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

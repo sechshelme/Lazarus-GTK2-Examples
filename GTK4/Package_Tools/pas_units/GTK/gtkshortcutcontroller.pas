@@ -3,7 +3,7 @@ unit gtkshortcutcontroller;
 interface
 
 uses
-  gdkenums, common_GTK, gtkenums, gtkwidget;
+  glib2, gdkenums, common_GTK, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

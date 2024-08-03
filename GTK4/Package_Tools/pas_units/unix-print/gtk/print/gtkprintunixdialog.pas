@@ -3,7 +3,7 @@ unit gtkprintunixdialog;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkwindow, gtkpagesetup, gtkprintsettings, gtkprinter;
+  glib2, common_GTK, gtkwidget, gtkwindow, gtkpagesetup, gtkprintsettings, gtkprinter;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

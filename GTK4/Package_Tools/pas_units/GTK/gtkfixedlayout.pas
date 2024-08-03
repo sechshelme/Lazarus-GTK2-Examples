@@ -3,7 +3,7 @@ unit gtkfixedlayout;
 interface
 
 uses
-  common_GTK, gtkwidget, gtklayoutmanager, gtklayoutchild;
+  glib2, common_GTK, gsktransform, gtkwidget, gtklayoutmanager, gtklayoutchild;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

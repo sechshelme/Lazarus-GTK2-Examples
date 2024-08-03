@@ -3,7 +3,7 @@ unit gtkfilechoosernative;
 interface
 
 uses
-  common_GTK, gtkwindow, gtknativedialog, gtkfilechooser;
+  glib2, common_GTK, gtkwindow, gtknativedialog, gtkfilechooser;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkfontdialogbutton;
 interface
 
 uses
-  pango, common_GTK, gtkwidget, gtkfontdialog;
+  glib2, pango, common_GTK, gtkwidget, gtkfontdialog;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

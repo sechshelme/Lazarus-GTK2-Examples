@@ -3,7 +3,7 @@ unit gtkgridlayout;
 interface
 
 uses
-  common_GTK, gtkenums, gtkwidget, gtklayoutmanager, gtklayoutchild;
+  glib2, common_GTK, gtkenums, gtkwidget, gtklayoutmanager, gtklayoutchild;
 
 
   {$IFDEF FPC}

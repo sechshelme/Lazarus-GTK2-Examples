@@ -3,7 +3,7 @@ unit gtkvideo;
 interface
 
 uses
-  common_GTK, gtkwidget, gtkmediastream, gtkgraphicsoffload;
+  glib2, common_GTK, gtkwidget, gtkmediastream, gtkgraphicsoffload;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

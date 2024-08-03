@@ -3,7 +3,7 @@ unit gskcairorenderer;
 interface
 
 uses
-  common_GTK;
+  glib2, common_GTK, gsktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
