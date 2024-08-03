@@ -7,6 +7,9 @@ uses
 
   // https://gstreamer.freedesktop.org/documentation/tutorials/basic/dynamic-pipelines.html?gi-language=c
 
+  procedure gst_caps_unref(object_: Tgpointer); cdecl; external gstreamerlib;
+
+
 const
   GST_CLOCK_TIME_NONE = TGstClockTime(-1);
 
@@ -20,12 +23,44 @@ type
   end;
   PCustomData = ^TCustomData;
 
+  function GST_PAD_LINK_FAILED(ret: TGstPadLinkReturn): boolean;
+  begin
+    Result := longint(ret) < longint(GST_PAD_LINK_OK);
+  end;
+
+
   procedure pad_added_handler(src: PGstElement; new_pad: PGstPad; Data: PCustomData);
   var
     sink_pad: PGstPad;
+    new_pad_caps: PGstCaps;
+    new_pad_struct: PGstStructure;
+    new_pad_type: Pgchar;
+    ret: TGstPadLinkReturn;
   begin
     sink_pad := gst_element_get_static_pad(Data^.convert, 'sink');
     g_print('Received new pad "%s" from "%s" '#10, PGstObject(new_pad)^.Name, PGstObject(src)^.Name);
+
+    if gst_pad_is_linked(sink_pad) then begin
+      g_print('Ist schon gelinkt'#10);
+    end else begin
+      new_pad_caps := gst_pad_get_current_caps(new_pad);
+      new_pad_struct := gst_caps_get_structure(new_pad_caps, 0);
+      new_pad_type := gst_structure_get_name(new_pad_struct);
+      if not g_str_has_prefix(new_pad_type, 'audio/x-raw') then begin
+        g_print('kein raw Audio %s. Ingnoriere'#10, new_pad_type);
+      end else begin
+        ret := gst_pad_link(new_pad, sink_pad);
+        if gst_pad_link_failed(ret) then begin
+          g_print('link failed: %s'#10, new_pad_type);
+        end else begin
+          g_print('link suceeded: %s'#10, new_pad_type);
+        end;
+      end;
+    end;
+    if new_pad_caps <> nil then begin
+      gst_caps_unref(new_pad_caps);
+    end;
+    gst_object_unref(sink_pad);
   end;
 
 
@@ -34,7 +69,7 @@ type
     Data: TCustomData;
     ret: TGstStateChangeReturn;
     bus: PGstBus;
-    terminate:Boolean=False;
+    terminate: boolean = False;
     msg: PGstMessage;
   begin
     gst_init(@argc, @argv);
@@ -69,13 +104,11 @@ type
       Exit(-1);
     end;
 
-    bus:=gst_element_get_bus(Data.pipeline);
+    bus := gst_element_get_bus(Data.pipeline);
     repeat
-      msg:=gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, TGstMessageType(TGstMessageType(uint64(GST_MESSAGE_STATE_CHANGED) or uint64(GST_MESSAGE_ERROR) or uint64(GST_MESSAGE_EOS))));
+      msg := gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, TGstMessageType(TGstMessageType(uint64(GST_MESSAGE_STATE_CHANGED) or uint64(GST_MESSAGE_ERROR) or uint64(GST_MESSAGE_EOS))));
 
     until terminate;
-
-
 
 
 

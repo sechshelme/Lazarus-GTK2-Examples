@@ -7,7 +7,7 @@ uses
   glib2,
   common_GTK,
 
-  // GDK
+  // ---- GDK
 
   gdkenums,                   // io.
   gdkenumtypes,               // io.
@@ -64,7 +64,7 @@ uses
   gdkcairocontext,            // unaufindbare external funktion
 
 
-  // GTK
+  // ---- GTK
 
   gtkenums,                   // io.
   gtktypes,                   // io.
@@ -386,7 +386,18 @@ uses
   gtkcsslocation,             // io.
   gtkcsssection,              // io. -> gtkcsslocation
 
+  gtkpagesetupunixdialog,     // io. -> gtkpagesetup, gtkprintsettings
+  gtkprinter,                 // io. -> gtkpagesetup, gtkpapersize
+  gtkprintunixdialog,         // io, -> gtkpagesetup, gtkprintsettings, gtkprinter
+  gtkprintjob,                // io. -> gtkprinter, gtkprintsettings, gtkpagesetup, gtkprintoperation
+
   gtkatspisocket,
+
+  // --- GSK
+
+  gskenums,                   // io.
+  gskenumtypes,               // io.
+  gskcairorenderer,           // io.
 
     // --- Eigenes
   ScrollBox,

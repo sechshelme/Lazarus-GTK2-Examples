@@ -29,7 +29,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="../../package/common_gtk.pas"/>
+        <Filename Value="../../Package_Tools/pas_units/common_gtk.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="common_GTK"/>
       </Unit>
@@ -62,7 +62,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../package;../../package/GTK/deprecated;../../package/GTK/print;../../package/GTK/css;../../package/GDK;../../package/GTK;../../package/GDK/deprecated;../../package/GTK/a11y"/>
+      <OtherUnitFiles Value="../../Package_Tools/pas_units;../../Package_Tools/pas_units/GTK/deprecated;../../Package_Tools/pas_units/GTK/print;../../Package_Tools/pas_units/GTK/css;../../Package_Tools/pas_units/GDK;../../Package_Tools/pas_units/GTK;../../Package_Tools/pas_units/GDK/deprecated;../../Package_Tools/pas_units/GTK/a11y;../../Package_Tools/pas_units/unix-print/gtk/print;../../Package_Tools/pas_units/GSK"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
