@@ -71,6 +71,8 @@ type
     bus: PGstBus;
     terminate: boolean = False;
     msg: PGstMessage;
+    err: PGError;
+    debug_info: Pgchar;
   begin
     gst_init(@argc, @argv);
 
@@ -107,30 +109,43 @@ type
     bus := gst_element_get_bus(Data.pipeline);
     repeat
       msg := gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, TGstMessageType(TGstMessageType(uint64(GST_MESSAGE_STATE_CHANGED) or uint64(GST_MESSAGE_ERROR) or uint64(GST_MESSAGE_EOS))));
+      if msg <> nil then begin
+        case GST_MESSAGE_TYPE(msg) of
+          GST_MESSAGE_ERROR: begin
+            gst_message_parse_error(msg, @err, @debug_info);
+            g_printerr('Error received from elemment %s: %s'#10, msg^.src^.Name, err^.message);
+            if debug_info = nil then begin
+              g_printerr('Debug Info: none'#10);
+            end else begin
+              g_printerr('Debug Info: %s'#10, debug_info);
+            end;
+            g_clear_error(@err);
+            g_free(debug_info);
+            terminate := True;
+          end;
+          GST_MESSAGE_EOS: begin
+            g_print('Stream Ende'#10);
+            terminate := True;
+          end;
+          GST_MESSAGE_STATE_CHANGED: begin
+            //            if GST_MESSAGE_SRC
+//            g_print('Pipeline Changed: '#10);
+          end;
+          else begin
+            g_print('Pipeline state unbekannt'#10);
+          end;
+        end;
 
+      end;
+
+      gst_message_unref(msg)
     until terminate;
 
+    gst_object_unref(bus);
+    gst_element_set_state( Data.pipeline,GST_STATE_NULL);
+    gst_object_unref(Data.pipeline);
 
 
-
-    //
-    //
-    //    pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/gstreamer/test.mp3', nil);
-    //    //    pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/gstreamer/Tutorial/Boing_1.wav', nil);
-    //    gst_element_set_state(pipeline, GST_STATE_PLAYING);
-    //
-    //    bus := gst_element_get_bus(pipeline);
-    //    msg := gst_bus_timed_pop_filtered(
-    //      bus, GST_CLOCK_TIME_NONE, TGstMessageType(TGstMessageType(uint64(GST_MESSAGE_ERROR) or uint64(GST_MESSAGE_EOS))));
-    //
-    //    if GST_MESSAGE_TYPE(msg) = GST_MESSAGE_ERROR then  begin
-    //      g_printerr('An error occurred! Re-run with the GST_DEBUG=*:WARN environment variable set for more details.'#10);
-    //    end;
-    //
-    //    gst_message_unref(msg);
-    //    gst_object_unref(bus);
-    //    gst_element_set_state(pipeline, GST_STATE_NULL);
-    //    gst_object_unref(pipeline);
     WriteLn('ende');
     Result := 0;
   end;
