@@ -5,6 +5,10 @@ interface
 uses
   glib2, common_GTK, gtkenums, gtktypes, gtkwidget, gtkselectionmodel, gtklistitemfactory, gtkscrollinfo;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
+
 type
   TGtkListView = record // _GtkListView
   end;

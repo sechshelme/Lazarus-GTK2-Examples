@@ -5,6 +5,10 @@ interface
 uses
   glib2, common_GTK;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
+
 type
   TGdkDevicePad = record
   end;

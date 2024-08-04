@@ -5,6 +5,10 @@ interface
 uses
   glib2, common_GTK, gtktypes, gtkwidget;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
+
 type
   TGtkFrame = record
     parent_instance: TGtkWidget;

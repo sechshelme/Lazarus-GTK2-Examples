@@ -5,6 +5,9 @@ interface
 uses
   glib2, common_GTK, gtkfilefilter, gtkwindow;
 
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
 
   {G_DECLARE_FINAL_TYPE (GtkFileDialog, gtk_file_dialog, GTK, FILE_DIALOG, GObject) }
 type

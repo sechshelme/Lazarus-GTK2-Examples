@@ -2,10 +2,12 @@ unit common_GTK;
 
 interface
 
-//  https://gitlab.com/freepascal.org/lazarus/lazarus/-/tree/main/tools/gir2pascal
-
 uses
   ctypes, Cairo, glib2, pango;
+
+{$IFDEF FPC}
+{$PACKRECORDS C}
+{$ENDIF}
 
 const
   gtklib = 'libgtk-4.so';
