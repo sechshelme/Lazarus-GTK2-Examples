@@ -10,10 +10,7 @@ uses
   GSK4,
   GTK4,
 
-  common_GTK, gtktypes,
-
-  //gtktypes,
-
+  common_GTK,
 
   // ==== GDK X11
 
@@ -511,11 +508,8 @@ const
   end;
 
   function Create_GridBox: PGtkWidget;
-//  var
-//    btn, tv: PGtkWidget;
   var
-    btn: PGtkWidget;
-    tv: PGtkWidget;
+    btn, tv: PGtkWidget;
   begin
     Result := gtk_grid_new;
 
