@@ -11,21 +11,21 @@ uses
 
   // ====  _ Typen
 type
-  TGdkDmabufFormats = record
-  end;
-  PGdkDmabufFormats = ^TGdkDmabufFormats;
+  //TGdkDmabufFormats = record
+  //end;
+  //PGdkDmabufFormats = ^TGdkDmabufFormats;
 
-  TGdkCairoContext = record
-  end;
-  PGdkCairoContext = ^TGdkCairoContext;
+  //TGdkCairoContext = record
+  //end;
+  //PGdkCairoContext = ^TGdkCairoContext;
 
-  TGdkAppLaunchContext = record
-  end;
-  PGdkAppLaunchContext = ^TGdkAppLaunchContext;
+  //TGdkAppLaunchContext = record
+  //end;
+  //PGdkAppLaunchContext = ^TGdkAppLaunchContext;
 
-  TGdkVulkanContext = record
-  end;
-  PGdkVulkanContext = ^TGdkVulkanContext;
+  //TGdkVulkanContext = record
+  //end;
+  //PGdkVulkanContext = ^TGdkVulkanContext;
 
 
   // ==== ausgelagertes
@@ -56,16 +56,16 @@ type
 const
   GDK_CURRENT_TIME = 0;
 
-type
-  TGdkRectangle = cairo_rectangle_int_t;
-
-  //TGdkRectangle = record
-  //  x: cint;
-  //  y: cint;
-  //  Width: cint;
-  //  Height: cint;
-  //end;
-  PGdkRectangle = ^TGdkRectangle;
+//type
+//  TGdkRectangle = cairo_rectangle_int_t;
+//
+//  //TGdkRectangle = record
+//  //  x: cint;
+//  //  y: cint;
+//  //  Width: cint;
+//  //  Height: cint;
+//  //end;
+//  PGdkRectangle = ^TGdkRectangle;
 
 {
 #define GDK_DECLARE_INTERNAL_TYPE(ModuleObjName, module_obj_name, MODULE, OBJ_NAME, ParentName) \

@@ -3,7 +3,7 @@ unit gdkcairo;
 interface
 
 uses
-  gdk2pixbuf, Cairo, common_GTK, gdktypes, gdkrgba;
+  gdk2pixbuf, Cairo, common_GTK, gdktypes, gdkrectangle, gdkrgba;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

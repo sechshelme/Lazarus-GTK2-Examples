@@ -5,14 +5,26 @@ interface
 uses
   ctypes, Cairo, glib2, pango;
 
-{$IFDEF FPC}
-{$PACKRECORDS C}
-{$ENDIF}
+  {$IFDEF FPC}
+  {$PACKRECORDS C}
+  {$ENDIF}
 
 const
-  gtklib = 'libgtk-4.so';
-  libgio = 'libgio-2.0.so.0';
-  gobjectlib = 'libgobject-2.0.so';
+  {$IFDEF Linux}
+  gtklib = 'libgtk-4';
+  libgio = 'libgio-2.0';
+  gobjectlib = 'libgobject-2.0';
+  {$ENDIF}
+
+  {$IFDEF Windows}
+  gtklib = 'libgtk-4.dll';
+  libgio = 'libgio-2.0.dll';
+  gobjectlib = 'libgobject-2.0.dll';
+  {$ENDIF}
+  //const
+  //  gtklib = 'libgtk-4.so';
+  //  libgio = 'libgio-2.0.so.0';
+  //  gobjectlib = 'libgobject-2.0.so';
 
 type
   // === Exotisches
@@ -38,38 +50,38 @@ type
   end;
   Pgraphene_size_t = ^Tgraphene_size_t;  // /usr/include/graphene-1.0/graphene-size.h
 
-  Tgraphene_point3d_t  =record
-    x,y,z:cfloat;
+  Tgraphene_point3d_t = record
+    x, y, z: cfloat;
   end;
-  Pgraphene_point3d_t=^Tgraphene_point3d_t;
+  Pgraphene_point3d_t = ^Tgraphene_point3d_t;
 
-  Tcairo_content_t=cairo_content_t;
+  Tcairo_content_t = cairo_content_t;
 
   // Wayland;
 
-  Twl_surface=Pointer;
-  Pwl_surface=^Twl_surface;
+  Twl_surface = Pointer;
+  Pwl_surface = ^Twl_surface;
 
-  Twl_seat=Pointer;
-  Pwl_seat=^Twl_seat;
+  Twl_seat = Pointer;
+  Pwl_seat = ^Twl_seat;
 
-  Twl_output=Pointer;
-  Pwl_output=^Twl_output;
+  Twl_output = Pointer;
+  Pwl_output = ^Twl_output;
 
-  Twl_display=Pointer;
-  Pwl_display=^Twl_display;
+  Twl_display = Pointer;
+  Pwl_display = ^Twl_display;
 
-  Twl_compositor=Pointer;
-  Pwl_compositor=^Twl_compositor;
+  Twl_compositor = Pointer;
+  Pwl_compositor = ^Twl_compositor;
 
-  Twl_pointer=Pointer;
-  Pwl_pointer=^Twl_pointer;
+  Twl_pointer = Pointer;
+  Pwl_pointer = ^Twl_pointer;
 
-  Twl_keyboard=Pointer;
-  Pwl_keyboard=^Twl_keyboard;
+  Twl_keyboard = Pointer;
+  Pwl_keyboard = ^Twl_keyboard;
 
-  Txkb_keymap=Pointer;
-  Pxkb_keymap=^Txkb_keymap;
+  Txkb_keymap = Pointer;
+  Pxkb_keymap = ^Txkb_keymap;
 
 
 
@@ -200,31 +212,31 @@ type
   end;
   PGOutputStream = ^TGOutputStream;
 
-  TGMountOperationClass=record   //     /usr/include/glib-2.0/gio/gmountoperation.h
+  TGMountOperationClass = record   //     /usr/include/glib-2.0/gio/gmountoperation.h
   end;
-  PGMountOperationClass=^TGMountOperationClass;
+  PGMountOperationClass = ^TGMountOperationClass;
 
-  TGMountOperation=record   //     /usr/include/glib-2.0/gio/gmountoperation.h
+  TGMountOperation = record   //     /usr/include/glib-2.0/gio/gmountoperation.h
     parent_instance: TGObject;
     // ......
   end;
-  PGMountOperation=^TGMountOperation;
+  PGMountOperation = ^TGMountOperation;
 
-  TGInputStream=record //     /usr/include/glib-2.0/gio/ginputstream.h
+  TGInputStream = record //     /usr/include/glib-2.0/gio/ginputstream.h
     // ......
-    end;
-  PGInputStream=^TGInputStream;
+  end;
+  PGInputStream = ^TGInputStream;
 
-  TGPermission=record  // gpermission.h
+  TGPermission = record  // gpermission.h
     // .....
   end;
-  PGPermission=^TGPermission;
+  PGPermission = ^TGPermission;
 
-  TGError=record  // gerror.h
+  TGError = record  // gerror.h
     // .....
   end;
-  PGError=^TGError;
-  PPGError=^PGError;
+  PGError = ^TGError;
+  PPGError = ^PGError;
 
   // ==== Pango
   PPPangoFontDescription = ^PPangoFontDescription; // Pango Erweiterung

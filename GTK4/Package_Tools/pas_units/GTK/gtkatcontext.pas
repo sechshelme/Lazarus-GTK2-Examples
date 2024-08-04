@@ -3,7 +3,7 @@ unit gtkatcontext;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtkenums, gtktypes, gtkwidget;
+  glib2, common_GTK, GDK4, gtkenums, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

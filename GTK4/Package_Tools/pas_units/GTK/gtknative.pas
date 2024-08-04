@@ -3,7 +3,7 @@ unit gtknative;
 interface
 
 uses
-  glib2, common_GTK, gsktypes, gdktypes, gtktypes, gtkwidget;
+  glib2, common_GTK, gsktypes, GDK4, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

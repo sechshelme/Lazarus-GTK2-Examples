@@ -3,7 +3,8 @@ unit gtktypes;
 interface
 
 uses
-  glib2, common_GTK, gdksnapshot;
+//  glib2, common_GTK,gdk4,  gdksnapshot;
+glib2, common_GTK,gdk4;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtktreednd;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtktreemodel;
+  glib2, common_GTK, GDK4, gtktreemodel;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

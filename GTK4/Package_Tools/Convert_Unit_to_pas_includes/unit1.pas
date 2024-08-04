@@ -31,6 +31,10 @@ implementation
 
 { TForm1 }
 
+const
+  srcPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/pas_units/';
+  destPath = '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/package/';
+
 procedure TForm1.Button1Click(Sender: TObject);
 var
   slFile, unit_source, inc_dest: TStringList;
@@ -39,7 +43,7 @@ var
   p: SizeInt;
 begin
   Memo1.Clear;
-  slFile := FindAllFiles('/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/Package_Tools/pas_units', '*.pas');
+  slFile := FindAllFiles(srcPath, '*.pas');
 
   for i := 0 to slFile.Count - 1 do begin
     unit_source := TStringList.Create;
@@ -48,7 +52,7 @@ begin
     inc_dest.Add('//                                                         //');
     inc_dest.Add('//   WARNUNG, dies Datei wird automatisch durch            //');
     inc_dest.Add('//   das Program "Convert_Unit_to_pas_includes" erzeugt !  //');
-    inc_dest.Add('//   Erzeugt am: '+FormatDateTime('dd/mm/yyyy   hh:nn', now)+  '                        //');
+    inc_dest.Add('//   Erzeugt am: ' + FormatDateTime('dd/mm/yyyy   hh:nn', now) + '                        //');
     inc_dest.Add('//                                                         //');
     inc_dest.Add('/////////////////////////////////////////////////////////////');
     inc_dest.Add('');
@@ -116,12 +120,15 @@ begin
     inc_dest.Add('{$ENDIF read_implementation}');
 
 
-    path := ExtractFileName(slFile[i]);
+
+    path := StringReplace(slFile[i], srcPath, '', []);
+    //    path := ExtractFileName(slFile[i]);
     path := ChangeFileExt(path, '.inc');
-    path := '/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/GTK4/package/' + path;
+    path := destPath + path;
+
+    ForceDirectories(ExtractFilePath(path));
 
     Memo1.Lines.Add(path);
-
     inc_dest.SaveToFile(path);
 
     inc_dest.Free;

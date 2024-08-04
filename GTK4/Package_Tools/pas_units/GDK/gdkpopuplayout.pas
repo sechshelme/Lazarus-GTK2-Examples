@@ -3,7 +3,7 @@ unit gdkpopuplayout;
 interface
 
 uses
-  common_GTK, gdktypes, gdkenums;
+  common_GTK, gdktypes, gdkrectangle, gdkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

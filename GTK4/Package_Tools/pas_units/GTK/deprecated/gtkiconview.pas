@@ -3,7 +3,7 @@ unit gtkiconview;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdkpaintable, gdkcontentformats, gdktypes, gtkenums, gtktypes , gtkwidget, gtktreemodel, gtkcellarea, gtkcellrenderer;
+  glib2, GDK4, common_GTK, gtkenums, gtktypes , gtkwidget, gtktreemodel, gtkcellarea, gtkcellrenderer;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

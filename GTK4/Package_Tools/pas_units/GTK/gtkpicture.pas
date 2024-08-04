@@ -3,7 +3,7 @@ unit gtkpicture;
 interface
 
 uses
-  glib2, gdk2pixbuf, common_GTK, gdkpaintable, gtktypes, gtkenums, gtkwidget;
+  glib2, gdk2pixbuf, common_GTK, GDK4, gtktypes, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

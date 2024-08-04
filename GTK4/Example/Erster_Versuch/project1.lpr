@@ -12,6 +12,7 @@ uses
   gdkenums,                   // io.
   gdkenumtypes,               // io.
   gdktypes,
+  gdkrectangle,               // io.
   gdkrgba,                    // io.
   gdkcairo,                   // io. -> gdkrgba
   gdkkeysyms,                 // Gross und Kleinschreibung !
@@ -19,14 +20,13 @@ uses
   gdkdrawcontext,             // io.
   gdkkeys,                    // io.
   gdkpango,                   // io.
-  gdkrectangle,               // io.
   gdkvulkancontext,           // io.
-  gdktoplevellayout,          // io.
+  gdkmonitor,                 // io.
+  gdktoplevellayout,          // io. -> gdkmonitor
   gdktoplevelsize,            // io.
   gdkpopuplayout,             // io.
   gdkpopup,                   // io. -> gdkpopuplayout
   gdkglcontext,               // io.
-  gdkcursor,                  // io.
   gdkdisplaymanager,          // io.
   gdkdmabufformats,           // io.
   gdkdmabuftexture,           // io.
@@ -35,7 +35,16 @@ uses
   gdkframetimings,            // io.
   gdkapplaunchcontext,        // io.
   gdkframeclock,              // io. -> gdkframetimings
-  gdksurface,                 // io. -> gdkcursor, gdkglcontext, gdkframeclock
+  gdkcairocontext,            // unaufindbare external funktion
+  gdktexture,                 // io.
+  gdkcursor,                  // io. -> gdktexture
+  gdkpixbuf,                  // io. -> gdktexture
+  gdktexturedownloader,       // io. -> gdktexture
+  gdkmemorytexture,           // io. -> gdktexture
+  gdkdmabuftexturebuilder,    // io. -> gdktexture
+  gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
+  gdkgltexture,               // io. -> gdktexture, gdkglcontext
+  gdksurface,                 // io. -> gdkcursor, gdkglcontext, gdkframeclock, gdkvulkancontext, gdkcairocontext
   gdkcontentformats,          // io.
   gdkcontentserializer,       // io. -> gdkcontentformats
   gdkcontentdeserializer,     // io. -> gdkcontentserializer
@@ -44,24 +53,15 @@ uses
   gdkcontentproviderimpl,     // io.
   gdkdrag,                    // io. -> gdksurface, gdkcontentformats
   gdkdrop,                    // io. -> gdkdrag,  gdkcontentformats
-  gdktexture,                 // io.
-  gdkpixbuf,                  // io. -> gdktexture
-  gdktexturedownloader,       // io. -> gdktexture
-  gdkmemorytexture,           // io. -> gdktexture
-  gdkdmabuftexturebuilder,    // io. -> gdktexture
-  gdkgltexturebuilder,        // io. -> gdktexture, gdkglcontext
-  gdkgltexture,               // io. -> gdktexture, gdkglcontext
   gdkseat,                    // io.
   gdkdevicetool,
   gdkdevice,                  // io. -> gdkseat, gdkdevicetool
   gdkevents,                  // io. -> gdkdevice, gdkdrop, gdkenums, gdkseat, gdkdevicetool
-  gdkmonitor,
   gdkdisplay,                 // io. -> gdkclipboard,  gdkseat, gdkglcontext, gdkmonitor
   gdktoplevel,                // io. -> gdkevents, gdktoplevellayout
   gdksnapshot,                // io.
   gdkpaintable,               // io. -> gdksnapshot
   gdkdevicepad,               // io.
-  gdkcairocontext,            // unaufindbare external funktion
 
   // ==== GDK X11
 

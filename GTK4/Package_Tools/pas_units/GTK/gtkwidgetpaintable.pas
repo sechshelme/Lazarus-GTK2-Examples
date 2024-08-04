@@ -3,7 +3,7 @@ unit gtkwidgetpaintable;
 interface
 
 uses
-  glib2, common_GTK, gdkpaintable, gtktypes, gtkwidget;
+  glib2, common_GTK, GDK4, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

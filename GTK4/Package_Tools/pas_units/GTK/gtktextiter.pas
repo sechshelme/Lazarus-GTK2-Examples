@@ -3,7 +3,7 @@ unit gtktextiter;
 interface
 
 uses
- ctypes, glib2, pango, common_GTK, gdkpaintable, gtktexttag, gtktextchild;
+ ctypes, glib2, pango, common_GTK, GDK4, gtktexttag, gtktextchild;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

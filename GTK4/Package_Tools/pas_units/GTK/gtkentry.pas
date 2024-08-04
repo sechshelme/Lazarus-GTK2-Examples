@@ -3,7 +3,7 @@ unit gtkentry;
 interface
 
 uses
-  glib2, gdkenums, pango, common_GTK, gdkpaintable, gdktypes, gtkenums, gtkwidget, gtktypes, gtkentrybuffer, gtkentrycompletion, gtkimage;
+  glib2, GDK4, pango, common_GTK, gtkenums, gtkwidget, gtktypes, gtkentrybuffer, gtkentrycompletion, gtkimage;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

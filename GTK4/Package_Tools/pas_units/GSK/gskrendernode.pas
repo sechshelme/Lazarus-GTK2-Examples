@@ -3,7 +3,7 @@ unit gskrendernode;
 interface
 
 uses
-  glib2, pango, Cairo, common_GTK, gdkrgba, gdktexture, gsktypes, gskenums, gsktransform, gskglshader, gskroundedrect, gskpath, gskstroke;
+  glib2, pango, Cairo, common_GTK, GDK4, gsktypes, gskenums, gsktransform, gskglshader, gskroundedrect, gskpath, gskstroke;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

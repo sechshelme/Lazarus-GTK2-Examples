@@ -3,7 +3,7 @@ unit gdkmonitor;
 interface
 
 uses
-  glib2, common_GTK, gdktypes;
+  glib2, common_GTK, gdktypes, gdkrectangle;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkstyleprovider;
 interface
 
 uses
-  glib2, common_GTK, gdktypes;
+  glib2, common_GTK, GDK4;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

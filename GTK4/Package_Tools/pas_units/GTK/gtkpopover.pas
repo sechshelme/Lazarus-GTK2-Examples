@@ -3,7 +3,7 @@ unit gtkpopover;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtktypes, gtkenums, gtkwidget;
+  glib2, common_GTK, GDK4, gtktypes, gtkenums, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

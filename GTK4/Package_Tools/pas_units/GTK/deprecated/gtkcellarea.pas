@@ -3,7 +3,7 @@ unit gtkcellarea;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtktypes, gtkenums, gtkwidget, gtkcellrenderer, gtktreemodel, gtkcelleditable;
+  glib2, common_GTK, GDK4, gtktypes, gtkenums, gtkwidget, gtkcellrenderer, gtktreemodel, gtkcelleditable;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

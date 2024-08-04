@@ -3,7 +3,7 @@ unit gtkcolorchooser;
 interface
 
 uses
-  glib2, common_GTK, gdkrgba, gtkenums;
+  glib2, common_GTK, GDK4, gtkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

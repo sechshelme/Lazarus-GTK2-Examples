@@ -3,7 +3,7 @@ unit gdksurface;
 interface
 
 uses
-  glib2, Cairo, common_GTK, gdkcursor, gdkframeclock, gdktypes, gdkenums, gdkglcontext;
+  glib2, Cairo, common_GTK, gdkvulkancontext, gdkcairocontext, gdkcursor, gdkframeclock, gdktypes, gdkenums, gdkglcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

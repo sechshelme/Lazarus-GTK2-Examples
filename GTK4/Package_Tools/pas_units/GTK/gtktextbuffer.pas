@@ -3,7 +3,7 @@ unit gtktextbuffer;
 interface
 
 uses
-  glib2, gdktypes, gdkclipboard, common_GTK, gdkpaintable, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
+  glib2, GDK4, common_GTK, gtktexttag, gtktextiter, gtktextchild, gtktextmark;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

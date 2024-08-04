@@ -3,7 +3,7 @@ unit gtktextview;
 interface
 
 uses
-  glib2, pango, common_GTK, gdkevents, gdktypes, gtktypes, gtkenums, gtkwidget, gtktextiter, gtktextmark, gtktextchild;
+  glib2, pango, common_GTK, GDK4, gtktypes, gtkenums, gtkwidget, gtktextiter, gtktextmark, gtktextchild;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

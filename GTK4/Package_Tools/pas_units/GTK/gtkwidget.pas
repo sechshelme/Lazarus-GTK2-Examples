@@ -3,7 +3,7 @@ unit gtkwidget;
 interface
 
 uses
-  ctypes, Cairo, glib2, common_GTK, gdkrgba, gdkclipboard, gdkcursor, gdkframeclock, gsktransform, gtktypes, gdkenums, gdktypes, pango, gtkenums;
+  ctypes, Cairo, glib2, common_GTK, GDK4, gsktransform, gtktypes, pango, gtkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
