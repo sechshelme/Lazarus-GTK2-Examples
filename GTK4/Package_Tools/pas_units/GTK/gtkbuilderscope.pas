@@ -10,19 +10,19 @@ uses
   {$ENDIF}
 
   {G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject) }
-  // Wegen gtkwidget ausgelagert
+  // ausgelagert
 //type
 //  TGtkBuilderScope = record
 //  end;
 //  PGtkBuilderScope = ^TGtkBuilderScope;
 //
 
-type
-  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
-  TGtkBuilderClosureFlags = longint;
-
-const
-  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
+//type
+//  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
+//  TGtkBuilderClosureFlags = longint;
+//
+//const
+//  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
 
 type
   PGtkBuilderScopeInterface = ^TGtkBuilderScopeInterface;

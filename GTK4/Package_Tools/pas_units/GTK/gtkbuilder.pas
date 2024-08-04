@@ -38,11 +38,6 @@ const
   GTK_BUILDER_ERROR_INVALID_ID = 13;
   GTK_BUILDER_ERROR_INVALID_FUNCTION = 14;
 
-type  // gtkbuilderscope.h
-  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
-  TGtkBuilderClosureFlags = longint;
-
-
 
 function gtk_builder_error_quark: TGQuark; cdecl; external gtklib;
 function gtk_builder_get_type: TGType; cdecl; external gtklib;

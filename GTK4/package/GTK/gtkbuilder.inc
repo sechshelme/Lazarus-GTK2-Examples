@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -36,11 +36,6 @@ const
   GTK_BUILDER_ERROR_INVALID_SIGNAL = 12;
   GTK_BUILDER_ERROR_INVALID_ID = 13;
   GTK_BUILDER_ERROR_INVALID_FUNCTION = 14;
-
-type  // gtkbuilderscope.h
-  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
-  TGtkBuilderClosureFlags = longint;
-
 
 
 function gtk_builder_error_quark: TGQuark; cdecl; external gtklib;

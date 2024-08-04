@@ -3,16 +3,17 @@ unit gtksettings;
 interface
 
 uses
-  glib2, common_GTK, GDK4;
+  glib2, common_GTK, gtktypes, GDK4;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
-type
-  TGtkSettings = record // _GtkSettings
-  end;
-  PGtkSettings = ^TGtkSettings;
+  // ausgelagert
+//type
+//  TGtkSettings = record // _GtkSettings
+//  end;
+//  PGtkSettings = ^TGtkSettings;
 
 
 function gtk_settings_get_type: TGType; cdecl; external gtklib;

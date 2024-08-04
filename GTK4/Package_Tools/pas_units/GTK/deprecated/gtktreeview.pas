@@ -26,10 +26,6 @@ type
   end;
   PGtkTreeView = ^TGtkTreeView;
 
-  TGtkTreeSelection = record
-  end;
-  PGtkTreeSelection = ^TGtkTreeSelection;
-
   TGtkTreeViewColumnDropFunc = function(tree_view: PGtkTreeView; column: PGtkTreeViewColumn; prev_column: PGtkTreeViewColumn; next_column: PGtkTreeViewColumn; Data: Tgpointer): Tgboolean; cdecl;
   TGtkTreeViewMappingFunc = procedure(tree_view: PGtkTreeView; path: PGtkTreePath; user_data: Tgpointer); cdecl;
   TGtkTreeViewSearchEqualFunc = function(model: PGtkTreeModel; column: longint; key: PChar; iter: PGtkTreeIter; search_data: Tgpointer): Tgboolean; cdecl;

@@ -3,7 +3,7 @@ unit gtkcellareacontext;
 interface
 
 uses
-  glib2, common_GTK, gtkcellarea;
+  glib2, common_GTK, gtktypes, gtkcellarea;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -11,10 +11,11 @@ uses
 
 
 type
-  TGtkCellAreaContext = record
-    parent_instance: TGObject;
-  end;
-  PGtkCellAreaContext = ^TGtkCellAreaContext;
+  // Ausgelagert
+  //TGtkCellAreaContext = record
+  //  parent_instance: TGObject;
+  //end;
+  //PGtkCellAreaContext = ^TGtkCellAreaContext;
 
   TGtkCellAreaContextClass = record
     parent_class: TGObjectClass;

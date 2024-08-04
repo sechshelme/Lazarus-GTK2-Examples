@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -24,10 +24,6 @@ type
     parent_instance: TGtkWidget;
   end;
   PGtkTreeView = ^TGtkTreeView;
-
-  TGtkTreeSelection = record
-  end;
-  PGtkTreeSelection = ^TGtkTreeSelection;
 
   TGtkTreeViewColumnDropFunc = function(tree_view: PGtkTreeView; column: PGtkTreeViewColumn; prev_column: PGtkTreeViewColumn; next_column: PGtkTreeViewColumn; Data: Tgpointer): Tgboolean; cdecl;
   TGtkTreeViewMappingFunc = procedure(tree_view: PGtkTreeView; path: PGtkTreePath; user_data: Tgpointer); cdecl;

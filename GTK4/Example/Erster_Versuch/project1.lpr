@@ -108,8 +108,8 @@ uses
   gsktransform,               // io.
   gskroundedrect,             // Macro nicht aufgelöst
   gskstroke,                  // io.
+  gskpathpoint,               // io.
   gskpath,                    // io. -> gskpathpoint, gskstroke
-  gskpathpoint,               // io. -> gskpath
   gskpathbuilder,             // io. -> gskpathpoint, gskroundedrect
   gskpathmeasure,             // io. -> gskpathpoint
   gskglshader,                // io.
@@ -134,7 +134,6 @@ uses
   gtkwidget,                  //   Macro nicht aufgelöst
   gtkwindow,                  // io.
   gtkapplication,             // io.
-  gtkapplicationwindow,       // io.
   gtkwindowgroup,             // io.
   gtkmain,                    // io.
   gtkdebug,                   //   Macro nicht aufgelöst
@@ -240,9 +239,9 @@ uses
 
   gtkcolumnviewrow,           // io.
   gtkcolumnviewsorter,        // io. -> gtksorter, gtkcolumnview
+  gtkcolumnview,              // io. -> gtkselectionmodel, gtksorter, gtkscrollinfo
   gtkcolumnviewcolumn,        // io. -> gtkcolumnview, gtklistitemfactory, gtksorter
   gtkcolumnviewcell,          // io.
-  gtkcolumnview,              // io. -> gtkselectionmodel, gtksorter, gtkscrollinfo
 
   gtkconstraint,              // io.
   gtkconstraintguide,         // io.
@@ -258,6 +257,7 @@ uses
   gtkshortcutsgroup,          // io. -> gtkshortcutsshortcut;
   gtkshortcutssection,        // io. -> gtkshortcutsgroup;
   gtkshortcutswindow,         // io. -> gtkshortcutssection;
+  gtkapplicationwindow,       // io. -> gtkshortcutswindow
 
 
   gtkdragicon,                // io.
@@ -342,6 +342,7 @@ uses
 
 
   gtktreemodel,               // io.
+  gtkcelleditable,
   gtkcellrenderer,            // io. -> gtkcelleditable;
   gtkcellarea,                // gtkcellrenderer, gtktreemodel, gtkcelleditable;  ( Makro )
   gtkentrycompletion,         // io. -> gtktreemodel, gtkcellarea;

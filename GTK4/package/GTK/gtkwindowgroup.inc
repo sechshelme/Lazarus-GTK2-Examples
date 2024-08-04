@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -10,11 +10,12 @@
 
 
 type
-  TGtkWindowGroup = record
-    parent_instance: TGObject;
-    priv: PGtkWindowGroupPrivate;
-  end;
-  PGtkWindowGroup = ^TGtkWindowGroup;
+  // Ausgelagert
+  //TGtkWindowGroup = record
+  //  parent_instance: TGObject;
+  //  priv: PGtkWindowGroupPrivate;
+  //end;
+  //PGtkWindowGroup = ^TGtkWindowGroup;
 
   TGtkWindowGroupClass = record
     parent_class: TGObjectClass;
@@ -24,6 +25,11 @@ type
     _gtk_reserved4: procedure; cdecl;
   end;
   PGtkWindowGroupClass = ^TGtkWindowGroupClass;
+
+  //TGtkWindowGroupPrivate = record // _GtkWindowGroupPrivate
+  //end;
+  //PGtkWindowGroupPrivate = ^TGtkWindowGroupPrivate;
+
 
 
 function gtk_window_group_get_type: TGType; cdecl; external gtklib;

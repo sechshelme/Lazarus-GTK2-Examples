@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -25,17 +25,6 @@ type
     padding: array[0..7] of Tgpointer;
   end;
   PGtkWindowClass = ^TGtkWindowClass;
-
-  TGtkWindowGroupPrivate = record // _GtkWindowGroupPrivate
-  end;
-  PGtkWindowGroupPrivate = ^TGtkWindowGroupPrivate;
-
-  TGtkWindowGroup = record
-    parent_instance: TGtkWidget;
-    priv: PGtkWindowGroupPrivate;
-  end;
-  PGtkWindowGroup = ^TGtkWindowGroup;
-
 
 function gtk_window_get_type: TGType; cdecl; external gtklib;
 function gtk_window_new: PGtkWidget; cdecl; external gtklib;

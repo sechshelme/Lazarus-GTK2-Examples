@@ -2,16 +2,17 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
 {$IFDEF read_interface}
 
-type
-  TGtkSettings = record // _GtkSettings
-  end;
-  PGtkSettings = ^TGtkSettings;
+  // ausgelagert
+//type
+//  TGtkSettings = record // _GtkSettings
+//  end;
+//  PGtkSettings = ^TGtkSettings;
 
 
 function gtk_settings_get_type: TGType; cdecl; external gtklib;

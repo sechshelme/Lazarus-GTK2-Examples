@@ -3,7 +3,7 @@ unit gtkwindowgroup;
 interface
 
 uses
-  glib2, common_GTK, gtkwindow;
+  glib2, common_GTK, gtktypes, gtkwindow;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -11,11 +11,12 @@ uses
 
 
 type
-  TGtkWindowGroup = record
-    parent_instance: TGObject;
-    priv: PGtkWindowGroupPrivate;
-  end;
-  PGtkWindowGroup = ^TGtkWindowGroup;
+  // Ausgelagert
+  //TGtkWindowGroup = record
+  //  parent_instance: TGObject;
+  //  priv: PGtkWindowGroupPrivate;
+  //end;
+  //PGtkWindowGroup = ^TGtkWindowGroup;
 
   TGtkWindowGroupClass = record
     parent_class: TGObjectClass;
@@ -25,6 +26,11 @@ type
     _gtk_reserved4: procedure; cdecl;
   end;
   PGtkWindowGroupClass = ^TGtkWindowGroupClass;
+
+  //TGtkWindowGroupPrivate = record // _GtkWindowGroupPrivate
+  //end;
+  //PGtkWindowGroupPrivate = ^TGtkWindowGroupPrivate;
+
 
 
 function gtk_window_group_get_type: TGType; cdecl; external gtklib;

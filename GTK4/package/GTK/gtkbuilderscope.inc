@@ -2,26 +2,26 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
 {$IFDEF read_interface}
 
   {G_DECLARE_INTERFACE (GtkBuilderScope, gtk_builder_scope, GTK, BUILDER_SCOPE, GObject) }
-  // Wegen gtkwidget ausgelagert
+  // ausgelagert
 //type
 //  TGtkBuilderScope = record
 //  end;
 //  PGtkBuilderScope = ^TGtkBuilderScope;
 //
 
-type
-  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
-  TGtkBuilderClosureFlags = longint;
-
-const
-  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
+//type
+//  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
+//  TGtkBuilderClosureFlags = longint;
+//
+//const
+//  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
 
 type
   PGtkBuilderScopeInterface = ^TGtkBuilderScopeInterface;

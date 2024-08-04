@@ -1,11 +1,11 @@
-unit GTK4;
+unit GSK4;
 
 //{$modeswitch typehelpers}
 
 interface
 
-  uses
-    ctypes, Cairo, glib2, gdk2pixbuf, pango,common_GTK, GDK4, GSK4;
+uses
+  ctypes, gdk2pixbuf, glib2, Cairo, pango, GDK4;
 
 //const
 //  {$IFDEF Linux}
@@ -25,14 +25,14 @@ interface
   {$ENDIF}
 
   {$DEFINE read_interface}
-  {$include GTK4_includes.inc}
+  {$include GSK4_includes.inc}
   {$UNDEF read_interface}
 
 
 implementation
 
 {$DEFINE read_implementation}
-{$include GTK4_includes.inc}
+{$include GSK4_includes.inc}
 {$UNDEF read_implementation}
 
 end.

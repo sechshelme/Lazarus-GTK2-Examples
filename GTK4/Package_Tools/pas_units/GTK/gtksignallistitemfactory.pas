@@ -3,7 +3,7 @@ unit gtksignallistitemfactory;
 interface
 
 uses
-  glib2, common_GTK, gtklistitemfactory;
+  glib2, common_GTK, gtktypes, gtklistitemfactory;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

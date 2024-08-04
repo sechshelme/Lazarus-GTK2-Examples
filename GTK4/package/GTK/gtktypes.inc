@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -82,6 +82,38 @@ type
   end;
   PGtkAccessible = ^TGtkAccessible;
   PPGtkAccessible = ^PGtkAccessible;
+
+  TGtkWindowGroupPrivate = record
+  end;
+  PGtkWindowGroupPrivate = ^TGtkWindowGroupPrivate;
+
+  TGtkWindowGroup = record
+    parent_instance: TGObject;
+    priv: PGtkWindowGroupPrivate;
+  end;
+  PGtkWindowGroup = ^TGtkWindowGroup;
+
+  TGtkColumnViewColumn = record // _GtkColumnViewColumn
+  end;
+  PGtkColumnViewColumn = ^TGtkColumnViewColumn;
+
+  TGtkCellAreaContext = record
+    parent_instance: TGObject;
+  end;
+  PGtkCellAreaContext = ^TGtkCellAreaContext;
+
+  TGtkTreeSelection = record
+  end;
+  PGtkTreeSelection = ^TGtkTreeSelection;
+
+
+
+type
+  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
+  TGtkBuilderClosureFlags = longint;
+
+const
+  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
 
 
   // =======================

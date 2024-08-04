@@ -3,16 +3,16 @@ unit gtktreeselection;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtktreemodel, gtktreeview;
+  glib2, common_GTK, gtkenums, gtktypes, gtktreemodel, gtktreeview;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGtkTreeSelection = record
-  end;
-  PGtkTreeSelection = ^TGtkTreeSelection;
+  //TGtkTreeSelection = record
+  //end;
+  //PGtkTreeSelection = ^TGtkTreeSelection;
 
   TGtkTreeSelectionFunc = function(selection: PGtkTreeSelection; model: PGtkTreeModel; path: PGtkTreePath; path_currently_selected: Tgboolean; Data: Tgpointer): Tgboolean; cdecl;
 

@@ -2,7 +2,7 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
@@ -20,10 +20,6 @@ type
   TGtkCellArea = record
     parent_instance: TGInitiallyUnowned;
   end;
-
-  TGtkCellAreaContext = record // _GtkCellAreaContext
-  end;
-  PGtkCellAreaContext = ^TGtkCellAreaContext;
 
   PGtkCellAreaClass = ^TGtkCellAreaClass;
 

@@ -3,12 +3,12 @@ unit gtktypes;
 interface
 
 uses
-//  glib2, common_GTK,gdk4,  gdksnapshot;
-glib2, common_GTK,gdk4;
+  //  glib2, common_GTK,gdk4,  gdksnapshot;
+  glib2, common_GTK, gdk4;
 
-{$IFDEF FPC}
-{$PACKRECORDS C}
-{$ENDIF}
+  {$IFDEF FPC}
+  {$PACKRECORDS C}
+  {$ENDIF}
 
 type
   PGtkSnapshot = ^TGtkSnapshot;
@@ -84,6 +84,38 @@ type
   end;
   PGtkAccessible = ^TGtkAccessible;
   PPGtkAccessible = ^PGtkAccessible;
+
+  TGtkWindowGroupPrivate = record
+  end;
+  PGtkWindowGroupPrivate = ^TGtkWindowGroupPrivate;
+
+  TGtkWindowGroup = record
+    parent_instance: TGObject;
+    priv: PGtkWindowGroupPrivate;
+  end;
+  PGtkWindowGroup = ^TGtkWindowGroup;
+
+  TGtkColumnViewColumn = record // _GtkColumnViewColumn
+  end;
+  PGtkColumnViewColumn = ^TGtkColumnViewColumn;
+
+  TGtkCellAreaContext = record
+    parent_instance: TGObject;
+  end;
+  PGtkCellAreaContext = ^TGtkCellAreaContext;
+
+  TGtkTreeSelection = record
+  end;
+  PGtkTreeSelection = ^TGtkTreeSelection;
+
+
+
+type
+  PGtkBuilderClosureFlags = ^TGtkBuilderClosureFlags;
+  TGtkBuilderClosureFlags = longint;
+
+const
+  GTK_BUILDER_CLOSURE_SWAPPED = 1 shl 0;
 
 
   // =======================

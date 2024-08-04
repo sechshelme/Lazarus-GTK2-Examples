@@ -2,16 +2,16 @@
 //                                                         //
 //   WARNUNG, dies Datei wird automatisch durch            //
 //   das Program "Convert_Unit_to_pas_includes" erzeugt !  //
-//   Erzeugt am: 04-08-2024   16:38                        //
+//   Erzeugt am: 04-08-2024   20:15                        //
 //                                                         //
 /////////////////////////////////////////////////////////////
 
 {$IFDEF read_interface}
 
 type
-  TGtkTreeSelection = record
-  end;
-  PGtkTreeSelection = ^TGtkTreeSelection;
+  //TGtkTreeSelection = record
+  //end;
+  //PGtkTreeSelection = ^TGtkTreeSelection;
 
   TGtkTreeSelectionFunc = function(selection: PGtkTreeSelection; model: PGtkTreeModel; path: PGtkTreePath; path_currently_selected: Tgboolean; Data: Tgpointer): Tgboolean; cdecl;
 

@@ -22,10 +22,6 @@ type
     parent_instance: TGInitiallyUnowned;
   end;
 
-  TGtkCellAreaContext = record // _GtkCellAreaContext
-  end;
-  PGtkCellAreaContext = ^TGtkCellAreaContext;
-
   PGtkCellAreaClass = ^TGtkCellAreaClass;
 
   TGtkCellAreaClass = record

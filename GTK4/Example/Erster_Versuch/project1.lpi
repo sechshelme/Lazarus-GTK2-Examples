@@ -62,7 +62,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../Package_Tools/pas_units;../../Package_Tools/pas_units/GTK/deprecated;../../Package_Tools/pas_units/GTK/print;../../Package_Tools/pas_units/GTK/css;../../Package_Tools/pas_units/GDK;../../Package_Tools/pas_units/GTK;../../Package_Tools/pas_units/GDK/deprecated;../../Package_Tools/pas_units/GTK/a11y;../../Package_Tools/pas_units/unix-print/gtk/print;../../Package_Tools/pas_units/GSK;../../Package_Tools/pas_units/GDK/x11;../../Package_Tools/pas_units/GDK/broadway;../../Package_Tools/pas_units/GDK/wayland;../../Package_Tools/pas_units/GSK/broadway;../../Package_Tools/pas_units/GSK/gl;../../Package_Tools/pas_units/GSK/gpu"/>
+      <OtherUnitFiles Value="../../Package_Tools/pas_units;../../Package_Tools/pas_units/GTK/deprecated;../../Package_Tools/pas_units/GTK/print;../../Package_Tools/pas_units/GTK/css;../../Package_Tools/pas_units/GDK;../../Package_Tools/pas_units/GTK;../../Package_Tools/pas_units/GDK/deprecated;../../Package_Tools/pas_units/GTK/a11y;../../Package_Tools/pas_units/unix-print/gtk/print;../../Package_Tools/pas_units/GSK;../../Package_Tools/pas_units/GDK/x11;../../Package_Tools/pas_units/GDK/broadway;../../Package_Tools/pas_units/GDK/wayland;../../Package_Tools/pas_units/GSK/broadway;../../Package_Tools/pas_units/GSK/gl;../../Package_Tools/pas_units/GSK/gpu;../../package"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

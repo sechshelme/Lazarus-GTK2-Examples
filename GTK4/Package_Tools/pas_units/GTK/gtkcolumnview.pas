@@ -19,10 +19,6 @@ type
   end;
   PGtkColumnViewClass = ^TGtkColumnViewClass;
 
-  TGtkColumnViewColumn = record // _GtkColumnViewColumn
-  end;
-  PGtkColumnViewColumn = ^TGtkColumnViewColumn;
-
 function gtk_column_view_get_type: TGType; cdecl; external gtklib;
 function gtk_column_view_new(model: PGtkSelectionModel): PGtkWidget; cdecl; external gtklib;
 function gtk_column_view_get_columns(self: PGtkColumnView): PGListModel; cdecl; external gtklib;

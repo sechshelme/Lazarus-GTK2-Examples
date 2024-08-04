@@ -3,17 +3,18 @@ unit gtklistitemfactory;
 interface
 
 uses
-  glib2, common_GTK;
+  glib2, common_GTK, gtktypes;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
 
 type
-  TGtkListItemFactory = record // _GtkListItemFactory
-  end;
-  PGtkListItemFactory = ^TGtkListItemFactory;
-
+  // ausgelagert
+  //TGtkListItemFactory = record // _GtkListItemFactory
+  //end;
+  //PGtkListItemFactory = ^TGtkListItemFactory;
+  //
   TGtkListItemFactoryClass = record // _GtkListItemFactoryClass
   end;
   PGtkListItemFactoryClass = ^TGtkListItemFactoryClass;
