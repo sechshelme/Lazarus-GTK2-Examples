@@ -29,6 +29,8 @@
  * around it.
  */
 
+/*
+
 #if !defined(GDK_DISABLE_DEPRECATION_WARNINGS) && \
     (G_GNUC_CHECK_VERSION(4, 6) ||                 \
      __clang_major__ > 3 || (__clang_major__ == 3 && __clang_minor__ >= 4))
@@ -67,6 +69,8 @@
 #define GDK_DEPRECATED_TYPE_FOR(f)
 #define GDK_UNAVAILABLE_TYPE(maj,min)
 #endif
+
+*/
 
 /**
  * GDK_MAJOR_VERSION:

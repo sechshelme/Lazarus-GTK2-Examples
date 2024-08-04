@@ -18,6 +18,15 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
+
+
+#define GSK_TYPE_GL_RENDERER (gsk_gl_renderer_get_type())
+#define GSK_GL_RENDERER(obj)                    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSK_TYPE_GL_RENDERER, GskGLRenderer))
+#define GSK_GL_RENDERER_CLASS(klass)            (G_TYPE_CHECK_CLASS_CAST ((klass), GSK_TYPE_GL_RENDERER, GskGLRendererClass))
+#define GSK_IS_GL_RENDERER(obj)                 (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSK_TYPE_GL_RENDERER))
+#define GSK_IS_GL_RENDERER_CLASS(klass)         (G_TYPE_CHECK_CLASS_TYPE ((klass), GSK_TYPE_GL_RENDERER))
+#define GSK_GL_RENDERER_GET_CLASS(obj)          (G_TYPE_INSTANCE_GET_CLASS ((obj), GSK_TYPE_GL_RENDERER, GskGLRendererClass))
+
 #pragma once
 
 #if !defined (__GSK_H_INSIDE__) && !defined (GTK_COMPILATION)
@@ -30,25 +39,13 @@
 
 
 
-#define GSK_TYPE_GL_RENDERER (gsk_gl_renderer_get_type())
-
-#define GSK_GL_RENDERER(obj)                    (G_TYPE_CHECK_INSTANCE_CAST ((obj), GSK_TYPE_GL_RENDERER, GskGLRenderer))
-#define GSK_IS_GL_RENDERER(obj)                 (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GSK_TYPE_GL_RENDERER))
-#define GSK_GL_RENDERER_CLASS(klass)            (G_TYPE_CHECK_CLASS_CAST ((klass), GSK_TYPE_GL_RENDERER, GskGLRendererClass))
-#define GSK_IS_GL_RENDERER_CLASS(klass)         (G_TYPE_CHECK_CLASS_TYPE ((klass), GSK_TYPE_GL_RENDERER))
-#define GSK_GL_RENDERER_GET_CLASS(obj)          (G_TYPE_INSTANCE_GET_CLASS ((obj), GSK_TYPE_GL_RENDERER, GskGLRendererClass))
-
 typedef struct _GskGLRenderer      GskGLRenderer;
 typedef struct _GskGLRendererClass GskGLRendererClass;
 
-GSK_INCLUDE_WARNING()
 GType        gsk_gl_renderer_get_type (void) ;
-GSK_INCLUDE_WARNING()
 GskRenderer *gsk_gl_renderer_new      (void);
 
-GSK_INCLUDE_WARNING()
 GType        gsk_ngl_renderer_get_type (void) ;
-GSK_INCLUDE_WARNING()
 GskRenderer *gsk_ngl_renderer_new      (void);
 
 
