@@ -3,7 +3,7 @@ unit gtkcenterlayout;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtklayoutmanager;
+  glib2, common_GTK, gtkenums, gtktypes, gtkwidget, gtklayoutmanager;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

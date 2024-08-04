@@ -3,7 +3,7 @@ unit gtkbutton;
 interface
 
 uses
-  glib2, gtkwidget, common_GTK;
+  glib2, gtkwidget, gtktypes, common_GTK;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

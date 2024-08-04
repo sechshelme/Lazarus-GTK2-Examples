@@ -3,7 +3,7 @@ unit gtkconstraintlayout;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkconstraint, gtklayoutmanager, gtklayoutchild, gtkconstraintguide;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkconstraint, gtklayoutmanager, gtklayoutchild, gtkconstraintguide;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

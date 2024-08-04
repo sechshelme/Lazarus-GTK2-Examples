@@ -3,7 +3,7 @@ unit gtkentrycompletion;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtktreemodel, gtkcellarea;
+  glib2, common_GTK, gtkwidget, gtktypes, gtktreemodel, gtkcellarea;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

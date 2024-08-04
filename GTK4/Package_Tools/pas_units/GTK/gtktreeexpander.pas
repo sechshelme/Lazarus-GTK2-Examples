@@ -3,7 +3,7 @@ unit gtktreeexpander;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtktreelistmodel;
+  glib2, common_GTK, gtktypes, gtkwidget, gtktreelistmodel;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

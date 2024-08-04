@@ -3,7 +3,7 @@ unit gtkviewport;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkscrollinfo, gtkadjustment;
+  glib2, common_GTK, gtktypes, gtkwidget, gtkscrollinfo, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkshortcut;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;
+  glib2, common_GTK, gtktypes, gtkwidget, gtkshortcuttrigger, gtkshortcutaction;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

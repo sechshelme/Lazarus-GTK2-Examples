@@ -3,7 +3,7 @@ unit gtkimcontext;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdktypes, gtkwidget;
+  glib2, gdkenums, common_GTK, gdktypes, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkwidget;
 interface
 
 uses
-  ctypes, gdkrgba, gdkclipboard, gdkcursor, gdkframeclock, gsktransform, gtktypes, gdkenums, gdktypes, pango, Cairo, glib2, common_GTK, gtkenums;
+  ctypes, Cairo, glib2, common_GTK, gdkrgba, gdkclipboard, gdkcursor, gdkframeclock, gsktransform, gtktypes, gdkenums, gdktypes, pango, gtkenums;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -19,94 +19,24 @@ type
   end;
   PGtkRequisition = ^TGtkRequisition;
 
-  TGtkWidgetPrivate = record    //  _GtkWidgetPrivate
-  end;
-  PGtkWidgetPrivate = ^TGtkWidgetPrivate;
+  // ausgelagert
+  //TGtkWidgetPrivate = record
+  //end;
+  //PGtkWidgetPrivate = ^TGtkWidgetPrivate;
 
-  TGtkWidget = record
-    parent_instance: TGInitiallyUnowned;
-    priv: PGtkWidgetPrivate;
-  end;
-  PGtkWidget = ^TGtkWidget;
-  PPGtkWidget = ^PGtkWidget;
+  // Ausgelagert
+  //TGtkWidget = record
+  //  parent_instance: TGInitiallyUnowned;
+  //  priv: PGtkWidgetPrivate;
+  //end;
+  //PGtkWidget = ^TGtkWidget;
+  //PPGtkWidget = ^PGtkWidget;
 
   TGtkTickCallback = function(widget: PGtkWidget; frame_clock: PGdkFrameClock; user_data: Tgpointer): Tgboolean; cdecl;
 
-  TGtkWidgetClassPrivate = Pointer;                  // _GtkWidgetClassPrivate
+  TGtkWidgetClassPrivate = record
+  end;
   PGtkWidgetClassPrivate = ^TGtkWidgetClassPrivate;
-
-  // ==== eigenes
-  TGInitiallyUnownedClass = Pointer;   // /usr/include/glib-2.0/gobject/gobject.h
-  PGInitiallyUnownedClass = ^TGInitiallyUnownedClass;
-
-  // ===  Zwingende Auslagerungen wegen Kreuzverbindungen mit gtkwidget
-
-  TGtkApplication = record
-    parent_instance: TGApplication;
-  end;
-  PGtkApplication = ^TGtkApplication;
-
-  TGtkNative = record
-  end;
-  PGtkNative = ^TGtkNative;
-
-  TGtkLayoutManager = record
-    parent_instance: TGObject
-  end;
-  PGtkLayoutManager = ^TGtkLayoutManager;
-
-  TGtkRoot = record
-  end;
-  PGtkRoot = ^TGtkRoot;
-
-  TGtkShortcut = record
-  end;
-  PGtkShortcut = ^TGtkShortcut;
-  TGtkShortcutFunc = function(widget: PGtkWidget; args: PGVariant; user_data: Tgpointer): Tgboolean; cdecl;
-
-  TGtkCssStyleChange = record // _GtkCssStyleChange
-  end;
-  PGtkCssStyleChange = ^TGtkCssStyleChange;
-
-  TGtkStyleContext = record
-    parent_object: TGObject;
-  end;
-  PGtkStyleContext = ^TGtkStyleContext;
-
-  TGtkTooltip = record // _GtkTooltip
-  end;
-  PGtkTooltip = ^TGtkTooltip;
-
-  TGtkSettings = record  // _GtkSettings
-  end;
-  PGtkSettings = ^TGtkSettings;
-
-  TGtkEventController = record // _GtkEventController
-  end;
-  PGtkEventController = ^TGtkEventController;
-
-  TGtkBuilderScope = record
-  end;
-  PGtkBuilderScope = ^TGtkBuilderScope;
-
-  TGtkListItemFactory = record
-  end;
-  PGtkListItemFactory = ^TGtkListItemFactory;
-
-  TGtkAccessible = record
-  end;
-  PGtkAccessible = ^TGtkAccessible;
-  PPGtkAccessible = ^PGtkAccessible;
-
-  //  TGtkSnapshot = TGdkSnapshot;
-  //  PGtkSnapshot = ^TGtkSnapshot;
-
-
-
-  // =======================
-
-
-
 
   TGtkWidgetClass = record
     parent_class: TGInitiallyUnownedClass;
@@ -145,15 +75,12 @@ type
 
 function gtk_widget_get_type: TGType; cdecl; external gtklib;
 procedure gtk_widget_unparent(widget: PGtkWidget); cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_10_FOR(gtk_widget_set_visible or gtk_window_present) }
 procedure gtk_widget_show(widget: PGtkWidget); cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_10_FOR(gtk_widget_set_visible) }
 procedure gtk_widget_hide(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_map(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_unmap(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_realize(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_unrealize(widget: PGtkWidget); cdecl; external gtklib;
-{ Queuing draws  }
 procedure gtk_widget_queue_draw(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_queue_resize(widget: PGtkWidget); cdecl; external gtklib;
 procedure gtk_widget_queue_allocate(widget: PGtkWidget); cdecl; external gtklib;
@@ -218,17 +145,12 @@ function gtk_widget_get_root(widget: PGtkWidget): PGtkRoot; cdecl; external gtkl
 function gtk_widget_get_native(widget: PGtkWidget): PGtkNative; cdecl; external gtklib;
 procedure gtk_widget_set_child_visible(widget: PGtkWidget; child_visible: Tgboolean); cdecl; external gtklib;
 function gtk_widget_get_child_visible(widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_width) }
 function gtk_widget_get_allocated_width(widget: PGtkWidget): longint; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_height) }
 function gtk_widget_get_allocated_height(widget: PGtkWidget): longint; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_get_baseline) }
 function gtk_widget_get_allocated_baseline(widget: PGtkWidget): longint; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_bounds) }
 procedure gtk_widget_get_allocation(widget: PGtkWidget; allocation: PGtkAllocation); cdecl; external gtklib;
 function gtk_widget_compute_transform(widget: PGtkWidget; target: PGtkWidget; out_transform: Pgraphene_matrix_t): Tgboolean; cdecl; external gtklib;
 function gtk_widget_compute_bounds(widget: PGtkWidget; target: PGtkWidget; out_bounds: Pgraphene_rect_t): Tgboolean; cdecl; external gtklib;
-(* Const before type ignored *)
 function gtk_widget_compute_point(widget: PGtkWidget; target: PGtkWidget; point: Pgraphene_point_t; out_point: Pgraphene_point_t): Tgboolean; cdecl; external gtklib;
 function gtk_widget_get_width(widget: PGtkWidget): longint; cdecl; external gtklib;
 function gtk_widget_get_height(widget: PGtkWidget): longint; cdecl; external gtklib;
@@ -249,7 +171,6 @@ function gtk_widget_get_display(widget: PGtkWidget): PGdkDisplay; cdecl; externa
 function gtk_widget_get_settings(widget: PGtkWidget): PGtkSettings; cdecl; external gtklib;
 function gtk_widget_get_clipboard(widget: PGtkWidget): PGdkClipboard; cdecl; external gtklib;
 function gtk_widget_get_primary_clipboard(widget: PGtkWidget): PGdkClipboard; cdecl; external gtklib;
-{ Expand flags and related support  }
 function gtk_widget_get_hexpand(widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
 procedure gtk_widget_set_hexpand(widget: PGtkWidget; expand: Tgboolean); cdecl; external gtklib;
 function gtk_widget_get_hexpand_set(widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
@@ -259,7 +180,6 @@ procedure gtk_widget_set_vexpand(widget: PGtkWidget; expand: Tgboolean); cdecl; 
 function gtk_widget_get_vexpand_set(widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
 procedure gtk_widget_set_vexpand_set(widget: PGtkWidget; set_: Tgboolean); cdecl; external gtklib;
 function gtk_widget_compute_expand(widget: PGtkWidget; orientation: TGtkOrientation): Tgboolean; cdecl; external gtklib;
-{ Margin and alignment  }
 function gtk_widget_get_halign(widget: PGtkWidget): TGtkAlign; cdecl; external gtklib;
 procedure gtk_widget_set_halign(widget: PGtkWidget; align: TGtkAlign); cdecl; external gtklib;
 function gtk_widget_get_valign(widget: PGtkWidget): TGtkAlign; cdecl; external gtklib;
@@ -273,7 +193,6 @@ procedure gtk_widget_set_margin_top(widget: PGtkWidget; margin: longint); cdecl;
 function gtk_widget_get_margin_bottom(widget: PGtkWidget): longint; cdecl; external gtklib;
 procedure gtk_widget_set_margin_bottom(widget: PGtkWidget; margin: longint); cdecl; external gtklib;
 function gtk_widget_is_ancestor(widget: PGtkWidget; ancestor: PGtkWidget): Tgboolean; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_12_FOR(gtk_widget_compute_point) }
 function gtk_widget_translate_coordinates(src_widget: PGtkWidget; dest_widget: PGtkWidget; src_x: Tdouble; src_y: Tdouble; dest_x: Pdouble;
   dest_y: Pdouble): Tgboolean; cdecl; external gtklib;
 function gtk_widget_contains(widget: PGtkWidget; x: Tdouble; y: Tdouble): Tgboolean; cdecl; external gtklib;
@@ -285,7 +204,6 @@ function gtk_widget_get_pango_context(widget: PGtkWidget): PPangoContext; cdecl;
 procedure gtk_widget_set_font_options(widget: PGtkWidget; options: Pcairo_font_options_t); cdecl; external gtklib;
 function gtk_widget_get_font_options(widget: PGtkWidget): Pcairo_font_options_t; cdecl; external gtklib;
 function gtk_widget_create_pango_layout(widget: PGtkWidget; Text: PChar): PPangoLayout; cdecl; external gtklib;
-{ Functions for setting directionality for widgets  }
 procedure gtk_widget_set_direction(widget: PGtkWidget; dir: TGtkTextDirection); cdecl; external gtklib;
 function gtk_widget_get_direction(widget: PGtkWidget): TGtkTextDirection; cdecl; external gtklib;
 procedure gtk_widget_set_default_direction(dir: TGtkTextDirection); cdecl; external gtklib;
@@ -308,112 +226,44 @@ function gtk_requisition_new: PGtkRequisition; cdecl; external gtklib;
 function gtk_requisition_copy(requisition: PGtkRequisition): PGtkRequisition; cdecl; external gtklib;
 procedure gtk_requisition_free(requisition: PGtkRequisition); cdecl; external gtklib;
 function gtk_widget_in_destruction(widget: PGtkWidget): Tgboolean; cdecl; external gtklib;
-{GDK_DEPRECATED_IN_4_10 }
 function gtk_widget_get_style_context(widget: PGtkWidget): PGtkStyleContext; cdecl; external gtklib;
 procedure gtk_widget_class_set_css_name(widget_class: PGtkWidgetClass; Name: PChar); cdecl; external gtklib;
 function gtk_widget_class_get_css_name(widget_class: PGtkWidgetClass): PChar; cdecl; external gtklib;
 function gtk_widget_add_tick_callback(widget: PGtkWidget; callback: TGtkTickCallback; user_data: Tgpointer; notify: TGDestroyNotify): Tguint; cdecl; external gtklib;
 procedure gtk_widget_remove_tick_callback(widget: PGtkWidget; id: Tguint); cdecl; external gtklib;
-{*
- * gtk_widget_class_bind_template_callback:
- * @widget_class: a `GtkWidgetClass`
- * @callback: the callback symbol
- *
- * Binds a callback function defined in a template to the @widget_class.
- *
- * This macro is a convenience wrapper around the
- * gtk_widget_class_bind_template_callback_full() function. It is not
- * supported after gtk_widget_class_set_template_scope() has been used
- * on @widget_class.
-  }
+
+
 {#define gtk_widget_class_bind_template_callback(widget_class, callback) \ }
 {  gtk_widget_class_bind_template_callback_full (GTK_WIDGET_CLASS (widget_class), \ }
 {                                                #callback, \ }
 {                                                G_CALLBACK (callback)) }
-{*
- * gtk_widget_class_bind_template_child:
- * @widget_class: a `GtkWidgetClass`
- * @TypeName: the type name of this widget
- * @member_name: name of the instance member in the instance struct for @data_type
- *
- * Binds a child widget defined in a template to the @widget_class.
- *
- * This macro is a convenience wrapper around the
- * gtk_widget_class_bind_template_child_full() function.
- *
- * This macro will use the offset of the @member_name inside the @TypeName
- * instance structure.
-  }
+
 {#define gtk_widget_class_bind_template_child(widget_class, TypeName, member_name) \ }
 {  gtk_widget_class_bind_template_child_full (widget_class, \ }
 {                                             #member_name, \ }
 {                                             FALSE, \ }
 {                                             G_STRUCT_OFFSET (TypeName, member_name)) }
-{*
- * gtk_widget_class_bind_template_child_internal:
- * @widget_class: a `GtkWidgetClass`
- * @TypeName: the type name, in CamelCase
- * @member_name: name of the instance member in the instance struct for @data_type
- *
- * Binds a child widget defined in a template to the @widget_class, and
- * also makes it available as an internal child in GtkBuilder, under the
- * name @member_name.
- *
- * This macro is a convenience wrapper around the
- * gtk_widget_class_bind_template_child_full() function.
- *
- * This macro will use the offset of the @member_name inside the @TypeName
- * instance structure.
-  }
+
 {#define gtk_widget_class_bind_template_child_internal(widget_class, TypeName, member_name) \ }
 {  gtk_widget_class_bind_template_child_full (widget_class, \ }
 {                                             #member_name, \ }
 {                                             TRUE, \ }
 {                                             G_STRUCT_OFFSET (TypeName, member_name)) }
-{*
- * gtk_widget_class_bind_template_child_private:
- * @widget_class: a `GtkWidgetClass`
- * @TypeName: the type name of this widget
- * @member_name: name of the instance private member in the private struct for @data_type
- *
- * Binds a child widget defined in a template to the @widget_class.
- *
- * This macro is a convenience wrapper around the
- * gtk_widget_class_bind_template_child_full() function.
- *
- * This macro will use the offset of the @member_name inside the @TypeName
- * private data structure (it uses G_PRIVATE_OFFSET(), so the private struct
- * must be added with G_ADD_PRIVATE()).
-  }
+
 {#define gtk_widget_class_bind_template_child_private(widget_class, TypeName, member_name) \ }
 {  gtk_widget_class_bind_template_child_full (widget_class, \ }
 {                                             #member_name, \ }
 {                                             FALSE, \ }
 {                                             G_PRIVATE_OFFSET (TypeName, member_name)) }
-{*
- * gtk_widget_class_bind_template_child_internal_private:
- * @widget_class: a `GtkWidgetClass`
- * @TypeName: the type name, in CamelCase
- * @member_name: name of the instance private member on the private struct for @data_type
- *
- * Binds a child widget defined in a template to the @widget_class, and
- * also makes it available as an internal child in GtkBuilder, under the
- * name @member_name.
- *
- * This macro is a convenience wrapper around the
- * gtk_widget_class_bind_template_child_full() function.
- *
- * This macro will use the offset of the @member_name inside the @TypeName
- * private data structure.
-  }
+
 {#define gtk_widget_class_bind_template_child_internal_private(widget_class, TypeName, member_name) \ }
 {  gtk_widget_class_bind_template_child_full (widget_class, \ }
 {                                             #member_name, \ }
 {                                             TRUE, \ }
 {                                             G_PRIVATE_OFFSET (TypeName, member_name)) }
+
 procedure gtk_widget_init_template(widget: PGtkWidget); cdecl; external gtklib;
 function gtk_widget_get_template_child(widget: PGtkWidget; widget_type: TGType; Name: PChar): PGObject; cdecl; external gtklib;
-{GDK_AVAILABLE_IN_4_8 }
 procedure gtk_widget_dispose_template(widget: PGtkWidget; widget_type: TGType); cdecl; external gtklib;
 procedure gtk_widget_class_set_template(widget_class: PGtkWidgetClass; template_bytes: PGBytes); cdecl; external gtklib;
 procedure gtk_widget_class_set_template_from_resource(widget_class: PGtkWidgetClass; resource_name: PChar); cdecl; external gtklib;
@@ -445,11 +295,9 @@ procedure gtk_widget_remove_css_class(widget: PGtkWidget; css_class: PChar); cde
 function gtk_widget_has_css_class(widget: PGtkWidget; css_class: PChar): Tgboolean; cdecl; external gtklib;
 function gtk_widget_get_css_classes(widget: PGtkWidget): PPchar; cdecl; external gtklib;
 procedure gtk_widget_set_css_classes(widget: PGtkWidget; Classes: PPchar); cdecl; external gtklib;
-{GDK_AVAILABLE_IN_4_10 }
 procedure gtk_widget_get_color(widget: PGtkWidget; color: PGdkRGBA); cdecl; external gtklib;
 
 type
-
   TGtkWidgetActionActivateFunc = procedure(widget: PGtkWidget; action_name: PChar; parameter: PGVariant); cdecl;
 
 procedure gtk_widget_class_install_action(widget_class: PGtkWidgetClass; action_name: PChar; parameter_type: PChar; activate: TGtkWidgetActionActivateFunc); cdecl; external gtklib;
@@ -503,6 +351,7 @@ begin
   Result := PGtkWidgetClass(PGTypeInstance(obj)^.g_class);
 end;
 
+// ====
 
 function GTK_TYPE_REQUISITION: TGType;
 begin

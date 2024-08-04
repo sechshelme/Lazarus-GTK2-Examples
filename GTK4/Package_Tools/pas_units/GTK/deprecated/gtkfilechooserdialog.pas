@@ -3,7 +3,7 @@ unit gtkfilechooserdialog;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkwindow, gtkfilechooser;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkwindow, gtkfilechooser;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkcombobox;
 interface
 
 uses
-  glib2, common_GTK, gdktypes, gtkenums, gtkwidget, gtktreemodel, gtktreeview;
+  glib2, common_GTK, gdktypes, gtkenums, gtkwidget, gtktypes, gtktreemodel, gtktreeview;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

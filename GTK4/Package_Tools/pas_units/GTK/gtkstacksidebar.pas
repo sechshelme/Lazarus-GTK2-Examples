@@ -3,7 +3,7 @@ unit gtkstacksidebar;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkstack;
+  glib2, common_GTK, gtktypes, gtkwidget, gtkstack;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

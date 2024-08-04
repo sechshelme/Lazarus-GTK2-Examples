@@ -3,7 +3,7 @@ unit gtkoverlaylayout;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtklayoutmanager, gtklayoutchild;
+  glib2, common_GTK, gtktypes, gtkwidget, gtklayoutmanager, gtklayoutchild;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkfixed;
 interface
 
 uses
-  glib2, common_GTK, gsktransform, gtkwidget;
+  glib2, common_GTK, gsktransform, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

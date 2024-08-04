@@ -3,7 +3,7 @@ unit gtklevelbar;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget;
+  glib2, common_GTK, gtkenums, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

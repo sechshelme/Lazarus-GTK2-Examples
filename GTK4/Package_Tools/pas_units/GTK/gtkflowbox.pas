@@ -3,7 +3,7 @@ unit gtkflowbox;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkadjustment;
+  glib2, common_GTK, gtkenums, gtktypes, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

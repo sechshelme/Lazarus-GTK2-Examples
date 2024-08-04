@@ -3,7 +3,7 @@ unit gtkscale;
 interface
 
 uses
-  pango, glib2, common_GTK, gtkenums, gtkwidget, gtkrange, gtkadjustment;
+  pango, glib2, common_GTK, gtkenums, gtkwidget, gtktypes, gtkrange, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

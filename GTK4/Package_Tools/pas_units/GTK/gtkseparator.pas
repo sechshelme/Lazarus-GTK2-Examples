@@ -3,7 +3,7 @@ unit gtkseparator;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget;
+  glib2, common_GTK, gtkenums, gtktypes, gtkwidget;
 
 
 type

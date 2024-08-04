@@ -3,7 +3,7 @@ unit gtkdrawingarea;
 interface
 
 uses
-  glib2, Cairo, common_GTK, gtkwidget;
+  glib2, Cairo, common_GTK, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

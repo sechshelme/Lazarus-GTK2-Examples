@@ -3,7 +3,7 @@ unit gtkscrolledwindow;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkadjustment;
+  glib2, common_GTK, gtktypes, gtkwidget, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

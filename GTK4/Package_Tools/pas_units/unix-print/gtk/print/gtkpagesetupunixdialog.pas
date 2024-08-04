@@ -3,7 +3,7 @@ unit gtkpagesetupunixdialog;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkwindow, gtkpagesetup, gtkprintsettings;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkwindow, gtkpagesetup, gtkprintsettings;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

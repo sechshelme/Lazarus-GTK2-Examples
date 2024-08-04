@@ -3,7 +3,7 @@ unit gtkglarea;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdkglcontext, gtkwidget;
+  glib2, gdkenums, common_GTK, gdkglcontext, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

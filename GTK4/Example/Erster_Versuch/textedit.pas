@@ -4,7 +4,7 @@ unit TextEdit;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtktextview, gtktextiter, gtktextbuffer;
+  glib2, common_GTK, gtkwidget, gtktypes, gtktextview, gtktextiter, gtktextbuffer;
 
 function Create_TextView: PGtkWidget;
 

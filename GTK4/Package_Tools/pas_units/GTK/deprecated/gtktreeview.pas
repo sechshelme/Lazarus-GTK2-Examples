@@ -3,7 +3,7 @@ unit gtktreeview;
 interface
 
 uses
-  glib2, gdkenums, common_GTK, gdkcontentformats, gdkpaintable, gdktypes, gtkenums, gtkwidget, gtkeditable, gtkcellrenderer, gtktreemodel, gtktreeviewcolumn;
+  glib2, gdkenums, common_GTK, gdkcontentformats, gdkpaintable, gdktypes, gtkenums, gtktypes, gtkwidget, gtkeditable, gtkcellrenderer, gtktreemodel, gtktreeviewcolumn;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

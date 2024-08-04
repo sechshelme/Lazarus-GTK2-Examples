@@ -3,7 +3,7 @@ unit gtklayoutmanager;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtklayoutchild, gtkwidget;
+  glib2, common_GTK, gtkenums, gtklayoutchild, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtklabel;
 interface
 
 uses
-  glib2, pango, common_GTK, gtkenums, gtkwidget;
+  glib2, pango, common_GTK, gtkenums, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

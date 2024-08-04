@@ -3,7 +3,7 @@ unit gtksearchbar;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkeditable;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkeditable;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

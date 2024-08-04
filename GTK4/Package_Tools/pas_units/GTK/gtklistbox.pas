@@ -3,7 +3,7 @@ unit gtklistbox;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkadjustment;
+  glib2, common_GTK, gtkenums, gtkwidget, gtktypes, gtkadjustment;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -3,7 +3,7 @@ unit gtkprogressbar;
 interface
 
 uses
-  glib2, pango, common_GTK, gtkwidget;
+  glib2, pango, common_GTK, gtktypes, gtkwidget;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

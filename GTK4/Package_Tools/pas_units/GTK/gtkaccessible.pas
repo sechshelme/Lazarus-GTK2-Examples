@@ -3,7 +3,7 @@ unit gtkaccessible;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkatcontext;
+  glib2, common_GTK, gtkenums, gtktypes, gtkwidget, gtkatcontext;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

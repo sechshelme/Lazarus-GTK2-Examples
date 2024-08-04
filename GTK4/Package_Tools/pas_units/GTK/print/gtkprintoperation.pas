@@ -3,7 +3,7 @@ unit gtkprintoperation;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkwindow, gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
+  glib2, common_GTK, gtkenums, gtkwidget, gtktypes, gtkwindow, gtkprintcontext, gtkpagesetup, gtkprintoperationpreview, gtkprintsettings;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

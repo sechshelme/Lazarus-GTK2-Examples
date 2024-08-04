@@ -3,7 +3,7 @@ unit gtkbuilderscope;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkbuilder;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkbuilder;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

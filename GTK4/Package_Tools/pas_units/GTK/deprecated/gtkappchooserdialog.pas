@@ -3,7 +3,7 @@ unit gtkappchooserdialog;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkwindow, gtkdialog;
+  glib2, common_GTK, gtkwidget, gtktypes, gtkwindow, gtkdialog;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}

@@ -130,8 +130,8 @@ uses
 
   gtkenums,                   // io.
   gtktypes,                   // io.
-  gtknative,                  // io.    ( TGtkNative ausgelagert )
-  gtkwidget,                  // -> pango,Cairo, gtknative
+  gtknative,                  // io.
+  gtkwidget,                  //   Macro nicht aufgelöst
   gtkwindow,                  // io.
   gtkapplication,             // io.
   gtkapplicationwindow,       // io.

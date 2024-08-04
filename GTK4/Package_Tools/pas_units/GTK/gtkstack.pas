@@ -3,7 +3,7 @@ unit gtkstack;
 interface
 
 uses
-  glib2, common_GTK, gtkwidget, gtkselectionmodel;
+  glib2, common_GTK, gtktypes, gtkwidget, gtkselectionmodel;
 
 {$IFDEF FPC}
 {$PACKRECORDS C}

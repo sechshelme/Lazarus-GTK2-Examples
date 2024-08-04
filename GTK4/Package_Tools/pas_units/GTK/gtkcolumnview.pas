@@ -3,7 +3,7 @@ unit gtkcolumnview;
 interface
 
 uses
-  glib2, common_GTK, gtkenums, gtkwidget, gtkselectionmodel, gtksorter, gtkscrollinfo;
+  glib2, common_GTK, gtkenums, gtkwidget, gtktypes, gtkselectionmodel, gtksorter, gtkscrollinfo;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
