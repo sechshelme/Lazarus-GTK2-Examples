@@ -7,19 +7,6 @@ interface
 uses
   ctypes, gdk2pixbuf, glib2, Cairo, pango, GDK4;
 
-//const
-//  {$IFDEF Linux}
-//  gtklib = 'libgtk-4';
-//  libgio = 'libgio-2.0';
-//  gobjectlib = 'libgobject-2.0';
-//  {$ENDIF}
-
-//  {$IFDEF Windows}
-//  gtklib = 'libgtk-4.dll';
-//  libgio = 'libgio-2.0.dll';
-//  gobjectlib = 'libgobject-2.0.dll';
-//  {$ENDIF}
-
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
@@ -36,4 +23,3 @@ implementation
 {$UNDEF read_implementation}
 
 end.
-

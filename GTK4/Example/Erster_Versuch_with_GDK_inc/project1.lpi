@@ -62,7 +62,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../package;../../Package_Tools/pas_units/GTK;../../Package_Tools/pas_units/GTK/deprecated;../../Package_Tools/pas_units/GTK/print;../../Package_Tools/pas_units;../../Package_Tools/pas_units/GSK"/>
+      <OtherUnitFiles Value="../../package;../../Package_Tools/pas_units/GTK/deprecated;../../Package_Tools/pas_units"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

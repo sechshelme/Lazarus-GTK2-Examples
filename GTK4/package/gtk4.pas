@@ -1,24 +1,9 @@
 unit GTK4;
 
-//{$modeswitch typehelpers}
-
 interface
 
-  uses
-    ctypes, Cairo, glib2, gdk2pixbuf, pango,common_GTK, GDK4, GSK4;
-
-//const
-//  {$IFDEF Linux}
-//  gtklib = 'libgtk-4';
-//  libgio = 'libgio-2.0';
-//  gobjectlib = 'libgobject-2.0';
-//  {$ENDIF}
-
-//  {$IFDEF Windows}
-//  gtklib = 'libgtk-4.dll';
-//  libgio = 'libgio-2.0.dll';
-//  gobjectlib = 'libgobject-2.0.dll';
-//  {$ENDIF}
+uses
+  ctypes, Cairo, glib2, gdk2pixbuf, pango, common_GTK, GDK4, GSK4;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
@@ -36,4 +21,3 @@ implementation
 {$UNDEF read_implementation}
 
 end.
-

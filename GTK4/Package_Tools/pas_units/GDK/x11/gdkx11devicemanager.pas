@@ -3,21 +3,11 @@ unit gdkx11devicemanager;
 interface
 
 uses
-  glib2, common_GTK, gdktypes;
+  glib2, common_GTK, gdktypes, gdkx11devicemanager_xi2;
 
   {$IFDEF FPC}
   {$PACKRECORDS C}
   {$ENDIF}
-
-type
-  TGdkX11DeviceManagerXI2 = record
-  end;
-  PGdkX11DeviceManagerXI2 = ^TGdkX11DeviceManagerXI2;
-
-  TGdkX11DeviceManagerXI2Class = record
-  end;
-  PGdkX11DeviceManagerXI2Class = ^TGdkX11DeviceManagerXI2Class;
-
 
 function gdk_x11_device_manager_lookup(device_manager: PGdkX11DeviceManagerXI2; device_id: longint): PGdkDevice; cdecl; external gtklib;
 

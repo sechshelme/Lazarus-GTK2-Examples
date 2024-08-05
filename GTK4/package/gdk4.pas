@@ -5,6 +5,9 @@ unit GDK4;
 interface
 
 uses
+  {$IFDEF Linux}
+  x, xlib,
+  {$ENDIF}
   ctypes, gdk2pixbuf, glib2, Cairo, pango;
 
 //const

@@ -278,5 +278,17 @@
 {$include GTK/deprecated/gtkvolumebutton.inc }            // io. -> gtkscalebutton
 {$include GTK/gtktestatcontext.inc }           // -> gtkaccessible    // komplexe Macros
 
+// === gtkcss
+
+{$include GTK/css/gtkcssenums.inc }                // io.
+{$include GTK/css/gtkcssenumtypes.inc }            // io.
+{$include GTK/css/gtkcsserror.inc }                // io.
+{$include GTK/css/gtkcsslocation.inc }             // io.
+{$include GTK/css/gtkcsssection.inc }              // io. -> gtkcsslocation
+
+// ==== a11y
+{$include GTK/a11y/gtkatspisocket.inc }            // io.
+
+
 
 

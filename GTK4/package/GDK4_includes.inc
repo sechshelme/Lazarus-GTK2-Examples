@@ -57,3 +57,37 @@
 {$include GDK/gdkdevicepad.inc}               // io.
 
 
+// ==== GDK X11
+
+{$IFDEF Linux}
+{$include GDK/x11/gdkx11applaunchcontext.inc }     // io.
+{$include GDK/x11/gdkx11device.inc }               // io.
+{$include GDK/x11/gdkx11device_xi2.inc }           // io.
+{$include GDK/x11/gdkx11devicemanager_xi2.inc }    // io.
+{$include GDK/x11/gdkx11devicemanager.inc }        // io.
+{$include GDK/x11/gdkx11screen.inc }               // io.
+{$include GDK/x11/gdkx11display.inc }              // io. -> GdkX11Screen
+{$include GDK/x11/gdkx11surface.inc }              // io. -> gdkx11display
+{$include GDK/x11/gdkx11dnd.inc }                  // io.
+{$include GDK/x11/gdkx11glcontext.inc }            // io.
+{$include GDK/x11/gdkx11monitor.inc }              // io.
+{$include GDK/x11/gdkx11selection.inc }            // io.
+{$include GDK/x11/gdkx11utils.inc }                // io.
+{$include GDK/x11/gdkx11property.inc }             // io.
+{$ENDIF}
+
+// ====  GDK Wayland
+
+{$IFDEF Linux}
+{$include GDK/wayland/gdkwaylanddevice.inc }           // io.
+{$include GDK/wayland/gdkwaylanddisplay.inc }          // io.
+{$include GDK/wayland/gdkwaylandglcontext.inc }        // io.
+{$include GDK/wayland/gdkwaylandmonitor.inc }          // io.
+{$include GDK/wayland/gdkwaylandpopup.inc }            // io.
+{$include GDK/wayland/gdkwaylandseat.inc }             // io.
+{$include GDK/wayland/gdkwaylandsurface.inc }          // io.
+{$include GDK/wayland/gdkwaylandtoplevel.inc }         // io.
+{$ENDIF}
+
+
+
