@@ -15,9 +15,12 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
+    pipeline: PGstElement;
 
   public
 
@@ -35,27 +38,24 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   gst_init(@argc, @argv);
+  pipeline := nil;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
-const
-  GST_CLOCK_TIME_NONE = -1;
-var
-  pipeline: PGstElement;
-  bus: PGstBus;
-  msg: PGstMessage;
 begin
-  pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/gstreamer/test.mp3', nil);
-  //  pipeline := gst_parse_launch('playbin uri=https://gstreamer.freedesktop.org/data/media/sintel_trailer-480p.webm', nil);
+  //  pipeline := gst_parse_launch('playbin uri=file:/n4800/DATEN/Programmierung/mit_GIT/Lazarus/Tutorial/GTK2/gstreamer/test.mp3', nil);
+  if pipeline = nil then begin
+    pipeline := gst_parse_launch('filesrc location=test.mp3 !  mpegaudioparse ! mpg123audiodec ! audioconvert ! audioresample ! pulsesink', nil);
+    //    pipeline := gst_parse_launch('filesrc location=test.flac ! decodebin3 ! audioconvert ! audioresample ! autoaudiosink', nil);
+  end;
   gst_element_set_state(pipeline, GST_STATE_PLAYING);
+end;
 
-  bus := gst_element_get_bus(pipeline);
-  //msg :=
-  //  gst_bus_timed_pop_filtered(bus, -1,
-  //  TGstMessageType(TGstMessageType(int64(GST_MESSAGE_ERROR) or int64(GST_MESSAGE_EOS))));
-  msg :=
-    gst_bus_timed_pop_filtered(bus, -1,
-    TGstMessageType(TGstMessageType(int64(GST_MESSAGE_ERROR) or int64(GST_MESSAGE_EOS))));
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  if pipeline <> nil then  begin
+    gst_element_set_state(pipeline, GST_STATE_PAUSED);
+  end;
 end;
 
 end.

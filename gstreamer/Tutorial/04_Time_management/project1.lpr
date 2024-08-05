@@ -28,20 +28,6 @@ type
     Result := longint(ret) < longint(GST_PAD_LINK_OK);
   end;
 
-  function GST_OBJECT(obj: Pointer): PGstObject;
-  begin
-    Result := PGstObject(g_type_check_instance_cast(obj, gst_object_get_type));
-  end;
-
-  function GST_MESSAGE_SRC(msg: PGstMessage): PGstObject;
-  begin
-    Result := msg^.src;
-  end;
-
-  function GST_OBJECT_NAME(obj: PGstObject): Pgchar;
-  begin
-    Result := obj^.Name;
-  end;
 
   procedure pad_added_handler(src: PGstElement; new_pad: PGstPad; Data: PCustomData);
   var
@@ -52,7 +38,7 @@ type
     ret: TGstPadLinkReturn;
   begin
     sink_pad := gst_element_get_static_pad(Data^.convert, 'sink');
-    g_print('Received new pad "%s" from "%s" '#10, GST_OBJECT_NAME(GST_OBJECT(new_pad)), GST_OBJECT_NAME(GST_OBJECT(src)));
+    g_print('Received new pad "%s" from "%s" '#10, PGstObject(new_pad)^.Name, PGstObject(src)^.Name);
 
     if gst_pad_is_linked(sink_pad) then begin
       g_print('Ist schon gelinkt'#10);
@@ -128,7 +114,7 @@ type
         case GST_MESSAGE_TYPE(msg) of
           GST_MESSAGE_ERROR: begin
             gst_message_parse_error(msg, @err, @debug_info);
-            g_printerr('Error received from elemment %s: %s'#10, GST_OBJECT_NAME(GST_MESSAGE_SRC(msg)), err^.message);
+            g_printerr('Error received from elemment %s: %s'#10, msg^.src^.Name, err^.message);
             if debug_info = nil then begin
               g_printerr('Debug Info: none'#10);
             end else begin
@@ -143,10 +129,10 @@ type
             terminate := True;
           end;
           GST_MESSAGE_STATE_CHANGED: begin
-            if GST_MESSAGE_SRC(msg) = GST_OBJECT(Data.pipeline) then begin
-              gst_message_parse_state_changed(msg, @old_state, @new_state, @pending_state);
+            if msg^.src = PGstObject(Data.pipeline) then begin
+              gst_message_parse_state_changed(msg, @old_state,@new_state,@pending_state);
 
-              g_print('Pipeline state changed from %s to %s '#10, gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
+              g_print('Pipeline state changed from %s to %s '#10,gst_element_state_get_name(old_state),gst_element_state_get_name(new_state));
             end;
           end;
           else begin
